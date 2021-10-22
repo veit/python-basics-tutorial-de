@@ -1,5 +1,5 @@
 =============
-Python basics
+Python Basics
 =============
 
 .. include:: ../README.rst
