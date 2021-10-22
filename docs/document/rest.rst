@@ -217,6 +217,9 @@ Codeblöcke werden mit zwei Doppelpunkten eingeleitet und eingerückt::
 
    >>> print 'Aber Doctests beginnen mit ">>>" und müssen nicht eingerückt werden.'
 
+.. seealso::
+   :doc:`code-blocks`
+
 Tabellen
 --------
 
