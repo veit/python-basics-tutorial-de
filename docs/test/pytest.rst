@@ -30,7 +30,8 @@ Merkmale
       :lines: 1-2,4-5
       :lineno-start: 1
 
-#. Schreibt eine Text-Fixture mit dem ``@pytest.fixture``-Dekorator:
+#. Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
+   ``@pytest.fixture``-Dekorator:
 
    .. literalinclude:: test_pytest.py
       :language: python
