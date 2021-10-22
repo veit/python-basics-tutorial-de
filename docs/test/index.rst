@@ -16,10 +16,10 @@ Konzepte
           `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
 
    Test Suite
-       ist eine Sammlung mehrerer Test Cases.
+       ist eine Sammlung mehrerer :term:`Test Cases <Test Case (Testfall)>`.
 
    Test Runner
-       durchläuft eine Test Suite und stellt die Ergebnisse dar.
+       durchläuft eine :term:`Test Suite` und stellt die Ergebnisse dar.
 
 Python-Testmodule
 -----------------
