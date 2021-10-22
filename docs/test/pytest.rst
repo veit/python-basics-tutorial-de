@@ -8,7 +8,7 @@ Merkmale
 --------
 
 * Ausführlichere Informationen über fehlgeschlagene ``assert``-Anweisungen
-* Automatische Erkennung von Testmodulen und Funktionen
+* Automatische Erkennung von Testmodulen und -Funktionen
 * Modulare Fixtures für die Verwaltung von kleinen oder parametrisierten,
   langlebigen Testressourcen
 * Kann auch Unittests ohne Voreinstellungen ausführen
