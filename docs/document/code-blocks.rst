@@ -90,6 +90,8 @@ könnt ihr angeben mit
       .. literalinclude:: main.py
          :diff: main.py.orig
 
+.. _deprecated:
+
 .. rst:directive:: .. deprecated:: version
 
    Beschreibt, wann die Funktion veraltet wurde. Es kann auch eine Erklärung
