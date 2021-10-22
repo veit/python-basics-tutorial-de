@@ -24,11 +24,11 @@ Installation
 
    .. code-block:: console
 
-    $ curl -O https://codeload.github.com/veit/python-basics-tutorial/zip/main
+    $ curl -O https://codeload.github.com/veit/python-basics-tutorial-de/zip/main
     $ unzip main
     Archive:  main
     …
-       creating: python-basics-tutorial-main/
+       creating: python-basics-tutorial-de-main/
     …
 
 #. Installieren von Python-Paketen:
