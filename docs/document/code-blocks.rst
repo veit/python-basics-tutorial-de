@@ -89,3 +89,22 @@ könnt ihr angeben mit
 
       .. literalinclude:: main.py
          :diff: main.py.orig
+
+.. rst:directive:: .. deprecated:: version
+
+   Beschreibt, wann die Funktion veraltet wurde. Es kann auch eine Erklärung
+   angegeben werden, um :abbr:`z.B.` darüber zu informieren, was stattdessen
+   verwendet werden sollte. Beispiel:
+
+   .. code-block:: rest
+
+      .. deprecated:: 4.1
+         verwende stattdessen :func:`new_function`.
+
+   .. deprecated:: 4.1
+      verwende stattdessen :func:`new_function`.
+
+.. rst:directive:option:: py:module:deprecated
+
+   Markiert ein Python-Modul als veraltet; es wird dann an verschiedenen
+   Stellen als solches gekennzeichnet.
