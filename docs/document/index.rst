@@ -41,6 +41,7 @@ für nutzende als auch für betreuende Personen eines Projekts enthalten.
    intersphinx
    uml/index
    extensions
+   test
 
 Badges
 ------
