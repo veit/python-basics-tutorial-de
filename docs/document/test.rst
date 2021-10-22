@@ -1,6 +1,8 @@
 Testen
 ======
 
+.. _build-errors:
+
 Build-Fehler
 ------------
 
@@ -14,6 +16,8 @@ also :abbr:`z.B. (zum Beispiel)` mit:
 .. code-block:: console
 
     $ python -m sphinx -nb html docs/ docs/_build/
+
+.. _link-checks:
 
 Links überprüfen
 ----------------
