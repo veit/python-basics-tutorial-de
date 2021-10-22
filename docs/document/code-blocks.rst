@@ -92,6 +92,9 @@ könnt ihr angeben mit
 
 .. _deprecated:
 
+Veralteter Code
+---------------
+
 .. rst:directive:: .. deprecated:: version
 
    Beschreibt, wann die Funktion veraltet wurde. Es kann auch eine Erklärung
