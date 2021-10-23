@@ -62,6 +62,8 @@ project = 'Python Basics'
 copyright = "2021, Veit Schiele"
 author = "Veit Schiele"
 
+show_authors = True
+
 # The full version, including alpha/beta/rc tags
 release = "0.1.0"
 
