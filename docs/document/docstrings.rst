@@ -153,7 +153,7 @@ Es gibt zwei Arten von docstrings in ``sphinx.ext.napoleon``:
   <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html>`_
 
 Der Hauptunterschied besteht darin, dass Google Einrückungen verwendet und NumPy
-Unterstriche:
+Unterstreichungen:
 
 Google:
 
