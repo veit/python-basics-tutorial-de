@@ -47,7 +47,7 @@ UI-Elemente und Interaktionen
    beliebiger Untersequenzen. Die Namen der einzelnen Auswahlen sollten durch
    ``-->`` getrennt werden.
 
-   :menuselection:`View --> Cell Toolba r--> Slideshow` erzielt ihr :abbr:`z.B.
+   :menuselection:`View --> Cell Toolbar --> Slideshow` erzielt ihr :abbr:`z.B.
    (zum Beispiel)` mit folgender Auszeichnung:
 
    .. code-block:: rest
