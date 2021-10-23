@@ -39,17 +39,7 @@ Aktivitätsdiagramm
            -->[Ende des Prozesses] (*)
            endif
 
-    .. uml::
-
-        (*) --> "Initialisierung"
-        if "ein Test" then
-        -->[wahr] "Eine Aktivität"
-        --> "Eine andere Aktivität"
-        -right-> (*)
-        else
-        ->[falsch] "Etwas anderes"
-        -->[Ende des Prozesses] (*)
-        endif
+    .. image:: activity-diagram.svg
 
 ``=== code ===``
     Synchronisationsbalken.
@@ -67,11 +57,4 @@ Aktivitätsdiagramm
            --> ===B2===
            --> (*)
 
-    .. uml::
-    
-        (*) --> ===B1===
-        --> "Erste parallele Aktivität"
-        --> ===B2===
-        ===B1=== --> "Parallele Aktivität 2"
-        --> ===B2===
-        --> (*)
+    .. image:: activity-sync.svg

@@ -12,9 +12,7 @@ Klassendiagramm
 
            abstract class  "Abstrakte Klasse"
 
-    .. uml::
-
-        abstract class  "Abstrakte Klasse"
+    .. image:: abstract-class.svg
 
 ``annotation``
 
@@ -26,9 +24,7 @@ Klassendiagramm
 
            annotation      Anmerkung
 
-    .. uml::
-
-        annotation      Anmerkung
+    .. image:: annotation.svg
 
 ``circle``, ``()``
 
@@ -40,9 +36,7 @@ Klassendiagramm
 
            circle          Kreis
 
-    .. uml::
-
-        circle          Kreis
+    .. image:: circle.svg
 
 ``class`` 
 
@@ -54,9 +48,7 @@ Klassendiagramm
 
            class           Klasse
 
-    .. uml::
-
-        class           Klasse
+    .. image:: class.svg
 
 ``diamond``, ``<>``
     An empty diamond stands for an association, a black diamond for a
@@ -70,9 +62,7 @@ Klassendiagramm
 
            diamond         Assoziation
 
-    .. uml::
-
-        diamond         Assoziation
+    .. image:: diamond.svg
 
 ``entity``
 
@@ -84,9 +74,7 @@ Klassendiagramm
 
            entity          Entität
 
-    .. uml::
-
-        entity          Entität
+    .. image:: entity.svg
 
 ``enum`` 
 
@@ -98,9 +86,7 @@ Klassendiagramm
 
            enum            Aufzählung
 
-    .. uml::
-
-        enum            Aufzählung
+    .. image:: enum.svg
 
 ``interface``
 
@@ -112,6 +98,4 @@ Klassendiagramm
 
            interface       Schnittstelle
 
-    .. uml::
-
-        interface       Schnittstelle
+    .. image:: interface.svg

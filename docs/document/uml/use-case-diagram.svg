@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="227px" preserveAspectRatio="none" style="width:402px;height:227px;background:#FFFFFF;" version="1.1" viewBox="0 0 402 227" width="402px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vr7lalju1i11" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[11f477baf0bf4f486fac6e7a49f682d9]
+entity Nutzende Person--><ellipse cx="91" cy="22.5" fill="#FEFECE" filter="url(#f1vr7lalju1i11)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M91,30.5 L91,57.5 M78,38.5 L104,38.5 M91,57.5 L78,72.5 M91,57.5 L104,72.5 " fill="none" filter="url(#f1vr7lalju1i11)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="32.5" y="91.5352">Nutzende Person</text><ellipse cx="91.0244" cy="188.818" fill="#FEFECE" filter="url(#f1vr7lalju1i11)" rx="85.0244" ry="26.318" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="39.0244" y="183.8648">Verwenden der</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="49.5244" y="200.3531">Anwendung</text><!--MD5=[97ab183161fd5d1db7fba7485cf76add]
+entity Admin--><ellipse cx="301" cy="14" fill="#FEFECE" filter="url(#f1vr7lalju1i11)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M301,22 L301,49 M288,30 L314,30 M301,49 L288,64 M301,49 L314,64 " fill="none" filter="url(#f1vr7lalju1i11)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="245" y="83.0352">Gruppe von</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="245" y="99.5234">Administratoren</text><ellipse cx="300.767" cy="188.818" fill="#FEFECE" filter="url(#f1vr7lalju1i11)" rx="89.267" ry="26.318" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="249.767" y="183.8648">Administrieren</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="245.767" y="200.3531">der Anwendung</text><!--MD5=[adf0dc8f447a86968bc5986df0b77fd8]
+link Nutzende Person to Verwendung--><path d="M91,94.19 C91,114.29 91,138.32 91,157.02 " fill="none" id="Nutzende Person-to-Verwendung" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="91,162.15,95,153.15,91,157.15,87,153.15,91,162.15" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[93b3b658afefcfab075c7380e610e8e6]
+link Admin to Administrieren\nder Anwendung--><path d="M301,102.7 C301,120.81 301,140.91 301,157.05 " fill="none" id="Admin-to-Administrieren\nder Anwendung" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="301,162.36,305,153.36,301,157.36,297,153.36,301,162.36" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[87e6d6ee4476232314a60516a3efa40b]
+@startuml
+:Nutzende Person: - -> (Verwendung)
+"Gruppe von\nAdministratoren" as Admin
+"Verwenden der\nAnwendung" as (Verwendung)
+Admin - -> (Administrieren\nder Anwendung)
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>

@@ -1,13 +1,7 @@
 Sequenzdiagramm
 ===============
 
-.. uml::
-
-    Browser -> Server: Authentifizierungsanfrage
-    Server --> Browser: Authentifizierungsantwort
-
-    Browser -> Server: Eine andere Authentifizierungsanfrage
-    Browser <-- Server: Eine andere Authentifizierungsantwort
+.. image:: sequence-diagram.svg
 
 .. code-block:: rest
 
