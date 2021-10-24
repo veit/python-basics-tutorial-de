@@ -4,7 +4,7 @@ Klassendiagramm
 
 ``abstract class``, ``abstract``
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -16,7 +16,7 @@ Klassendiagramm
 
 ``annotation``
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -28,7 +28,7 @@ Klassendiagramm
 
 ``circle``, ``()``
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -40,7 +40,7 @@ Klassendiagramm
 
 ``class`` 
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -54,7 +54,7 @@ Klassendiagramm
     An empty diamond stands for an association, a black diamond for a
     composition.
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -66,7 +66,7 @@ Klassendiagramm
 
 ``entity``
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -78,7 +78,7 @@ Klassendiagramm
 
 ``enum`` 
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
@@ -90,7 +90,7 @@ Klassendiagramm
 
 ``interface``
 
-    Example:
+    Beispiel:
 
     .. code-block:: rest
 
