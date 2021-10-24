@@ -8,8 +8,7 @@ Build-Fehler
 
 Ihr habt die Möglichkeit, vor der Veröffentlichung eurer Änderungen zu
 überprüfen, ob eure Inhalte ordnungsgemäß erstellt werden. Hierfür hat
-:abbr:`z.B. (zum Beispiel)` das für die Erstellung des Cusy-Design-System
-verwendete `Sphinx <https://www.sphinx-doc.org/>`_ einen pingelig (:abbr:`engl.
+`Sphinx <https://www.sphinx-doc.org/>`_ einen pingelig (:abbr:`engl.
 (englisch)` nitpicky)-Modus, der mit der Option ``-n`` aufgerufen werden kann,
 also :abbr:`z.B. (zum Beispiel)` mit:
 
