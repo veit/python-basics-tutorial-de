@@ -11,7 +11,7 @@ einem Docstring angegebenen Tests erfüllt sind.
       :lines: 2-5
       :lineno-start: 2
 
-#. Anschließend könnt ihr in testen mit:
+#. Anschließend könnt ihr ihn testen mit:
 
    .. code-block:: console
 
