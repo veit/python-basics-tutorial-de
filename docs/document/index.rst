@@ -76,9 +76,9 @@ das `cookiecutter-namespace-template
 Sphinx
 ------
 
-Für umfangreiche Dokumentationen können Sie :abbr:`z.B.(zum Beispiel`) `Sphinx
+Für umfangreiche Dokumentationen könnt ihr :abbr:`z.B.(zum Beispiel)` `Sphinx
 <https://www.sphinx-doc.org/>`_ verwenden, ein Dokumentationswerkzeug, das 
-eStructuredText in HTML oder PDF, EPub und man pages umwandelt. Auch die Python
+reStructuredText in HTML oder PDF, EPub und man pages umwandelt. Auch die Python
 Basics werden mit Sphinx erstellt. Um einen ersten Eindruck von Sphinx zu
 bekommen, könnt ihr euch den Quellcode dieser Seite unter dem Link `Page source
 <../_sources/document/index.rst.txt>`_ ansehen.
