@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="268px" preserveAspectRatio="none" style="width:312px;height:268px;background:#FFFFFF;" version="1.1" viewBox="0 0 312 268" width="312px" zoomAndPan="magnify"><defs><filter height="300%" id="fnuttejtled71" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="161.5" cy="16" fill="#000000" filter="url(#fnuttejtled71)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#000000" filter="url(#fnuttejtled71)" height="8" style="stroke:none;stroke-width:1.0;" width="80" x="121.5" y="66"/><rect fill="#FEFECE" filter="url(#fnuttejtled71)" height="34.1328" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="153" x="7" y="114"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="133" x="17" y="135.6016">Erste parallele Aktivität</text><rect fill="#000000" filter="url(#fnuttejtled71)" height="8" style="stroke:none;stroke-width:1.0;" width="80" x="121.5" y="188"/><rect fill="#FEFECE" filter="url(#fnuttejtled71)" height="34.1328" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="180.5" y="114"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="98" x="190.5" y="135.6016">Parallel Activity 2</text><ellipse cx="161.5" cy="246" filter="url(#fnuttejtled71)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;fill:none;"/><ellipse cx="162" cy="246.5" fill="#000000" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"/><!--MD5=[6396badacac00578348ddb3cf20ba689]
+link start to B1--><path d="M161.5,26.06 C161.5,35.8 161.5,51.15 161.5,60.62 " fill="none" id="start-to-B1" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="161.5,65.87,165.5,56.87,161.5,60.87,157.5,56.87,161.5,65.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5a0d91c31d39be10a74c37cc4a23b00b]
+link B1 to Erste parallele Aktivität--><path d="M157.31,74.17 C148.32,80.97 126.6,97.4 109.04,110.68 " fill="none" id="B1-to-Erste parallele Aktivität" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="104.67,113.99,114.256,111.7298,108.6511,110.9649,109.4159,105.36,104.67,113.99" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[633b17aeafcdbfff01fe3dd4a795ced7]
+link Erste parallele Aktivität to B2--><path d="M104.81,148.12 C120.76,160.18 141.71,176.03 153.15,184.68 " fill="none" id="Erste parallele Aktivität-to-B2" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="157.43,187.92,152.6645,179.3009,153.442,184.904,147.8389,185.6816,157.43,187.92" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dd101ddc4241f7155734c5b5adbcf57b]
+link B1 to Parallel Activity 2--><path d="M165.69,74.17 C174.68,80.97 196.4,97.4 213.96,110.68 " fill="none" id="B1-to-Parallel Activity 2" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="218.33,113.99,213.5841,105.36,214.3489,110.9649,208.744,111.7298,218.33,113.99" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[567e15d994040624498a7e50582176b3]
+link Parallel Activity 2 to B2--><path d="M218.19,148.12 C202.24,160.18 181.29,176.03 169.85,184.68 " fill="none" id="Parallel Activity 2-to-B2" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="165.57,187.92,175.1611,185.6816,169.558,184.904,170.3355,179.3009,165.57,187.92" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[67dd31f82dae465fe6f080fdaa978b88]
+link B2 to end--><path d="M161.5,196.1 C161.5,202.77 161.5,218.87 161.5,230.78 " fill="none" id="B2-to-end" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="161.5,235.91,165.5,226.91,161.5,230.91,157.5,226.91,161.5,235.91" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[926ea1f09615a4e4c42bd012caf54897]
+@startuml
+(*) - -> ===B1===
+- -> "Erste parallele Aktivität"
+- -> ===B2===
+===B1=== - -> "Parallel Activity 2"
+- -> ===B2===
+- -> (*)
+@enduml
+
+PlantUML version 1.2021.12(Tue Oct 05 18:01:58 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: de
+Country: DE
+--></g></svg>
