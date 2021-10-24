@@ -41,8 +41,8 @@ Aktivitätsdiagramm
 
     .. image:: activity-diagram.svg
 
-``=== code ===``
-    Synchronisationsbalken.
+``fork``, ``fork again`` und ``end fork`` oder ``end merge``
+    Schlüsselworte für die parallele Verarbeitung.
 
     Beispiel:
 
@@ -50,11 +50,12 @@ Aktivitätsdiagramm
 
        .. uml::
         
-           (*) --> ===B1===
-           --> "Erste parallele Aktivität"
-           --> ===B2===
-           ===B1=== --> "Parallele Aktivität 2"
-           --> ===B2===
-           --> (*)
+          start
+          fork
+            :Aktion 1;
+          fork again
+            :Aktion 2;
+          end fork
+          stop
 
-    .. image:: activity-sync.svg
+    .. image:: parallel.svg
