@@ -29,5 +29,5 @@ Daten abfragen
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 26
-      :lineno-start: 26
+      :lines: 25-27
+      :lineno-start: 25
