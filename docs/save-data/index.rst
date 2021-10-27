@@ -40,4 +40,5 @@ lassen. Dann solltet ihr zumindest einen Blick auf
    query-data
    update-data
    delete-data
+   normalise
    psycopg
