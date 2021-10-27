@@ -24,3 +24,10 @@ Daten abfragen
       :language: python
       :lines: 18-24
       :lineno-start: 18
+
+#. Schließlich können die Daten abgefragt werden mit:
+
+   .. literalinclude:: query_data.py
+      :language: python
+      :lines: 28-30
+      :lineno-start: 28
