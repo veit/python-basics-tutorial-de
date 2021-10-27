@@ -8,6 +8,10 @@ Daten abfragen
       :lines: 7-11
       :lineno-start: 7
 
+   Für die ``print``-Ausgabe verwenden wir durch ein vorangestelltes ``f`` 
+   ein formatiertes Stringliteral oder `f-string
+   <https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals>`_.
+
 #. Alle Daten auswählen und nach Autor sortieren:
 
    .. literalinclude:: query_data.py
