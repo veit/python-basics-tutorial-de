@@ -61,8 +61,8 @@ veräffentlicht wurden.
       :lineno-start: 48
 
    .. note::
-      Erst ab Python-Versionen ab 3.8, die nach dem 27. April veröffentlicht
-      wurden, kann  ``DROP COLUMN`` verwendet werden.
+      Erst ab Python-Versionen ab 3.8, die nach dem 27. April 2021
+      veröffentlicht wurden, kann  ``DROP COLUMN`` verwendet werden.
 
       Bei älteren Python-Versionen müsste eine weitere Tabelle angelegt werden,
       die nicht mehr die Spalte ``languages`` enthält und anschließend die
