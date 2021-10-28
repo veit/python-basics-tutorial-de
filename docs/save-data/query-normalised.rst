@@ -11,7 +11,10 @@ Abfragen normalisierter Daten
    .. code-block:: rest
 
     All books ordered by language id and title:
-    [(1, 'Veit Schiele', 'Jupyter Tutorial'), (2, 'Veit Schiele', 'Jupyter Tutorial'), (2, 'Veit Schiele', 'PyViz Tutorial'), (2, 'Veit Schiele', 'Python basics')]
+    (1, 'Veit Schiele', 'Jupyter Tutorial')
+    (2, 'Veit Schiele', 'Jupyter Tutorial')
+    (2, 'Veit Schiele', 'PyViz Tutorial')
+    (2, 'Veit Schiele', 'Python basics')
 
 #. Um nun nicht nur die ID der Sprachen zu erhalten sondern die zugehörigen
    Sprachcodes wird mit ``JOIN`` über die ``id``-Spalte in der
@@ -26,4 +29,7 @@ Abfragen normalisierter Daten
    .. code-block:: rest
 
     All books ordered by language code and title:
-    [('de', 'Veit Schiele', 'Jupyter Tutorial'), ('en', 'Veit Schiele', 'Jupyter Tutorial'), ('en', 'Veit Schiele', 'PyViz Tutorial'), ('en', 'Veit Schiele', 'Python basics')]
+    ('de', 'Veit Schiele', 'Jupyter Tutorial')
+    ('en', 'Veit Schiele', 'Jupyter Tutorial')
+    ('en', 'Veit Schiele', 'PyViz Tutorial')
+    ('en', 'Veit Schiele', 'Python basics')

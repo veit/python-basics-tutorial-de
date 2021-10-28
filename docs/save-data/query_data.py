@@ -11,7 +11,7 @@ def select_all_records_from_author(cursor, author):
 
 def select_all_records_sorted_by_author(cursor):
     print("Listing of all books sorted by author:")
-    for row in cursor.execute("SELECT rowid, * FROM books ORDER BY author"):
+    for row in cursor.execute("SELECT * FROM books ORDER BY author"):
         print(row)
 
 def select_using_like(cursor, text):
