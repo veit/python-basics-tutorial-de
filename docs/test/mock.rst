@@ -2,12 +2,14 @@ Mock
 ====
 
 `Mock-Objekte <https://de.wikipedia.org/wiki/Mock-Objekt>`_ fördern Tests, die
-auf dem Verhalten von Objekten basieren.
+auf dem Verhalten von Objekten basieren. Die Python-Bibliothek :doc:`mock
+<python3:library/unittest.mock>` ermöglicht euch, Teile des zu testenden Systems
+durch Scheinobjekte zu ersetzen und Aussagen über deren Verwendung zu treffen.
 
 Installation
 ------------
 
-:doc:`python3:library/unittest.mock` ist seit Python 3.3 in der
+:doc:`mock <python3:library/unittest.mock>` ist seit Python 3.3 in der
 Python-Standardbibliothek enthalten. Für ältere Versionen von Python könnt ihr
 sie installieren mit:
 
