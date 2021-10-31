@@ -56,3 +56,4 @@ können:
    hypothesis
    pytest
    tox
+   sqlite
