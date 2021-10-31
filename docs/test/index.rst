@@ -50,23 +50,3 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    pytest
    tox
    sqlite
-
-Konzepte
---------
-
-.. glossary::
-
-   Test Case (Testfall)
-       testet eine einzelnes Szenario.
-
-   Test Fixture (Prüfvorrichtung)
-       ist eine konsistente Testumgebung.
-
-       .. seealso::
-          `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
-
-   Test Suite
-       ist eine Sammlung mehrerer :term:`Test Cases <Test Case (Testfall)>`.
-
-   Test Runner
-       durchläuft eine :term:`Test Suite` und stellt die Ergebnisse dar.

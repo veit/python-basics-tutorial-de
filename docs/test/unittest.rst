@@ -1,6 +1,32 @@
 Unittest
 ========
 
+:doc:`python3:library/unittest` unterstützt euch bei der Testautomatisierung mit
+gemeinsam genutztem Setup- und TearDown-Code sowie der Aggregation und
+Unabhängigkeit von Tests.
+
+Hierfür liefert es die folgenden Testkonzepte:
+
+.. glossary::
+
+   Test Case (Testfall)
+       testet eine einzelnes Szenario.
+
+   Test Fixture (Prüfvorrichtung)
+       ist eine konsistente Testumgebung.
+
+       .. seealso::
+          `pytest fixtures <https://docs.pytest.org/en/stable/fixture.html>`_
+
+   Test Suite
+       ist eine Sammlung mehrerer :term:`Test Cases <Test Case (Testfall)>`.
+
+   Test Runner
+       durchläuft eine :term:`Test Suite` und stellt die Ergebnisse dar.
+
+Beispiel
+--------
+
 Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 
 .. literalinclude:: arithmetic.py
