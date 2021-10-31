@@ -1,9 +1,9 @@
 Unittest
 ========
 
-:doc:`python3:library/unittest` unterstützt euch bei der Testautomatisierung mit
-gemeinsam genutztem Setup- und TearDown-Code sowie der Aggregation und
-Unabhängigkeit von Tests.
+:doc:`unittest <python3:library/unittest>` unterstützt euch bei der
+Testautomatisierung mit gemeinsam genutztem Setup- und TearDown-Code sowie der
+Aggregation und Unabhängigkeit von Tests.
 
 Hierfür liefert es die folgenden Testkonzepte:
 
