@@ -55,4 +55,3 @@ cursor.execute("""ALTER TABLE temp RENAME TO books"""
                )
 
 conn.commit()
-
