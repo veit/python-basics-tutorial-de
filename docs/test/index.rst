@@ -1,6 +1,56 @@
 Testen
 ======
 
+Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschieden.
+
+.. glossary::
+
+   Statische Testverfahren
+    werden verwendet um den Quellcode zu überprüfen, wobei dieser jedoch nicht
+    ausgeführt wird. Sie unterteilen sich in
+    
+    * `Reviews <https://de.wikipedia.org/wiki/Review_(Softwaretest)>`_ und
+    * `Statische Code-Analyse
+      <https://de.wikipedia.org/wiki/Statische_Code-Analyse>`_
+
+      Es gibt diverse Python-Pakete, die euch bei der statischen Code-Analyse
+      unterstützen können, u.a. :doc:`jupyter-tutorial:refactoring/qa/flake8`,
+      :doc:`jupyter-tutorial:refactoring/qa/pysa` und
+      :doc:`jupyter-tutorial:refactoring/qa/wily`.
+
+   Dynamische Testverfahren
+    dienen dem Auffinden von Fehlern beim Ausführen des Quellcodes. Dabei wird
+    zwischen Whitebox- und Backbox-Tests unterschieden.
+
+    Whitebox-Tests
+        werden unter Kenntnis des Quellcodes und der Software-Struktur entwickelt.
+        In Python stehen euch verschiedene Module zur Verfügung:
+
+        :doc:`unittest`
+            unterstützt euch bei der Automatisierung von Tests.
+        :doc:`mock`
+            erlaubt euch das Erstellen und Verwenden von Mock-Objekten.
+        :doc:`doctest`
+            ermöglicht das Testen von in Python Docstrings geschriebenen Tests.
+        :doc:`tox`
+            ermöglicht das Testen in verschiedenen Umgebungen.
+
+    Blackbox-Tests
+        werden ohne Kenntnis des Quellcodes entwickelt. Neben :doc:`unittest`
+        kann in Python auch :doc:`hypothesis` für solche Tests verwendet werden.
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   unittest
+   mock
+   doctest
+   hypothesis
+   pytest
+   tox
+   sqlite
+
 Konzepte
 --------
 
@@ -20,40 +70,3 @@ Konzepte
 
    Test Runner
        durchläuft eine :term:`Test Suite` und stellt die Ergebnisse dar.
-
-Python-Testmodule
------------------
-
-Python enthält mehrere integrierte Module zum Testen Ihres Codes:
-:doc:`unittest`, :doc:`mock` und :doc:`doctest`.
-
-.. toctree::
-   :titlesonly:
-   :hidden:
-
-   unittest
-   mock
-   doctest
-
-Andere Testwerkzeuge
---------------------
-
-Es gibt weitere Testwerkzeuge für Python, die das Testen erheblich vereinfachen
-können:
-
-:doc:`hypothesis`
-    ermöglicht euch, Tests zu schreiben, die aus einer Quelle von Beispielen
-    parametrisiert werden.
-:doc:`pytest`
-    vereinfacht das Schreiben von Tests.
-:doc:`tox`
-    ermöglicht das Testen in verschiedenen Umgebungen.
-
-.. toctree::
-   :titlesonly:
-   :hidden:
-
-   hypothesis
-   pytest
-   tox
-   sqlite
