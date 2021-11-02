@@ -24,7 +24,7 @@ Installation und Start
 
    .. code-block:: console
 
-      $ sphinx-quickstart docs
+      $ bin/sphinx-quickstart docs
       Selected root path: docs
       > Separate source and build directories (y/n) [n]:
       > Name prefix for templates and static dir [_]:
