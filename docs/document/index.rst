@@ -5,8 +5,7 @@ Eine ``README``-Datei im Stammverzeichnis sollte allgemeine Informationen sowohl
 für nutzende als auch für betreuende Personen eines Projekts enthalten.
 
 * Sie sollte in einem sehr leicht lesbaren Markup, wie
-  :doc:`jupyter-tutorial:productive/documenting/rest` oder Markdown, geschrieben
-  sein.
+  :doc:`rest` oder Markdown, geschrieben sein.
 * Sie sollte den Zweck des Projekts oder der Bibliothek in einer nicht
   voraussetzungsvollen Weise erklären.
 * Sie sollte Links zu den Hauptquellen der Software enthalten.
