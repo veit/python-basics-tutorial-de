@@ -49,6 +49,10 @@ Externe Links
 
    .. _Link: http://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
 
+.. note::
+   Vor einer mit ``..`` beginnenden Direktive muss immer eine Leerzeile
+   stehen.
+
 Interne Links
 ~~~~~~~~~~~~~
 
