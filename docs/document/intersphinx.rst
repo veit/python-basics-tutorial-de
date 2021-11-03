@@ -143,7 +143,7 @@ Der Fehler kann mit korrigiert werden:
 
    .. code-block:: console
 
-        $ python -m phinx -ab html docs/ docs/_build/
+        $ python -m sphinx -ab html docs/ docs/_build/
 
 Rollen hinzufügen
 -----------------
