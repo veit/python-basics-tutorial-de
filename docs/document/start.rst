@@ -66,5 +66,26 @@ Sphinx-Layout
         ├── index.rst
         └── make.bat
 
-``index.rst`` ist die Ausgangsdatei für die Dokumentation, in der sich das Inhaltsverzeichnis befindet. Das
-Inhaltsverzeichnis kann von euch erweitert werden, sobald ihr neue ``*.rst``-Dateien hinzufügt.
+``index.rst`` ist die Ausgangsdatei für die Dokumentation, in der sich das
+Inhaltsverzeichnis befindet. Das Inhaltsverzeichnis kann von euch erweitert
+werden, sobald ihr neue ``*.rst``-Dateien hinzufügt.
+
+Generiert die Dokumentation
+---------------------------
+
+Ihr könnt die Dokumentation nun generieren, :abbr:`z.B. (zum Beispiel)` mit:
+
+.. code-block:: console
+
+   $ bin/sphinx-build -ab html docs/ docs/_build
+
+``a``
+    generiert alle Seiten der Dokumentation neu.
+
+    .. note::
+       Dies ist immer dann sinnvoll, wenn ihr eurer Dokumentation neue Seiten
+       hinzugefügt habt.
+
+``b``
+    gibt an, welcher Builder zum Generieren der Dokumentation verwendet werden
+    soll. In unserem Beispiel ist dies ``html``.
