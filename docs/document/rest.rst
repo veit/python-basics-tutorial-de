@@ -94,11 +94,11 @@ Link zu einem Dokument, das nicht von Sohinx gerendert werden soll, :abbr:`z.B.
 Bilder
 ------
 
-.. image:: python-logo.png
+.. image:: uml/activity-diagram.svg
 
 .. code-block:: rest
 
-   .. image:: python-logo.png
+   .. image:: uml/activity-diagram.svg
 
 Andere semantische Auszeichnungen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
