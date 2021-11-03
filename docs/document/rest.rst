@@ -12,13 +12,17 @@ reStructuredText
 Absätze
 -------
 
-Ein Absatz besteht aus einer oder mehreren Zeilen nicht eingerückten Textes, die
-durch Leerzeilen von dem darüber und darunter liegenden Text getrennt sind.
+Ein Absatz besteht aus einer oder mehreren Zeilen nicht eingerückten Textes.
+
+Sie können durch Leerzeilen vom darüber und darunter liegenden Text getrennt
+werden.
 
 .. code-block:: rest
 
-   Ein Absatz besteht aus einer oder mehreren Zeilen nicht eingerückten Textes, die
-   durch Leerzeilen von dem darüber und darunter liegenden Text getrennt sind.
+   Ein Absatz besteht aus einer oder mehreren Zeilen nicht eingerückten Textes.
+
+   Sie können durch Leerzeilen vom darüber und darunter liegenden Text getrennt
+   werden.
 
 Inline-Auszeichnung
 -------------------
