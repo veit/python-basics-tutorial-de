@@ -22,6 +22,8 @@ Installation
 
 #. Herunterladen und auspacken:
 
+   … auf Linux/MacOS:
+
    .. code-block:: console
 
     $ curl -O https://codeload.github.com/veit/python-basics-tutorial-de/zip/main
@@ -31,52 +33,75 @@ Installation
        creating: python-basics-tutorial-de-main/
     …
 
-#. Installieren von Python-Paketen:
+   … auf Windows:
 
    .. code-block:: console
 
-    $ python3 -m venv .
-    $ source bin/activate
-    $ python -m pip install --upgrade pip
-    $ python -m pip install -r docs/requirements.txt
+    C:> curl.exe -o main.zip -O https://codeload.github.com/veit/python-basics-tutorial-de/zip/main
+    C:> tar -xvzf main.zip
+    python-basics-tutorial-de-main/
+    python-basics-tutorial-de-main/.gitignore
+    python-basics-tutorial-de-main/.pyup.yml
+    …
+
+#. Installieren von Python-Paketen:
+
+   … auf Linux/MacOS:
+
+   .. code-block:: console
+
+      $ python3 -m venv .
+      $ bin/python -m pip install --upgrade pip
+      $ bin/python -m pip install -r docs/requirements.txt
+
+   … auf Windows:
+
+   .. code-block:: console
+
+      C:> python -m venv .
+      C:> Scripts\python -m pip install --upgrade pip
+      C:> Scripts\python -m pip install -r docs/requirements.txt
 
 #. Erstellen der HTML-Dokumentation:
 
-   Beachtet, dass pandoc installiert sein muss. Auf Debian/Ubuntu könnt ihr
-   hierfür folgendes ausführen:
+   .. note::
+   pandoc muss installiert sein.
+
+   … auf Debian/Ubuntu:
 
    .. code-block:: console
 
-    $  sudo apt-get install pandoc
+      $  sudo apt-get install pandoc
 
    Zum Erstellen der HTML-Dokumentation führt den folgenden Befehl aus:
 
    .. code-block:: console
 
-    $ sphinx-build -ab html docs/ docs/_build/
+      $ sphinx-build -ab html docs/ docs/_build/
 
 #. Erstellen eines PDF:
 
-   Zum Erstellen einer PDF-Dokumentation benötigt ihr zusätzliche Pakete.
+   Zum Erstellen einer PDF-Dokumentation benötigt ihr zusätzliche Pakete, die
+   ihr installieren könnt
 
-   Auf Debian/Ubuntu erhaltet ihr diese mit:
-
-   .. code-block:: console
-
-    $ sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
-
-   … oder auf macOS mit:
+   … auf Debian/Ubuntu mit
 
    .. code-block:: console
 
-    $ brew cask install mactex
-    …
-    🍺  mactex was successfully installed!
-    $ curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-    $ sudo texlua install-getnonfreefonts
-    …
-    mktexlsr: Updating /usr/local/texlive/2020/texmf-dist/ls-R...
-    mktexlsr: Done.
+      $ sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+
+   … auf MacOS mit
+
+   .. code-block:: console
+
+      $ brew cask install mactex
+      …
+      🍺  mactex was successfully installed!
+      $ curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
+      $ sudo texlua install-getnonfreefonts
+      …
+      mktexlsr: Updating /usr/local/texlive/2020/texmf-dist/ls-R...
+      mktexlsr: Done.
 
    Anschließend könnt ihr ein PDF generieren mit:
 
