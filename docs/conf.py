@@ -35,6 +35,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinxcontrib.plantuml',
+    'sphinx_tabs.tabs',
     ]
 
 plantuml = 'java -jar /PATH/TO/plantuml.jar'
