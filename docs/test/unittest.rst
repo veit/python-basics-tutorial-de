@@ -63,29 +63,63 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 #. Schließlich können alle Tests in :download:`test_arithmetic.py` ausgeführt
    werden:
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python test_arithmetic.py
-      ....
-      ----------------------------------------------------------------------
-      Ran 4 tests in 0.000s
+      .. tab:: Linux/MacOS
 
-      OK
+         .. code-block:: console
+
+            $ bin/python test_arithmetic.py
+            ....
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
+
+      .. tab:: Windows
+
+         .. code-block:: console
+
+            C:> python test_arithmetic.py
+            ....
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
 
    … oder etwas ausführlicher:
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python test_arithmetic.py -v
-      test_addition (__main__.TestArithmetic) ... ok
-      test_division (__main__.TestArithmetic) ... ok
-      test_multiplication (__main__.TestArithmetic) ... ok
-      test_subtraction (__main__.TestArithmetic) ... ok
+      .. tab:: Linux/Windows
 
-      ----------------------------------------------------------------------
-      Ran 4 tests in 0.000s
+         .. code-block:: console
 
-      OK
+            $ python test_arithmetic.py -v
+            test_addition (__main__.TestArithmetic) ... ok
+            test_division (__main__.TestArithmetic) ... ok
+            test_multiplication (__main__.TestArithmetic) ... ok
+            test_subtraction (__main__.TestArithmetic) ... ok
+
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
+
+      .. tab:: Windows
+
+         .. code-block:: console
+
+            C:> Scripts\python test_arithmetic.py -v
+            test_addition (__main__.TestArithmetic) ... ok
+            test_division (__main__.TestArithmetic) ... ok
+            test_multiplication (__main__.TestArithmetic) ... ok
+            test_subtraction (__main__.TestArithmetic) ... ok
+
+            ----------------------------------------------------------------------
+            Ran 4 tests in 0.000s
+
+            OK
 
 .. seealso::
    * :doc:`python3:library/unittest`

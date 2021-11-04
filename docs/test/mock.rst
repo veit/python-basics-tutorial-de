@@ -13,9 +13,19 @@ Installation
 Python-Standardbibliothek enthalten. Für ältere Versionen von Python könnt ihr
 sie installieren mit:
 
-.. code-block:: console
+.. tabs::
 
-   $ python3 -m pip install mock
+   .. tab:: Linux/MacOS
+
+      .. code-block:: console
+
+         $ bin/python -m pip install mock
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         C:> Scripts\python -m pip install mock
 
 Beispiel
 --------

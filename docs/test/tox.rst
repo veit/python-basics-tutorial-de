@@ -7,9 +7,19 @@ Interpreterkonfigurationen.
 
 #. Installation
 
-   .. code-block:: console
+   .. tabs::
 
-      $ python -m pip install tox
+      .. tab:: Linux/MacOS
+
+         .. code-block:: console
+
+            $ bin/python -m pip install tox
+
+      .. tab:: Windows
+
+         .. code-block:: console
+
+            C:> Scripts\python -m pip install tox
 
 #. Konfiguration
 
