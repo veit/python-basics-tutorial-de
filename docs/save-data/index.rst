@@ -33,6 +33,7 @@ lassen. Dann solltet ihr zumindest einen Blick auf
    :titlesonly:
    :hidden:
 
+   pickle
    sqlite
    create-db
    create-data
