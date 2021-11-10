@@ -1,4 +1,4 @@
-Das ``psycopg``-Modul 
+Das ``psycopg``-Modul
 =====================
 
 #. Installiert das psycopg-Modul:
