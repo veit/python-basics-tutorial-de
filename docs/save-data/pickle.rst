@@ -2,11 +2,14 @@ Das ``pickle``-Modul
 ====================
 
 Wenn ihr Python-Objekte serialisieren wollt, könnt ihr einfach das
-Python-:doc:`pickle <python3:library/pickle>`-Modul verwenden.
+Python-:doc:`pickle <python3:library/pickle>`-Modul verwenden, das mit Python
+mitgeliefert wird.
 
 .. note::
-   Beachtet dabei jedoch bitte, dass Pickle nicht sicher ist und
-   Pickle-Versionen auch nicht immer rückwärtskompatibel sind.
+   Beachtet dabei jedoch bitte, dass Pickle nicht sicher ist, ihr also keine
+   Daten verarbeiten solltet, die aus nicht vertrauenswürdigen Quellen kommen.
+
+   Zudem sind Pickle-Versionen nicht immer rückwärtskompatibel.
 
 Hier ein Beispiel für ein Python-Dict, das mehrere Datentypen enthält:
 
@@ -42,3 +45,7 @@ Hier ein Beispiel für ein Python-Dict, das mehrere Datentypen enthält:
 
       {'a': [1, 2.0, (3+4j)], 'b': ('character string', b'byte string'), 'c': {False, True, None}}
 
+.. seealso::
+   * :doc:`Python-Module-Dokumentation <python3:library/pickle>`
+   * `Using Pickle <https://wiki.python.org/moin/UsingPickle>`_
+   * :doc:`Python-marshal-Dokumentation <python3:library/marshal>`
