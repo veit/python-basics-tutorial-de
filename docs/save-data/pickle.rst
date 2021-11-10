@@ -48,4 +48,3 @@ Hier ein Beispiel für ein Python-Dict, das mehrere Datentypen enthält:
 .. seealso::
    * :doc:`Python-Module-Dokumentation <python3:library/pickle>`
    * `Using Pickle <https://wiki.python.org/moin/UsingPickle>`_
-   * :doc:`Python-marshal-Dokumentation <python3:library/marshal>`

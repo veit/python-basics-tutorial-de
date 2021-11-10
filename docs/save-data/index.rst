@@ -1,6 +1,23 @@
 Daten speichern und abrufen
 ===========================
 
+Um Daten persistent zu speichern, kann ein Prozess verwendet werden, der sich
+*Serialisierung* oder *Marshalling* nennt. In ihm werden Datenstrukturen in eine
+lineare Form umgewandelt und gespeichert. Der umgekehrte Vorgang wird dann
+*Deserialisierung* oder *Unmarshalling* genannt. Python bietet in der
+Standardbibliothek mehrere Module, mit denen ihr Objekte serialisieren und
+deserialisieren könnt:
+
+das :doc:`marshal <python3:library/marshal>`-Modul
+    wird im Wesentlichen intern von Python genutzt und sollte nicht verwendet
+    werden um Daten abwärtskompatibel zu speichern.
+das :doc:`pickle <pickle>`-Modul
+    könnt ihr verwenden, wenn ihr weder ein lesbares Format noch
+    Interoperabilität benötigt.
+das :doc:`json <>python3:library/json`-Modul
+    könnt ihr verwenden um Daten für verschiedene Sprachen in einer lesbaren
+    Form auszutauschen.
+
 Die Python-Datenbank-API
 ------------------------
 
