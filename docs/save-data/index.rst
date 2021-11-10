@@ -14,7 +14,7 @@ das :doc:`marshal <python3:library/marshal>`-Modul
 das :doc:`pickle <pickle>`-Modul
     könnt ihr verwenden, wenn ihr weder ein lesbares Format noch
     Interoperabilität benötigt.
-das :doc:`json <>python3:library/json`-Modul
+das :doc:`json <python3:library/json>`-Modul
     könnt ihr verwenden um Daten für verschiedene Sprachen in einer lesbaren
     Form auszutauschen.
 
