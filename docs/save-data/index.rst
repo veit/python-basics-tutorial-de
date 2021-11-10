@@ -17,6 +17,9 @@ das :doc:`pickle <pickle>`-Modul
 das :doc:`json <python3:library/json>`-Modul
     könnt ihr verwenden um Daten für verschiedene Sprachen in einer lesbaren
     Form auszutauschen.
+das :doc:`xml <xml>`-Modul
+    könnt ihr ebenfalls verwenden um Daten in verschiedene Sprachen in einer
+    lesbaren Form auszutauschen.
 
 Die Python-Datenbank-API
 ------------------------
@@ -51,6 +54,7 @@ lassen. Dann solltet ihr zumindest einen Blick auf
    :hidden:
 
    pickle
+   xml
    sqlite
    create-db
    create-data
