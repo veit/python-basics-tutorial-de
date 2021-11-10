@@ -6,8 +6,8 @@ Python-:doc:`pickle <python3:library/pickle>`-Modul verwenden, das mit Python
 mitgeliefert wird.
 
 .. note::
-   Beachtet dabei jedoch bitte, dass Pickle nicht sicher ist, ihr also keine
-   Daten verarbeiten solltet, die aus nicht vertrauenswürdigen Quellen kommen.
+   Beachtet dabei jedoch, dass Pickle nicht sicher ist, ihr also keine Daten
+   verarbeiten solltet, die aus nicht vertrauenswürdigen Quellen kommen.
 
    Zudem sind Pickle-Versionen nicht immer rückwärtskompatibel.
 
