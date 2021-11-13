@@ -23,7 +23,7 @@ sie installieren mit:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1con
 
          C:> Scripts\python -m pip install mock
 

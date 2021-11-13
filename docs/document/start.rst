@@ -16,7 +16,7 @@ Installation und Start
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> python -m venv venv
 
@@ -36,7 +36,7 @@ Installation und Start
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> cd venv
             C:> bin/python -m pip install sphinx
@@ -81,7 +81,7 @@ Installation und Start
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> Scripts\sphinx-quickstart docs
             Selected root path: docs
@@ -144,7 +144,7 @@ Ihr könnt die Dokumentation nun generieren, :abbr:`z.B. (zum Beispiel)` mit:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1con
 
          C:> Scripts\sphinx-build -ab html docs\ docs\_build
 

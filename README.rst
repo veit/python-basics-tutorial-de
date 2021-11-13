@@ -35,7 +35,7 @@ Installation
 
    … auf Windows:
 
-   .. code-block:: console
+   .. code-block:: ps1con
 
     C:> curl.exe -o main.zip -O https://codeload.github.com/veit/python-basics-tutorial-de/zip/main
     C:> tar -xvzf main.zip
@@ -56,7 +56,7 @@ Installation
 
    … auf Windows:
 
-   .. code-block:: console
+   .. code-block:: ps1con
 
       C:> python -m venv .
       C:> Scripts\python -m pip install --upgrade pip

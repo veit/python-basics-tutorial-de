@@ -18,7 +18,7 @@ Das ``psycopg``-Modul
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> python -m pip install psycopg
             Collecting psycopg

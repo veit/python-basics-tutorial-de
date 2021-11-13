@@ -29,7 +29,7 @@ Merkmale
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
           C:> Scripts\python -m pip install pytest
           Collecting pytest
@@ -83,7 +83,7 @@ Merkmale
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> Scripts\python -m pytest -v
             ============================= test session starts ==============================

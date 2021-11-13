@@ -19,7 +19,7 @@ wenig Aufwand zu finden.
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> Scripts\python -m pip install hypothesis
 

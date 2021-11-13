@@ -78,7 +78,7 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> python test_arithmetic.py
             ....
@@ -93,7 +93,7 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 
       .. tab:: Linux/Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             $ python test_arithmetic.py -v
             test_addition (__main__.TestArithmetic) ... ok
@@ -108,7 +108,7 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 
       .. tab:: Windows
 
-         .. code-block:: console
+         .. code-block:: ps1con
 
             C:> Scripts\python test_arithmetic.py -v
             test_addition (__main__.TestArithmetic) ... ok

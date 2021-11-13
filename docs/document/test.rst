@@ -22,7 +22,7 @@ also :abbr:`z.B. (zum Beispiel)` mit:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1con
 
           C:> Scripts\python -m sphinx -nb html docs\ docs\_build\
 
@@ -46,7 +46,7 @@ könnt mit:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1con
 
           C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
 
@@ -75,7 +75,7 @@ Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1con
 
           C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
           Running Sphinx v3.5.2
