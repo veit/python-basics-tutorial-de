@@ -91,7 +91,7 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
 
    .. tabs::
 
-      .. tab:: Linux/Windows
+      .. tab:: Linux/MacOS
 
          .. code-block:: ps1con
 
