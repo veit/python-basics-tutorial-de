@@ -2,7 +2,7 @@ pytest
 ======
 
 `pytest <https://docs.pytest.org/>`_ ist eine Alternative zu Pythons
-:doc:`unittest`-Modul, die das Testen erheblich vereinfacht.
+:doc:`unittest`-Modul, die das Testen noch weiter vereinfacht.
 
 Merkmale
 --------
