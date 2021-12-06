@@ -32,6 +32,7 @@ def test_sorted__key_example_2(dict_list):
     ([2, 1], [1, 2]),
     ('zasdqw', list('adqswz')),
 ])
+
 def test_examples(input, expected):
     actual = sorted(input)
     assert actual == expected
