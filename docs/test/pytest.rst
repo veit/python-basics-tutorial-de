@@ -66,6 +66,10 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
 Testparametrisierung
 --------------------
 
+.. literalinclude:: test_pytest.py
+   :language: python
+   :lines: 31-
+   :lineno-start: 31
 
 Tests ausführen
 ---------------
