@@ -27,7 +27,8 @@ Hierfür liefert es die folgenden Testkonzepte:
 Beispiel
 --------
 
-Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
+Angenommen, ihr habt im Modul :download:`test_arithmetic.py` die folgende
+Methode zum Hinzufügen implementiert:
 
 .. literalinclude:: arithmetic.py
    :language: python
