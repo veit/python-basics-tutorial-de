@@ -49,4 +49,5 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    hypothesis
    pytest
    tox
+   unittest2
    sqlite
