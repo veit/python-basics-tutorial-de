@@ -51,8 +51,8 @@ einem Docstring angegebenen Tests erfüllt sind.
           1 passed and 0 failed.
           Test passed.
     
-#. Wenn ihr einen Doctest innerhalb eines Moduls durchführen wollt, solltet ihr
-   die folgenden Zeilen hinzufügen:
+#. Damit die Doctests auch in andere Module importiert werden können, solltet
+   ihr die folgenden Zeilen hinzufügen:
 
    .. literalinclude:: arithmetic.py
       :language: python

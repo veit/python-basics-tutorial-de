@@ -27,7 +27,8 @@ Hierfür liefert es die folgenden Testkonzepte:
 Beispiel
 --------
 
-Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
+Angenommen, ihr habt im Modul :download:`test_arithmetic.py` die folgende
+Methode zum Hinzufügen implementiert:
 
 .. literalinclude:: arithmetic.py
    :language: python
@@ -51,9 +52,8 @@ Angenommen, ihr habt die folgende Methode zum Hinzufügen implementiert:
       :lines: 4-7
       :lineno-start: 4
 
-
-#. Damit der Code von der Kommandozeile aus ausgeführt werden kann, fügen wir
-   die folgende Methode hinzu:
+#. Damit die Unittests auch in andere Module importiert werden können, solltet
+   ihr die folgenden Zeilen hinzufügen:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
