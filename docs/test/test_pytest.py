@@ -26,7 +26,7 @@ def test_sorted__key_example_2(dict_list):
         dict(a='b', b=2),
         dict(a='a', b=3),
     ]
-    
+
 # Test parameterisation
 @pytest.mark.parametrize('input,expected', [
     ([2, 1], [1, 2]),
