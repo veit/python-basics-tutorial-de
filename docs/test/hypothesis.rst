@@ -23,6 +23,22 @@ wenig Aufwand zu finden.
 
             C:> Scripts\python -m pip install hypothesis
 
+   Alternativ kann Hypothesis auch mit Erweiterungen installiert werden, z.B.:
+
+   .. tabs::
+
+      .. tab:: Linux/MacOS
+
+         .. code-block:: console
+
+            $ bin/python -m pip install hypothesis[numpy,pandas]
+
+      .. tab:: Windows
+
+         .. code-block:: ps1con
+
+            C:> Scripts\python -m pip install hypothesis[numpy,pandas]
+
 #. Schreibt einen Test:
 
    #. Importe:
