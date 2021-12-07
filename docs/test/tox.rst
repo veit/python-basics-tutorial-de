@@ -114,3 +114,74 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
             run: |
               set -xe
               python -VV
+              python -m site
+              python -m pip install --upgrade pip setuptools wheel
+              python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
+
+          - name: "Run tox targets for ${{ matrix.python-version }}"
+            run: "python -m tox"
+
+   .. note::
+      Passt :abbr:`ggf. (gegebenenfalls)` die Python-Versionen in
+      :envvar:`python-version` an; ihr müsst jedoch nicht auch die
+      Umgebungsvariable in ``USING_COVERAGE`` ändern, da dies durch das
+      tox-Plugin ``tox-gh-actions`` (siehe unten) erfolgt.
+
+#. Anschließend könnt ihr auf :guilabel:`Start commit` klicken. Da wir noch
+   weitere Änderungen vornehmen wollen bevor die Tests automatisiert ausgeführt
+   werden sollen, wählen wir :guilabel:`Create a new branch for this commit and
+   start a pull request` und als Name für den neuen :term:`Branch <branch>`
+   ``github-actions``. Schließlich könnt ihr auf :guilabel:`Create pull request`
+   klicken.
+#. Um nun in den neuen Branch zu wechseln, gehen wir zu :menuselection:`Code -->
+   main --> github-actions`.
+#. `tox-gh-actions <https://pypi.org/project/tox-gh-actions/>`_ vereinfacht das
+   Ausführen von tox in GitHub-Actions indem es als Umgebung für die Tests
+   diejenige bereitstellt, die auch tox selbst verwendet. Hierfür müssen wir
+   jedoch noch unsere :file:`tox.ini`-Datei anpassen, :abbr:`z.B. (zum
+   Beispiel)`:
+
+   .. code-block:: ini
+
+    [gh-actions]
+    python =
+        3.6: py36
+        3.7: py37, docs
+        3.8: py38, lint, typing, changelog
+
+   Dies ordnet GitHub-Actions tox-Umgebungen zu.
+
+   .. note::
+      * Es müssen nicht alle Varianten eurer Umgebung angegeben werden. Dies
+        unterscheidet ``tox-gh-actions`` von ``tox -e py``.
+      * Stellt sicher, dass die Versionen im ``[gh-actions]``-Abschnitt mit den
+        verfügbaren Python-Versionen und :abbr:`ggf. (gegebenenfalls)` mit denen
+        in den :ref:`GitHub-Actions für Git pre-commit Hooks
+        <gh-action-pre-commit-example>` übereinstimmen.
+      * Da alle Tests für eine spezifische Python-Version nacheinander in einem
+        Container ausgeführt werden, gehen hierbei die Vorteile der parallelen
+        Ausführung verloren.
+
+   .. seealso::
+      * `Build & test Python
+        <https://docs.github.com/en/actions/guides/building-and-testing-python>`_
+      * `Workflow syntax
+        <https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions>`_
+
+#. Nun könnt ihr in eurer :file:`README.rst`-Datei noch ein Badge eures
+   :abbr:`CI (Continuous Integration)`-Status hinzufügen, :abbr:`z.B. (zum
+   Beispiel)` mit:
+
+   .. code-block::
+
+    .. image:: https://github.com/YOU/YOUR_PROJECT/workflows/CI/badge.svg?branch=main
+         :target: https://github.com/YOU/YOUR_PROJECT/actions?workflow=CI
+         :alt: CI Status
+
+#. Die Code-Abdeckung könnt ihr auf :doc:`coverage/codecov` veröffentlichen,
+   :abbr:`s.a. (siehe auch)` :ref:`Codecov und GitHub-Actions
+   <together-with-github-actions>`.
+
+#. Ihr könnt auch noch ein Badge für die Code-Abdeckung in eurer
+   :file:`README.rst`-Datei anzeigen, :abbr:`s.a. (siehe auch)` :ref:`Codecov
+   Badge <codecov-badge>`.
