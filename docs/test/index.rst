@@ -39,6 +39,10 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
         werden ohne Kenntnis des Quellcodes entwickelt. Neben :doc:`unittest`
         kann in Python auch :doc:`hypothesis` für solche Tests verwendet werden.
 
+.. seealso::
+   * `Python Testing and Continuous Integration
+     <http://carpentries-incubator.github.io/python-testing/>`_
+
 .. toctree::
    :titlesonly:
    :hidden:
