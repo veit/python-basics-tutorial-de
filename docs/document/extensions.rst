@@ -40,14 +40,14 @@ Erweiterungen von Drittanbietern
     auch `Embedding Widgets in the Sphinx HTML Documentation
     <https://ipywidgets.readthedocs.io/en/latest/embedding.html#embedding-widgets-in-the-sphinx-html-documentation>`_.
 `numpydoc <https://github.com/numpy/numpydoc>`_
-    `NumPy <NumPy>`_ Sphinx-Erweiterung.
+    `NumPy <https://numpy.org/>`_ Sphinx-Erweiterung.
 `Releases <https://github.com/bitprophet/releases>`_
     schreibt eine Changelog-Datei.
 `sphinxcontrib-napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/>`_
     Präprozessor zum Parsen von NumPy- und Google-Style Docstrings.
 `Sphinx-autodoc-typehints <https://github.com/agronholm/sphinx-autodoc-typehints>`_
     Unterstützung von Typ-Hints für die Sphinx-Autodoc-Erweiterung.
-`sphinx-git <sphinx-git>`_
+`sphinx-git <https://sphinx-git.readthedocs.io/>`_
     `git <https://git-scm.com/>`_-Changelog für Sphinx.
 `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
     Sphinx-Erweiterung für Übersetzungen.
