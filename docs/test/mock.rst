@@ -81,3 +81,29 @@ Zunächst importieren wir ``datetime.datetime`` und ``Mock``:
       :language: python
       :lines: 19,21
       :lineno-start: 19
+
+patch-Dekorator
+---------------
+
+Um Mock-Klassen oder Objekte zu erzeugen, kann der ``patch``-Dekorator verwendet
+werden. In den folgenden Beispielen wird die Ausgabe von ``os.listdir`` gemockt.
+Dazu muss die Datei ``example.txt`` nicht im Verzeichnis vorhanden sein:
+
+.. code-block:: python
+
+    import os
+    from unittest import mock
+
+
+    @mock.patch("os.listdir", mock.MagicMock(return_value="example.txt"))
+    def test_listdir():
+        assert "example.txt" == os.listdir()
+
+Alternativ kann der Rückgabewert auch separat definiert werden:
+
+.. code-block:: python
+
+    @mock.patch("os.listdir")
+    def test_listdir(mock_listdir):
+        mock_listdir.return_value = "example.txt"
+        assert "example.txt" == os.listdir()
