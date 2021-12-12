@@ -6,6 +6,13 @@ auf dem Verhalten von Objekten basieren. Die Python-Bibliothek :doc:`mock
 <python3:library/unittest.mock>` ermöglicht euch, Teile des zu testenden Systems
 durch Scheinobjekte zu ersetzen und Aussagen über deren Verwendung zu treffen.
 
+.. seealso::
+
+   Mit `responses <https://github.com/getsentry/responses>`_ könnt ihr
+   Mock-Objekte für die `Requests
+   <https://jupyter-tutorial.readthedocs.io/de/latest/data-processing/requests/index.html>`_-Bibliothek
+   erstellen.
+
 Installation
 ------------
 
