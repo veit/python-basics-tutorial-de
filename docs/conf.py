@@ -38,7 +38,7 @@ extensions = [
     'sphinx_tabs.tabs',
     ]
 
-plantuml = 'java -jar /PATH/TO/plantuml.jar'
+plantuml = 'java -jar /Users/veit/cusy/trn/python-basics-tutorial-de/plantuml.jar'
 plantuml_output_format = 'svg'
 
 intersphinx_mapping = {
@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Python Basics'
-copyright = "2021, Veit Schiele"
+copyright = "2021–2022, Veit Schiele"
 author = "Veit Schiele"
 
 show_authors = True
