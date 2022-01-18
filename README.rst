@@ -71,7 +71,7 @@ Installation
 
    .. code-block:: console
 
-      $  sudo apt-get install pandoc
+      $  sudo apt install pandoc
 
    Zum Erstellen der HTML-Dokumentation führt den folgenden Befehl aus:
 
@@ -88,7 +88,7 @@ Installation
 
    .. code-block:: console
 
-      $ sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+      $ sudo apt install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
 
    … auf MacOS mit
 
