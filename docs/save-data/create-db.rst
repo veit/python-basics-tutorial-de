@@ -1,5 +1,5 @@
-Erstellt eine Datenbank
-=======================
+Erstellen einer Datenbank
+=========================
 
 #. Importiert das sqlite-Modul:
 
