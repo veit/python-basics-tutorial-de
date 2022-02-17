@@ -3,29 +3,27 @@ Das ``psycopg``-Modul
 
 #. Installiert das psycopg-Modul:
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
+         $ python3 -m pip install psycopg
+         Collecting psycopg
+           Downloading psycopg-3.0.1-py3-none-any.whl (140 kB)
+              |████████████████████████████████| 140 kB 3.4 MB/s            
+         Installing collected packages: psycopg
+         Successfully installed psycopg-3.0.1
 
-            $ python3 -m pip install psycopg
-            Collecting psycopg
-              Downloading psycopg-3.0.1-py3-none-any.whl (140 kB)
-                 |████████████████████████████████| 140 kB 3.4 MB/s            
-            Installing collected packages: psycopg
-            Successfully installed psycopg-3.0.1
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
-
-            C:> python -m pip install psycopg
-            Collecting psycopg
-              Downloading psycopg-3.0.1-py3-none-any.whl (140 kB)
-                 |████████████████████████████████| 140 kB 3.4 MB/s            
-            Installing collected packages: psycopg
-            Successfully installed psycopg-3.0.1
+         C:> python -m pip install psycopg
+         Collecting psycopg
+           Downloading psycopg-3.0.1-py3-none-any.whl (140 kB)
+              |████████████████████████████████| 140 kB 3.4 MB/s            
+         Installing collected packages: psycopg
+         Successfully installed psycopg-3.0.1
 
 #. Importiert das psycopg-Modul:
 

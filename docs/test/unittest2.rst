@@ -26,16 +26,14 @@ Testmodul ändern, ohne dass ihr weiteren Code ändern müsst.
 Installation
 ------------
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
+         $ bin/python -m pip install unittest2
 
-            $ bin/python -m pip install unittest2
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
-
-            C:> Scripts\python -m pip install unittest2
+         C:> Scripts\python -m pip install unittest2

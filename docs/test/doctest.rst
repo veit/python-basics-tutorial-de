@@ -13,44 +13,42 @@ einem Docstring angegebenen Tests erfüllt sind.
 
 #. Anschließend könnt ihr ihn testen mit:
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
-
-          $ bin/python -m doctest arithmetic.py -v
-          Trying:
-              add(7,6)
-          Expecting:
-              13
-          ok
-          1 items had no tests:
-              arithmetic
-          1 items passed all tests:
-             1 tests in arithmetic.add
-          1 tests in 2 items.
-          1 passed and 0 failed.
-          Test passed.
+       $ bin/python -m doctest arithmetic.py -v
+       Trying:
+           add(7,6)
+       Expecting:
+           13
+       ok
+       1 items had no tests:
+           arithmetic
+       1 items passed all tests:
+          1 tests in arithmetic.add
+       1 tests in 2 items.
+       1 passed and 0 failed.
+       Test passed.
     
-      .. tab:: Windows
+   .. tab:: Windows
 
-         .. code-block:: console
+      .. code-block:: console
 
-          C:> Scripts\python -m doctest arithmetic.py -v
-          Trying:
-              add(7,6)
-          Expecting:
-              13
-          ok
-          1 items had no tests:
-              arithmetic
-          1 items passed all tests:
-             1 tests in arithmetic.add
-          1 tests in 2 items.
-          1 passed and 0 failed.
-          Test passed.
-    
+       C:> Scripts\python -m doctest arithmetic.py -v
+       Trying:
+           add(7,6)
+       Expecting:
+           13
+       ok
+       1 items had no tests:
+           arithmetic
+       1 items passed all tests:
+          1 tests in arithmetic.add
+       1 tests in 2 items.
+       1 passed and 0 failed.
+       Test passed.
+ 
 #. Damit die Doctests auch in andere Module importiert werden können, solltet
    ihr die folgenden Zeilen hinzufügen:
 

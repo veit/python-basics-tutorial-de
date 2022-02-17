@@ -11,19 +11,17 @@ Ihr könnt einen Report für die Testabdeckung erstellen mit `Coverage.py
 Installation
 ------------
 
-.. tabs::
+.. tab:: Linux/MacOS
 
-   .. tab:: Linux/MacOS
+   .. code-block:: console
 
-      .. code-block:: console
+      $ bin/python -m pip install coverage
 
-         $ bin/python -m pip install coverage
+.. tab:: Windows
 
-   .. tab:: Windows
+   .. code-block:: ps1con
 
-      .. code-block:: ps1con
-
-            C:> Scripts\python -m pip install coverage
+         C:> Scripts\python -m pip install coverage
 
 .. note::
    Wollt ihr die Testabdeckung für Python 2 and Python<3.6 ermitteln, müsst ihr
@@ -36,86 +34,76 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
 * … mit `pytest <https://docs.pytest.org/>`_:
 
-  .. tabs::
+  .. tab:: Linux/MacOS
 
-     .. tab:: Linux/MacOS
+     .. code-block:: console
 
-        .. code-block:: console
+        $ bin/python -m pip install pytest-cov
 
-           $ bin/python -m pip install pytest-cov
+  .. tab:: Windows
 
-     .. tab:: Windows
+     .. code-block:: ps1con
 
-        .. code-block:: ps1con
-
-           C:> Scripts\python -m pip install pytest-cov
+        C:> Scripts\python -m pip install pytest-cov
 
   oder für verteilte Tests
 
-  .. tabs::
+  .. tab:: Linux/MacOS
 
-     .. tab:: Linux/MacOS
+     .. code-block:: console
 
-        .. code-block:: console
+        $ bin/python -m pip install pytest-xdist
 
-           $ bin/python -m pip install pytest-xdist
+  .. tab:: Windows
 
-     .. tab:: Windows
+     .. code-block:: ps1con
 
-        .. code-block:: ps1con
-
-           C:> Scripts\python -m pip install pytest-xdist
+        C:> Scripts\python -m pip install pytest-xdist
 
   Anschließend könnt ihr die Testabdeckung überprüfen mit
 
-  .. tabs::
+  .. tab:: Linux/MacOS
 
-     .. tab:: Linux/MacOS
+     .. code-block:: console
 
-        .. code-block:: console
+        $ bin/pytest --cov=myproj tests/
 
-           $ bin/pytest --cov=myproj tests/
+  .. tab:: Windows
 
-     .. tab:: Windows
+     .. code-block:: ps1con
 
-        .. code-block:: ps1con
-
-           C:> Scripts\pytest --cov=myproj tests\
+        C:> Scripts\pytest --cov=myproj tests\
 
   .. seealso::
      * `pytest-cov’s documentation <https://pytest-cov.readthedocs.io/>`_
 
 * … mit :doc:`../unittest`:
 
-  .. tabs::
+  .. tab:: Linux/MacOS
 
-     .. tab:: Linux/MacOS
+     .. code-block:: console
 
-        .. code-block:: console
+        $ bin/coverage run -m unittest discover
 
-           $ bin/coverage run -m unittest discover
+  .. tab:: Windows
 
-     .. tab:: Windows
+     .. code-block:: ps1con
 
-        .. code-block:: ps1con
-
-           C:> Scripts\coverage run -m unittest discover
+        C:> Scripts\coverage run -m unittest discover
 
 * … mit `nose <https://nose.readthedocs.io/>`_:
 
-  .. tabs::
+  .. tab:: Linux/MacOS
 
-     .. tab:: Linux/MacOS
+     .. code-block:: console
 
-        .. code-block:: console
+        $ bin/coverage run -m nose arg1 arg2
 
-           $ bin/coverage run -m nose arg1 arg2
+  .. tab:: Windows
 
-     .. tab:: Windows
+     .. code-block:: ps1con
 
-        .. code-block:: ps1con
-
-           C:> Scripts\coverage run -m nose arg1 arg2
+        C:> Scripts\coverage run -m nose arg1 arg2
 
 Testabdeckung aller Tests mit GitHub-Actions
 --------------------------------------------
