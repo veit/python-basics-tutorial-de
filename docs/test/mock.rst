@@ -20,19 +20,17 @@ Installation
 Python-Standardbibliothek enthalten. Für ältere Versionen von Python könnt ihr
 sie installieren mit:
 
-.. tabs::
+.. tab:: Linux/MacOS
 
-   .. tab:: Linux/MacOS
+   .. code-block:: console
 
-      .. code-block:: console
+      $ bin/python -m pip install mock
 
-         $ bin/python -m pip install mock
+.. tab:: Windows
 
-   .. tab:: Windows
+   .. code-block:: ps1con
 
-      .. code-block:: ps1con
-
-         C:> Scripts\python -m pip install mock
+      C:> Scripts\python -m pip install mock
 
 Beispiel
 --------

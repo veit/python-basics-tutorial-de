@@ -63,63 +63,59 @@ Methode zum Hinzufügen implementiert:
 #. Schließlich können alle Tests in :download:`test_arithmetic.py` ausgeführt
    werden:
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: console
 
-         .. code-block:: console
+         $ bin/python test_arithmetic.py
+         ....
+         ----------------------------------------------------------------------
+         Ran 4 tests in 0.000s
 
-            $ bin/python test_arithmetic.py
-            ....
-            ----------------------------------------------------------------------
-            Ran 4 tests in 0.000s
+         OK
 
-            OK
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
+         C:> python test_arithmetic.py
+         ....
+         ----------------------------------------------------------------------
+         Ran 4 tests in 0.000s
 
-            C:> python test_arithmetic.py
-            ....
-            ----------------------------------------------------------------------
-            Ran 4 tests in 0.000s
-
-            OK
+         OK
 
    … oder etwas ausführlicher:
 
-   .. tabs::
+   .. tab:: Linux/MacOS
 
-      .. tab:: Linux/MacOS
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
+         $ python test_arithmetic.py -v
+         test_addition (__main__.TestArithmetic) ... ok
+         test_division (__main__.TestArithmetic) ... ok
+         test_multiplication (__main__.TestArithmetic) ... ok
+         test_subtraction (__main__.TestArithmetic) ... ok
 
-            $ python test_arithmetic.py -v
-            test_addition (__main__.TestArithmetic) ... ok
-            test_division (__main__.TestArithmetic) ... ok
-            test_multiplication (__main__.TestArithmetic) ... ok
-            test_subtraction (__main__.TestArithmetic) ... ok
+         ----------------------------------------------------------------------
+         Ran 4 tests in 0.000s
 
-            ----------------------------------------------------------------------
-            Ran 4 tests in 0.000s
+         OK
 
-            OK
+   .. tab:: Windows
 
-      .. tab:: Windows
+      .. code-block:: ps1con
 
-         .. code-block:: ps1con
+         C:> Scripts\python test_arithmetic.py -v
+         test_addition (__main__.TestArithmetic) ... ok
+         test_division (__main__.TestArithmetic) ... ok
+         test_multiplication (__main__.TestArithmetic) ... ok
+         test_subtraction (__main__.TestArithmetic) ... ok
 
-            C:> Scripts\python test_arithmetic.py -v
-            test_addition (__main__.TestArithmetic) ... ok
-            test_division (__main__.TestArithmetic) ... ok
-            test_multiplication (__main__.TestArithmetic) ... ok
-            test_subtraction (__main__.TestArithmetic) ... ok
+         ----------------------------------------------------------------------
+         Ran 4 tests in 0.000s
 
-            ----------------------------------------------------------------------
-            Ran 4 tests in 0.000s
-
-            OK
+         OK
 
 .. seealso::
    * :doc:`python3:library/unittest`

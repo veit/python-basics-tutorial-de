@@ -15,19 +15,17 @@ Installation
 
 Codecov kann einfach installiert werden mit
 
-.. tabs::
+.. tab:: Linux/MacOS
 
-   .. tab:: Linux/MacOS
+   .. code-block:: console
 
-      .. code-block:: console
+      $ bin/python -m pip install codecov
 
-         $ bin/python -m pip install codecov
+.. tab:: Windows
 
-   .. tab:: Windows
+   .. code-block:: ps1con
 
-      .. code-block:: ps1con
-
-            C:> Scripts\python -m pip install codecov
+         C:> Scripts\python -m pip install codecov
 
 Verwendung
 ----------
@@ -35,19 +33,17 @@ Verwendung
 …  im Terminal
 ~~~~~~~~~~~~~~
 
-.. tabs::
+.. tab:: Linux/MacOS
 
-   .. tab:: Linux/MacOS
+   .. code-block:: console
 
-      .. code-block:: console
+      $ bin/codecov -t <repository-upload-token>
 
-         $ bin/codecov -t <repository-upload-token>
+.. tab:: Windows
 
-   .. tab:: Windows
+   .. code-block:: ps1con
 
-      .. code-block:: ps1con
-
-            C:> Scripts\codecov -t <repository-upload-token>
+         C:> Scripts\codecov -t <repository-upload-token>
 
 .. _together-with-github-actions:
 
