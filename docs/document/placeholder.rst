@@ -39,3 +39,7 @@ Sphinx unterscheidet die folgenden Platzhaltervariablen:
     Diese Rolle hat standardmäßig keine besondere Bedeutung. Ihr könnt sie daher
     für alles Mögliche zu verwenden, :abbr:`z.B. (zum Beispiel)` auch für
     Variablennamen.
+
+.. seealso::
+   * `Sphinx awesome sampdirective
+     <https://github.com/kai687/sphinxawesome-sampdirective>`_
