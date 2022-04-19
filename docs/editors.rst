@@ -61,4 +61,23 @@ und MacOS verwenden oder :kbd:`Ctrl-z` unter Windows. Alternativ könnt ihr auch
 IDLE
 ----
 
+IDLE ist das Akronym für eine integrierte Entwicklungsumgebung (engl.:
+integrated development environment) und kombiniert einen interaktiven
+Interpreter mit Werkzeugen zur Code-Bearbeitung und Fehlersuche. Das Ausfphren
+ist sehr einfach auf den verschiedenen Plattformen:
 
+.. tab:: Linux/MacOS
+
+   Gebt folgendes in eurem Terminal ein:
+
+   .. code-block:: console
+
+      $ idle-python3.10
+
+.. tab:: Windows
+
+   Ihr könnt IDLE starten in :menuselection:`Windows --> Alle Apps --> IDLE
+   (Python GUI)`
+
+Ihr könnt mit den Tasten :kbd:`alt-p` und :kbd:`alt-n` durch die Historie der
+vorherigen Befehle blättern.
