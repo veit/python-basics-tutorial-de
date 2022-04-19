@@ -8,6 +8,7 @@ Python Basics
    :titlesonly:
    :hidden:
 
+   intro
    save-data/index
    test/index
    document/index
