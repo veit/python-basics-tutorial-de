@@ -12,7 +12,7 @@ Schreiben eigener Programme zu ermöglichen.
 
 Vielleicht stellt ihr euch die Frage, warum ihr Python lernen solltet. Es gibt
 viele Programmiersprachen von C und C++ über Java bis hin zu Lua und Go. Python
-hat eine sehr große Verbreitung gefunden und einer der Gründe fürfte sein, dass
+hat eine sehr große Verbreitung gefunden und einer der Gründe dürfte sein, dass
 sie auf vielen verschiedenen Plattformen läuft, von IoT-Geräten über die
 gängigen Betriebssysteme bis hin zu Supercomputern. Es kann gut zur Entwicklung
 kleiner Anwendungen und schneller Prototypen verwendet werden. Dabei gibt es
@@ -40,8 +40,8 @@ Vollständigkeit
     was für das Programmieren mit Python benötigt wird, E-Mails, Websites,
     Datenbanken, ohne dass zusätzliche Bibliotheken installiert werden müssen. 
 Plattformunabhängigkeit
-    Python läuft auf vielen Plattformen: Windows, Mac, Linux, UNIX etc. Es gibt
-    sogar Varianten, die auf Java (`Jython <https://www.jython.org/>`_) und .NET
+    Python läuft auf vielen Plattformen: Windows, Mac, Linux etc. Es gibt sogar
+    Varianten, die auf Java (`Jython <https://www.jython.org/>`_) und .NET
     (`IronPython <https://ironpython.net/>`_) laufen.
 Open Source
     Ihr könnt Python herunterladen und für die Entwicklung kommerzieller oder
@@ -52,12 +52,12 @@ Open Source
     <https://www.python.org/psf/sponsorship/>`_.
 
 Python hat zwar einige Vorteile, aber keine Sprache ist in allen Bereichen
-die beste Lösung. So schneidet :abbr:`z.B. (zum Beispiel` Python in den
+die beste Lösung. So schneidet :abbr:`z.B. (zum Beispiel)` Python in den
 folgenden Bereichen weniger gut ab:
 
-Geschwwindigkeit
+Geschwindigkeit
     Python ist keine vollständig kompilierte Sprache und der Code wird zunächst
-    in Pytecode kompiliert bevor er vom Python-Interpreter ausgeführt wird. Zwar
+    in Bytecode kompiliert bevor er vom Python-Interpreter ausgeführt wird. Zwar
     gibt es einige Aufgaben, wie :abbr:`z.B. (zum Beispiel)` das Parsen von
     Zeichenketten mit regulären Ausdrücken, für die Python effiziente
     Implementierungen bereitstellt, und die genauso schnell wie ein C-Programm
