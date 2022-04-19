@@ -4,8 +4,8 @@ Installation
 Die Installation von Python ist einfach. Der erste Schritt besteht darin, die
 aktuelle Version von `www.python.org/downloads
 <https://www.python.org/downloads/>`_ herunterzuladen. Das Tutorial basiert auf
-Python 3.8, falls ihr jedoch bereits Python 3.10 oder Python 3.7 installiert
-habt, ist das auch kein Problem.
+Python 3.10, falls ihr jedoch Python 3.7 oder 3.8 installiert habt, ist das auch
+kein Problem.
 
 .. tab:: Linux
 
