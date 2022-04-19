@@ -1,10 +1,10 @@
 Editoren
 ========
 
-Interaktiver Modus
-------------------
+Interaktive Shell
+-----------------
 
-Mit dem interaktiven Modus könnt ihr einfach die meisten Beispiele in diesem
+Mit der interaktiven Shell könnt ihr einfach die meisten Beispiele in diesem
 Tutorial ausführen. Später lernt ihr auch, wie ihr Code, der in eine Datei
 geschrieben wurde, einfach als Modul eingebunden werden kann.
 
@@ -26,11 +26,11 @@ geschrieben wurde, einfach als Modul eingebunden werden kann.
 
    .. code-block:: console
 
+
       $ python3
-      Python 3.10.4 (default, Mar 23 2022, 17:29:05)
-      [GCC 9.4.0] on linux
+      Python 3.10.4 (v3.10.4:9d38120e33, Mar 23 2022, 17:29:05) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
       Type "help", "copyright", "credits" or "license" for more information.
-      >>> 
+      >>>
 
    .. note::
       Wenn ihr die Fehlermeldung *Kommando nicht gefunden.* erhaltet, könnt ihr
@@ -39,13 +39,13 @@ geschrieben wurde, einfach als Modul eingebunden werden kann.
 
 .. tab:: Windows
 
-   Den interaktiven Python-Modus könnt ihr starten in :menuselection:`Start -->
+   Die interaktive Python-Shell könnt ihr starten in :menuselection:`Start -->
    Programme --> Python 3.10`
 
-   Alternativ könnt ihr auch die direkt ausführbare Datei file:`Python.exe`
+   Alternativ könnt ihr auch die direkt ausführbare Datei :file:`Python.exe`
    suchen, :abbr:`z.B. (zum Beispiel)` in
-   :file:`C:\Users\{veit}\AppData\Local\Programme\Python \Python310-64` und dann
-   doppelklicken.
+   :file:`C:\\Users\\VEIT\\AppData\\Local\\Programme\\Python\\Python310-64`
+   und dann doppelklicken.
 
 Beenden der interaktiven Shell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
