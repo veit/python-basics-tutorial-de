@@ -47,6 +47,10 @@ geschrieben wurde, einfach als Modul eingebunden werden kann.
    :file:`C:\\Users\\VEIT\\AppData\\Local\\Programme\\Python\\Python310-64`
    und dann doppelklicken.
 
+Mit den Pfeiltasten, :kbd:`Home`, :kbd:`End`, :kbd:`Page up` und
+:kbd:`Page down` könnt ihr durch frühere Eingaben blättern und mit der
+Eingabetaste wiederholen.
+
 Beenden der interaktiven Shell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -54,6 +58,7 @@ Um die interaktive Shell zu beenden, könnt ihr einfach :kbd:`Ctrl-d` unter Linu
 und MacOS verwenden oder :kbd:`Ctrl-z` unter Windows. Alternativ könnt ihr auch
 ``exit()`` eingeben.
 
-Mit den Pfeiltasten, :kbd:`Home`, :kbd:`End`, :kbd:`Page up` und
-:kbd:`Page down` könnt ihr durch frühere Eingaben blättern und mit der
-Eingabetaste wiederholen.
+IDLE
+----
+
+
