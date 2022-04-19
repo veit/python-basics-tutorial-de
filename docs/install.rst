@@ -1,0 +1,41 @@
+Installation
+============
+
+Die Installation von Python ist einfach. Der erste Schritt besteht darin, die
+aktuelle Version von `www.python.org/downloads
+<https://www.python.org/downloads/>`_ herunterzuladen. Das Tutorial basiert auf
+Python 3.8, falls ihr jedoch bereits Python 3.10 oder Python 3.7 installiert
+habt, ist das auch kein Problem.
+
+.. tab:: Linux
+
+   Bei den meisten Linux-Distributionen ist Pyython bereits installiert. Wenn
+   eine vorkompilierte Version von Python in eurer Linux-Distribution existiert,
+   empfehle ich euch, diese zu verwenden.
+
+.. tab:: MacOS
+
+   Ihr benötigt eine Python-Version, die zu eurem MacOS und eurem Prozessor
+   passt. Wenn ihr die richtige Variante ermittelt habt, könnt ihr die
+   Image-Datei herunterladen und mit einem Doppelklick mounten und anschließend
+   das darin enthaltene Installationsprogramm starten. Anschließend befindet
+   sich Python im :file:`Programme`-Ordner.
+
+   Wenn ihr `Homebrew <https://brew.sh/>`_ verwendet, könnt ihr Python auch
+   einfach im Terminal installieren mit:
+
+   .. code-block:: console
+
+      $ brew install python3
+
+.. tab:: Windows
+
+   Python kann für die meisten Windows-Versionen nach Windows 7 mit dem
+   Python-Installationsprogramm installiert werden. Ladet die exe-Datei herunter
+   und führt die Installation aus.
+
+.. note::
+   Wenn auf eurem System bereits Python installiert ist, könnt ihr problemlos
+   eure eigenes Python installieren. Eine neue Version ersetzt nicht die alte
+   sondern wird an einem anderen Ort installiert.
+

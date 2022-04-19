@@ -9,6 +9,7 @@ Python Basics
    :hidden:
 
    intro
+   install
    save-data/index
    test/index
    document/index
