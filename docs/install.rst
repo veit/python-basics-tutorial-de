@@ -9,7 +9,7 @@ kein Problem.
 
 .. tab:: Linux
 
-   Bei den meisten Linux-Distributionen ist Pyython bereits installiert. Wenn
+   Bei den meisten Linux-Distributionen ist Python bereits installiert. Wenn
    eine vorkompilierte Version von Python in eurer Linux-Distribution existiert,
    empfehle ich euch, diese zu verwenden.
 
