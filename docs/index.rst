@@ -10,6 +10,7 @@ Python Basics
 
    intro
    install
+   editors
    save-data/index
    test/index
    document/index
