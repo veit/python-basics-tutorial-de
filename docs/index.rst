@@ -11,6 +11,7 @@ Python Basics
    intro
    install
    editors
+   explore
    save-data/index
    test/index
    document/index
