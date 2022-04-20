@@ -12,6 +12,7 @@ Python Basics
    install
    editors
    explore
+   types/index
    save-data/index
    test/index
    document/index
