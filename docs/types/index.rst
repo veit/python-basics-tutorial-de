@@ -20,3 +20,9 @@ speziellen Methodenattribute definiert habt, bearbeitet werden.
 
 Python hat mehrere eingebaute Datentypen, von Skalaren wie Zahlen und boolschen
 Werten bis hin zu komplexeren Strukturen wie Listen, Dictionaries und Dateien.
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   numbers
