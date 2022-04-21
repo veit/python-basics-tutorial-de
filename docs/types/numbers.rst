@@ -119,7 +119,7 @@ In den folgenden Beispielen werden Boolesche Werte verwendet:
 
 .. code-block:: python
 
-    >>> y = True * 2          1
+    >>> y = True * 2
     >>> y
     2
 
