@@ -2,7 +2,7 @@ Zahlen
 ======
 
 Die vier Zahlentypen von Python sind ganze Zahlen, Gleitkommazahlen, komplexe
-Zahlen und Boolesche ZGhlen:
+Zahlen und Boolesche Zahlen:
 
 +-----------------------+-----------------------------------------------+
 | Typ                   | Beispiele                                     |
