@@ -63,12 +63,12 @@ Beispiel`:
 
     >>> import math
     >>> pi = math.pi
-    >>> r = 28
-    >>> u = 2 * pi * r
-    >>> print("Pi ist ", pi, "und der Umfang u ist ", u, "Zoll.")
-    Pi ist  3.141592653589793 und der Umfang u ist  175.92918860102841 Zoll.
-    >>> print("Der Wert von %s ist %.2f." % ("Pi", pi))
-    Der Wert von Pi ist 3.14.
+    >>> d = 28
+    >>> u = pi * d
+    >>> print("Pi ist", pi, "und der Umfang bei einem Durchmesser von", d, "Zoll ist", u, "Zoll.")
+    Pi ist 3.141592653589793 und der Umfang bei einem Durchmesser von 28 Zoll ist 87.96459430051421 Zoll.
+    >>> print("Der Wert von %s ist %.3f." % ("Pi", pi))
+    Der Wert von Pi ist 3.142.
 
 Objekte werden automatisch in Zeichenketten umgewandelt, um sie auszudrucken,
-wobei der ``%``-Operator bietet zusätzliche Formatierungsmöglichkeiten.
+wobei der ``%``-Operator zusätzliche Formatierungsmöglichkeiten bietet.
