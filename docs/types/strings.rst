@@ -37,6 +37,10 @@ mehrere Methoden, um mit ihrem Inhalt zu arbeiten :abbr:`u.a. (unter anderem)`
     >>> x.replace("\tHello", "Hi")
     'Hi pythonistas!'
 
+.. seealso::
+   Eine vollständige Übersicht über die ``str``-Methoden findet ihr in der
+   :ref:`Python-Dokumentation <python3:string-methods>`.
+
 Das Bibliotheksmodul :doc:`python3:library/re` enthält ebenfalls Funktionen für
 die Arbeit mit Zeichenketten:
 
