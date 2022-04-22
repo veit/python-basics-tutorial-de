@@ -34,8 +34,10 @@ mehrere Methoden, um mit ihrem Inhalt zu arbeiten :abbr:`u.a. (unter anderem)`
     >>> x = "\tHello pythonistas!"
     >>> x.split()
     ['Hello', 'pythonistas!']
-    >>> x.replace("\tHello", "Hi")
+    >>> x.replace("\tHello", "Hello")
     'Hi pythonistas!'
+    >>> x.title()
+    '\tHello Pythonistas!'
 
 .. seealso::
    Eine vollständige Übersicht über die ``str``-Methoden findet ihr in der
