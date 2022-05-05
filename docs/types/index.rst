@@ -29,3 +29,4 @@ Werten bis hin zu komplexeren Strukturen wie Listen, Dictionaries und Dateien.
    lists
    strings
    dicts
+   sets
