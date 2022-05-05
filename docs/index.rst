@@ -13,6 +13,7 @@ Python Basics
    editors
    explore
    types/index
+   control-flows/index
    save-data/index
    test/index
    document/index
