@@ -11,3 +11,4 @@ und Schleifen.
 
    boolean
    if-elif-else
+   loops
