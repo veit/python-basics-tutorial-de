@@ -13,3 +13,4 @@ und Schleifen.
    if-elif-else
    loops
    functions
+   exceptions
