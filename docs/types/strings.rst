@@ -25,19 +25,77 @@ Tupeln. Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um
 Elemente oder Slices zu erhalten, kann aber nicht verwendet werden, um Elemente
 hinzuzufügen, zu entfernen oder zu ersetzen.
 
-Für Zeichenketten gibt es im Modul :doc:`string <python3:library/string>`
-mehrere Methoden, um mit ihrem Inhalt zu arbeiten :abbr:`u.a. (unter anderem)`
-``split`` und ``replace``:
+``string``
+----------
+
+Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
+<python3:library/string>` mehrere Methoden, um mit ihrem Inhalt zu arbeiten
+:abbr:`u.a. (unter anderem)` :py:meth:`str.split`, :py:meth:`str.replace` und
+:py:meth:`str.strip`:
 
 .. code-block:: python
 
-    >>> x = "\tHello pythonistas!"
+    >>> x = "Hello pythonistas!\n"
     >>> x.split()
     ['Hello', 'pythonistas!']
-    >>> x.replace("\tHello", "Hello")
-    'Hi pythonistas!'
-    >>> x.title()
-    '\tHello Pythonistas!'
+    >>> x.replace('Hello', 'Hi')
+    'Hi pythonistas!\n'
+    >>> x.strip()
+    'Hello pythonistas!'
+
+Im folgenden ein Überblick über alle ``string``-Methoden:
+
++---------------+---------------------------------------------------------------+
+| Methode       | Beschreibung                                                  |
++===============+===============================================================+
+| ``count``     | gibt die Anzahl der sich nicht überschneidenden Vorkommen der |
+|               | Zeichenkette zurück.                                          |
++---------------+---------------------------------------------------------------+
+| ``endswith``  | gibt ``True`` zurück, wenn die Zeichenkette mit dem Suffix    |
+|               | endet.                                                        |
++---------------+---------------------------------------------------------------+
+| ``startswith``| gibt ``True`` zurück, wenn die Zeichenkette mit dem Präfix    |
+|               | beginnt.                                                      |
++---------------+---------------------------------------------------------------+
+| ``join``      | verwendet die Zeichenkette als Begrenzer für die Verkettung   |
+|               | einer Folge anderer Zeichenketten.                            |
++---------------+---------------------------------------------------------------+
+| ``index``     | gibt die Position des ersten Zeichens in der Zeichenkette     |
+|               | zurück, wenn es in der Zeichenkette gefunden wurde; löst einen|
+|               | ``ValueError`` aus, wenn es nicht gefunden wurde.             |
++---------------+---------------------------------------------------------------+
+| ``find``      | gibt die Position des ersten Zeichens des ersten Vorkommens   |
+|               | der Teilzeichenkette in der Zeichenkette zurück; wie          |
+|               | ``index``, gibt aber ``-1`` zurück, wenn nichts gefunden      |
+|               | wurde.                                                        |
++---------------+---------------------------------------------------------------+
+| ``rfind``     | Rückgabe der Position des ersten Zeichens des letzten         |
+|               | Vorkommens der Teilzeichenkette in der Zeichenkette; gibt     |
+|               | ``-1`` zurück, wenn nichts gefunden wurde.                    |
++---------------+---------------------------------------------------------------+
+| ``replace``   | ersetzt Vorkommen einer Zeichenkette durch eine andere        |
+|               | Zeichenkette.                                                 |
++---------------+---------------------------------------------------------------+
+| ``strip``,    | schneiden Leerzeichen ab, einschließlich Zeilenumbrüchen.     |
+| ``rstrip``,   |                                                               |
+| ``lstrip``    |                                                               |
++---------------+---------------------------------------------------------------+
+| ``split``     | zerlegt eine Zeichenkette in eine Liste von Teilzeichenketten |
+|               | unter Verwendung des übergebenen Trennzeichens.               |
++---------------+---------------------------------------------------------------+
+| ``lower``     | konvertiert alphabetische Zeichen in Kleinbuchstaben.         |
++---------------+---------------------------------------------------------------+
+| ``upper``     | konvertiert alphabetische Zeichen in Großbuchstaben.          |
++---------------+---------------------------------------------------------------+
+| ``casefold``  | konvertiert Zeichen in Kleinbuchstaben und konvertiert alle   |
+|               | regionsspezifischen variablen Zeichenkombinationen in eine    |
+|               | gemeinsame vergleichbare Form.                                |
++---------------+---------------------------------------------------------------+
+| ``ljust``,    | linksbündig bzw. rechtsbündig; füllt die gegenüberliegende    |
+| ``rjust``     | Seite der Zeichenkette mit Leerzeichen (oder einem anderen    |
+|               | Füllzeichen) auf, um eine Zeichenkette mit einer Mindestbreite|
+|               | zu erhalten.                                                  |
++---------------+---------------------------------------------------------------+
 
 .. seealso::
    Eine vollständige Übersicht über die ``str``-Methoden findet ihr in der
