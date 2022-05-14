@@ -172,7 +172,8 @@ drei Komponenten aufteilen:
 #. Domänenname
 #. Domänensuffix
 
-Dazu setzt ihr zunächst runde Klammern ```()` um die zu segmentierenden Teile des Musters :
+Dazu setzt ihr zunächst runde Klammern ``()`` um die zu segmentierenden Teile
+des Musters:
 
 .. code-block:: python
 
