@@ -19,6 +19,7 @@ Python Basics
    save-data/index
    test/index
    document/index
+   appendix/index
 
 .. Indizes und Tabellen
    ====================

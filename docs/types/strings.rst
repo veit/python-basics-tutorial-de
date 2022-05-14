@@ -232,6 +232,9 @@ Die folgende Tabelle enthält einen kurzen Überblick über Methoden für regul�
 |               | zu verweisen.                                                                 |
 +---------------+-------------------------------------------------------------------------------+
 
+.. seealso::
+   * :doc:`../appendix/regex`
+
 ``print()``
 -----------
 
