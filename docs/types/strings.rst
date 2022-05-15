@@ -35,12 +35,15 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
 
 .. code-block:: python
 
-    >>> x = "Hello pythonistas!\n"
-    >>> x.split()
+    >>> welcome = "Hello pythonistas!\n"
+    >>> welcome.strip()
+    'Hello pythonistas!'
+    >>> welcome.split(' ')
+    ['Hello', 'pythonistas!\n']
+    >>> chunks = [x.strip() for x in welcome.split(' ')]
+    >>> chunks
     ['Hello', 'pythonistas!']
-    >>> x.replace('Hello', 'Hi')
-    'Hi pythonistas!\n'
-    >>> x.strip()
+    >>> ' '.join(chunks)
     'Hello pythonistas!'
 
 Im folgenden ein Überblick über alle ``string``-Methoden:
