@@ -8,15 +8,14 @@ Funktionen, um Python zu erkunden.
 ----------
 
 ``help()`` hat zwei verschiedene Modi. Wenn ihr ``help()`` eingebt, ruft ihr das
-Hilfesystem auf, mit dem ihr Imformationen zu Modulen, Schlüsselwärtern und
+Hilfesystem auf, mit dem ihr Informationen zu Modulen, Schlüsselwörtern und
 weiteren Themen erhalten könnt. Wenn ihr euch im Hilfesystem befindet, seht ihr
 mit ``help>`` eine Eingabeaufforderung. Ihr könnt nun einen Modulnamen eingeben,
 :abbr:`z.B. (zum Beispiel)` ``float``, um die `Python-Dokumentation
 <https://docs.python.org/>`_ zu diesem Typ zu durchsuchen.
 
-``help()`` ist Teil der `pydoc
-<https://docs.python.org/3/library/pydoc.html>`_-Bibliothek, die Zugriff auf die
-in Python-Bibliotheken integrierte Dokumentation bietet. Da jede
+``help()`` ist Teil der :doc:`pydoc <python3:library/pydoc>`-Bibliothek, die
+Zugriff auf die in Python-Bibliotheken integrierte Dokumentation bietet. Da jede
 Python-Installation mit einer vollständigen Dokumentation ausgeliefert wird,
 habt ihr auch offline die gesamte Dokumentation zur Hand.
 
