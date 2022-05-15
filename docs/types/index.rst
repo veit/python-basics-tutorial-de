@@ -3,9 +3,10 @@ Datentypen
 
 Python verfügt über mehrere eingebaute Datentypen, wie :abbr:`z.B. (zum
 Beispiel)` :doc:`numbers` (Ganzzahlen, Gleitkommazahlen, komplexe Zahlen),
-:doc:`strings`, Listen, Tupel, Dictionaries und Dateien. Diese Datentypen können
-mit Hilfe von Sprachoperatoren, eingebauten Funktionen, Bibliotheksfunktionen
-oder den eigenen Methoden eines Datentyps manipuliert werden.
+:doc:`strings`, :doc:`lists`, :doc:`tuples`, :doc:`dicts` und :doc:`files`.
+Diese Datentypen können mit Hilfe von Sprachoperatoren, eingebauten Funktionen,
+Bibliotheksfunktionen oder den eigenen Methoden eines Datentyps manipuliert
+werden.
 
 Ihr könnt auch eure eigenen Klassen definieren und eigene Klasseninstanzen
 erstellen. Für diese Klasseninstanzen könnt ihr Methoden definieren sowie mit
