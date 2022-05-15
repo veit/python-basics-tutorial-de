@@ -42,7 +42,7 @@ oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
 ``dir()``, ``globals()`` und ``locals()``
 -----------------------------------------
 
-``dir()`` ist eine weitere nützliche Funktion, die Objekte in einem bestimmten
-Namensraum auflistet. Wenn ihr sie ohne Parameter verwendet, listet sie alle
-*Globals* auf. Alternativ kann sie jedoch auch Objekte für ein Modul oder einen
-Typ auflisten. Mit ``dir()`` könnt ihr herauszufinden, welche Methoden und Daten
+:py:func:`dir` ist eine weitere nützliche Funktion, die Objekte in einem
+bestimmten Namensraum auflistet. Wenn ihr sie ohne Parameter verwendet, könnt
+ihr herausfinden, welche Methoden und Daten lokal verfügbar sind. Alternativ
+kann sie auch Objekte für ein Modul oder einen Typ auflisten.
