@@ -48,57 +48,57 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
 
 Im folgenden ein Überblick über alle ``string``-Methoden:
 
-+---------------+---------------------------------------------------------------+
-| Methode       | Beschreibung                                                  |
-+===============+===============================================================+
-| ``count``     | gibt die Anzahl der sich nicht überschneidenden Vorkommen der |
-|               | Zeichenkette zurück.                                          |
-+---------------+---------------------------------------------------------------+
-| ``endswith``  | gibt ``True`` zurück, wenn die Zeichenkette mit dem Suffix    |
-|               | endet.                                                        |
-+---------------+---------------------------------------------------------------+
-| ``startswith``| gibt ``True`` zurück, wenn die Zeichenkette mit dem Präfix    |
-|               | beginnt.                                                      |
-+---------------+---------------------------------------------------------------+
-| ``join``      | verwendet die Zeichenkette als Begrenzer für die Verkettung   |
-|               | einer Folge anderer Zeichenketten.                            |
-+---------------+---------------------------------------------------------------+
-| ``index``     | gibt die Position des ersten Zeichens in der Zeichenkette     |
-|               | zurück, wenn es in der Zeichenkette gefunden wurde; löst einen|
-|               | ``ValueError`` aus, wenn es nicht gefunden wurde.             |
-+---------------+---------------------------------------------------------------+
-| ``find``      | gibt die Position des ersten Zeichens des ersten Vorkommens   |
-|               | der Teilzeichenkette in der Zeichenkette zurück; wie          |
-|               | ``index``, gibt aber ``-1`` zurück, wenn nichts gefunden      |
-|               | wurde.                                                        |
-+---------------+---------------------------------------------------------------+
-| ``rfind``     | Rückgabe der Position des ersten Zeichens des letzten         |
-|               | Vorkommens der Teilzeichenkette in der Zeichenkette; gibt     |
-|               | ``-1`` zurück, wenn nichts gefunden wurde.                    |
-+---------------+---------------------------------------------------------------+
-| ``replace``   | ersetzt Vorkommen einer Zeichenkette durch eine andere        |
-|               | Zeichenkette.                                                 |
-+---------------+---------------------------------------------------------------+
-| ``strip``,    | schneiden Leerzeichen ab, einschließlich Zeilenumbrüchen.     |
-| ``rstrip``,   |                                                               |
-| ``lstrip``    |                                                               |
-+---------------+---------------------------------------------------------------+
-| ``split``     | zerlegt eine Zeichenkette in eine Liste von Teilzeichenketten |
-|               | unter Verwendung des übergebenen Trennzeichens.               |
-+---------------+---------------------------------------------------------------+
-| ``lower``     | konvertiert alphabetische Zeichen in Kleinbuchstaben.         |
-+---------------+---------------------------------------------------------------+
-| ``upper``     | konvertiert alphabetische Zeichen in Großbuchstaben.          |
-+---------------+---------------------------------------------------------------+
-| ``casefold``  | konvertiert Zeichen in Kleinbuchstaben und konvertiert alle   |
-|               | regionsspezifischen variablen Zeichenkombinationen in eine    |
-|               | gemeinsame vergleichbare Form.                                |
-+---------------+---------------------------------------------------------------+
-| ``ljust``,    | linksbündig bzw. rechtsbündig; füllt die gegenüberliegende    |
-| ``rjust``     | Seite der Zeichenkette mit Leerzeichen (oder einem anderen    |
-|               | Füllzeichen) auf, um eine Zeichenkette mit einer Mindestbreite|
-|               | zu erhalten.                                                  |
-+---------------+---------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------+
+| Methode                   | Beschreibung                                                  |
++===========================+===============================================================+
+| :py:meth:`str.count`      | gibt die Anzahl der sich nicht überschneidenden Vorkommen der |
+|                           | Zeichenkette zurück.                                          |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.endswith`   | gibt ``True`` zurück, wenn die Zeichenkette mit dem Suffix    |
+|                           | endet.                                                        |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.startswith` | gibt ``True`` zurück, wenn die Zeichenkette mit dem Präfix    |
+|                           | beginnt.                                                      |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.join`       | verwendet die Zeichenkette als Begrenzer für die Verkettung   |
+|                           | einer Folge anderer Zeichenketten.                            |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.index`      | gibt die Position des ersten Zeichens in der Zeichenkette     |
+|                           | zurück, wenn es in der Zeichenkette gefunden wurde; löst einen|
+|                           | ``ValueError`` aus, wenn es nicht gefunden wurde.             |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.find`       | gibt die Position des ersten Zeichens des ersten Vorkommens   |
+|                           | der Teilzeichenkette in der Zeichenkette zurück; wie          |
+|                           | ``index``, gibt aber ``-1`` zurück, wenn nichts gefunden      |
+|                           | wurde.                                                        |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.rfind`      | Rückgabe der Position des ersten Zeichens des letzten         |
+|                           | Vorkommens der Teilzeichenkette in der Zeichenkette; gibt     |
+|                           | ``-1`` zurück, wenn nichts gefunden wurde.                    |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.replace`    | ersetzt Vorkommen einer Zeichenkette durch eine andere        |
+|                           | Zeichenkette.                                                 |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.strip`,     | schneiden Leerzeichen ab, einschließlich Zeilenumbrüchen.     |
+| :py:meth:`str.rstrip`,    |                                                               |
+| :py:meth:`str.lstrip`     |                                                               |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.split`      | zerlegt eine Zeichenkette in eine Liste von Teilzeichenketten |
+|                           | unter Verwendung des übergebenen Trennzeichens.               |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.lower`      | konvertiert alphabetische Zeichen in Kleinbuchstaben.         |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.upper`      | konvertiert alphabetische Zeichen in Großbuchstaben.          |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.casefold`   | konvertiert Zeichen in Kleinbuchstaben und konvertiert alle   |
+|                           | regionsspezifischen variablen Zeichenkombinationen in eine    |
+|                           | gemeinsame vergleichbare Form.                                |
++---------------------------+---------------------------------------------------------------+
+| :py:meth:`str.ljust`,     | linksbündig bzw. rechtsbündig; füllt die gegenüberliegende    |
+| :py:meth:`str.rjust`      | Seite der Zeichenkette mit Leerzeichen (oder einem anderen    |
+|                           | Füllzeichen) auf, um eine Zeichenkette mit einer Mindestbreite|
+|                           | zu erhalten.                                                  |
++---------------------------+---------------------------------------------------------------+
 
 .. seealso::
    Eine vollständige Übersicht über die ``str``-Methoden findet ihr in der
@@ -211,30 +211,30 @@ Auch in :py:meth:`re.Pattern.sub` können Gruppen verwendet werden wobei ``\1`` 
 
 Die folgende Tabelle enthält einen kurzen Überblick über Methoden für reguläre Ausdrücke:
 
-+---------------+-------------------------------------------------------------------------------+
-| Methode       | Beschreibung                                                                  |
-+===============+===============================================================================+
-| ``findall``   | gibt alle sich nicht überschneidenden übereinstimmenden Muster in einer       |
-|               | Zeichenkette als Liste zurück.                                                |
-+---------------+-------------------------------------------------------------------------------+
-| ``finditer``  | wie ``findall``, gibt aber einen Iterator zurück.                             |
-+---------------+-------------------------------------------------------------------------------+
-| ``match``     | entspricht dem Muster am Anfang der Zeichenkette und segmentiert optional die |
-|               | Musterkomponenten in Gruppen; wenn das Muster übereinstimmt, wird ein         |
-|               | ``match``-Objekt zurückgegeben, andernfalls keines.                           |
-+---------------+-------------------------------------------------------------------------------+
-| ``search``    | durchsucht die Zeichenkette nach Übereinstimmungen mit dem Muster; gibt in    |
-|               | diesem Fall ein ``match``-Objekt zurück; im Gegensatz zu ``match`` kann die   |
-|               | Übereinstimmung an einer beliebigen Stelle der Zeichenkette und nicht nur am  |
-|               | Anfang stehen.                                                                |
-+---------------+-------------------------------------------------------------------------------+
-| ``split``     | zerlegt die Zeichenkette bei jedem Auftreten des Musters in Teile.            |
-+---------------+-------------------------------------------------------------------------------+
-| ``sub``,      | ersetzt alle (``sub``) oder die ersten ``n`` Vorkommen (``subn``) des Musters |
-| ``subn``      | in der Zeichenkette durch einen Ersetzungsausdruck; verwendet die Symbole     |
-|               | ``\1``, ``\2``, …, um auf die Elemente der Übereinstimmungsgruppe in der      |
-|               | zu verweisen.                                                                 |
-+---------------+-------------------------------------------------------------------------------+
++-----------------------+-------------------------------------------------------------------------------+
+| Methode               | Beschreibung                                                                  |
++=======================+===============================================================================+
+| :py:func:`re.findall` | gibt alle sich nicht überschneidenden übereinstimmenden Muster in einer       |
+|                       | Zeichenkette als Liste zurück.                                                |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:func:`re.finditer`| wie ``findall``, gibt aber einen Iterator zurück.                             |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:func:`re.match`   | entspricht dem Muster am Anfang der Zeichenkette und segmentiert optional die |
+|                       | Musterkomponenten in Gruppen; wenn das Muster übereinstimmt, wird ein         |
+|                       | ``match``-Objekt zurückgegeben, andernfalls keines.                           |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:func:`re.search`  | durchsucht die Zeichenkette nach Übereinstimmungen mit dem Muster; gibt in    |
+|                       | diesem Fall ein ``match``-Objekt zurück; im Gegensatz zu ``match`` kann die   |
+|                       | Übereinstimmung an einer beliebigen Stelle der Zeichenkette und nicht nur am  |
+|                       | Anfang stehen.                                                                |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:func:`re.split`   | zerlegt die Zeichenkette bei jedem Auftreten des Musters in Teile.            |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:func:`re.sub`,    | ersetzt alle (``sub``) oder die ersten ``n`` Vorkommen (``subn``) des Musters |
+| :py:func:`re.subn`    | in der Zeichenkette durch einen Ersetzungsausdruck; verwendet die Symbole     |
+|                       | ``\1``, ``\2``, …, um auf die Elemente der Übereinstimmungsgruppe in der      |
+|                       | zu verweisen.                                                                 |
++-----------------------+-------------------------------------------------------------------------------+
 
 .. seealso::
    * :doc:`../appendix/regex`
