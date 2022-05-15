@@ -232,8 +232,8 @@ Die folgende Tabelle enthält einen kurzen Überblick über Methoden für regul�
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:func:`re.sub`,    | ersetzt alle (``sub``) oder die ersten ``n`` Vorkommen (``subn``) des Musters |
 | :py:func:`re.subn`    | in der Zeichenkette durch einen Ersetzungsausdruck; verwendet die Symbole     |
-|                       | ``\1``, ``\2``, …, um auf die Elemente der Übereinstimmungsgruppe in der      |
-|                       | zu verweisen.                                                                 |
+|                       | ``\1``, ``\2``, …, um auf die Elemente der Übereinstimmungsgruppe zu          |
+|                       | verweisen.                                                                    |
 +-----------------------+-------------------------------------------------------------------------------+
 
 .. seealso::
