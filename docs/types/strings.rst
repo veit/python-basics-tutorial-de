@@ -118,10 +118,10 @@ Möglichkeiten zur Musterextraktion und -ersetzung als ``string``.
     'Hello pythonistas!'
 
 Hier wird der reguläre Ausdruck zunächst kompiliert und dann seine
-:py:meth:`re.Pattern.sub`-Methode für den übergebenen Text aufgerufen. Ihr könnt den
-Auddruck selbst mit :py:func:`re.compile` kompilieren und so ein wiederverwendbares
-``regex``-Objekt bilden, das auf unterschiedliche Zeichenketten angewendet die
-CPU-Zyklen verringert:
+:py:meth:`re.Pattern.sub`-Methode für den übergebenen Text aufgerufen. Ihr könnt
+den Auddruck selbst mit :py:func:`re.compile` kompilieren und so ein
+wiederverwendbares ``regex``-Objekt bilden, das auf unterschiedliche
+Zeichenketten angewendet die CPU-Zyklen verringert:
 
 .. code-block:: python
 
@@ -130,8 +130,8 @@ CPU-Zyklen verringert:
     'Hello pythonistas!'
 
 Wenn ihr stattdessen eine Liste aller Muster erhalten möchtet, die dem
-``regex``-Objekt entsprechen, könnt ihr die :py:meth:`re.Pattern.findall`-Methode
-verwenden:
+``regex``-Objekt entsprechen, könnt ihr die
+:py:meth:`re.Pattern.findall`-Methode verwenden:
 
 .. code-block:: python
 
@@ -139,16 +139,17 @@ verwenden:
     ['\n']
 
 .. note::
-   Um das umständliche Escaping mit ``\`` in einem regulären Ausdruck zu vermeiden,
-   könnt ihr rohe String-Literale wie ``r'C:\PATH\TO\FILE'`` anstelle des
-   entsprechenden ``'C:\\PATH\\TO\\FILE'`` verwenden.
+   Um das umständliche Escaping mit ``\`` in einem regulären Ausdruck zu
+   vermeiden, könnt ihr rohe String-Literale wie ``r'C:\PATH\TO\FILE'``
+   anstelle des  entsprechenden ``'C:\\PATH\\TO\\FILE'`` verwenden.
 
 :py:meth:`re.Pattern.match` und :py:meth:`re.Pattern.search` sind eng mit
-:py:meth:`re.Pattern.findall` verwandt. Während ``findall`` alle Übereinstimmungen in
-einer Zeichenkette zurückgibt, gibt ``search`` nur die erste Übereinstimmung und
-``match`` nur Übereinstimmungen am Anfang der Zeichenkette zurück. Als weniger
-triviales Beispiel betrachten wir einen Textblock und einen regulären Ausdruck, der
-die meisten E-Mail-Adressen identifizieren kann:
+:py:meth:`re.Pattern.findall` verwandt. Während ``findall`` alle
+Übereinstimmungen in einer Zeichenkette zurückgibt, gibt ``search`` nur die
+erste Übereinstimmung und ``match`` nur Übereinstimmungen am Anfang der
+Zeichenkette zurück. Als weniger triviales Beispiel betrachten wir einen
+Textblock und einen regulären Ausdruck, der die meisten E-Mail-Adressen
+identifizieren kann:
 
 .. code-block:: python
 
@@ -165,11 +166,11 @@ die meisten E-Mail-Adressen identifizieren kann:
     >>> print(regex.match(addresses))
     None
 
-``regex.match`` gibt ``None`` zurück, da das Muster nur dann passt, wenn es am Anfang
-der Zeichenkette steht.
+``regex.match`` gibt ``None`` zurück, da das Muster nur dann passt, wenn es am
+Anfang der Zeichenkette steht.
 
-Angenommen, ihr möchtet E-Mail-Adressen finden und gleichzeitig jede Adresse in ihre
-drei Komponenten aufteilen:
+Angenommen, ihr möchtet E-Mail-Adressen finden und gleichzeitig jede Adresse in
+ihre drei Komponenten aufteilen:
 
 #. Personenname
 #. Domänenname
@@ -186,19 +187,20 @@ des Musters:
     >>> match.groups()
     ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` gibt ein :doc:`tuples` zurück, das alle Untergruppen der
-Übereinstimmung enthält. 
+:py:meth:`re.Match.groups` gibt ein :doc:`tuples` zurück, das alle Untergruppen
+der Übereinstimmung enthält. 
 
-:py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster Gruppen
-enthält:
+:py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
+Gruppen enthält:
 
 .. code-block:: python
 
     >>> regex.findall(addresses)
     [('veit', 'cusy', 'io'), ('veit.schiele', 'cusy', 'io'), ('info', 'cusy', 'io')]
 
-Auch in :py:meth:`re.Pattern.sub` können Gruppen verwendet werden wobei ``\1`` für die erste
-übereinstimmende Gruppe steht, ``\2`` für die zweite :abbr:`usw. (und so weiter)`:
+Auch in :py:meth:`re.Pattern.sub` können Gruppen verwendet werden wobei ``\1``
+für die erste übereinstimmende Gruppe steht, ``\2`` für die zweite :abbr:`usw.
+(und so weiter)`:
 
 .. code-block:: python
 
@@ -209,7 +211,8 @@ Auch in :py:meth:`re.Pattern.sub` können Gruppen verwendet werden wobei ``\1`` 
     Veit Schiele <Username: veit.schiele, Domain: cusy, Suffix: io>
     cusy GmbH <Username: info, Domain: cusy, Suffix: io>
 
-Die folgende Tabelle enthält einen kurzen Überblick über Methoden für reguläre Ausdrücke:
+Die folgende Tabelle enthält einen kurzen Überblick über Methoden für reguläre
+Ausdrücke:
 
 +-----------------------+-------------------------------------------------------------------------------+
 | Methode               | Beschreibung                                                                  |
@@ -238,6 +241,8 @@ Die folgende Tabelle enthält einen kurzen Überblick über Methoden für regul�
 
 .. seealso::
    * :doc:`../appendix/regex`
+   * :doc:`python3:howto/regex`
+   * :doc:`python3:library/re`
 
 ``print()``
 -----------
