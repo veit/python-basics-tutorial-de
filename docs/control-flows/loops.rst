@@ -57,10 +57,10 @@ Zeile 5
 Die ``for``-Schleife ist einfach, aber mächtig, weil sie über einen beliebigen
 iterierbaren Typ, wie eine Liste oder ein Tupel, iterieren kann. Anders als in
 vielen anderen Sprachen iteriert die ``for``-Schleife in Python über jedes
-Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)  eine :doc:`Liste <lists>`
-oder ein :doc:`../types/tuples`), was sie eher zu einer ``foreach``-Schleife
-macht. Die folgende Schleife findet das erste Vorkommen einer ganzen Zahl, die
-durch ``5`` teilbar ist:
+Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+<../types/lists>` oder ein :doc:`../types/tuples`), was sie eher zu einer
+``foreach``-Schleife macht. Die folgende Schleife findet das erste Vorkommen
+einer ganzen Zahl, die durch ``5`` teilbar ist:
 
 .. code-block:: python
     :linenos:
