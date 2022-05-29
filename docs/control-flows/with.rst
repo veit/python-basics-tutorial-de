@@ -21,5 +21,5 @@ der Ausdruck in der ersten Zeile ausgeführt wird, ohne eine Ausnahme
 auszulösen, wird die Datei immer geschlossen. Dieser Code ist äquivalent zu
 diesem Code:
 
-.. code-block:: python
+.. literalinclude:: with_alt.py
    :linenos:
