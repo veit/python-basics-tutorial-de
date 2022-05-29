@@ -52,32 +52,3 @@ verwendet.
     >>> c2.move(6, 10)
     >>> print(c2)
     Circle of radius 3 at coordinates (11, 18)
-
-Zeile 2
-    Klassen werden mit dem Schlüsselwort ``class`` definiert.
-Zeilen 4 und 7
-    Die Instanzinitialisierungsmethode (Konstruktor) für eine Klasse heißt
-    immer ``__init__``.
-Zeilen 5 und 6
-    Hier werden die Instanzvariablen ``x`` und ``y`` angelegt und
-    initialisiert.
-Zeile 7
-    Methoden werden, wie Funktionen, mit dem Schlüsselwort ``def`` definiert.
-Zeile 15
-    Das erste Argument einer Methode wird per Konvention ``self`` genannt.
-Zeile 17
-    Wenn die Methode aufgerufen wird, wird ``self`` auf die Instanz gesetzt,
-    die die Methode aufgerufen hat.
-Zeile 15
-    Die Klasse ``Circle`` erbt von der Klasse ``Form``.
-Zeile 17
-    Die Klasse ``Circle`` ist ähnlich, aber nicht genau wie die
-    Standardklassenvariable.
-Zeile 19
-    Eine Klasse muss explizit den Initialisierer ihrer Basisklasse aufrufen.
-Zeile 24
-    Die Methode ``__str__`` wird von der Funktion ``print`` verwendet.
-
-Andere spezielle Methodenattribute ermöglichen das Überladen von Operatoren
-oder werden von eingebauten Methoden wie der Funktion *length* (``len``)
-verwendet.
