@@ -65,13 +65,13 @@ Installation
 #. Erstellen der HTML-Dokumentation:
 
    .. note::
-   pandoc muss installiert sein.
+      pandoc muss installiert sein.
 
-   … auf Debian/Ubuntu:
+      … auf Debian/Ubuntu:
 
-   .. code-block:: console
+      .. code-block:: console
 
-      $  sudo apt install pandoc
+         $  sudo apt install pandoc
 
    Zum Erstellen der HTML-Dokumentation führt den folgenden Befehl aus:
 
