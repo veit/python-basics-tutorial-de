@@ -15,8 +15,28 @@ viele Optionen zur Begrenzung von Zeichenketten:
 Zeichenketten können durch einfache (``' '``), doppelte (``" "``), dreifache
 einfache (``''' '''``) oder dreifache doppelte (``""" """``) Anführungszeichen
 getrennt werden und können Tabulator- (``\t``) und Zeilenumbruchzeichen (``\n``)
-enthalten.
-    
+enthalten. Allgemein können Backslashes ``\`` als Escape-Zeichen verwendet
+werden. So kann :abbr:`z.B. (zum Beispiel) ``\\`` für einen einzelnen Backslash
+und ``\"`` für ein einfaches Anführungszeichen verwendet werden, wodurch es die
+Zeichenfolge nicht beendet:
+
+.. code-block:: python
+
+    "You don't need a backslash here."
+    'However, this wouldn\'t work without a backslash.'
+
+Eine normale Zeichenkette kann nicht auf mehrere Zeilen aufgeteilt werden. Der
+folgende Code wird nicht funktionieren:
+
+.. code-block::
+
+    "Dies ist ein fehlerhafter Versuch, einen einen Zeilenumbruch in
+    eine Zeichenkette einzufügen, ohne \n zu verwenden."
+
+Python bietet jedoch Zeichenketten in dreifachen Anführungszeichen (``"""``),
+die dies ermöglichen und einfache und doppelte Anführungszeichen ohne
+Backslashes enthalten können.
+
 Zeichenketten sind außerdem unveränderlich. Die Operatoren und Funktionen, die
 mit ihnen arbeiten, geben neue, vom Original abgeleitete Zeichenketten zurück.
 Die Operatoren (``in``, ``+`` und ``*``) und eingebauten Funktionen (``len``,
