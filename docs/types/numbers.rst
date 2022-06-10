@@ -82,6 +82,9 @@ Suffix ``j``. Im vorangehenden Code ist die Variable ``x`` einer komplexen Zahl
 zugeordnet. Ihr könnt ihren „realen“ Teil mit der Attributschreibweise
 ``x.real`` und den „imaginären“ Teil mit ``x.imag`` erhalten.
 
+Built-in numerische Funktionen
+------------------------------
+
 Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
 
 :func:`python3:abs`
@@ -120,9 +123,39 @@ Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
     Wird *ndigits* weggelassen oder ist *None*, wird die nächstgelegene Ganzzahl
     zur Eingabe zurückgegeben.
 
+Erweiterte numerische Funktionen
+--------------------------------
+
+Fortgeschrittenere numerische Funktionen wie Trigonometrie sowie einige
+nützliche Konstanten sind nicht in Python integriert, sondern werden in einem
+Standardmodul namens :doc:`math <python3:library/math>` bereitgestellt.
+:doc:`Module </modules/index>` werden später noch ausführlicher erklärt. Für den
+Moment genügt, dass ihr die mathematischen Funktionen in diesem Abschnitt
+verfügbar machen müsst, indem ihr alles von ``math`` importiert:
+
+.. code-block:: python
+
+    from math import *
+
+Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
+
+* die zahlentheoretischen und Darstellungsfunktionen :func:`python3:math.ceil`,
+  :func:`python3:math.modf`, :func:`python3:math.frexp` und
+  :func:`python3:math.ldexp`,
+* die Potenz- und logarithmische Funktionen :func:`python3:math.exp`,
+  :func:`python3:math.log`, :func:`python3:math.log10`, :func:`python3:math.pow`
+  und :func:`python3:math.sqrt`,
+* die trigonometrischen Funktionen :func:`python3:math.acos`,
+  :func:`python3:math.asin`, :func:`python3:math.atan`,
+  :func:`python3:math.atan2`, :func:`python3:math.ceil`,
+  :func:`python3:math.cos`, :func:`python3:math.hypot` und
+  :func:`python3:math.sin`,
+* die hyperbolischen Funktionen :func:`python3:math.cosh`,
+  :func:`python3:math.sinh` und :func:`python3:math.tanh`
+* und die Konstanten :data:`python3:math.e` und :data:`python3:math.pi`.
+
 Außerdem gibt es das Bibliotheksmodul :doc:`cmath <python3:library/cmath>` (das
-Funktionen für komplexe Zahlen enthält) und das Bibliotheksmodul :doc:`math
-<python3:library/math>` (das Funktionen für die anderen drei Typen enthält):
+Funktionen für komplexe Zahlen enthält).
 
 .. code-block:: python
 
