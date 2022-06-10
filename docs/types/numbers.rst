@@ -82,9 +82,46 @@ Suffix ``j``. Im vorangehenden Code ist die Variable ``x`` einer komplexen Zahl
 zugeordnet. Ihr könnt ihren „realen“ Teil mit der Attributschreibweise
 ``x.real`` und den „imaginären“ Teil mit ``x.imag`` erhalten.
 
-Mehrere eingebaute Funktionen können mit Zahlen arbeiten. Außerdem gibt es das
-Bibliotheksmodul :doc:`cmath <python3:library/cmath>` (das Funktionen für
-komplexe Zahlen enthält) und das Bibliotheksmodul :doc:`math
+Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
+
+:func:`python3:abs`
+    gibt den absoluten Wert einer Zahl zurück. Dabei kann as Argument kann eine
+    Ganzzahl, eine Fließkommazahl oder ein Objekt sein, das ``__abs__()``
+    implementiert. Bei komplexen Zahlen als Argument wird ihr Betrag
+    zurückgegeben.
+:func:`python3:divmod`
+    nimmt zwei (nicht-komplexe) Zahlen als Argumente und gibt ein Zahlenpaar
+    zurück, das aus ihrem Quotienten und dem Rest besteht, wenn eine ganzzahlige
+    Division verwendet wird.
+:class:`python3:float`
+    Gibt eine Fließkommazahl zurück, die aus einer Zahl oder Zeichenkette ``x``
+    gebildet wird.
+:func:`python3:hex`
+    konvertiert eine Integer-Zahl in eine klein geschriebene hexadezimale
+    Zeichenkette mit dem Präfix ``0x``.
+:class:`python3:int`
+    gibt ein Integer-Objekt zurück, das aus einer Zahl oder Zeichenkette ``x``
+    konstruiert wurde, oder ``0``, wenn keine Argumente angegeben werden.
+:func:`python3:max`
+    gibt das größte Element in einem :term:`python3:iterable` oder das größte
+    von zwei oder mehr Argumenten zurück.
+:func:`python3:min`
+    gibt das kleinste Element in einem Iterable oder das kleinste von zwei oder
+    mehr Argumenten zurück.
+:func:`python3:oct`
+    konvertiert eine Integer-Zahl in eine oktale Zeichenkette mit dem Präfix
+    ``0o``. Das Ergebnis ist ein gültiger Python-Ausdruck. Wenn ``x`` kein
+    Python :func:`int`-Objekt ist, muss es eine ``__index__()``-Methode
+    definieren, die eine ganze Zahl zurückgibt.
+:func:`python3:pow`
+    gibt *base* als Potenz von *exp* zurück.
+:func:`python3:round`
+    gibt eine Zahl zurück, die auf *ndigits* nach dem Dezimalpunkt gerundet ist.
+    Wird *ndigits* weggelassen oder ist *None*, wird die nächstgelegene Ganzzahl
+    zur Eingabe zurückgegeben.
+
+Außerdem gibt es das Bibliotheksmodul :doc:`cmath <python3:library/cmath>` (das
+Funktionen für komplexe Zahlen enthält) und das Bibliotheksmodul :doc:`math
 <python3:library/math>` (das Funktionen für die anderen drei Typen enthält):
 
 .. code-block:: python
