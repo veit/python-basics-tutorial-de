@@ -137,6 +137,24 @@ verfügbar machen müsst, indem ihr alles von ``math`` importiert:
 
     from math import *
 
+Eingebaute Funktionen sind immer verfügbar und werden mit einer Standard-Syntax
+für Funktionsaufrufe aufgerufen. Im folgenden Code wird ``round`` mit einem
+Float als Eingangsargument aufgerufen.
+
+.. code-block:: python
+
+    >>> round(1.49)
+    1
+
+Mit ``ceil`` aus der Standardbibliothek ``math`` und der Attributschreibweise
+:samp:`MODUL.FUNKTION(ARGUMENT)` wird aufgerundet:
+
+.. code-block:: python
+
+    >>> import math
+    >>> math.ceil(1.49)
+    2
+
 Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
 
 * die zahlentheoretischen und Darstellungsfunktionen :func:`python3:math.ceil`,
@@ -157,25 +175,8 @@ Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
 Außerdem gibt es das Bibliotheksmodul :doc:`cmath <python3:library/cmath>` (das
 Funktionen für komplexe Zahlen enthält).
 
-.. code-block:: python
-
-    >>> round(1.49)
-    1
-
-.. code-block:: python
-
-    >>> import math
-    >>> math.ceil(1.49)
-    2
-
-Eingebaute Funktionen sind immer verfügbar und werden mit einer Standard-Syntax
-für Funktionsaufrufe aufgerufen. Im vorangegangenen Code wird ``round`` mit
-einem Float als Eingangsargument aufgerufen.
-
-Die Funktionen in Bibliotheksmodulen werden über die Anweisung ``import``
-verfügbar gemacht. Im letzten Beispiel wird das Modul der Bliothek ``math``
-importiert, und seine Funktion ``ceil`` wird mit der Attributschreibweise
-aufgerufen: :samp:`MODUL.FUNKTION(ARGUMENT)`.
+Boolsche Werte
+--------------
 
 In den folgenden Beispielen werden Boolesche Werte verwendet:
 
