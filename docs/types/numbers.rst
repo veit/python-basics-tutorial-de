@@ -123,6 +123,28 @@ Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
     Wird *ndigits* weggelassen oder ist *None*, wird die nächstgelegene Ganzzahl
     zur Eingabe zurückgegeben.
 
+Boolsche Werte
+--------------
+
+In den folgenden Beispielen werden Boolesche Werte verwendet:
+
+.. code-block:: python
+
+    >>> x = False
+    >>> x
+    False
+    >>> not x
+    True
+
+.. code-block:: python
+
+    >>> y = True * 2
+    >>> y
+    2
+
+Abgesehen von ihrer Darstellung als ``True`` und ``False`` verhalten sich
+Boolesche Werte wie die Zahlen ``1`` (``True``) und ``0`` (``False``).
+
 Erweiterte numerische Funktionen
 --------------------------------
 
@@ -184,25 +206,3 @@ Aber die leistungsstarke Python-Erweiterung
 :doc:`jupyter-tutorial:workspace/numpy/index`  bieten hocheffiziente
 Implementierungen vieler fortgeschrittener numerischer Operationen. Der Schwerpunkt liegt dabei auf Array-Operationen, einschließlich mehrdimensionaler Matrizen
 und fortgeschrittener Funktionen wie der schnellen Fourier-Transformation.
-
-Boolsche Werte
---------------
-
-In den folgenden Beispielen werden Boolesche Werte verwendet:
-
-.. code-block:: python
-
-    >>> x = False
-    >>> x
-    False
-    >>> not x
-    True
-
-.. code-block:: python
-
-    >>> y = True * 2
-    >>> y
-    2
-
-Abgesehen von ihrer Darstellung als ``True`` und ``False`` verhalten sich
-Boolesche Werte wie die Zahlen ``1`` (``True``) und ``0`` (``False``).
