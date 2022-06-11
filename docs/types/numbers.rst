@@ -60,27 +60,55 @@ Beispiele:
     >>> -5e-3 ** 3
     -1.2500000000000002e-07
 
-Die folgenden Beispiele verwenden komplexe Zahlen:
+Komplexe Zahlen
+---------------
+
+Komplexe Zahlen bestehen aus einem Realteil und einem
+`Imaginärteil <https://de.wikipedia.org/wiki/Imagin%C3%A4re_Zahl>`_, der in
+Python den Suffix ``j`` erhält.
 
 .. code-block:: python
 
-    >>> (5+3j) ** (3+5j)
-    (-7.04464115622119-11.276062812695923j)
+    >>> 7 + 2j
+    (7+2j)
+
+.. note::
+
+    Python drückt die resultierende komplexe Zahl in Klammern aus, um
+    anzuzeigen, dass die Ausgabe den Wert eines einzelnen Objekts darstellt:
 
 .. code-block:: python
 
-    >>> x = (5+3j) * (6+8j)
+    >>> (7+2j) - (4+4j)
+    (3-2j)
+
+.. code-block:: python
+
+    >>> 2j * 4j
+    (-8+0j)
+
+.. note::
+
+    Die Berechnung von ``2j * 4j`` ergibt die erwartete Antwort von ``-8``, aber
+    das Ergebnis bleibt ein Python-Objekt für komplexe Zahlen. Komplexe Zahlen
+    werden nie automatisch in entsprechende reelle oder ganzzahlige Objekte
+    umgewandelt. Ihr könnt aber leicht auf ihre realen und imaginären Teile mit
+    ``real`` und ``imag`` zugreifen.
+
+.. code-block:: python
+
+    >>> x = 2j * 4j
     >>> x
-    (6+58j)
+    (-8+0j)
     >>> x.real
-    6.0
+    -8.0
     >>> x.imag
-    58.0
+    0.0
 
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil mit dem
-Suffix ``j``. Im vorangehenden Code ist die Variable ``x`` einer komplexen Zahl
-zugeordnet. Ihr könnt ihren „realen“ Teil mit der Attributschreibweise
-``x.real`` und den „imaginären“ Teil mit ``x.imag`` erhalten.
+.. note::
+
+    Die Real- und Imaginärteile einer komplexen Zahl werden immer als
+    Fließkommazahlen zurückgegeben.
 
 Built-in numerische Funktionen
 ------------------------------
