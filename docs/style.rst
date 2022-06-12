@@ -1,5 +1,5 @@
-Struktur
-========
+Stil
+====
 
 Einrückung und Blöcke
 ---------------------

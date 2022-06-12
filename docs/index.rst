@@ -12,7 +12,7 @@ Python Basics
    install
    editors
    explore
-   structure
+   style
    variables-expressions
    types/index
    input
