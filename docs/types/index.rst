@@ -33,3 +33,4 @@ Werten bis hin zu komplexeren Strukturen wie Listen, Dictionaries und Dateien.
    dicts
    sets
    files
+   none
