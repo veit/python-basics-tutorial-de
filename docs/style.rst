@@ -44,7 +44,7 @@ einer :doc:`Zeichenkette <types/strings>`:
     >>> x = "# Dies ist eine Zeichenkette und kein Kommentar"
 
 Grundlegender Python-Stil
-=========================
+-------------------------
 
 In Python gibt es nur relativ wenige Einschränkungen für den Codierungsstil, mit
 der offensichtlichen Ausnahme, dass der Code durch Einrücken in Blöcke
