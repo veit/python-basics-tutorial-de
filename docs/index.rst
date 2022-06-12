@@ -14,8 +14,8 @@ Python Basics
    explore
    structure
    variables-expressions
-   input
    types/index
+   input
    control-flows/index
    modules/index
    oop/index
