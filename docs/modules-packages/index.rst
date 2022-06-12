@@ -1,5 +1,8 @@
+Module und Pakete
+=================
+
 Erstellen von Modulen
-=====================
+---------------------
 
 Es ist einfach, eigene Module zu erstellen, die auf die gleiche Weise
 importiert und verwendet werden können wie die in Python eingebauten
@@ -42,12 +45,21 @@ Bibliotheksmodulfunktionen verwendet wird.
         >>> imp.reload(wc)
         <module 'wc'>
 
+Pakete
+------
+
 Für größere Projekte gibt es eine Verallgemeinerung des Modulkonzepts, die
 Pakete genannt wird und die es euch ermöglicht, Module in einem Verzeichnis
 oder einem Unterverzeichnis zu gruppieren und dann zu importieren und
 hierarchisch auf sie zu verweisen, indem ihr eine
 ``package.subpackage.module``-Syntax verwendet. Dies erfordert nicht viel mehr
 als die Erstellung einer möglicherweise leeren Initialisierungsdatei für jedes
-Paket oder Unterpaket. Eine Vorlage hierfür findet ihr in meinem
-`ccokiecutter-namespace-template
-<https://github.com/veit/cookiecutter-namespace-template>`_.
+Paket oder Unterpaket.
+
+Das derzeitige Standardformat zur Verteilung von Python-Modulen und -Anwendungen
+ist die Verwendung von `Wheels <https://pythonwheels.com/>`_. Wheels wurden
+entwickelt, um die Installation von Python-Code zuverlässiger zu machen und die
+Verwaltung von Abhängigkeiten zu erleichtern. Die Details zur Erstellung von
+Wheels würden jedoch den Rahmen dieses Abschnitts sprengen, aber alle Details zu
+den Anforderungen und dem Prozess zur Erstellung von Wheels findet ihr in
+:doc:`jupyter-tutorial:productive/packaging/distribution`.
