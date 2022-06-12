@@ -76,3 +76,20 @@ Rechnern laufen können, auf denen Python nicht installiert ist. In vielerlei
 Hinsicht sind jedoch eigenständige ausführbare Dateien nicht ideal, da sie
 tendenziell größer und weniger flexibel sind als native Python-Anwendungen, aber
 in manchen Situationen können sie auch die beste oder einzige Lösung sein.
+
+``freeze``
+~~~~~~~~~~
+
+Auch das ``freeze``-Tool erstellt ein ausführbares Python-Programm, das auf
+Rechnern läuft, auf denen Python nicht installiert ist. Wenn ihr das
+``freeze``-Tool verwenden möchtet, müsst ihr wahrscheinlich den
+Python-Quellcode herunterladen.
+
+Beim *Einfrieren* eines Python-Programms werden C-Dateien erstellt , die dann mit
+einem C-Compiler kompiliert und gelinkt werden, den ihr auf eurem System
+installiert haben müsst. Die so eingefrorene Anwendung läuft nur auf Plattformen,
+für die der verwendete C-Compiler seine ausführbaren Dateien bereitstellt.
+
+.. seealso::
+
+    * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
