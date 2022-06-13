@@ -69,3 +69,76 @@ Zeile 2
     Der Wert der ``fact``-Funktion wird nur im Interpreter ausgegeben.
 Zeile 3
     Der Rückgabewert ist mit der Variablen ``x`` verknüpft.
+
+Optionen für Funktionsparameter
+-------------------------------
+
+Die meisten Funktionen benötigen Parameter. Dabei bietet Python drei Optionen
+für die Definition von Funktionsparametern.
+
+Positionsbezogene Parameter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Die einfachste Art, Parameter an eine Funktion in Python zu übergeben, ist die
+Übergabe an der Position. In der ersten Zeile der Funktion gebt ihr den
+Variablennamen für jeden Parameter an; wenn die Funktion aufgerufen wird, werden
+die im aufrufenden Code verwendeten Parameter den Parametervariablen der
+Funktion auf der Grundlage ihrer Reihenfolge zugeordnet. Die folgende Funktion
+berechnet ``x`` als Potenz von ``y``:
+
+.. code-block:: python
+
+>>> def power(x, y):
+...     p = 1
+...     while y > 0:
+...             p = p * x
+...             y = y - 1
+...     return p
+...
+>>> power(2, 5)
+32
+
+Diese Methode setzt voraus, dass die Anzahl der vom aufrufenden Code verwendeten
+Parameter genau mit der Anzahl der Parameter in der Funktionsdefinition
+übereinstimmt; andernfalls wird eine Type-Error-Exception ausgelöst:
+
+.. code-block:: python
+
+    >>> power(2)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: power() missing 1 required positional argument: 'y'
+
+Funktionsparameter können Standardwerte haben, die ihr deklarieren könnt, indem
+ihr in der ersten Zeile der Funktionsdefinition einen Standardwert zuweist, etwa
+so:
+
+.. code-block:: python
+
+    def function_name(param1, param2=Standardwert2, param3=Standardwert3, ...)
+
+Es können beliebig viele Parameter mit Standardwerten versehen werden wobei 
+Parameter mit Standardwerten als letzte in der Parameterliste definiert werden
+müssen.
+
+Die folgende Funktion berechnet ``x`` ebenfalls als Potenz von ``y``. Wenn ``y``
+jedoch nicht in einem Funktionsaufruf angegeben wird, wird der Standardwert
+``5`` verwendet:
+
+.. code-block:: python
+
+    >>> def power(x, y=5):
+    ...     p = 1
+    ...     while y > 0:
+    ...             p = p * x
+    ...             y = y - 1
+    ...     return p
+
+Wie sich das Standardargument auswirkt, können ihr im folgenden Beispiel sehen:
+
+.. code-block:: python
+
+    >>> power(3, 6)
+    729
+    >>> power(3)
+    243
