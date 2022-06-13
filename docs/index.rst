@@ -17,6 +17,7 @@ Python Basics
    types/index
    input
    control-flows/index
+   functions
    modules-packages/index
    oop/index
    save-data/index
