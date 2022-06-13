@@ -142,3 +142,24 @@ Wie sich das Standardargument auswirkt, können ihr im folgenden Beispiel sehen:
     729
     >>> power(3)
     243
+
+Parameternamen
+~~~~~~~~~~~~~~
+
+ihr könnt auch Argumente an eine Funktion übergeben, indem ihr den Namen des
+entsprechenden Funktionsparameters und nicht dessen Position verwendet. Ähnlich
+dem vorherigen Beispiels könnt ihr Folgendes eingeben:
+
+.. code-block:: python
+
+    >>> power(y=6, x=2)
+    64
+
+Da die Argumente für die Potenz im letzten Aufruf mit ``x`` und ``y`` benannt
+sind, ist ihre Reihenfolge irrelevant; die Argumente sind mit den gleichnamigen
+Parametern in der Definition der Potenz verknüpft, und man erhält ``2^6``
+zurück. Diese Art der Argumentübergabe wird als Schlüsselwortübergabe
+bezeichnet. Die Übergabe von Schlüsselwörtern kann in Kombination mit den
+Standardargumenten von Python-Funktionen sehr nützlich sein, wenn ihr Funktionen
+mit einer großen Anzahl von möglichen Argumenten definiert, von denen die
+meisten gemeinsame Standardwerte haben.
