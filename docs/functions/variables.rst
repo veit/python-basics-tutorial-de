@@ -59,5 +59,16 @@ innerhalb von ``my_func`` verweist zunächst auf denselben Wert wie die Variable
 ``y`` außerhalb von ``my_func``, aber die Zuweisung bewirkt, dass ``y`` auf
 einen neuen Wert verweist, der für die Funktion ``my_func`` lokal ist.
 
+
+.. seealso::
+
+    * :ref:`python3:global`
+
 Während ``global`` für eine Variable der obersten Ebene verwendet wird, bezieht
 sich ``nonlocal`` auf jede Variable in einem umschließenden Bereich.
+
+.. seealso::
+
+    * :ref:`python3:nonlocal`
+    * `PEP 3104 – Access to Names in Outer Scopes
+      <https://peps.python.org/pep-3104/>`_
