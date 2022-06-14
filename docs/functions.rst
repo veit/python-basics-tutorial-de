@@ -231,3 +231,12 @@ Parameternamen sind:
     >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
     ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
     The sum of the other values is 10
+
+Techniken zur Argumentübergabe mischen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Es ist möglich, alle Argumentübergabe-Möglichkeiten von Python-Funktionen
+gleichzeitig zu verwenden, obwohl dies verwirrend sein kann, wenn ihr es nicht
+sorgfältig macht. Dabei sollten  die Positionsargumente an erster Stelle stehen,
+dann benannte Argumente, gefolgt von unbestimmten Positionsargumenten mit einem
+einfachen ``*`` und zuletzt unbestimmte Schlüsselwortargumente mit ``**``.
