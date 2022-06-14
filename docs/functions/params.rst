@@ -1,74 +1,5 @@
-Funktionen
-==========
-
-Grundlegende Funktionsdefinitionen
-----------------------------------
-
-Die grundlegende Syntax für eine Python-Funktionsdefinition lautet
-
-.. code-block:: python
-
-    def function_name(param1, param2, ...):
-        body
-
-Wie bei :doc:`Kontrollströmen <control-flows/index>` verwendet Python
-Einrückungen, um die Funktion von der Funktionsdefinition abzugrenzen. Das
-folgende einfache Beispiel fügt den Code in eine Funktion ein, so dass ihr diese
-aufrufen könnt, um die `Fakultät
-<https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik)>`_ einer Zahl zu
-erhalten:
-
-.. code-block:: python
-   :linenos:
-
-    >>> def fact(n):
-    ...     """Return the factorial of the given number."""
-    ...     f = 1
-    ...     while n > 0:
-    ...         f = f * n
-    ...         n = n - 1
-    ...     return f
-
-Zeile 2
-    Dies ist ein optionaler Dokumentationsstring, oder ``docstring``. Ihr könnt
-    seinen Wert erhalten, indem ihr ``fact.__doc__`` aufruft. Der Zweck von
-    Docstrings ist es, das Verhalten einer Funktion und die Parameter, die sie
-    annimmt, zu beschreiben, während Kommentare interne Informationen über die
-    Funktionsweise des Codes dokumentieren sollen. Docstrings sind
-    :doc:`/types/strings`, die unmittelbar auf die erste Zeile einer
-    Funktionsdefinition folgen und normalerweise in dreifachen Anführungszeichen
-    stehen, um mehrzeilige Beschreibungen zu ermöglichen. Bei mehrzeiligen
-    Dokumentationsstrings ist es üblich, in der ersten Zeile eine
-    Zusammenfassung der Funktion zu geben, dieser Zusammenfassung eine leere
-    Zeile folgen zu lassen und mit dem Rest der Informationen zu enden.
-
-    .. seealso::
-        * :ref:`napoleon`
-
-Zeile 7
-    Der Wert wird nach dem Aufruf der Funktion zurückgegeben. Ihr könnt auch
-    Funktionen schreiben, die keine Rückgabeanweisung haben und
-    :doc:`types/none` zurückgeben, und wenn ``return arg`` ausgeführt wird, wird
-    der Wert ``arg`` zurückgegeben.
-
-Obwohl alle Python-Funktionen Werte zurückgeben, liegt es an euch, wie der
-Rückgabewert einer Funktion verwendet wird:
-
-.. code-block:: python
-   :linenos:
-
-    >>> fact(3)
-    6
-    >>> x = fact(3)
-    >>> x
-    6
-
-Zeile 1
-    Der Rückgabewert ist nicht mit einer Variablen verknüpft.
-Zeile 2
-    Der Wert der ``fact``-Funktion wird nur im Interpreter ausgegeben.
-Zeile 3
-    Der Rückgabewert ist mit der Variablen ``x`` verknüpft.
+Parameter
+=========
 
 Optionen für Funktionsparameter
 -------------------------------
@@ -170,10 +101,10 @@ Variable Anzahl von Argumenten
 Python-Funktionen können auch so definiert werden, dass sie mit einer variablen
 Anzahl von Argumenten umgehen können. Dies ist auf zweierlei Arten möglich. Die
 eine Methode sammelt eine unbekannte Anzahl von Argumenten in einer :doc:`Liste
-<types/lists>`. Die andere Methode kann eine beliebige Anzahl von Argumenten,
+</types/lists>`. Die andere Methode kann eine beliebige Anzahl von Argumenten,
 die mit einem Schlüsselwort übergeben wurde und die keinen entsprechend
 benannten Parameter in der Funktionsparameterliste hat, in einem :doc:`Dict
-<types/dicts>` sammeln.
+</types/dicts>` sammeln.
 
 Bei einer unbestimmten Anzahl von Positionsargumenten bewirkt das Voranstellen
 eines ``*`` vor den endgültigen Parameternamen der Funktion, dass alle
@@ -203,7 +134,7 @@ mit:
 Eine beliebige Anzahl von Schlüsselwortargumenten kann ebenfalls verarbeitet
 werden, wenn dem letzten Parameter in der Parameterliste das Präfix ``**``
 vorangestellt ist. Dann werden alle Argumente, die mit einem Schlüsselwort
-übergeben wurden, in einem :doc:`Dict <types/dicts>` gesammelt. Der Schlüssel
+übergeben wurden, in einem :doc:`Dict </types/dicts>` gesammelt. Der Schlüssel
 für jeden Eintrag im Dict ist das Schlüsselwort (Parametername) für das
 Argument. Der Wert dieses Eintrags ist das Argument selbst. Ein per
 Schlüsselwort übergebenes Argument ist in diesem Zusammenhang überflüssig, wenn
@@ -245,11 +176,11 @@ Veränderliche Objekte als Argumente
 -----------------------------------
 
 Argumente werden per Objektreferenz übergeben. Der Parameter wird zu einem neuen
-Verweis auf das Objekt. Bei unveränderlichen Objekten wie :doc:`types/tuples`,
-:doc:`types/strings` und :doc:`types/numbers` hat das, was mit einem Parameter
+Verweis auf das Objekt. Bei unveränderlichen Objekten wie :doc:`/types/tuples`,
+:doc:`/types/strings` und :doc:`/types/numbers` hat das, was mit einem Parameter
 gemacht wird, keine Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein
 veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
-<types/lists>`, ein :doc:`Dict <types/dicts>` oder eine Klasseninstanz, ändert
+</types/lists>`, ein :doc:`Dict </types/dicts>` oder eine Klasseninstanz, ändert
 jede Änderung des Objekts, worauf das Argument außerhalb der Funktion verweist.
 Die Neuzuweisung des Parameters hat keine Auswirkungen auf das Argument.
 
@@ -269,64 +200,3 @@ Die Variable ``x`` wird nicht geändert, da sie unveränderlich ist. Stattdessen
 wird der Funktionsparameter ``n`` so gesetzt, dass er auf den neuen Wert ``6``
 verweist. Bei ``y`` gibt es jedoch eine Änderung, weil die Liste, auf die sie
 verweist, geändert wurde.
-
-Lokale, nicht-lokale und globale Variablen
-------------------------------------------
-
-Hier kehren Sie zur Definition von ``fact`` vom Anfang dieses Kapitels zurück:
-
-.. code-block:: python
-
-    >>> def fact(n):
-    ...     """Return the factorial of the given number."""
-    ...     f = 1
-    ...     while n > 0:
-    ...         f = f * n
-    ...         n = n - 1
-    ...     return f
-
-Sowohl die Variablen ``f`` als auch ``n`` sind lokal für einen bestimmten Aufruf
-der Funktion ``fact``; Änderungen an ihnen, die während der Ausführung der
-Funktion vorgenommen werden, haben keine Auswirkungen auf Variablen außerhalb
-der Funktion. Alle Variablen in der Parameterliste einer Funktion und alle
-Variablen, die innerhalb einer Funktion durch eine Zuweisung erzeugt werden, wie
-:abbr:`z.B. (zum Beispiel)` ``f = 1``, sind für die Funktion lokal.
-
-Ihr könnt eine Variable explizit zu einer globalen Variable machen, indem ihr
-sie mit der ``global``-Anweisung deklariert, bevor sie verwendet wird. Globale
-Variablen können von der Funktion angesprochen und geändert werden. Sie
-existieren außerhalb der Funktion und können auch von anderen Funktionen, die
-sie als global deklarieren, oder von Code, der sich nicht innerhalb einer
-Funktion befindet, aufgerufen und geändert werden. Hier ein Beispiel, das den
-Unterschied zwischen lokalen und globalen Variablen verdeutlicht:
-
-.. code-block:: python
-
-    >>> def my_func():
-    ...     global x
-    ...     x = 1
-    ...     y = 2
-
-.. code-block:: python
-
-    >>> x = 3
-    >>> y = 4
-    >>> my_func()
-    >>> x
-    1
-    >>> y
-    4
-
-In diesem Beispiel wird eine Funktion definiert, die ``x`` als globale Variable
-und ``y`` als lokale Variable behandelt und versucht, sowohl ``x`` als auch
-``y`` zu ändern. Die Zuweisung an ``x`` innerhalb von ``my_func`` ist eine
-Zuweisung an die globale Variable ``x``, die auch außerhalb von ``my_func``
-existiert. Da ``x`` in ``my_func`` als global bezeichnet wird, ändert die
-Zuweisung diese globale Variable so, dass sie den Wert ``1`` anstelle des Wertes
-``3`` beibehält. Dasselbe gilt jedoch nicht für ``y``; die lokale Variable ``y``
-innerhalb von ``my_func`` verweist zunächst auf denselben Wert wie die Variable
-``y`` außerhalb von ``my_func``, aber die Zuweisung bewirkt, dass ``y`` auf
-einen neuen Wert verweist, der für die Funktion ``my_func`` lokal ist.
-
-Während ``global`` für eine Variable der obersten Ebene verwendet wird, bezieht
-sich ``nonlocal`` auf jede Variable in einem umschließenden Bereich.
