@@ -178,7 +178,7 @@ benannten Parameter in der Funktionsparameterliste hat, in einem :doc:`Dict
 Bei einer unbestimmten Anzahl von Positionsargumenten bewirkt das Voranstellen
 eines ``*`` vor den endgültigen Parameternamen der Funktion, dass alle
 überschüssigen Nicht-Schlüsselwort-Argumente in einem Funktionsaufruf,
-(:abbr:`d.h. (das heißt)` die Positionsargumente, die keinem anderen Parameter
+:abbr:`d.h. (das heißt)` die Positionsargumente, die keinem anderen Parameter
 zugewiesen sind, gesammelt und als Tupel dem angegebenen Parameter zugewiesen
 werden. Dies ist :abbr:`z.B. (zum Beispiel)` eine einfache Möglichkeit, eine
 Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
