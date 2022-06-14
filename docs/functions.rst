@@ -88,15 +88,15 @@ berechnet ``x`` als Potenz von ``y``:
 
 .. code-block:: python
 
->>> def power(x, y):
-...     p = 1
-...     while y > 0:
-...             p = p * x
-...             y = y - 1
-...     return p
-...
->>> power(2, 5)
-32
+    >>> def power(x, y):
+    ...     p = 1
+    ...     while y > 0:
+    ...             p = p * x
+    ...             y = y - 1
+    ...     return p
+    ...
+    >>> power(2, 5)
+    32
 
 Diese Methode setzt voraus, dass die Anzahl der vom aufrufenden Code verwendeten
 Parameter genau mit der Anzahl der Parameter in der Funktionsdefinition
