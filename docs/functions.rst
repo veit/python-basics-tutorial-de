@@ -192,7 +192,8 @@ Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
     ...         m = sum(numbers) / len(numbers)
     ...     return m
 
-Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z.B. (zum Beispiel` mit:
+Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z.B. (zum Beispiel)`
+mit:
 
 .. code-block:: python
 
