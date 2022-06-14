@@ -163,3 +163,70 @@ bezeichnet. Die Übergabe von Schlüsselwörtern kann in Kombination mit den
 Standardargumenten von Python-Funktionen sehr nützlich sein, wenn ihr Funktionen
 mit einer großen Anzahl von möglichen Argumenten definiert, von denen die
 meisten gemeinsame Standardwerte haben.
+
+Variable Anzahl von Argumenten
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Python-Funktionen können auch so definiert werden, dass sie mit einer variablen
+Anzahl von Argumenten umgehen können. Dies ist auf zweierlei Arten möglich. Die
+eine Methode sammelt eine unbekannte Anzahl von Argumenten in einer :doc:`Liste
+<types/lists>`. Die andere Methode kann eine beliebige Anzahl von Argumenten,
+die mit einem Schlüsselwort übergeben wurde und die keinen entsprechend
+benannten Parameter in der Funktionsparameterliste hat, in einem :doc:`Dict
+<types/dicts>` sammeln.
+
+Bei einer unbestimmten Anzahl von Positionsargumenten bewirkt das Voranstellen
+eines ``*`` vor den endgültigen Parameternamen der Funktion, dass alle
+überschüssigen Nicht-Schlüsselwort-Argumente in einem Funktionsaufruf,
+(:abbr:`d.h. (das heißt)` die Positionsargumente, die keinem anderen Parameter
+zugewiesen sind, gesammelt und als Tupel dem angegebenen Parameter zugewiesen
+werden. Dies ist :abbr:`z.B. (zum Beispiel)` eine einfache Möglichkeit, eine
+Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
+
+.. code-block:: python
+
+    >>> def mean(*numbers):
+    ...     if len(numbers) == 0:
+    ...         return None
+    ...     else:
+    ...         m = sum(numbers) / len(numbers)
+    ...     return m
+
+Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z.B. (zum Beispiel` mit:
+
+.. code-block:: python
+
+    >>> mean(3, 5, 2, 4, 6)
+    4.0
+
+Eine beliebige Anzahl von Schlüsselwortargumenten kann ebenfalls verarbeitet
+werden, wenn dem letzten Parameter in der Parameterliste das Präfix ``**``
+vorangestellt ist. Dann werden alle Argumente, die mit einem Schlüsselwort
+übergeben wurden, in einem :doc:`Dict <types/dicts>` gesammelt. Der Schlüssel
+für jeden Eintrag im Dict ist das Schlüsselwort (Parametername) für das
+Argument. Der Wert dieses Eintrags ist das Argument selbst. Ein per
+Schlüsselwort übergebenes Argument ist in diesem Zusammenhang überflüssig, wenn
+das Schlüsselwort, mit dem es übergeben wurde, nicht mit einem der
+Parameternamen in der Funktionsdefinition übereinstimmt, :abbr:`z.B. (zum
+Beispiel)`:
+
+.. code-block:: python
+
+    >>> def server(ip, port, **other):
+    ...     print("ip: {0}, port: {1}, keys in 'other': {2}".format(ip,
+    ...           port, list(other.keys())))
+    ...     total = 0
+    ...     for k in other.keys():
+    ...         total = total + other[k]
+    ...     print("The sum of the other values is {0}".format(total))
+
+Das Ausprobieren dieser Funktion zeigt, dass sie  die Argumente addieren kann,
+die unter den Schlüsselwörtern ``foo``,  ``bar`` und ``baz`` übergeben werden,
+obwohl ``foo``,  ``bar`` und ``baz`` in der Funktionsdefinition keine
+Parameternamen sind:
+
+.. code-block:: python
+
+    >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
+    ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
+    The sum of the other values is 10
