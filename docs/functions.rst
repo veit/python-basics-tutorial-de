@@ -252,3 +252,20 @@ veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 <types/lists>`, ein :doc:`Dict <types/dicts>` oder eine Klasseninstanz, ändert
 jede Änderung des Objekts, worauf das Argument außerhalb der Funktion verweist.
 Die Neuzuweisung des Parameters hat keine Auswirkungen auf das Argument.
+
+.. code-block:: python
+
+    >>> def my_func(n, l):
+    ...     l.append(1)
+    ...     n = n + 1
+    ...
+    >>> x = 5
+    >>> y = [2, 4, 6]
+    >>> my_func(x, y)
+    >>> x, y
+    (5, [2, 4, 6, 1])
+
+Die Variable ``x`` wird nicht geändert, da sie unveränderlich ist. Stattdessen
+wird der Funktionsparameter ``n`` so gesetzt, dass er auf den neuen Wert ``6``
+verweist. Bei ``y`` gibt es jedoch eine Änderung, weil die Liste, auf die sie
+verweist, geändert wurde.
