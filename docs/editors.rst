@@ -58,6 +58,8 @@ Um die interaktive Shell zu beenden, könnt ihr einfach :kbd:`Ctrl-d` unter Linu
 und MacOS verwenden oder :kbd:`Ctrl-z` unter Windows. Alternativ könnt ihr auch
 ``exit()`` eingeben.
 
+.. _idle:
+
 IDLE
 ----
 
