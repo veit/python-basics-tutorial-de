@@ -5,7 +5,7 @@ Module werden in Python verwendet, um größere Projekte zu organisieren. Die
 Python-Standardbibliothek ist in Module aufgeteilt, um sie überschaubarer zu
 machen. Ihr müsst euren eigenen Code zwar nicht in Modulen organisieren, aber
 wenn ihr umfangreichere Programme schreibt, oder Code, den ihr wiederverwenden
-möchten, sollten ihr dies tun.
+möchten, solltet ihr dies tun.
 
 Was ist ein Modul?
 ------------------
