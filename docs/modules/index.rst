@@ -45,9 +45,9 @@ beginnt mit der Eingabe.
 
 Es ist einfach, eigene Module zu erstellen, die auf die gleiche Weise
 importiert und verwendet werden können wie die in Python eingebauten
-Bibliotheksmodule. Das Beispiel in dieser Auflistung ist ein einfaches Modul
-mit einer Funktion, die zur Eingabe eines Dateinamens auffordert und die Anzahl
-der in dieser Datei vorkommenden Wörter ermittelt.
+Bibliotheksmodule. Das folgende Beispiel ist ein einfaches Modul mit einer
+Funktion, die zur Eingabe eines Dateinamens auffordert und die Anzahl der in
+dieser Datei vorkommenden Wörter ermittelt.
 
 .. literalinclude:: wc.py
    :linenos:
@@ -63,8 +63,50 @@ Zeile 17
     Ihr könnt einen ``\`` verwenden, um eine lange Anweisung über mehrere
     Zeilen zu verteilen.
 Zeilen 20 und 21
-    Mit dieser ``if``-Anweisung könnt ihr das Programm als Skript ausführen,
-    indem ihr ``python3 wc.py`` in der Befehlszeile eingebt.
+    Mit dieser ``if``-Anweisung könnt ihr das Programm auf zweierlei Arten
+    nutzen:
+
+    * zum Importieren in der Python-Shell oder einem anderen Python-Skript:
+
+      .. code-block:: python
+
+         >>> import wc
+         >>> wc.words_occur()
+         Enter the name of the file: README.rst
+         File README.rst has 332 words (191 are unique)
+         {'Schnelleinstieg': 1, ...}
+
+      Alternativ könnt ihr auch ``words_occur`` direkt importieren:
+
+      .. code-block:: python
+
+         >>> from wc import words_occur
+         >>> words_occur()
+         Enter the name of the file: README.rst
+         File README.rst has 332 words (191 are unique)
+         {'Schnelleinstieg': 1, ...}
+
+      Ihr könnt den interaktiven Modus der Python-Shell oder von :ref:`idle`
+      verwenden, um ein Modul während der Erstellung inkrementell zu testen.
+      Wenn ihr jedoch euer Modul auf der Festplatte ändert, wird es durch die
+      erneute Eingabe des Import-Befehls nicht erneut geladen. Zu diesem Zweck
+      müsst ihr die Funktion ``reload`` aus dem
+      :doc:`importlib <python3:library/importlib>`-Modul verwenden:
+
+      .. code-block:: python
+
+         >>> import wc, importlib
+         >>> importlib.reload(wc)
+         <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
+
+    * als Skript:
+
+      .. code-block:: console
+
+         $ python3 wc.py
+         Enter the name of the file: README.rst
+         File README.rst has 332 words (191 are unique)
+         {'Schnelleinstieg': 1, ...}
 
 Speichert diesen Code zunächst in einem der Verzeichnisse des Modulsuchpfads,
 die in der Liste von ``sys.path`` zu finden ist. Als Dateinamensendung empfiehlt
@@ -88,31 +130,3 @@ sich ``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen wird.
    das Verzeichnis, in dem sich das Skript befindet, als erstes Element
    eingefügt, so dass ihr auf bequeme Weise feststellen könnt, wo sich das
    ausführende Python-Programm befindet.
-
-Startet nun die Python-Shell und gebt das Folgendes ein:
-
-.. code-block:: python
-
-    >>> import wc
-    >>> wc.words_occur()
-    Enter the name of the file: README.rst
-    File README.rst has 332 words (191 are unique)
-    {'Schnelleinstieg': 1, ...}
-
-Alternativ könnt ihr auch ``words_occur`` direkt importieren:
-
-.. code-block:: python
-
-    >>> from wc import words_occur
-    >>> words_occur()
-
-Ihr könnt den interaktiven Modus der Python-Shell oder von :ref:`idle`
-verwenden, um ein Modul während der Erstellung inkrementell zu testen. Wenn ihr
-jedoch euer Modul auf der Festplatte ändert, wird es durch die erneute Eingabe
-des Import-Befehls nicht erneut geladen. Zu diesem Zweck müsst ihr die Funktion ``reload`` aus dem :doc:`importlib <python3:library/importlib>`-Modul verwenden:
-
-.. code-block:: python
-
-    >>> import wc, importlib
-    >>> importlib.reload(wc)
-    <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
