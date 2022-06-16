@@ -67,8 +67,27 @@ Zeilen 20 und 21
     indem ihr ``python3 wc.py`` in der Befehlszeile eingebt.
 
 Speichert diesen Code zunächst in einem der Verzeichnisse des Modulsuchpfads,
-die mit ``sys.path`` zu finden sind. Als Dateinamensendung empfiehlt sich
-``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen wird.
+die in der Liste von ``sys.path`` zu finden ist. Als Dateinamensendung empfiehlt
+sich ``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen wird.
+
+.. note::
+   Die Liste von Verzeichnissen, die mit ``sys.path`` angezeigt wird, hängt von
+   eurer Systemkonfiguration ab. Diese Liste von Verzeichnissen wird von Python
+   in der Reihenfolge durchsucht, wenn eine Import-Anweisung ausgeführt wird.
+   Das erste gefundene Modul, das die Importanforderung erfüllt, wird verwendet.
+   Wenn es kein zutreffendes Modul in diesem  Suchpfad gibt, wird ein
+   ``ImportError`` ausgelöst.
+
+   Wenn ihr :ref:`idle`  verwendet, könnt ihr euch den Suchpfad und die darin
+   enthaltenen Module grafisch ansehen, indem ihr das Fenster
+   :menuselection:`File --> Path Browser` verwendet.
+
+   Die Variable ``sys.path`` wird mit dem Wert der Umgebungsvariablen
+   ``PYTHONPATH`` initialisiert, falls diese existiert. Wenn ihr ein
+   Python-Skript ausführt, wird in die ``sys.path``-Variable für dieses Skript
+   das Verzeichnis, in dem sich das Skript befindet, als erstes Element
+   eingefügt, so dass ihr auf bequeme Weise feststellen könnt, wo sich das
+   ausführende Python-Programm befindet.
 
 Startet nun die Python-Shell und gebt das Folgendes ein:
 
