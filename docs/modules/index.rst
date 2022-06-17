@@ -130,3 +130,63 @@ sich ``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen wird.
    das Verzeichnis, in dem sich das Skript befindet, als erstes Element
    eingefügt, so dass ihr auf bequeme Weise feststellen könnt, wo sich das
    ausführende Python-Programm befindet.
+
+Befehlszeilenargumente
+----------------------
+
+Wollt ihr in unserem Beispiel den Dateinamen als Befehlszeilenargument
+übergeben, also mit
+
+.. code-block:: console
+
+    $ python3 wc.py README.rst
+
+so könnt ihr dies einfach mit folgender Änderung unseres Scripts:
+
+.. literalinclude:: wcargv.py
+   :diff: wc.py
+
+:data:`python3:sys.argv` 
+    gibt eine Liste der Befehlszeilenargumente zurück, die an ein Python-Skript
+    übergeben wurden. ``argv[0]`` ist der Skriptname.
+:ref:`.pop <python3:tut-morelists>`
+    entfernt das Element an der angegebenen Position in der Liste und gibt es
+    zurück. Wenn kein Index angegeben wird, entfernt ``.pop()`` das letzte
+    Element in der Liste und gibt es zurück.
+
+Das ``argparse``-Modul
+----------------------
+
+Ihr könnt ein Skript so konfigurieren, dass es sowohl Kommandozeilenoptionen als
+auch Argumente akzeptiert. Das :doc:`argparse <python3:library/argparse>`-Modul
+unterstützt beim Parsen verschiedener Argumenttypen und kann sogar Nachrichten
+erzeugen. Um das ``argparse``-Modul zu verwenden, erstellt eine Instanz von
+:class:`ArgumentParser <python3:argparse.ArgumentParser>`, füllt sie mit
+Argumenten und lest dann sowohl die optionalen als auch die Positionsargumente.
+Das folgende Beispiel veranschaulicht die Verwendung des Moduls:
+
+.. literalinclude:: wcargparse.py
+   :diff: wc.py
+
+Dieser Code erzeugt eine Instanz von ``ArgumentParser`` und fügt dann das
+Argument ``filename`` hinzu. Das ``argparse``-Modul gibt ein Namespace-Objekt
+zurück, das die Argumente als Attribute enthält. Ihr könnt die Werte der
+Argumente mit der Punktnotation abrufen, in unserem Fall mit ``args.filename``.
+
+Ihr könnt das Skript nun aufrufen mit:
+
+.. code-block:: console
+
+   $ python3 wcargparse.py -f index.rst
+
+Zudem wird automatisch eine Hilfeoption ``-h`` oder ``--help`` erzeugt:
+
+.. code-block:: console
+
+   $ python3 wcargparse.py -h
+   usage: wcargparse.py [-h] [-f FILENAME]
+
+   optional arguments:
+     -h, --help            show this help message and exit
+     -f FILENAME, --file FILENAME
+                           read data from the file
