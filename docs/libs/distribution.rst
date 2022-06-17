@@ -250,7 +250,8 @@ Testen
     $ cd !$
     cd test_env
     $ python3 -m venv .
-    $ bin/python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
+    $ source bin/activate
+    $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
     Processing ./dist/dataprep-0.1.0-py3-none-any.whl
     Collecting pandas
       Using cached pandas-1.3.4-cp39-cp39-macosx_10_9_x86_64.whl (11.6 MB)
@@ -261,15 +262,15 @@ Anschließend könnt ihr das Wheel überprüfen mit:
 
 .. code-block:: console
 
-    $ bin/python -m pip install check-wheel-contents
-    $ bin/python check-wheel-contents dist/*.whl
+    $ python -m pip install check-wheel-contents
+    $ python check-wheel-contents dist/*.whl
     dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternativ könnt ihr das Paket auch installieren:
 
 .. code-block:: console
 
-    $ bin/python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
+    $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
     Processing ./dist/dataprep-0.1-py3-none-any.whl
     Collecting pandas
     …
