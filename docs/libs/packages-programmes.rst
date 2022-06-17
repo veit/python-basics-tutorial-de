@@ -1,5 +1,5 @@
-Pakete
-======
+Pakete und Programme
+====================
 
 Wheels
 ~~~~~~
