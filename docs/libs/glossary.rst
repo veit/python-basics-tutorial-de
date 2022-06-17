@@ -101,6 +101,14 @@ Glossar
         die Installation mit einem Tool wie :term:`Pip` oder zum Generieren
         von :term:`Built Distributions <Built Distribution>` benötigt werden.
 
+   Virtuelle Umgebung
+       Eine isolierte Python-Umgebung, die die Installation von Paketen für eine
+       bestimmte Anwendung ermöglicht, anstatt sie systemweit zu installieren.
+
+       `Docs <https://docs.python.org/3/library/venv.html>`_ |
+       `Creating Virtual Environments
+       <https://packaging.python.org/tutorials/installing-packages/#creating-and-using-virtual-environments>`_ |
+
    Warehouse
        Die aktuelle Codebasis, die den Python Package Index (PyPI) antreibt. Sie
        wird auf `pypi.org`_ gehostet.
