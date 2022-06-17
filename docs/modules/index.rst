@@ -52,17 +52,17 @@ dieser Datei vorkommenden Wörter ermittelt.
 .. literalinclude:: wc.py
    :linenos:
 
-Zeilen 1,2 und 4
+Zeilen 1 und 3
     :doc:`../document/docstrings` sind Standardmethoden zur Dokumentation von
     Modulen, Funktionen, Methoden und Klassen.
-Zeile 9
+Zeile 8
     ``read`` gibt eine Zeichenkette zurück, die alle Zeichen in einer Datei
     enthält, und ``split`` gibt eine Liste der Wörter einer Zeichenkette zurück,
     die anhand von Leerzeichen *aufgespalten* wurde.
-Zeile 17
+Zeile 16
     Ihr könnt einen ``\`` verwenden, um eine lange Anweisung über mehrere
     Zeilen zu verteilen.
-Zeilen 20 und 21
+Zeilen 19 bis 20
     Mit dieser ``if``-Anweisung könnt ihr das Programm auf zweierlei Arten
     nutzen:
 
