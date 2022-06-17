@@ -66,7 +66,8 @@ Zeilen 19 bis 20
     Mit dieser ``if``-Anweisung könnt ihr das Programm auf zweierlei Arten
     nutzen:
 
-    * zum Importieren in der Python-Shell oder einem anderen Python-Skript:
+    * zum Importieren in der Python-Shell oder einem anderen Python-Skript ist
+      ``__name__`` der Dateiname:
 
       .. code-block:: python
 
@@ -99,7 +100,8 @@ Zeilen 19 bis 20
          >>> importlib.reload(wc)
          <module 'wc' from '/home/veit/.local/lib/python3.8/site-packages/wc.py'>
 
-    * als Skript:
+    * als Skript  wird es mit dem Namen ``__main__`` ausgeführt und die Funktion
+      ``words_occur()`` aufgerufen:
 
       .. code-block:: console
 
