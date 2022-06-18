@@ -242,3 +242,4 @@ aussehen:
 .. seealso::
 
    * `GitHub Actions <https://docs.github.com/en/actions>`_
+   * :doc:`cibuildwheel`
