@@ -289,3 +289,16 @@ Anschließend könnt ihr Python aufrufen und euer loaders-Modul importieren:
     wird jedoch heutzutage von Teilen der `Python Packaging Authority (PyPA)
     <https://github.com/pypa/>`_ als `Anti-Pattern
     <https://twitter.com/pganssle/status/1152695229105000453>`_ angesehen.
+
+.. seealso::
+
+    zum Paketieren und Verteilen von Python-Bibliotheken mit `setuptools
+    <https://packaging.python.org/key_projects/#setuptools>`_: `Packaging and
+    distributing projects
+    <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+
+    Wenn ihr Alternativen zu ``setuptools`` anschauen wollt:
+
+    * `flit <https://packaging.python.org/key_projects/#flit>`_
+    * `hatch <https://github.com/ofek/hatch>`_
+    * `poetry <https://github.com/python-poetry/poetry>`_
