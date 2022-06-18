@@ -136,6 +136,13 @@ importiert und auf die ``name``-Eigenschaft referenziert, die zuvor in
     >>> minimal_example.name
     'minimal_example'
 
+.. note::
+
+    Die Pakete auf *Test-PyPI* werden nur temporär gespeichert. Wenn ihr ein
+    Paket in den echten :term:`Python Package Index (PyPI)` hochladen wollt,
+    könnt ihr dies tun, indem ihr ein Konto auf https://pypi.org anlegt und die
+    gleichen Anweisungen befolgt, jedoch ``twine upload dist/*`` verwendet.
+
 README
 ~~~~~~
 

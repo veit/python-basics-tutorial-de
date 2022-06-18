@@ -289,7 +289,3 @@ Anschließend könnt ihr Python aufrufen und euer loaders-Modul importieren:
     wird jedoch heutzutage von Teilen der `Python Packaging Authority (PyPA)
     <https://github.com/pypa/>`_ als `Anti-Pattern
     <https://twitter.com/pganssle/status/1152695229105000453>`_ angesehen.
-
-.. seealso::
-   * `PyPI Release Checklist
-     <https://cookiecutter-namespace-template.readthedocs.io/en/latest/pypi-release-checklist.html>`_
