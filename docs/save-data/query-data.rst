@@ -15,22 +15,22 @@ Daten abfragen
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 12-15
-      :lineno-start: 12
+      :lines: 13-16
+      :lineno-start: 13
 
 #. Alle Titel auswählen, die Python enthalten:
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 17-23
-      :lineno-start: 17
+      :lines: 18-24
+      :lineno-start: 18
 
 #. Schließlich können die Daten abgefragt werden mit:
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 25-27
-      :lineno-start: 25
+      :lines: 26-28
+      :lineno-start: 26
 
    .. code-block:: rest
 
