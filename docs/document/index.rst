@@ -19,7 +19,7 @@ genutzt und verbessert werden kann:
 * Diejenigen, die die Software verbessern wollen, benötigen Informationen
 
   * wie sie mit Fehlerbehebungen zur Verbesserung des Produkts beitragen können
-  (``CONTRIBUTING``)
+    (``CONTRIBUTING``)
   * wie sie mit anderen kommunizieren (``CODE_OF_CONDUCT``) können
 
 Alle gemeinsam benötigen Informationen, wie das Produkt lizenziert ist
