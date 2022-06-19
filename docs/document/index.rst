@@ -41,6 +41,7 @@ für nutzende als auch für betreuende Personen eines Projekts enthalten.
    uml/index
    extensions
    test
+   shot-scraper
 
 Badges
 ------
