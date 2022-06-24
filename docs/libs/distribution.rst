@@ -87,7 +87,7 @@ Abhängigkeiten werden mit ``install_requires`` angegeben:
    :lineno-start: 32
 
 .. note::
-   Versionsnummern von Abhängigkeiten sollten üblicherweise nicht in der
+    Versionsnummern von Abhängigkeiten sollten üblicherweise nicht in der
     ``setup.py`` festgeschrieben werden sondern in der `requirements.txt
     <https://pip.pypa.io/en/latest/user_guide/#requirements-files>`_-Datei.
 
