@@ -225,7 +225,7 @@ erzeugen::
         ist die Version des Distrubitionspakets
     ``py3``
         gibt die Python-Version und ggf. die C-`ABI
-        <https://de.wikipedia.org/wiki/Bin%C3%A4rschnittstelle>` an
+        <https://de.wikipedia.org/wiki/Bin%C3%A4rschnittstelle>`_ an
     ``none``, ``macosx_10_9``
         gibt an, ob das *Wheel*-Paket für jedes oder nur spezifische OS geeignet
         ist
