@@ -108,7 +108,7 @@ Die Datei enthält alle Dateien und Verzeichnisse, die nicht bereits mit
 .. literalinclude:: dataprep/MANIFEST.in
    :linenos:
 
-Weitere Anweisungen in `Manifest.in` findet ihr in `Creating a source
+Weitere Anweisungen in ``Manifest.in`` findet ihr in `Creating a source
 distribution
 <https://docs.python.org/3/distutils/commandref.html?highlight=manifest#creating-a-source-distribution-the-sdist-command>`__.
 
