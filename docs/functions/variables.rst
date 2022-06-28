@@ -4,7 +4,8 @@ Variablen
 Lokale, nicht-lokale und globale Variablen
 ------------------------------------------
 
-Hier kehren Sie zur Definition von ``fact`` vom Anfang dieses Kapitels zurück:
+Hier kehren wir zur Definition von ``fact`` vom Anfang dieses
+:doc:`index`-Kapitels zurück:
 
 .. code-block:: python
 
