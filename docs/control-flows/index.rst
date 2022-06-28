@@ -1,4 +1,4 @@
-Kontrollströme
+Kontrollflüsse
 ==============
 
 Python verfügt über eine ganze Reihe von Strukturen zur Kontrolle der
