@@ -10,7 +10,7 @@ wurden entwickelt, um die Installation von Python-Code zuverlässiger zu machen
 und die Verwaltung von Abhängigkeiten zu erleichtern. Die Details zur Erstellung
 von Wheels würden jedoch den Rahmen dieses Abschnitts sprengen, aber alle
 Details zu den Anforderungen und dem Prozess zur Erstellung von Wheels findet
-ihr in :doc:`jupyter-tutorial:productive/packaging/distribution`.
+ihr in :doc:`distribution`.
 
 ``py2exe`` und ``py2app``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
