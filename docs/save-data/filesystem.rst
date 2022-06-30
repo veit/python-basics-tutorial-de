@@ -3,9 +3,8 @@ Dateisystem
 
 Um mit Dateien zu arbeiten, müsst ihr häufig auch mit dem Dateisystem und den
 unterschiedlichen Konventionen je nach Betriebssystem interagieren. Hierfür
-zeige ich euch :doc:`os <python3:library/os>`, :doc:`os.path
-<python3:library/os.path>` und :doc:`pathlib <python3:library/pathlib>`, das
-seit Python 3.5 bereitsteht.
+zeige ich euch :doc:`os <python3:library/os>` und speziell :doc:`os.path
+<python3:library/os.path>`.
 
 Pfade und Pfadnamen
 -------------------
