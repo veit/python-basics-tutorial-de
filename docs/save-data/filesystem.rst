@@ -357,3 +357,58 @@ es werden jedoch auch spezifischere Dateisystemfunktionen bereitgestellt.
     .. code-block:: python
 
         >>> os.makedirs('save-data/filesystem')
+
+Verarbeitung aller Dateien in einem Verzeichnis
+-----------------------------------------------
+
+Eine nützliche Funktion zum rekursiven Durchlaufen von Verzeichnisstrukturen ist
+die Funktion :func:`os.walk`. Mit ihr könnt ihr einen ganzen Verzeichnisbaum
+durchlaufen und für jedes Verzeichnis den Pfad dieses Verzeichnisses, eine Liste
+seiner Unterverzeichnisse und eine Liste seiner Dateien zurückgeben. Dabei kann
+sie drei optionale Argumente haben: ``os.walk(directory, topdown=True,
+onerror=None, followlinks= False)``.
+
+``directory``
+    ist der Pfad des Startverzeichnisses
+``topdown``
+    auf ``True`` oder nicht vorhanden, verarbeitet die Dateien in jedem
+    Verzeichnis vor den Unterverzeichnissen, was zu einer Auflistung führt, die
+    oben beginnt und nach unten geht;
+
+    auf ``False`` werden die Unterverzeichnisse jedes Verzeichnisses zuerst
+    verarbeitet, was eine Durchquerung des Baums von unten nach oben ergibt.
+
+``onerror``
+    kann auf eine Funktion gesetzt werden, um Fehler zu behandeln, die aus
+    Aufrufen von :func:`os.listdir` resultieren, die standardmäßig ignoriert
+    werden. Üblicherweise wird symbolische Links nicht gefolgt, es sei denn, ihr
+    gebt den Parameter ``follow-links=True`` an.
+
+.. code-block:: python
+    :linenos:
+
+    >>> import os
+    >>> for root, dirs, files in os.walk(os.curdir):
+    ...     print("{0} has {1} files".format(root, len(files)))
+    ...     if ".ipynb_checkpoints" in dirs:
+    ...         dirs.remove(".ipynb_checkpoints")
+    ... 
+    . has 13 files
+    ./control-flows has 13 files
+    ./save-data has 30 files
+    ./test has 15 files
+    ./test/coverage has 3 files
+    …
+
+Zeile 4
+    prüft auf ein Verzeichnis namens ``.ipynb_checkpoints``.
+Zeile 5
+    entfernt ``.ipynb_checkpoints`` aus der Verzeichnisliste.
+
+:func:`shutil.copytree` erstellt rekursiv Kopien aller Dateien eines
+Verzeichnisses und all seiner Unterverzeichnisse, wobei die Informationen über
+den Zugriffsmodus und den Status (:abbr:`d.h. (das heißt)` die
+Zugriffs- und Änderungszeiten) erhalten bleiben. :mod:`shutil` verfügt auch über
+die bereits erwähnte Funktion :func:`shutil.rmtree` zum Entfernen eines
+Verzeichnisses und aller seiner Unterverzeichnisse sowie über mehrere Funktionen
+zum Erstellen von Kopien einzelner Dateien.
