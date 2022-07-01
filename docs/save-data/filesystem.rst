@@ -312,17 +312,17 @@ Weitere ähnliche Funktionen stellen speziellere Abfragen bereit:
 :func:`python3:os.path.ismount`
     gibt unter ``possix``-Dateisystemen ``True`` zurück, wenn der Pfad ein
     :abbr:`sog. (sogenannter)` *Mount Point* oder Einhängepunkt ist. 
-:func:`python3:os.path.samefile(PATH1, PATH2)`
+:func:`python3:os.path.samefile`
     gibt ``True`` zurück, wenn die beiden Pfadargumente auf dieselbe Datei
     zeigen.
-:func:`python3:os.path. isabs(PATH)`
+:func:`python3:os.path.isabs`
     gibt ``True`` zurück, wenn sein Argument ein absoluter Pfad ist; andernfalls
     wird ``False`` zurückgegeben.
-:func:`python3:os.path.getsize(PATH)`
+:func:`python3:os.path.getsize`
     gibt die Größe der Datei oder des Verzeichnisses an.
-:func:`python3:os.path.getmtime(PATH)`
+:func:`python3:os.path.getmtime`
     gibt das Änderungsdatum der Datei oder des Verzeichnisses an.
-:func:`python3:os.path.getatime(path)`
+:func:`python3:os.path.getatime`
     gibt de letzte Zugriffszeit für eine Datei oder ein Verzeichnis an.
 
 Weitere Dateisystemoperationen
