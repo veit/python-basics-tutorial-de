@@ -108,7 +108,8 @@ Relative Pfadnamen
       Arbeitsverzeichnis) bezeichnet. Dieses Verzeichnis wird sich meist von dem
       Verzeichnis unterscheiden, in dem sich der Python-Interpreter befindet. Um
       dies zu verdeutlichen, starten wir Python und verwenden den Befehl
-      ``os.getcwd``, um das aktuelle Arbeitsverzeichnis von Python zu ermitteln:
+      :func:`python3:os.getcwd`, um das aktuelle Arbeitsverzeichnis von Python
+      zu ermitteln:
 
       .. code-block:: python
 
