@@ -20,14 +20,14 @@ modelliert ist, wobei eine Festplatte die Wurzel und Ordner, Unterordner
 
 Verschiedene Betriebssysteme haben jedoch unterschiedliche Konventionen für
 Pfadnamen. Das Zeichen, das zur Trennung von aufeinanderfolgenden Datei- oder
-Verzeichnisnamen in einem Linux/UNIX-Pfadnamen verwendet wird, ist ``/``,
+Verzeichnisnamen in einem Linux/macOS-Pfadnamen verwendet wird, ist ``/``,
 während es in einem Windows-Pfadnamen ``\`` ist. Außerdem hat das
-UNIX-Dateisystem ein einziges Stammverzeichnis auf das durch ein ``/``-Zeichen
+Linux-Dateisystem ein einziges Stammverzeichnis auf das durch ein ``/``-Zeichen
 als erstes Zeichen im Pfadnamen verwiesen wird, während das Windows-Dateisystem
 für jedes Laufwerk ein eigenes Stammverzeichnis hat, das mit ``C:\`` :abbr:`usw.
 (und so weiter)` bezeichnet wird. Aufgrund dieser Unterschiede haben die
 Dateien auf den verschiedenen Betriebssystemen unterschiedliche Pfadnamen. Eine
-Datei namens :samp:`C:\data\myfile` unter Windows könnte unter UNIX und macOS
+Datei namens :samp:`C:\data\myfile` unter Windows könnte unter Linux und macOS
 :samp:`/data/myfile` sein. Python bietet Funktionen und Konstanten, mit denen
 ihr gängige Pfadnamenmanipulationen durchführen könnt, ohne sich um solche
 syntaktischen Details kümmern zu müssen. Mit ein wenig Sorgfalt können ihr eure
@@ -65,13 +65,13 @@ Relative Pfadnamen
     an, und dieser andere Punkt wird nicht im relativen Pfadnamen selbst
     angegeben.
 
-    Als Beispiele sei hier ein relativer Windows-Pfadnamen genannt:
+    Als Beispiel sei hier ein relativer Windows-Pfadnamen genannt:
 
     .. code-block:: console
 
         save-data\filesystem.rst
 
-    …und hier ein relativer Linux/macOS-Pfadname:
+    … und hier ein relativer Linux/macOS-Pfadname:
 
     .. code-block:: console
 
