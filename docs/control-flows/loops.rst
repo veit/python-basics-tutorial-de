@@ -51,6 +51,8 @@ Zeilen 8 und 9
 Zeile 5
     ``continue`` bricht die aktuelle Iteration der Schleife ab.
 
+.. _for-loop:
+
 ``for``-Schleife
 ----------------
 
