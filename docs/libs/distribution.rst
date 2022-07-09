@@ -185,7 +185,7 @@ Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
 
 .. seealso::
    * `Keep a Changelog <https://keepachangelog.com>`_
-   * `towncrier <https://pypi.org/project/towncrier/>`_
+   * `scriv <https://pypi.org/project/scriv/>`_
 
 Build
 -----
