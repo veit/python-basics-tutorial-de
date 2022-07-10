@@ -10,7 +10,7 @@ eine Datei zu schreiben und diesen Zustand wieder einzulesen.
 Python bietet diese Möglichkeit über das :doc:`pickle
 <python3:library/pickle>`-Modul. Pickle ist mächtig, aber einfach zu benutzen.
 Nehmen wir an, dass der gesamte Zustand eines Programms in drei Variablen
-gespeichert ist: ``a``, ``b`` und ``c``.Ihr könnt diesen Zustand wie folgt in
+gespeichert ist: ``a``, ``b`` und ``c``. Ihr könnt diesen Zustand wie folgt in
 einer Datei namens ``data.pickle`` speichern:
 
 #. Importieren des ``pickle``-Moduls
