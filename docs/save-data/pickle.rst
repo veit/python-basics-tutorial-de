@@ -15,24 +15,26 @@ einer Datei namens ``data.pickle`` speichern:
 
 #. Importieren des ``pickle``-Moduls
 
-   .. literalinclude:: pickle_example.py
-      :language: python
-      :lines: 1
-      :lineno-start: 1
+   .. code-block:: python
+
+      >>> import pickle
 
 #. Definieren verschiedener Daten
 
-   .. literalinclude:: pickle_example.py
-      :language: python
-      :lines: 3-5
-      :lineno-start: 3
+   .. code-block:: python
+
+      >>> a = [1, 2.0, 3+4j]
+      >>> b = ("character string", b"byte string")
+      >>> c = {None, True, False}
 
 #. Schreiben der Daten:
 
-   .. literalinclude:: pickle_example.py
-      :language: python
-      :lines: 8-11
-      :lineno-start: 8
+   .. code-block:: python
+
+      >>> with open('data.pickle', 'wb') as f:
+      ...     pickle.dump(a, f)
+      ...     pickle.dump(b, f)
+      ...     pickle.dump(c, f)
 
    Es spielt keine Rolle, was in den Variablen gespeichert wurde. Der Inhalt
    kann so einfach sein wie Zahlen oder so komplex wie eine Liste von
@@ -53,20 +55,18 @@ einer Datei namens ``data.pickle`` speichern:
    Diese Daten können bei einem späteren Programmlauf wieder eingelesen werden
    mit :py:func:`pickle.load`:
 
-   .. literalinclude:: pickle_example.py
-      :language: python
-      :lines: 14-17
-      :lineno-start: 14
+   .. code-block:: python
+
+      >>> with open('data.pickle', 'rb') as f:
+      ...     first = pickle.load(f)
+      ...     second = pickle.load(f)
+      ...     third = pickle.load(f)
 
 #. Ausgeben der gepickelten Daten:
 
-   .. literalinclude:: pickle_example.py
-      :language: python
-      :lines: 20
-      :lineno-start: 20
-
    .. code-block:: python
 
+      >>> print(first, second, third)
       [1, 2.0, (3+4j)] ('character string', b'byte string') {False, None, True}
 
 In den meisten Fällen werdet ihr jedoch nicht eure gesamten Daten in der
@@ -79,20 +79,23 @@ das Wörterbuch wieder einzulesen und die Werte im Wörterbuch den entsprechende
 Programmvariablen zuzuweisen. Wenn ihr diesen Ansatz mit dem vorherigen Beispiel
 verwendet, erhaltet ihr folgenden Code:
 
-.. literalinclude:: pickle_example2.py
-   :language: python
-   :lines: 1-12
-   :lineno-start: 1
+   .. code-block:: python
+
+      >>> def save():
+      ...     # Serialise Python objects
+      ...     data = {'a': a, 'b': b, 'c': c}
+      ...     # File with pickles
+      ...     with open('data.pickle', 'wb') as f:
+      ...         pickle.dump(data, f)
 
 Anschließend könnt ihr gezielt die Daten aus ``c`` ausgeben mit
 
-.. literalinclude:: pickle_example2.py
-   :language: python
-   :lines: 15-19
-   :lineno-start: 15
-
 .. code-block:: python
 
+   >>> with open('data.pickle', 'rb') as f:
+   ...     saved_data = pickle.load(f)
+   ...     print(saved_data['c'])
+   ... 
    {False, None, True}
 
 Neben :py:func:`pickle.dump` und :py:func:`pickle.load` gibt es auch noch die
