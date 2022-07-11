@@ -70,7 +70,7 @@ einer Datei namens ``data.pickle`` speichern:
       [1, 2.0, (3+4j)] ('character string', b'byte string') {False, None, True}
 
 In den meisten Fällen werdet ihr jedoch nicht eure gesamten Daten in der
-gespeicherten Reiehnfolge wiederherstellen wollen. Ein einfacher und effektiver
+gespeicherten Reihenfolge wiederherstellen wollen. Ein einfacher und effektiver
 Weg, nur die Daten von Interesse wiederherzustellen, besteht darin, eine
 Speicherfunktion zu schreiben, die alle zu speichernden Daten in einem
 Wörterbuch speichert und dann Pickle zum Speichern des Wörterbuchs verwendet.
