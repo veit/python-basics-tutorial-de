@@ -1,11 +1,10 @@
-Objektorientierte Programmierung
-================================
+Objektorientierung
+==================
 
-Python bietet volle Unterstützung für OOP. Das folgende Listing ist ein
-Beispiel, das der Anfang eines einfachen Shapes-Moduls für ein Zeichenprogramm
-sein könnte. Es soll hauptsächlich als Referenz dienen, wenn ihr bereits mit
-OOP vertraut sind. In den Hinweisen wird die Syntax und Semantik von Python mit
-den Standardfunktionen anderer Sprachen verglichen.
+Python bietet volle Unterstützung für `Objektorientierte Programmierung
+<https://de.wikipedia.org/wiki/Objektorientierte_Programmierung>`_ :abbr:`OOP
+(Objektorientierte Programmierung)`. Das folgende Beispiel könnte der Anfang
+eines einfachen *Shapes*-Moduls für ein Zeichenprogramm sein.
 
 .. literalinclude:: form.py
     :linenos:
