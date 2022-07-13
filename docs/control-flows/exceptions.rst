@@ -29,8 +29,8 @@ Python-Dokumentation. Jeder Ausnahmetyp ist eine Python-Klasse, die von ihrem
 ``ZeroDivisionError`` durch Vererbung auch ein ``ArithmeticError``, eine
 ``Exception`` und auch eine ``BaseException``. Diese Hierarchie ist gewollt: Die
 meisten Ausnahmen erben von ``Exception``, und es wird dringend empfohlen, dass
-alle benutzerdefinierten Ausnahmen auch die Unterklasse ``, Exception``,  und
-nicht ``, BaseException``,  bilden:
+alle benutzerdefinierten Ausnahmen auch die Unterklasse von ``Exception``  und
+nicht von ``BaseException`` bilden:
 
 .. literalinclude:: exceptions.py
    :language: python
