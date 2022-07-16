@@ -97,6 +97,8 @@ anwendet:
 #. Wenn die Methode nicht im Namensraum der Instanz gefunden wird, wird die
    Methode in der Klasse gesucht. In den vorangegangenen Beispielen ist
    ``class`` der ``Square``-Typ der Instanz ``s``.
+#. Wenn die Methode immer noch nicht gefunden wurde, wird sie in einer
+   Superklasse gesucht, :abbr:`s.a. (siehe auch)` :doc:`inheritance`.
 #. Wenn die Methode gefunden wurde, wird sie als normale Python-Funktion
    aufgerufen, wobei die Instanz als erstes Argument der Funktion verwendet und
    alle anderen Argumente im Methodenaufruf um ein Leerzeichen nach rechts
