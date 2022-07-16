@@ -13,3 +13,4 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    variables
    methods
    inheritance
+   summary
