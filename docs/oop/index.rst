@@ -14,3 +14,5 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    methods
    inheritance
    summary
+   private
+   property
