@@ -18,7 +18,7 @@ einer Methode zugegriffen werden kann: download:`form_ns.py`:
 
 Einen Überblick über die Methoden, die in einem Namensraum verfügbar sind, erhaltet ihr mit
 
-.. literalinclude:: form_scope.py
+.. literalinclude:: form_ns.py
     :language: python
     :linenos:
     :lines: 48-53
@@ -61,7 +61,7 @@ Diese drei Namensräume werden ebenfalls in dieser Reihenfolge druchsucht.
 Den Namensraum der Instanz könnt ihr nun :abbr:`z.B. (zum Beispiel)` analysieren
 mit der Methode ``instance_variables``:
 
-.. literalinclude:: form_scope.py
+.. literalinclude:: form_ns.py
     :language: python
     :linenos:
     :lines: 54-56
