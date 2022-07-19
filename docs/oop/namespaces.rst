@@ -12,11 +12,12 @@ Wenn ihr euch in der Methode einer Klasse befindet, habt ihr direkten Zugriff
 
 Diese drei Namensräume werden in dieser Reihenfolge durchsucht.
 
-Um die verschiedenen Namepsaces in unserem Beispiel näher zu erläutern, haben
+Um die verschiedenen Namensräume in unserem Beispiel näher zu erläutern, haben
 wir unser bestehendes Modul so erweitert, dass deutlich wird, worauf innerhalb
-einer Methode zugegriffen werden kann: download:`form_ns.py`:
+einer Methode zugegriffen werden kann: :download:`form_ns.py`.
 
-Einen Überblick über die Methoden, die in einem Namensraum verfügbar sind, erhaltet ihr mit
+Einen Überblick über die Methoden, die in einem Namensraum verfügbar sind,
+erhaltet ihr mit
 
 .. literalinclude:: form_ns.py
     :language: python
