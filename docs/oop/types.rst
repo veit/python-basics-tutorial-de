@@ -112,3 +112,55 @@ dies klarer:
         False
         >>> issubclass(c1.__class__, Circle)
         True
+
+Duck-Typing
+-----------
+
+Die Verwendung von :class:`python3:type`, :func:`python3:isinstance` und
+:func:`python3:issubclass` macht es ziemlich einfach, die Vererbungshierarchie
+eines Objekts oder einer Klasse korrekt zu bestimmen. Python hat jedoch auch
+eine Funktion, die die Verwendung von Objekten noch einfacher macht:
+Duck-Typing – *„If it walks like a duck and it quacks like a duck, then it must be a duck“*. Dies bezieht sich auf Pythons Art und Weise zu bestimmen, ob ein
+Objekt der erforderliche Typ für eine Operation ist, wobei der Schwerpunkt auf
+der Schnittstelle eines Objekts liegt. Kurz gesagt müsst ihr euch in Python
+nicht um die Typüberprüfung von Funktions- oder Methodenargumenten und Ähnlichem
+kümmern, sondern euch stattdessen auf lesbaren und dokumentierten Code in
+Verbindung mit Tests verlassen, um sicherzustellen, dass ein Objekt bei Bedarf
+„wie eine Ente quakt.“
+
+Duck-Typing kann die Flexibilität von gut geschriebenem Code erhöhen und gibt
+euch in Kombination mit fortgeschrittenen objektorientierten Funktionen die
+Möglichkeit, Klassen und Objekte zu erstellen, die fast jede Situation abdecken.
+Solche :ref:`speziellen Methoden <python3:specialnames>` sind Attribute einer
+Klasse mit besonderer Bedeutung für Python. Sie sind zwar als Methoden
+definiert, aber nicht dazu gedacht, sie direkt aufzurufen; stattdessen werden
+sie von Python automatisch als Reaktion auf eine Anforderung an ein Objekt
+dieser Klasse aufgerufen.
+
+Eines der einfachsten Beispiele für eine spezielle Methode ist
+:meth:`object.__str__`. Wenn es in einer Klasse definiert ist, wird das
+``__str__``-Methodenattribut jedes Mal aufgerufen, wenn eine Instanz dieser
+Klasse verwendet wird und Python eine benutzerlesbare Zeichenkettendarstellung
+dieser Instanz benötigt. Um dieses Attribut in Aktion zu sehen, verwenden wir
+erneut unsere ``Form``-Klasse mit der Standardmethode ``__init__`` um Instanzen
+der Klasse zu initialisieren, sondern auch eine ``__str__``-Methode um
+Zeichenketten zurückzugeben, die Instanzen in einem lesbaren Format darstellen:
+
+.. code-block:: python
+
+    >>> class Form:
+    ...     def __init__(self, x, y):
+    ...         self.x = x
+    ...         self.y = y
+    ...     def __str__(self):
+    ...         return "Position: x={0}, y={1}".format (self.x, self.y)
+    ...
+    >>> f = Form(2,3)
+    >>> print(f)
+    Position: x=2, y=3
+
+Auch wenn unser spezielles ``__str__``-Methodenattribut nicht von unserem Code
+explizit aufgerufen wurde, konnte es dennoch von Python verwendet werden, da
+Python weiß, dass das ``__str__``-Attribut, falls vorhanden, eine Methode zur
+Umwandlung von Objekten in benutzerlesbare Zeichenketten definiert. Und genau
+dies zeichnet die speziellen Methodenattribute aus.
