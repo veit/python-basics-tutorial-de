@@ -17,3 +17,4 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    private
    property
    namespaces
+   types
