@@ -1,5 +1,5 @@
-Private Variablen und private Methoden
-======================================
+Private Variablen und Methoden
+==============================
 
 Eine private Variable oder private Methode ist eine Variable, die außerhalb der
 Methoden der Klasse, in der sie definiert ist, nicht sichtbar ist. Private
