@@ -247,7 +247,7 @@ zu verweisen, :abbr:`z.B. (zum Beispiel)`:
 .. warning::
 
     Nun wird auch verständlicher, weswegen wir nicht den Import aller Funktionen
-    eines Moduls empfehlen mit :samp:`from {MODULE} import *`. Wenn ihr damit
+    eines Moduls empfehlen mit :samp:`from {MODULE} import \*`. Wenn ihr damit
     zuerst das Modul ``math`` und dann das Modul ``cmath`` importieren würdet,
     hätten die Funktionen in ``cmath`` Vorrang vor denen von ``math``. Außerdem
     ist es beim Verstehen des Codes viel mühsamer, die Quelle der verwendeten
