@@ -240,16 +240,50 @@ Zeile 5
    im Umgang mit Netzwerkprotokollen, wo sich Datenströme oft wie Dateien
    verhalten, aber als Bytes und nicht als Strings interpretiert werden müssen.
 
-Es gibt noch mehrere andere Ein- und Ausgabemöglichkeiten:
+Eingebaute Module für Dateien
+-----------------------------
 
-:doc:`fileinput <python3:library/fileinput>`
-    erlaubt euch, schnell eine Schleife über die Standardeingabe oder eine Liste
-    von Dateien zu schreiben. 
-:doc:`sys <python3:library/sys>`
-    ermöglicht den Zugriff auf ``stdin``, ``stdout`` und ``stderr``.
-:doc:`struct <python3:library/struct>`
-    bietet Unterstützung für das Lesen und Schreiben von Dateien, die von
-    C-Programmen erzeugt wurden oder von diesen verwendet werden sollen.
-:doc:`pickle <python3:library/pickle>`
-    persistiert Python-Datentypen, :abbr:`s.a. (siehe auch)`
-    :doc:`../save-data/pickle`
+Die Python-Standardbibliothek enthält eine Reihe eingebauter Module, mit denen
+ihr Dateien managen könnt:
+
++-----------------------+-------------------------------------------------------------------------------+
+| Modul                 | Beschreibung                                                                  |
++=======================+===============================================================================+
+| :py:mod:`os.path`     | führt allgemeine Pfadnamenmanipulationen durch                                |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`pathlib`     | manipuliert Pfadnamen                                                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`fileinput`   | iteriert über mehrere Eingabedateien                                          |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`filecmp`     | vergleicht Dateien und Verzeichnisse                                          |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`tempfile`    | erzeugt temporäre Dateien und Verzeichnisse                                   |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`glob`,       | verwenden UNIX-ähnlicher Pfad- und Dateinamensmuster                          |
+| :py:mod:`fnmatch`     |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`linecache`   | greift zufällig auf Textzeilen zu                                             |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`shutil`      | führt Dateioperationen auf höherer Ebene aus                                  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`pickle`,     | aktivieren von Python-Objektserialisierung und -persistenz, :abbr:`s.a. (siehe|
+| :py:mod:`shelve`      | auch)` :doc:`../save-data/pickle`                                             |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`sqlite3`     | bietet eine DB-API 2.0-Schnittstelle für SQLite-Datenbanken, :abbr:`s.a.      |
+|                       | (siehe auch)` :doc:`../save-data/sqlite`                                      |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`xml`         | liest und schreibt XML-Dateien, :abbr:`s.a. (siehe auch)`                     |
+|                       | :doc:`../save-data/xml`                                                       |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`csv`         | liest und schreibt CSV-Dateien                                                |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`configparser`| liest und schreibt Windows-ähnliche Konfigurationsdateien (``.ini``)          |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`struct`      | liest und schreibt strukturierte Daten in und aus Dateien                     |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`zlib`,       | für das Arbeiten mit Archivdateien und Komprimierungen                        |
+| :py:mod:`gzip`,       |                                                                               |
+| :py:mod:`bz2`,        |                                                                               |
+| :py:mod:`zipfile`,    |                                                                               |
+| :py:mod:`tarfile`     |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+

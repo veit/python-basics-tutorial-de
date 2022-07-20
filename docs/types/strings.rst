@@ -305,8 +305,7 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`re`          | sucht und ersetzt Text mit regulären Ausdrücken                               |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`struct`      | interpretiert Bytes als gepackte Binärdaten,  liest und schreibt strukturierte|
-|                       | Daten in und aus Dateien                                                      |
+| :py:mod:`struct`      | interpretiert Bytes als gepackte Binärdaten                                   |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`difflib`     | hilft beim Berechnen von Deltas, beim Auffinden von Unterschieden zwischen    |
 |                       | Zeichenketten oder Sequenzen und beim Erstellen von Patches und Diff-Dateien  |
