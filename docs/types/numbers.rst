@@ -262,3 +262,33 @@ Aber die leistungsstarke Python-Erweiterung
 :doc:`jupyter-tutorial:workspace/numpy/index`  bieten hocheffiziente
 Implementierungen vieler fortgeschrittener numerischer Operationen. Der Schwerpunkt liegt dabei auf Array-Operationen, einschließlich mehrdimensionaler Matrizen
 und fortgeschrittener Funktionen wie der schnellen Fourier-Transformation.
+
+Eingebaute Module für Zahlen
+----------------------------
+
+Die Python-Standardbibliothek enthält eine Reihe eingebauter Module, mit denen
+ihr Zahlen managen könnt:
+
++-----------------------+-------------------------------------------------------------------------------+
+| Modul                 | Beschreibung                                                                  |
++=======================+===============================================================================+
+| :py:mod:`numbers`     | für numerische abstrakte Basisklassen                                         |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`math`,       | für mathematische Funktionen für reelle und komplexe Zahlen                   |
+| :py:mod:`cmath`       |                                                                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`decimal`     | für dezimale Festkomma- und Gleitkomma-Arithmetik                             |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`statistics`  | für Funktionen zur Berechnung von mathematischen Statistiken                  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`fractions`   | für rationale Zahlen                                                          |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`random`      | zum Erzeugen von Pseudozufallszahlen und -auswahlen sowie zum Mischen von     |
+|                       | Sequenzen                                                                     |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`itertools`   | für Funktionen, die Iteratoren für effiziente Schleifen erzeugen              |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`functools`   | für Funktionen höherer Ordnung und Operationen auf aufrufbaren Objekten       |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`operator`    | für Standardoperatoren als Funktionen                                         |
++-----------------------+-------------------------------------------------------------------------------+
