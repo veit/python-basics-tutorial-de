@@ -290,3 +290,26 @@ Formatierungsmöglichkeiten bieten.
    * :ref:`python3:f-strings`
    * `PEP 498 – Literal String Interpolation
      <https://peps.python.org/pep-0498/>`_
+
+Eingebaute Module für Zeichenketten
+-----------------------------------
+
+Die Python-Standardbibliothek enthält eine Reihe eingebauter Module, mit denen
+ihr Zeichenketten managen könnt:
+
++-----------------------+-------------------------------------------------------------------------------+
+| Modul                 | Beschreibung                                                                  |
++=======================+===============================================================================+
+| :py:mod:`string`      | vergleicht mit Konstanten wie :py:data:`string.digits` oder                   |
+|                       | :py:data:`string.whitespace`                                                  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`re`          | sucht und ersetzt Text mit regulären Ausdrücken                               |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`struct`      | interpretiert Bytes als gepackte Binärdaten,  liest und schreibt strukturierte|
+|                       | Daten in und aus Dateien                                                      |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`difflib`     | hilft beim Berechnen von Deltas, beim Auffinden von Unterschieden zwischen    |
+|                       | Zeichenketten oder Sequenzen und beim Erstellen von Patches und Diff-Dateien  |
++-----------------------+-------------------------------------------------------------------------------+
+| :py:mod:`textwrap`    | umbricht und füllt Text, formatiert Text mit Zeilenumbrüchen oder Leerzeichen |
++-----------------------+-------------------------------------------------------------------------------+
