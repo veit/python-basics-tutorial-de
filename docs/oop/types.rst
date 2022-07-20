@@ -163,4 +163,19 @@ Auch wenn unser spezielles ``__str__``-Methodenattribut nicht von unserem Code
 explizit aufgerufen wurde, konnte es dennoch von Python verwendet werden, da
 Python weiß, dass das ``__str__``-Attribut, falls vorhanden, eine Methode zur
 Umwandlung von Objekten in benutzerlesbare Zeichenketten definiert. Und genau
-dies zeichnet die speziellen Methodenattribute aus.
+dies zeichnet die speziellen Methodenattribute aus. So ist es :abbr:`z.B. (zum
+Beispiel)` oft eine gute Idee, das ``__str__``-Attribut für eine Klasse zu
+definieren, damit ihr im Debugging-Code ``print(instance)`` aufrufen könnt und
+eine informative Aussage über euer Objekt zu erhalten.
+
+Umgekehrt kann es jedoch auch verwundern, dass ein Objekttyp anders auf
+spezielle Methodenattribute reagiert. Daher verwende ich spezielle
+Methodenattribute meist nur in einer der folgenden beiden Fälle:
+
+* in einer häufig verwendeten Klasse, meist für Sequenzen, die sich ähnlich wie
+  ein in Python eingebauter Typ verhält, und die durch spezielle
+  Methodenattribute nützlicher wird.
+* in einer Klasse, die sich fast identisch zu einer eingebauten Klasse verhält,
+  :abbr:`z.B. (zum Beispiel)` Listen, die als balancierte Bäume implementiert
+  sind, um das Einfügen zu beschleunigen, kann ich die speziellen
+  Methodenattribute definieren. 
