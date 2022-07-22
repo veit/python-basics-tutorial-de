@@ -297,6 +297,8 @@ Eingebaute Module für Zeichenketten
 Die Python-Standardbibliothek enthält eine Reihe eingebauter Module, mit denen
 ihr Zeichenketten managen könnt:
 
+.. _string-modules:
+
 +-----------------------+-------------------------------------------------------------------------------+
 | Modul                 | Beschreibung                                                                  |
 +=======================+===============================================================================+

@@ -269,6 +269,8 @@ Eingebaute Module für Zahlen
 Die Python-Standardbibliothek enthält eine Reihe eingebauter Module, mit denen
 ihr Zahlen managen könnt:
 
+.. _number-modules:
+
 +-----------------------+-------------------------------------------------------------------------------+
 | Modul                 | Beschreibung                                                                  |
 +=======================+===============================================================================+
