@@ -33,7 +33,9 @@ Funktion aufruft:
 Klasseninstanzen können als Strukturen oder Datensätze verwendet werden. Im
 Gegensatz zu C-Strukturen oder Java-Klassen müssen die Datenfelder einer Instanz
 jedoch nicht im Voraus deklariert werden. Das folgende kurze Beispiel definiert
-eine Klasse namens ``Square``, erstellt eine ``Square``-Instanz, weist der Kantenlänge einen Wert zu und verwendet diesen Wert dann zur Berechnung der Fläche:
+eine Klasse namens ``Square``, erstellt eine ``Square``-Instanz, weist der
+Kantenlänge einen Wert zu und verwendet diesen Wert dann zur Berechnung der
+Gesamtkantenlänge:
 
 .. code-block:: python
 
