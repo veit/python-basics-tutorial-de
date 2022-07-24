@@ -10,7 +10,7 @@ Klassen ``Square`` und ``Circle``, die wir früher bereits besprochen haben, und
 verallgemeinern sie.
 
 Wenn wir diese Klassen nun in einem Zeichenprogramm verwenden wollen, müssen wir
-definieren, wo auf der Zeichenfläche sich eine Instanz befindet soll. wir können
+definieren, wo auf der Zeichenfläche sich eine Instanz befindet soll. Wir können
 dies tun, indem wir ``x``- und ``y``-Koordinaten für jede Instanz definieren:
 
 .. code-block:: python
