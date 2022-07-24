@@ -63,7 +63,7 @@ Methode zum Hinzufügen implementiert:
 #. Schließlich können alle Tests in :download:`test_arithmetic.py` ausgeführt
    werden:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -87,7 +87,7 @@ Methode zum Hinzufügen implementiert:
 
    … oder etwas ausführlicher:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: ps1con
 

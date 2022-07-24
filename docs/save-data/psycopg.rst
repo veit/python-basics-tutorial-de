@@ -3,7 +3,7 @@ Das ``psycopg``-Modul
 
 #. Installiert das psycopg-Modul:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

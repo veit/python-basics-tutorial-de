@@ -20,7 +20,7 @@ Installation
 Python-Standardbibliothek enthalten. Für ältere Versionen von Python könnt ihr
 sie installieren mit:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

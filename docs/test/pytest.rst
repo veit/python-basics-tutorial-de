@@ -17,7 +17,7 @@ Merkmale
 Installation
 ------------
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -72,7 +72,7 @@ Testparametrisierung
 Tests ausführen
 ---------------
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

@@ -20,7 +20,7 @@ geschrieben wurde, einfach als Modul eingebunden werden kann.
       Type "help", "copyright", "credits" or "license" for more information.
       >>> 
 
-.. tab:: MacOS
+.. tab:: macOS
 
    Öffnet ein Terminal-Fenster und gebt dort ``python3`` ein:
 
@@ -55,7 +55,7 @@ Beenden der interaktiven Shell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Um die interaktive Shell zu beenden, könnt ihr einfach :kbd:`Ctrl-d` unter Linux
-und MacOS verwenden oder :kbd:`Ctrl-z` unter Windows. Alternativ könnt ihr auch
+und macOS verwenden oder :kbd:`Ctrl-z` unter Windows. Alternativ könnt ihr auch
 ``exit()`` eingeben.
 
 .. _idle:
@@ -68,7 +68,7 @@ integrated development environment) und kombiniert einen interaktiven
 Interpreter mit Werkzeugen zur Code-Bearbeitung und Fehlersuche. Das Ausfphren
 ist sehr einfach auf den verschiedenen Plattformen:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    Gebt folgendes in eurem Terminal ein:
 

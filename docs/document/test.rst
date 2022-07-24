@@ -12,7 +12,7 @@ Ihr habt die Möglichkeit, vor der Veröffentlichung eurer Änderungen zu
 (englisch)` nitpicky)-Modus, der mit der Option ``-n`` aufgerufen werden kann,
 also :abbr:`z.B. (zum Beispiel)` mit:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -34,7 +34,7 @@ Linkziele erreichbar sind. Unser Dokumentationswerkzeug Sphinx verwendet hierfü
 einen ``linkcheck``-Builder, den ihr :abbr:`ggf. (gegebenenfalls)` aufrufen
 könnt mit:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -48,7 +48,7 @@ könnt mit:
 
 Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

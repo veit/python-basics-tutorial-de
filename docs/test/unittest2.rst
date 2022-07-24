@@ -26,7 +26,7 @@ Testmodul ändern, ohne dass ihr weiteren Code ändern müsst.
 Installation
 ------------
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

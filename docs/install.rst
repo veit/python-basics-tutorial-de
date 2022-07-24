@@ -13,9 +13,9 @@ kein Problem.
    eine vorkompilierte Version von Python in eurer Linux-Distribution existiert,
    empfehle ich euch, diese zu verwenden.
 
-.. tab:: MacOS
+.. tab:: macOS
 
-   Ihr benötigt eine Python-Version, die zu eurem MacOS und eurem Prozessor
+   Ihr benötigt eine Python-Version, die zu eurem macOS und eurem Prozessor
    passt. Wenn ihr die richtige Variante ermittelt habt, könnt ihr die
    Image-Datei herunterladen und mit einem Doppelklick mounten und anschließend
    das darin enthaltene Installationsprogramm starten. Anschließend befindet

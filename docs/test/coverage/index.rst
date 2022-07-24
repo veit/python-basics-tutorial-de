@@ -11,7 +11,7 @@ Ihr könnt einen Report für die Testabdeckung erstellen mit `Coverage.py
 Installation
 ------------
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -34,7 +34,7 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
 * … mit `pytest <https://docs.pytest.org/>`_:
 
-  .. tab:: Linux/MacOS
+  .. tab:: Linux/macOS
 
      .. code-block:: console
 
@@ -48,7 +48,7 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
   oder für verteilte Tests
 
-  .. tab:: Linux/MacOS
+  .. tab:: Linux/macOS
 
      .. code-block:: console
 
@@ -62,7 +62,7 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
   Anschließend könnt ihr die Testabdeckung überprüfen mit
 
-  .. tab:: Linux/MacOS
+  .. tab:: Linux/macOS
 
      .. code-block:: console
 
@@ -79,7 +79,7 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
 * … mit :doc:`../unittest`:
 
-  .. tab:: Linux/MacOS
+  .. tab:: Linux/macOS
 
      .. code-block:: console
 
@@ -93,7 +93,7 @@ Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
 
 * … mit `nose <https://nose.readthedocs.io/>`_:
 
-  .. tab:: Linux/MacOS
+  .. tab:: Linux/macOS
 
      .. code-block:: console
 

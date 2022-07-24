@@ -6,7 +6,7 @@ Installation und Start
 
 #. Erstellt eine virtuelle Umgebung für euer Dokumentationsprojekt:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -20,7 +20,7 @@ Installation und Start
 
 #. Wechselt in die virtuelle Umgebung und installiert dort Sphinx:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -41,7 +41,7 @@ Installation und Start
 
 #. Erstellt euer Sphinx-Dokumentationsprojekt:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -128,7 +128,7 @@ Generiert die Dokumentation
 
 Ihr könnt die Dokumentation nun generieren, :abbr:`z.B. (zum Beispiel)` mit:
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

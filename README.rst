@@ -22,7 +22,7 @@ Installation
 
 #. Herunterladen und auspacken:
 
-   … auf Linux/MacOS:
+   … auf Linux/macOS:
 
    .. code-block:: console
 
@@ -46,7 +46,7 @@ Installation
 
 #. Installieren von Python-Paketen:
 
-   … auf Linux/MacOS:
+   … auf Linux/macOS:
 
    .. code-block:: console
 
@@ -90,7 +90,7 @@ Installation
 
       $ sudo apt install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
 
-   … auf MacOS mit
+   … auf macOS mit
 
    .. code-block:: console
 

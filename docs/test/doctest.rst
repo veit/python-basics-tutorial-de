@@ -13,7 +13,7 @@ einem Docstring angegebenen Tests erfüllt sind.
 
 #. Anschließend könnt ihr ihn testen mit:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 

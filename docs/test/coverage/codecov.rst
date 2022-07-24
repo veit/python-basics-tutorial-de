@@ -15,7 +15,7 @@ Installation
 
 Codecov kann einfach installiert werden mit
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 
@@ -33,7 +33,7 @@ Verwendung
 …  im Terminal
 ~~~~~~~~~~~~~~
 
-.. tab:: Linux/MacOS
+.. tab:: Linux/macOS
 
    .. code-block:: console
 

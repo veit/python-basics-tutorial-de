@@ -9,7 +9,7 @@ wenig Aufwand zu finden.
 
 #. Installiert Hypothesis:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -23,7 +23,7 @@ wenig Aufwand zu finden.
 
    Alternativ kann Hypothesis auch mit Erweiterungen installiert werden, z.B.:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: console
 
@@ -53,7 +53,7 @@ wenig Aufwand zu finden.
 
 #. Test durchführen:
 
-   .. tab:: Linux/MacOS
+   .. tab:: Linux/macOS
 
       .. code-block:: python
 
