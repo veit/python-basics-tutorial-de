@@ -1,5 +1,5 @@
-@property-Dekorator
-===================
+``@property``-Dekorator
+=======================
 
 In Python könnt ihr direkt auf Instanzvariablen zugreifen, ohne zusätzliche
 Getter- und Setter-Methoden, die häufig in Java und anderen objektorientierten
