@@ -44,13 +44,13 @@ zugänglich zu machen:
 .. code-block:: python
 
     >>> class Circle:
-    ...     p = 3.14159
+    ...     pi = 3.14159
     ...     def __init__(self, diameter):
     ...         self.diameter = diameter
     ...     def circumference(self):
     ...         return self.diameter * Circle.pi
 
-Wenn ihr diese Definition eingegeben habt, könnt ihr ``p`` abfragen mit:
+Wenn ihr diese Definition eingegeben habt, könnt ihr ``pi`` abfragen mit:
 
 .. code-block:: python
 
