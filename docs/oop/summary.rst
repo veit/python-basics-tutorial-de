@@ -25,7 +25,7 @@ Beispiel zusammenfassen:
     Zeilen 8 und 9
         Instanzvariablen, die in der ``move``-Methode gesetzt werden.
 
-#. Als nächstes erstellen Sie eine Unterklasse, die von der Basisklasse ``Form``
+#. Als nächstes erstellt eine Unterklasse, die von der Basisklasse ``Form``
    erbt:
 
     .. literalinclude:: form.py
