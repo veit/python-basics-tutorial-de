@@ -1,7 +1,7 @@
 Datentypen als Objekte
 ======================
 
-Inzwischen habn ihr die grundlegenden Python-:doc:`../types/index`
+Inzwischen habt ihr die grundlegenden Python-:doc:`../types/index`
 kennengelernt und wisst, wie ihr mit Hilfe von :doc:`classes` eure eigenen
 Datentypen erstellen könnt. Beachtet dabei, dass Python dynamisch typisiert ist,
 :abbr:`d.h.(das heißt)`, die Typen werden zur Laufzeit bestimmt, nicht zur
