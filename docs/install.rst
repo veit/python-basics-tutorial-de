@@ -31,8 +31,26 @@ kein Problem.
 .. tab:: Windows
 
    Python kann für die meisten Windows-Versionen nach Windows 7 mit dem
-   Python-Installationsprogramm installiert werden. Ladet die exe-Datei herunter
-   und führt die Installation aus.
+   Python-Installationsprogramm in drei Schritten installiert werden:
+
+   #. Ladet das aktuelle Installationsprogramm von `Python Releases for Windows
+      <https://www.python.org/downloads/windows/>`_ herunter, :abbr:`z.B. (zum
+      Beispiel)` `Windows installer (64-bit)
+      <https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe>`_.
+   #. Startet das Installationsprogramm. Sofern ihr die notwendigen
+      Berechtigungen habt, installiert Python mit der Optionen *Install launcher
+      for all users*. Dies sollte Python in
+      :file:`C:\\Program Files\\Python310-64` installieren. Außerdem sollte *Add
+      Python 3.10 to PATH* aktiviert sein damit dieser Pfad zur
+      Python-Installation auch in der Liste der ``PATH``-Umgebungsvariablen
+      eingetragen wird.
+   #. Schließlich könnt ihr die Installation nun überprüfen, indem ihr in der
+      Eingabeaufforderung folgendes eingebt:
+
+      .. code-block:: ps1con
+
+         C:\> python -V
+         Python 3.10.6
 
 .. note::
    Wenn auf eurem System bereits Python installiert ist, könnt ihr problemlos
