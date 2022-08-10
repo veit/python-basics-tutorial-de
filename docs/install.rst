@@ -38,7 +38,7 @@ kein Problem.
       Beispiel)` `Windows installer (64-bit)
       <https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe>`_.
    #. Startet das Installationsprogramm. Sofern ihr die notwendigen
-      Berechtigungen habt, installiert Python mit der Optionen *Install launcher
+      Berechtigungen habt, installiert Python mit der Option *Install launcher
       for all users*. Dies sollte Python in
       :file:`C:\\Program Files\\Python310-64` installieren. Außerdem sollte *Add
       Python 3.10 to PATH* aktiviert sein damit dieser Pfad zur
