@@ -224,7 +224,7 @@ Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
 Erweiterte Funktionen für komplexe Zahlen
 -----------------------------------------
 
-Die Funktionen im Modul :doc:`cmath <python3:library/math>` sind nicht auf
+Die Funktionen im Modul :doc:`math <python3:library/math>` sind nicht auf
 komplexe Zahlen anwendbar; einer der Gründe hierfür dürfte sein, dass die
 Quadratwurzel aus ``-1`` einen Fehler erzeugen soll. Daher wurden ähnliche
 Funktionen für komplexe Zahlen arbeiten im
