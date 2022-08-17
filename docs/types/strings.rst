@@ -320,7 +320,7 @@ Formatierungsmöglichkeiten bieten.
 
 In ``{pi:.3f}`` wird die Format-Spezifikation ``f`` verwendet, um die Zahl Pi
 auf drei Nachkommastellen zu begrenzen. Weitere Informationen zu den
-Format-Spezifikationeb erhaltet ihr unter `Format Specification Mini-Language
+Format-Spezifikationen erhaltet ihr unter `Format Specification Mini-Language
 <https://docs.python.org/3/library/string.html#format-specification-mini-language>`_.
 
 .. seealso::
