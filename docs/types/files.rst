@@ -89,7 +89,7 @@ in eine Datei:
 
     >>> f = open('docs/types/myfile.txt', 'w')
     >>> f.write('Hi, Pythonistas!\n')
-    18
+    17
     >>> f.close()
 
 Je nach Betriebssystem kann :func:`python3:open` auch Zugang zu weiteren
@@ -133,7 +133,7 @@ Strings mit einen String pro Zeile zurückgibt:
 
     >>> f = open('docs/types/myfile.txt', 'r')
     >>> print(len(f.readlines()))
-    2
+    1
     >>> f.close()
 
 Wenn ihr alle Zeilen einer großen Datei zählt, kann diese Methode dazu führen,
@@ -154,7 +154,7 @@ einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer
     ...     lc = lc + 1
     ... 
     >>> print(lc)
-    2
+    1
     >>> f.close()
 
 Diese Methode hat den Vorteil, dass die Zeilen je nach Bedarf in den Speicher
@@ -173,7 +173,7 @@ angebt, wodurch nur diese Zeichenfolge als Zeilenumbruch verwendet wird:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', newline='\n')
+    >>> f = open('docs/types/myfile.txt', 'r', newline='\r\n')
 
 In diesem Beispiel wird nur ``\n`` als Zeilenumbruch gewertet. Wenn die Datei
 jedoch im Binärmodus geöffnet wurde, ist der Parameter ``newline`` nicht
@@ -206,9 +206,9 @@ Textdatei ist, erzeugt das folgende Beispiel eine exakte Kopie von
     >>> input_file = open("myfile.txt", 'r')
     >>> lines = input_file.readlines()
     >>> input_file.close()
-    >>> output = open("myfile2.txt", 'w')
-    >>> output.writelines(lines)
-    >>> output.close()
+    >>> output_file = open("myfile2.txt", 'w')
+    >>> output_file.writelines(lines)
+    >>> output_file.close()
 
 Verwendung des Binärmodus
 ~~~~~~~~~~~~~~~~~~~~~~~~~
