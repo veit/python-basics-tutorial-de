@@ -23,11 +23,10 @@ des Alters aus dem Geburtsjahr:
 .. code-block:: python
 
     >>> import datetime
-    >>>
     >>> currentDateTime = datetime.datetime.now()
-    >>> date = currentDateTime.date()
+    >>> year = currentDateTime.year
     >>> year_birth = input("Geburtsjahr? ")
     Geburtsjahr? 1964
-    >>> age = date.year - int(year_birth)
+    >>> age = year - int(year_birth)
     >>> print('Alter:', age, 'Jahre')
     Alter: 58 Jahre
