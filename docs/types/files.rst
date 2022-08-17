@@ -7,11 +7,11 @@ Dateien
 In Python öffnet und lest ihr eine Datei, indem ihr die eingebaute Funktion
 :func:`python3:open` und verschiedene eingebaute Leseoperationen verwendet. Das
 folgende kurze Python-Programm liest eine Zeile aus einer Textdatei namens
-:samp:`{myfile}` ein:
+:samp:`{myfile.txt}` ein:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> line = f.readline()
 
 :func:`python3:open` liest nichts aus der Datei, sondern gibt ein :abbr:`sog.
@@ -29,12 +29,12 @@ existiert, :abbr:`usw (und so weiter)`.
 Das erste Argument der Funktion ``open`` ist ein Pfadname. Im vorigen Beispiel
 öffnet ihr eine Datei, von der ihr annehmt, dass sie sich im aktuellen
 Arbeitsverzeichnis befindet. Das folgende Beispiel öffnet eine Datei an einem
-absoluten Speicherort – :samp:`{C:\Meine Dokumente\\myfile}`:
+absoluten Speicherort – :samp:`{C:\Meine Dokumente\\myfile.txt}`:
 
 .. code-block:: python
 
     >>> import os
-    >>> pathname = os.path.join('C:', 'Users', 'Veit', 'Documents', 'myfile')
+    >>> pathname = os.path.join('C:', 'Users', 'Veit', 'Documents', 'myfile.txt')
     >>> with open(pathname, 'r') as f:
     ...     line = f.readline()
 
@@ -62,7 +62,7 @@ nicht mehr benötigt wird:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> line = f.readline()
     >>> f.close()
 
@@ -71,7 +71,7 @@ Möglichkeit, um Dateien automatisch zu schließen, wenn ihr fertig seid:
 
 .. code-block:: python
 
-    >>> with open('docs/types/myfile', 'r') as f:
+    >>> with open('docs/types/myfile.txt', 'r') as f:
     ...     line = f.readline()
 
 Öffnen von Dateien im Schreib- oder anderen Modi
@@ -87,7 +87,7 @@ in eine Datei:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'w')
+    >>> f = open('docs/types/myfile.txt', 'w')
     >>> f.write('Hi, Pythonistas!\n')
     18
     >>> f.close()
@@ -116,7 +116,7 @@ in einer Datei zu ermitteln:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> lc = 0
     >>> while f.readline() != '':
     ...     lc = lc + 1
@@ -131,7 +131,7 @@ Strings mit einen String pro Zeile zurückgibt:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> print(len(f.readlines()))
     2
     >>> f.close()
@@ -148,7 +148,7 @@ einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', 'r')
+    >>> f = open('docs/types/myfile.txt', 'r')
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
@@ -173,7 +173,7 @@ angebt, wodurch nur diese Zeichenfolge als Zeilenumbruch verwendet wird:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile', newline='\n')
+    >>> f = open('docs/types/myfile.txt', newline='\n')
 
 In diesem Beispiel wird nur ``\n`` als Zeilenumbruch gewertet. Wenn die Datei
 jedoch im Binärmodus geöffnet wurde, ist der Parameter ``newline`` nicht
@@ -199,7 +199,16 @@ andernfalls werden sie aneinandergereiht. ``writelines`` ist damit die genaue
 Umkehrung von ``readlines``, da sie auf die von ``readlines`` zurückgegebene
 Liste angewendet werden kann, um eine Datei zu schreiben, die identisch mit der Ausgangsdatei ist. Unter der Annahme, dass myfile.txt existiert und eine
 Textdatei ist, erzeugt das folgende Beispiel eine exakte Kopie von
-:file:`myfile` mit dem Namen :file:`myfile2`:
+:file:`myfile.txt` mit dem Namen :file:`myfile2.txt`:
+
+.. code-block:: python
+
+    >>> input_file = open("myfile.txt", 'r')
+    >>> lines = input_file.readlines()
+    >>> input_file.close()
+    >>> output = open("myfile2.txt", 'w')
+    >>> output.writelines(lines)
+    >>> output.close()
 
 Verwendung des Binärmodus
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +223,7 @@ Anzahl von Bytes und gibt ein Bytes-Objekt der angegebenen Größe zurück:
 .. code-block:: python
     :linenos:
 
-    >>> f = open('myfile', 'rb')
+    >>> f = open('myfile.txt', 'rb')
     >>> head = f.read(16)
     >>> print(head)
     b'Hi, Pythonistas!'
