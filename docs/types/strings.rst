@@ -41,9 +41,41 @@ Zeichenketten sind außerdem unveränderlich. Die Operatoren und Funktionen, die
 mit ihnen arbeiten, geben neue, vom Original abgeleitete Zeichenketten zurück.
 Die Operatoren (``in``, ``+`` und ``*``) und eingebauten Funktionen (``len``,
 ``max`` und ``min``) arbeiten mit Zeichenketten genauso wie mit Listen und
-Tupeln. Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um
-Elemente oder Slices zu erhalten, kann aber nicht verwendet werden, um Elemente
-hinzuzufügen, zu entfernen oder zu ersetzen.
+Tupeln.
+
+.. code-block:: python
+
+    >>> welcome = "Hello pythonistas!\n"
+    >>> 2 * welcome
+    'Hello pythonistas!\nHello pythonistas!\n'
+    >>> welcome + welcome
+    'Hello pythonistas!\nHello pythonistas!\n'
+    >>> 'python' in welcome
+    True
+    >>> max(welcome)
+    'y'
+    >>> min(welcome)
+    '\n'
+
+Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um Elemente
+oder Slices zu erhalten:
+
+.. code-block:: python
+
+    >>> welcome[0:5]
+    'Hello'
+    >>> welcome[6:-1]
+    'pythonistas!'
+
+Die Index- und Slice-Notation kann jedoch nicht verwendet werden, um Elemente
+hinzuzufügen, zu entfernen oder zu ersetzen:
+
+.. code-block:: python
+
+    >>> welcome[6:-1] = 'everybody!'
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'str' object does not support item assignment
 
 ``string``
 ----------
