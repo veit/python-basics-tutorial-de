@@ -17,4 +17,17 @@ für ``input``:
 Dies ist ein recht einfacher Weg, um Dateneingaben zu erhalten. Der einzige
 Haken ist, dass die Eingabe als Zeichenkette eingeht. Wenn ihr also eine Zahl
 verwenden wollt, müsst ihr sie mit der Funktion :class:`python3:int` oder
-:class:`python3:float` umwandeln.
+:class:`python3:float` umwandeln, :abbr:`z.B. (zum Beispiel)` für die Berechnung
+des Alters aus dem Geburtsjahr:
+
+.. code-block:: python
+
+    >>> import datetime
+    >>>
+    >>> currentDateTime = datetime.datetime.now()
+    >>> date = currentDateTime.date()
+    >>> year_birth = input("Geburtsjahr? ")
+    Geburtsjahr? 1964
+    >>> age = date.year - int(year_birth)
+    >>> print('Alter:', age, 'Jahre')
+    Alter: 58 Jahre
