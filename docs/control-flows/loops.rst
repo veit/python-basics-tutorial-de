@@ -61,8 +61,9 @@ iterierbaren Typ, wie eine Liste oder ein Tupel, iterieren kann. Anders als in
 vielen anderen Sprachen iteriert die ``for``-Schleife in Python über jedes
 Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 <../types/lists>` oder ein :doc:`../types/tuples`), was sie eher zu einer
-``foreach``-Schleife macht. Die folgende Schleife findet das erste Vorkommen
-einer ganzen Zahl, die durch ``5`` teilbar ist:
+``foreach``-Schleife macht. Die folgende Schleife verwendet den `Modulo
+<https://de.wikipedia.org/wiki/Division_mit_Rest#Modulo>`_-Operator ``%`` als
+Bedingung für as erste Vorkommen einer ganzen Zahl, die durch ``5`` teilbar ist:
 
 .. code-block:: python
     :linenos:
