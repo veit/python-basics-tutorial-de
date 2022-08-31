@@ -57,3 +57,12 @@ Die Vorteile von Tupeln gegenüber :doc:`lists` sind:
 
 * Tupel können als Schlüssel in :doc:`dicts` und Werte in :doc:`sets` verwendet
   werden.
+
+Zusammenfassung
+---------------
+
++---------------+---------------+---------------+---------------+---------------+
+| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
++===============+===============+===============+===============+===============+
+| Liste         | ❌            | ✅            | ✅            | ✅            |
++---------------+---------------+---------------+---------------+---------------+

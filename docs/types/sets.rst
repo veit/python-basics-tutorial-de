@@ -25,3 +25,12 @@ Zeile 3
 Zeilen 4 und 6
     Das Schlüsselwort wird verwendet, um die Zugehörigkeit eines Objekts zu
     einer Menge zu prüfen.
+
+Zusammenfassung
+---------------
+
++---------------+---------------+---------------+---------------+---------------+
+| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
++===============+===============+===============+===============+===============+
+| Liste         | ✅            | ❌            | ❌            | ❌            |
++---------------+---------------+---------------+---------------+---------------+

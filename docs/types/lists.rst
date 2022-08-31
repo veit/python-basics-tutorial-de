@@ -99,3 +99,12 @@ Zeile 6
 
 Einige dieser Operationen wiederholen Funktionen, die mit der Slice-Notation
 ausgeführt werden können, aber sie verbessern die Lesbarkeit des Codes.
+
+Zusammenfassung
+---------------
+
++---------------+---------------+---------------+---------------+---------------+
+| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
++===============+===============+===============+===============+===============+
+| Liste         | ✅            | ✅            | ✅            | ✅            |
++---------------+---------------+---------------+---------------+---------------+
