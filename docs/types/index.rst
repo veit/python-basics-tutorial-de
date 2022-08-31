@@ -29,8 +29,8 @@ Werten bis hin zu komplexeren Strukturen wie Listen, Dictionaries und Dateien.
    numbers
    lists
    tuples
-   strings
-   dicts
    sets
+   dicts
+   strings
    files
    none
