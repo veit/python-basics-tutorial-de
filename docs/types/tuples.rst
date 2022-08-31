@@ -45,3 +45,15 @@ umgewandelt werden:
     >>> x = (1, 2, 3, 4)
     >>> list(x)
     [1, 2, 3, 4]
+
+Die Vorteile von Tupeln gegenüber :doc:`lists` sind:
+
+* Tupel sind schneller als Listen.
+
+  Wenn ihr eine konstante Menge von Werten definieren und diese nur durchlaufen
+  wollt, solltet ihr ein Tupel anstelle einer Liste verwenden.
+
+* Tupel können nicht verändert werden und sind daher *schreibgeschützt*.
+
+* Tupel können als Schlüssel in :doc:`dicts` und Werte in :doc:`sets` verwendet
+  werden.
