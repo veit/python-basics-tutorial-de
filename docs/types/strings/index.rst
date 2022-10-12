@@ -251,8 +251,8 @@ des Musters:
     >>> match.groups()
     ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` gibt ein :doc:`tuples` zurück, das alle Untergruppen
-der Übereinstimmung enthält. 
+:py:meth:`re.Match.groups` gibt ein :doc:`../tuples` zurück, das alle
+Untergruppen der Übereinstimmung enthält.
 
 :py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
 Gruppen enthält:
@@ -304,7 +304,7 @@ Ausdrücke:
 +-----------------------+-------------------------------------------------------------------------------+
 
 .. seealso::
-   * :doc:`../appendix/regex`
+   * :doc:`../../appendix/regex`
    * :doc:`python3:howto/regex`
    * :doc:`python3:library/re`
 

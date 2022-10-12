@@ -23,7 +23,7 @@ Wie bei :doc:`lists` sind mehrere Dictionary-Methoden (``clear``, ``copy``,
     'nicht vorhanden'
 
 Schlüssel müssen vom unveränderlichen Typ sein, einschließlich :doc:`numbers`,
-:doc:`strings` und Tupel. Werte können alle Arten von Objekten sein,
+:doc:`strings/index` und Tupel. Werte können alle Arten von Objekten sein,
 einschließlich veränderlicher Typen wie :doc:`lists` und :doc:`dicts`. Wenn ihr
 versucht, auf den Wert eines Schlüssels zuzugreifen, der nicht im Dictionary
 enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um diesen Fehler zu
