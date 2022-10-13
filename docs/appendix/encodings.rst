@@ -175,7 +175,7 @@ Im Folgenden findet ihr einen detaillierteren Blick auf jede dieser neun
 Funktionen:
 
 +-----------------------+---------------+---------------------------------------+
-| Funktion              | Rückgabetyp   | Zweck                                 |
+| Funktion              | Rückgabetyp   | Beschreibung                          |
 +=======================+===============+=======================================+
 | :func:`python3:ascii` | ``str``       | ASCII-Darstellung eines Objekts, wobei|
 |                       |               | nicht-ASCII-Zeichen escaped werden    |
@@ -189,11 +189,11 @@ Funktionen:
 | :func:`python3:oct`   | ``str``       | Oktaldarstellung einer ganzen Zahl    |
 |                       |               | mit dem Präfix ``0o``                 |
 +-----------------------+---------------+---------------------------------------+
-| :ref:`bytes()         | ``bytes``     | konvertiert die Eingabe in Bytes      |
-| <python3:func-bytes>` |               |                                       |
+| :class:`python3:bytes`| ``bytes``     | konvertiert die Eingabe in            |
+|                       |               | :ref:`bytes-Typ <python3:typebytes>`  |
 +-----------------------+---------------+---------------------------------------+
-| :ref:`str()           | ``str``       | konvertiert die Eingabe in ``str``    |
-| <python3:func-str>`   |               |                                       |
+| :class:`python3:str`  | ``str``       | konvertiert die Eingabe in            |
+|                       |               | :ref:`str-Typ <python3:textseq>`      |
 +-----------------------+---------------+---------------------------------------+
 | :class:`python3:int`  | ``int``       | konvertiert die Eingabe in ``int``    |
 +-----------------------+---------------+---------------------------------------+
