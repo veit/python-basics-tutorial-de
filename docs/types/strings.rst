@@ -251,8 +251,8 @@ des Musters:
     >>> match.groups()
     ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` gibt ein :doc:`../tuples` zurück, das alle
-Untergruppen der Übereinstimmung enthält.
+:py:meth:`re.Match.groups` gibt ein :doc:`tuples` zurück, das alle Untergruppen
+der Übereinstimmung enthält.
 
 :py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
 Gruppen enthält:
@@ -363,9 +363,3 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`textwrap`    | umbricht und füllt Text, formatiert Text mit Zeilenumbrüchen oder Leerzeichen |
 +-----------------------+-------------------------------------------------------------------------------+
-
-.. toctree::
-   :titlesonly:
-   :hidden:
-
-   encodings

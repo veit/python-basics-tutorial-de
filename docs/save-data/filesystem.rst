@@ -125,8 +125,8 @@ Relative Pfadnamen
          Home-Verzeichnis auf einem meiner Linux-Rechner. Auf Windows-Rechnern
          würden zusätzliche Backslashes in den Pfad eingefügt:
          ``C:\\Users\\Veit``, da Windows den Backslash ``\`` als Pfadseparator
-         verwendet, der in :doc:`/types/strings/index` jedoch eine andere
-         Bedeutung hat.
+         verwendet, der in :doc:`/types/strings` jedoch eine andere Bedeutung
+         hat.
 
       Um euch die Inhalte des aktuellen Verzeichnisses anzeigen zu lassen,
       könnt ihr folgendes eingeben:

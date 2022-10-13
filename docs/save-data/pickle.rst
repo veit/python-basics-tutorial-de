@@ -43,12 +43,12 @@ einer Datei namens ``data.pickle`` speichern:
 
    Das Pickle-Modul kann fast alles auf diese Weise speichern. Es kann mit
    :doc:`/types/numbers`, :doc:`/types/lists`, :doc:`/types/tuples`,
-   :doc:`/types/dicts`, :doc:`/types/strings/index` und so ziemlich allem
-   umgehen, was aus diesen Objekttypen besteht, also auch mit allen
-   Klasseninstanzen. Es geht auch mit gemeinsam genutzten Objekten, zyklischen
-   Referenzen und anderen komplexen Speicherstrukturen korrekt um, indem es
-   gemeinsam genutzte Objekte nur einmal speichert und sie als gemeinsam
-   genutzte Objekte wiederherstellt, nicht als identische Kopien.
+   :doc:`/types/dicts`, :doc:`/types/strings` und so ziemlich allem umgehen, was
+   aus diesen Objekttypen besteht, also auch mit allen Klasseninstanzen. Es geht
+   auch mit gemeinsam genutzten Objekten, zyklischen Referenzen und anderen
+   komplexen Speicherstrukturen korrekt um, indem es gemeinsam genutzte Objekte
+   nur einmal speichert und sie als gemeinsam genutzte Objekte wiederherstellt,
+   nicht als identische Kopien.
 
 #. Laden der gepickelten Daten:
 

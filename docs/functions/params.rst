@@ -177,13 +177,12 @@ Veränderliche Objekte als Argumente
 
 Argumente werden per Objektreferenz übergeben. Der Parameter wird zu einem neuen
 Verweis auf das Objekt. Bei unveränderlichen Objekten wie :doc:`/types/tuples`,
-:doc:`/types/strings/index` und :doc:`/types/numbers` hat das, was mit einem
-Parameter gemacht wird, keine Auswirkungen außerhalb der Funktion. Wenn ihr
-jedoch ein veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine
-:doc:`Liste </types/lists>`, ein :doc:`Dict </types/dicts>` oder eine
-Klasseninstanz, ändert jede Änderung des Objekts, worauf das Argument außerhalb
-der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen
-auf das Argument.
+:doc:`/types/strings` und :doc:`/types/numbers` hat das, was mit einem Parameter
+gemacht wird, keine Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein
+veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+</types/lists>`, ein :doc:`Dict </types/dicts>` oder eine Klasseninstanz, ändert
+jede Änderung des Objekts, worauf das Argument außerhalb der Funktion verweist.
+Die Neuzuweisung des Parameters hat keine Auswirkungen auf das Argument.
 
 .. code-block:: python
 

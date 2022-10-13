@@ -25,9 +25,8 @@ Zeile 2
     Ein Tupel mit einem Element benötigt ein Komma.
 Zeile 4
     Ein Tupel kann, wie eine :doc:`Liste <lists>`, eine Mischung anderer Typen
-    als Elemente enthalten, darunter beliebige :doc:`numbers`,
-    :doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
-    :doc:`files` und Funktionen.
+    als Elemente enthalten, darunter beliebige :doc:`numbers`, :doc:`strings`,
+    :doc:`tuples`, :doc:`lists`, :doc:`dicts`, :doc:`files` und Funktionen.
 
 Eine Liste kann mit Hilfe der eingebauten Funktion ``tuple`` in ein Tupel
 umgewandelt werden:

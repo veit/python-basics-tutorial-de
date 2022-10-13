@@ -5,4 +5,5 @@ Anhang
    :titlesonly:
 
    regex
+   encodings
    glossary
