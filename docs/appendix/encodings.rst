@@ -161,12 +161,12 @@ Built-In Python-Funktionen
 Python verfügt über eine Reihe von eingebauten Funktionen, die sich in
 irgendeiner Weise auf Zeichenkodierungen beziehen:
 
-``ascii()``, ``bin()``, ``hex()``, ``oct()``
+:func:`python3:ascii`, :func:`python3:bin`, :func:`python3:hex`, :func:`python3:oct`
     geben einen String aus.
-``bytes()``, ``str()``, ``int()``
+:class:`python3:bytes`, :class:`python3:str`, :class:`python3:int`
     sind Klassenkonstruktoren für ihre jeweiligen Typen, die die Eingabe in den
     gewünschten Typ konvertiert.
-``ord()``, ``chr()``
+:func:`python3:ord`, :func:`python3:chr`
     sind insofern invers zueinander, als die Python-Funktion ``ord()`` ein
     ``str``-Zeichen in seinen ``base=10``-Codepunkt umwandelt, während ``chr()``
     das Gegenteil tut.
@@ -195,7 +195,8 @@ Funktionen:
 | :class:`python3:str`  | ``str``       | konvertiert die Eingabe in            |
 |                       |               | :ref:`str-Typ <python3:textseq>`      |
 +-----------------------+---------------+---------------------------------------+
-| :class:`python3:int`  | ``int``       | konvertiert die Eingabe in ``int``    |
+| :class:`python3:int`  | ``int``       | konvertiert die Eingabe in            |
+|                       |               | :class:`int-Typ <python3:int>`        |
 +-----------------------+---------------+---------------------------------------+
 | :func:`python3:ord`   | ``int``       | konvertiert ein einzelnes             |
 |                       |               | Unicode-Zeichen in seinen             |
