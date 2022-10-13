@@ -95,6 +95,14 @@ zwei Bytes, ``c3`` und ``b6`` als Hexadezimalwerte.
     In ``.encode()`` und ``.decode()`` ist der Kodierungsparameter standardmäßig
     ``"utf-8"``; dennoch empfiehlt sich, ihn explizit anzugeben.
 
+Mit :meth:`python3:bytes.fromhex` könnt ihr die Hexadezimalwerte in Bytes
+umwandeln:
+
+.. code-block:: python
+
+    >>> bytes.fromhex('c3 b6')
+    b'\xc3\xb6'
+
 UTF-16 und UTF-32
 ~~~~~~~~~~~~~~~~~
 
