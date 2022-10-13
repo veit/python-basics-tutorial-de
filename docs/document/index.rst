@@ -124,7 +124,7 @@ und Veröffentlichen von Dokumentationen nach jedem Commit.
 
 Für die Projektdokumentation kann die Visualisierung von :doc:`Git Feature
 Branches <jupyter-tutorial:productive/git/workflows/feature-branches>` und
-:doc:`Tags <jupyter-tutorial:productive/git/tagging>` mit
+:doc:`Tags <jupyter-tutorial:productive/git/tag>` mit
 :doc:`jupyter-tutorial:productive/git/git-big-picture` hilfreich sein.
 
 .. note::
