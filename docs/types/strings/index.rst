@@ -363,3 +363,9 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`textwrap`    | umbricht und füllt Text, formatiert Text mit Zeilenumbrüchen oder Leerzeichen |
 +-----------------------+-------------------------------------------------------------------------------+
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   encodings
