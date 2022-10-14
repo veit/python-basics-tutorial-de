@@ -91,7 +91,7 @@ dargestellt werden, wie es ist, das `ö <https://unicode-table.com/en/00F6/>`_
 wird jedoch zu ``"\xc3\xb6"``. Diese chaotisch aussehende Sequenz repräsentiert
 zwei Bytes, ``c3`` und ``b6`` als Hexadezimalwerte.
 
-.. tipp::
+.. tip::
     In ``.encode()`` und ``.decode()`` ist der Kodierungsparameter standardmäßig
     ``"utf-8"``; dennoch empfiehlt sich, ihn explizit anzugeben.
 
