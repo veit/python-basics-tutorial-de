@@ -64,6 +64,10 @@ Geschwindigkeit
     sind, dennoch werden Python-Programme in den meisten Fällen langsamer sein
     als C-Programme. Dies spielt jedoch selten eine entscheidende Rolle, da es
     bereits viele Python-Module gibt, die intern C verwenden.
+
+    .. seealso::
+        * :doc:`jupyter-tutorial:performance/index`
+
 Bibliotheksvielfalt
     Python verfügt zwar bereits über sehr viele Bibliotheken, in einigen Fällen
     werdet ihr jedoch passende Bibliotheken nur in anderen Sprachen finden. Für
