@@ -88,4 +88,4 @@ Unterstützung für nebenläufige Berechnungen
     Kerne ausgelegt. 
 
     .. seealso::
-        * :doc:`jupyter-tutorial:performance/concurrency`
+        * :doc:`jupyter-tutorial:performance/multiprocessing-threading-async`
