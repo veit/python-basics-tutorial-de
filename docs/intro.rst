@@ -11,7 +11,14 @@ Schreiben eigener Programme zu ermöglichen.
 -----------
 
 Vielleicht stellt ihr euch die Frage, warum ihr Python lernen solltet. Es gibt
-viele Programmiersprachen von C und C++ über Java bis hin zu Lua und Go. Python
+viele Programmiersprachen von C und C++ über Java bis hin zu Lua und Go.
+
+.. figure:: tiobe-index.svg
+   :alt: TIOBE Index für Oktober 2022
+
+   `TIOBE Index für Oktober 2022 <https://www.tiobe.com/tiobe-index/>`_
+
+Python
 hat eine sehr große Verbreitung gefunden und einer der Gründe dürfte sein, dass
 sie auf vielen verschiedenen Plattformen läuft, von IoT-Geräten über die
 gängigen Betriebssysteme bis hin zu Supercomputern. Es kann gut zur Entwicklung
