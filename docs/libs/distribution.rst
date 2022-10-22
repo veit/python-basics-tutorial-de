@@ -169,9 +169,13 @@ Ausführliche Informationen hierzu findet ihr im Abschnitt
 ~~~~~~~~~~~~~~
 
 Diese Datei teilt denjenigen, die sich für das Paket interessieren, in kurzer
-Form mit, wie sie es nutzen können. Wenn ihr das Dokument in
-:doc:`/document/rest` schreibt, könnt ihr die Inhalte auch als ausführliche
-Beschreibung in euer Paket übernehmen:
+Form mit, wie sie es nutzen können.
+
+.. seealso::
+    * `README 101 <https://www.makeareadme.com>`_
+
+Wenn ihr das Dokument in :doc:`/document/rest` schreibt, könnt ihr die Inhalte
+auch als ausführliche Beschreibung in euer Paket übernehmen:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
