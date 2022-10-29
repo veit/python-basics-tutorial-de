@@ -2,7 +2,7 @@ CookieCutter-Features
 =====================
 
 * Cross-platform: Windows, Mac und Linux werden unterstützt
-* Funktioniert mit Python 3.6, 3.7, 3.8 und PyPy3
+* Funktioniert mit Python 3.7, 3.8, 3.9 und 3.10
 * Die Projektvorlagen können für jede Programmiersprache und jedes
   Markup-Format erstellt werden: Python, JavaScript, Ruby, ReST, CSS, HTML.
   Es können auch mehrere Sprachen im selben Template verwendet werden.
