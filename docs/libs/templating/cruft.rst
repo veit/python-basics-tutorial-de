@@ -13,7 +13,7 @@ Die wesentlichen Features von cruft sind:
   Version einer Vorlage verwendet. Diese Prüfung kann auch leicht in
   CI-Pipelines integriert werden, um sicherzustellen, dass eure Projekte
   synchron sind.
-* Umgekehrt automatisiert cruft auch die Aktualisierung der
+* cruft automatisiert auch die Aktualisierung der Projekte aus den
   cookiecutter-Vorlagen.
 
 Installation
