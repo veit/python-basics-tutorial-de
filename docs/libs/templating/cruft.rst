@@ -45,7 +45,7 @@ Git-Hash der verwendeten Vorlage sowie die angegebenen Parameter enthält.
     Beispiel)` Testfälle oder :file:`__init__`-Dateien. Ihr könnt cruft
     anweisen, die Aktualisierung dieser Dateien in einem Projekt immer zu
     überspringen, indem ihr das Projekt mit den Argumenten
-    :samp:`--skip cruft/__init__.py --skip tests` erzeugt oder sie manuell zu
+    :samp:`--skip vsc__init__.py --skip tests` erzeugt oder sie manuell zu
     einem Skip-Abschnitt in eurer :file:`.cruft.json`-Datei hinzufügt:
 
     .. code-block:: javascript
