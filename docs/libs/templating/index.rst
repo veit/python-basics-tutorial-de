@@ -13,3 +13,4 @@ vereinfachen.
    templates
    install
    advanced
+   cruft
