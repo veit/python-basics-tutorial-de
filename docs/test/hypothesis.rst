@@ -55,7 +55,7 @@ wenig Aufwand zu finden.
 
    .. tab:: Linux/macOS
 
-      .. code-block:: python
+      .. code-block:: console
 
            $ bin/python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
@@ -95,7 +95,7 @@ wenig Aufwand zu finden.
 
    .. tab:: Windows
 
-      .. code-block:: python
+      .. code-block:: console
 
            C:> Scripts\python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
