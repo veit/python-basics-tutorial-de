@@ -8,7 +8,7 @@ for file in filenames:
         if line == "":
             f.close()
             raise EmptyFileError(f"{file} is empty")
-    except IOError as error:
+    except OSError as error:
         print(f"Cannot open file {file}: {error.strerror}")
     except EmptyFileError as error:
         print(error)
