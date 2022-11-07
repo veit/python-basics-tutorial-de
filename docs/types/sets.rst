@@ -9,7 +9,7 @@ von :doc:`Dictionary <dicts>`-Schlüsseln ohne zugehörige Werte:
 .. code-block:: python
    :linenos:
 
-    >>> x = set([1, 2, 3, 2, 4])
+    >>> x = set([4, 2, 3, 2, 1])
     >>> x
     {1, 2, 3, 4}
     >>> 1 in x
