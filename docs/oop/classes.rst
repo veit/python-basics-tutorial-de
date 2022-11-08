@@ -28,7 +28,10 @@ Funktion aufruft:
 
 .. code-block:: python
 
-    >>> instance = MyClass()
+    >>> class Square:
+    ...     line_width = 1
+    ...
+    >>> my_square = Square()
 
 Klasseninstanzen können als Strukturen oder Datensätze verwendet werden. Im
 Gegensatz zu C-Strukturen oder Java-Klassen müssen die Datenfelder einer Instanz
@@ -39,13 +42,13 @@ Umfangs:
 
 .. code-block:: python
 
-    >>> my_square = Square()
     >>> my_square.length = 3
     >>> print(4 * my_square.length)
     12
 
-Wie in Java und vielen anderen Sprachen werden die Felder einer Instanz mit
-Hilfe der Punktnotation angesprochen.
+Zeile 2
+    Wie in Java und vielen anderen Sprachen werden die Felder einer Instanz mit
+    Hilfe der Punktnotation angesprochen.
 
 Ihr könnt Felder einer Instanz automatisch initialisieren, indem ihr eine
 ``__init__``-Initialisierungsmethode in die Klasse aufnehmt. Diese Funktion wird
@@ -60,6 +63,7 @@ werden standardmäßig Quadrate mit einer Kantenlänge von ``1`` erzeugt:
     >>> class Square:
     ...     def __init__(self):
     ...         self.length = 1
+    ...         self.line_width = 1
     ...
     >>> my_square = Square()
     >>> print(4 * my_square.length)
@@ -69,15 +73,14 @@ Zeile 2
     Der Konvention nach ist ``self`` immer der Name des ersten Arguments von
     ``__init__``. ``self`` wird auf die neu erstellte ``Square``-Instanz
     gesetzt, wenn ``__init__`` ausgeführt wird.
-Zeile 5
-    Als nächstes verwendet der Code die Klassendefinition. Ihr erstellt zunächst
-    ein ``Square``-Instanzobjekt.
 Zeile 6
+    Als nächstes erstellt ihr ein ``Square``-Instanzobjekt.
+Zeile 7
     Diese Zeile nutzt die Tatsache, dass das ``length``-Feld bereits
     initialisiert ist.
 
-    Ihr könnt das ``length``-Feld auch überschreiben, so dass die letzte Zeile
-    ein anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
+Ihr könnt das ``length``-Feld auch überschreiben, so dass die letzte Zeile ein
+anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
 
     .. code-block:: python
 
