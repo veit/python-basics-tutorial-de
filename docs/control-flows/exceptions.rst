@@ -34,6 +34,7 @@ nicht von ``BaseException`` bilden:
 
 .. literalinclude:: exceptions.py
    :language: python
+   :linenos:
    :lines: 1-2
 
 Dies definiert ihr euren eigenen Ausnahmetyp, der vom Basistyp ``Exception``
@@ -41,7 +42,9 @@ erbt.
 
 .. literalinclude:: exceptions.py
    :language: python
-   :lines: 3
+   :linenos:
+   :lines: 4
+   :lineno-start: 4
 
 Eine Liste unterschiedlicher Datei-Arten wird definiert.
 
@@ -52,17 +55,18 @@ Jede Ausnahme, die nicht abgefangen wird, führt zur Beendigung des Programms.
 .. literalinclude:: exceptions.py
    :language: python
    :linenos:
-   :lines: 4-
+   :lines: 6-
+   :lineno-start: 6
 
-Zeile 2
+Zeile 7
     Wenn während der Ausführung der Anweisungen im ``try``-Block ein
     ``OSError`` oder ``EmptyFileError`` auftritt, wird der zugehörige
     ``except``-Block ausgeführt.
-Zeile 3
+Zeile 8
     Hier könnte ein ``OSError`` ausgelöst werden.
-Zeile 7
+Zeile 11
     Hier löst ihr den ``EmptyFileError`` aus.
-Zeile 12
+Zeile 16
     Die ``else``-Klausel ist optional; sie wird ausgeführt, wenn im
     ``try``-Block keine Ausnahme auftritt.
 
@@ -70,6 +74,6 @@ Zeile 12
        In diesem Beispiel hätte stattdessen auch ``continue``-Anweisungen in
        den ``except``-Blöcken verwendet werden können.
       
-Zeile 14
+Zeile 18
     Die ``finally``-Klausel ist optional; sie wird am Ende des Blocks
     ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht.
