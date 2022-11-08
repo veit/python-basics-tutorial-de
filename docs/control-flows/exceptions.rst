@@ -56,10 +56,10 @@ Jede Ausnahme, die nicht abgefangen wird, führt zur Beendigung des Programms.
 
 Zeile 2
     Wenn während der Ausführung der Anweisungen im ``try``-Block ein
-    ``IOError`` oder ``EmptyFileError`` auftritt, wird der zugehörige
+    ``OSError`` oder ``EmptyFileError`` auftritt, wird der zugehörige
     ``except``-Block ausgeführt.
 Zeile 3
-    Hier könnte ein ``IOError`` ausgelöst werden.
+    Hier könnte ein ``OSError`` ausgelöst werden.
 Zeile 7
     Hier löst ihr den ``EmptyFileError`` aus.
 Zeile 12
