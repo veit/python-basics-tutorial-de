@@ -53,8 +53,8 @@ Die ``print_y``-Methode ist nicht privat, und da sie sich in der
 
     Der Mechanismus, der zur Gewährleistung der Privatsphäre verwendet wird,
     verfälscht den Namen privater Variablen und privater Methoden, wenn der Code
-    zu Bytecode kompiliert wird. Konkret bedeutet dies, dass ``_classname`` dem
-    Variablennamen vorangestellt wird:
+    zu Bytecode kompiliert wird. Konkret bedeutet dies, dass
+    :samp:`_{ClassName}` dem Variablennamen vorangestellt wird:
 
     .. code-block:: python
 

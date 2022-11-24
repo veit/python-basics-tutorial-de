@@ -120,13 +120,18 @@ Die Verwendung von :class:`python3:type`, :func:`python3:isinstance` und
 :func:`python3:issubclass` macht es ziemlich einfach, die Vererbungshierarchie
 eines Objekts oder einer Klasse korrekt zu bestimmen. Python hat jedoch auch
 eine Funktion, die die Verwendung von Objekten noch einfacher macht:
-Duck-Typing – *„If it walks like a duck and it quacks like a duck, then it must be a duck“*. Dies bezieht sich auf Pythons Art und Weise zu bestimmen, ob ein
-Objekt der erforderliche Typ für eine Operation ist, wobei der Schwerpunkt auf
-der Schnittstelle eines Objekts liegt. Kurz gesagt müsst ihr euch in Python
-nicht um die Typüberprüfung von Funktions- oder Methodenargumenten und Ähnlichem
-kümmern, sondern euch stattdessen auf lesbaren und dokumentierten Code in
-Verbindung mit Tests verlassen, um sicherzustellen, dass ein Objekt bei Bedarf
-„wie eine Ente quakt.“
+Duck-Typing:
+
+    *„If it walks like a duck and it quacks like a duck, then it must be a
+    duck.“*
+
+Dies bezieht sich auf Pythons Art und Weise zu bestimmen, ob ein Objekt der
+erforderliche Typ für eine Operation ist, wobei der Schwerpunkt auf der
+Schnittstelle eines Objekts liegt. Kurz gesagt müsst ihr euch in Python nicht um
+die Typüberprüfung von Funktions- oder Methodenargumenten und Ähnlichem kümmern,
+sondern euch stattdessen auf lesbaren und dokumentierten Code in Verbindung mit
+Tests verlassen, um sicherzustellen, dass ein Objekt bei Bedarf *„wie eine Ente
+quakt.“*
 
 Duck-Typing kann die Flexibilität von gut geschriebenem Code erhöhen und gibt
 euch in Kombination mit fortgeschrittenen objektorientierten Funktionen die

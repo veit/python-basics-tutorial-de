@@ -75,8 +75,8 @@ das `cookiecutter-namespace-template
    https://pyup.io/repos/github/veit/cookiecutter-namespace-template/shield.svg
    :target: https://pyup.io/repos/github/veit/cookiecutter-namespace-template/
 .. |Versions| image::
-   https://img.shields.io/pypi/pyversions/cookiecutter-namespace-template.svg
-   :target: https://pypi.org/project/cookiecutter-namespace-template/
+   https://img.shields.io/pypi/pyversions/cookiecutter-namespace-template/0.2.9
+   :target: https://pypi.org/project/cookiecutter-namespace-template/0.2.9/
 .. |Contributors| image::
    https://img.shields.io/github/contributors/veit/cookiecutter-namespace-template.svg
    :target: https://github.com/veit/cookiecutter-namespace-template/graphs/contributors
