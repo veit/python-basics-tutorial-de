@@ -40,6 +40,12 @@ leichte Nutzbarkeit
     zugewiesen werden und eine Liste kann Objekte verschiedener Typen enthalten.
     Zudem sind die Syntaxregeln sehr einfach und ihr könnt schnell lernen,
     nützlichen Code zu schreiben.
+
+    .. figure:: python.png
+       :alt: Python – and programming is fun again!
+
+       `XKCD: Python <https://xkcd.com/353>`_
+
 Ausdrucksstärke
     Häufig könnt ihr in wenigen Zeilen Code sehr viel mehr erreichen als in
     anderen Sprachen. Dies führt dazu, dass ihr eure Projekte schneller
