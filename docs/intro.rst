@@ -26,7 +26,13 @@ kleiner Anwendungen und schneller Prototypen verwendet werden. Dabei gibt es
 unzählige Software-Bibliotheken, die euch die Arbeit erleichtern.
 
 Python ist eine moderne Programmiersprache, die von Guido van Rossum in den 90er
-Jahren entwickelt wurde. Einige Stärken von Python sind:
+Jahren entwickelt wurde.
+
+.. seealso::
+    * Lambert Meertens: `The Origins of Python
+      <https://inference-review.com/article/the-origins-of-python>`_
+
+Einige Stärken von Python sind:
 
 leichte Nutzbarkeit
     Einige der Gründe hierfür sind, dass Typen mit Objekten verbunden sind,
