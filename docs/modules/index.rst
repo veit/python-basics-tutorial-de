@@ -34,6 +34,9 @@ meisten Standardfunktionen von Python sind nicht in den Kern der Sprache
 integriert, sondern werden über spezielle Module bereitgestellt, die ihr bei
 Bedarf laden könnt.
 
+.. seealso::
+    * :ref:`python3:py-modindex`
+
 Erstellen von Modulen
 ---------------------
 
