@@ -64,7 +64,6 @@ berechnet den Durchschnitt von ``x`` und ``y`` und speichert das Ergebnis in der
 Variablen ``z``:
 
 .. code-block:: python
-   :linenos:
 
     >>> x = 1
     >>> y = 2
