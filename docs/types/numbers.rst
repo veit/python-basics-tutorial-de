@@ -116,7 +116,7 @@ Built-in numerische Funktionen
 Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
 
 :func:`python3:abs`
-    gibt den absoluten Wert einer Zahl zurück. Dabei kann as Argument kann eine
+    gibt den absoluten Wert einer Zahl zurück. Dabei kann das Argument eine
     Ganzzahl, eine Fließkommazahl oder ein Objekt sein, das ``__abs__()``
     implementiert. Bei komplexen Zahlen als Argument wird ihr Betrag
     zurückgegeben.
