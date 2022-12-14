@@ -65,7 +65,7 @@ IDLE
 
 IDLE ist das Akronym für eine integrierte Entwicklungsumgebung (engl.:
 integrated development environment) und kombiniert einen interaktiven
-Interpreter mit Werkzeugen zur Code-Bearbeitung und Fehlersuche. Das Ausfphren
+Interpreter mit Werkzeugen zur Code-Bearbeitung und Fehlersuche. Das Ausführen
 ist sehr einfach auf den verschiedenen Plattformen:
 
 .. tab:: Linux/macOS
