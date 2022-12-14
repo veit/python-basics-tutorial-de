@@ -25,7 +25,6 @@ wenn sie zum ersten Mal zugewiesen werden.
    folgende Beispiel an:
 
    .. code-block:: python
-      :linenos:
 
       >>> x = [1, 2, 3]
       >>> y = x
@@ -36,7 +35,6 @@ wenn sie zum ersten Mal zugewiesen werden.
    Variablen können sich jedoch auch auf Konstanten beziehen:
 
    .. code-block:: python
-      :linenos:
 
       >>> x = 1
       >>> y = x
@@ -45,10 +43,10 @@ wenn sie zum ersten Mal zugewiesen werden.
       >>> print(x,y,z)
       1 4 1
 
-   In diesem Fall verweisen nach der dritten Zeile ``a``, ``b`` und ``c`` alle
-   auf dasselbe unveränderliche Integer-Objekt mit dem Wert ``1``. Die nächste
-   Zeile, ``y = 5``, bewirkt, dass ``b`` auf das Integer-Objekt ``5`` verweist,
-   dies ändert jedoch nicht die Referenzen von ``a`` oder ``c``.
+   In diesem Fall verweisen nach der dritten Zeile ``x``, ``y`` und ``z`` alle
+   auf dasselbe unveränderlichee Integer-Objekt mit dem Wert ``1``. Die nächste
+   Zeile, ``y = 4``, bewirkt, dass ``y`` auf das Integer-Objekt ``4`` verweist,
+   dies ändert jedoch nicht die Referenzen von ``x`` oder ``z``.
 
 Python-Variablen können auf jedes beliebige Objekt gesetzt werden, während in 
 vielen anderen Sprachen Variablen nur im deklarierten Typ gespeichert werden
