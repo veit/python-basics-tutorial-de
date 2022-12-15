@@ -71,6 +71,6 @@ Variablen ``z``:
 
 .. note::
    Arithmetische Operatoren, die nur ganze Zahlen verwenden, geben nicht immer
-   eine ganze Zahl zurück. Ab Python  3 gibt sie Division eine Fließkommazahl
+   eine ganze Zahl zurück. Ab Python 3 gibt die Division eine Fließkommazahl
    zurück. Wenn die traditionelle Ganzzahldivision mit einer Ganzzahl
    zurückgegeben werden soll, könnt ihr stattdessen ``//`` verwenden.
