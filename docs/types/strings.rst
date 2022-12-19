@@ -102,7 +102,7 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
     'Hello pythonistas!'
     >>> welcome.split(' ')
     ['hello', 'pythonistas!\n']
-    >>> chunks = [x.strip() for x in welcome.split(' ')]
+    >>> chunks = [snippet.strip() for snippet in welcome.split(' ')]
     >>> chunks
     ['hello', 'pythonistas!']
     >>> ' '.join(chunks)
@@ -178,7 +178,7 @@ Möglichkeiten zur Musterextraktion und -ersetzung als ``string``.
 .. code-block:: python
 
     >>> import re
-    >>> re.sub('\n', '', x)
+    >>> re.sub('\n', '', welcome)
     'Hello pythonistas!'
 
 Hier wird der reguläre Ausdruck zunächst kompiliert und dann seine
@@ -190,7 +190,7 @@ Zeichenketten angewendet die CPU-Zyklen verringert:
 .. code-block:: python
 
     >>> regex = re.compile('\n')
-    >>> regex.sub('', x)
+    >>> regex.sub('', welcome)
     'Hello pythonistas!'
 
 Wenn ihr stattdessen eine Liste aller Muster erhalten möchtet, die dem
@@ -199,7 +199,7 @@ Wenn ihr stattdessen eine Liste aller Muster erhalten möchtet, die dem
 
 .. code-block:: python
 
-    >>> regex.findall(x)
+    >>> regex.findall(welcome)
     ['\n']
 
 .. note::
