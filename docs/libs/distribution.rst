@@ -140,8 +140,9 @@ Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 isolierte Builds und `pyproject.toml
 <https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_. Die
 Datei verwendet das
-:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml`-Format und
-da wir ``setuptools`` verwenden, sollte die Datei so oder so ähnlich aussehen:
+:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index`-Format
+und da wir ``setuptools`` verwenden, sollte die Datei so oder so ähnlich
+aussehen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
