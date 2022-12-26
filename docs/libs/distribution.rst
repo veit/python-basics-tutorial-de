@@ -173,6 +173,12 @@ aussehen:
     gepunkteten Pfad. Das Setuptools-Backend-Objekt ist unter
     ``setuptools.build_meta`` verfügbar.
 
+``CONTRIBUTORS.rst``
+~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+    * `allcontributors.org <https://allcontributors.org/>`_
+
 ``LICENSE``
 ~~~~~~~~~~~
 
