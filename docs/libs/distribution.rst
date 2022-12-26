@@ -173,12 +173,6 @@ aussehen:
     gepunkteten Pfad. Das Setuptools-Backend-Objekt ist unter
     ``setuptools.build_meta`` verfügbar.
 
-``CHANGELOG.rst``
-~~~~~~~~~~~~~~~~~
-
-.. seealso::
-    * `Keep a Changelog <https://keepachangelog.com/>`_
-
 ``CONTRIBUTORS.rst``
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -215,8 +209,15 @@ Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
 ~~~~~~~~~~~~~~~~~
 
 .. seealso::
-   * `Keep a Changelog <https://keepachangelog.com>`_
-   * `scriv <https://pypi.org/project/scriv/>`_
+    * `Keep a Changelog <https://keepachangelog.com/>`_
+    * `Scriv <https://github.com/nedbat/scriv>`_
+    * `changelog_manager <https://github.com/masukomi/changelog_manager>`_
+    * `github-activity <https://github.com/executablebooks/github-activity>`_
+    * `Dinghy <https://github.com/nedbat/dinghy>`_
+    * `Python core-workflow blurb
+      <https://github.com/python/core-workflow/tree/master/blurb>`_
+    * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
+    * `towncrier <https://github.com/twisted/towncrier>`_
 
 Build
 -----
