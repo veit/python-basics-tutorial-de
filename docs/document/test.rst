@@ -85,3 +85,18 @@ Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
        (   index: line    5) redirect  https://cusy-design-system.readthedocs.io/ - with Found to https://cusy-design-system.readthedocs.io/de/latest/
        …
        (accessibility/color: line  114) broken    https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl - 404 Client Error: Not Found for url: https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl
+
+Code-Formatierung
+-----------------
+
+`blacken-docs <https://github.com/adamchainz/blacken-docs>`_ unterstützt aktuell
+die folgenden `black <https://github.com/psf/black>`_-Optionen:
+
+* ``-l``/``--line-length``
+* ``-t``/``--target-version``
+* ``-s``/``--skip-string-normalization``
+* ``-E``/``--skip-errors``
+
+.. code-block:: console
+
+   $ bin/python -m pip install blacken-docs
