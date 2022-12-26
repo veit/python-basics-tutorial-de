@@ -87,6 +87,9 @@ das `cookiecutter-namespace-template
    https://readthedocs.org/projects/cookiecutter-namespace-template/badge/?version=latest
    :target: https://cookiecutter-namespace-template.readthedocs.io/en/latest/
 
+.. seealso::
+    * `shields.io <https://shields.io>`_
+
 Sphinx
 ------
 
