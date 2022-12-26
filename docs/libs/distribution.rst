@@ -183,7 +183,7 @@ aussehen:
 ~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
-    * `allcontributors.org <https://allcontributors.org/>`_
+    * `All contributors <https://allcontributors.org/>`_
 
 ``LICENSE``
 ~~~~~~~~~~~
