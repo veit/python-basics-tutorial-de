@@ -173,7 +173,8 @@ Diese Datei teilt denjenigen, die sich für das Paket interessieren, in kurzer
 Form mit, wie sie es nutzen können.
 
 .. seealso::
-    * `README 101 <https://www.makeareadme.com>`_
+    * `Make a README <https://www.makeareadme.com>`_
+    * `readme.so <https://readme.so>`_
 
 Wenn ihr das Dokument in :doc:`/document/rest` schreibt, könnt ihr die Inhalte
 auch als ausführliche Beschreibung in euer Paket übernehmen:
