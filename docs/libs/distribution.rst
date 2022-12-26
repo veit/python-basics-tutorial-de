@@ -173,6 +173,12 @@ aussehen:
     gepunkteten Pfad. Das Setuptools-Backend-Objekt ist unter
     ``setuptools.build_meta`` verfügbar.
 
+``CHANGELOG.rst``
+~~~~~~~~~~~~~~~~~
+
+.. seealso::
+    * `Keep a Changelog <https://keepachangelog.com/>`_
+
 ``CONTRIBUTORS.rst``
 ~~~~~~~~~~~~~~~~~~~~
 
