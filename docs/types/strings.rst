@@ -110,7 +110,8 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
     >>> welcome.replace('\n', '')
     'hello pythonistas!'
 
-Im folgenden ein Überblick über alle ``string``-Methoden:
+Im Folgenden findet ihr einen Überblick über die häufigsten
+:ref:`String-Methoden <python3:string-methods>`:
 
 +---------------------------+---------------------------------------------------------------+
 | Methode                   | Beschreibung                                                  |
@@ -164,9 +165,22 @@ Im folgenden ein Überblick über alle ``string``-Methoden:
 |                           | zu erhalten.                                                  |
 +---------------------------+---------------------------------------------------------------+
 
-.. seealso::
-   Eine vollständige Übersicht über die ``str``-Methoden findet ihr in der
-   :ref:`Python-Dokumentation <python3:string-methods>`.
+Darüber hinaus gibt es einige Methoden, mit denen die Eigenschaft einer
+Zeichenkette überprüft werden kann:
+
++-------------------+---------------+---------------+---------------+---------------+---------------+
+| Methode           | ``[!#$%…]``   | ``[a-zA-Z]``  | ``[¼½¾]``     | ``[¹²³]``     | ``[0-9]``     |
++===================+===============+===============+===============+===============+===============+
+| ``isprintable()`` | ✅            | ✅            | ✅            | ✅            | ✅            |
++-------------------+---------------+---------------+---------------+---------------+---------------+
+| ``isalnum()``     | ❌            | ✅            | ✅            | ✅            | ✅            |
++-------------------+---------------+---------------+---------------+---------------+---------------+
+| ``isnumeric()``   | ❌            | ❌            | ✅            | ✅            | ✅            |
++-------------------+---------------+---------------+---------------+---------------+---------------+
+| ``isdigit()``     | ❌            | ❌            | ❌            | ✅            | ✅            |
++-------------------+---------------+---------------+---------------+---------------+---------------+
+| ``isdecimal()``   | ❌            | ❌            | ❌            | ❌            | ✅            |
++-------------------+---------------+---------------+---------------+---------------+---------------+
 
 ``re``
 ------
