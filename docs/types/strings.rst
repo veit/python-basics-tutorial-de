@@ -182,6 +182,9 @@ Zeichenkette überprüft werden kann:
 | :py:meth:`str.isdecimal`  | ❌            | ❌            | ❌            | ❌            | ✅            |
 +---------------------------+---------------+---------------+---------------+---------------+---------------+
 
+:py:meth:`str.isspace` prüft auf Leerzeichen:
+``[ \t\n\r\f\v\x1c-\x1f\x85\xa0\u1680…]``.
+
 ``re``
 ------
 
