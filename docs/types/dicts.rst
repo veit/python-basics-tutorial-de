@@ -30,3 +30,6 @@ enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um diesen Fehler zu
 vermeiden, gibt die Dictionary-Methode ``get`` optional einen
 benutzerdefinierten Wert zurück, wenn ein Schlüssel nicht in einem Wörterbuch
 enthalten ist.
+
+.. seealso::
+   * `python-benedict <https://github.com/fabiocaccamo/python-benedict>`_
