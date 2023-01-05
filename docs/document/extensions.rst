@@ -1,6 +1,9 @@
 Erweiterungen
 =============
 
+.. seealso::
+    * sphinx-extensions`<https://sphinx-extensions.readthedocs.io/en/latest/>`_
+
 Eingebaute Erweiterungen
 ------------------------
 
