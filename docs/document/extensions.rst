@@ -2,7 +2,8 @@ Erweiterungen
 =============
 
 .. seealso::
-    * sphinx-extensions`<https://sphinx-extensions.readthedocs.io/en/latest/>`_
+    `Sphinx Extensions
+    <https://www.sphinx-doc.org/en/master/usage/extensions/index.html>`_
 
 Eingebaute Erweiterungen
 ------------------------
@@ -30,8 +31,8 @@ Eingebaute Erweiterungen
     fügt Links auf den Quellcode der Sphinx-Dokumentation hinzu.
 
 .. seealso::
-   Einen vollständigen Überblick erhaltet ihr unter `Sphinx Extensions
-   <https://www.sphinx-doc.org/en/master/usage/extensions/index.html>`_.
+    `sphinx/sphinx/ext/
+    <https://github.com/sphinx-doc/sphinx/tree/master/sphinx/ext>`_
 
 Erweiterungen von Drittanbietern
 --------------------------------
@@ -39,26 +40,53 @@ Erweiterungen von Drittanbietern
 `nbsphinx <https://nbsphinx.readthedocs.io/>`_
     Jupyter Notebooks in Sphinx
 `jupyter-sphinx <https://github.com/jupyter-widgets/jupyter-sphinx>`_
-    ermöglicht das Rendern von interaktiven Jupyter-Widgets in Sphinx, siehe
-    auch `Embedding Widgets in the Sphinx HTML Documentation
-    <https://ipywidgets.readthedocs.io/en/latest/embedding.html#embedding-widgets-in-the-sphinx-html-documentation>`_.
+    ermöglicht das Rendern von interaktiven Jupyter-Widgets in Sphinx.
+
+    .. seealso::
+        `Embedding Widgets in the Sphinx HTML Documentation
+        <https://ipywidgets.readthedocs.io/en/latest/embedding.html#embedding-widgets-in-the-sphinx-html-documentation>`_.
+
+`Breathe <https://github.com/breathe-doc/breathe>`_
+    ReStructuredText and Sphinx bridge to `Doxygen <https://www.doxygen.nl>`_
 `numpydoc <https://github.com/numpy/numpydoc>`_
     `NumPy <https://numpy.org/>`_ Sphinx-Erweiterung.
 `Releases <https://github.com/bitprophet/releases>`_
     schreibt eine Changelog-Datei.
 `sphinxcontrib-napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/>`_
     Präprozessor zum Parsen von NumPy- und Google-Style Docstrings.
+`sphinx-autodoc-annotation <https://github.com/nicolashainaux/sphinx-autodoc-annotation>`_
+    verwendet Python3-Annotations in Sphinx docstrings
 `Sphinx-autodoc-typehints <https://github.com/agronholm/sphinx-autodoc-typehints>`_
     Unterstützung von Typ-Hints für die Sphinx-Autodoc-Erweiterung.
 `sphinx-git <https://sphinx-git.readthedocs.io/>`_
     `git <https://git-scm.com/>`_-Changelog für Sphinx.
+`Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
+    fügt git Zeitstempel im Kontext ein
 `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
     Sphinx-Erweiterung für Übersetzungen.
 `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_
     überwacht ein Sphinx-Repository und erstellt neue Dokumentation, sobald
     Änderungen vorgenommen werden.
+`Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io/en/latest/>`_
+    erlaubt die Definition, Verlinkung und Filterung von need-Objekten, also
+    :abbr:`z.B. (zum Beispiel)` Anforderungen und Testfälle
+`Sphinx-pyreverse <https://github.com/alendit/sphinx-pyreverse>`_
+    erstellt ein UML-Diagramm von Python-Modulen
+`sphinx-jsonschema <https://github.com/lnoor/sphinx-jsonschema>`_
+    zeigt ein `JSON Schema <https://json-schema.org>`_ in der
+    Sphinx-Dokumentation
 `Sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_
     ermöglicht euch, Mermaid-Grafiken in Ihre Dokumente einzubetten.
+`Sphinx Sitemap Generator Extension <https://github.com/jdillard/sphinx-sitemap>`_
+    generiert multiversion- und multilanguage `sitemaps
+    <https://www.sitemaps.org/protocol.html>`_ für die HTML-Version
+
+.. seealso::
+    `sphinx-contrib <https://github.com/sphinx-contrib/>`_
+        A repository of Sphinx extensions maintained by their respective authors.
+    `sphinx-extensions <https://sphinx-extensions.readthedocs.io/en/latest/>`_
+        Curated site with Sphinx extensions with live examples and their
+        configuration.
 
 Eigene Erweiterungen
 --------------------
@@ -79,3 +107,9 @@ aussehen:
         'foo',
         ...
         ]
+
+.. seealso::
+    * `Developing extensions for Sphinx
+      <https://www.sphinx-doc.org/en/master/extdev/>`_
+    * `Application API
+      <https://www.sphinx-doc.org/en/master/extdev/appapi.html>`_
