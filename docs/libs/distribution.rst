@@ -7,9 +7,10 @@ installiert werden können.
 
 .. seealso::
 
-    zum Paketieren und Verteilen von Python-Bibliotheken mit `setuptools
-    <https://packaging.python.org/key_projects/#setuptools>`_: `Packaging and
-    distributing projects
+    Paketieren und Verteilen von Python-Bibliotheken mit `setuptools
+    <https://packaging.python.org/key_projects/#setuptools>`_:
+
+    * `Packaging and distributing projects
     <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
     Wenn ihr euch Alternativen zu ``setuptools`` anschauen wollt:
