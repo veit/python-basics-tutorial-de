@@ -17,6 +17,7 @@ installiert werden können.
     * `flit <https://packaging.python.org/key_projects/#flit>`_
     * `hatch <https://github.com/ofek/hatch>`_
     * `poetry <https://github.com/python-poetry/poetry>`_
+    * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 Struktur
 --------
