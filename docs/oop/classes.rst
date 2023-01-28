@@ -29,7 +29,7 @@ Funktion aufruft:
 .. code-block:: python
 
     >>> class Square:
-    ...     line_width = 1
+    ...     length = 1
     ...
     >>> my_square = Square()
 
@@ -43,10 +43,10 @@ Umfangs:
 .. code-block:: python
 
     >>> my_square.length = 3
-    >>> print(4 * my_square.length)
-    12
+    >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
+    Der Umfang des Quadrats ist 12.
 
-Zeile 2
+Zeile 1
     Wie in Java und vielen anderen Sprachen werden die Felder einer Instanz mit
     Hilfe der Punktnotation angesprochen.
 
@@ -63,19 +63,18 @@ werden standardmäßig Quadrate mit einer Kantenlänge von ``1`` erzeugt:
     >>> class Square:
     ...     def __init__(self):
     ...         self.length = 1
-    ...         self.line_width = 1
     ...
     >>> my_square = Square()
-    >>> print(4 * my_square.length)
-    4
+    >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
+    Der Umfang des Quadrats ist 4.
 
 Zeile 2
     Der Konvention nach ist ``self`` immer der Name des ersten Arguments von
     ``__init__``. ``self`` wird auf die neu erstellte ``Square``-Instanz
     gesetzt, wenn ``__init__`` ausgeführt wird.
-Zeile 6
+Zeile 5
     Als nächstes erstellt ihr ein ``Square``-Instanzobjekt.
-Zeile 7
+Zeile 6
     Diese Zeile nutzt die Tatsache, dass das ``length``-Feld bereits
     initialisiert ist.
 
@@ -85,5 +84,5 @@ anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
     .. code-block:: python
 
         >>> my_square.length = 3
-        >>> print(4 * my_square.length)
-        12
+        >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
+        Der Umfang des Quadrats ist 12.
