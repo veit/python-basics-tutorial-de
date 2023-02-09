@@ -21,8 +21,8 @@ der Eigenschaft hat:
 .. literalinclude:: form_pr.py
     :language: python
     :linenos:
-    :lines: 11-18
-    :lineno-start: 11
+    :lines: 23-25
+    :lineno-start: 23
 
 Ohne Setter ist die *Property* ``length`` jedoch schreibgeschützt:
 
@@ -39,8 +39,8 @@ Um dies zu ändern, müsst ihr einen Setter hinzufügen:
 .. literalinclude:: form_pr.py
     :language: python
     :linenos:
-    :lines: 19-21
-    :lineno-start: 19
+    :lines: 27-29
+    :lineno-start: 27
 
 Jetzt könnt ihr die Punkt-Notation verwenden, um die Eigenschaft ``length``
 sowohl zu erhalten als auch zu setzen. Beachtet, dass der Name der Methode

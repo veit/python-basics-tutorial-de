@@ -5,7 +5,7 @@ Die bisher angesprochenen Punkte, sind die Grundlagen der Verwendung von Klassen
 und Objekten in Python. Diese Grundlagen werde ich nun in einem einzigen
 Beispiel zusammenfassen:
 
-#. Zunächst erstellen wir eine Basisklasse: 
+#. Zunächst erstellen wir eine Basisklasse:
 
     .. literalinclude:: form.py
         :language: python

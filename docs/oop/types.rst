@@ -183,4 +183,4 @@ Methodenattribute meist nur in einer der folgenden beiden Fälle:
 * in einer Klasse, die sich fast identisch zu einer eingebauten Klasse verhält,
   :abbr:`z.B. (zum Beispiel)` Listen, die als balancierte Bäume implementiert
   sind, um das Einfügen zu beschleunigen, kann ich die speziellen
-  Methodenattribute definieren. 
+  Methodenattribute definieren.

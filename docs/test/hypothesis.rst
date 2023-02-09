@@ -48,8 +48,8 @@ wenig Aufwand zu finden.
 
       .. literalinclude:: test_hypothesis.py
          :language: python
-         :lines: 5-
-         :lineno-start: 5
+         :lines: 6-
+         :lineno-start: 6
 
 #. Test durchführen:
 

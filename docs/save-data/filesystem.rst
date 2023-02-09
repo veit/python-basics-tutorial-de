@@ -311,7 +311,7 @@ Weitere ähnliche Funktionen stellen speziellere Abfragen bereit:
     erstellte Links geben ebenfalls ``True`` zurück.
 :func:`python3:os.path.ismount`
     gibt unter ``possix``-Dateisystemen ``True`` zurück, wenn der Pfad ein
-    :abbr:`sog. (sogenannter)` *Mount Point* oder Einhängepunkt ist. 
+    :abbr:`sog. (sogenannter)` *Mount Point* oder Einhängepunkt ist.
 :func:`python3:os.path.samefile`
     gibt ``True`` zurück, wenn die beiden Pfadargumente auf dieselbe Datei
     zeigen.
@@ -393,7 +393,7 @@ onerror=None, followlinks= False)``.
     ...     print("{0} has {1} files".format(root, len(files)))
     ...     if ".ipynb_checkpoints" in dirs:
     ...         dirs.remove(".ipynb_checkpoints")
-    ... 
+    ...
     . has 13 files
     ./control-flows has 13 files
     ./save-data has 30 files

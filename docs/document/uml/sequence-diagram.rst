@@ -20,7 +20,7 @@ Sequenzdiagramm
      wird verwendet, um eine gepunktete Linie zu zeichnen.
 ``<- und <--``
     verändert die Zeichnung nicht, kann aber die Lesbarkeit erhöhen.
-    
+
     .. note::
        Dies gilt nur für Sequenzdiagramme. In anderen Diagrammen können andere
        Regeln gelten.

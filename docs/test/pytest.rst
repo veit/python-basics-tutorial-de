@@ -40,7 +40,7 @@ Einzlener Test
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 1-2,4-5
+   :lines: 1-4, 19-24
    :lineno-start: 1
 
 Test-Fixture
@@ -51,8 +51,8 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 8-28
-   :lineno-start: 8
+   :lines: 9-16
+   :lineno-start: 9
 
 ``key``
      Funktion, die aufgerufen wird, um die Elemente der Kollektion zu
@@ -66,8 +66,8 @@ Testparametrisierung
 
 .. literalinclude:: test_pytest.py
    :language: python
-   :lines: 31-
-   :lineno-start: 31
+   :lines: 35-
+   :lineno-start: 35
 
 Tests ausführen
 ---------------

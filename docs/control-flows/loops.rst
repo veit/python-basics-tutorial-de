@@ -16,7 +16,7 @@ y``) wahr ist:
     ...     if x == 4:
     ...         break
     ...     print(x)
-    ... 
+    ...
     5
 
 Zeile 1
@@ -44,7 +44,7 @@ Zeilen 8 und 9
     ...     if x == 4:
     ...         continue
     ...     print(x)
-    ... 
+    ...
     5
     3
 
@@ -76,7 +76,7 @@ Bedingung für as erste Vorkommen einer ganzen Zahl, die durch ``5`` teilbar ist
     ...     if not i % d:
     ...         print(f"Erste gefundene Ganzzahl, die durch {d} teilbar ist: {i}")
     ...         break
-    ... 
+    ...
     Erste gefundene Ganzzahl, die durch 5 teilbar ist: 10
 
 ``x`` wird nacheinander jeder Wert in der Liste zugewiesen. Wenn ``x`` keine

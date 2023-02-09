@@ -42,7 +42,7 @@ z.B. so aus:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
-   :lines: 2,4-5,9-12,15-21,41-
+   :lines: 4-5, 9-12, 15-21,41
    :lineno-start: 1
 
 ``src``-Package
@@ -81,7 +81,6 @@ Mit `classifiers <https://pypi.org/classifiers/>`_ können auf dem
 .. literalinclude:: dataprep/setup.py
    :language: python
    :lines: 22-38
-   :lineno-start: 16
 
 Außerdem haben eine nützliche Zusatzfunktion: PyPI lehnt unbekannte
 *Classifiers* ab, sodass damit auch ein versehentlicher Upload vermieden werden
@@ -99,7 +98,6 @@ Abhängigkeiten werden mit ``install_requires`` angegeben:
 .. literalinclude:: dataprep/setup.py
    :language: python
    :lines: 39
-   :lineno-start: 32
 
 .. note::
     Versionsnummern von Abhängigkeiten sollten üblicherweise nicht in der

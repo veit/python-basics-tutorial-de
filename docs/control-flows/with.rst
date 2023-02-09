@@ -1,4 +1,4 @@
-Kontextmanagement mit ``with`` 
+Kontextmanagement mit ``with``
 ==============================
 
 Eine rationellere Art, das Muster ``try-except-finally`` zu kapseln, ist die

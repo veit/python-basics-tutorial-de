@@ -70,13 +70,13 @@ könnt ihr angeben mit
       .. code-block:: rest
 
           .. literalinclude:: main.py
-             :emphasize-lines: 3,7-10,20-22
+             :emphasize-lines: 4, 9-12, 20-22
              :linenos:
 
       .. literalinclude:: main.py
-         :emphasize-lines: 3,7-10,20-22
+         :emphasize-lines: 4, 9-12, 20-22
          :linenos:
-      
+
    .. rst:directive:option:: diff
 
       Wenn ihr das Diff eures Codes anzeigen möchtet, könnt ihr die alte Datei

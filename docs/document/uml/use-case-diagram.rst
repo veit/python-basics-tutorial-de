@@ -2,11 +2,11 @@ Anwendungsfall-Diagramm
 =======================
 
 .. image:: use-case-diagram.svg
-    
+
 .. code-block:: rest
 
    .. uml::
-    
+
       :Nutzende Person: --> (Verwendung)
       "Gruppe von\nAdministratoren" as Admin
       "Verwenden der\nAnwendung" as (Verwendung)

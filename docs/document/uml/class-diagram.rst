@@ -38,7 +38,7 @@ Klassendiagramm
 
     .. image:: circle.svg
 
-``class`` 
+``class``
 
     Beispiel:
 
@@ -76,7 +76,7 @@ Klassendiagramm
 
     .. image:: entity.svg
 
-``enum`` 
+``enum``
 
     Beispiel:
 

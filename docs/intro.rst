@@ -57,7 +57,7 @@ Lesbarkeit
 Vollständigkeit
     Mit der Installation von Python ist bereits alles wesentliche  vorhanden,
     was für das Programmieren mit Python benötigt wird, E-Mails, Websites,
-    Datenbanken, ohne dass zusätzliche Bibliotheken installiert werden müssen. 
+    Datenbanken, ohne dass zusätzliche Bibliotheken installiert werden müssen.
 Plattformunabhängigkeit
     Python läuft auf vielen Plattformen: Windows, Mac, Linux etc. Es gibt sogar
     Varianten, die auf Java (`Jython <https://www.jython.org/>`_) und .NET
@@ -108,7 +108,7 @@ Unterstützung für nebenläufige Berechnungen
     Prozessoren mit mehreren Kernen sind inzwischen weit verbreitet und führen
     in vielen Bereichen zu erheblichen Leistungssteigerungen. Die
     Standardimplementierung von Python ist jedoch nicht für die Nutzung mehrerer
-    Kerne ausgelegt. 
+    Kerne ausgelegt.
 
     .. seealso::
         * :doc:`jupyter-tutorial:performance/multiprocessing-threading-async`

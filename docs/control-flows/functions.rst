@@ -32,7 +32,7 @@ Python bietet flexible Mechanismen zur Übergabe von Argumenten an Funktionen:
     (7, 8, 9)
     >>> def func4(u, v=1, w=1, **kwargs):
     ...     print(u, v, w, kwargs)
-    ... 
+    ...
     >>> func4(1, 2, s=4, t=5, w=3)
     1 2 3 {'s': 4, 't': 5}
 

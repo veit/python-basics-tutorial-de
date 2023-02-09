@@ -148,13 +148,14 @@ Der Fehler kann mit korrigiert werden:
 Rollen hinzufügen
 -----------------
 
-Wenn Sie eine Fehlermeldung erhalten, dass eine bestimmte Textrolle unbekannt ist, :abbr:`z.B. (zum Beispiel)`: 
+Wenn ihr eine Fehlermeldung erhaltet, dass eine bestimmte Textrolle unbekannt
+ist, :abbr:`z.B. (zum Beispiel)`:
 
 .. code-block:: console
 
     WARNING: Unknown interpreted text role "confval".
 
-so dass ihr sie in der ``conf.py`` hinzufügen könnt:
+so könnt ihr sie in der ``conf.py`` hinzufügen:
 
 .. code-block:: python
 

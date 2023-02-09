@@ -52,7 +52,7 @@ oder
 
     $ python3.8 -m pip install requests>=2.28.0
 
-Installieren mit der ``--user``-Option 
+Installieren mit der ``--user``-Option
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Häufig werdet ihr ein Python-Paket jedoch nicht in der Hauptinstanz von Python

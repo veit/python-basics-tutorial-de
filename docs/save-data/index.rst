@@ -28,7 +28,7 @@ Die Python Database :abbr:`API (Application Programming Interface)` definiert
 eine Standardschnittstelle für Python-Datenbankzugriffsmodule. Sie ist in `PEP
 249 <https://www.python.org/dev/peps/pep-0249/>`_ definiert und wird häufig
 verwendet, :abbr:`z.B. (zum Beispiel)` von :doc:`sqlite <sqlite>`, :doc:`psycopg
-<psycopg>`, and `mysql-python 
+<psycopg>`, and `mysql-python
 <https://sourceforge.net/projects/mysql-python/>`_.
 
 SQLAlchemy

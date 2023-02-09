@@ -29,23 +29,23 @@ Im folgenden Beispiel analysieren wir :download:`books.xml`:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 3-9
-      :lineno-start: 3
+      :lines: 4-10
+      :lineno-start: 4
 
 #. Dann erstellen wir eine leere Liste namens ``titles``, die mit den
    Titelobjekten gefüllt wird:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 11-14
-      :lineno-start: 11
+      :lines: 12-15
+      :lineno-start: 12
 
 #. Nun wird in verschachtelten ``for``-Schleifen der Titel ausgegeben:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 16-20
-      :lineno-start: 16
+      :lines: 17-21
+      :lineno-start: 17
 
 #. Schließlich setzen wir die ``__name__``-Variable noch wie ``__main__``
    gesetzt, sodass das Modul wie das Hauptprogramm ausgeführt werden kann.
@@ -54,8 +54,8 @@ Im folgenden Beispiel analysieren wir :download:`books.xml`:
 
    .. literalinclude:: minidom_example.py
       :language: py
-      :lines: 22-
-      :lineno-start: 22
+      :lines: 24-
+      :lineno-start: 24
 
 Parsen mit ElementTree
 ----------------------
@@ -76,8 +76,8 @@ Parsen mit ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 3-10
-      :lineno-start: 3
+      :lines: 4-11
+      :lineno-start: 4
 
    .. code-block:: py
 
@@ -88,8 +88,8 @@ Parsen mit ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 12-16
-      :lineno-start: 12
+      :lines: 13-17
+      :lineno-start: 13
 
    .. code-block:: py
 
@@ -106,8 +106,8 @@ Parsen mit ElementTree
 
    .. literalinclude:: elementtree_example.py
       :language: py
-      :lines: 19-26
-      :lineno-start: 19
+      :lines: 20-27
+      :lineno-start: 20
 
    .. code-block:: py
 
@@ -124,4 +124,3 @@ Parsen mit ElementTree
       book=
       title=Jupyter Tutorial
       ...
-

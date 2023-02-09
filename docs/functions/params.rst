@@ -48,7 +48,7 @@ so:
 
     def function_name(param1, param2=Standardwert2, param3=Standardwert3, ...)
 
-Es können beliebig viele Parameter mit Standardwerten versehen werden wobei 
+Es können beliebig viele Parameter mit Standardwerten versehen werden wobei
 Parameter mit Standardwerten als letzte in der Parameterliste definiert werden
 müssen.
 

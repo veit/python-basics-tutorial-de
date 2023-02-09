@@ -104,7 +104,7 @@ von Zeilenumbrüchen in Textdateien. Auch hier gilt, dass ihr euch in der Regel
 keine Gedanken über diese Funktionen machen müsst, aber wenn ihr mit Python
 fortgeschrittener werdet, solltet ihr euch vielleicht darüber informieren.
 
-Lese- und Schreib-Funktionen 
+Lese- und Schreib-Funktionen
 ----------------------------
 
 Die häufigste Funktion zum Lesen von Textdateien, :mod:`python3:readline`, habe
@@ -120,7 +120,7 @@ in einer Datei zu ermitteln:
     >>> lc = 0
     >>> while f.readline() != '':
     ...     lc = lc + 1
-    ... 
+    ...
     >>> print(lc)
     2
     >>> f.close()
@@ -152,7 +152,7 @@ einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
-    ... 
+    ...
     >>> print(lc)
     1
     >>> f.close()

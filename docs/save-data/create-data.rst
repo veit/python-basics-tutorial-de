@@ -12,13 +12,13 @@ Daten erstellen
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 13
-      :lineno-start: 13
+      :lines: 14
+      :lineno-start: 14
 
 #. Fügt mehrere Datensätze mit der sichereren  ``?``-Methode ein, wobei die
    Anzahl der  ``?`` der Anzahl der Spalten entsprechen sollte:
 
    .. literalinclude:: create_data.py
       :language: python
-      :lines: 16-
-      :lineno-start: 16
+      :lines: 17-
+      :lineno-start: 17

@@ -55,17 +55,14 @@ dieser Datei vorkommenden Wörter ermittelt.
 .. literalinclude:: wc.py
    :linenos:
 
-Zeilen 1 und 3
+Zeilen 1 und 5
     :doc:`../document/docstrings` sind Standardmethoden zur Dokumentation von
     Modulen, Funktionen, Methoden und Klassen.
-Zeile 8
+Zeile 10
     ``read`` gibt eine Zeichenkette zurück, die alle Zeichen in einer Datei
     enthält, und ``split`` gibt eine Liste der Wörter einer Zeichenkette zurück,
     die anhand von Leerzeichen *aufgespalten* wurde.
-Zeile 16
-    Ihr könnt einen ``\`` verwenden, um eine lange Anweisung über mehrere
-    Zeilen zu verteilen.
-Zeilen 19 bis 20
+Zeilen 25 und 26
     Mit dieser ``if``-Anweisung könnt ihr das Programm auf zweierlei Arten
     nutzen:
 
@@ -151,7 +148,7 @@ so könnt ihr dies einfach mit folgender Änderung unseres Scripts:
 .. literalinclude:: wcargv.py
    :diff: wc.py
 
-:data:`python3:sys.argv` 
+:data:`python3:sys.argv`
     gibt eine Liste der Befehlszeilenargumente zurück, die an ein Python-Skript
     übergeben wurden. ``argv[0]`` ist der Skriptname.
 :ref:`.pop <python3:tut-morelists>`

@@ -32,7 +32,7 @@ Methode zum Hinzufügen implementiert:
 
 .. literalinclude:: arithmetic.py
    :language: python
-   :lines: 1,6
+   :lines: 1-6
    :lineno-start: 1
 
 … dann könnt ihr diese Methode mit einem Unittest testen.
@@ -41,7 +41,7 @@ Methode zum Hinzufügen implementiert:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 1-2
+      :lines: 1, 6
       :lineno-start: 1
 
 #. Anschließend könnt ihr eine Testmethode schreiben, die eure Additionsmethode

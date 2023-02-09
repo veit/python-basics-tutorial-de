@@ -3,7 +3,7 @@ shot-scraper
 
 `shot-scraper <https://simonwillison.net/2022/Mar/10/shot-scraper/>`_ ist ein
 Werkzeug, mit dem sich der Prozess der Aktualisierung von Screenshots
-automatisieren lässt. 
+automatisieren lässt.
 
 Installation
 ------------

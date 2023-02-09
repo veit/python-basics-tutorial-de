@@ -24,8 +24,8 @@ veräffentlicht wurden.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 11-17
-      :lineno-start: 11
+      :lines: 12-18
+      :lineno-start: 12
 
 #. Da SQLite ``MODIFY COLUMN`` nicht unterstützt, legen wir nun eine temporäre
    Tabelle ``temp`` an mit allen Spalten aus ``books`` und einer Spalte
@@ -34,31 +34,31 @@ veräffentlicht wurden.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 19-29
-      :lineno-start: 19
+      :lines: 22-32
+      :lineno-start: 22
 
 #. Nun übernehmen wir die Werte aus der ``books``-Tabelle in die
    ``temp``-Tabelle:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 31-33
-      :lineno-start: 31
+      :lines: 35-37
+      :lineno-start: 35
 
 #. Die Angabe der Sprache in ``books`` als ``id`` der Datensätze aus der
    ``languages``-Tabelle in ``temp`` übernehmen.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 35-43
-      :lineno-start: 35
+      :lines: 40-44
+      :lineno-start: 40
 
 #. Nun können wir die Spalte ``languages`` in der Tabelle ``temp`` löschen:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 48-49
-      :lineno-start: 48
+      :lines: 55
+      :lineno-start: 55
 
    .. note::
       Erst ab Python-Versionen ab 3.8, die nach dem 27. April 2021
@@ -72,12 +72,12 @@ veräffentlicht wurden.
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 51-52
-      :lineno-start: 51
+      :lines: 57
+      :lineno-start: 57
 
 #. Und schließlich kann die ``temp``-Tabelle umbenannt werden in ``books``:
 
    .. literalinclude:: normalise.py
       :language: python
-      :lines: 54-55
-      :lineno-start: 54
+      :lines: 59
+      :lineno-start: 59

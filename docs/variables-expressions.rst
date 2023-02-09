@@ -48,7 +48,7 @@ wenn sie zum ersten Mal zugewiesen werden.
    Zeile, ``y = 4``, bewirkt, dass ``y`` auf das Integer-Objekt ``4`` verweist,
    dies ändert jedoch nicht die Referenzen von ``x`` oder ``z``.
 
-Python-Variablen können auf jedes beliebige Objekt gesetzt werden, während in 
+Python-Variablen können auf jedes beliebige Objekt gesetzt werden, während in
 vielen anderen Sprachen Variablen nur im deklarierten Typ gespeichert werden
 können.
 

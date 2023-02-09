@@ -57,7 +57,7 @@ Glossar
 
    Environment
        Eine Struktur, in der Informationen über alle Dokumente unterhalb des
-       Stammverzeichnisses gespeichert und für Querverweise verwendet werden. 
+       Stammverzeichnisses gespeichert und für Querverweise verwendet werden.
        Die Umgebung wird gespeichert, so dass nachfolgende Programmläufe nur
        neue und geänderte Dokumente lesen und parsen.
 
@@ -71,7 +71,7 @@ Glossar
 
       Environment
           Eine Struktur, in der Informationen über alle Dokumente unterhalb des
-          Stammverzeichnisses gespeichert und für Querverweise verwendet werden. 
+          Stammverzeichnisses gespeichert und für Querverweise verwendet werden.
           Die Umgebung wird gespeichert, so dass nachfolgende Programmläufe nur
           neue und geänderte Dokumente lesen und parsen.
 

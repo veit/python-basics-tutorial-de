@@ -15,7 +15,7 @@ UI-Elemente und Interaktionen
 
    :guilabel:`&Cancel` erzielt ihr :abbr:`z.B. (zum Beispiel)` mit folgender
    Auszeichnung:
-   
+
    .. code-block:: rest
 
       :guilabel:`&Cancel`
@@ -34,7 +34,7 @@ UI-Elemente und Interaktionen
 
    :kbd:`Ctrl-s` erzielt ihr :abbr:`z.B. (zum Beispiel)` mit folgender
    Auszeichnung:
-   
+
    .. code-block:: rest
 
       :kbd:`Ctrl-s`

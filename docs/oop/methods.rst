@@ -93,7 +93,7 @@ anwendet:
 
 #. Suche nach dem Methodennamen im Instanz-Namensraum. Wenn eine Methode für
    diese Instanz geändert oder hinzugefügt wurde, wird sie bevorzugt gegenüber
-   Methoden in der Klasse aufgerufen. 
+   Methoden in der Klasse aufgerufen.
 #. Wenn die Methode nicht im Namensraum der Instanz gefunden wird, wird die
    Methode in der Klasse gesucht. In den vorangegangenen Beispielen ist
    ``class`` der ``Square``-Typ der Instanz ``s``.
@@ -115,7 +115,7 @@ dieser Klasse erstellt wurde. Um eine statische Methode zu erstellen, verwendet 
 .. literalinclude:: circle.py
     :linenos:
 
-Zeile 8
+Zeile 11
     definiert die Klassenvariable ``circles``  als zunächst leere Liste aller
     ``Circle``-Instanzen.
 Zeile 14
@@ -143,8 +143,8 @@ gehören, als erster Parameter übergeben:
 .. literalinclude:: circle_cm.py
     :language: python
     :linenos:
-    :lines: 18-
-    :lineno-start: 18
+    :lines: 23-
+    :lineno-start: 23
 
 Zeile 18
     Der ``@classmethod``-Dekorator wird vor der Methode ``def`` verwendet.

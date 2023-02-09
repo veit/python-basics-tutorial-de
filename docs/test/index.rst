@@ -8,7 +8,7 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    Statische Testverfahren
     werden verwendet um den Quellcode zu überprüfen, wobei dieser jedoch nicht
     ausgeführt wird. Sie unterteilen sich in
-    
+
     * `Reviews <https://de.wikipedia.org/wiki/Review_(Softwaretest)>`_ und
     * `Statische Code-Analyse
       <https://de.wikipedia.org/wiki/Statische_Code-Analyse>`_

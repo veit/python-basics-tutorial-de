@@ -1,11 +1,12 @@
 class EmptyFileError(Exception):
     pass
 
+
 filenames = ["myFile1.py", "nonExistent.py", "emptyFile.py", "myFile2.py"]
 
 for file in filenames:
     try:
-        f = open(file, 'r')
+        f = open(file, "r")
         line = f.readline()
         if line == "":
             raise EmptyFileError(f"{file} is empty")

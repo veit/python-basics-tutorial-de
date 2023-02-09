@@ -45,7 +45,7 @@ Installation
     plantuml = 'java -jar /PATH/TO/plantuml.jar'
 
    .. note::
-      Auch in Windows werden in der Pfadangabe ``/`` angegeben. 
+      Auch in Windows werden in der Pfadangabe ``/`` angegeben.
 
 .. toctree::
    :titlesonly:

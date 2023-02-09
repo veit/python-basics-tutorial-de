@@ -30,7 +30,7 @@ einem Docstring angegebenen Tests erfüllt sind.
        1 tests in 2 items.
        1 passed and 0 failed.
        Test passed.
-    
+
    .. tab:: Windows
 
       .. code-block:: console
@@ -48,7 +48,7 @@ einem Docstring angegebenen Tests erfüllt sind.
        1 tests in 2 items.
        1 passed and 0 failed.
        Test passed.
- 
+
 #. Damit die Doctests auch in andere Module importiert werden können, solltet
    ihr die folgenden Zeilen hinzufügen:
 

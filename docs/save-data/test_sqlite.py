@@ -1,10 +1,11 @@
 import os
 import sqlite3
 import unittest
+
 import create_db
 
-class TestCreateDB(unittest.TestCase):
 
+class TestCreateDB(unittest.TestCase):
     def test_db_exists(self):
         assert os.path.exists("library.db")
 
@@ -12,14 +13,15 @@ class TestCreateDB(unittest.TestCase):
         with self.assertRaises(sqlite3.OperationalError):
             create_db.cursor.execute("CREATE TABLE books(title text)")
 
-class TestCommands(unittest.TestCase):
 
+class TestCommands(unittest.TestCase):
     def setUp(self):
         self.conn = sqlite3.connect(":memory:")
         self.cursor = self.conn.cursor()
 
+
 # In order to use the file as a script as well as an importable module, the code
 # that parses the command line only runs if the module is executed as the “main”
 # file.
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

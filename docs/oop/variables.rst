@@ -1,7 +1,7 @@
 Variablen
 =========
 
-Instanzvariablen 
+Instanzvariablen
 ----------------
 
 Im vorigen Beispiel ist ``length`` eine Instanzvariable von

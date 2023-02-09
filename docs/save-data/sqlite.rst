@@ -1,4 +1,4 @@
-Das ``sqlite``-Modul 
+Das ``sqlite``-Modul
 ====================
 
 Die wichtigsten Eigenschaften von `SQLite <https://www.sqlite.org/index.html>`_

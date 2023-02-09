@@ -73,7 +73,7 @@ Zeile 16
     .. note::
        In diesem Beispiel hätte stattdessen auch ``continue``-Anweisungen in
        den ``except``-Blöcken verwendet werden können.
-      
+
 Zeile 18
     Die ``finally``-Klausel ist optional; sie wird am Ende des Blocks
     ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht.
