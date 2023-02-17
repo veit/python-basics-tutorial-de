@@ -11,7 +11,7 @@ installiert werden können.
     <https://packaging.python.org/key_projects/#setuptools>`_:
 
     * `Packaging and distributing projects
-    <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+      <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
     Wenn ihr euch Alternativen zu ``setuptools`` anschauen wollt:
 
