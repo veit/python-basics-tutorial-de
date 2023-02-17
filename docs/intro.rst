@@ -1,12 +1,6 @@
 Einführung
 ==========
 
-Willkommen bei den Python Basics! Ich habe dieses Buch geschrieben, um einen
-einfachen und praxisnahen Einstieg in Python zu ermöglichen. Das Buch ist nicht
-als umfassendes Nachschlagewerk für Python gedacht, sondern das Ziel ist
-vielmehr, euch grundlegend mit Python vertraut zu machen und euch schnell das
-Schreiben eigener Programme zu ermöglichen.
-
 Über Python
 -----------
 
