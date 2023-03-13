@@ -193,16 +193,16 @@ Float als Eingangsargument aufgerufen.
 
 .. code-block:: python
 
-    >>> round(1.49)
-    1
+    >>> round(2.5)
+    2
 
 Mit ``ceil`` aus der Standardbibliothek ``math`` und der Attributschreibweise
 :samp:`MODUL.FUNKTION(ARGUMENT)` wird aufgerundet:
 
 .. code-block:: python
 
-    >>> math.ceil(1.49)
-    2
+    >>> math.ceil(2.5)
+    3
 
 Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
 
@@ -252,6 +252,20 @@ zu verweisen, :abbr:`z.B. (zum Beispiel)`:
     hätten die Funktionen in ``cmath`` Vorrang vor denen von ``math``. Außerdem
     ist es beim Verstehen des Codes viel mühsamer, die Quelle der verwendeten
     Funktionen herauszufinden.
+
+Kaufmännisch runden
+-------------------
+
+Für das kaufmännische Runden werden :class:`Decimal <python3:decimal.Decimal>` und
+:data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
+
+.. code-block:: python
+
+    >>> import decimal
+    >>> num = decimal.Decimal('2.5')
+    >>> rounded = num.quantize(decimal.Decimal('0'), rounding = decimal.ROUND_HALF_UP)
+    >>> rounded
+    Decimal('3')
 
 Numerische Berechnungen
 -----------------------
