@@ -49,16 +49,16 @@ Methode zum Hinzufügen implementiert:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 4-7
-      :lineno-start: 4
+      :lines: 6-9
+      :lineno-start: 6
 
 #. Damit die Unittests auch in andere Module importiert werden können, solltet
    ihr die folgenden Zeilen hinzufügen:
 
    .. literalinclude:: test_arithmetic.py
       :language: python
-      :lines: 21-22
-      :lineno-start: 21
+      :lines: 23-24
+      :lineno-start: 23
 
 #. Schließlich können alle Tests in :download:`test_arithmetic.py` ausgeführt
    werden:

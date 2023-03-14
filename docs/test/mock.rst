@@ -58,27 +58,27 @@ Zunächst importieren wir ``datetime.datetime`` und ``Mock``:
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 8-10
-      :lineno-start: 8
+      :lines: 9-11
+      :lineno-start: 9
 
 #. Dann mocken wir datetime:
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 12
-      :lineno-start: 12
+      :lines: 14
+      :lineno-start: 14
 
 #. Schließlich testen wir unsere beiden Mock-Objekte:
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 15,17
-      :lineno-start: 15
+      :lines: 17-19
+      :lineno-start: 17
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 19,21
-      :lineno-start: 19
+      :lines: 21-23
+      :lineno-start: 21
 
 patch-Dekorator
 ---------------
