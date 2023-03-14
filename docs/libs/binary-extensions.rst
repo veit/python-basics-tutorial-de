@@ -231,7 +231,7 @@ Schließlich können wir unser Paket überprüfen mit ``check-wheel-contents``:
 
 .. code-block:: console
 
-    $ pipenv run check-wheel-contents dataprep/dist/*.whl
+    $ check-wheel-contents dataprep/dist/*.whl
     dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl: OK
 
 Alternativ könnt ihr auch unser ``dataprep``-Paket installieren und ``mean``
@@ -239,8 +239,8 @@ verwenden:
 
 .. code-block:: console
 
-    $ pipenv run python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
-    $ pipenv run python
+    $ python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
+    $ python
 
 .. code-block:: python
 
