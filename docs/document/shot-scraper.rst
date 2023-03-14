@@ -10,7 +10,7 @@ Installation
 
 .. code-block:: console
 
-   $ pipenv install shot-scraper
+   $ python -m pip install shot-scraper
    $ shot-scraper install
 
 .. note::
@@ -31,7 +31,7 @@ shot-scraper kann auf zweierleis Art verwendet werden
 
     .. code-block::
 
-        $ pipenv run shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
+        $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
 
 #. …für eine Reihe von Screenshots, die in einer YAML-Datei konfiguriert sind:
 
@@ -48,7 +48,7 @@ shot-scraper kann auf zweierleis Art verwendet werden
 
    .. code-block:: console
 
-        $ pipenv run shot-scraper multi shots.yaml
+        $ shot-scraper multi shots.yaml
         Screenshot of 'https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html' written to '~(Downloads/clean-prep.png'
         Screenshot of 'https://www.example.org/' written to 'example.jpg'
 

@@ -40,7 +40,7 @@ Interpreterkonfigurationen.
 
       .. code-block:: console
 
-           $ pipenv run python setup.py sdist
+           $ python setup.py sdist
 
    #. Erstellen der in ``envlist`` angegebenen Umgebungen
 

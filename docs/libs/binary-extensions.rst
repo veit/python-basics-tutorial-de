@@ -212,7 +212,7 @@ Nun könnt ihr den Build-Prozess mit dem Befehl ``pyproject-build`` ausführen u
 
 .. code-block:: console
 
-    $ pipenv run pyproject-build ../dataprep
+    $ pyproject-build .
     * Creating venv isolated environment...
     * Installing packages in isolated environment... (cython, setuptools>=40.6.0, wheel)
     * Getting dependencies for sdist...
