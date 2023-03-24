@@ -4,8 +4,8 @@ Glossar
 .. glossary::
 
    Built Distribution
-       Eine Struktur aus Dateien und Metadaten, die bei der Installation nur an den
-       richtigen Speicherort auf dem Zielsystem verschoben werden müssen.
+       Eine Struktur aus Dateien und Metadaten, die bei der Installation nur an
+       den richtigen Speicherort auf dem Zielsystem verschoben werden müssen.
        :term:`Wheel` ist ein solches Format, nicht jedoch *distutil’s*
        :term:`Source Distributions <Source Distribution (sdist)>`, die einen
        Build-Schritt erfordern.
@@ -77,8 +77,8 @@ Glossar
 
    Python Package Index (PyPI)
        `PyPI <https://pypi.org/>`_ ist der Standard-Paket-Index für die
-       Python-Community. Alle Python-Entwickler können ihre Distributionen nutzen
-       und verteilen.
+       Python-Community. Alle Python-Entwickler können ihre Distributionen
+       nutzen und verteilen.
 
    Release
        Der Snapshot eines Projekts zu einem bestimmten Zeitpunkt, gekennzeichnet
@@ -88,10 +88,10 @@ Glossar
        <Built Distribution>` zur Folge haben.
 
    setuptools
-       setuptools (und ``easy_install``) ist eine Sammlung von Verbesserungen der
-       Python-Distutils, mit denen ihr Python-Distributionen einfacher erstellen
-       und verteilen könnt, insbesondere solche, die Abhängigkeiten von anderen
-       Paketen haben.
+       setuptools (und ``easy_install``) ist eine Sammlung von Verbesserungen
+       der Python-Distutils, mit denen ihr Python-Distributionen einfacher
+       erstellen und verteilen könnt, insbesondere solche, die Abhängigkeiten
+       von anderen Paketen haben.
 
    Source Distribution (sdist)
         Ein Verteilungsformat (das normalerweise mithilfe von ``python setup.py
@@ -115,11 +115,11 @@ Glossar
 
    Wheel
        Distributionsformat, das mit `PEP 427
-       <https://www.python.org/dev/peps/pep-0427/>`_ eingeführt wurde. Es soll das
-       :term:`Egg`-Format ersetzen und wird von aktuellen
+       <https://www.python.org/dev/peps/pep-0427/>`_ eingeführt wurde. Es soll
+       das :term:`Egg`-Format ersetzen und wird von aktuellen
        :term:`Pip`-Installationen unterstützt.
 
-       C-Erweiterungen können als plattformspezifische Wheels für Windows, Mac OS
+       C-Erweiterungen können als plattformspezifische Wheels für Windows, macOS
        und Linux auf PyPI bereitgestellt werden. Dies hat für die Benutzer des
        Pakets den Vorteil, bei der Installation nicht kompilieren zu müssen.
 
