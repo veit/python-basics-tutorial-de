@@ -311,12 +311,10 @@ Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
 
 .. code-block:: console
 
-    dist/
-      dataprep-0.1.0-py3-none-any.whl
-      dataprep-0.1.0.tar.gz
+   dist
+   ├── dataprep-0.1.0-py3-none-any.whl
+   └── dataprep-0.1.0.tar.gz
 
-``dataprep-0.1.0.tar.gz``
-    ist eine Source-Distribution
 ``dataprep-0.1.0-py3-none-any.whl``
     ist eine Build-Distribution. Neuere pip-Versionen installieren bevorzugt
     Build-Distributionen, greifen aber bei Bedarf auf Source-Distributionen
@@ -339,6 +337,9 @@ Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
     ``any``
         ``any`` eignet sich für jede Prozessorarchitektur, ``x86_64`` hingegen
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
+
+``dataprep-0.1.0.tar.gz``
+    ist eine Source-Distribution
 
 .. seealso::
     Die Referenz für die Dateinamen findet ihr in `File name convention
