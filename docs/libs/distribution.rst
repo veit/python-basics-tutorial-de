@@ -161,7 +161,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 ---------------
 
 ``dataprep``
-    ist sas Verzeichnis, das die Python-Dateien enthält. Der Name sollte mit dem
+    ist das Verzeichnis, das die Python-Dateien enthält. Der Name sollte mit dem
     Projektnamen übereinstimmen um die Konfiguration zu vereinfachen und für
     diejenigen, die das Paket installieren, besser erkennbar zu sein.
 ``__init__.py``
