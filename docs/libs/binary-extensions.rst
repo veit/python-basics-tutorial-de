@@ -204,7 +204,7 @@ Nun können wir in :download:`dataprep/pyproject.toml` unser externes Modul
 angeben mit:
 
 .. literalinclude:: dataprep/pyproject.toml
-   :language: python
+   :language: toml
    :lines: 2
    :lineno-start: 2
 
