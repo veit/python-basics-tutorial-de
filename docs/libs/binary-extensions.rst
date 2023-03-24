@@ -200,12 +200,13 @@ aufgenommen werden. Die Setuptools nutzen Datei, um auch Nicht-Python-Dateien
 in ein Paket aufzunehmen. Mit der ``graft``-Direktive  werden alle Dateien
 aus dem ``src/``-Verzeichnis eingeschlossen.
 
-Nun können wir in :download:`dataprep/setup.py` unser externes Modul angeben
-mit:
+Nun können wir in :download:`dataprep/pyproject.toml` unser externes Modul
+angeben mit:
 
-.. literalinclude:: dataprep/setup.py
+.. literalinclude:: dataprep/pyproject.toml
    :language: python
-   :lines: 3-5,9,40-
+   :lines: 2
+   :lineno-start: 2
 
 Nun könnt ihr den Build-Prozess mit dem Befehl ``pyproject-build`` ausführen und
 überprüfen, ob die Cython-Datei auch wie erwartet im Paket landet:
