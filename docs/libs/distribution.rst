@@ -72,6 +72,14 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
     gepunkteten Pfad. Das ``hatchling``-Backend-Objekt ist unter
     ``hatchling.build`` verfügbar.
 
+.. seealso::
+   Wenn ihr euch Alternativen zu ``hatchling`` anschauen wollt:
+
+   * `setuptools <https://packaging.python.org/key_projects/#setuptools>`_
+   * `flit <https://packaging.python.org/key_projects/#flit>`_
+   * `poetry <https://github.com/python-poetry/poetry>`_
+   * `pypackaging-native <https://pypackaging-native.github.io>`_
+
 Metadaten
 ~~~~~~~~~
 
@@ -149,13 +157,6 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
      <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
    * `PEP 345 – Metadata for Python Software Packages 1.2
      <https://peps.python.org/pep-0345/>`_
-
-   Wenn ihr euch Alternativen zu ``hatchling`` anschauen wollt:
-
-   * `setuptools <https://packaging.python.org/key_projects/#setuptools>`_
-   * `flit <https://packaging.python.org/key_projects/#flit>`_
-   * `poetry <https://github.com/python-poetry/poetry>`_
-   * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 ``src``-Package
 ---------------
