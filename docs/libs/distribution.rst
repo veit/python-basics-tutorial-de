@@ -188,6 +188,29 @@ ihr beispielsweise für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten a
    :lines: 35-39
    :lineno-start: 35
 
+Ihr könnt diese optionalen Abhängigkeiten installieren, :abbr:`z.B. (zum
+Beispiel)` mit:
+
+.. tab:: Linux/macOS
+
+   .. code-block:: console
+
+      $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
+      $ python3 -m venv .
+      $ source bin/activate
+      $ python -m pip install --upgrade pip
+      $ python -m pip install -e '.[dev]'
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
+      > python3 -m venv .
+      > Scripts\activate.bat
+      > python -m pip install --upgrade pip
+      > python -m pip install -e '.[dev]'
+
 ``src``-Package
 ---------------
 
