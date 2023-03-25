@@ -168,7 +168,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
      <https://peps.python.org/pep-0345/>`_
 
 Optionale Abhängigkeiten
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``project.optional-dependencies``
     erlaubt euch, optionale Abhängigkeiten für euer Paket anzugeben. Dabei könnt
