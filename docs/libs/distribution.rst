@@ -51,10 +51,13 @@ Backends wählen, wobei dieses Tutorial standardmäßig ``hatchling`` verwendet.
 Eine minimale und dennoch funktionale :download:`dataprep/pyproject.toml`-Datei
 sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
 
-.. literalinclude:: dataprep/pyproject.toml
-   :language: toml
-   :lines: 1-3
+.. code-block:: toml
+   :linenos:
    :lineno-start: 1
+
+   [build-system]
+   requires = ["hatchling"]
+   build-backend = "hatchling.build"
 
 ``build-system``
     definiert einen Abschnitt, der das Build-System beschreibt
@@ -88,7 +91,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-
+   :lines: 5-19, 21-23, 31-
    :lineno-start: 5
 
 ``name``
@@ -145,6 +148,12 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     .. seealso::
        `Add invalid classifier for non open source license to avoid upload to…
        <https://github.com/veit/cookiecutter-namespace-template/commit/f4fff8ee8595ae2e59e5feb92211c8e3f1252461>`_
+
+``dependencies``
+    gibt die Abhängigkeiten für euer Paket in einem Array an.
+
+    .. seealso::
+       :pep:`631`
 
 ``urls``
     lässt euch eine beliebige Anzahl von zusätzlichen Links auflisten, die auf

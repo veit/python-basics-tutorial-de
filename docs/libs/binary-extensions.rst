@@ -194,19 +194,35 @@ Python-Code aus :download:`dataprep/src/dataprep/cymean.pyx` in optimierten
 C-Code während des Build-Prozesses zu übersetzen. Cython-Dateien haben den
 Suffix ``pyx`` und können sowohl Python- also auch C-Code enthalten.
 
-Da Cython selbst ein Python-Paket ist, kann es einfach in der
-:download:`dataprep/pyproject.toml`-Datei in die Liste der Abhängigkeiten
-aufgenommen werden. Die Setuptools nutzen Datei, um auch Nicht-Python-Dateien
-in ein Paket aufzunehmen. Mit der ``graft``-Direktive  werden alle Dateien
-aus dem ``src/``-Verzeichnis eingeschlossen.
-
-Nun können wir in :download:`dataprep/pyproject.toml` unser externes Modul
-angeben mit:
+Als Build-Backend können wir jedoch aktuell noch nicht ``hatchling.build``
+verwenden, sondern müssen auf ``setuptools.build_meta`` zurückgreifen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 2
-   :lineno-start: 2
+   :lines: 1-3
+   :lineno-start: 1
+
+.. note::
+   Mit `extensionlib <https://github.com/ofek/extensionlib>`_ gibt es ein
+   Toolkit für Extensions-Module, das aktuell jedoch noch kein
+   ``hatchling``-Plugin enthält.
+
+Da Cython selbst ein Python-Paket ist, kann es einfach in der
+:download:`dataprep/pyproject.toml`-Datei in die Liste der Abhängigkeiten
+aufgenommen werden:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 19-22
+   :lineno-start: 19
+   :emphasize-lines: 2
+
+Die Setuptools nutzen :download:`dataprep/setup.py`, um auch
+Nicht-Python-Dateien in ein Paket aufzunehmen.
+
+.. literalinclude:: dataprep/setup.py
+    :language: python
+    :lines: 3-5,9,40-
 
 Nun könnt ihr den Build-Prozess mit dem Befehl ``pyproject-build`` ausführen und
 überprüfen, ob die Cython-Datei auch wie erwartet im Paket landet:
