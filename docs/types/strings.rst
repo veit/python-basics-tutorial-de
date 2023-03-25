@@ -343,19 +343,12 @@ Beispiel)`:
     >>> print(f"Der Wert von Pi ist {pi:.3f}.")
     Der Wert von Pi ist 3.142.
 
-Objekte werden automatisch in Zeichenketten umgewandelt, um sie auszudrucken,
-wobei die mit vorangestelltem ``f`` formatierten String-Literale zusätzliche
-Formatierungsmöglichkeiten bieten.
 
 In ``{pi:.3f}`` wird die Format-Spezifikation ``f`` verwendet, um die Zahl Pi
-auf drei Nachkommastellen zu begrenzen. Weitere Informationen zu den
-Format-Spezifikationen erhaltet ihr unter `Format Specification Mini-Language
-<https://docs.python.org/3/library/string.html#format-specification-mini-language>`_.
 
 .. seealso::
    * :ref:`python3:f-strings`
-   * `PEP 498 – Literal String Interpolation
-     <https://peps.python.org/pep-0498/>`_
+   * :pep:`498`
 
 Eingebaute Module für Zeichenketten
 -----------------------------------

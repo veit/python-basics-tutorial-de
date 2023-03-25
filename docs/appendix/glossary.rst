@@ -114,9 +114,8 @@ Glossar
        wird auf `pypi.org`_ gehostet.
 
    Wheel
-       Distributionsformat, das mit `PEP 427
-       <https://www.python.org/dev/peps/pep-0427/>`_ eingeführt wurde. Es soll
-       das :term:`Egg`-Format ersetzen und wird von aktuellen
+       Distributionsformat, das mit :pep:`427` eingeführt wurde. Es soll das
+       :term:`Egg`-Format ersetzen und wird von aktuellen
        :term:`Pip`-Installationen unterstützt.
 
        C-Erweiterungen können als plattformspezifische Wheels für Windows, macOS
@@ -125,6 +124,6 @@ Glossar
 
        `Home <https://pythonwheels.com/>`__ |
        `Docs <https://wheel.readthedocs.io/>`__ |
-       `PEP <https://www.python.org/dev/peps/pep-0427/>`_ |
+       :pep:`427` |
        `GitHub <https://github.com/pypa/wheel>`__ |
        `PyPI <https://pypi.org/project/wheel/>`__ |

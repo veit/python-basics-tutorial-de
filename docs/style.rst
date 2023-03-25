@@ -82,7 +82,7 @@ ihr in der folgenden Tabelle:
 
 .. seealso::
 
-    * `PEP 8 – Style Guide for Python Code <https://peps.python.org/pep-0008/>`_
+    * :pep:`8`
     * `Google Python Style Guide
       <https://google.github.io/styleguide/pyguide.html>`_
 

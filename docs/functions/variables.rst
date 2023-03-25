@@ -71,5 +71,4 @@ sich ``nonlocal`` auf jede Variable in einem umschließenden Bereich.
 .. seealso::
 
     * :ref:`python3:nonlocal`
-    * `PEP 3104 – Access to Names in Outer Scopes
-      <https://peps.python.org/pep-3104/>`_
+    * :pep:`3104`

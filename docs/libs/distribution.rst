@@ -37,9 +37,8 @@ Ein minimales Distribution Package kann :abbr:`z.B. (zum Beispiel)` so aussehen:
 ``pyproject.toml``
 ------------------
 
-`PEP 517 <https://peps.python.org/pep-0517/>`_ und `PEP 518
-<https://peps.python.org/pep-0518/>`_ brachten erweiterbare Build-Backends,
-isolierte Builds und `pyproject.toml
+:pep:`517` und :pep:`518` brachten erweiterbare Build-Backends, isolierte Builds
+und `pyproject.toml
 <https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ im
 :doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index`-Format.
 
@@ -103,8 +102,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     ist die Version des Pakets.
 
     .. seealso::
-       * `PEP 440 – Version Identification and Dependency Specification
-         <https://peps.python.org/pep-0440/>`_
+       * :pep:`440`
        * `Semantic Versioning <https://semver.org>`_
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
@@ -164,8 +162,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 .. seealso::
    * `Declaring project metadata
      <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
-   * `PEP 345 – Metadata for Python Software Packages 1.2
-     <https://peps.python.org/pep-0345/>`_
+   * :pep:`345`
 
 Optionale Abhängigkeiten
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,13 +395,12 @@ Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
     ist eine Source-Distribution
 
 .. seealso::
-    Die Referenz für die Dateinamen findet ihr in `File name convention
-    <https://www.python.org/dev/peps/pep-0427/#file-name-convention>`_.
+    Die Referenz für die Dateinamen findet ihr in :pep:`427`.
 
     Weitere Infos zu Source-Distributionen erhaltet ihr in `Creating a Source
     Distribution
     <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__.
-    und `PEP 376 <https://www.python.org/dev/peps/pep-0376/>`_.
+    und :pep:`376`.
 
 Testen
 ------
