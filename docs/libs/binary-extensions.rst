@@ -301,21 +301,10 @@ dass ihr einen geeigneten Compiler zur Verfügung habt. Unter Windows wird
 Visual C zum Erstellen des offiziellen CPython-Interpreters verwendet und er
 sollte auch zum Erstellen kompatibler Beschleunigungsmodule verwendet werden:
 
-für Python 3.4
-    #. installiert `Microsoft Windows SDK for Windows 7 and .NET Framework 4
-       <https://www.microsoft.com/en-gb/download/details.aspx?id=8279>`_
-    #. arbeitet mit dem SDK-Command-Prompt (mit den Umgebungsvariablen und dem
-       SDK in ``PATH``).
-    #. setzt ``DISTUTILS_USE_SDK=1``.
-für Python 3.5+
-    #. installiert `Visual Studio Code <https://code.visualstudio.com/>`_ mit
-       `Python Extension
-       <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_
 
-    .. note::
-        Visual Studio arbeitet ab Python 3.5 abwärtskompatibel, d.h., dass jede
-        zukünftige Version von Visual Studio Python-Erweiterungen für alle
-        Python-Versionen ab Version 3.5 erstellen kann.
+Für Python ≥ 3.5 installiert `Visual Studio Code
+<https://code.visualstudio.com/>`_ mit `Python Extension
+<https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_
 
 Das Erstellen mit dem empfohlenen Compiler unter Windows stellt sicher, dass
 eine kompatible C-Bibliothek im gesamten Python-Prozess verwendet wird.
