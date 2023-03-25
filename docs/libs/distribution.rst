@@ -303,14 +303,16 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
 
    .. code-block:: console
 
+      $ python -m pip install build
       $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
       $ rm -rf build dist
-      $ python3 -m build
+      $ python -m build
 
 .. tab:: Windows
 
    .. code-block:: ps1
 
+      > python -m pip install build
       > cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
       > rm -rf build dist
       > python -m build
@@ -398,7 +400,7 @@ Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
 .. code-block:: console
 
     $ python -m pip install check-wheel-contents
-    $ python check-wheel-contents dist/*.whl
+    $ check-wheel-contents dist/*.whl
     dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternativ könnt ihr das Paket auch installieren:
