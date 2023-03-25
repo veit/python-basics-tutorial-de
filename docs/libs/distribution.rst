@@ -91,7 +91,7 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-19, 21-23, 31-
+   :lines: 5-19, 21-23, 40-
    :lineno-start: 5
 
 ``name``
@@ -166,6 +166,27 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
      <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
    * `PEP 345 – Metadata for Python Software Packages 1.2
      <https://peps.python.org/pep-0345/>`_
+
+Optionale Abhängigkeiten
+------------------------
+
+``project.optional-dependencies``
+    erlaubt euch, optionale Abhängigkeiten für euer Paket anzugeben. Dabei könnt
+    ihr auch zwischen verschiedenen Sets unterscheiden:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 24-34
+   :lineno-start: 34
+
+Auch rekursive optionale Abhängigkeiten sind mit pip ≥ 21.2 möglich. So könnt
+ihr beispielsweise für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus
+``docs`` und ``test`` übernehmen:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lines: 35-39
+   :lineno-start: 35
 
 ``src``-Package
 ---------------

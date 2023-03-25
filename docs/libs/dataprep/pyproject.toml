@@ -21,6 +21,22 @@ dependencies = [
     "pandas",
 ]
 
+[project.optional-dependencies]
+tests = [
+    "coverage[toml]",
+    "pytest>=6.0",
+]
+docs = [
+    "furo",
+    "sphinxext-opengraph",
+    "sphinx-copybutton",
+    "sphinx_inline_tabs"
+]
+dev = [
+    "dataprep[tests, docs]",
+    "pre-commit"
+]
+
 [project.urls]
 "Homepage" = "https://github.com/veit/dataprep"
 "Bug Tracker" = "https://github.com/veit/dataprep/issues"
