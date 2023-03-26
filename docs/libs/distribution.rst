@@ -101,16 +101,48 @@ In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 ``version``
     ist die Version des Pakets.
 
+    In unserem Beispiel ist die Versionsnummer statisch gesetzt worden. Es gibt
+    jedoch auch die Möglichkeit, die Version dynamisch anzugeben, :abbr:`z.B.
+    (zum Beispiel)` durch eine Datei:
+
+    .. code-block:: toml
+
+       [project]
+       ...
+       dynamic = ["version"]
+
+       [tool.hatch.version]
+       path = "src/dataprep/__about__.py"
+
+    Das Standardmuster sucht nach einer Variablen namens :samp:`__version__`
+    oder :samp:`VERSION`, die die Version enthält, optional mit dem
+    vorangestellten Kleinbuchstaben :samp:`v`. Dabei basiert das Standardschema
+    basiert auf :pep:`440`.
+
+    Wenn dies nicht der Art entspricht, wie ihr Versionen speichern wollt,
+    könnt ihr mit der Option :samp:`pattern` auch einen anderen regulären
+    Ausdruck definieren.
+
+    Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z.B. (zum
+    Beispiel)` `hatch-semver <https://github.com/Nagidal/hatch-semver>`_ für
+    `Semantic Versioning <https://semver.org>`_.
+
+    Mit dem Version-Source-Plugin `hatch-vcs
+    <https://github.com/ofek/hatch-vcs>`_ könnt ihr auch
+    :doc:`jupyter-tutorial:productive/git/tag` verwenden:
+
+    .. code-block:: toml
+
+       [build-system]
+       requires = ["hatchling", "hatch-vcs"]
+       ...
+       [tool.hatch.version]
+       source = "vcs"
+
     .. seealso::
-       * :pep:`440`
-       * `Semantic Versioning <https://semver.org>`_
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
        * `bump2version <https://pypi.org/project/bump2version/>`_
-
-    Einige Build-Backends erlauben es, die Version auf andere Weise anzugeben,
-    :abbr:`z.B. (zum Beispiel)` durch eine Datei oder
-    :doc:`jupyter-tutorial:productive/git/tag`.
 
 ``authors``
     wird verwendet, um die Autoren des Pakets anahnd ihrer Namen und
