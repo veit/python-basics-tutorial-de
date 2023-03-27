@@ -58,10 +58,6 @@ Interpreterkonfigurationen.
            py27: commands succeeded
            ERROR:   py36: commands failed
 
-   .. seealso::
-
-      * `Beispiele <https://tox.readthedocs.io/en/latest/examples.html>`_
-
 GitHub-Actions
 --------------
 

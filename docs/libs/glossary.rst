@@ -39,7 +39,7 @@ Glossar
 
        Conda installiert keine Pakete von :term:`PyPI` und kann nur von den
        offiziellen Continuum-Repositories oder von `anaconda.org
-       <https://anaconda.org/>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
+       <https://anaconda.org>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
        Intranet-) Paketservern installieren. Beachtet jedoch, dass :term:`pip`
        in conda installiert werden und Seite an Seite arbeiten kann, um
        Distributionen von :term:`PyPI` zu verwalten.

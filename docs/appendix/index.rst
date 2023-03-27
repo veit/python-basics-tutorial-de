@@ -6,4 +6,3 @@ Anhang
 
    regex
    encodings
-   glossary

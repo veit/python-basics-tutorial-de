@@ -21,9 +21,9 @@ Python
     `Codacy <https://github.com/codacy/python-codacy-coverage/>`_,
     und `Code Climate <https://github.com/codeclimate/python-test-reporter>`_,
     Dokumentation mit `Sphinx <http://www.sphinx-doc.org/>`_,
-    Packaging-Checks u.a. mit `Landscape <https://landscape.io/index.html>`_,
-    `scrutinizer <https://scrutinizer-ci.com/docs/guides/python/>`_,
-    `Isort <https://github.com/PyCQA/isort>`_ etc.
+    Packaging-Checks u.a. mit `scrutinizer
+    <https://scrutinizer-ci.com/docs/guides/python/>`_, `Isort
+    <https://github.com/PyCQA/isort>`_ etc.
 `cookiecutter-python-cli <https://github.com/seanluong/cookiecutter-python-cli>`_
     Template zum Erstellen einer Python-CLI-Anwendung mit `Click
     <https://click.palletsprojects.com/>`_

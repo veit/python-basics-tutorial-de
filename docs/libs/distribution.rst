@@ -274,7 +274,7 @@ Eine minimale und dennoch funktionale :download:`dataprep/setup.py` sieht dann
 <https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
 verweist auf das Verzeichnis ``src``, in dem sich ein oder mehrere Pakete
 befinden können. Anschließend könnt ihr mit setuptools’s `find_packages()
-<https://setuptools.readthedocs.io/en/latest/userguide/package_discovery.html#using-find-or-find-packages>`_
+<https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
 alle Pakete in diesem Verzeichnis finden.
 
 .. note::
