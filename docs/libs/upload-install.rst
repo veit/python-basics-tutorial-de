@@ -28,8 +28,8 @@ Nun könnt ihr eine ``~/.pypirc``-Datei erstellen:
     <https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html>`_.
 
 Nachdem ihr registriert seid, könnt ihr euer :term:`Distribution Package` mit
-`twine <https://packaging.python.org/key_projects/#twine>`_ hochladen. Hierzu
-müsst ihr jedoch zunächst twine installieren mit:
+:term:`twine` hochladen. Hierzu müsst ihr jedoch zunächst twine installieren
+mit:
 
 .. code-block:: console
 
@@ -41,7 +41,8 @@ müsst ihr jedoch zunächst twine installieren mit:
    Führt diesen Befehl vor jedem Release aus um sicherzustellen, dass alle
    Release-Tools auf dem neuesten Stand sind.
 
-Nun könnt ihr eure *Distribution Packages* erstellen mit:
+Nun könnt ihr eure :term:`Distribution Packages <Distribution Package>`
+erstellen mit:
 
 .. code-block:: console
 

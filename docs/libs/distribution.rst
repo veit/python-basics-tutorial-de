@@ -34,16 +34,17 @@ Ein minimales Distribution Package kann :abbr:`z.B. (zum Beispiel)` so aussehen:
             ├── __init__.py
             └── loaders.py
 
+.. _pyproject-toml:
+
 ``pyproject.toml``
 ------------------
 
 :pep:`517` und :pep:`518` brachten erweiterbare Build-Backends, isolierte Builds
-und `pyproject.toml
-<https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/>`_ im
+und :term:`pyproject.toml` im
 :doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index`-Format.
 
-``pyproject.toml`` teilt :abbr:`u.a. (unter anderem)` :term:`pip` und
-``build`` mit, welches *Backend*-Werkzeug verwendet werden soll, um
+:file:`pyproject.toml` teilt :abbr:`u.a. (unter anderem)` :term:`pip` und
+:term:`build` mit, welches *Backend*-Werkzeug verwendet werden soll, um
 Distributionspakete für euer Projekt zu erstellen. Ihr könnt aus einer Reihe von
 Backends wählen, wobei dieses Tutorial standardmäßig ``hatchling`` verwendet.
 
@@ -77,15 +78,15 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
 .. seealso::
    Wenn ihr euch Alternativen zu ``hatchling`` anschauen wollt:
 
-   * `setuptools <https://packaging.python.org/key_projects/#setuptools>`_
-   * `flit <https://packaging.python.org/key_projects/#flit>`_
+   * :term:`setuptools`
+   * :term:`Flit`
    * `poetry <https://github.com/python-poetry/poetry>`_
    * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 Metadaten
 ~~~~~~~~~
 
-In ``pyproject.toml`` könnt ihr auch Metadaten zu eurem Paket angeben, wie
+In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 :abbr:`z.B. (zum Beispiel)`:
 
 .. literalinclude:: dataprep/pyproject.toml
@@ -370,7 +371,7 @@ hochgeladen und von :term:`pip` installiert werden können.
 Stellt sicher, dass ihr die neueste Version von ``build`` installiert habt:
 
 Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
-``pyproject.toml`` befindet:
+:file:`pyproject.toml` befindet:
 
 .. tab:: Linux/macOS
 

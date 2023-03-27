@@ -137,9 +137,9 @@ Branches <jupyter-tutorial:productive/git/workflows/feature-branches>` und
 :doc:`jupyter-tutorial:productive/git/git-big-picture` hilfreich sein.
 
 .. note::
-   Wenn der Inhalt von ``long_description`` in ``setuptools.setup()`` in
-   reStructured Text geschrieben ist, wird er als gut formatiertes HTML im
-   :term:`Python Package Index (PyPI)` angezeigt.
+   Wenn der Inhalt von ``long_description`` in ``setup()`` in reStructured Text
+   geschrieben ist, wird er als gut formatiertes HTML im :term:`Python Package
+   Index (PyPI)` angezeigt.
 
 Andere Dokumentationswerkzeuge
 ------------------------------

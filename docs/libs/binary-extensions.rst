@@ -195,7 +195,8 @@ C-Code während des Build-Prozesses zu übersetzen. Cython-Dateien haben den
 Suffix ``pyx`` und können sowohl Python- also auch C-Code enthalten.
 
 Als Build-Backend können wir jedoch aktuell noch nicht ``hatchling.build``
-verwenden, sondern müssen auf ``setuptools.build_meta`` zurückgreifen:
+verwenden, sondern müssen auf ``build_meta`` der :term:`setuptools`
+zurückgreifen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml

@@ -1,16 +1,18 @@
 Pakete und Programme
 ====================
 
-Wheels
+.. _wheels:
+
+wheels
 ~~~~~~
 
 Das derzeitige Standardformat zur Verteilung von Python-Bibliotheken und
--Programmen ist die Verwendung von `Wheels <https://pythonwheels.com/>`_. Wheels
-wurden entwickelt, um die Installation von Python-Code zuverlässiger zu machen
-und die Verwaltung von Abhängigkeiten zu erleichtern. Die Details zur Erstellung
-von Wheels würden jedoch den Rahmen dieses Abschnitts sprengen, aber alle
-Details zu den Anforderungen und dem Prozess zur Erstellung von Wheels findet
-ihr in :doc:`distribution`.
+-Programmen ist die Verwendung von :term:`wheels <wheel>`. wheels wurden
+entwickelt, um die Installation von Python-Code zuverlässiger zu machen und die
+Verwaltung von Abhängigkeiten zu erleichtern. Die Details zur Erstellung von
+wheels würden jedoch den Rahmen dieses Abschnitts sprengen, aber alle Details zu
+den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
+:doc:`distribution`.
 
 ``py2exe`` und ``py2app``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
