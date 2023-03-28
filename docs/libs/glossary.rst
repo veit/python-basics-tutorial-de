@@ -269,6 +269,17 @@ Glossar
        :term:`pypi.org` ist der Standard-Paket-Index für die Python-Community.
        Alle Python-Entwickler können ihre Distributionen nutzen und verteilen.
 
+   Python Packaging Authority
+   PyPA
+       Die `Python Packaging Authority <https://www.pypa.io/en/latest/>`_ ist
+       eine Arbeitsgruppe, die mehrere Softwareprojekte für die Paketierung,
+       Verteilung und Installation von Python-Bibliotheken verwaltet. Die in
+       `PyPA Goals <https://www.pypa.io/en/latest/future/>`_ genannten Ziele
+       sind jedoch noch während der Diskussionen um :pep:`516`, :pep:`517` und
+       :pep:`518` entstanden, die mit dem :term:`pyproject.toml`-basierten
+       Build-System konkurrierende Workflows erlaubten, die nicht interoperabel
+       sein müssen.
+
    readme_renderer
        ``readme_renderer`` ist eine Bibliothek, die verwendet wird, um
        Dokumentation aus Auszeichnungssprachen wie Markdown oder
