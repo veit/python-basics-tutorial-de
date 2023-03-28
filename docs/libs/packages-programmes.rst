@@ -14,6 +14,10 @@ wheels würden jedoch den Rahmen dieses Abschnitts sprengen, aber alle Details z
 den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
 :doc:`distribution`.
 
+.. seealso::
+   * Pradyun Gedam: `Thoughts on the Python packaging ecosystem
+     <https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/>`_
+
 ``py2exe`` und ``py2app``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
