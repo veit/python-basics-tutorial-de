@@ -4,7 +4,7 @@ Pakete und Programme
 .. _wheels:
 
 wheels
-~~~~~~
+------
 
 Das derzeitige Standardformat zur Verteilung von Python-Bibliotheken und
 -Programmen ist die Verwendung von :term:`wheels <wheel>`. wheels wurden
@@ -19,7 +19,7 @@ den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
      <https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/>`_
 
 ``py2exe`` und ``py2app``
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 `py2exe <https://www.py2exe.org/>`_ erstellt eigenständige Windows-Programme und `py2app <https://py2app.readthedocs.io/en/latest/>`_ dasselbe für macOS. In
 beiden Fällen handelt es sich um einzelne ausführbare Dateien, die auch auf
@@ -29,7 +29,7 @@ tendenziell größer und weniger flexibel sind als native Python-Anwendungen, ab
 in manchen Situationen können sie auch die beste oder einzige Lösung sein.
 
 ``freeze``
-~~~~~~~~~~
+----------
 
 Auch das ``freeze``-Tool erstellt ein ausführbares Python-Programm, das auf
 Rechnern läuft, auf denen Python nicht installiert ist. Wenn ihr das
