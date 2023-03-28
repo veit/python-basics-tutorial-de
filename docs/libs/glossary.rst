@@ -211,6 +211,7 @@ Glossar
        `PyPI <https://pypi.org/project/pipenv>`__
 
    Pipfile
+   Pipfile.lock
        ``Pipfile`` und ``Pipfile.lock`` sind eine übergeordnete,
        anwendungsorientierte Alternative zu :term:`pip`’s
        ``requirements.txt``-Datei. Die :pep:`PEP 508 Environment Markers
