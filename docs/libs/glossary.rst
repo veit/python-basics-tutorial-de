@@ -97,7 +97,7 @@ Glossar
 
    Flit
        Flit bietet eine einfache Möglichkeit, reine Python-Pakete und -Module zu
-       erstellen und auf den:term:`Python Package Index` hochzuladen. Flit kann
+       erstellen und auf den :term:`Python Package Index` hochzuladen. Flit kann
        eine Konfigurationsdatei generieren, um schnell ein Projekt einzurichten,
        eine :term:`Source Distribution` und ein :term:`wheel` zu erstellen und
        sie zu PyPI hochzuladen.
@@ -160,8 +160,9 @@ Glossar
    pdm
        Python-Paketmanager mit :pep:`582`-Unterstützung. Er installiert und
        verwaltet Pakete ohne dass eine :term:`virtuelle Umgebung <Virtuelle
-       Umgebung>` erstellt werden muss. Er verwendet auch term:`pyproject.toml`,
-       um Projekt-Metadaten zu speichern, wie in :pep:`621` definiert.
+       Umgebung>` erstellt werden muss. Er verwendet auch
+       :term:`pyproject.toml`, um Projekt-Metadaten zu speichern, wie in
+       :pep:`621` definiert.
 
        `Docs <https://pdm.fming.dev/>`__ |
        `GitHub <https://github.com/pdm-project/pdm/>`__ |
