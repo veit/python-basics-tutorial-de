@@ -131,7 +131,7 @@ virtuelle Umgebung momentan aktiv ist.
 PyPI
 ~~~~
 
-Der :term:`Python Package Index (PyPI)` ist der Standard-Paket-Index, jedoch
-keineswegs das einzige Repository für Python-Code. Ihr könnt ihn direkt unter
-https://pypi.python.org aufrufen und nach Paketen suchen oder die Pakete nach
+Der :term:`Python Package Index` (:term:`PyPI`) ist der Standard-Paket-Index,
+jedoch keineswegs das einzige Repository für Python-Code. Ihr könnt ihn direkt
+unter :term:`pypi.org` aufrufen und nach Paketen suchen oder die Pakete nach
 Kategorien filtern.
