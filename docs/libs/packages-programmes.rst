@@ -17,6 +17,8 @@ den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
 .. seealso::
    * Pradyun Gedam: `Thoughts on the Python packaging ecosystem
      <https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/>`_
+   * `Python Package Build Tools
+     <https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html>`_
 
 ``py2exe`` und ``py2app``
 -------------------------
