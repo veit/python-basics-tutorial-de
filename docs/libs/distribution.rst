@@ -244,6 +244,21 @@ Beispiel)` mit:
 ``src``-Package
 ---------------
 
+Wenn ihr ein neues Paket erstellt, solltet ihr kein flaches sondern das
+``src``-Layout verwenden, das auch in `Packaging Python Projects
+<https://packaging.python.org/en/latest/tutorials/packaging-projects/>`_ der
+:term:`PyPA` empfohlen wird. Ein wesentlicher Vorteil dieses Layouts ist, dass
+Tests mit der installierten Version eures Pakets und nicht mit den Dateien in
+eurem Arbeitsverzeichnis ausgeführt werden.
+
+.. seealso::
+   * Hynek Schlawack: `Testing & Packaging
+     <https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html>`_
+
+.. note::
+   In Python ≥ 3.11 kann mit :envvar:`PYTHONSAFEPATH` sichergestellt werden,
+   dass die installierten Pakete zuerst verwendet werden.
+
 ``dataprep``
     ist das Verzeichnis, das die Python-Dateien enthält. Der Name sollte mit dem
     Projektnamen übereinstimmen um die Konfiguration zu vereinfachen und für
