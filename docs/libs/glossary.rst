@@ -127,11 +127,10 @@ Glossar
        kann.
 
    meson-python
-       Build-Backend, das das `Meson
-       <https://github.com/mesonbuild/meson>`_-Build-System verwendet. Es
-       unterstützt eine Vielzahl von Sprachen, einschließlich C, und ist in der
-       Lage, die Anforderungen der meisten komplexen Build-Konfigurationen zu
-       erfüllen.
+       Build-Backend, das das `Meson <https://mesonbuild.com>`_-Build-System
+       verwendet. Es unterstützt eine Vielzahl von Sprachen, einschließlich C,
+       und ist in der Lage, die Anforderungen der meisten komplexen
+       Build-Konfigurationen zu erfüllen.
 
        `Docs <https://meson-python.readthedocs.io/en/latest/>`__ |
        `GitHub <https://github.com/mesonbuild/meson-python>`__ |
