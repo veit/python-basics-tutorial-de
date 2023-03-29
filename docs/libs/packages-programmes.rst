@@ -38,10 +38,11 @@ Rechnern läuft, auf denen Python nicht installiert ist. Wenn ihr das
 ``freeze``-Tool verwenden möchtet, müsst ihr wahrscheinlich den
 Python-Quellcode herunterladen.
 
-Beim *Einfrieren* eines Python-Programms werden C-Dateien erstellt , die dann mit
-einem C-Compiler kompiliert und gelinkt werden, den ihr auf eurem System
-installiert haben müsst. Die so eingefrorene Anwendung läuft nur auf Plattformen,
-für die der verwendete C-Compiler seine ausführbaren Dateien bereitstellt.
+Beim *Einfrieren* eines Python-Programms werden C-Dateien erstellt , die dann
+mit einem C-Compiler kompiliert und gelinkt werden, den ihr auf eurem System
+installiert haben müsst. Die so eingefrorene Anwendung läuft nur auf
+Plattformen, für die der verwendete C-Compiler seine ausführbaren Dateien
+bereitstellt.
 
 .. seealso::
 
