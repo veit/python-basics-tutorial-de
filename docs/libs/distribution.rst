@@ -277,8 +277,8 @@ Andere Dateien
 ``setup.py``
 ~~~~~~~~~~~~
 
-Eine minimale und dennoch funktionale :download:`dataprep/setup.py` sieht dann
-:abbr:`z.B. (zum Beispiel)` so aus:
+Eine minimale und dennoch funktionale :download:`dataprep/setup.py` kann
+:abbr:`z.B. (zum Beispiel)` so aussehen:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
@@ -328,7 +328,8 @@ distribution
 Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ``wheel`` sammelt heutzutage alle erforderlichen Lizenzdateien automatisch und
 ``setuptools`` kann mit dem ``options``-Keyword-Argument universelle
-``wheel``-Pakete bauen, z.B. ``dataprep-0.1.0-py3-none-any.whl``.
+``wheel``-Pakete bauen, :abbr:`z.B. (zum Beispiel)`
+``dataprep-0.1.0-py3-none-any.whl``.
 
 ``CONTRIBUTORS.rst``
 ~~~~~~~~~~~~~~~~~~~~
