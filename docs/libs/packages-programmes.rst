@@ -51,13 +51,13 @@ bereitstellt.
 PyInstaller and PyOxidizer
 --------------------------
 
-`PyInstaller <https://pyinstaller.org/en/stable/index.html#>`_ and `PyOxidizer
-<https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bundle a
-Python application and all its dependencies into a single package.
+`PyInstaller <https://pyinstaller.org/en/stable/index.html#>`_ und `PyOxidizer
+<https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bündeln eine
+Python-Anwendung und alle ihre Abhängigkeiten in einem einzigen Paket.
 
 Briefcase
 ---------
 
-`Briefcase <https://beeware.org/project/projects/tools/briefcase/>`_ is a tool
-for converting a Python project into a standalone native application for Mac,
-Windows, Linux, iPhone/iPad and Android.
+`Briefcase <https://beeware.org/project/projects/tools/briefcase/>`_ ist ein
+Werkzeug zur Konvertierung eines Python-Projekts in eine eigenständige native
+Anwendung für Mac, Windows, Linux, iPhone/iPad und Android.
