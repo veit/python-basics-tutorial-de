@@ -315,11 +315,11 @@ Glossar
    scikit-build
        Build-System-Generator für ``C``-, ``C++``-, ``Fortran``- und
        ``Cython``-Erweiterungen, der :term:`setuptools`, :term:`wheel` und
-       :term:`pip` integriert ist. Er verwendet intern ``CMake``, um eine
-       bessere Unterstützung für zusätzliche Compiler, Build-Systeme,
-       Cross-Compilation und das Auffinden von Abhängigkeiten und deren
-       zugehörigen Build-Anforderungen zu bieten. Um die Erstellung großer
-       Projekte zu beschleunigen und zu parallelisieren, kann Ninja installiert
+       :term:`pip` integriert. Er verwendet intern ``CMake``, um eine bessere
+       Unterstützung für zusätzliche Compiler, Build-Systeme, Cross-Compilation
+       und das Auffinden von Abhängigkeiten und deren zugehörigen
+       Build-Anforderungen zu bieten. Um die Erstellung großer Projekte zu
+       beschleunigen und zu parallelisieren, kann zusätzlich Ninja installiert
        werden.
 
        `Docs <https://scikit-build.readthedocs.io/en/latest/>`__ |

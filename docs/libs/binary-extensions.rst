@@ -208,9 +208,11 @@ zurückgreifen:
    Toolkit für Extensions-Module, das aktuell jedoch noch kein
    ``hatchling``-Plugin enthält.
 
-.. note::
-   Alternativ könnt ihr :term:`Meson <meson-python>` verwenden, das auch Cython
-   und C++ unterstützt: `Cython <https://mesonbuild.com/Cython.html>`_.
+.. seealso::
+   * :term:`Meson <meson-python>`: `Cython Support
+     <https://mesonbuild.com/Cython.html>`_
+   * :term:`scikit-build`: `C Runtime, Compiler and Build System Generator
+     <https://scikit-build.readthedocs.io/en/latest/generators.html>`_
 
 Da Cython selbst ein Python-Paket ist, kann es einfach in der
 :download:`dataprep/pyproject.toml`-Datei in die Liste der Abhängigkeiten
