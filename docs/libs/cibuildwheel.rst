@@ -55,8 +55,8 @@ Dadurch wird der CI-Workflow mit den folgenden Standardeinstellungen ausgeführt
 * ``package-dir: .``
 * ``output-dir: wheelhouse``
 
-Ihr könnt die Datei erweitern um die Wheels automatisch auf den
-:term:`Python Package Index (PyPI)` hochzuladen mit:
+Ihr könnt die Datei erweitern um die Wheels automatisch auf den :term:`Python
+Package Index` (:term:`PyPI`) hochzuladen mit:
 
 .. code-block:: yaml
 

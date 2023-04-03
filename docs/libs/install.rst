@@ -29,9 +29,9 @@ jedoch zwei Probleme mit sich:
 #. Es werden bestimmte Python-Pfade und Berechtigungen eures Systems erwartet.
 
 Python bietet :term:`pip` als aktuelle Lösung für beide Probleme an. ``pip``
-versucht, das Modul im :term:`Python Package Index (PyPI)` zu finden, lädt es
-und alle Abhängigkeiten herunter und kümmert sich um die Installation. Die
-grundlegende Syntax von ``pip`` ist recht einfach: um :abbr:`z.B. (zum
+versucht, das Modul im :term:`Python Package Index` (:term:`PyPI`) zu finden,
+lädt es und alle Abhängigkeiten herunter und kümmert sich um die Installation.
+Die grundlegende Syntax von ``pip`` ist recht einfach: um :abbr:`z.B. (zum
 Beispiel)` die beliebte ``requests``-Bibliothek von der Kommandozeile aus zu
 installieren, müsst ihr nur Folgendes tun:
 

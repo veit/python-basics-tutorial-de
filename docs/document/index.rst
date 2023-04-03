@@ -139,7 +139,7 @@ Branches <jupyter-tutorial:productive/git/workflows/feature-branches>` und
 .. note::
    Wenn der Inhalt von ``long_description`` in ``setup()`` in reStructured Text
    geschrieben ist, wird er als gut formatiertes HTML im :term:`Python Package
-   Index (PyPI)` angezeigt.
+   Index` (:term:`PyPI`) angezeigt.
 
 Andere Dokumentationswerkzeuge
 ------------------------------

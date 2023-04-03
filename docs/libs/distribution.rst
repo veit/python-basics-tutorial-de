@@ -97,8 +97,8 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 ``name``
     ist der Distributionsname eures Pakets. Dies kann ein beliebiger Name sein,
     solange er nur Buchstaben, Zahlen, ``.``, ``_`` und ``-`` enthält. Er sollte
-    auch nicht bereits auf dem :term:`Python Package Index (PyPI)` vergeben
-    sein.
+    auch nicht bereits auf dem :term:`Python Package Index` (:term:`PyPI`)
+    vergeben sein.
 ``version``
     ist die Version des Pakets.
 
@@ -155,16 +155,16 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     ist eine kurze Zusammenfassung des Pakets, die aus einem Satz besteht.
 ``readme``
     ist ein Pfad zu einer Datei, die eine detaillierte Beschreibung des Pakets
-    enthält. Diese wird auf der Paketdetailseite auf :term:`Python Package Index
-    (PyPI)` angezeigt. In diesem Fall wird die Beschreibung aus ``README.rst``
-    geladen.
+    enthält. Diese wird auf der Paketdetailseite auf :term:`Python Package
+    Index` (:term:`PyPI`) angezeigt. In diesem Fall wird die Beschreibung aus
+    ``README.rst`` geladen.
 ``requires-python``
     gibt die Versionen von Python an, die von eurem Projekt unterstützt werden.
     Dabei werden Installationsprogramme wie :term:`pip` ältere Versionen von
     Paketen durchsuchen, bis sie eines finden, das eine passende Python-Version
     hat.
 ``classifiers``
-    gibt dem :term:`Python Package Index (PyPI)` und :term:`pip` einige
+    gibt dem :term:`Python Package Index` (:term:`PyPI`) und :term:`pip` einige
     zusätzliche Metadaten über euer Paket. In diesem Fall ist das Paket nur mit
     Python 3 kompatibel, steht unter der BSD-Lizenz und ist OS-unabhängig. Ihr
     solltet immer zumindest die Versionen von Python angeben, unter denen euer
@@ -173,8 +173,8 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Klassifizierer findet ihr unter https://pypi.org/classifiers/.
 
     Außerdem haben sie eine nützliche Zusatzfunktion: der :term:`Python Package
-    Index (PyPI)` lehnt Pakete mit unbekannten *Classifiers* ab, sodass damit
-    auch ein versehentlicher Upload vermieden werden kann.
+    Index` (:term:`PyPI`) lehnt Pakete mit unbekannten *Classifiers* ab, sodass
+    damit auch ein versehentlicher Upload vermieden werden kann.
 
     .. seealso::
        `Add invalid classifier for non open source license to avoid upload to…
@@ -188,9 +188,9 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 ``urls``
     lässt euch eine beliebige Anzahl von zusätzlichen Links auflisten, die auf
-    dem :term:`Python Package Index (PyPI)` angezeigt werden. Im Allgemeinen
-    könnte dies zum Quellcode, zur Dokumentation, zu Aufgabenverwaltungen
-    :abbr:`usw. (und so weiter)` führen.
+    dem :term:`Python Package Index` (:term:`PyPI`) angezeigt werden. Im
+    Allgemeinen könnte dies zum Quellcode, zur Dokumentation, zu
+    Aufgabenverwaltungen :abbr:`usw. (und so weiter)` führen.
 
 .. seealso::
    * `Declaring project metadata
@@ -381,8 +381,8 @@ Build
 -----
 
 Der nächste Schritt besteht darin, Distributionspakete für das Paket zu
-erstellen. Dies sind Archive, die in den :term:`Python Package Index (PyPI)`
-hochgeladen und von :term:`pip` installiert werden können.
+erstellen. Dies sind Archive, die in den :term:`Python Package Index`
+(:term:`PyPI`) hochgeladen und von :term:`pip` installiert werden können.
 
 Stellt sicher, dass ihr die neueste Version von ``build`` installiert habt:
 

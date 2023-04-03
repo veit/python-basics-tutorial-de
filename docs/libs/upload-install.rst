@@ -1,8 +1,8 @@
 Paket hochladen
 ===============
 
-Schließlich könnt ihr das Paket auf dem :term:`Python Package Index (PyPI)`
-oder einem anderen Index bereitstellen.
+Schließlich könnt ihr das Paket auf dem :term:`Python Package Index`
+(:term:`PyPI`) oder einem anderen Index bereitstellen.
 
 Hierfür müsst ihr euch bei *Test PyPI* registrieren. *Test-PyPI* ist eine
 separate Instanz, die zum Testen und Experimentieren vorgesehen ist. Um dort
@@ -140,9 +140,10 @@ importiert und auf die ``name``-Eigenschaft referenziert, die zuvor in
 .. note::
 
     Die Pakete auf *Test-PyPI* werden nur temporär gespeichert. Wenn ihr ein
-    Paket in den echten :term:`Python Package Index (PyPI)` hochladen wollt,
-    könnt ihr dies tun, indem ihr ein Konto auf https://pypi.org anlegt und die
-    gleichen Anweisungen befolgt, jedoch ``twine upload dist/*`` verwendet.
+    Paket in den echten :term:`Python Package Index` (:term:`PyPI`) hochladen
+    wollt, könnt ihr dies tun, indem ihr ein Konto auf :term:`pypi.org` anlegt
+    und die gleichen Anweisungen befolgt, jedoch ``twine upload dist/*``
+    verwendet.
 
 README
 ~~~~~~
@@ -153,8 +154,8 @@ korrekt angezeigt wird.
 PyPI
 ----
 
-Registriert euch nun beim :term:`Python Package Index (PyPI)` und stellt sicher,
-dass die `Zwei-Faktor-Authentifizierung
+Registriert euch nun beim :term:`Python Package Index` (:term:`PyPI`) und stellt
+sicher, dass die `Zwei-Faktor-Authentifizierung
 <https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_
 aktiviert ist indem ihr die ``~/.pypirc``-Datei ergänzt:
 

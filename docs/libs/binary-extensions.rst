@@ -90,9 +90,9 @@ sollten auch eine Reihe anderer Alternativen in Betracht gezogen werden:
   enthält eine Reihe optimierter Datenstrukturen und Algorithmen, insbesondere in
   den builtins und den Modulen ``collections`` und ``itertools``.
 
-  Gelegentlich bietet auch der :term:`Python Package Index (PyPI)` zusätzliche
-  Alternativen. Manchmal kann ein Modul eines Drittanbieters die Notwendigkeit
-  vermeiden, ein eigenes Accelerator-Modul zu erstellen.
+  Gelegentlich bietet auch der :term:`Python Package Index` (:term:`PyPI`)
+  zusätzliche Alternativen. Manchmal kann ein Modul eines Drittanbieters die
+  Notwendigkeit vermeiden, ein eigenes Accelerator-Modul zu erstellen.
 
 * Für lange laufende Anwendungen kann der JIT-kompilierte `PyPy
   <https://pypi.org/>`_-Interpreter eine geeignete Alternative zum
@@ -348,14 +348,14 @@ Spinning Wheels-Wiki <https://github.com/MacPython/wiki/wiki/Spinning-wheels>`_.
 Deployment von Beschleunigungsmodulen
 -------------------------------------
 
-Im Folgenden soll das Deployment auf dem :term:`Python Package Index (PyPI)`
-oder einem anderen Index beschrieben werden.
+Im Folgenden soll das Deployment auf dem :term:`Python Package Index`
+(:term:`PyPI`) oder einem anderen Index beschrieben werden.
 
 .. note::
    Bei Deployments auf Linux-Distributionen sollte beachtet werden, dass diese
    Anforderungen an das spezifische Build-System stellen. Daher sollten neben
    :term:`Wheels <wheel>` immer auch :term:`Source Distributions (sdist)
-   <Source Distribution (sdist)>` bereitgestellt werden.
+   <Source Distribution>` bereitgestellt werden.
 
 .. seealso::
    * `Deploying Python applications
