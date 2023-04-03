@@ -90,40 +90,65 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
 #. Zuerst erstellen wir die Umgebung:
 
-   .. code-block:: console
+   .. tab:: Linux/macOS
 
-      $ python3.8 -m venv myenv
+      .. code-block:: console
 
-   Hiermit wird die Umgebung mit Python und ``pip`` in einem Verzeichnis namens
-   ``myenv`` erstellt.
+         $ python3 -m venv myenv
 
-#. Anschließend könnt ihr Python-Pakete nur für diese virtuelle Umgebung
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         > python -m venv myenv
+
+   Hiermit wird die Umgebung mit Python und :term:`pip` in einem Verzeichnis
+   namens ``myenv`` erstellt.
+
+#. Anschließend könnt ihr diese Umgebung aktivieren, sodass beim nächsten Aufruf
+   von ``python`` das Python aus eurer neuen Umgebung verwendet wird:
+
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         $ source myenv/bin/activate
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         > myenv\Scripts\activate.bat
+
+#. Python-Pakete nur für diese virtuelle Umgebung
    installieren:
 
    .. tab:: Linux/macOS
 
       .. code-block:: console
 
-         $ cd myenv
-         $ bin/python3.8 -m pip install requests
+         (myenv) $ python -m pip install requests
 
    .. tab:: Windows
 
       .. code-block:: console
 
-         > cd myenv
-         > Scripts\python.exe -m pip install requests
+         (myenv) > python.exe -m pip install requests
 
-   .. note::
-      Die Python-Version, die ihr zum Erstellen der Umgebung verwendet habt, ist
-      die Standard-Python-Version für diese Umgebung, so dass ihr statt
-      ``python3`` oder ``python3.8`` einfach ``python`` verwenden könnt.
+#. Wenn ihr eure Arbeit an diesem Projekt beenden wollt, könnt ihr die virtuelle
+   Umgebung wieder deaktivieren mit
 
-Virtuelle Umgebungen sind sehr nützlich und gängige Praxis für die Verwaltung
-von Projekten und deren Abhängigkeiten, insbesondere zum Arbeiten an mehreren
-Projekten. Dies ist auch der Grund, weswegen ich nicht empfehle, eine virtuelle
-Umgebung zu aktivieren: ihr könnt dann leicht den Überblick verlieren, welche
-virtuelle Umgebung momentan aktiv ist.
+   .. tab:: Linux/macOS
+
+      .. code-block:: console
+
+         (myenv) $ deactivate
+
+   .. tab:: Windows
+
+      .. code-block:: console
+
+         (myenv) > deactivate
 
 .. seealso::
    * :doc:`python3:tutorial/venv`
