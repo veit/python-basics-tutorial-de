@@ -28,7 +28,7 @@ zwar etwas gewöhnungsbedürftig, bietet aber erhebliche Vorteile:
   mehr nach der Klammer suchen, die zu früheren Klammern passen könnte.
 * Die visuelle Struktur des Codes spiegelt seine tatsächliche Struktur wider,
   wodurch die Struktur des Codes sehr viel einfacher zu verstehen ist.
-* Python Codierung-Styles sind meist einheitlich; :abbr.`m.a.W. (mit anderen
+* Python Codierung-Styles sind meist einheitlich; :abbr:`m.a.W. (mit anderen
   Worten)`, euer Code wird meist sehr ähnlich aussehen, wie derjenige von
   anderen.
 

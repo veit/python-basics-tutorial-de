@@ -1,8 +1,8 @@
 ``cibuildwheel``
 ================
 
-:term`cibuildwheel` vereinfacht die Erstellung von :term:`Python Wheels <wheel>`
-für die verschiedenen Plattformen und Python-Versionen durch Continuous
+:term:`cibuildwheel` vereinfacht die Erstellung von :term:`Python Wheels
+<wheel>` für die verschiedenen Plattformen und Python-Versionen durch Continuous
 Integration (CI) Workflows. Genauer gesagt baut es Manylinux-, macOS 10.9+- und
 Windows-Wheels für CPython und PyPy mit GitHub Actions, Azure Pipelines, Travis
 CI, AppVeyor, CircleCI, oder GitLab CI.
