@@ -101,8 +101,8 @@ Link zu einem Dokument, das nicht von Sohinx gerendert werden soll, :abbr:`z.B.
 
 .. code-block:: rest
 
-   Link zu einem Dokument, das nicht von Sohinx gerendert werden soll, :abbr:`z.B.
-   (zum Beispiel)` zu :download:`docstrings-example.rst`.
+   Link zu einem Dokument, das nicht von Sohinx gerendert werden soll,
+   :abbr:`z.B. (zum Beispiel)` zu :download:`docstrings-example.rst`.
 
 Bilder
 ------
