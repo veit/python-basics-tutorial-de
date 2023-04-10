@@ -139,6 +139,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        ...
        [tool.hatch.version]
        source = "vcs"
+       raw-options = { local_scheme = "no-local-version" }
 
     .. seealso::
        * `Calendar Versioning <https://calver.org>`_
