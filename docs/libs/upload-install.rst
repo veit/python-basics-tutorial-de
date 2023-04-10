@@ -197,7 +197,7 @@ Schließlich könnt ihr nun euer Paket auf PyPI veröffentlichen:
    alte Versionen auf GitHub ausweichen müssen. PyPI hat eine `yank
    <https://pypi.org/help/#yanked>`_-Funktion, die ihr stattdessen nutzen
    könnt. Dies ignoriert eine bestimmte Version, wenn sie nicht explizit mit
-   ``==`` oder ``===`` explizit angegeben wurde.
+   ``==`` oder ``===`` angegeben wurde.
 
 .. seealso::
     * `PyPI Release Checklist
