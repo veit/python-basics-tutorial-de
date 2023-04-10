@@ -172,13 +172,10 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Betriebssystemen euer Paket läuft. Eine vollständige Liste der
     Klassifizierer findet ihr unter https://pypi.org/classifiers/.
 
-    Außerdem haben sie eine nützliche Zusatzfunktion: der :term:`Python Package
-    Index` (:term:`PyPI`) lehnt Pakete mit unbekannten *Classifiers* ab, sodass
-    damit auch ein versehentlicher Upload vermieden werden kann.
-
-    .. seealso::
-       `Add invalid classifier for non open source license to avoid upload to…
-       <https://github.com/veit/cookiecutter-namespace-template/commit/f4fff8ee8595ae2e59e5feb92211c8e3f1252461>`_
+    Außerdem haben sie eine nützliche Zusatzfunktion: Um zu verhindern, dass ein
+    Paket zu :term:`PyPI` hochgeladen wird, verwendet den speziellen
+    Klassifikator ``"Private :: Do Not Upload"``. :term:`PyPI` wird immer Pakete
+    ablehnen, deren Klassifizierer mit ``"Private ::"`` beginnt.
 
 ``dependencies``
     gibt die Abhängigkeiten für euer Paket in einem Array an.
