@@ -104,11 +104,9 @@ installiert euer Paket von *Test PyPI*:
 
 .. code-block:: console
 
-    $ mkdir test_env
-    $ cd !$
-    cd test_env
-    $ source bin/activate
-    $ python -m pip install --extra-index-url https://test.pypi.org/simple/ minimal_example
+    $ python3 -m venv test_env
+    $ source test_env/bin/activate
+    $ pip install -i https://test.pypi.org/simple/ minimal_example
 
 .. note::
    Wenn ihr einen anderen Paketnamen verwendet habt, ersetzt ihn im obigen
@@ -119,8 +117,9 @@ in etwa so aussehen:
 
 .. code-block:: console
 
-    Collecting example_pkg
-      Downloading https://test-files.pythonhosted.org/packages/.../minimal_example-0.0.1-py3-none-any.whl
+    Looking in indexes: https://test.pypi.org/simple/
+    Collecting minimal_example
+      ...
     Installing collected packages: minimal_example
     Successfully installed minimal_example-0.0.1
 
