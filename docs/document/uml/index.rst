@@ -6,17 +6,11 @@ Installation
 
 #. Installiert `plantuml <https://plantuml.com/starting>`_:
 
-   * Installiert die Abhängigkeiten Java und Graphviz:
+   .. tab:: Linux
 
-     .. tab:: Linux
+       .. code-block:: console
 
-        .. code-block:: console
-
-           $ sudo apt install openjdk-11-jdk graphviz
-
-   * Ladet die Datei :download:`plantuml.jar
-     <http://sourceforge.net/projects/plantuml/files/plantuml.jar/download>`
-     herunter.
+         $ sudo apt install plantuml
 
 #. Installiert `sphinxcontrib-plantuml
    <https://pypi.org/project/sphinxcontrib-plantuml/>`_:
@@ -42,7 +36,7 @@ Installation
         'sphinxcontrib.plantuml',
         ]
 
-    plantuml = 'java -jar /PATH/TO/plantuml.jar'
+    plantuml = '/PATH/TO/PLANTUML'
 
    .. note::
       Auch in Windows werden in der Pfadangabe ``/`` angegeben.
