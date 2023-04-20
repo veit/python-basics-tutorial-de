@@ -65,19 +65,19 @@ Installation
 #. Erstellen der HTML-Dokumentation:
 
    .. note::
-      pandoc muss installiert sein.
+      pandoc und plantuml müssen installiert sein.
 
       … auf Debian/Ubuntu:
 
       .. code-block:: console
 
-         $  sudo apt install pandoc
+         $  sudo apt install pandoc plantuml
 
    Zum Erstellen der HTML-Dokumentation führt den folgenden Befehl aus:
 
    .. code-block:: console
 
-      $ sphinx-build -ab html docs/ docs/_build/
+      $ sphinx-build -ab html docs/ docs/_build/html/
 
 #. Erstellen eines PDF:
 
