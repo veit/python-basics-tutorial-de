@@ -389,7 +389,10 @@ Glossar
        isolierte :term:`virtuelle Python-Umgebungen <Virtuelle Umgebung>` zu
        erstellen, ähnlich wie :term:`venv`. Es bietet jedoch zusätzliche
        Funktionalität für die Konfiguration, Wartung, Duplizierung und
-       Fehlerbehebung und unterstützt Python 2.7.
+       Fehlerbehebung.
+
+       Ab Version 20.22.0 unterstützt virtualenv nicht mehr die Python-Versionen
+       2.7, 3.5 und 3.6.
 
    Virtuelle Umgebung
        Eine isolierte Python-Umgebung, die die Installation von Paketen für eine
