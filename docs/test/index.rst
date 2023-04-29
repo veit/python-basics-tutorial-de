@@ -55,4 +55,4 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    pytest
    tox
    unittest2
-   coverage/index
+   coverage

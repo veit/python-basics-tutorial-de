@@ -172,10 +172,10 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
          :target: https://github.com/YOU/YOUR_PROJECT/actions?workflow=CI
          :alt: CI Status
 
-#. Die Code-Abdeckung könnt ihr auf :doc:`coverage/codecov` veröffentlichen,
-   :abbr:`s.a. (siehe auch)` :ref:`Codecov und GitHub-Actions
-   <together-with-github-actions>`.
+#. Die Testabdeckung könnt ihr auf GitHub veröffentlichen, :abbr:`s.a. (siehe
+   auch)` :ref:`Coverage GitHub-Actions <coverage-github-actions>` oder in einem
+   :ref:`Badge <coverage-badge>` zeigen.
 
 #. Ihr könnt auch noch ein Badge für die Code-Abdeckung in eurer
-   :file:`README.rst`-Datei anzeigen, :abbr:`s.a. (siehe auch)` :ref:`Codecov
-   Badge <codecov-badge>`.
+   :file:`README.rst`-Datei anzeigen, :abbr:`s.a. (siehe auch)` :ref:`Coverage
+   badge <coverage-badge>`.
