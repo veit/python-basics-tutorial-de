@@ -30,24 +30,17 @@ Interpreterkonfigurationen.
 
    .. literalinclude:: tox.ini
       :language: ini
+      :lines: 1-14
       :lineno-start: 1
 
 #. Ausführen
 
    Mit ``bin/tox`` werden dann die folgenden Schritte durchlaufen:
 
-   #. Optional erstellen eines Python-Package mit
+   #. Erstellen der in :envvar:`env_list` angegebenen Umgebungen
 
-      .. code-block:: console
-
-           $ python setup.py sdist
-
-   #. Erstellen der in ``envlist`` angegebenen Umgebungen
-
-      In jeder dieser Umgebungen werden dann
-
-      #. die Abhängigkeiten und Pakete installiert
-      #. die Befehle aus ``commands`` ausgeführt
+      In jeder dieser Umgebungen werden dann die Abhängigkeiten und Pakete
+      installiert
 
    #. Erstellen eines Reports mit den Ergebnissen aus jeder der Umgebungen,
       :abbr:`z.B. (zum Beispiel)`:
@@ -55,8 +48,11 @@ Interpreterkonfigurationen.
       .. code-block:: text
 
            ____________________ summary ____________________
-           py27: commands succeeded
-           ERROR:   py36: commands failed
+           ERROR:   py37: commands failed
+           py38: commands succeeded
+           py39: commands succeeded
+           py310: commands succeeded
+           py311: commands succeeded
 
 GitHub-Actions
 --------------
@@ -77,49 +73,16 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
 #.  Die vorausgefüllte YAML-Datei ist für unsere Zwecke wenig hilfreich. Ihr
     könnt den Text ersetzen, :abbr:`z.B. (zum Beispiel)` mit:
 
-   .. code-block:: yaml
-
-    name: CI
-
-    on:
-      push:
-        branches: ["main"]
-      pull_request:
-        branches: ["main"]
-      workflow_dispatch:
-
-    jobs:
-      tests:
-        name: "Python ${{ matrix.python-version }}"
-        runs-on: "ubuntu-latest"
-        env:
-          USING_COVERAGE: '3.6,3.8'
-
-        strategy:
-          matrix:
-            python-version: ["3.6", "3.7", "3.8"]
-
-        steps:
-          - uses: "actions/checkout@v2"
-          - uses: "actions/setup-python@v2"
-            with:
-              python-version: "${{ matrix.python-version }}"
-          - name: "Install dependencies"
-            run: |
-              set -xe
-              python -VV
-              python -m site
-              python -m pip install --upgrade pip setuptools wheel
-              python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
-
-          - name: "Run tox targets for ${{ matrix.python-version }}"
-            run: "python -m tox"
+   .. literalinclude:: ci.yaml
+      :language: yaml
+      :lines: 1-45
+      :lineno-start: 1
 
    .. note::
       Passt :abbr:`ggf. (gegebenenfalls)` die Python-Versionen in
-      :envvar:`python-version` an; ihr müsst jedoch nicht auch die
-      Umgebungsvariable in ``USING_COVERAGE`` ändern, da dies durch das
-      tox-Plugin ``tox-gh-actions`` (siehe unten) erfolgt.
+      :envvar:`python-version` an. ihr müsst jedoch nicht auch die
+      Umgebungsvariable in :envvar:`USING_COVERAGE` ändern, da dies durch das
+      tox-Plugin ``tox-gh-actions`` (:abbr:`s.u. (siehe unten)`) erfolgt.
 
 #. Anschließend könnt ihr auf :guilabel:`Start commit` klicken. Da wir noch
    weitere Änderungen vornehmen wollen bevor die Tests automatisiert ausgeführt
@@ -135,13 +98,10 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
    jedoch noch unsere :file:`tox.ini`-Datei anpassen, :abbr:`z.B. (zum
    Beispiel)`:
 
-   .. code-block:: ini
-
-    [gh-actions]
-    python =
-        3.6: py36
-        3.7: py37, docs
-        3.8: py38, lint, typing, changelog
+   .. literalinclude:: tox.ini
+      :language: ini
+      :lines: 15-
+      :lineno-start: 15
 
    Dies ordnet GitHub-Actions tox-Umgebungen zu.
 
@@ -157,10 +117,10 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
         Ausführung verloren.
 
    .. seealso::
-      * `Build & test Python
-        <https://docs.github.com/en/actions/guides/building-and-testing-python>`_
-      * `Workflow syntax
-        <https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions>`_
+      * `Building and testing Python
+        <https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_
+      * `Workflow syntax for GitHub Actions
+        <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
 
 #. Nun könnt ihr in eurer :file:`README.rst`-Datei noch ein Badge eures
    :abbr:`CI (Continuous Integration)`-Status hinzufügen, :abbr:`z.B. (zum
@@ -173,9 +133,7 @@ GitHub-Actions verfügbar: `github.com/actions/virtual-environments
          :alt: CI Status
 
 #. Die Testabdeckung könnt ihr auf GitHub veröffentlichen, :abbr:`s.a. (siehe
-   auch)` :ref:`Coverage GitHub-Actions <coverage-github-actions>` oder in einem
-   :ref:`Badge <coverage-badge>` zeigen.
-
+   auch)` :ref:`Coverage GitHub-Actions <coverage-github-actions>`.
 #. Ihr könnt auch noch ein Badge für die Code-Abdeckung in eurer
    :file:`README.rst`-Datei anzeigen, :abbr:`s.a. (siehe auch)` :ref:`Coverage
    badge <coverage-badge>`.

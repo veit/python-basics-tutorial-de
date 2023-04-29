@@ -118,13 +118,13 @@ Testabdeckung aller Tests mit GitHub-Actions
 --------------------------------------------
 
 Nachdem ihr die Testabdeckung überprüft habt, könnt ihr die Dateien als
-GitHub-Action :abbr:`z.B. (zum Beispiel)` in einer :download:`tests.yaml` als
+GitHub-Action :abbr:`z.B. (zum Beispiel)` in einer :download:`ci.yaml` als
 Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 49-54
-   :lineno-start: 49
+   :lines: 47-52
+   :lineno-start: 47
 
 ``if-no-files-found: ignore``
     ist sinnvoll, wenn nicht für alle Python-Versionen die Testabdeckung
@@ -135,10 +135,10 @@ Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 Nachdem alle Tests durchlaufen wurden, könnt ihr einen weiteren Job definieren,
 der die Ergebnisse zusammenführt:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 56-94
-   :lineno-start: 56
+   :lines: 54-92
+   :lineno-start: 54
 
 ``needs: tests``
     stellt sicher, dass alle Tests durchgeführt werden. Wenn euer Job, der die
@@ -169,16 +169,16 @@ Badge
 Ihr könnt GitHub Actions verwenden, um ein Badge mit eurer Code-Coverage zu
 erstellen. Dabei wird zusätzlich ein GitHub Gist benötigt um die Parameter für
 das Badge, das von `shields.io <https://shields.io>`_ gerendert wird, zu
-speichern. Hierfür erweitern wir unsere :download:`tests.yaml` folgendermaßen:
+speichern. Hierfür erweitern wir unsere :download:`ci.yaml` folgendermaßen:
 
-.. literalinclude:: tests.yaml
+.. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 96-
-   :lineno-start: 96
+   :lines: 94-
+   :lineno-start: 94
 
-Zeile 86
+Zeile 97
     ``GIST_TOKEN`` ist ein persönliches GitHub-Zugangs-Token.
-Zeile 87
+Zeile 98
     ``YOUR_GIST_ID`` solltet ihr durch eure eigene Gist-ID ersetzen. Falls ihr
     noch keine Gist-ID habt, könnt ihr diese erstellen mit:
 
@@ -196,7 +196,7 @@ Zeile 87
        das  :samp:`GIST_SECRET` auch in :menuselection:`YOUR_REPO --> Settings
        --> Secrets --> Dependabot` hinzufügen.
 
-Zeilen 91–93
+Zeilen 102-104
     Das Badge wird automatisch eingefärbt:
 
     * ≤ 50 % in rot
