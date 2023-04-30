@@ -18,6 +18,7 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
    distribution
    templating/index
    upload-install
+   gitlab
    cibuildwheel
    binary-extensions
    glossary

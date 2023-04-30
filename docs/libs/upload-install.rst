@@ -2,7 +2,8 @@ Paket hochladen
 ===============
 
 Schließlich könnt ihr das Paket auf dem :term:`Python Package Index`
-(:term:`PyPI`) oder einem anderen Index bereitstellen.
+(:term:`PyPI`) oder einem anderen Index, :abbr:`z.B. (zum Beispiel)`
+:doc:`gitlab` oder :term:`devpi`, bereitstellen.
 
 Hierfür müsst ihr euch bei *Test PyPI* registrieren. *Test-PyPI* ist eine
 separate Instanz, die zum Testen und Experimentieren vorgesehen ist. Um dort
