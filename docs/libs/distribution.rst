@@ -508,8 +508,8 @@ Anschließend könnt ihr Python aufrufen und euer ``loaders``-Modul importieren:
     from dataprep import loaders
 
 .. note::
-    Es gibt immer noch viele Anleitungen, die einen Schritt zum Aufruf der
-    ``setup.py`` enthalten, :abbr:`z.B. (zum Beispiel)` ``python setup.py
-    sdist``. Dies wird jedoch heutzutage von Teilen der `Python Packaging
-    Authority (PyPA) <https://github.com/pypa/>`_ als `Anti-Pattern
-    <https://twitter.com/pganssle/status/1152695229105000453>`_ angesehen.
+   Es gibt immer noch viele Anleitungen, die einen Schritt zum Aufruf der
+   :file:`setup.py` enthalten, :abbr:`z.B. (zum Beispiel)` :samp:`python
+   setup.py sdist`. Dies wird jedoch heutzutage von Teilen der `Python Packaging
+   Authority (PyPA) <https://github.com/pypa/>`_ als `Anti-Pattern
+   <https://twitter.com/pganssle/status/1152695229105000453>`_ angesehen.
