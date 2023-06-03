@@ -43,6 +43,9 @@ Einzlener Test
    :lines: 1-4, 19-24
    :lineno-start: 1
 
+Zum Strukturieren von Testfunktionen könnt ihr euch an das :abbr:`AAA
+(Arrange/Act/Assert)`- oder :abbr:`GWT (Given/When/Then)`-Muster halten.
+
 Test-Fixture
 ------------
 
