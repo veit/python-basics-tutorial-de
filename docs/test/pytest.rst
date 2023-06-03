@@ -64,6 +64,14 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
 ``lambda``
     Funktion, die im Falle von ``sorted`` nur einen Parameter benötigt.
 
+.. seealso::
+   * `About fixtures
+     <https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures>`_
+   * `Fixtures reference
+     <https://docs.pytest.org/en/latest/reference/fixtures.html>`_
+   * `How to use fixtures
+     <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
+
 Testparametrisierung
 --------------------
 
