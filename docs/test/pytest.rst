@@ -46,8 +46,18 @@ Einzlener Test
 Zum Strukturieren von Testfunktionen könnt ihr euch an das :abbr:`AAA
 (Arrange/Act/Assert)`- oder :abbr:`GWT (Given/When/Then)`-Muster halten.
 
-Test-Fixture
-------------
+Testsuite strukturieren
+-----------------------
+
+Verwendet eine Verzeichnisstruktur, die der Art und Weise entspricht, wie ihr
+euren Code ausführen möchtet, denn es ist einfach, ein komplettes
+Unterverzeichnis auszuführen. So könnt ihr Features und Funktionen unterteilen
+oder Subsysteme als Grundlage nehmen oder euch an der Codestruktur orientieren.
+Ihr könnt auch :samp:`-k {FILTER}` verwenden, um Verzeichnisse, Klassen oder
+Testpräfixe zu filtern.
+
+Test-Fixtures
+-------------
 
 Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
 ``@pytest.fixture``-Dekorator:
@@ -63,6 +73,13 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
      übergeben wird, muss aufrufbar sein.
 ``lambda``
     Funktion, die im Falle von ``sorted`` nur einen Parameter benötigt.
+
+* Mit ``--fixtures`` könnt ihr euch die verfügbaren Fixtures auflisten lassen,
+  ihren Umfang und wo sie definiert sind.
+* Mit ``yield`` könnt ihr Setup und Teardown trennen.
+* Nutzt Fixture-Bereiche, um die Performance eurer Tests zu verbessern.
+* Teilt Fixtures zwischen Testmodulen/Verzeichnissen mit
+  :file:`conftest.py`-Dateien.
 
 .. seealso::
    * `About fixtures
