@@ -89,6 +89,28 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
    * `How to use fixtures
      <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
 
+Markers
+-------
+
+:samp:`@pytest.mark.{MYMARKER}`-Markers
+    erlaubt euch, Tests zu gruppieren oder selektiv zu deaktivieren.
+:file:`pytest.ini`
+    registriert die Markers.
+
+    Alternativ könnt ihr ``pytestmark`` in Python-Dateien verwenden:
+    :samp:`pytestmark = [pytest.mark.{MYMARKER1}, pytest.mark.{MYMARKER2}]`.
+
+:samp:`--strict-markers`
+    wandelt fehlende Registrierungen in Fehler um.
+
+:samp:`--markers`
+    zeigt alle verfügbaren Markers an.
+:samp:`xfail`
+    zeigt an, dass der Test fehlschlagen soll.
+
+    :samp:`-ra` oder :samp:`-rxX`
+        zeigt die Gründe, weswegen der Test nicht bestanden wurde.
+
 Testparametrisierung
 --------------------
 
