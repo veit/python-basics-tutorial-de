@@ -183,7 +183,7 @@ Konfiguration
 
 Ihr solltet eine Konfigurationsdatei haben, entweder :file:`pytest.ini`, oder
 einem pytest-Abschnitt in :file:`tox.ini`, :file:`pyproject.toml` oder in
-:file:`setup.cfg`. Sie legt das pberste Verzeichnis fest, von dem aus ``pytest``
+:file:`setup.cfg`. Sie legt das oberste Verzeichnis fest, von dem aus ``pytest``
 gestartet wird.
 
 Die meisten meiner Projekte starten mit folgender Konfiguration:
