@@ -43,6 +43,13 @@ Einzlener Test
    :lines: 1-4, 19-24
    :lineno-start: 1
 
+``key``
+     Funktion, die aufgerufen wird, um die Elemente der Kollektion zu
+     transformieren, bevor sie verglichen werden. Der Parameter, der an ``key``
+     übergeben wird, muss aufrufbar sein.
+``lambda``
+    Funktion, die im Falle von ``sorted`` nur einen Parameter benötigt.
+
 Zum Strukturieren von Testfunktionen könnt ihr euch an das :abbr:`AAA
 (Arrange/Act/Assert)`- oder :abbr:`GWT (Given/When/Then)`-Muster halten.
 
@@ -66,13 +73,6 @@ Schreibt ein :term:`Test Fixture <Test Fixture (Prüfvorrichtung)>` mit dem
    :language: python
    :lines: 9-16
    :lineno-start: 9
-
-``key``
-     Funktion, die aufgerufen wird, um die Elemente der Kollektion zu
-     transformieren, bevor sie verglichen werden. Der Parameter, der an ``key``
-     übergeben wird, muss aufrufbar sein.
-``lambda``
-    Funktion, die im Falle von ``sorted`` nur einen Parameter benötigt.
 
 * Mit ``--fixtures`` könnt ihr euch die verfügbaren Fixtures auflisten lassen,
   ihren Umfang und wo sie definiert sind.
