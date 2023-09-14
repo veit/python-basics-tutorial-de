@@ -41,7 +41,7 @@ Ein minimales Distribution Package kann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
 :pep:`517` und :pep:`518` brachten erweiterbare Build-Backends, isolierte Builds
 und :term:`pyproject.toml` im
-:doc:`jupyter-tutorial:data-processing/serialisation-formats/toml/index`-Format.
+:doc:`Python4DataScience:data-processing/serialisation-formats/toml/index`-Format.
 
 :file:`pyproject.toml` teilt :abbr:`u.a. (unter anderem)` :term:`pip` und
 :term:`build` mit, welches *Backend*-Werkzeug verwendet werden soll, um
@@ -130,7 +130,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
     Mit dem Version-Source-Plugin `hatch-vcs
     <https://github.com/ofek/hatch-vcs>`_ könnt ihr auch
-    :doc:`jupyter-tutorial:productive/git/tag` verwenden:
+    :doc:`Python4DataScience:productive/git/tag` verwenden:
 
     .. code-block:: toml
 
@@ -339,7 +339,7 @@ Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ~~~~~~~~~~~
 
 Ausführliche Informationen hierzu findet ihr im Abschnitt
-:doc:`jupyter-tutorial:productive/licensing`.
+:doc:`Python4DataScience:productive/licensing`.
 
 ``README.rst``
 ~~~~~~~~~~~~~~

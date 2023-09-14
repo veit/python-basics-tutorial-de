@@ -273,7 +273,7 @@ Numerische Berechnungen
 Die Python-Standardinstallation eignet sich aufgrund von
 Geschwindigkeitseinschränkungen nicht gut für intensive numerische Berechnungen.
 Aber die leistungsstarke Python-Erweiterung
-:doc:`jupyter-tutorial:workspace/numpy/index`  bieten hocheffiziente
+:doc:`Python4DataScience:workspace/numpy/index`  bieten hocheffiziente
 Implementierungen vieler fortgeschrittener numerischer Operationen. Der Schwerpunkt liegt dabei auf Array-Operationen, einschließlich mehrdimensionaler Matrizen
 und fortgeschrittener Funktionen wie der schnellen Fourier-Transformation.
 

@@ -79,7 +79,7 @@ Geschwindigkeit
     bereits viele Python-Module gibt, die intern C verwenden.
 
     .. seealso::
-        * :doc:`jupyter-tutorial:performance/index`
+        * :doc:`Python4DataScience:performance/index`
 
 Bibliotheksvielfalt
     Python verfügt zwar bereits über sehr viele Bibliotheken, in einigen Fällen
@@ -105,4 +105,4 @@ Unterstützung für nebenläufige Berechnungen
     Kerne ausgelegt.
 
     .. seealso::
-        * :doc:`jupyter-tutorial:performance/multiprocessing-threading-async`
+        * :doc:`Python4DataScience:performance/multiprocessing-threading-async`

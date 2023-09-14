@@ -120,7 +120,7 @@ Python-:doc:`docstrings` verwendet werden kann, könnte ebenfalls zur Verbreitun
 von Sphinx unter Python-Entwicklern beitragen. Insgesamt ermöglicht es Sphinx
 Entwicklungsteams, eine vollständige Dokumentation an Ort und Stelle zu
 erstellen. Oft wird die Dokumentation auch im gleichen  :doc:`Git
-<jupyter-tutorial:productive/git/index>`-Repository gespeichert, so dass die
+<Python4DataScience:productive/git/index>`-Repository gespeichert, so dass die
 Erstellung der neuesten Software-Dokumentation einfach bleibt.
 
 Sphinx wird auch in Projekten außerhalb der Python-Gemeinschaft eingesetzt,
@@ -132,9 +132,9 @@ Dokumentation weiter zu vereinfachen. Read the Docs erleichtert das Erstellen
 und Veröffentlichen von Dokumentationen nach jedem Commit.
 
 Für die Projektdokumentation kann die Visualisierung von :doc:`Git Feature
-Branches <jupyter-tutorial:productive/git/workflows/feature-branches>` und
-:doc:`Tags <jupyter-tutorial:productive/git/tag>` mit
-:doc:`jupyter-tutorial:productive/git/git-big-picture` hilfreich sein.
+Branches <Python4DataScience:productive/git/workflows/feature-branches>` und
+:doc:`Tags <Python4DataScience:productive/git/tag>` mit
+:doc:`Python4DataScience:productive/git/git-big-picture` hilfreich sein.
 
 .. note::
    Wenn der Inhalt von ``long_description`` in ``setup()`` in reStructured Text

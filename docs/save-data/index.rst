@@ -33,11 +33,11 @@ eine Standardschnittstelle für Python-Datenbankzugriffsmodule. Sie ist in
 SQLAlchemy
 ----------
 
-:doc:`jupyter-tutorial:data-processing/postgresql/sqlalchemy` ist ein weit
+:doc:`Python4DataScience:data-processing/postgresql/sqlalchemy` ist ein weit
 verbreitetes Datenbank-Toolkit. Es bietet nicht nur als ein :abbr:`ORM (Object
 Relational Mapper)`, sondern bietet auch eine allgemeine API zum Schreiben von
 datenbankagnostischem Code ohne SQL.
-:doc:`jupyter-tutorial:data-processing/postgresql/alembic` basiert auf
+:doc:`Python4DataScience:data-processing/postgresql/alembic` basiert auf
 SQLAlchemy und dient als Datenbankmigrationswerkzeug.
 
 
@@ -46,7 +46,7 @@ NoSQL-Datenbanken
 
 Es gibt Daten, die sich nur schwer in ein relationales Datenmodell übertragen
 lassen. Dann solltet ihr zumindest einen Blick auf
-:doc:`jupyter-tutorial:data-processing/nosql/index` werfen.
+:doc:`Python4DataScience:data-processing/nosql/index` werfen.
 
 .. toctree::
    :titlesonly:

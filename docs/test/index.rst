@@ -14,9 +14,9 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
       <https://de.wikipedia.org/wiki/Statische_Code-Analyse>`_
 
       Es gibt diverse Python-Pakete, die euch bei der statischen Code-Analyse
-      unterstützen können, u.a. :doc:`jupyter-tutorial:productive/qa/flake8`,
-      :doc:`jupyter-tutorial:productive/qa/pysa` und
-      :doc:`jupyter-tutorial:productive/qa/wily`.
+      unterstützen können, u.a. :doc:`Python4DataScience:productive/qa/flake8`,
+      :doc:`Python4DataScience:productive/qa/pysa` und
+      :doc:`Python4DataScience:productive/qa/wily`.
 
    Dynamische Testverfahren
     dienen dem Auffinden von Fehlern beim Ausführen des Quellcodes. Dabei wird
