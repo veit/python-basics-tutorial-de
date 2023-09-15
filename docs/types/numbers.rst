@@ -34,8 +34,8 @@ Sie können mit den arithmetischen Operatoren manipuliert werden:
 | ``%``                 | Modulus                                       |
 +-----------------------+-----------------------------------------------+
 
-.. [#] Die Division ganzer Zahlen mit ``/`` führt zu einem Float, und die
-       Division ganzer Zahlen mit ``//`` führt zu einer Ganzzahl, die
+.. [#] Die Division ganzer Zahlen mit ``/`` führt zu einer Gleitkommazahl, und
+       die Division ganzer Zahlen mit ``//`` führt zu einer Ganzzahl, die
        abgeschnitten wird.
 
 .. note::
@@ -59,6 +59,13 @@ Beispiele:
     -450000.0
     >>> -5e-3 ** 3
     -1.2500000000000002e-07
+
+.. seealso::
+   * Julia Evans: `Examples of floating point problems
+     <https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/>`_
+   * David Goldberg: `What Every Computer Scientist Should Know About
+     Floating-Point Arithmetic
+     <https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html>`_
 
 Komplexe Zahlen
 ---------------
@@ -256,14 +263,19 @@ zu verweisen, :abbr:`z.B. (zum Beispiel)`:
 Kaufmännisch runden
 -------------------
 
-Für das kaufmännische Runden werden :class:`Decimal <python3:decimal.Decimal>` und
-:data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
+Üblicherweise rechnet Python Gleitkommazahlen der `IEEE 754
+<https://de.wikipedia.org/wiki/IEEE_754>`_-Norm entsprechend, wobei Zahlen in
+der Mitte in der Hälfte der Fälle abgerundet werden und in der anderen Hälfte
+aufgerundet werden um eine statistische Drift bei längeren Rechnungen zu
+vermeiden. Für das kaufmännische Runden werden daher :class:`Decimal
+<python3:decimal.Decimal>` und :data:`ROUND_HALF_UP
+<python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
 
 .. code-block:: python
 
     >>> import decimal
-    >>> num = decimal.Decimal('2.5')
-    >>> rounded = num.quantize(decimal.Decimal('0'), rounding = decimal.ROUND_HALF_UP)
+    >>> num = decimal.Decimal("2.5")
+    >>> rounded = num.quantize(decimal.Decimal("0"), rounding = decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
 
