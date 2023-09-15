@@ -146,6 +146,26 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        * `ZeroVer <https://0ver.org/>`_
        * `bump2version <https://pypi.org/project/bump2version/>`_
 
+    Auch das setuptools-Backend erlaubt dynamische Versionierung:
+
+    .. code-block:: toml
+
+       [build-system]
+       requires = ["setuptools", "setuptools-scm"]
+       build-backend = "setuptools.build_meta"
+
+       [project]
+       ...
+       dynamic = ["version"]
+
+       [tool.setuptools.dynamic]
+       version = {attr = "dataprep.VERSION"}
+
+    .. seealso::
+
+       * `Configuring setuptools using pyproject.toml files: Dynamic Metadata
+         <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>`_
+
 ``authors``
     wird verwendet, um die Autoren des Pakets anahnd ihrer Namen und
     E-Mail-Adressen zu identifizieren.
