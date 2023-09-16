@@ -75,6 +75,11 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
     gepunkteten Pfad. Das ``hatchling``-Backend-Objekt ist unter
     ``hatchling.build`` verfügbar.
 
+.. note::
+   With `validate-pyproject
+   <https://validate-pyproject.readthedocs.io/en/latest/>`_ you can check your
+   :file:`pyproject.toml` file.
+
 .. seealso::
    Wenn ihr euch Alternativen zu ``hatchling`` anschauen wollt:
 
