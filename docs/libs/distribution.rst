@@ -75,18 +75,31 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
     gepunkteten Pfad. Das ``hatchling``-Backend-Objekt ist unter
     ``hatchling.build`` verfügbar.
 
+    .. note::
+       Für Python-Pakete, die :doc:`binäre Erweiterungen <binary-extensions>`
+       mit ``Cython``, ``C``-, ``C++``-, ``Fortran``- oder ``Rust`` enthalten,
+       ist das :term:`hatchling`-Backend jedoch nicht geeignet. Hier sollte
+       eines der folgenden Backends verwendet werden:
+
+       * :term:`setuptools`
+       * :term:`scikit-build`
+       * :term:`maturin`
+
+       Doch damit nicht genug – es gibt noch weitere Backends:
+
+       * :term:`Flit`
+       * :term:`whey`
+       * :term:`poetry`
+       * :term:`pybind11`
+       * :term:`meson-python`
+
+    .. seealso::
+       * `pypackaging-native <https://pypackaging-native.github.io>`_
+
 .. note::
    With `validate-pyproject
    <https://validate-pyproject.readthedocs.io/en/latest/>`_ you can check your
    :file:`pyproject.toml` file.
-
-.. seealso::
-   Wenn ihr euch Alternativen zu ``hatchling`` anschauen wollt:
-
-   * :term:`setuptools`
-   * :term:`Flit`
-   * `poetry <https://github.com/python-poetry/poetry>`_
-   * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 Metadaten
 ~~~~~~~~~

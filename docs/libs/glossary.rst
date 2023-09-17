@@ -113,18 +113,25 @@ Glossar
 
    Hatch
        Hatch ist ein Kommandozeilenwerkzeug, das ihr zum Konfigurieren und
-       Versionieren von Paketen, zum Spezifizieren von Abhängigkeiten und mit
-       dem Build-Backend Hatchling auch zum Veröffentlichen auf dem
-       :term:`Python Package Index` nutzen könnt. Das Plugin-System ermöglicht
-       die einfache Erweiterung der Funktionalitäten.
+       Versionieren von Paketen, zum Spezifizieren von Abhängigkeitengenutzt
+       werden kann. Das Plugin-System ermöglicht die einfache Erweiterung der
+       Funktionalitäten.
 
        `Docs <https://hatch.pypa.io/latest/>`__ |
        `GitHub <https://github.com/pypa/hatch>`__ |
        `PyPI <https://pypi.org/project/hatch>`__
 
+   hatchling
+       Build-Backend von :term:`Hatch`, das auch zum Veröffentlichen auf dem
+       :term:`Python Package Index` genutzt werden kann.
+
    Import Package
        Ein Python-Modul, das andere Module oder rekursiv andere Pakete enthalten
        kann.
+
+   maturin
+       Vormals pyo3-pack, ist ein :pep:`621`-kompatibles Build-Tool für
+       :doc:`binäre Erweiterungen <binary-extensions>` in Rust.
 
    meson-python
        Build-Backend, das das `Meson <https://mesonbuild.com>`_-Build-System
@@ -239,15 +246,23 @@ Glossar
        `GitHub <https://github.com/piwheels/piwheels/>`__
 
    poetry
-       Kommandozeilenwerkzeug, das die Installation und Isolierung von
-       Abhängigkeiten sowie die Erstellung und Paketierung von Python-Paketen
-       übernimmt. Es verwendet :term:`pyproject.toml` und bietet statt der
-       Resolver-Funktionalität von :term:`pip` einen eigenen
-       Dependency-Resolver.
+       Eine All-in-One-Lösung für reine Python-Projekte. Es ersetzt
+       :term:`setuptools`, :term:`venv`/:term:`pipenv`, :term:`pip`,
+       :term:`wheel` und :term:`twine`. Sie macht jedoch einige schlechte
+       Standardannahmen für Bibliotheken und die
+       :term:`pyproject.toml`-Konfiguration ist nicht standardkonform.
 
        `Docs <https://python-poetry.org/>`__ |
        `GitHub <https://github.com/python-poetry/poetry>`__ |
        `PyPI <https://pypi.org/project/poetry/>`__
+
+   pybind11
+       Dies ist :term:`setuptools`, aber mit einer C++-Erweiterung und von
+       :term:`cibuildwheel` generierten :term:`wheels <wheel>`.
+
+       `Docs <https://pybind11.readthedocs.io/en/stable/>`__ |
+       `GitHub <https://github.com/pybind/pybind11>`__ |
+       `PyPI <https://pypi.org/project/pybind11/>`__
 
    pypi.org
        `pypi.org  <https://pypi.org/>`_ ist der Domainname für den
@@ -298,20 +313,6 @@ Glossar
        Eine Veröffentlichung kann mehrere :term:`Built Distributions
        <Built Distribution>` zur Folge haben.
 
-   setuptools
-       setuptools (und ``easy_install``) ist eine Sammlung von Verbesserungen
-       der Python-Distutils, mit denen ihr Python-Distributionen einfacher
-       erstellen und verteilen könnt, insbesondere solche, die Abhängigkeiten
-       von anderen Paketen haben.
-
-       `Docs <https://setuptools.readthedocs.io/en/latest/>`__ |
-       `GitHub <https://github.com/pypa/setuptools>`__ |
-       `PyPI <https://pypi.org/project/setuptools>`__
-
-       .. seealso::
-           `Packaging and distributing projects
-           <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
-
    scikit-build
        Build-System-Generator für ``C``-, ``C++``-, ``Fortran``- und
        ``Cython``-Erweiterungen, der :term:`setuptools`, :term:`wheel` und
@@ -323,8 +324,22 @@ Glossar
        werden.
 
        `Docs <https://scikit-build.readthedocs.io/en/latest/>`__ |
-       `GitHub <https://github.com/scikit-build/scikit-build/>`__ |
+       `GitHub <https://github.com/scikit-build/scikit-build>`__ |
        `PyPI <https://pypi.org/project/scikit-build>`__
+
+
+   setuptools
+       setuptools sind das klassische Build-System, das sehr leistungsfähig ist,
+       aber mit steiler Lernkurve und hohem Konfigurationsaufwand. Ab Version
+       61.0.0 unterstützen die setuptools auch :term:`pyproject.toml`-Dateien.
+
+       `Docs <https://setuptools.readthedocs.io/en/latest/>`__ |
+       `GitHub <https://github.com/pypa/setuptools>`__ |
+       `PyPI <https://pypi.org/project/setuptools>`__
+
+       .. seealso::
+          `Packaging and distributing projects
+          <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
 
    shiv
        Kommandozeilenprogramm zur Erstellung von Python-Zip-Apps, wie sie in
@@ -428,3 +443,7 @@ Glossar
 
        .. seealso::
           * :ref:`wheels`
+
+   whey
+       Einfacher Python-:term:`wheel`-Builder mit Automatisierungsoptionen für
+       :term:`trove-classifiers`.
