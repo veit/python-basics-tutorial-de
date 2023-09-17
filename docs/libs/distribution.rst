@@ -341,9 +341,8 @@ Beispiel)` so aussehen: :download:`dataprep/MANIFEST.in`:
 .. literalinclude:: dataprep/MANIFEST.in
    :linenos:
 
-Weitere Anweisungen in ``Manifest.in`` findet ihr in `Creating a source
-distribution
-<https://docs.python.org/3/distutils/commandref.html?highlight=manifest#creating-a-source-distribution-the-sdist-command>`__.
+Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
+<https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
 
 .. note::
     Häufig wird die Aktualisierung der ``Manifest.in``-Datei vergessen. Um dies
