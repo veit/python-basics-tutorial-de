@@ -145,7 +145,6 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     .. seealso::
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
-       * `bump2version <https://pypi.org/project/bump2version/>`_
 
     Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z.B. (zum
     Beispiel)` `hatch-semver <https://github.com/Nagidal/hatch-semver>`_ für
