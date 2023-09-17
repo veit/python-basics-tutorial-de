@@ -168,7 +168,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     .. code-block:: toml
 
        [build-system]
-       requires = ["setuptools", "setuptools-scm"]
+       requires = ["setuptools>=61.0", "setuptools-scm"]
        build-backend = "setuptools.build_meta"
 
        [project]
