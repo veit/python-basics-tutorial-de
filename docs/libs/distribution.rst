@@ -136,11 +136,16 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Das Standardmuster sucht nach einer Variablen namens :samp:`__version__`
     oder :samp:`VERSION`, die die Version enthält, optional mit dem
     vorangestellten Kleinbuchstaben :samp:`v`. Dabei basiert das Standardschema
-    basiert auf :pep:`440`.
+    auf :pep:`440`.
 
     Wenn dies nicht der Art entspricht, wie ihr Versionen speichern wollt,
     könnt ihr mit der Option :samp:`pattern` auch einen anderen regulären
     Ausdruck definieren.
+
+    .. seealso::
+       * `Calendar Versioning <https://calver.org>`_
+       * `ZeroVer <https://0ver.org/>`_
+       * `bump2version <https://pypi.org/project/bump2version/>`_
 
     Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z.B. (zum
     Beispiel)` `hatch-semver <https://github.com/Nagidal/hatch-semver>`_ für
@@ -159,32 +164,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        source = "vcs"
        raw-options = { local_scheme = "no-local-version" }
 
-    .. seealso::
-       * `Calendar Versioning <https://calver.org>`_
-       * `ZeroVer <https://0ver.org/>`_
-       * `bump2version <https://pypi.org/project/bump2version/>`_
-
     Auch das setuptools-Backend erlaubt dynamische Versionierung:
-
-    .. code-block:: toml
-
-       [build-system]
-       requires = ["setuptools", "setuptools-scm"]
-       build-backend = "setuptools.build_meta"
-
-       [project]
-       ...
-       dynamic = ["version"]
-
-       [tool.setuptools.dynamic]
-       version = {attr = "dataprep.VERSION"}
-
-    .. seealso::
-
-       * `Configuring setuptools using pyproject.toml files: Dynamic Metadata
-         <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>`_
-
-    The setuptools backend also allows dynamic versioning:
 
     .. code-block:: toml
 
