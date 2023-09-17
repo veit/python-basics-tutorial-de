@@ -36,8 +36,8 @@ Ein minimales Distribution Package kann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
 .. _pyproject-toml:
 
-``pyproject.toml``
-------------------
+:file:`pyproject.toml`
+----------------------
 
 :pep:`517` und :pep:`518` brachten erweiterbare Build-Backends, isolierte Builds
 und :term:`pyproject.toml` im
@@ -276,11 +276,11 @@ Beispiel)` mit:
       > python -m pip install --upgrade pip
       > python -m pip install -e '.[dev]'
 
-``src``-Package
----------------
+:file:`src`-Package
+-------------------
 
 Wenn ihr ein neues Paket erstellt, solltet ihr kein flaches sondern das
-``src``-Layout verwenden, das auch in `Packaging Python Projects
+:file:`src`-Layout verwenden, das auch in `Packaging Python Projects
 <https://packaging.python.org/en/latest/tutorials/packaging-projects/>`_ der
 :term:`PyPA` empfohlen wird. Ein wesentlicher Vorteil dieses Layouts ist, dass
 Tests mit der installierten Version eures Pakets und nicht mit den Dateien in
@@ -294,14 +294,14 @@ eurem Arbeitsverzeichnis ausgeführt werden.
    In Python ≥ 3.11 kann mit :envvar:`PYTHONSAFEPATH` sichergestellt werden,
    dass die installierten Pakete zuerst verwendet werden.
 
-``dataprep``
+:file:`dataprep`
     ist das Verzeichnis, das die Python-Dateien enthält. Der Name sollte mit dem
     Projektnamen übereinstimmen um die Konfiguration zu vereinfachen und für
     diejenigen, die das Paket installieren, besser erkennbar zu sein.
-``__init__.py``
+:file:`__init__.py`
     ist erforderlich, um das Verzeichnis als Paket zu importieren. Die Datei
     sollte leer sein.
-``loaders.py``
+:file:`loaders.py`
     ist ein Beispiel für ein Modul innerhalb des Pakets, das die Logik
     (Funktionen, Klassen, Konstanten, :abbr:`etc. (et cetera)`) eures Pakets
     enthalten könnte.
@@ -309,8 +309,8 @@ eurem Arbeitsverzeichnis ausgeführt werden.
 Andere Dateien
 --------------
 
-``setup.py``
-~~~~~~~~~~~~
+:file:`setup.py`
+~~~~~~~~~~~~~~~~
 
 Eine minimale und dennoch funktionale :download:`dataprep/setup.py` kann
 :abbr:`z.B. (zum Beispiel)` so aussehen:
@@ -322,7 +322,7 @@ Eine minimale und dennoch funktionale :download:`dataprep/setup.py` kann
 
 `package_dir
 <https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
-verweist auf das Verzeichnis ``src``, in dem sich ein oder mehrere Pakete
+verweist auf das Verzeichnis :file:`src`, in dem sich ein oder mehrere Pakete
 befinden können. Anschließend könnt ihr mit setuptools’s `find_packages()
 <https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_
 alle Pakete in diesem Verzeichnis finden.
@@ -331,8 +331,8 @@ alle Pakete in diesem Verzeichnis finden.
     ``find_packages()`` ohne ``src/``-Verzeichnis würde alle Verzeichnisse mit
     einer ``__init__.py``-Datei paketieren, also auch ``tests/``-Verzeichnisse.
 
-``MANIFEST.in``
-~~~~~~~~~~~~~~~
+:file:`MANIFEST.in`
+~~~~~~~~~~~~~~~~~~~
 
 Die Datei enthält alle Dateien und Verzeichnisse, die nicht bereits mit
 ``packages`` oder ``py_module`` erfasst werden. Sie kann :abbr:`z.B. (zum
@@ -345,40 +345,40 @@ Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
 <https://packaging.python.org/en/latest/guides/using-manifest-in/>`__.
 
 .. note::
-    Häufig wird die Aktualisierung der ``Manifest.in``-Datei vergessen. Um dies
-    zu vermeiden, könnt ihr `check-manifest
-    <https://pypi.org/project/check-manifest/>`_ in einem ``pre-commit``-Hook
-    verwenden.
+   Häufig wird die Aktualisierung der :file:`Manifest.in`-Datei vergessen. Um
+   dies zu vermeiden, könnt ihr `check-manifest
+   <https://pypi.org/project/check-manifest/>`_ in einem :doc:`Git pre-commit
+   Hook <Python4DataScience:productive/git/hooks/index>` verwenden.
 
 .. note::
-    Wenn ihr Dateien und Verzeichnisse aus ``MANIFEST.in`` auch installiert
-    werden sollen, z.B. wenn es sich um laufzeitrelevante Daten handelt, könnt
-    ihr dies mit ``include_package_data=True`` in eurem ``setup()``-Aufruf
-    angeben.
+   Wenn Dateien und Verzeichnisse aus :file:`MANIFEST.in` auch installiert
+   werden sollen, :abbr:`z.B. (zum Beispiel)` wenn es sich um laufzeitrelevante
+   Daten handelt, könnt ihr dies mit ``include_package_data=True`` in eurem
+   ``setup()``-Aufruf angeben.
 
-``setup.cfg``
-~~~~~~~~~~~~~
+:file:`setup.cfg`
+~~~~~~~~~~~~~~~~~
 
 Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ``wheel`` sammelt heutzutage alle erforderlichen Lizenzdateien automatisch und
 ``setuptools`` kann mit dem ``options``-Keyword-Argument universelle
 ``wheel``-Pakete bauen, :abbr:`z.B. (zum Beispiel)`
-``dataprep-0.1.0-py3-none-any.whl``.
+:file:`dataprep-0.1.0-py3-none-any.whl`.
 
-``CONTRIBUTORS.rst``
-~~~~~~~~~~~~~~~~~~~~
+:file:`CONTRIBUTORS.rst`
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
     * `All contributors <https://allcontributors.org/>`_
 
-``LICENSE``
-~~~~~~~~~~~
+:file:`LICENSE`
+~~~~~~~~~~~~~~~
 
 Ausführliche Informationen hierzu findet ihr im Abschnitt
 :doc:`Python4DataScience:productive/licensing`.
 
-``README.rst``
-~~~~~~~~~~~~~~
+:file:`README.rst`
+~~~~~~~~~~~~~~~~~~
 
 Diese Datei teilt denjenigen, die sich für das Paket interessieren, in kurzer
 Form mit, wie sie es nutzen können.
@@ -397,8 +397,8 @@ auch als ausführliche Beschreibung in euer Paket übernehmen:
 Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
 </document/start>` mit ``.. include:: ../../README.rst`` übernehmen.
 
-``CHANGELOG.rst``
-~~~~~~~~~~~~~~~~~
+:file:`CHANGELOG.rst`
+~~~~~~~~~~~~~~~~~~~~~
 
 .. seealso::
     * `Keep a Changelog <https://keepachangelog.com/>`_
@@ -443,7 +443,7 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
 
 Die zweite Zeile stellt sicher, dass ein sauberes Build ohne Artefakte früherer
 Builds erstellt wird. Die dritte Zeile sollte eine Menge Text ausgeben und nach
-Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
+Abschluss zwei Dateien im :file:`dist`-Verzeichnis erzeugen:
 
 .. code-block:: console
 
@@ -451,7 +451,7 @@ Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
    ├── dataprep-0.1.0-py3-none-any.whl
    └── dataprep-0.1.0.tar.gz
 
-``dataprep-0.1.0-py3-none-any.whl``
+:file:`dataprep-0.1.0-py3-none-any.whl`
     ist eine Build-Distribution. Neuere pip-Versionen installieren bevorzugt
     Build-Distributionen, greifen aber bei Bedarf auf Source-Distributionen
     zurück. Ihr solltet immer eine Source-Distribution hochladen und
@@ -474,7 +474,7 @@ Abschluss zwei Dateien im ``dist``-Verzeichnis erzeugen:
         ``any`` eignet sich für jede Prozessorarchitektur, ``x86_64`` hingegen
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
 
-``dataprep-0.1.0.tar.gz``
+:file:`dataprep-0.1.0.tar.gz`
     ist eine Source-Distribution
 
 .. seealso::
