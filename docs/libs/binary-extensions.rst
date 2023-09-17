@@ -195,8 +195,8 @@ C-Code während des Build-Prozesses zu übersetzen. Cython-Dateien haben den
 Suffix ``pyx`` und können sowohl Python- also auch C-Code enthalten.
 
 Als Build-Backend können wir jedoch aktuell noch nicht ``hatchling.build``
-verwenden, sondern müssen auf ``build_meta`` der :term:`setuptools`
-zurückgreifen:
+verwenden, sondern greifen auf eine aktuelle Version der :term:`setuptools`
+zurück:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
@@ -208,11 +208,25 @@ zurückgreifen:
    Toolkit für Extensions-Module, das aktuell jedoch noch kein
    ``hatchling``-Plugin enthält.
 
-.. seealso::
-   * :term:`Meson <meson-python>`: `Cython Support
-     <https://mesonbuild.com/Cython.html>`_
-   * :term:`scikit-build`: `C Runtime, Compiler and Build System Generator
-     <https://scikit-build.readthedocs.io/en/latest/generators.html>`_
+.. note::
+   Alternativ könntet ihr auch :term:`Meson <meson-python>` oder
+   :term:`scikit-build` verwenden:
+
+   .. tab:: Meson
+
+      .. code-block:: toml
+
+         [build-system]
+         requires = ["meson-python"]
+         build-backend = "mesonpy"
+
+   .. tab:: scikit-build
+
+      .. code-block:: toml
+
+         [build-system]
+         requires = ["scikit-build-core"]
+         build-backend = "scikit_build_core.build"
 
 Da Cython selbst ein Python-Paket ist, kann es einfach in der
 :download:`dataprep/pyproject.toml`-Datei in die Liste der Abhängigkeiten
