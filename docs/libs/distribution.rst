@@ -487,7 +487,7 @@ Abschluss zwei Dateien im :file:`dist`-Verzeichnis erzeugen:
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
 
 :file:`dataprep-0.1.0.tar.gz`
-    ist eine Source-Distribution
+    ist eine :term:`Source Distribution`.
 
 .. seealso::
     Die Referenz für die Dateinamen findet ihr in :pep:`427`.
@@ -507,7 +507,7 @@ Testen
       $ mkdir test_env
       $ cd test_env
       $ python3 -m venv .
-      $ source bin/activate
+      $ . bin/activate
       $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
       Processing ./dist/dataprep-0.1.0-py3-none-any.whl
       Collecting pandas
