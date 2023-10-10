@@ -80,3 +80,24 @@ mit der Methode ``instance_variables``:
     Während ihr auf die Methode ``move`` der Superklasse ``form`` mit ``self``
     zugreifen könnt, sind jedoch private Instanzvariablen, private Methoden und
     private Klassenvariablen der Superklasse so nicht zugänglich.
+
+Wenn ihr nur Instanzen einer bestimmten Klasse ändern wollt, könnt ihr dies
+:abbr:`z.B. (zum Beispiel)` mit dem :mod:`Garbage Collector <gc>`:
+
+.. code-block:: python
+
+    >>> import forms
+    >>> c1 = forms.Circle()
+    >>> c2 = forms.Circle(2, 3, 4)
+    >>> s1 = forms.Square(5, 6, 7)
+    >>> import gc
+    >>> for obj in gc.get_objects():
+    ...     if isinstance(obj, forms.Circle):
+    ...         obj.move(3, 0)
+    ...
+    >>> c1.x, c1.y
+    (3, 0)
+    >>> c2.x, c2.y
+    (6, 4)
+    >>> s1.x, s1.y
+    (6, 7)
