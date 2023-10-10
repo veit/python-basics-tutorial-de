@@ -415,7 +415,7 @@ Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
    Häufig wird die Aktualisierung der :file:`Manifest.in`-Datei vergessen. Um
    dies zu vermeiden, könnt ihr `check-manifest
    <https://pypi.org/project/check-manifest/>`_ in einem :doc:`Git pre-commit
-   Hook <Python4DataScience:productive/git/hooks/index>` verwenden.
+   Hook <Python4DataScience:productive/git/advanced/hooks/index>` verwenden.
 
 .. note::
    Wenn Dateien und Verzeichnisse aus :file:`MANIFEST.in` auch installiert

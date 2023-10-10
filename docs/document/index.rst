@@ -132,9 +132,11 @@ Dokumentation weiter zu vereinfachen. Read the Docs erleichtert das Erstellen
 und Veröffentlichen von Dokumentationen nach jedem Commit.
 
 Für die Projektdokumentation kann die Visualisierung von :doc:`Git Feature
-Branches <Python4DataScience:productive/git/workflows/feature-branches>` und
-:doc:`Tags <Python4DataScience:productive/git/tag>` mit
-:doc:`Python4DataScience:productive/git/git-big-picture` hilfreich sein.
+Branches
+<Python4DataScience:productive/git/workflows/feature-branches>` und :doc:`Tags
+<Python4DataScience:productive/git/tag>` mit
+:doc:`Python4DataScience:productive/git/advanced/git-big-picture` hilfreich
+sein.
 
 .. note::
    Wenn der Inhalt von ``long_description`` in ``setup()`` in reStructured Text

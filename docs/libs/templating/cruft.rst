@@ -83,8 +83,9 @@ Ein Projekt überprüfen
 Um festzustellen, ob ein Projekt eine Vorlagenaktualisierung verpasst hat, könnt
 ihr ganz einfach, ``cruft check`` aufrufen. Wenn das Projekt veraltet ist, wird
 ein Fehler und der :samp:`Exit-Code 1` zurückgegeben. ``cruft check`` kann auch
-zu :doc:`Python4DataScience:productive/git/hooks/pre-commit` und CI-Pipelines
-hinzugefügt werden, um sicherzustellen, dass Projekte nicht ungewollt veralten.
+zu :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` und
+CI-Pipelines hinzugefügt werden, um sicherzustellen, dass Projekte nicht
+ungewollt veralten.
 
 Ein bestehendes Projekt verknüpfen
 ----------------------------------
