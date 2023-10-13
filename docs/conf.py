@@ -31,6 +31,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    "pygments_pytest",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
@@ -45,7 +46,8 @@ plantuml_output_format = "svg"
 intersphinx_mapping = {
     "python3": ("https://docs.python.org/3/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/de/latest/", None),
-    "Python4DataScience": ("https://www.python4data.science/en/latest/", None),
+    "Python4DataScience": ("https://www.python4data.science/de/latest/", None),
+    "pytest": ("https://docs.pytest.org/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.

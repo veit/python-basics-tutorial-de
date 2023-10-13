@@ -52,7 +52,8 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    mock
    doctest
    hypothesis
-   pytest
+   pytest/index
    tox
    unittest2
    coverage
+   glossary
