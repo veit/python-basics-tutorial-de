@@ -24,9 +24,9 @@ folgenden String-Konstanten, die alle in den ASCII-Zeichensatz fallen:
     printable = digits + ascii_letters + punctuation + whitespace
 
 Die meisten dieser Konstanten sollten in ihrem Bezeichnernamen selbsterklärend
-sein. ``hexdigits`` und ``octdigits`` beziehen sich auf die Hexadezimal-
-:abbr:`bzw. (beziehungsweise)` Oktalwerte. Ihr könnt diese Konstanten für
-alltägliche String-Manipulation verwenden:
+sein. ``hexdigits`` und ``octdigits`` beziehen sich auf die
+Hexadezimal- :abbr:`bzw. (beziehungsweise)` Oktalwerte. Ihr könnt diese
+Konstanten für alltägliche String-Manipulation verwenden:
 
 .. code-block:: python
 

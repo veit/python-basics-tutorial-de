@@ -80,6 +80,10 @@ Erweiterungen von Drittanbietern
 `Sphinx Sitemap Generator Extension <https://github.com/jdillard/sphinx-sitemap>`_
     generiert multiversion- und multilanguage `sitemaps
     <https://www.sitemaps.org/protocol.html>`_ für die HTML-Version
+`Sphinx Lint <https://github.com/sphinx-contrib/sphinx-lint>`_
+    basiert auf `rstlint.py
+    <https://github.com/python/cpython/blob/e0433c1e7/Doc/tools/rstlint.py>`_
+    aus CPython.
 
 .. seealso::
     `sphinx-contrib <https://github.com/sphinx-contrib/>`_

@@ -162,11 +162,11 @@ betriebssystemspezifische Syntax verwenden zu müssen.
         >>> print(os.path.join('save-data', 'filesystem.rst'))
         save-data\filesystem.rst
 
-    Dabei werden die Argumente interpretiert als eine Reihe von Verzeichnis-
-    oder Dateinamen, die zu einer einzigen Zeichenkette verbunden werden sollen,
-    die vom zugrunde liegenden Betriebssystem als relativer Pfad verstanden
-    wird. Unter Windows bedeutet dies, dass die Namen der Pfadkomponenten mit
-    Backslashes (``\``) verbunden werden.
+    Dabei werden die Argumente interpretiert als eine Reihe von
+    Verzeichnis- oder Dateinamen, die zu einer einzigen Zeichenkette verbunden
+    werden sollen, die vom zugrunde liegenden Betriebssystem als relativer Pfad
+    verstanden wird. Unter Windows bedeutet dies, dass die Namen der
+    Pfadkomponenten mit Backslashes (``\``) verbunden werden.
 
     Wenn ihr das Gleiche unter Linux/macOS ausführt, erhaltet ihr hingegen als
     Separator ``/``:

@@ -19,8 +19,8 @@ Zugriff auf die in Python-Bibliotheken integrierte Dokumentation bietet. Da jede
 Python-Installation mit einer vollständigen Dokumentation ausgeliefert wird,
 habt ihr auch offline die gesamte Dokumentation zur Hand.
 
-Alternativ könnt ihr ``help()`` auch gezielter anwenden, indem ihr einen Typ-
-oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
+Alternativ könnt ihr ``help()`` auch gezielter anwenden, indem ihr einen
+Typ- oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
 
 .. code-block:: python
 

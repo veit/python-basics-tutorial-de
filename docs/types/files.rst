@@ -95,14 +95,15 @@ in eine Datei:
 Je nach Betriebssystem kann :func:`python3:open` auch Zugang zu weiteren
 Dateimodi haben. Diese Modi sind jedoch für die meisten Zwecke nicht notwendig.
 
-``open`` kann ein optionales drittes Argument annehmen, das definiert, wie Lese-
-oder Schreibvorgänge für diese Datei gepuffert werden. Beim Puffern werden Daten
-so lange im Speicher gehalten, bis genügend Daten angefordert oder geschrieben
-wurden, um die Zeitaufwände für einen Plattenzugriff zu rechtfertigen. Andere
-Parameter für ``open`` steuern die Kodierung für Textdateien und die Behandlung
-von Zeilenumbrüchen in Textdateien. Auch hier gilt, dass ihr euch in der Regel
-keine Gedanken über diese Funktionen machen müsst, aber wenn ihr mit Python
-fortgeschrittener werdet, solltet ihr euch vielleicht darüber informieren.
+``open`` kann ein optionales drittes Argument annehmen, das definiert, wie
+Lese- oder Schreibvorgänge für diese Datei gepuffert werden. Beim Puffern werden
+Daten so lange im Speicher gehalten, bis genügend Daten angefordert oder
+geschrieben wurden, um die Zeitaufwände für einen Plattenzugriff zu
+rechtfertigen. Andere Parameter für ``open`` steuern die Kodierung für
+Textdateien und die Behandlung von Zeilenumbrüchen in Textdateien. Auch hier
+gilt, dass ihr euch in der Regel keine Gedanken über diese Funktionen machen
+müsst, aber wenn ihr mit Python fortgeschrittener werdet, solltet ihr euch
+vielleicht darüber informieren.
 
 Lese- und Schreib-Funktionen
 ----------------------------
