@@ -718,6 +718,7 @@ Datenbank bereitstellt, und die neue Fixture für Tests, die eine Datenbank mit
 vier Items enthält:
 
 .. code-block:: python
+
     def test_zero_item(items_db):
         assert items_db.count() == 0
 
