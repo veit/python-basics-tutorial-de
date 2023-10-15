@@ -84,6 +84,8 @@ Erweiterungen von Drittanbietern
     basiert auf `rstlint.py
     <https://github.com/python/cpython/blob/e0433c1e7/Doc/tools/rstlint.py>`_
     aus CPython.
+`sphinx-toolbox <https://sphinx-toolbox.readthedocs.io/en/stable/index.html>`_
+    Werkzeugkasten für Sphinx mit vielen nützlichen Werkzeugen.
 
 .. seealso::
     `sphinx-contrib <https://github.com/sphinx-contrib/>`_
