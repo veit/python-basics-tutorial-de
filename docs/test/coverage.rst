@@ -1,109 +1,239 @@
 Coverage
 ========
 
-Ihr könnt einen Report für die Testabdeckung erstellen mit `Coverage.py
-<https://github.com/nedbat/coveragepy>`_.
+Wir haben eine erste Liste von Testfällen erstellt. Die Tests im
+:file:`tests/api`-Verzeichnis testen die Items über die API. Aber woher wissen
+wir, ob diese Tests unseren Code umfassend testen? An dieser Stelle kommt die
+Codeabdeckung (engl.: Coverage) ins Spiel.
 
-.. seealso::
-   * `GitHub <https://github.com/nedbat/coveragepy>`_
-   * `Docs <https://coverage.readthedocs.io/>`_
+Tools, die die Codeabdeckung messen, beobachten euren Code, während eine
+Testsuite ausgeführt wird, und halten fest, welche Zeilen durchlaufen werden und
+welche nicht. Dieses Maß – die :abbr:`sog. (sogenannte)` line coverage – wird
+berechnet, indem die Gesamtzahl der ausgeführten Zeilen durch die Gesamtanzahl
+der Codezeilen geteilt wird. Code-Coverage-Tools können euch auch sagen, ob alle
+Pfade in Control-Statements durchlaufen werden, eine Messung, die als
+Branch-Coverage bezeichnet wird.
 
-Installation
-------------
+Die Codeabdeckung kann euch jedoch nicht sagen, ob eure Testsuite gut ist; sie
+kann euch nur darüber informieren, wie viel des Anwendungscodes von eurer
+Testsuite durchlaufen wird.
+
+`Coverage.py <https://coverage.readthedocs.io/en/latest/>`_ ist das bevorzugte
+Python-Tool, das die Codeabdeckung misst. Und `pytest-cov
+<https://pytest-cov.readthedocs.io/en/latest/>`_ ist ein beliebtes
+:doc:`Pytest-Plugin <pytest/plugins>`, das oft in Verbindung mit Coverage.py
+verwendet wird.
+
+Coverage.py mit pytest-cov verwenden
+------------------------------------
+
+Sowohl Coverage.py als auch pytest-cov sind Third-Party-Packages, die vor der
+Verwendung installiert werden müssen:
+
+Ihr könnt einen Report für die Testabdeckung erstellen mit Coverage.py.
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ bin/python -m pip install coverage
+      $ bin/python -m pip install coverage pytest-cov
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-         C:> Scripts\python -m pip install coverage
+      C:> Scripts\python -m pip install coverage pytest-cov
 
 .. note::
    Wollt ihr die Testabdeckung für Python 2 and Python<3.6 ermitteln, müsst ihr
    Coverage<6.0 verwenden.
 
-Nutzung
--------
+Um Tests mit Coverage.py auszuführen, müsst ihr die Option ``--cov`` hinzufügen
+und entweder einen Pfad zu dem Code angeben, den ihr messen wollt, oder das
+installierte Paket, das ihr testet. In unserem Fall ist das Projekt Items ein
+installiertes Paket, so dass wir es mit ``--cov=items`` testen werden.
 
-Ihr könnt euren üblichen Test-Runner zusammen mit Coverage ausführen
+Auf die normale pytest-Ausgabe folgt der Abdeckungsbericht, wie hier gezeigt:
 
-* … mit `pytest <https://docs.pytest.org/>`_:
+.. code-block:: pytest
 
-  .. tab:: Linux/macOS
+    $ cd /PATH/TO/items
+    $ python3 -m venv .
+    $ . bin/acitvate
+    $ python -m pip install ".[dev]"
+    $ pytest --cov=items
+    ============================= test session starts ==============================
+    ...
+    rootdir: /Users/veit/cusy/prj/items
+    configfile: pyproject.toml
+    testpaths: tests
+    plugins: cov-4.1.0, Faker-19.11.0
+    collected 35 items
 
-     .. code-block:: console
+    tests/api/test_add.py ....                                               [ 11%]
+    tests/api/test_config.py .                                               [ 14%]
+    tests/api/test_count.py ...                                              [ 22%]
+    tests/api/test_delete.py ...                                             [ 31%]
+    tests/api/test_finish.py ....                                            [ 42%]
+    tests/api/test_list.py .........                                         [ 68%]
+    tests/api/test_start.py ....                                             [ 80%]
+    tests/api/test_update.py ....                                            [ 91%]
+    tests/api/test_version.py .                                              [ 94%]
+    tests/cli/test_add.py ..                                                 [100%]
 
-        $ bin/python -m pip install pytest-cov
+    ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
+    Name                    Stmts   Miss  Cover
+    -------------------------------------------
+    src/items/__init__.py       3      0   100%
+    src/items/api.py           70      1    99%
+    src/items/cli.py           38      9    76%
+    src/items/db.py            23      0   100%
+    -------------------------------------------
+    TOTAL                     134     10    93%
 
-  .. tab:: Windows
 
-     .. code-block:: ps1con
+    ============================== 35 passed in 0.11s ==============================
 
-        C:> Scripts\python -m pip install pytest-cov
+Die vorherige Ausgabe wurde von den Berichtsfunktionen von coverage erzeugt, obwohl wir coverage nicht direkt aufgerufen haben.
+``pytest --cov=items`` wies das ``pytest-cov``-Plugin an
 
-  oder für verteilte Tests
+* ``coverage`` mit ``--source`` auf ``items`` zu setzen, während pytest mit den
+  Tests ausgeführt wird
+* ``coverage report`` auszuführen für den Line-Coverage-Report
 
-  .. tab:: Linux/macOS
+Ohne pytest-cov würden die Befehle wie folgt aussehen:
 
-     .. code-block:: console
+.. code-block:: console
 
-        $ bin/python -m pip install pytest-xdist
+    $ coverage run --source=items -m pytest
+    $ coverage report
 
-  .. tab:: Windows
+Die Dateien :file:`__init__.py` und :file:`db.py`. haben eine Abdeckung von
+100%, was bedeutet, dass unsere Testsuite auf jede Zeile in diesen Dateien
+trifft. Das sagt uns jedoch nicht, dass sie ausreichend getestet ist oder dass
+die Tests mögliche Fehler erkennen; aber es sagt uns zumindest, dass jede Zeile
+während der Testsuite ausgeführt wurde.
 
-     .. code-block:: ps1con
+Die Datei :file:`cli.py` hat eine Abdeckung von 76%. Dies mag überraschend hoch
+erscheinen, da wir die CLI noch gar nicht getestet haben. Dies hängt jedoch
+damit zusammen, dass :file:`cli.py` von :file:`__init__.py` importiert wird, so
+dass alle Funktionsdefinitionen ausgeführt werden, aber keiner der
+Funktionsinhalte.
 
-        C:> Scripts\python -m pip install pytest-xdist
+Wirklich interessiert uns jedoch die :file:`api.py`-Datei mit 99% Testabdeckung.
+Wir können herausfinden, was übersehen wurde, indem wir die Tests erneut ausführen und die Option ``--cov-report=term-missing`` hinzufügen:
 
-  Anschließend könnt ihr die Testabdeckung überprüfen mit
+.. code-block:: pytest
 
-  .. tab:: Linux/macOS
+    pytest --cov=items --cov-report=term-missing
+    ============================= test session starts ==============================
+    ...
+    rootdir: /Users/veit/cusy/prj/items
+    configfile: pyproject.toml
+    testpaths: tests
+    plugins: cov-4.1.0, Faker-19.11.0
+    collected 35 items
 
-     .. code-block:: console
+    tests/api/test_add.py ....                                               [ 11%]
+    tests/api/test_config.py .                                               [ 14%]
+    tests/api/test_count.py ...                                              [ 22%]
+    tests/api/test_delete.py ...                                             [ 31%]
+    tests/api/test_finish.py ....                                            [ 42%]
+    tests/api/test_list.py .........                                         [ 68%]
+    tests/api/test_start.py ....                                             [ 80%]
+    tests/api/test_update.py ....                                            [ 91%]
+    tests/api/test_version.py .                                              [ 94%]
+    tests/cli/test_add.py ..                                                 [100%]
 
-        $ bin/pytest --cov=myproj tests/
+    ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
+    Name                    Stmts   Miss  Cover   Missing
+    -----------------------------------------------------
+    src/items/__init__.py       3      0   100%
+    src/items/api.py           68      1    99%   52
+    src/items/cli.py           38      9    76%   18-19, 25, 39-43, 51
+    src/items/db.py            23      0   100%
+    -----------------------------------------------------
+    TOTAL                     132     10    92%
 
-  .. tab:: Windows
 
-     .. code-block:: ps1con
+    ============================== 35 passed in 0.11s ==============================
 
-        C:> Scripts\pytest --cov=myproj tests\
+Da wir nun die Zeilennummern der nicht getesteten Zeilen haben, können wir die
+Dateien in einem Editor öffnen und die fehlenden Zeilen betrachten. Einfacher
+ist es jedoch, sich den HTML-Bericht anzusehen:
 
-  .. seealso::
-     * `pytest-cov’s documentation <https://pytest-cov.readthedocs.io/>`_
+.. code-block:: pytest
 
-* … mit :doc:`unittest`:
+.. seealso::
+   * `pytest-cov’s documentation <https://pytest-cov.readthedocs.io/>`_
 
-  .. tab:: Linux/macOS
+HTML-Berichte generieren
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-     .. code-block:: console
+Mit Coverage.py können wir HTML-Berichte erstellen, um die Coverage-Daten
+detaillierter betrachten zu können. Der Bericht wird entweder mit der Option
+``--cov-report=html`` oder durch die Ausführung von ``coverage html`` nach einem
+vorherigen Coverage-Run erstellt:
 
-        $ bin/coverage run -m unittest discover
+.. code-block:: console
 
-  .. tab:: Windows
+    $ cd /PATH/TO/items
+    $ python3 -m venv .
+    $ . bin/acitvate
+    $ python -m pip install ".[dev]"
+    $ pytest --cov=items --cov-report=html
 
-     .. code-block:: ps1con
+Bei beiden Befehlen wird Coverage.py aufgefordert, einen HTML-Bericht im
+:file:`htmlcov/`-Verzeichnis zu erstellen. Öffnet :file:`htmlcov/index.html` mit
+einem Browser und ihr solltet folgendes sehen:
 
-        C:> Scripts\coverage run -m unittest discover
+.. image:: coverage.png
+   :alt: Coverage report: 92%
 
-* … mit `nose <https://nose.readthedocs.io/>`_:
+Wenn ihr auf die :file:`c/items/api.py:`-Datei klickt, wird ein Bericht für
+diese Datei angezeigt:
 
-  .. tab:: Linux/macOS
+.. image:: api.png
+   :alt:  Coverage for src/items/api.py: 99%
 
-     .. code-block:: console
+Der obere Teil des Berichts zeigt den Prozentsatz der abgedeckten Zeilen (99%), die Gesamtzahl der Statements (68) und wie viele Statements ausgeführt (67),
+übersehen (1) und ausgeschlossen (0) wurden. Klickt auf
+:menuselection:`missing` , um die Zeilen hervorzuheben, die nicht ausgeführt
+wurden:
 
-        $ bin/coverage run -m nose arg1 arg2
+.. image:: missing.png
+   :alt: raise MissingSummary
 
-  .. tab:: Windows
+Es sieht so aus, als hätte die Funktion :func:`add_item()` eine Exception
+``MissingSummary``, die bisher nicht getestet wird.
 
-     .. code-block:: ps1con
+Code von der Testabdeckung ausschließen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        C:> Scripts\coverage run -m nose arg1 arg2
+In den HTML-Berichten findet ihr eine Spalte mit der Angabe *0 ausgeschlossen*. Dies bezieht sich auf eine Funktion von Coverage.py, die es uns ermöglicht,
+einige Zeilen von der Prüfung auszuschließen. In Items schließen wir nichts aus.
+Es ist jedoch nicht ungewöhnlich, dass einige Codezeilen von der Berechnung der
+Testabdeckung ausgeschlossen werden, :abbr:`z.B. (zum Beispiel)` können Module, die sowohl importiert wie auch direkt ausgeführt werden sollen, einen Block
+enthalten, der so oder so ähnlich aussieht:
+
+.. code-block:: python
+
+    if __name__ == '__main__':
+        main()
+
+Dieser Befehl weist Python an, :func:`main()` auszuführen, wenn wir das Modul
+direkt aufrufen mit ``python my_module.py``, aber den Code nicht auszuführen,
+wenn das Modul importiert wird. Diese Arten von Code-Blöcken werden häufig mit
+einer einfachen Pragma-Anweisung vom Testen ausgeschlossen:
+
+.. code-block:: python
+
+    if __name__ == '__main__': # pragma: no cover
+        main()
+
+Damit wird Coverage.py angewiesen, entweder eine einzelne Zeile oder einen
+Code-Block auszuschließen. Wenn, wie in diesem Fall, das Pragma in der
+if-Anweisung steht,  müsst ihr es nicht in beide Codezeilen einfügen.
 
 Erweiterungen
 -------------

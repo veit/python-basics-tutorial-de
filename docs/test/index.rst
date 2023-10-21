@@ -53,7 +53,7 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    doctest
    hypothesis
    pytest/index
+   coverage
    tox
    unittest2
-   coverage
    glossary
