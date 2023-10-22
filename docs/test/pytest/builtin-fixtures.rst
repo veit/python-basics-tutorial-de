@@ -74,6 +74,8 @@ paar temporären Basisverzeichnisse werden auf dem System belassen.
 Ihr könnt auch euer eigenes Basisverzeichnis angeben mit :samp:`pytest
 --basetemp={MYDIR}`.
 
+.. _capsys-fixture:
+
 ``capsys``
 ----------
 
@@ -222,6 +224,8 @@ Nun wird sie Ausgabe im ``with``-Block immer angezeigt, auch ohne die
         erfasst Bytes in den Dateideskriptoren 1 und 2
     ``caplog``
         erfasst Ausgaben, die mit dem Logging-Paket geschrieben wurden
+
+.. _monkeypatch-fixture:
 
 ``monkeypatch``
 ---------------

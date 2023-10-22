@@ -49,11 +49,11 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
 
    unittest
    sqlite
-   mock
    doctest
    hypothesis
    pytest/index
    coverage
+   mock
    tox
    unittest2
    glossary

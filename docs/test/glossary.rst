@@ -35,8 +35,11 @@ Glossar
 
     Mock
         Objekte, die mit :term:`exception` programmiert sind, die eine
-        Spezifikation der Aufrufe bilden, die sie voraussichtlich erhalten
-        werden.
+        Spezifikation der Aufrufe bilden, die ihr voraussichtlich erhalten
+        werdet.
+
+        .. seealso::
+           * `Mock-Objekt <https://de.wikipedia.org/wiki/Mock-Objekt>`_
 
     pytest
         Ein Python-Paket mit Test-Utilities.
