@@ -108,11 +108,11 @@ Ohne pytest-cov würden die Befehle wie folgt aussehen:
     $ coverage run --source=items -m pytest
     $ coverage report
 
-Die Dateien :file:`__init__.py` und :file:`db.py`. haben eine Abdeckung von
-100%, was bedeutet, dass unsere Testsuite auf jede Zeile in diesen Dateien
-trifft. Das sagt uns jedoch nicht, dass sie ausreichend getestet ist oder dass
-die Tests mögliche Fehler erkennen; aber es sagt uns zumindest, dass jede Zeile
-während der Testsuite ausgeführt wurde.
+Die Dateien :file:`__init__.py` und :file:`db.py` haben eine Abdeckung von 100%,
+was bedeutet, dass unsere Testsuite auf jede Zeile in diesen Dateien trifft. Das
+sagt uns jedoch nicht, dass sie ausreichend getestet ist oder dass die Tests
+mögliche Fehler erkennen; aber es sagt uns zumindest, dass jede Zeile während der
+Testsuite ausgeführt wurde.
 
 Die Datei :file:`cli.py` hat eine Abdeckung von 76%. Dies mag überraschend hoch
 erscheinen, da wir die CLI noch gar nicht getestet haben. Dies hängt jedoch
@@ -160,9 +160,7 @@ Wir können herausfinden, was übersehen wurde, indem wir die Tests erneut ausf�
 
 Da wir nun die Zeilennummern der nicht getesteten Zeilen haben, können wir die
 Dateien in einem Editor öffnen und die fehlenden Zeilen betrachten. Einfacher
-ist es jedoch, sich den HTML-Bericht anzusehen:
-
-.. code-block:: pytest
+ist es jedoch, sich den HTML-Bericht anzusehen.
 
 .. seealso::
    * `pytest-cov’s documentation <https://pytest-cov.readthedocs.io/>`_
@@ -190,7 +188,7 @@ einem Browser und ihr solltet folgendes sehen:
 .. image:: coverage.png
    :alt: Coverage report: 92%
 
-Wenn ihr auf die :file:`c/items/api.py:`-Datei klickt, wird ein Bericht für
+Wenn ihr auf die :file:`src/items/api.py:`-Datei klickt, wird ein Bericht für
 diese Datei angezeigt:
 
 .. image:: api.png
@@ -210,10 +208,12 @@ Es sieht so aus, als hätte die Funktion :func:`add_item()` eine Exception
 Code von der Testabdeckung ausschließen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In den HTML-Berichten findet ihr eine Spalte mit der Angabe *0 ausgeschlossen*. Dies bezieht sich auf eine Funktion von Coverage.py, die es uns ermöglicht,
-einige Zeilen von der Prüfung auszuschließen. In Items schließen wir nichts aus.
-Es ist jedoch nicht ungewöhnlich, dass einige Codezeilen von der Berechnung der
-Testabdeckung ausgeschlossen werden, :abbr:`z.B. (zum Beispiel)` können Module, die sowohl importiert wie auch direkt ausgeführt werden sollen, einen Block
+In den HTML-Berichten findet ihr eine Spalte mit der Angabe *0 excluded*. Dies
+bezieht sich auf eine Funktion von Coverage.py, die es uns ermöglicht, einige
+Zeilen von der Prüfung auszuschließen. In Items schließen wir nichts aus. Es ist
+jedoch nicht ungewöhnlich, dass einige Codezeilen von der Berechnung der
+Testabdeckung ausgeschlossen werden, :abbr:`z.B. (zum Beispiel)` können Module,
+die sowohl importiert wie auch direkt ausgeführt werden sollen, einen Block
 enthalten, der so oder so ähnlich aussieht:
 
 .. code-block:: python
@@ -319,11 +319,11 @@ Zeile 98
        ein neues Token mit dem Gist-Bereich.
     #. Geht schließlich zu :menuselection:`YOUR_REPO --> Settings --> Secrets
        --> Actions` und fügt dieses Token hinzu. Ihr könnt ihm einen beliebigen
-       Namen geben, :abbr:`z.B. (zum Beispiel)` :samp:`GIST_SECRET`.
+       Namen geben, :abbr:`z.B. (zum Beispiel)` :samp:`{GIST_SECRET}`.
 
        Wenn ihr `Dependabot <https://github.com/dependabot>`_ verwendet, um die
        Abhängigkeiten eures Repository automatisch zu aktualisieren, müsst ihr
-       das  :samp:`GIST_SECRET` auch in :menuselection:`YOUR_REPO --> Settings
+       das  :samp:`{GIST_SECRET}` auch in :menuselection:`YOUR_REPO --> Settings
        --> Secrets --> Dependabot` hinzufügen.
 
 Zeilen 102-104

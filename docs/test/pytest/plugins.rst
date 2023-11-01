@@ -74,7 +74,7 @@ Testnamen mit dem Ergebnis. Es gibt jedoch Plugins, die die Ausgabe noch weiter
 verändern:
 
 `pytest-instafail <https://pypi.org/project/pytest-instafail/>`_
-    fügt einw ``--instafail``-Option hinzu, das Tracebacks und Ausgaben von
+    fügt eine ``--instafail``-Option hinzu, das Tracebacks und Ausgaben von
     fehlgeschlagenen Tests direkt nach dem Fehlschlag meldet. Normalerweise
     meldet pytest Tracebacks und Ausgaben von fehlgeschlagenen Tests erst,
     nachdem alle Tests abgeschlossen wurden.
@@ -145,7 +145,6 @@ Bedarf decken:
 `pytest-freezegun <https://pypi.org/project/pytest-freezegun/>`_
     friert die Zeit ein, so dass jeder Code, der die Zeit, Datum oder Uhrzeit,
     liest, während eines Tests denselben Wert erhält.
-    bestimmte Uhrzeit festlegen.
 :doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
     ist ein Pytest-Plugin für
     :doc:`Python4DataScience:data-processing/apis/grpc/index`.

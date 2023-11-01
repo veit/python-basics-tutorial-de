@@ -217,7 +217,7 @@ Beispiel)` in einem ``assertion``-Hilfsprogramm.
 Schreiben von ``assertion``-Hilfsfunktionen
 -------------------------------------------
 
-Eine ``assertion``-Hilfsfunktio dient dazu, eine komplizierte
+Eine ``assertion``-Hilfsfunktion dient dazu, eine komplizierte
 ``assertion``-Prüfung zu verpacken. Ein Beispiel: Die Datenklasse ``Item``
 ist so eingerichtet, dass zwei Items mit unterschiedlichen IDs trotzdem
 Gleichheit berichten. Wenn wir eine strengere Prüfung wünschen, könnten wir eine

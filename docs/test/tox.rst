@@ -12,7 +12,7 @@ GitHub Actions einrichten.
 Einführung in tox
 -----------------
 
-tox1 ist ein Kommandozeilen-Tool, mit dem ihr eure komplette Testsuite in
+tox ist ein Kommandozeilen-Tool, mit dem ihr eure komplette Testsuite in
 verschiedenen Umgebungen ausführen könnt. Wir werden tox verwenden, um das
 Items-Projekt in mehreren Python-Versionen zu testen. tox ist jedoch nicht nur
 auf Python-Versionen beschränkt. Ihr könnt es zum Testen mit verschiedenen

@@ -15,7 +15,7 @@ Glossar
 
     Dummy
         Objekt, das herumgereicht, aber nie wirklich benutzt. Normalerweise
-        werden sie nur zum Füllen von Parameterlisten verwendet.
+        werden sie nur zum Füllen von Parameter-Listen verwendet.
 
     ``exception``
         Anpassbare Form von :term:`assert`.
@@ -56,7 +56,7 @@ Glossar
     Test-driven development
     TDD
     Testgetriebene Entwicklung
-        Eine Softwareentwicklungsstrategie, bei der die Tests vor dem Code
+        Eine Software-Entwicklungsstrategie, bei der die Tests vor dem Code
         geschrieben werden.
 
     ``try``

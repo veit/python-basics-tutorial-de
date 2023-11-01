@@ -111,9 +111,9 @@ einfach auslassen:
         assert i1 < i2
 
 Der Marker ``@pytest.mark.skip()`` weist pytest an, den Test zu überspringen.
-Die Angabe des Grundes eines Grundes ist zwar optional, aber sie hilft bei der
-weiteren Entwicklung.  Wenn wir übersprungene Tests ausführen, werden sie als
-``s`` angezeigt:
+Die Angabe eines Grundes ist zwar optional, aber sie hilft bei der weiteren
+Entwicklung.  Wenn wir übersprungene Tests ausführen, werden sie als ``s``
+angezeigt:
 
 .. code-block:: pytest
    :emphasize-lines: 6
@@ -127,7 +127,7 @@ weiteren Entwicklung.  Wenn wir übersprungene Tests ausführen, werden sie als
 
     ========================= 1 passed, 1 skipped in 0.00s =========================
 
-...der verbos als ``SKIPPED``:
+… oder verbos als ``SKIPPED``:
 
 .. code-block:: pytest
    :emphasize-lines: 1, 10
@@ -182,7 +182,8 @@ sind, wie folgt zu überspringen:
         assert i1 < i2
 
 Mit dem ``skipif``-Marker könnt ihr beliebig viele Bedingungen eingeben, und
-wenn eine davon wahr ist, wird der Test übersprungen. In unserem Fall verwenden wir ``packaging.version.parse``, um die Minor-Version zu isolieren und sie mit
+wenn eine davon wahr ist, wird der Test übersprungen. In unserem Fall verwenden
+wir ``packaging.version.parse``, um die Minor-Version zu isolieren und sie mit
 der Zahl 2 zu vergleichen.
 
 In diesem Beispiel wird als zusätzliches Paket `packaging
@@ -289,7 +290,7 @@ wird.
 
 Bei Tests, die mit ``xfail`` markiert wurden, jedoch tatsächlich bestanden
 wurden, gibt es zwei Möglichkeiten: Wenn sie zu ``XFAIL`` führen sollen, dann
-solltet ihr die Finger von ``strikt`` lassen. Wenn sie hingegen ``FAILED``
+solltet ihr die Finger von ``strict`` lassen. Wenn sie hingegen ``FAILED``
 ausgeben sollen, dann setzt ``strict``.  Ihr könnt ``strict`` entweder als
 Option für den ``xfail``-Marker setzen, wie wir es in diesem Beispiel getan
 haben, oder ihr könnt es auch global mit der Einstellung ``xfail_strict=True``
@@ -855,9 +856,6 @@ funktioniert:
     test_items.py::test_thirteen_items PASSED
 
     ============================== 3 passed in 0.09s ===============================
-
-, und sehen wir uns ein Beispiel für diese Fälschung an
-Daten:
 
 .. note::
    Damit ihr einen Eindruck bekommt, wie die Daten von Faker aussehen, könnt ihr

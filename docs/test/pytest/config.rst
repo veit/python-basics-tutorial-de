@@ -73,7 +73,8 @@ Speichern von Einstellungen und Optionen in :file:`pytest.ini`
 
 ``[pytest]`` kennzeichnet den Beginn des pytest-Abschnitts. Danach folgen die
 einzelnen Einstellungen. Bei Konfigurationseinstellungen, die
-mehr als einen Wert zulassen, können die Werte entweder in eine oder in mehrere Zeilen geschrieben werden in der Form :samp:`{EINSTELLUNG} = {WERT1} {WERT2}`.
+mehr als einen Wert zulassen, können die Werte entweder in eine oder in mehrere
+Zeilen geschrieben werden in der Form :samp:`{EINSTELLUNG} = {WERT1} {WERT2}`.
 Bei ``markers`` hingegen ist nur ein Marker pro Zeile erlaubt.
 
 Dieses Beispiel ist eine einfache :file:`pytest.ini`-Datei, die ich so, oder so
@@ -86,7 +87,7 @@ Zeilen durch:
 ``--strict-markers``
     weist pytest an, bei jedem nicht registrierten Marker, der im Testcode
     auftaucht, einen Fehler statt einer Warnung auszugeben. Hierdurch können wir
-    Tippfehler bei Markernamen vermeiden.
+    Tippfehler bei Marker-Namen vermeiden.
 ``--strict-config``
     weist pytest an, wenn beim Parsen von Konfigurationsdateien Schwierigkeiten
     auftauchen, nicht nur eine Warnung sondern einen Fehler auszugeben. Damit
@@ -107,7 +108,7 @@ Zeilen durch:
     Kommandozeile keinen Datei- oder Verzeichnisnamen angegeben habt. In unserem
     Fall sucht pytest im :file:`tests`-Verzeichnis.
 
-    Auf den ersten Blick mag es überflüssig erscheinen, testpaths auf
+    Auf den ersten Blick mag es überflüssig erscheinen, ``testpaths`` auf
     :file:`tests` zu setzen, da pytest sowieso dort sucht, und wir keine
     :file:`test_`-Dateien in unseren :file:`src`- oder
     :file:`docs`-Verzeichnissen haben. Allerdings kann die Angabe eines
@@ -202,7 +203,7 @@ oder :file:`setup.cfg`, die einen pytest-Abschnitt enthält:
 
 * wenn ihr ein Testverzeichnis angegeben habt, beginnt pytest dort zu suchen
 * wenn ihr mehrere Dateien oder Verzeichnisse angegeben habt, beginnt pytest mit
-  dem übergeordenten Verzeichniss
+  dem übergeordneten Verzeichnis
 * wenn ihr keine Datei oder kein Verzeichnis angebt, beginnt pytest im aktuellen
   Verzeichnis.
 
@@ -249,7 +250,7 @@ API-Tests, und einige könnt ihr auch gemeinsam nutzen.
    Es ist jedoch eine gute Idee, nur eine einzige :file:`conftest.py`-Datei zu
    halten, damit ihr die Fixture-Definitionen leicht finden können. Auch wenn
    wir mit :samp:`pytest --fixtures -v` immer herausfinden können, wo eine
-   Fixture definiert ist, so ist es dennoch einfacher, wenn sie immmer in der
+   Fixture definiert ist, so ist es dennoch einfacher, wenn sie immer in der
    einen :file:`conftest.py`-Datei definiert ist.
 
 :file:`__init__.py` um Kollision von Testdateinamen zu vermeiden
@@ -280,7 +281,7 @@ Beispiel)`:
 
 Nun können wir die ``add``-Funktionalität sowohl über die :abbr:`API
 (Anwendungsprogrammierschnittstelle)` als auch über die :abbr:`CLI
-(Befehlszeilenschnittstelle)i` testen, wobei eine :file:`test_add.py`
+(Befehlszeilenschnittstelle)` testen, wobei eine :file:`test_add.py`
 in beiden Verzeichnissen liegt:
 
 .. code-block:: pytest
@@ -306,13 +307,13 @@ Die meisten meiner Projekte starten mit folgender Konfiguration:
 
 .. code-block:: ini
 
-addopts =
-   --strict-markers
-   --strict-config
-   -ra
+   addopts =
+      --strict-markers
+      --strict-config
+      -ra
 
 .. seealso::
-* `Configuration
- <https://docs.pytest.org/en/latest/reference/customize.html>`_
-* `Configuration Options
- <https://docs.pytest.org/en/latest/reference/reference.html#configuration-options>`_
+   * `Configuration
+     <https://docs.pytest.org/en/latest/reference/customize.html>`_
+   * `Configuration Options
+     <https://docs.pytest.org/en/latest/reference/reference.html#configuration-options>`_

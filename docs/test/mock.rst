@@ -86,7 +86,9 @@ nicht simulieren können, was in einem separaten Prozess läuft. So können wir 
 :file:`tests/cli/conftest.py` der :func:`invoke`-Funktion unseres ``runner`` nur
 unsere Anwendung ``items.cli.app`` und eine Liste von Strings übergeben, die den
 Befehl darstellt: genauer wandeln wir mit :func:`shlex.split(command_string)`
-die Befehle, :abbr:`z.B. (zum Beispiel)` :samp:`list -o veit" in ["list", "-o", "veit"]` um und können die Ausgabe dann abfangen und zurückgeben.
+die Befehle, :abbr:`z.B. (zum Beispiel)` :samp:`list -o "veit"` in
+:samp:`["list", "-o", "veit"]` um und können die Ausgabe dann abfangen und
+zurückgeben.
 
 .. code-block:: python
    :emphasize-lines: 4, 8, 16-17
@@ -459,7 +461,7 @@ Plugins zur Unterstützung von Mocking
 Wir haben uns bisher auf die direkte Verwendung von :doc:`mock
 <python3:library/unittest.mock>` konzentriert. Es gibt jedoch viele Plugins, die
 beim Mocking helfen, wie :abbr:`z.B. (zum Beispiel)` `pytest-mock
-<https://pypi.org/project/pytest-mock/>`, das eine ``mocker``-Fixture
+<https://pypi.org/project/pytest-mock/>`_, das eine ``mocker``-Fixture
 bereitstellt. Ein Vorteil ist, dass das Fixture nach sich selbst aufräumt, so
 dass ihr keinen ``with``-Block verwenden müsst, wie wir es in unseren Beispielen
 getan haben.
@@ -475,7 +477,7 @@ Es gibt auch einige spezielle Mocking-Bibliotheken:
 
 - Zum Testen von HTTP-Servern könnt ihr `pytest-httpserver
   <https://pypi.org/project/pytest-httpserver/>`_ verwenden.
-- Zum Mocken von `requests  <https://pypi.org/project/requests/>`_ könnt ihr
+- Zum Mocken von `requests <https://pypi.org/project/requests/>`_ könnt ihr
   `responses <https://pypi.org/project/responses/>`_ oder `betamax
   <https://pypi.org/project/betamax/>`_ verwenden.
 - Weitere Tools für verschiedene Anforderungen sind
