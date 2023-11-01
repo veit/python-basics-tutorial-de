@@ -31,14 +31,14 @@ Tests für die API-Methode ``finish()`` aus :file:`src/items/api.py`:
 
     def finish(self, item_id: int):
         """Set an item state to done."""
-        self.update_item(item_id, Card(state="done"))
+        self.update_item(item_id, Item(state="done"))
 
 Die in der Anwendung verwendeten Zustände sind *todo*, *in progress* und *done*,
 und ``finish()`` setzt den Zustand einer Karte auf *done*. Um dies zu testen,
 könnten wir
 
-#. ein Card-Objekt erstellen und es zur Datenbank hinzufügen, damit wir eine
-   Card haben, mit der wir arbeiten können,
+#. ein Item-Objekt erstellen und es zur Datenbank hinzufügen, damit wir eine
+   Item haben, mit der wir arbeiten können,
 #. ``finish()`` aufrufen
 #. sicherstellen, dass der Endzustand *done* ist.
 
@@ -106,7 +106,7 @@ zusammenzufassen, etwa so:
             item = items_db.get_item(index)
             assert item.state == "done"
 
-Nun Lassen wir :file:`tests/test_finish.py` erneut laufen:
+Nun lassen wir :file:`tests/test_finish.py` erneut laufen:
 
 .. code-block:: pytest
 
@@ -166,7 +166,7 @@ Die ``test_finish()``-Funktion  hat jetzt ihre ursprüngliche
 Argument von ``@pytest.mark.parametrize()`` überein.
 
 #. Das erste Argument von ``@pytest.mark.parametrize()`` ist eine Liste von
-   Parameternamen. Dieses Argument könnte auch eine Liste von Zeichenketten
+   Parameter-Namen. Dieses Argument könnte auch eine Liste von Zeichenketten
    sein, wie :abbr:`z.B. (zum Beispiel)` ``["start_summary", "start_state"]``
    oder eine komma-getrennte Zeichenkette ``"start_summary, start_state"``.
 #. Das zweite Argument von ``@pytest.mark.parametrize()`` ist unsere Liste von
@@ -296,7 +296,7 @@ Und nach all dem sieht die Ausgabe genauso aus wie vorher:
 Auf den ersten Blick erfüllt die Fixture-Parametrisierung in etwa den gleichen
 Zweck wie die Funktionsparametrisierung, allerdings mit etwas mehr Code. Die
 Fixture-Parametrisierung hat jedoch den Vorteil, dass für jeden Satz von
-Argumenten ein Fixture ausgeführt wird. Dies ist nützlich, wenn ihr * Setup* -
+Argumenten ein Fixture ausgeführt wird. Dies ist nützlich, wenn ihr *Setup* -
 oder *Teardown*-Code habt, der für jeden Testfall ausgeführt werden muss,
 :abbr:`z.B. (zum Beispiel)` eine andere Datenbankverbindung oder ein anderer
 Dateiinhalt oder was auch immer.

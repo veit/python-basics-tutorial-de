@@ -459,7 +459,7 @@ Plugins zur Unterstützung von Mocking
 Wir haben uns bisher auf die direkte Verwendung von :doc:`mock
 <python3:library/unittest.mock>` konzentriert. Es gibt jedoch viele Plugins, die
 beim Mocking helfen, wie :abbr:`z.B. (zum Beispiel)` `pytest-mock
-<https://pypi.org/project/pytest-mock/>`, das eine ``mocker``-Fixture
+<https://pypi.org/project/pytest-mock/>`_, das eine ``mocker``-Fixture
 bereitstellt. Ein Vorteil ist, dass das Fixture nach sich selbst aufräumt, so
 dass ihr keinen ``with``-Block verwenden müsst, wie wir es in unseren Beispielen
 getan haben.

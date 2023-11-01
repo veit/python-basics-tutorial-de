@@ -282,7 +282,7 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 | Funktion                                              | Beschreibung          |
 +=======================================================+=======================+
 | :samp:`setattr(TARGET, NAME, VALUE, raising=True)`    | setzt ein Attribut    |
-| [1]_                                                  | setzt ein Attribut    |
+| [1]_                                                  |                       |
 +-------------------------------------------------------+-----------------------+
 | :samp:`delattr(TARGET, NAME, raising=True)` [1]_      | löscht ein Attribut   |
 +-------------------------------------------------------+-----------------------+
@@ -395,7 +395,7 @@ patchen:
         monkeypatch.setattr(items.cli.pathlib.Path, "home", fake_home)
         assert run_items_cli("config") == str(items_dir)
 
-Mmonkey patching* und *Mocking* verkomplizieren jedoch das Testen, sodass wir
+*Monkey patching* und *Mocking* verkomplizieren jedoch das Testen, sodass wir
 nach Möglichkeiten suchen werden, dies zu vermeiden, wann immer es möglich ist.
 In unserem Fall könnte sinnvoll sein, eine Umgebungsvariable
 :envvar:`ITEMS_DB_DIR` zu setzen, die einfach gepatcht werden kann:

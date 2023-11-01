@@ -57,7 +57,7 @@ Testfixtures in pytest beziehen sich auf den Mechanismus, der die Trennung von
 *Vorbereitungen für*- und *Aufräumen nach*-Code von euren Testfunktionen
 ermöglicht. pytest behandelt Exceptions während Fixtures anders als während
 einer Testfunktion. Eine ``Exception`` oder ein ``assert``-Fehler oder ein
-Aufruf von :func:`pytest.fail()`), die während des eigentlichen Testcodes
+Aufruf von :func:`pytest.fail()`, die während des eigentlichen Testcodes
 auftritt, führt zu einem ``Fail``-Ergebnis. Während einer Fixture wird die
 Testfunktion jedoch als ``Error`` gemeldet. Diese Unterscheidung ist hilfreich
 bei der Fehlersuche, wenn ein Test nicht bestanden wurde. Wenn ein Test mit
@@ -72,8 +72,8 @@ Fixtures für Setup und Teardown verwenden
 Fixtures werden uns beim Testen der Items-Anwendung eine große Hilfe sein. Die
 Items-Anwendung besteht aus einer API, die den Großteil der Arbeit und der Logik
 übernimmt, einem schlanken :abbr:`CLI (Command Line Interface)` und eine
-Datenbank. und Der Umgang mit der Datenbank ist ein Bereich, in dem Fixtures
-eine große Hilfe sein werden:
+Datenbank. Der Umgang mit der Datenbank ist ein Bereich, in dem Fixtures eine
+große Hilfe sein werden:
 
 .. code-block:: python
 
@@ -231,7 +231,7 @@ indem ``scope="module"`` zum Fixture Decorator hinzugefügt wird:
             tests/test_count.py::test_count (fixtures used: items_db).
         TEARDOWN M items_db
 
-============================== 2 passed in 0.01s ===============================
+    ============================== 2 passed in 0.01s ===============================
 
 Wir haben diese Einrichtungszeit für die zweite Testfunktion eingespart. Durch
 die Änderung des Modulumfangs kann jeder Test in diesem Modul, der die
@@ -368,7 +368,7 @@ kann. Diese Liste enthält eine Reihe von eingebauten Fixtures, die wir uns in
 bereitgestellt werden. Die Fixtures, die in :file:`conftest.py`-Dateien gefunden
 werden, stehen am Ende der Liste. Wenn ihr ein Verzeichnis angebt, listet pytest
 die Fixtures auf, die für Tests in diesem Verzeichnis verfügbar sind. Wenn ihr
-den Namen einer Testdatei angebtn, schließt pytest auch die in den Testmodulen
+den Namen einer Testdatei angebt, schließt pytest auch die in den Testmodulen
 definierten Fixtures ein.
 
 Die Ausgabe von pytest enthält
@@ -564,8 +564,8 @@ Und auch Fixtures können mehrere andere Fixtures verwenden:
             items_db.add_item(i)
         return items_db
 
-Die Fixture ``populated_db` muss im ``function``-Bereich liegen, da sie
-``items_db`` verwendet, das bereits im `function`-Bereich liegt. Wenn ihr
+Die Fixture ``populated_db`` muss im ``function``-Bereich liegen, da sie
+``items_db`` verwendet, das bereits im ``function``-Bereich liegt. Wenn ihr
 versuchen solltet, ``populated_db`` in den ``module``-Bereich oder einen
 größeren Bereich zu setzen, wird pytest einen Fehler ausgeben. Vergesst nicht,
 dass ihr, wenn ihr keinen Bereich angebt, Fixtures im ``function``-Bereich
@@ -616,8 +616,8 @@ Anstelle eines bestimmten Bereichs haben wir einen Funktionsnamen eingegeben:
 
 Es gibt viele Möglichkeiten, wie wir herausfinden können, welchen Bereich wir
 verwenden sollen. In diesem Fall habe ich mich für eine neue
-Kommandozeilenoption ``--fdb`` entschieden. Damit pytest uns die Verwendung
-dieser neuen Option erlaubt, müssen wir eine Hook-Funktion in der
+Kommandozeilenoption ``--fdb`` entschieden. Damit wir diese neue Option mit
+pytestverwenden können, müssen wir eine Hook-Funktion in der
 :file:`conftest.py`-Datei schreiben, die ich in :doc:`plugins` näher erläutern
 werde:
 
@@ -763,4 +763,4 @@ einem Namensparameter an ``@pytest.fixture()``:
         assert items_db.count() == 0
 
 Ein Fall, in dem eine Umbenennung sinnvoll sein kann, ist, wenn der
-naheliegendste Fixtur-Name bereits als Variablen- oder Funktionsname existiert.
+naheliegendste Fixture-Name bereits als Variablen- oder Funktionsname existiert.
