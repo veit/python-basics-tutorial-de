@@ -10,7 +10,7 @@ lautet:
 
 .. code-block:: python
 
-    >>> x = 3.14159
+    >>> pi = 3.14159
 
 In Python ist, anders als in vielen anderen Programmiersprachen, weder eine
 Variablendeklaration noch ein Zeilenendebegrenzer notwendig. Die Zeile wird
