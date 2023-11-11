@@ -57,6 +57,31 @@ alphanumerische Zeichen sowie Unterstriche enthalten, müssen aber mit einem
 Buchstaben oder Unterstrich beginnen.
 
 .. note::
+   Wenn ihr einen ``SyntaxError`` erhaltet, prüft, ob der Variablenname ein
+   Schlüsselwort ist. Schlüsselwörter sind für die Verwendung in
+   Python-Sprachkonstrukten reserviert, so dass ihr sie nicht zu Variablen
+   machen könnt. Nach dem Aufruf von :ref:`help` könnt ihr ``keywords``
+   eingeben, um die Schlüsselworte zu erhalten:
+
+   .. code-block::
+
+      >>> help()
+      ...
+      help> keywords
+
+      Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+      False               class               from                or
+      None                continue            global              pass
+      True                def                 if                  raise
+      and                 del                 import              return
+      as                  elif                in                  try
+      assert              else                is                  while
+      async               except              lambda              with
+      await               finally             nonlocal            yield
+      break               for                 not
+
+.. note::
    Ihr könnt mit einem Variablennamen eingebaute (engl.: *built-in*) Funktionen,
    Typen und andere Objekte überschreiben, sodass der Zugriff anschließend nur
    noch über das :doc:`builtins <python3:library/builtins>`-Modul erfolgen kann.

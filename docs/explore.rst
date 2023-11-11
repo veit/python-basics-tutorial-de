@@ -4,6 +4,8 @@ Python erkunden
 Egal, ob ihr IDLE oder die interaktive Shell nutzt, es gibt einige nützliche
 Funktionen, um Python zu erkunden.
 
+.. _help:
+
 ``help()``
 ----------
 
