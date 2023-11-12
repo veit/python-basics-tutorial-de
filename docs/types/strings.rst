@@ -345,6 +345,7 @@ Beispiel)`:
 
 
 In ``{pi:.3f}`` wird die Format-Spezifikation ``f`` verwendet, um die Zahl Pi
+auf drei Nachkommastellen zu kürzen.
 
 .. seealso::
    * :ref:`python3:f-strings`
