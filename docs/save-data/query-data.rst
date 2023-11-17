@@ -5,7 +5,7 @@ Daten abfragen
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 7-11
+      :lines: 7-12
       :lineno-start: 7
 
    Für die ``print``-Ausgabe verwenden wir durch ein vorangestelltes ``f``
@@ -15,22 +15,22 @@ Daten abfragen
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 14-15
-      :lineno-start: 14
+      :lines: 15-18
+      :lineno-start: 15
 
 #. Alle Titel auswählen, die Python enthalten:
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 20-26
-      :lineno-start: 20
+      :lines: 21-27
+      :lineno-start: 21
 
 #. Schließlich können die Daten abgefragt werden mit:
 
    .. literalinclude:: query_data.py
       :language: python
-      :lines: 29-
-      :lineno-start: 29
+      :lines: 30-
+      :lineno-start: 30
 
    .. code-block:: rest
 

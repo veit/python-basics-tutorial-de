@@ -43,8 +43,8 @@ erbt.
 .. literalinclude:: exceptions.py
    :language: python
    :linenos:
-   :lines: 4
-   :lineno-start: 4
+   :lines: 5
+   :lineno-start: 5
 
 Eine Liste unterschiedlicher Datei-Arten wird definiert.
 
@@ -55,18 +55,18 @@ Jede Ausnahme, die nicht abgefangen wird, führt zur Beendigung des Programms.
 .. literalinclude:: exceptions.py
    :language: python
    :linenos:
-   :lines: 6-
-   :lineno-start: 6
+   :lines: 7-
+   :lineno-start: 7
 
 Zeile 7
     Wenn während der Ausführung der Anweisungen im ``try``-Block ein
     ``OSError`` oder ``EmptyFileError`` auftritt, wird der zugehörige
     ``except``-Block ausgeführt.
-Zeile 8
+Zeile 9
     Hier könnte ein ``OSError`` ausgelöst werden.
-Zeile 11
+Zeile 12
     Hier löst ihr den ``EmptyFileError`` aus.
-Zeile 16
+Zeile 17
     Die ``else``-Klausel ist optional; sie wird ausgeführt, wenn im
     ``try``-Block keine Ausnahme auftritt.
 
@@ -74,6 +74,6 @@ Zeile 16
        In diesem Beispiel hätte stattdessen auch ``continue``-Anweisungen in
        den ``except``-Blöcken verwendet werden können.
 
-Zeile 18
+Zeile 19
     Die ``finally``-Klausel ist optional; sie wird am Ende des Blocks
     ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht.
