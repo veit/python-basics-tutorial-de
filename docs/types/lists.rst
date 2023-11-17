@@ -62,12 +62,12 @@ entfernen und zu ersetzen oder um ein Element oder eine neue Liste zu erhalten, 
     >>> x[1] = "zweitens"
     >>> x[2:3] = []
     >>> x
-    [1, 'zweitens', (5.1, 5.2)]
+    [1, 'zweitens', ['4a', '4b'], (5.1, 5.2)]
     >>> x[2] = [3.1, 3.2, 3.3]
     >>> x
-    [1, 'zweitens', [3.1, 3.2, 3.3]]
+    [1, 'zweitens', [3.1, 3.2, 3.3], (5.1, 5.2)]
     >>> x[2:]
-    [[3.1, 3.2, 3.3]]
+    [[3.1, 3.2, 3.3], (5.1, 5.2)]
 
 Zeile 3
     Die Größe der Liste erhöht oder verringert sich, wenn das neue Slice größer
