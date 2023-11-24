@@ -267,8 +267,9 @@ Kaufmännisch runden
 <https://de.wikipedia.org/wiki/IEEE_754>`_-Norm entsprechend, wobei Zahlen in
 der Mitte in der Hälfte der Fälle abgerundet werden und in der anderen Hälfte
 aufgerundet werden um eine statistische Drift bei längeren Rechnungen zu
-vermeiden. Für das kaufmännische Runden werden daher :class:`Decimal
-<python3:decimal.Decimal>` und :data:`ROUND_HALF_UP
+vermeiden. Für das `kaufmännische Runden werden
+<https://de.wikipedia.org/wiki/Rundung#Kaufmännisches_Runden>`_ daher
+:class:`Decimal <python3:decimal.Decimal>` und :data:`ROUND_HALF_UP
 <python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
 
 .. code-block:: python
