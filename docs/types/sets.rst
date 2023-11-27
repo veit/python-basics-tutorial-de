@@ -3,8 +3,8 @@ Sets
 
 Ein Set in Python ist eine ungeordnete Sammlung von Objekten, die in Situationen
 verwendet wird, in denen die Zugehörigkeit und Einzigartigkeit zur Menge die
-wichtigsten Informationen des Objekts sind. Sets verhalten sich wie Kollektionen
-von :doc:`Dictionary <dicts>`-Schlüsseln ohne zugehörige Werte:
+wichtigsten Informationen des Objekts sind. Der ``in``-Operator läuft bei Sets
+schneller als bei :doc:`lists`:
 
 .. code-block:: python
    :linenos:
@@ -25,6 +25,14 @@ Zeile 3
 Zeilen 4 und 6
     Das Schlüsselwort wird verwendet, um die Zugehörigkeit eines Objekts zu
     einer Menge zu prüfen.
+
+Sets verhalten sich wie Kollektionen von :doc:`Dictionary <dicts>`-Schlüsseln
+ohne zugehörige Werte.
+
+Der Geschwindigkeitsvorteil hat jedoch auch ihren Preis: Sets halten die
+Elemente nicht in der richtigen Reihenfolge, während :doc:`lists` und
+:doc:`tuples` dies tun. Wenn die Reihenfolge für euch wichtig ist, solltet ihr
+eine Datenstruktur verwenden, die sich die Reihenfolge merkt.
 
 Zusammenfassung
 ---------------
