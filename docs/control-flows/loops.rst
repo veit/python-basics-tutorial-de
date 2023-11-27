@@ -66,7 +66,6 @@ Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 Bedingung für as erste Vorkommen einer ganzen Zahl, die durch ``5`` teilbar ist:
 
 .. code-block:: python
-    :linenos:
 
     >>> items = [1, "fünf", 5.0, 10, 11, 15]
     >>> d = 5
@@ -84,3 +83,70 @@ ganze Zahl ist, wird der Rest dieser Iteration durch die ``continue``-Anweisung
 abgebrochen. Die Ablaufsteuerung wird fortgesetzt, wobei ``x`` auf den nächsten
 Eintrag in der Liste gesetzt wird. Nachdem die erste passende ganze Zahl
 gefunden wurde, wird die Schleife mit der ``break``-Anweisung beendet.
+
+Schleifen mit einem Index
+-------------------------
+
+Ihr könnt in einer ``for``-Schleife auch den Index ausgeben, :abbr:`z.B. (zum
+Beispiel)` mit :py:func:`enumerate`:
+
+.. code-block:: python
+
+   >>> data_types = ["Data types", "Numbers", "Lists"]
+   >>> for index, title in enumerate(data_types):
+   ...     print(index, title)
+   ...
+   0 Data types
+   1 Numbers
+   2 Lists
+
+List Comprehensions
+-------------------
+
+Üblicherweise wird eine Liste folgendermaßen generiert:
+
+.. code-block:: python
+
+   >>> squares = []
+   >>> for i in range(8):
+   ...     squares.append(i ** 2)
+   ...
+   >>> squares
+   [0, 1, 4, 9, 16, 25, 36, 49]
+
+Anstatt eine leere Liste zu erstellen und jedes Element am Ende einzufügen,
+definiert ihr mit List Comprehensions einfach die Liste und ihren Inhalt
+gleichzeitig mit nur einer einzigen Code-Zeile:
+
+.. code-block:: python
+
+   >>> squares = [i ** 2 for i in range(8)]
+   >>> squares
+   [0, 1, 4, 9, 16, 25, 36, 49]
+
+Das allgemeine Format hierfür ist:
+
+:samp:`{NEW_LIST} = [{EXPRESSION} for {MEMBER} in {ITERABLE}]`
+
+Jede List Comprehension in Python enthält drei Elemente:
+
+:samp:`{EXPRESSION}`
+    ist ein Aufruf einer Methode oder ein anderer gültiger Ausdruck, der einen
+    Wert zurückgibt. Im obigen Beispiel ist der Ausdruck ``i ** 2`` das Quadrat
+    des jeweiligen Mitgliedswertes.
+:samp:`{MEMBER}`
+    ist das Objekt oder der Wert in einem :samp:`{ITERABLE}`. Im obigen Beispiel
+    ist der Wert ``i``.
+:samp:`{ITERABLE}`
+    ist eine :doc:`Liste <../types/lists>`, ein :doc:`Set <../types/sets>`, ein
+    Generator oder ein anderes Objekt, das seine Elemente einzeln zurückgeben
+    kann. Im obigen Beispiel ist die Iterable ``range(8)``.
+
+Ihr könnt mit List Comprehensions auch optional Bedingungen verwenden, die
+üblicherweise am Ende des Ausdruck angehängt werden:
+
+.. code-block:: python
+
+   >>> squares = [i ** 2 for i in range(8) if i >= 4]
+   >>> squares
+   [16, 25, 36, 49]
