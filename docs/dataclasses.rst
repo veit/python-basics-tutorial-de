@@ -43,7 +43,7 @@ der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
 
 .. code-block:: python
 
-   @dataclass
+   >>> @dataclass
    ... class Item:
    …
    ...     @classmethod
