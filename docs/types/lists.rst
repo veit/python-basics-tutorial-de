@@ -4,6 +4,7 @@ Listen
 Python hat einen mächtigen eingebauten Listentyp:
 
 .. code-block:: python
+   :linenos:
 
     []
     [1]
@@ -73,32 +74,78 @@ Zeile 3
     Die Größe der Liste erhöht oder verringert sich, wenn das neue Slice größer
     oder kleiner ist als das Slice, das es ersetzt.
 
-Einige eingebaute Funktionen (``len``, ``max`` und ``min``), einige Operatoren
-(``in``, ``+`` und ``*``), die ``del``-Anweisung und die Listenmethoden
-(``append``, ``count``, ``extend``, ``index``, ``insert``, ``pop``, ``remove``,
-``reverse`` und ``sort``) arbeiten mit Listen:
+Slices erlauben auch eine stufenweise Auswahl zwischen den Start- und
+Endindizes. Der Standardwert für ein nicht spezifiziertes Stride ist ``1``,
+womit jedes Element aus einer Sequenz zwischen den Indizes genommen wird. Bei
+einem Stride von ``2`` wird jedes zweite Element übernommen :abbr:`usw. (und so
+weiter)`:
 
 .. code-block:: python
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+   >>> x[0:3:2]
+   [1, [3.1, 3.2, 3.3]]
+   >>> x[::2]
+   [1, [3.1, 3.2, 3.3]]
+   >>> x[1::2]
+   ['zweitens', (5.1, 5.2)]
+
+Der Stride-Wert kann auch negativ sein. Ein ``-1``-Stride bedeutet, von rechts
+nach links gezählt wird:
+
+.. code-block:: python
+   :linenos:
+
+   >>> x[3:0:-2]
+   [(5.1, 5.2), 'zweitens']
+   >>> x[::-2]
+   [(5.1, 5.2), 'zweitens']
+   >>> x[::-1]
+   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1]
+
+Zeile 1
+    Um eine negative Schrittweite zu verwenden, sollte das Start-Slice größer
+    sein als das End-Slice.
+Zeile 3
+    Die Ausnahme ist, wenn ihr die Start- und Endindizes weglasst.
+Zeile 5
+    Ein Stride von ``-1`` kehrt die Reihenfolge um.
+
+Einige Funktionen der Slice-Notation können auch mit speziellen Operationen wausgeführt werden, wodurch die Lesbarkeit des Codes verbessert wird:
+
+.. code-block:: python
+   :linenos:
+
+   >>> x.reverse()
+   >>> x
+   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1]
+
+Darüberhinaus könnt ihr die fogenden eingebauten Funktionen (``len``, ``max``
+und ``min``), einige Operatoren (``in``, ``+`` und ``*``), die ``del``-Anweisung
+und die Listenmethoden (``append``, ``count``, ``extend``, ``index``,
+``insert``, ``pop``, ``remove``, ``reverse`` und ``sort``) für Listen verwenden:
+
+.. code-block:: python
+   :linenos:
+
     >>> len(x)
-    5
-    >>> [-1, 0] + x
-    [-1, 0, 1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
+    4
+    >>> x + [0, -1]
+    [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1]
     >>> x.reverse()
     >>> x
-    [(5.1, 5.2), ['4a', '4b'], 3.0, '2.', 1]
+    [1, 'zweitens', [3.1, 3.2, 3.3], (5.1, 5.2)]
 
-Zeile 4
+Zeile 3
     Die Operatoren ``+`` und ``*`` erzeugen jeweils eine neue Liste, wobei die
     ursprüngliche Liste unverändert bleibt.
-Zeile 6
+Zeile 5
     Die Methoden einer Liste werden mit Hilfe der Attributschreibweise für die
-    Liste selbst aufgerufen: ``x.METHODE(ARGUMENTE)``
+    Liste selbst aufgerufen: :samp:`{LISTE}.{METHODE}({ARGUMENTE})`.
 
-Einige dieser Operationen wiederholen Funktionen, die mit der Slice-Notation
-ausgeführt werden können, aber sie verbessern die Lesbarkeit des Codes.
+.. seealso::
+   * :doc:`Daten auswählen und filtern mit pandas
+     <Python4DataScience:workspace/pandas/select-filter>`
 
 Zusammenfassung
 ---------------
