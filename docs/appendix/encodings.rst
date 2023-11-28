@@ -57,10 +57,9 @@ UTF-8 das vermutlich am häufigsten verwendete Kodierungsschema ist.
    Möglichkeiten, Python-Strings zu erstellen, eingegangen.
 
 .. seealso::
-    * `Unicode HOWTO
-      <https://docs.python.org/3/howto/unicode.html#unicode-howto>`_
+    * :ref:`python3:unicode-howto`
     * `What’s New In Python 3.0: Text Vs. Data Instead Of Unicode Vs. 8-bit
-      <https://docs.python.org/3.0/whatsnew/3.0.html#text-vs-data-instead-of-unicode-vs-8-bit>`_
+      <https://docs.python.org/3/whatsnew/3.0.html#text-vs-data-instead-of-unicode-vs-8-bit>`_
 
 Unicode und UTF-8
 ~~~~~~~~~~~~~~~~~
