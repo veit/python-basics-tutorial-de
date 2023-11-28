@@ -51,6 +51,11 @@ jedoch eine viel größere Menge von Zeichen. Dabei ist Unicode selbst keine
 Kodierung sondern wird durch verschiedene Zeichenkodierungen implementiert wobei
 UTF-8 das vermutlich am häufigsten verwendete Kodierungsschema ist.
 
+.. note::
+   Die Python-Hilfedokumentation hat einen Eintrag für Unicode: gebt ``help()``
+   und dann ``UNICODE`` ein. Es wird ausführlich auf die verschiedenen
+   Möglichkeiten, Python-Strings zu erstellen, eingegangen.
+
 .. seealso::
     * `Unicode HOWTO
       <https://docs.python.org/3/howto/unicode.html#unicode-howto>`_
