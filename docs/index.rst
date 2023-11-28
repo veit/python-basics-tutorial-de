@@ -30,6 +30,7 @@ Schreiben eigener Programme zu ermöglichen.
    libs/index
    oop/index
    save-data/index
+   dataclasses
    test/index
    document/index
    appendix/index
