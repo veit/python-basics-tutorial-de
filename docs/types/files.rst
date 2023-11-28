@@ -11,7 +11,7 @@ folgende kurze Python-Programm liest eine Zeile aus einer Textdatei namens
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
 
 :func:`python3:open` liest nichts aus der Datei, sondern gibt ein :abbr:`sog.
@@ -35,7 +35,7 @@ absoluten Speicherort – :samp:`{C:\Meine Dokumente\\myfile.txt}`:
 
     >>> import os
     >>> pathname = os.path.join("C:/", "Users", "Veit", "Documents", "myfile.txt")
-    >>> with open(pathname, 'r') as f:
+    >>> with open(pathname, "r") as f:
     ...     line = f.readline()
 
 .. note::
@@ -62,7 +62,7 @@ nicht mehr benötigt wird:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
     >>> f.close()
 
@@ -71,24 +71,24 @@ Möglichkeit, um Dateien automatisch zu schließen, wenn ihr fertig seid:
 
 .. code-block:: python
 
-    >>> with open('docs/types/myfile.txt', 'r') as f:
+    >>> with open("docs/types/myfile.txt", "r") as f:
     ...     line = f.readline()
 
 Öffnen von Dateien im Schreib- oder anderen Modi
 ------------------------------------------------
 
 Das zweite Argument des Befehls :func:`python3:open` ist eine Zeichenkette, die
-angibt, wie die Datei geöffnet werden soll. ``'r'`` öffnet die Datei zum Lesen
-(engl. *read*), ``'w'`` öffnet die Datei zum Schreiben (engl. *write*) und
-``'a'`` offnet die Datei zum Anhängen (engl. *attach*). Wenn ihr die Datei zum
-Lesen öffnen wollen, könnt ihr das zweite Argument weglassen, da ``'r'`` der
+angibt, wie die Datei geöffnet werden soll. ``"r"`` öffnet die Datei zum Lesen
+(engl. *read*), ``"w"`` öffnet die Datei zum Schreiben (engl. *write*) und
+``"a"`` offnet die Datei zum Anhängen (engl. *attach*). Wenn ihr die Datei zum
+Lesen öffnen wollen, könnt ihr das zweite Argument weglassen, da ``"r"`` der
 Standardwert ist. Das folgende kurze Programm schreibt :samp:`Hi, Pythonistas!`
 in eine Datei:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'w')
-    >>> f.write('Hi, Pythonistas!\n')
+    >>> f = open("docs/types/myfile.txt", "w")
+    >>> f.write("Hi, Pythonistas!\n")
     17
     >>> f.close()
 
@@ -117,9 +117,9 @@ in einer Datei zu ermitteln:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
-    >>> while f.readline() != '':
+    >>> while f.readline() != "":
     ...     lc = lc + 1
     ...
     >>> print(lc)
@@ -132,7 +132,7 @@ Strings mit einen String pro Zeile zurückgibt:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> print(len(f.readlines()))
     1
     >>> f.close()
@@ -149,7 +149,7 @@ einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r')
+    >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
     >>> for l in f:
     ...     lc = lc + 1
@@ -169,12 +169,12 @@ Windows- und macOS Übersetzungen im Textmodus erfolgen, wenn ihr den Befehl
 anzuhängen. Im Textmodus wird auf macOS jedes ``\r`` in ``\n`` umgewandelt,
 während unter Windows ``\r\n``-Paare in ``\n`` umgewandelt werden. Ihr könnt die
 Behandlung von Zeilenumbrüchen festlegen, indem ihr beim Öffnen der Datei den
-Parameter ``newline`` verwendet und ``newline='\n'``, ``\r`` oder ``\r\n``
+Parameter ``newline`` verwendet und ``newline="\n"``, ``\r`` oder ``\r\n``
 angebt, wodurch nur diese Zeichenfolge als Zeilenumbruch verwendet wird:
 
 .. code-block:: python
 
-    >>> f = open('docs/types/myfile.txt', 'r', newline='\r\n')
+    >>> f = open("docs/types/myfile.txt", "r", newline="\r\n")
 
 In diesem Beispiel wird nur ``\n`` als Zeilenumbruch gewertet. Wenn die Datei
 jedoch im Binärmodus geöffnet wurde, ist der Parameter ``newline`` nicht
@@ -189,7 +189,7 @@ Zeichenkette eingebettet sind, wie im folgenden Beispiel:
 
 .. code-block:: python
 
-    f.write('Hi, Pythinistas!\n\n')
+    f.write("Hi, Pythinistas!\n\n")
 
 Die Methode ``writelines`` ist jedoch verwirrend, weil sie nicht unbedingt
 mehrere Zeilen schreibt; sie nimmt eine Liste von Zeichenketten als Argument und
@@ -204,10 +204,10 @@ Textdatei ist, erzeugt das folgende Beispiel eine exakte Kopie von
 
 .. code-block:: python
 
-    >>> input_file = open("myfile.txt", 'r')
+    >>> input_file = open("myfile.txt", "r")
     >>> lines = input_file.readlines()
     >>> input_file.close()
-    >>> output_file = open("myfile2.txt", 'w')
+    >>> output_file = open("myfile2.txt", "w")
     >>> output_file.writelines(lines)
     >>> output_file.close()
 
@@ -224,7 +224,7 @@ Anzahl von Bytes und gibt ein Bytes-Objekt der angegebenen Größe zurück:
 .. code-block:: python
     :linenos:
 
-    >>> f = open('myfile.txt', 'rb')
+    >>> f = open("myfile.txt", "rb")
     >>> head = f.read(16)
     >>> print(head)
     b'Hi, Pythonistas!'
