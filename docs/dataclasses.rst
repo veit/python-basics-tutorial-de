@@ -13,7 +13,7 @@ Klasse erstellen wollen.
    <Python4DataScience:workspace/numpy/index>`.
 
 Nehmen wir an, wir wollen eine Klasse speichern, die ein Item repräsentiert mit
-``summary``, ``owner`` ``state`` und ``id``. Wir können eine solche Klasse
+``summary``, ``owner``, ``state`` und ``id``. Wir können eine solche Klasse
 definieren mit:
 
 .. code-block:: python
