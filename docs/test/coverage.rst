@@ -235,6 +235,81 @@ Damit wird Coverage.py angewiesen, entweder eine einzelne Zeile oder einen
 Code-Block auszuschließen. Wenn, wie in diesem Fall, das Pragma in der
 if-Anweisung steht,  müsst ihr es nicht in beide Codezeilen einfügen.
 
+Alternativ kann dies auch für alle Vorkommen konfiguriert werden:
+
+.. tab:: :file:`.coveragerc`
+
+   .. code-block:: ini
+
+      [run]
+      branch = True
+
+      [report]
+      ; Regexes for lines to exclude from consideration
+      exclude_also =
+
+          ; Don’t complain if tests don’t hit defensive assertion code:
+          raise AssertionError
+          raise NotImplementedError
+
+          ; Don't complain if non-runnable code isn’t run:
+          if __name__ == .__main__.:
+
+      ignore_errors = True
+
+      [html]
+      directory = coverage_html_report
+
+.. tab:: :file:`pyproject.toml`
+
+   .. code-block:: toml
+
+      [tool.coverage.run]
+      branch = true
+
+      [tool.coverage.report]
+      # Regexes for lines to exclude from consideration
+      exclude_also = [
+          # Don’t complain if tests don’t hit defensive assertion code:
+          "raise AssertionError",
+          "raise NotImplementedError",
+
+          # Don’t complain if non-runnable code isn’t run:
+          "if __name__ == .__main__.:",
+          ]
+
+      ignore_errors = true
+
+      [tool.coverage.html]
+      directory = "coverage_html_report"
+
+.. tab:: :file:`setup.cfg`, :file:`tox.ini`
+
+   .. code-block:: ini
+
+      [coverage:run]
+      branch = True
+
+      [coverage:report]
+      ; Regexes for lines to exclude from consideration
+      exclude_also =
+
+          ; Don’t complain if tests don’t hit defensive assertion code:
+          raise AssertionError
+          raise NotImplementedError
+
+          ; Don’t complain if non-runnable code isn’t run:
+          if __name__ == .__main__.:
+
+      ignore_errors = True
+
+      [coverage:html]
+      directory = coverage_html_report
+
+.. seealso::
+   `Configuration reference
+   <https://coverage.readthedocs.io/en/latest/config.html>`_
+
 Erweiterungen
 -------------
 
