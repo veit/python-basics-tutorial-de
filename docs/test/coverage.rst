@@ -59,7 +59,7 @@ Auf die normale pytest-Ausgabe folgt der Abdeckungsbericht, wie hier gezeigt:
 
     $ cd /PATH/TO/items
     $ python3 -m venv .
-    $ . bin/acitvate
+    $ . bin/activate
     $ python -m pip install ".[dev]"
     $ pytest --cov=items
     ============================= test session starts ==============================
