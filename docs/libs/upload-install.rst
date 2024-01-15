@@ -11,7 +11,7 @@ ein Konto einzurichten, geht ihr auf https://test.pypi.org/account/register/.
 Weitere Informationen findet ihr unter `Using TestPyPI
 <https://packaging.python.org/guides/using-testpypi/>`_.
 
-Nun könnt ihr eine ``~/.pypirc``-Datei erstellen:
+Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
 
 .. code-block:: ini
 
@@ -61,7 +61,7 @@ Python Package Index hochladen mit:
 ``-r``, ``--repository``
     Das Repository zum Hochladen des Pakets.
 
-    In unserem Fall wird ``test``-Abschnitt aus der ``~/.pypirc``-Datei
+    In unserem Fall wird ``test``-Abschnitt aus der :file:`~/.pypirc`-Datei
     verwendet.
 
 ``-s``, ``--sign``
@@ -89,7 +89,7 @@ registriert habt. Anschließend solltet ihr eine ähnliche Ausgabe sehen:
 
    müsst ihr einen eindeutigen Namen für euer Paket auswählen:
 
-   #. ändert das ``name``-Argument in der ``setup.py``-Datei
+   #. ändert das ``name``-Argument in der :file:`setup.py`-Datei
    #. entfernt das ``dist``-Verzeichnis
    #. generiert die Archive neu
 
@@ -120,7 +120,7 @@ in etwa so aussehen:
 
     Looking in indexes: https://test.pypi.org/simple/
     Collecting minimal_example
-      ...
+      …
     Installing collected packages: minimal_example
     Successfully installed minimal_example-0.0.1
 
@@ -148,7 +148,7 @@ importiert und auf die ``name``-Eigenschaft referenziert, die zuvor in
 README
 ~~~~~~
 
-Überprüft bitte auch, ob die ``README.rst``-Datei auf der Test-PyPI-Seite
+Überprüft bitte auch, ob die :file:`README.rst`-Datei auf der Test-PyPI-Seite
 korrekt angezeigt wird.
 
 PyPI
@@ -157,7 +157,7 @@ PyPI
 Registriert euch nun beim :term:`Python Package Index` (:term:`PyPI`) und stellt
 sicher, dass die `Zwei-Faktor-Authentifizierung
 <https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_
-aktiviert ist indem ihr die ``~/.pypirc``-Datei ergänzt:
+aktiviert ist indem ihr die :file:`~/.pypirc`-Datei ergänzt:
 
 .. code-block:: ini
 
@@ -208,47 +208,136 @@ GitHub Action
 -------------
 
 Ihr könnt auch eine GitHub-Aktion erstellen, die ein Paket erstellt und auf PyPI
-hochlädt. Eine solche ``.github/workflows/pypi.yml``-Datei könnte folgendermaßen
-aussehen:
+hochlädt. Eine solche :file:`.github/workflows/pypi.yml`-Datei könnte
+folgendermaßen aussehen:
 
 .. code-block:: yaml
+   :linenos:
 
-    name: pypi
+   name: Publish Python Package
+
     on:
-      push:
-        tags:
-        - '*'
+      release:
+        types: [created]
 
-    jobs:
-      package-and-deploy:
+   jobs:
+     test:
+       …
+     package-and-deploy:
+       runs-on: ubuntu-latest
+       needs: [test]
+       steps:
+       - name: Checkout
+         uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
+       - name: Set up Python
+         uses: actions/setup-python@v5
+         with:
+           python-version: '3.11'
+           cache: pip
+           cache-dependency-path: '**/pyproject.toml'
+       - name: Install dependencies
+         run: |
+           python -m pip install -U pip
+           python -m pip install -U setuptools build twine wheel
+       - name: Build
+         run: |
+           python -m build
+       - name: Publish
+         env:
+           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+         run: |
+           twine upload dist/*
 
-        runs-on: ubuntu-latest
-
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v2
-            with:
-              fetch-depth: 0
-
-          - name: Set up Python
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.8
-
-          - name: Install dependencies
-            run: |
-              python -m pip install -U pip
-              python -m pip install -U setuptools twine wheel
-
-          - name: Build and publish
-            env:
-              TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-              TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-            run: |
-              python setup.py sdist bdist_wheel
-              twine upload dist/*
+Zeilen 3–5
+    Dies stellt sicher, dass der Arbeitsablauf jedes Mal ausgeführt wird, wenn
+    ein neues GitHub-Release für das Repository erstellt wird.
+Zeile 12
+    Der Job wartet auf das Bestehen des ``test``-Jobs bevor er ausgeführt wird.
 
 .. seealso::
 
    * `GitHub Actions <https://docs.github.com/en/actions>`_
    * :doc:`cibuildwheel`
+
+Trusted Publishers
+------------------
+
+`Trusted Publishers <https://docs.pypi.org/trusted-publishers/>`_ ist ein
+alternatives Verfahren zum Veröffentlichen von Paketen auf dem :term:`PyPI`. Sie
+basiert auf OpenID Connect und erfordert weder Passwort noch Token. Dazu sind
+lediglich die folgenden Schritte erforderlich:
+
+#. Fügt einen *Trusted Publishers*  auf PyPI hinzu
+
+   Je nachdem, ob ihr ein neues Paket veröffentlichen oder ein bestehendes
+   aktualisieren wollt, unterscheidet sich der Prozess geringfügig:
+
+   * zum Aktualisieren eines bestehenden Pakets siehe `Adding a trusted
+     publisher to an existing PyPI project
+     <https://docs.pypi.org/trusted-publishers/adding-a-publisher/>`_
+   * zum veröffentlichen eines neuen Pakets gibt es ein spezielles Verfahren,
+     *Pending Publisher* genannt; :abbr:`s.a. (siehe auch)` `Creating a PyPI
+     project with a trusted publisher
+     <https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/>`_
+
+     Ihr könnt damit auch einen Paketnamen reservieren, bevor ihr die erste
+     Version veröffentlicht. Damit könnt ihr sicherstellen, dass ihr das Paket
+     auch unter dem gewünschten Namen veröffentlichen könnt.
+
+     Hierfür müsst ihr in `pypi.org/manage/account/publishing/
+     <https://pypi.org/manage/account/publishing/>`_ einen neuen *Pending
+     Publisher* erstellen mit
+
+     * Namen des PyPI-Projekts
+     * GitHub-Repository Owner
+     * Namen des Workflows, :abbr:`z.B. (zum Beispiel)` :file:`publish.yml`
+     * Name der Umgebung (optional), :abbr:`z.B. (zum Beispiel)` ``release``
+
+#. Erstellt eine Umgebung für die GitHub-Actions
+
+   Wenn wir eine Umgebung auf :term:`PyPI` angegeben haben, müssen wir diese nun
+   auch erstellen. Das kann in :menuselection:`Settings --> Environments` für
+   das Repository geschehen. Der Name unserer Umgebung ist ``release``.
+
+#. Konfiguriert den Arbeitsablauf
+
+   Hierfür erstellen wir nun die Datei :file:`.github/workflows/publish.yml` in
+   unserem Repository:
+
+   .. code-block:: yaml
+      :linenos:
+
+      …
+      jobs:
+        …
+        deploy:
+          runs-on: ubuntu-latest
+          environment: release
+          permissions:
+            id-token: write
+          needs: [test]
+          steps:
+          - name: Checkout
+            …
+          - name: Set up Python
+            …
+          - name: Install dependencies
+            …
+          - name: Build
+            …
+          - name: Publish
+            uses: pypa/gh-action-pypi-publish@release/v1
+
+   Zeile 6
+       Dies wird benötigt, weil wir eine Umgebung in :term:`PyPI` konfiguriert
+       haben.
+   Zeilen 7–8
+       Sie sind erforderlich, damit die OpenID Connect-Token-Authentifizierung
+       funktioniert.
+   Zeilen 19–20
+       Das Paket verwendet die Aktion `github.com/pypa/gh-action-pypi-publish
+       <https://github.com/pypa/gh-action-pypi-publish>`_, um das Paket zu
+       veröffentlichen.
