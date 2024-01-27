@@ -1,9 +1,9 @@
 ``dataclasses``
 ===============
 
-Datenklassen wurden in Python 3.7 eingeführt und sind ein spezieller Shortcut,
-mit der wir Klassen erstellen können, die Daten speichern. Python bietet einen
-speziellen :doc:`Dekorator <../functions/decorators>`, wenn wir eine solche
+:doc:`dataclasses <python3:library/dataclasses>` wurden in Python 3.7 eingeführt und sind
+ein spezieller Shortcut, mit der wir Klassen erstellen können, die Daten speichern. Python
+bietet einen speziellen :doc:`Dekorator <../functions/decorators>`, wenn wir eine solche
 Klasse erstellen wollen.
 
 .. note::
