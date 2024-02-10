@@ -113,6 +113,8 @@ dies klarer:
         >>> issubclass(c1.__class__, Circle)
         True
 
+.. _duck-typing:
+
 Duck-Typing
 -----------
 
