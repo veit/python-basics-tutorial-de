@@ -14,12 +14,27 @@ alle ``True`` oder ``False`` zurückgeben:
 
 .. code-block:: python
 
-    >>> x = 5
-    >>> y = 3
+    >>> x = 3
+    >>> y = 3.0
     >>> z = [3, 4, 5]
+    >>> x == y
+    True
     >>> x is y
     False
     >>> x is not y
     True
     >>> x in z
     True
+
+Ihr solltet jedoch nie berechnete Fließkommazahlen miteinander vergleichen:
+
+.. code-block:: python
+
+    >>> u = 0.6 * 7
+    >>> v = 0.7 * 6
+    >>> u == v
+    False
+    >>> u
+    4.2
+    >>> v
+    4.199999999999999
