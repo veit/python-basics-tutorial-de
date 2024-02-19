@@ -12,5 +12,5 @@ Daten aktualisieren
 
    .. literalinclude:: update_data.py
       :language: python
-      :lines: 15
-      :lineno-start: 15
+      :lines: 16
+      :lineno-start: 16
