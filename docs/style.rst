@@ -54,31 +54,31 @@ bevorzugte stilistische Konventionen für Python, die im *Python Enhancement
 Proposal* (PEP) 8 enthalten sind. Eine Auswahl von Python-Konventionen findet
 ihr in der folgenden Tabelle:
 
-+-----------------------+-----------------------+-------------------------------+
-| Kontext               | Empfehlung            | Beispiel                      |
-+=======================+=======================+===============================+
-| Modul- und Paketnamen | kurz, Kleinbuchstaben,| ``math``, ``sys``             |
-|                       | Unterstriche nur bei  |                               |
-|                       | Bedarf                |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Funktionsnamen        | Kleinbuchstaben, ggf. | ``my_func()``                 |
-|                       | mit Unterstrichen     |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Variablennamen        | Kleinbuchstaben, ggf. | ``my_var``                    |
-|                       | mit Unterstrichen     |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Klassennamen          | CamelCase-Schreibweise| ``MyClass``                   |
-+-----------------------+-----------------------+-------------------------------+
-| Konstantennamen       | Versalien mit         | ``PI``                        |
-|                       | Unterstrichen         |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Einrückung            | Vier Leerzeichen pro  |                               |
-|                       | Ebene, keine Tabs     |                               |
-+-----------------------+-----------------------+-------------------------------+
-| Vergleiche            | nicht explizit mit    | ``if my_var:``,               |
-|                       | ``True`` oder         | ``if not my_var:``            |
-|                       | ``False``             |                               |
-+-----------------------+-----------------------+-------------------------------+
++-----------------------+-------------------------------+-------------------------------+
+| Kontext               | Empfehlung                    | Beispiel                      |
++=======================+===============================+===============================+
+| Modul- und Paketnamen | kurz, Kleinbuchstaben,        | ``math``, ``sys``             |
+|                       | Unterstriche nur bei Bedarf   |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Funktionsnamen        | Kleinbuchstaben, :abbr:`ggf.` | ``my_func()``                 |
+|                       | (gegebenenfalls)` mit         |                               |
+|                       | Unterstrichen                 |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Variablennamen        | Kleinbuchstaben, :abbr:`ggf.` | ``my_var``                    |
+|                       | (gegebenenfalls)` mit         |                               |
+|                       | Unterstrichen                 |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Klassennamen          | CamelCase-Schreibweise        | ``MyClass``                   |
++-----------------------+-------------------------------+-------------------------------+
+| Konstantennamen       | Versalien mit Unterstrichen   | ``PI``                        |
++-----------------------+-------------------------------+-------------------------------+
+| Einrückung            | Vier Leerzeichen pro Ebene,   |                               |
+|                       | keine Tabs                    |                               |
++-----------------------+-------------------------------+-------------------------------+
+| Vergleiche            | nicht explizit mit ``True``   | ``if my_var:``,               |
+|                       | oder ``False``,siehe auch     | ``if not my_var:``            |
+|                       | :doc:`control-flows/boolean`  |                               |
++-----------------------+-------------------------------+-------------------------------+
 
 .. seealso::
 
