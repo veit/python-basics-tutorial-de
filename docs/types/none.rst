@@ -23,11 +23,15 @@ dasselbe Objekt), und ``None`` ist nur mit sich selbst identisch:
 :class:`None` ist *falsy*
 -------------------------
 
-In Python verlassen wir uns oft darauf, dass :class:`None` *falsy* ist. So
-können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
-<../control-flows/if-elif-else>` überprüfen, ob :doc:`types/strings` leer sind:
+In Python verlassen wir uns oft darauf, dass :class:`None` *falsy* ist:
 
 .. code-block:: python
+
+   >>> bool(None)
+   False
+
+So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
+<../control-flows/if-elif-else>` überprüfen, ob :doc:`../types/strings` leer sind:
 
    >>> myval = ""
    >>> if not myval:
