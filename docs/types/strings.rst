@@ -580,6 +580,10 @@ Schließlich können Bibliotheken von Drittanbietern auch ihre eigene
 Unterstützung für die Formatierung von Strings hinzufügen, indem sie eine
 ``__format__``-Methode zu ihren Objekten hinzufügen.
 
+.. seealso::
+   * :ref:`format-codes`
+   * `Python strftime cheatsheet <https://strftime.org>`_
+
 Eingebaute Module für Zeichenketten
 -----------------------------------
 
