@@ -45,8 +45,8 @@ So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
 .. code-block:: python
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
-   >>> sets = titles.get("7.3")
-   >>> print(sets)
+   >>> third_title = titles.get("7.3")
+   >>> print(third_title)
    None
 
 Der Standardrückgabewert einer Funktion ist :class:`None`
