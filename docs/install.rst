@@ -54,5 +54,5 @@ kein Problem.
 
 .. note::
    Wenn auf eurem System bereits Python installiert ist, könnt ihr problemlos
-   eure eigenes Python installieren. Eine neue Version ersetzt nicht die alte
+   euer eigenes Python installieren. Eine neue Version ersetzt nicht die alte
    sondern wird an einem anderen Ort installiert.
