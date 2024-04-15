@@ -91,7 +91,7 @@ Das Ergebnis von ``str.encode()`` ist ein :ref:`Bytes-Objekt
 <python3:typebytes>`. Sowohl Bytes-Literale (wie ``b'sch\xc3\xb6n'``) als auch
 die Darstellungen von Bytes lassen nur ASCII-Zeichen zu. Aus diesem Grund darf
 beim Aufruf von ``"schön".encode("utf-8")`` das ASCII-kompatible ``"sch"`` so
-dargestellt werden, wie es ist, das `ö <https://unicode-table.com/en/00F6/>`_
+dargestellt werden, wie es ist, das `ö <https://symbl.cc/en/00F6/>`_
 wird jedoch zu ``"\xc3\xb6"``. Diese chaotisch aussehende Sequenz repräsentiert
 zwei Bytes, ``c3`` und ``b6`` als Hexadezimalwerte.
 
