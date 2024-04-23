@@ -398,6 +398,8 @@ Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ``wheel``-Pakete bauen, :abbr:`z.B. (zum Beispiel)`
 :file:`dataprep-0.1.0-py3-none-any.whl`.
 
+.. _manifest-in:
+
 :file:`MANIFEST.in`
 ~~~~~~~~~~~~~~~~~~~
 
