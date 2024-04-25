@@ -13,6 +13,17 @@ kein Problem.
    eine vorkompilierte Version von Python in eurer Linux-Distribution existiert,
    empfehle ich euch, diese zu verwenden.
 
+   Wenn ihr dennoch eine aktuellere Python-Version installieren wollt, könnt ihr
+   dies :abbr:`z.B. (zum Beispiel)` für Debian oder Ubuntu wie folgt tun:
+
+   .. code-block:: console
+
+      $ wget https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
+      $ tar xf Python-3.12.3.tgz
+      $ cd Python-3.12.3
+      $ ./configure --enable-optimizations
+      $ sudo make altinstall
+
 .. tab:: macOS
 
    Ihr benötigt eine Python-Version, die zu eurem macOS und eurem Prozessor
