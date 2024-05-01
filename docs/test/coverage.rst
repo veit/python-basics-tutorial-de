@@ -328,8 +328,8 @@ Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 47-52
-   :lineno-start: 47
+   :lines: 45-50
+   :lineno-start: 45
 
 ``if-no-files-found: ignore``
     ist sinnvoll, wenn nicht für alle Python-Versionen die Testabdeckung
@@ -342,8 +342,8 @@ der die Ergebnisse zusammenführt:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 54-92
-   :lineno-start: 54
+   :lines: 52-90
+   :lineno-start: 52
 
 ``needs: tests``
     stellt sicher, dass alle Tests durchgeführt werden. Wenn euer Job, der die
@@ -378,8 +378,8 @@ speichern. Hierfür erweitern wir unsere :download:`ci.yaml` folgendermaßen:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 94-
-   :lineno-start: 94
+   :lines: 92-
+   :lineno-start: 92
 
 Zeile 97
     ``GIST_TOKEN`` ist ein persönliches GitHub-Zugangs-Token.
