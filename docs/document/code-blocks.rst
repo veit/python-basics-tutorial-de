@@ -2,9 +2,9 @@ Code-Blöcke
 ===========
 
 Code-Blöcke lassen sich mit der Direktive :rst:dir:`code-block` sehr einfach
-darstellen. Zusammen mit `Pygments <http://pygments.org/>`_ hebt Sphinx dann die
-jeweilige Syntax automatisch hervor. Die passende Sprache für einen Code-Block
-könnt ihr angeben mit
+darstellen. Zusammen mit `Pygments <https://pygments.org/>`_ hebt Sphinx dann
+die jeweilige Syntax automatisch hervor. Die passende Sprache für einen
+Code-Block könnt ihr angeben mit
 
 .. rst:directive:: .. code-block:: LANGUAGE
 

@@ -136,22 +136,22 @@ Betracht gezogen werden sollten.
 Die unten beschriebenen Ansätze vereinfachen nicht die Distribution, aber sie
 können den Wartungsaufwand im Vergleich zu Wrapper-Modulen deutlich reduzieren.
 
-* `Cython <http://cython.org/>`__ eignet sich nicht nur zum Erstellen von
+* `Cython <https://cython.org/>`__ eignet sich nicht nur zum Erstellen von
   Accelerator-Modulen, sondern auch zum Erstellen von Wrapper-Modulen. Da das
   Wrapping der API immer noch von Hand erfolgen muss, ist es keine gute Wahl beim
   Wrapping großer APIs.
 
 * `cffi <https://cffi.readthedocs.io/>`_ ist das Projekt einiger Personen aus
-  dem `PyPy <https://pypy.org/>`__-Entwicklungsteam, um C-Module einfacher für
-  Python-Anwendungen verfügbar zu machen. Es macht das Wrapping eines C-Moduls
-  basierend auf seinen  Header-Dateien relativ einfach, auch wenn man sich mit C
-  selbst nicht auskennt.
+  dem `PyPy <https://www.pypy.org/>`__-Entwicklungsteam, um C-Module einfacher
+  für Python-Anwendungen verfügbar zu machen. Es macht das Wrapping eines
+  C-Moduls basierend auf seinen Header-Dateien relativ einfach, auch wenn man
+  sich mit C selbst nicht auskennt.
 
   Einer der Hauptvorteile von cffi besteht darin, dass es mit dem PyPy-JIT
   kompatibel ist, sodass CFFI-Wrapper-Module vollständig von den
   PyPy-Tracing-JIT-Optimierungen partizipieren können.
 
-* `SWIG <http://www.swig.org/>`_ ist ein Wrapper Interface Generator, der eine
+* `SWIG <https://www.swig.org/>`_ ist ein Wrapper Interface Generator, der eine
   Vielzahl von Programmiersprachen, einschließlich Python, mit C- und C++-Code
   verbindet.
 
@@ -163,7 +163,7 @@ können den Wartungsaufwand im Vergleich zu Wrapper-Modulen deutlich reduzieren.
   können die obigen Alternativen alle auf der C-API arbeiten und
   C-Header-Dateien verwenden, um die Konsistenz zu gewährleisten.
 
-* `pythoncapi_compat <https://github.com/python/pythoncapi_compat>`_ kann
+* `pythoncapi_compat <https://github.com/python/pythoncapi-compat>`_ kann
   verwendet werden, um eine C-Erweiterung zu schreiben, die mehrere
   Python-Versionen mit einer einzigen Codebasis unterstützt. Es besteht aus der
   Header-Datei ``pythoncapi_compat.h`` und dem Skript ``upgrade_pythoncapi.py``.
@@ -243,7 +243,6 @@ Nicht-Python-Dateien in ein Paket aufzunehmen.
 
 .. literalinclude:: dataprep/setup.py
     :language: python
-    :lines: 3-5,9,40-
 
 Nun könnt ihr den Build-Prozess mit dem Befehl ``pyproject-build`` ausführen und
 überprüfen, ob die Cython-Datei auch wie erwartet im Paket landet:
@@ -280,7 +279,7 @@ verwenden:
     $ python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
     $ python
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> from dataprep.mean import mean
     >>> from random import randint
@@ -298,14 +297,14 @@ Zufallszahlen mit Werten zwischen 1 und 1000 erstellt.
    <https://docs.python.org/3/extending/extending.html>`_. Beachtet jedoch
    bitte, dass diese Einführung nur die grundlegenden Tools zum Erstellen von
    Erweiterungen beshreibt, die im Rahmen von CPython bereitgestellt werden.
-   Third-Party-Tools wie `Cython <http://cython.org/>`__, `cffi
-   <https://cffi.readthedocs.io/>`_, `SWIG <http://www.swig.org/>`_ und `Numba
+   Third-Party-Tools wie `Cython <https://cython.org/>`__, `cffi
+   <https://cffi.readthedocs.io/>`_, `SWIG <https://www.swig.org/>`__ und `Numba
    <https://numba.pydata.org/>`__ bieten sowohl einfachere als auch
    ausgeklügeltere Ansätze zum Erstellen von C- und C ++- Erweiterungen für
    Python.
 
    `Python Packaging User Guide: Binary Extensions
-   <https://packaging.python.org/guides/packaging-binary-extensions/>`_
+   <https://packaging.python.org/en/latest/guides/packaging-binary-extensions/>`_
    behandelt nicht nur verschiedene verfügbare Tools, die die Erstellung von
    Beschleunigungsmodulen vereinfachen, sondern erläutert auch die verschiedenen
    Gründe, warum das Erstellen eines Extension Module wünschenswert sein
@@ -373,6 +372,6 @@ Im Folgenden soll das Deployment auf dem :term:`Python Package Index`
 
 .. seealso::
    * `Deploying Python applications
-     <https://packaging.python.org/discussions/deploying-python-applications/>`_
+     <https://packaging.python.org/en/latest/discussions/deploying-python-applications/>`_
    * `Supporting Windows using Appveyor
-     <https://packaging.python.org/guides/supporting-windows-using-appveyor/>`_
+     <https://packaging.python.org/en/latest/guides/supporting-windows-using-appveyor/>`_

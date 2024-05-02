@@ -79,7 +79,7 @@ Parsen mit ElementTree
       :lines: 4-11
       :lineno-start: 4
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       <Element 'catalog' at 0x10b009620>
       tag=catalog, attrib={}
@@ -91,7 +91,7 @@ Parsen mit ElementTree
       :lines: 13-17
       :lineno-start: 13
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       book {'id': '1'}
       title
@@ -105,11 +105,11 @@ Parsen mit ElementTree
 #. Inhalte der Kindelemente mit ``iter`` ausgeben:
 
    .. literalinclude:: elementtree_example.py
-      :language: py
+      :language: python
       :lines: 20-27
       :lineno-start: 20
 
-   .. code-block:: py
+   .. code-block:: pycon
 
       --------------------
       Iterating using iter

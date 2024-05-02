@@ -9,7 +9,7 @@ In Python öffnet und lest ihr eine Datei, indem ihr die eingebaute Funktion
 folgende kurze Python-Programm liest eine Zeile aus einer Textdatei namens
 :samp:`{myfile.txt}` ein:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
@@ -31,12 +31,13 @@ Das erste Argument der Funktion ``open`` ist ein Pfadname. Im vorigen Beispiel
 Arbeitsverzeichnis befindet. Das folgende Beispiel öffnet eine Datei an einem
 absoluten Speicherort – :samp:`{C:\Meine Dokumente\\myfile.txt}`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import os
     >>> pathname = os.path.join("C:/", "Users", "Veit", "Documents", "myfile.txt")
     >>> with open(pathname, "r") as f:
     ...     line = f.readline()
+    ...
 
 .. note::
 
@@ -60,7 +61,7 @@ jedoch die Systemressourcen erschöpfen, was zum Abbruch des Programms führen.
 Ihr schließt ein Dateiobjekt mit der ``close``-Methode, wenn das Datei-Objekt
 nicht mehr benötigt wird:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> line = f.readline()
@@ -69,10 +70,11 @@ nicht mehr benötigt wird:
 Die Verwendung eines :doc:`/control-flows/with` bleibt meist jedoch die bessere
 Möglichkeit, um Dateien automatisch zu schließen, wenn ihr fertig seid:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> with open("docs/types/myfile.txt", "r") as f:
     ...     line = f.readline()
+    ...
 
 Öffnen von Dateien im Schreib- oder anderen Modi
 ------------------------------------------------
@@ -85,7 +87,7 @@ Lesen öffnen wollen, könnt ihr das zweite Argument weglassen, da ``"r"`` der
 Standardwert ist. Das folgende kurze Programm schreibt :samp:`Hi, Pythonistas!`
 in eine Datei:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "w")
     >>> f.write("Hi, Pythonistas!\n")
@@ -115,7 +117,7 @@ der Zeile. Wenn es nichts mehr zu lesen gibt, gibt readline einen leeren String
 zurück, was es einfach macht, :abbr:`z.B. (zum Beispiel)` die Anzahl der Zeilen
 in einer Datei zu ermitteln:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
@@ -130,7 +132,7 @@ Ein kürzerer Weg, alle Zeilen zu zählen, gibt es mit der ebenfalls eingebauten
 ``readlines``-Methode, die alle Zeilen einer Datei liest und sie als Liste von
 Strings mit einen String pro Zeile zurückgibt:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> print(len(f.readlines()))
@@ -147,7 +149,7 @@ Zeitpunkt gelesenen Daten beeinflusst. Eine andere Möglichkeit, über alle Zeil
 einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer
 :ref:`for-loop` zu behandeln:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r")
     >>> lc = 0
@@ -172,7 +174,7 @@ Behandlung von Zeilenumbrüchen festlegen, indem ihr beim Öffnen der Datei den
 Parameter ``newline`` verwendet und ``newline="\n"``, ``\r`` oder ``\r\n``
 angebt, wodurch nur diese Zeichenfolge als Zeilenumbruch verwendet wird:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> f = open("docs/types/myfile.txt", "r", newline="\r\n")
 
@@ -202,7 +204,7 @@ Liste angewendet werden kann, um eine Datei zu schreiben, die identisch mit der 
 Textdatei ist, erzeugt das folgende Beispiel eine exakte Kopie von
 :file:`myfile.txt` mit dem Namen :file:`myfile2.txt`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> input_file = open("myfile.txt", "r")
     >>> lines = input_file.readlines()
@@ -221,7 +223,7 @@ liest sie die gesamte Datei ab der aktuellen Position ein und gibt die Daten als
 Bytes-Objekt zurück. Mit einem ganzzahligen Argument liest sie maximal diese
 Anzahl von Bytes und gibt ein Bytes-Objekt der angegebenen Größe zurück:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> f = open("myfile.txt", "rb")

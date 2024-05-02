@@ -17,13 +17,13 @@ die im aufrufenden Code verwendeten Parameter den Parametervariablen der
 Funktion auf der Grundlage ihrer Reihenfolge zugeordnet. Die folgende Funktion
 berechnet ``x`` als Potenz von ``y``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def power(x, y):
     ...     p = 1
     ...     while y > 0:
-    ...             p = p * x
-    ...             y = y - 1
+    ...         p = p * x
+    ...         y = y - 1
     ...     return p
     ...
     >>> power(2, 5)
@@ -33,7 +33,7 @@ Diese Methode setzt voraus, dass die Anzahl der vom aufrufenden Code verwendeten
 Parameter genau mit der Anzahl der Parameter in der Funktionsdefinition
 übereinstimmt; andernfalls wird eine Type-Error-Exception ausgelöst:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(2)
     Traceback (most recent call last):
@@ -46,7 +46,8 @@ so:
 
 .. code-block:: python
 
-    def function_name(param1, param2=Standardwert2, param3=Standardwert3, ...)
+    def function_name(param1, param2=Standardwert2, param3=Standardwert3):
+        pass
 
 Es können beliebig viele Parameter mit Standardwerten versehen werden wobei
 Parameter mit Standardwerten als letzte in der Parameterliste definiert werden
@@ -56,18 +57,19 @@ Die folgende Funktion berechnet ``x`` ebenfalls als Potenz von ``y``. Wenn ``y``
 jedoch nicht in einem Funktionsaufruf angegeben wird, wird der Standardwert
 ``5`` verwendet:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def power(x, y=5):
     ...     p = 1
     ...     while y > 0:
-    ...             p = p * x
-    ...             y = y - 1
+    ...         p = p * x
+    ...         y = y - 1
     ...     return p
+    ...
 
 Wie sich das Standardargument auswirkt, können ihr im folgenden Beispiel sehen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(3, 6)
     729
@@ -81,7 +83,7 @@ ihr könnt auch Argumente an eine Funktion übergeben, indem ihr den Namen des
 entsprechenden Funktionsparameters und nicht dessen Position verwendet. Ähnlich
 dem vorherigen Beispiels könnt ihr Folgendes eingeben:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> power(y=6, x=2)
     64
@@ -114,7 +116,7 @@ zugewiesen sind, gesammelt und als Tupel dem angegebenen Parameter zugewiesen
 werden. Dies ist :abbr:`z.B. (zum Beispiel)` eine einfache Möglichkeit, eine
 Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def mean(*numbers):
     ...     if len(numbers) == 0:
@@ -122,11 +124,12 @@ Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
     ...     else:
     ...         m = sum(numbers) / len(numbers)
     ...     return m
+    ...
 
 Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z.B. (zum Beispiel)`
 mit:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> mean(3, 5, 2, 4, 6)
     4.0
@@ -142,24 +145,28 @@ das Schlüsselwort, mit dem es übergeben wurde, nicht mit einem der
 Parameternamen in der Funktionsdefinition übereinstimmt, :abbr:`z.B. (zum
 Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def server(ip, port, **other):
-    ...     print("ip: {0}, port: {1}, keys in 'other': {2}".format(ip,
-    ...           port, list(other.keys())))
+    ...     print(
+    ...         "ip: {0}, port: {1}, keys in 'other': {2}".format(
+    ...             ip, port, list(other.keys())
+    ...         )
+    ...     )
     ...     total = 0
     ...     for k in other.keys():
     ...         total = total + other[k]
     ...     print("The sum of the other values is {0}".format(total))
+    ...
 
 Das Ausprobieren dieser Funktion zeigt, dass sie  die Argumente addieren kann,
 die unter den Schlüsselwörtern ``foo``,  ``bar`` und ``baz`` übergeben werden,
 obwohl ``foo``,  ``bar`` und ``baz`` in der Funktionsdefinition keine
 Parameternamen sind:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> server("127.0.0.1", port = "8080", foo = 3, bar = 5, baz = 2)
+    >>> server("127.0.0.1", port="8080", foo=3, bar=5, baz=2)
     ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
     The sum of the other values is 10
 
@@ -184,7 +191,7 @@ veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 jede Änderung des Objekts, worauf das Argument außerhalb der Funktion verweist.
 Die Neuzuweisung des Parameters hat keine Auswirkungen auf das Argument.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def my_func(n, l):
     ...     l.append(1)

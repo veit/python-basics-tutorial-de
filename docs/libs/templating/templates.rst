@@ -6,7 +6,7 @@ Python
 
 `cookiecutter-namespace-template <https://github.com/veit/cookiecutter-namespace-template>`_
     Namespace-Template für Python-Pakete
-`cookiecutter-pypackage <https://github.com/audreyr/cookiecutter-pypackage>`_
+`cookiecutter-pypackage <https://github.com/audreyfeldroy/cookiecutter-pypackage>`_
     Template für Python-Pakete
 `cookiecutter-pytest-plugin <https://github.com/pytest-dev/cookiecutter-pytest-plugin>`_
     Minimales Cookiecutter-Template zum Erstellen von `Pytest
@@ -14,13 +14,14 @@ Python
 `cookiecutter-pylibrary <https://github.com/ionelmc/cookiecutter-pylibrary>`_
     Umfangreiche Vorlage für Python-Pakete mit Unterstützung für Tests und
     Deployments (C-Extension-Support u.a. für `cffi
-    <https://cffi.readthedocs.io/>`_ und `Cython <http://cython.org/>`_,
+    <https://cffi.readthedocs.io/>`_ und `Cython <https://cython.org/>`_,
     Test-Unterstützung für `Tox <https://tox.readthedocs.io/>`_,
-    `Pytest <https://docs.pytest.org/>`_, `Travis-CI <https://travis-ci.org/>`_,
-    `Coveralls <https://github.com/coveralls-clients/coveralls-python>`_,
-    `Codacy <https://github.com/codacy/python-codacy-coverage/>`_,
-    und `Code Climate <https://github.com/codeclimate/python-test-reporter>`_,
-    Dokumentation mit `Sphinx <http://www.sphinx-doc.org/>`_,
+    `Pytest <https://docs.pytest.org/>`_, `Travis-CI
+    <https://www.travis-ci.com/>`_, `Coveralls
+    <https://github.com/TheKevJames/coveralls-python>`_, `Codacy
+    <https://github.com/archived-codacy/python-codacy-coverage>`_, und `Code
+    Climate <https://github.com/codeclimate/python-test-reporter>`_,
+    Dokumentation mit `Sphinx <https://www.sphinx-doc.org/>`_,
     Packaging-Checks u.a. mit `scrutinizer
     <https://scrutinizer-ci.com/docs/guides/python/>`_, `Isort
     <https://github.com/PyCQA/isort>`_ etc.

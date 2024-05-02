@@ -70,7 +70,7 @@ das `cookiecutter-namespace-template
 
 .. |Downloads| image::
    https://static.pepy.tech/badge/cookiecutter-namespace-template
-   :target: https://pepy.tech/project/cookiecutter-namespace-template
+   :target: https://www.pepy.tech/projects/cookiecutter-namespace-template
 .. |Updates| image::
    https://pyup.io/repos/github/veit/cookiecutter-namespace-template/shield.svg
    :target: https://pyup.io/repos/github/veit/cookiecutter-namespace-template/
@@ -114,7 +114,7 @@ heute in fast allen Python-Projekten verwendet, darunter `NumPy and SciPy
 <https://docs.sqlalchemy.org/>`_.
 
 Die Sphinx `autodoc
-<http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_-Funktion,
+<https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_-Funktion,
 die zur Erstellung von Dokumentation aus
 Python-:doc:`docstrings` verwendet werden kann, könnte ebenfalls zur Verbreitung
 von Sphinx unter Python-Entwicklern beitragen. Insgesamt ermöglicht es Sphinx
@@ -127,7 +127,7 @@ Sphinx wird auch in Projekten außerhalb der Python-Gemeinschaft eingesetzt,
 :abbr:`z.B. (zum Beispiel)` für die Dokumentation des Linux-Kernels: `Kernel
 documentation update <https://lwn.net/Articles/705224/>`_.
 
-`Read the Docs <https://readthedocs.org/>`_ wurde entwickelt, um die
+`Read the Docs <https://about.readthedocs.com/>`_ wurde entwickelt, um die
 Dokumentation weiter zu vereinfachen. Read the Docs erleichtert das Erstellen
 und Veröffentlichen von Dokumentationen nach jedem Commit.
 

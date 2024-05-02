@@ -44,7 +44,7 @@ Sie können mit den arithmetischen Operatoren manipuliert werden:
 
 Beispiele:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> 8 + 3 - 5 * 3
     -4
@@ -52,12 +52,12 @@ Beispiele:
     2.6666666666666665
     >>> 8 // 3
     2
-    >>> x = 4.2 ** 3.4
+    >>> x = 4.2**3.4
     >>> x
     131.53689544409096
     >>> 9e7 * -5e-3
     -450000.0
-    >>> -5e-3 ** 3
+    >>> -(5e-3**3)
     -1.2500000000000002e-07
 
 .. seealso::
@@ -74,7 +74,7 @@ Komplexe Zahlen bestehen aus einem Realteil und einem
 `Imaginärteil <https://de.wikipedia.org/wiki/Imagin%C3%A4re_Zahl>`_, der in
 Python den Suffix ``j`` erhält.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> 7 + 2j
     (7+2j)
@@ -84,12 +84,12 @@ Python den Suffix ``j`` erhält.
     Python drückt die resultierende komplexe Zahl in Klammern aus, um
     anzuzeigen, dass die Ausgabe den Wert eines einzelnen Objekts darstellt:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> (7+2j) - (4+4j)
+    >>> (7 + 2j) - (4 + 4j)
     (3-2j)
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> 2j * 4j
     (-8+0j)
@@ -102,7 +102,7 @@ Python den Suffix ``j`` erhält.
     umgewandelt. Ihr könnt aber leicht auf ihre realen und imaginären Teile mit
     ``real`` und ``imag`` zugreifen.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = 2j * 4j
     >>> x
@@ -163,7 +163,7 @@ Boolsche Werte
 
 In den folgenden Beispielen werden Boolesche Werte verwendet:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = False
     >>> x
@@ -171,7 +171,7 @@ In den folgenden Beispielen werden Boolesche Werte verwendet:
     >>> not x
     True
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> y = True * 2
     >>> y
@@ -198,7 +198,7 @@ Eingebaute Funktionen sind immer verfügbar und werden mit einer Standard-Syntax
 für Funktionsaufrufe aufgerufen. Im folgenden Code wird ``round`` mit einem
 Float als Eingangsargument aufgerufen.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> round(2.5)
     2
@@ -206,7 +206,7 @@ Float als Eingangsargument aufgerufen.
 Mit ``ceil`` aus der Standardbibliothek ``math`` und der Attributschreibweise
 :samp:`MODUL.FUNKTION(ARGUMENT)` wird aufgerundet:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> math.ceil(2.5)
     3
@@ -245,7 +245,7 @@ normaleren Äquivalenten zu vermeiden, empfiehlt sich der einfache Import des
 Moduls um bei der Verwendung der Funktion ausdrücklich auf das ``cmath``-Paket
 zu verweisen, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import cmath
     >>> cmath.sqrt(-2)
@@ -272,11 +272,11 @@ vermeiden. Für das `kaufmännische Runden werden
 :class:`Decimal <python3:decimal.Decimal>` und :data:`ROUND_HALF_UP
 <python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import decimal
     >>> num = decimal.Decimal("2.5")
-    >>> rounded = num.quantize(decimal.Decimal("0"), rounding = decimal.ROUND_HALF_UP)
+    >>> rounded = num.quantize(decimal.Decimal("0"), rounding=decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
 

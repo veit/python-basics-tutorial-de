@@ -92,7 +92,7 @@ Der Befehl ``items version`` soll die Version ausgeben:
 
 Die Version ist auch via Python verfügbar:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import items
     >>> items.__version__
@@ -112,7 +112,9 @@ Eine Möglichkeit, dies zu testen, ist
 
 
     def test_version():
-        process = subprocess.run(["items", "version"], capture_output=True, text=True)
+        process = subprocess.run(
+            ["items", "version"], capture_output=True, text=True
+        )
         output = process.stdout.rstrip()
         assert output == items.__version__
 

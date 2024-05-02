@@ -7,10 +7,11 @@ euch leistungsfähige Werkzeuge bereit, um jeden Aspekt des Verhaltens einer
 Klasse zu manipulieren. Ihr könnt eine Klasse mit der ``class``-Anweisung
 definieren:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class MyClass:
     ...     STATEMENTS
+    ...
 
 ``MyClass``
     Klassenbezeichner werden üblicherweise in Großbuchstaben geschrieben,
@@ -26,7 +27,7 @@ Nachdem ihr die Klasse definiert habt, könnt ihr ein neues Objekt des
 Klassentyps (eine Instanz der Klasse) erstellen, indem ihr den Klassennamen als
 Funktion aufruft:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Square:
     ...     length = 1
@@ -40,7 +41,7 @@ eine Klasse namens ``Square``, erstellt eine ``Square``-Instanz, weist der
 Kantenlänge einen Wert zu und verwendet diesen Wert dann zur Berechnung des
 Umfangs:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> my_square.length = 3
     >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
@@ -57,7 +58,7 @@ erstes Argument ``self`` erstellt wird. Anders als in Java und C++ können
 Python-Klassen auch nur eine ``__init__``-Methode haben. Im folgenden Beispiel
 werden standardmäßig Quadrate mit einer Kantenlänge von ``1`` erzeugt:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Square:
@@ -81,7 +82,7 @@ Zeile 6
 Ihr könnt das ``length``-Feld auch überschreiben, so dass die letzte Zeile ein
 anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> my_square.length = 3
         >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")

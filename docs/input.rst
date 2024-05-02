@@ -5,7 +5,7 @@ Ihr könnt die Funktion :func:`python3:input` verwenden, um Dateneingaben zu
 erhalten. Verwendet den Prompt-String, den ihr anzeigen möchtet, als Parameter
 für ``input``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> first_name = input("Vorname? ")
     Vorname? Veit
@@ -20,7 +20,7 @@ verwenden wollt, müsst ihr sie mit der Funktion :class:`python3:int` oder
 :class:`python3:float` umwandeln, :abbr:`z.B. (zum Beispiel)` für die Berechnung
 des Alters aus dem Geburtsjahr:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import datetime
     >>> currentDateTime = datetime.datetime.now()
@@ -28,5 +28,5 @@ des Alters aus dem Geburtsjahr:
     >>> year_birth = input("Geburtsjahr? ")
     Geburtsjahr? 1964
     >>> age = year - int(year_birth)
-    >>> print('Alter:', age, 'Jahre')
+    >>> print("Alter:", age, "Jahre")
     Alter: 58 Jahre

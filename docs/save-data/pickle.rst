@@ -15,26 +15,27 @@ einer Datei namens ``data.pickle`` speichern:
 
 #. Importieren des ``pickle``-Moduls
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> import pickle
 
 #. Definieren verschiedener Daten
 
-   .. code-block:: python
+   .. code-block:: pycon
 
-      >>> a = [1, 2.0, 3+4j]
+      >>> a = [1, 2.0, 3 + 4j]
       >>> b = ("character string", b"byte string")
       >>> c = {None, True, False}
 
 #. Schreiben der Daten:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
-      >>> with open('data.pickle', 'wb') as f:
+      >>> with open("data.pickle", "wb") as f:
       ...     pickle.dump(a, f)
       ...     pickle.dump(b, f)
       ...     pickle.dump(c, f)
+      ...
 
    Es spielt keine Rolle, was in den Variablen gespeichert wurde. Der Inhalt
    kann so einfach sein wie Zahlen oder so komplex wie eine Liste von
@@ -55,16 +56,17 @@ einer Datei namens ``data.pickle`` speichern:
    Diese Daten können bei einem späteren Programmlauf wieder eingelesen werden
    mit :py:func:`pickle.load`:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
-      >>> with open('data.pickle', 'rb') as f:
+      >>> with open("data.pickle", "rb") as f:
       ...     first = pickle.load(f)
       ...     second = pickle.load(f)
       ...     third = pickle.load(f)
+      ...
 
 #. Ausgeben der gepickelten Daten:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> print(first, second, third)
       [1, 2.0, (3+4j)] ('character string', b'byte string') {False, None, True}
@@ -79,22 +81,23 @@ das Wörterbuch wieder einzulesen und die Werte im Wörterbuch den entsprechende
 Programmvariablen zuzuweisen. Wenn ihr diesen Ansatz mit dem vorherigen Beispiel
 verwendet, erhaltet ihr folgenden Code:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> def save():
       ...     # Serialise Python objects
-      ...     data = {'a': a, 'b': b, 'c': c}
+      ...     data = {"a": a, "b": b, "c": c}
       ...     # File with pickles
-      ...     with open('data.pickle', 'wb') as f:
+      ...     with open("data.pickle", "wb") as f:
       ...         pickle.dump(data, f)
+      ...
 
 Anschließend könnt ihr gezielt die Daten aus ``c`` ausgeben mit
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> with open('data.pickle', 'rb') as f:
+   >>> with open("data.pickle", "rb") as f:
    ...     saved_data = pickle.load(f)
-   ...     print(saved_data['c'])
+   ...     print(saved_data["c"])
    ...
    {False, None, True}
 

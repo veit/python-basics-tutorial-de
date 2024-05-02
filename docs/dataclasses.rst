@@ -16,7 +16,7 @@ Nehmen wir an, wir wollen eine Klasse speichern, die ein Item repräsentiert mit
 ``summary``, ``owner``, ``state`` und ``id``. Wir können eine solche Klasse
 definieren mit:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> from dataclasses import dataclass
    >>> @dataclass
@@ -25,12 +25,13 @@ definieren mit:
    ...     owner: str = None
    ...     state: str = "todo"
    ...     id: int = None
+   ...
 
 Der ``@dataclass``-Dekorator erstellt die ``__init__``- und
 ``__repr__``-Methoden. Wenn ich mir die Instanz der Klasse ausgeben lasse,
 erhalte ich den Klassennamen und die Attribute:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> i1
    Item(summary='My first item', owner='veit', state='todo', id=1)
@@ -41,15 +42,20 @@ zusätzliche Funktionalität verleihen, indem ihr Methoden definiert. Wir werden
 der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
 <types/dicts>` erstellt:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> @dataclass
    ... class Item:
-   …
+   ...     ...
    ...     @classmethod
    ...     def from_dict(cls, d):
    ...         return Item(**d)
    ...
-   >>> item_dict = {"summary": "My first item", "owner": "veit", "state": "todo", "id": 1}
+   >>> item_dict = {
+   ...     "summary": "My first item",
+   ...     "owner": "veit",
+   ...     "state": "todo",
+   ...     "id": 1,
+   ... }
    >>> Item.from_dict(item_dict)
    Item(summary='My first item', owner='veit', state='todo', id=1)

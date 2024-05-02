@@ -753,6 +753,8 @@ einem Namensparameter an ``@pytest.fixture()``:
 
 
     from items import cli
+
+
     @pytest.fixture(scope="session", name="db")
     def _db():
         """The db object"""

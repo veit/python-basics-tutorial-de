@@ -15,7 +15,7 @@ Linux und macOS durch `auditwheel <https://github.com/pypa/auditwheel>`_ und
 Schließlich können die Tests auch gegen die Wheels laufen.
 
 .. seealso::
-   * `Docs <https://cibuildwheel.readthedocs.io/>`_
+   * `Docs <https://cibuildwheel.pypa.io/>`_
    * `GitHub <https://github.com/pypa/cibuildwheel>`_
 
 GitHub Actions
@@ -81,7 +81,7 @@ Nun könnt ihr endlich die Artefakte beider Jobs auf den :term:`PyPI` hochladen:
 
 .. seealso::
    * `Workflow syntax for GitHub Actions
-     <https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions>`_
+     <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
 
 GitLab CI/CD
 ------------
@@ -109,13 +109,13 @@ Konfigurationsdatei wie :file:`pyproject.toml` konfiguriert werden, :abbr:`z.B.
 
 .. seealso::
    * `cibuildwheel: Options
-     <https://cibuildwheel.readthedocs.io/en/stable/options/>`_
+     <https://cibuildwheel.pypa.io/en/stable/options/>`_
 
 Beispiele
 ---------
 
 * Coverage.py: `.github/workflows/kit.yml <https://github.com/nedbat/coveragepy/blob/master/.github/workflows/kit.yml>`_
-* matplotlib: `.github/workflows/cibuildwheel.yml <https://github.com/matplotlib/matplotlib/blob/master/.github/workflows/cibuildwheel.yml>`_
+* matplotlib: `.github/workflows/cibuildwheel.yml <https://github.com/matplotlib/matplotlib/blob/main/.github/workflows/cibuildwheel.yml>`_
 * MyPy: `.github/workflows/build.yml
   <https://github.com/mypyc/mypy_mypyc-wheels/blob/master/.github/workflows/build.yml>`__
 * psutil: `.github/workflows/build.yml

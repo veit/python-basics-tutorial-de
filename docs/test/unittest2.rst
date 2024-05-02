@@ -16,8 +16,9 @@ vereinfachen:
 
     import unittest2 as unittest
 
+
     class MyTest(unittest.TestCase):
-        ...
+        pass
 
 Auf diese Weise könnt ihr, wenn ihr zu einer neueren Python-Version wechselt und
 das Modul ``unittest2`` nicht mehr benötigt, einfach den Import in eurem

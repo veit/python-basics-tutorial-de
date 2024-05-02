@@ -8,10 +8,10 @@ Direktiven können angegeben werden:
 
 .. rst:directive::  automodule
                     autoclass
-                    autoexception
+                    autoefunction
 
-Diese dokumentieren ein Modul, eine Klasse oder eine Ausnahme unter Verwendung
-des docstring des jeweiligen Objekts.
+Diese dokumentieren ein Modul, eine Klasse oder eine Funktion unter Verwendung
+des jeweiligen Docstrings.
 
 Installation
 ------------
@@ -21,53 +21,33 @@ Sphinx-Konfigurationsdatei ``docs/conf.py`` angegeben:
 
 .. code-block:: python
 
-    extensions = [
-        'sphinx.ext.autodoc',
-        ...
-    ]
+    extensions = ["sphinx.ext.autodoc", ...]
 
-Wenn euer Paket und die zugehörige Dokumentation Teil desselben Repositorys
+Wenn euer Paket und die zugehörige Dokumentation Teil desselben Repository
 sind, werden sie immer dieselbe relative Position im Dateisystem haben. In
 diesem Fall könnt ihr einfach die Sphinx-Konfiguration für ``sys.path``
 bearbeiten, um den relativen Pfad zum Paket anzugeben, also:
 
 .. code-block:: python
 
-    sys.path.insert(0, os.path.abspath('..'))
-    import requests
+    sys.path.insert(0, os.path.abspath(".."))
+    import MODULE
 
 Wenn ihr eure Sphinx-Dokumentation in einer virtuellen Umgebung installiert
-habt, könnt ihr euer Paket auch dort mitinstallieren:
-
-.. code-block:: console
-
-    $ python -m pip install my.package
-
-oder, wenn ihr das Paket weiterentwickeln wollt, mit:
-
-.. code-block:: console
-
-    $ python -m pip install -e https://github.com/veit/my.package.git
+habt, könnt ihr euer Paket auch dort mitinstallieren, :abbr:`z.B. (zum
+Beispiel)` indem ihr es in eure :file:`requirements.txt`-Datei eintragt.
 
 Beispiele
 ---------
 
-Hier findet ihr einige Beispiele aus der API-Dokumentation für das `requests
-<https://docs.python-requests.org>`_-Modul:
+Hier findet ihr einige Beispiele aus der Dokumentation des
+Python-:py:mod:`string`-Moduls:
 
-.. literalinclude:: docstrings-example.rst
+.. literalinclude:: autodoc-examples.rst
    :language: rest
    :lines: 3-
 
-Dies führt zum :doc:`docstrings-example`, die aus den folgenden Docstrings
-generiert wird:
-
-* `requests.head <https://docs.python-requests.org/en/master/_modules/requests/api/#head>`_
-* `requests.RequestException <https://docs.python-requests.org/en/master/_modules/requests/exceptions/#RequestException>`_
-* `requests.Session <https://docs.python-requests.org/en/master/_modules/requests/sessions/#Session>`_
-
-.. autoclass:: Session
-   :inherited-members:
+Die Ausgabe ist :doc:`autodoc-examples`.
 
 .. note::
    Ihr solltet diese Richtlinien befolgen, wenn ihr Docstrings schreibt:

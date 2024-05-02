@@ -68,7 +68,7 @@ Jetzt könnt ihr einige Instanzen der Klasse ``Circle`` erstellen und sie
 analysieren. Da die ``__init__``-Methode von ``Circle`` Standardparameter hat,
 könnt ihr einen Kreis erstellen, ohne irgendwelche Parameter anzugeben:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> import form
         >>> c1 = form.Circle()
@@ -78,7 +78,7 @@ könnt ihr einen Kreis erstellen, ohne irgendwelche Parameter anzugeben:
 Wenn ihr Parameter angebt, werden diese verwendet, um die Werte der Instanz
 festzulegen:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c2 = form.Circle(2, 3, 4)
         >>> c2.diameter, c2.x, c2.y
@@ -88,7 +88,7 @@ Wenn ihr die ``move()``-Methode aufruft, findet Python keine ``move()``-Methode
 in der Klasse ``Circle``, also wird in der Vererbungshierarchie nach oben
 gegangen und die ``move()``-Methode von ``Form`` verwendet:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c2.move(5, 6)
         >>> c2.diameter, c2.x, c2.y
@@ -97,7 +97,7 @@ gegangen und die ``move()``-Methode von ``Form`` verwendet:
 Ihr könnt auch die Klassenmethode ``circumferences()`` der Klasse ``Circle``
 aufrufen, entweder über die Klasse selbst oder durch eine Instanz:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> form.Circle.circumferences()
         9.424769999999999

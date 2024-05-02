@@ -26,7 +26,7 @@ der Eigenschaft hat:
 
 Ohne Setter ist die *Property* ``length`` jedoch schreibgeschützt:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> s1 = form.Square()
     >>> s1.length = 2
@@ -47,7 +47,7 @@ sowohl zu erhalten als auch zu setzen. Beachtet, dass der Name der Methode
 derselbe bleibt, aber der Dekorator ändert sich in den *Property*-Namen, in
 unserem Fall in ``length.setter``:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> s1 = form.Square()
     >>> s1.length = 2

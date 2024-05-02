@@ -39,7 +39,7 @@ Erweiterungen von Drittanbietern
 
 `nbsphinx <https://nbsphinx.readthedocs.io/>`_
     Jupyter Notebooks in Sphinx
-`jupyter-sphinx <https://github.com/jupyter-widgets/jupyter-sphinx>`_
+`jupyter-sphinx <https://github.com/jupyter/jupyter-sphinx>`_
     ermöglicht das Rendern von interaktiven Jupyter-Widgets in Sphinx.
 
     .. seealso::
@@ -62,12 +62,12 @@ Erweiterungen von Drittanbietern
     `git <https://git-scm.com/>`_-Changelog für Sphinx.
 `Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
     fügt git Zeitstempel im Kontext ein
-`sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`_
+`sphinx-intl <https://pypi.org/project/sphinx-intl/>`_
     Sphinx-Erweiterung für Übersetzungen.
-`sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_
+`sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_
     überwacht ein Sphinx-Repository und erstellt neue Dokumentation, sobald
     Änderungen vorgenommen werden.
-`Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io/en/latest/>`_
+`Sphinx-Needs <https://sphinx-needs.readthedocs.io/>`_
     erlaubt die Definition, Verlinkung und Filterung von need-Objekten, also
     :abbr:`z.B. (zum Beispiel)` Anforderungen und Testfälle
 `Sphinx-pyreverse <https://github.com/alendit/sphinx-pyreverse>`_
@@ -107,12 +107,10 @@ aussehen:
 
     import sys
     import os
-    sys.path.insert(0, os.path.abspath('exts'))
 
-    extensions = [
-        'foo',
-        ...
-        ]
+    sys.path.insert(0, os.path.abspath("exts"))
+
+    extensions = ["foo", ...]
 
 .. seealso::
     * `Developing extensions for Sphinx

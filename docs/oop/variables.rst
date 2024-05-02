@@ -41,7 +41,7 @@ allen Instanzen der Klasse gesehen werden. ihr könnt eine Klassenvariable
 verwenden, um einen Wert für ``pi`` für alle Instanzen der Klasse ``Circle``
 zugänglich zu machen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Circle:
     ...     pi = 3.14159
@@ -49,10 +49,11 @@ zugänglich zu machen:
     ...         self.diameter = diameter
     ...     def circumference(self):
     ...         return self.diameter * Circle.pi
+    ...
 
 Wenn ihr diese Definition eingegeben habt, könnt ihr ``pi`` abfragen mit:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> Circle.pi
     3.14159
@@ -70,7 +71,7 @@ Klassenvariable zugreifen. Ihr tut dies in der Definition von
 ``Circle.circumference``, wo die Funktion ``circumference`` einen speziellen
 Verweis auf ``Circle.pi`` enthält:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> c = Circle(3)
     >>> c.circumference()
@@ -82,7 +83,7 @@ Ihr könnt dies vermeiden, indem ihr das spezielle ``__class__``-Attribut
 verwendet, das für alle Python-Klasseninstanzen verfügbar ist. Dieses Attribut
 gibt die Klasse zurück, zu der die Instanz gehört, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block::
+.. code-block:: pycon
 
     >>> Circle
     <class '__main__.Circle'>
@@ -95,7 +96,7 @@ repräsentiert, und diese Datenstruktur ist genau das, was durch das
 wird. In diesem Beispiel könnt ihr den Wert von ``Circle.pi`` von ``c`` abrufen,
 ohne sich explizit auf den Namen der Klasse ``Circle`` zu beziehen:
 
-.. code-block::
+.. code-block:: pycon
 
     >>> c.__class__.pi
     3.14159
@@ -123,7 +124,7 @@ könnte, wenn ihr euch dessen nicht bewusst seid.
     Instanzvariable finden kann, wird eine Klassenvariable ``pi`` in ``Circle``
     gesucht:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1 = Circle(1)
         >>> c1.pi
@@ -133,7 +134,7 @@ könnte, wenn ihr euch dessen nicht bewusst seid.
     und ihr sie durch eine präzisere Angabe ersetzen wollt, könntet ihr geneigt
     sein, dies folgendermaßen zu ändern:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.pi = 3.141592653589793
         >>> c1.pi
@@ -143,7 +144,7 @@ könnte, wenn ihr euch dessen nicht bewusst seid.
     hinzugefügt. Die Klassenvariable ``Circle.pi`` und alle anderen daraus
     abgeleiteten Instanzen haben weiterhin nur fünf Nachkommastellen:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> Circle.pi
         3.14159
