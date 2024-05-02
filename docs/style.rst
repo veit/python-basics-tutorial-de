@@ -11,7 +11,7 @@ zu bestimmen, was die :doc:`while <control-flows/loops>`-Klausel einer Bedingung
 dazu geschweifte Klammern. Im folgenden Beispiel wird durch die Einrückung der
 Zeilen 3–6 festgelegt, dass sie zur ``while``-Anweisung gehören:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -20,6 +20,7 @@ Zeilen 3–6 festgelegt, dass sie zur ``while``-Anweisung gehören:
     ...     if x == 4:
     ...         break
     ...     print(x)
+    ...
 
 Einrückungen zur Strukturierung des Codes anstelle von geschweiften Klammern ist
 zwar etwas gewöhnungsbedürftig, bietet aber erhebliche Vorteile:
@@ -39,7 +40,7 @@ Meist ist alles, was hinter ``#`` folgt ein Kommentar und wird bei der
 Ausführung des Codes nicht beachtet. Die offensichtliche Ausnahme ist ``#`` in
 einer :doc:`Zeichenkette <types/strings>`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = "# Dies ist eine Zeichenkette und kein Kommentar"
 

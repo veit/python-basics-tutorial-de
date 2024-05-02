@@ -173,8 +173,8 @@ sind, wie folgt zu überspringen:
 
 
     @pytest.mark.skipif(
-    parse(items.__version__).minor < 2,
-    reason="The comparison with < is not yet supported in version 0.1.x.",
+        parse(items.__version__).minor < 2,
+        reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
         i1 = Item("Update pytest section")
@@ -231,19 +231,21 @@ Schauen wir uns ein Beispiel an:
 
 
     @pytest.mark.xfail(
-    parse(items.__version__).minor < 2,
-    reason="The comparison with < is not yet supported in version 0.1.x.",
+        parse(items.__version__).minor < 2,
+        reason="The comparison with < is not yet supported in version 0.1.x.",
     )
     def test_less_than():
         i1 = Item("Update pytest section")
         i2 = Item("Update cibuildwheel section")
         assert i1 < i2
 
+
     @pytest.mark.xfail(reason="Feature #17: not implemented yet")
     def test_xpass():
         i1 = Item("Update pytest section")
         i2 = Item("Update pytest section")
         assert i1 == i2
+
 
     @pytest.mark.xfail(reason="Feature #17: not implemented yet", strict=True)
     def test_xfail_strict():
@@ -491,7 +493,9 @@ Tests in einer Klasse zu haben und Markierungen auf Klassenebene zu verwenden:
             assert s.state == "done"
 
         def test_finish_from_in_prog(self, items_db):
-            i = items_db.add_item(Item("Update pytest section", state="in progress"))
+            i = items_db.add_item(
+                Item("Update pytest section", state="in progress")
+            )
             items_db.finish(i)
             s = items_db.get_item(i)
             assert s.state == "done"
@@ -550,7 +554,9 @@ jedoch auch Fixtures auf die gleiche Weise markieren:
 
 
     def test_finish(items_db, start_state_fixture):
-        i = items_db.add_item(Item("Update pytest section", state=start_state_fixture))
+        i = items_db.add_item(
+            Item("Update pytest section", state=start_state_fixture)
+        )
         items_db.finish(i)
         s = items_db.get_item(i)
         assert s.state == "done"
@@ -568,7 +574,7 @@ einfach stapeln. Zum Beispiel wird :func:`test_finish_non_existent()` sowohl mit
     @pytest.mark.smoke
     @pytest.mark.exception
     def test_finish_non_existent(items_db):
-        i = 44 # any_number will be invalid, db is empty
+        i = 44  # any_number will be invalid, db is empty
         with pytest.raises(InvalidItemId):
             items_db.finish(i)
 
@@ -690,7 +696,7 @@ derzeit die Datenbank für jeden Test, der sie verwenden möchte:
 .. code-block:: python
 
     @pytest.fixture(scope="function")
-        def items_db(session_items_db):
+    def items_db(session_items_db):
         db = session_items_db
         db.delete_all()
         return db
@@ -787,6 +793,7 @@ notwendig:
 
       ...
 
+
       @pytest.fixture(scope="function")
       def items_db(session_items_db, request, faker):
           db = session_items_db
@@ -797,7 +804,9 @@ notwendig:
           if m and len(m.args) > 0:
               num_items = m.args[0]
               for _ in range(num_items):
-                  db.add_item(Item(summary=faker.sentence(), owner=faker.first_name()))
+                  db.add_item(
+                      Item(summary=faker.sentence(), owner=faker.first_name())
+                  )
           return db
 
    Hier gibt es eine Menge Änderungen, die wir jetzt durchgehen wollen.

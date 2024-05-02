@@ -8,7 +8,7 @@ als Parameter annimmt, sie in eine andere Funktion einbettet, die etwas
 Ähnliches tut, und dann die neue Funktion zurückgibt. Diese neue Kombination
 kann dann anstelle der ursprünglichen Funktion verwendet werden:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> def inf(func):
@@ -47,7 +47,7 @@ Verwendung eines Dekorators besteht ganz einfach aus zwei Teilen:
 Die Dekorfunktion sollte eine Funktion als Parameter annehmen und eine Funktion
 zurückgeben, wie folgt:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> @inf
@@ -80,13 +80,13 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
     wird. Da alte Werte nie gelöscht werden müssen, ist diese Funktion dann
     auch kleiner und schneller. Ein Beispiel:
 
-    .. code-block:: Python
+    .. code-block:: pycon
         :linenos:
 
         >>> from functools import cache
         >>> @cache
         ... def factorial(n):
-        ...     return n * factorial(n-1) if n else 1
+        ...     return n * factorial(n - 1) if n else 1
         ...
         >>> factorial(8)
         40320
@@ -104,21 +104,21 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
     Dieser Dekorator lässt die Wrapper-Funktion so, so wie die ursprüngliche
     Funktion aussehen mit ihren Namen und ihren Eigenschaften.
 
-    .. code-block:: Python
+    .. code-block:: pycon
 
         >>> from functools import wraps
         >>> def my_decorator(f):
         ...     @wraps(f)
         ...     def wrapper(*args, **kwargs):
         ...         """Wrapper docstring"""
-        ...         print('Call decorated function')
+        ...         print("Call decorated function")
         ...         return f(*args, **kwargs)
         ...     return wrapper
         ...
         >>> @my_decorator
         ... def example():
         ...     """Example docstring"""
-        ...     print('Call example function')
+        ...     print("Call example function")
         ...
         >>> example.__name__
         'example'
@@ -128,7 +128,7 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
     Ohne ``@wraps``-Dekorator wäre stattdessen Name und Docstring der
     ``wrapper``-Methode zurückgegeben worden:
 
-    .. code-block:: Python
+    .. code-block:: pycon
 
         >>> example.__name__
         'wrapper'

@@ -16,7 +16,7 @@ Hierfür liefert es die folgenden Testkonzepte:
        ist eine konsistente Testumgebung.
 
        .. seealso::
-          * `pytest fixtures <https://docs.pytest.org/en/latest/fixture.html>`_
+          * `pytest fixtures <https://docs.pytest.org/en/latest/explanation/fixtures.html>`_
           * `About fixtures
             <https://docs.pytest.org/en/latest/explanation/fixtures.html#about-fixtures>`_
           * `Fixtures reference

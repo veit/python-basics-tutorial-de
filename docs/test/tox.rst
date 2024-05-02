@@ -404,8 +404,8 @@ fort mit der Ausführung von ``pytest`` und ``tox`` mithilfe von GitHub-Aktionen
 Wenn euer Projekt auf `GitHub <https://github.com/>`_ gehostet ist, könnt ihr
 GitHub-Actions verwenden um automatisiert eure Tests in verschiedenen Umgebungen
 ausführen zu können. Dabei sind eine ganze Reihe von Umgebungen für die
-GitHub-Actions verfügbar: `github.com/actions/virtual-environments
-<https://github.com/actions/virtual-environments/#readme>`_.
+GitHub-Actions verfügbar: `github.com/actions/runner-images
+<https://github.com/actions/runner-images>`_.
 
 #. Um eine GitHub-Action in eurem Projekt zu erstellen, klickt auf
    :menuselection:`Actions --> set up a workflow yourself`. Dies erstellt
@@ -548,5 +548,5 @@ Hooks erstellt. Der folgende Codeschnipsel würde zum Beispiel ein neues --my
         parser.add_argument("--my", action="store_true", help="my option")
 
 .. seealso::
-   * `Extending tox <https://tox.readthedocs.io/en/latest/plugins.html>`_
+   * `Extending tox <https://tox.wiki/en/latest/plugins.html>`_
    * `tox development team <https://github.com/orgs/tox-dev/repositories>`_

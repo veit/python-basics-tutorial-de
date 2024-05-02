@@ -8,7 +8,7 @@ viele Optionen zur Begrenzung von Zeichenketten:
 
    "Eine Zeichenfolge in doppelten Anführungszeichen kann 'einfache Anführungszeichen' enthalten."
    'Eine Zeichenfolge in einfachen Anführungszeichen kann "doppelte Anführungszeichen" enthalten.'
-   '''\tEine Zeichenkette, die mit einem Tabulator beginnt und mit einem Zeilenumbruchzeichen endet.\n'''
+   """\tEine Zeichenkette, die mit einem Tabulator beginnt und mit einem Zeilenumbruchzeichen endet.\n"""
    """Dies ist eine Zeichenkette in dreifach doppelten Anführungszeichen, die
    einzige Zeichenkette, die echte Zeilenumbrüche enthält."""
 
@@ -20,10 +20,14 @@ werden. So kann :abbr:`z.B. (zum Beispiel)` ``\\`` für einen einzelnen Backslas
 und ``\'`` für ein einfaches Anführungszeichen verwendet werden, wodurch es die
 Zeichenfolge nicht beendet:
 
+.. blacken-docs:off
+
 .. code-block:: python
 
    "You don't need a backslash here."
    'However, this wouldn\'t work without a backslash.'
+
+.. blacken-docs:on
 
 Hier sind weitere Zeichen, die ihr mit dem Escape-Zeichen erhalten könnt:
 
@@ -72,14 +76,14 @@ Die Operatoren (``in``, ``+`` und ``*``) und eingebauten Funktionen (``len``,
 ``max`` und ``min``) arbeiten mit Zeichenketten genauso wie mit Listen und
 Tupeln.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome = "Hello pythonistas!\n"
    >>> 2 * welcome
    'Hello pythonistas!\nHello pythonistas!\n'
    >>> welcome + welcome
    'Hello pythonistas!\nHello pythonistas!\n'
-   >>> 'python' in welcome
+   >>> "python" in welcome
    True
    >>> max(welcome)
    'y'
@@ -89,7 +93,7 @@ Tupeln.
 Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um Elemente
 oder Slices zu erhalten:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome[0:5]
    'Hello'
@@ -99,9 +103,9 @@ oder Slices zu erhalten:
 Die Index- und Slice-Notation kann jedoch nicht verwendet werden, um Elemente
 hinzuzufügen, zu entfernen oder zu ersetzen:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> welcome[6:-1] = 'everybody!'
+   >>> welcome[6:-1] = "everybody!"
    Traceback (most recent call last):
      File "<stdin>", line 1, in <module>
    TypeError: 'str' object does not support item assignment
@@ -114,7 +118,7 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
 :abbr:`u.a. (unter anderem)` :py:meth:`str.split`, :py:meth:`str.replace` und
 :py:meth:`str.strip`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> welcome = "hello pythonistas!\n"
    >>> welcome.isupper()
@@ -129,14 +133,14 @@ Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
    'Hello Pythonistas!\n'
    >>> welcome.strip()
    'Hello pythonistas!'
-   >>> welcome.split(' ')
+   >>> welcome.split(" ")
    ['hello', 'pythonistas!\n']
-   >>> chunks = [snippet.strip() for snippet in welcome.split(' ')]
+   >>> chunks = [snippet.strip() for snippet in welcome.split(" ")]
    >>> chunks
    ['hello', 'pythonistas!']
-   >>> ' '.join(chunks)
+   >>> " ".join(chunks)
    'hello pythonistas!'
-   >>> welcome.replace('\n', '')
+   >>> welcome.replace("\n", "")
    'hello pythonistas!'
 
 Im Folgenden findet ihr einen Überblick über die häufigsten
@@ -221,10 +225,10 @@ Die Python-Standard-Bibliothek :doc:`re <python3:library/re>` enthält ebenfalls
 Funktionen für die Arbeit mit Zeichenketten. Dabei bietet ``re`` ausgefeiltere
 Möglichkeiten zur Musterextraktion und -ersetzung als ``string``.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import re
-   >>> re.sub('\n', '', welcome)
+   >>> re.sub("\n", "", welcome)
    'Hello pythonistas!'
 
 Hier wird der reguläre Ausdruck zunächst kompiliert und dann seine
@@ -233,17 +237,17 @@ den Ausdruck selbst mit :py:func:`re.compile` kompilieren und so ein
 wiederverwendbares ``regex``-Objekt bilden, das auf unterschiedliche
 Zeichenketten angewendet die CPU-Zyklen verringert:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> regex = re.compile('\n')
-   >>> regex.sub('', welcome)
+   >>> regex = re.compile("\n")
+   >>> regex.sub("", welcome)
    'Hello pythonistas!'
 
 Wenn ihr stattdessen eine Liste aller Muster erhalten möchtet, die dem
 ``regex``-Objekt entsprechen, könnt ihr die
 :py:meth:`re.Pattern.findall`-Methode verwenden:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(welcome)
    ['\n']
@@ -261,13 +265,13 @@ Zeichenkette zurück. Als weniger triviales Beispiel betrachten wir einen
 Textblock und einen regulären Ausdruck, der die meisten E-Mail-Adressen
 identifizieren kann:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> addresses = """Veit <veit@cusy.io>
    ... Veit Schiele <veit.schiele@cusy.io>
    ... cusy GmbH <info@cusy.io>
    ... """
-   >>> pattern = r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}'
+   >>> pattern = r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}"
    >>> regex = re.compile(pattern, flags=re.IGNORECASE)
    >>> regex.findall(addresses)
    ['veit@cusy.io', 'veit.schiele@cusy.io', 'info@cusy.io']
@@ -289,11 +293,11 @@ ihre drei Komponenten aufteilen:
 Dazu setzt ihr zunächst runde Klammern ``()`` um die zu segmentierenden Teile
 des Musters:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> pattern = r'([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})'
+   >>> pattern = r"([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})"
    >>> regex = re.compile(pattern, flags=re.IGNORECASE)
-   >>> match = regex.match('veit@cusy.io')
+   >>> match = regex.match("veit@cusy.io")
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
@@ -303,7 +307,7 @@ der Übereinstimmung enthält.
 :py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
 Gruppen enthält:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(addresses)
    [('veit', 'cusy', 'io'), ('veit.schiele', 'cusy', 'io'), ('info', 'cusy', 'io')]
@@ -312,11 +316,11 @@ Auch in :py:meth:`re.Pattern.sub` können Gruppen verwendet werden wobei ``\1``
 für die erste übereinstimmende Gruppe steht, ``\2`` für die zweite :abbr:`usw.
 (und so weiter)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> regex.findall(addresses)
    [('veit', 'cusy', 'io'), ('veit.schiele', 'cusy', 'io'), ('info', 'cusy', 'io')]
-   >>> print(regex.sub(r'Username: \1, Domain: \2, Suffix: \3', addresses))
+   >>> print(regex.sub(r"Username: \1, Domain: \2, Suffix: \3", addresses))
    Veit <Username: veit, Domain: cusy, Suffix: io>
    Veit Schiele <Username: veit.schiele, Domain: cusy, Suffix: io>
    cusy GmbH <Username: info, Domain: cusy, Suffix: io>
@@ -365,13 +369,21 @@ Die Funktion :func:`print` gibt Zeichenketten aus wobei andere Python-Datentypen
 leicht in Strings umgewandelt und formatiert werden können, :abbr:`z.B. (zum
 Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import math
    >>> pi = math.pi
    >>> d = 28
    >>> u = pi * d
-   >>> print("Pi ist", pi, "und der Umfang bei einem Durchmesser von", d, "Zoll ist", u, "Zoll.")
+   >>> print(
+   ...     "Pi ist",
+   ...     pi,
+   ...     "und der Umfang bei einem Durchmesser von",
+   ...     d,
+   ...     "Zoll ist",
+   ...     u,
+   ...     "Zoll.",
+   ... )
    Pi ist 3.141592653589793 und der Umfang bei einem Durchmesser von 28 Zoll ist 87.96459430051421 Zoll.
 
 F-Strings
@@ -379,7 +391,7 @@ F-Strings
 
 Mit F-Strings lassen sich die für einen Text zu detaillierten Zahlen kürzen:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> print(f"Der Wert von Pi ist {pi:.3f}.")
    Der Wert von Pi ist 3.142.
@@ -390,7 +402,7 @@ auf drei Nachkommastellen zu kürzen.
 In A/B-Testszenarien möchtet ihr oft die prozentuale Veränderung einer Kennzahl
 darstellen. Mit F-Strings können sie verständlich formuliert werden:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> metrics = 0.814172
    >>> print(f"Die AUC hat sich vergrößert auf {metrics:=+7.2%}")
@@ -405,7 +417,7 @@ umgewandelt.
 
 Werte lassen sich auch in binäre und hexadezimale Werte umrechnen:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> block_size = 192
    >>> print(f"Binary block size: {block_size:b}")
@@ -416,11 +428,12 @@ Werte lassen sich auch in binäre und hexadezimale Werte umrechnen:
 Es gibt auch Formatierungsangaben, die ideal geeignet sind für die :abbr:`CLI
 (Command Line Interface)`-Ausgabe, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> data_types = [(7, "Data types", 19), (7.1, "Numbers", 19), (7.2, "Lists", 23)]
    >>> for n, title, page in data_types:
-   ...     print(f"{n:.1f} {title:.<25} {page: >3}")                               ...
+   ...     print(f"{n:.1f} {title:.<25} {page: >3}")
+   ...
    7.0 Data types...............  19
    7.1 Numbers..................  19
    7.2 Lists....................  23
@@ -518,7 +531,7 @@ ihre Bedeutung aufgeführt:
 .. [#] Der Formatbezeichner ``n`` formatiert eine Zahl in einer lokal angepassten
     Weise, :abbr:`z.B. (zum Beispiel)`:
 
-     .. code-block:: python
+     .. code-block:: pycon
 
         >>> value = 635372
         >>> import locale
@@ -530,7 +543,7 @@ ihre Bedeutung aufgeführt:
 .. tip::
    Eine gute Quelle für F-Strings ist die Hilfe-Funktion:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> help()
       help> FORMATTING
@@ -553,7 +566,7 @@ In Python 3.8 wurde ein Spezifizierer eingeführt, der bei der Fehlersuche in
 F-String-Variablen hilft. Durch Hinzufügen eines Gleichheitszeichens ``=`` wird der
 Code innerhalb des F-Strings aufgenommen:
 
-.. code-block::
+.. code-block:: pycon
 
    >>> uid = "veit"
    >>> print(f"My name is {uid.capitalize()=}")
@@ -566,7 +579,7 @@ Formatierung von Datums-, Zeitformaten und IP-Adressen
 gleichen Syntax wie die :py:meth:`strftime <datetime.datetime.strftime>`-Methode
 für diese Objekte.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> import datetime
    >>> today = datetime.date.today()

@@ -5,7 +5,7 @@ Der Codeblock nach der ersten wahren Bedingung einer ``if``- oder
 ``elif``-Anweisung wird ausgeführt. Wenn keine der Bedingungen wahr ist, wird
 der Codeblock nach dem ``else`` ausgeführt:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x = 1

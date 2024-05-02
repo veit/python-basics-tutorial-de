@@ -25,7 +25,7 @@ erhaltet ihr mit
     :lines: 65-70
     :lineno-start: 65
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import form_ns
     >>> c1 = form_ns.Circle()
@@ -68,7 +68,7 @@ mit der Methode ``instance_variables``:
     :lines: 72-
     :lineno-start: 72
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import form_ns
     >>> c1 = form_ns.Circle()
@@ -84,7 +84,7 @@ mit der Methode ``instance_variables``:
 Wenn ihr nur Instanzen einer bestimmten Klasse ändern wollt, könnt ihr dies
 :abbr:`z.B. (zum Beispiel)` mit dem :mod:`Garbage Collector <gc>`:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import forms
     >>> c1 = forms.Circle()

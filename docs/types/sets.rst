@@ -6,7 +6,7 @@ verwendet wird, in denen die Zugehörigkeit und Einzigartigkeit zur Menge die
 wichtigsten Informationen des Objekts sind. Der ``in``-Operator läuft bei Sets
 schneller als bei :doc:`lists`:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> x = set([4, 2, 3, 2, 1])

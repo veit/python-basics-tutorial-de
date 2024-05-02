@@ -8,13 +8,13 @@ Datentypen erstellen könnt. Beachtet dabei, dass Python dynamisch typisiert ist
 Kompilierzeit. Dies ist einer der Gründe, warum Python so einfach zu benutzen
 ist. Ihr könnt einfach folgendes ausprobieren:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> type(3)
     <class 'int'>
-    >>> type('Hello')
+    >>> type("Hello")
     <class 'str'>
-    >>> type(['Hello', 'Pythonistas'])
+    >>> type(["Hello", "Pythonistas"])
     <class 'list'>
 
 In diesen Beispielen seht ihr die eingebaute :class:`type`-Funktion in Python.
@@ -28,11 +28,11 @@ auf die Aufrufe von :class:`type` Objekte zurückgibt; ``<class 'int'>``,
 zurückgegebenen Objekte. Ihr könnt diese Python-Pbjekte also miteinander
 vergleichen:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> type('Hello') == type('Pythonistas!')
+    >>> type("Hello") == type("Pythonistas!")
     True
-    >>> type('Hello') == type('Pythonistas!') == type(['Hello', 'Pythonistas'])
+    >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
     False
 
 Mit dieser Technik könnt ihr :abbr:`u.a. (unter anderem)` eine Typüberprüfung
@@ -43,7 +43,7 @@ dies klarer:
 
 #. Zunächst definieren wir zwei Klassen mit einer Vererbungshierarchie:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> class Form:
         ...     pass
@@ -53,10 +53,11 @@ dies klarer:
         ...
         >>> class Circle(Form):
         ...     pass
+        ...
 
 #. Nun könnt ihr eine Instanz ``c1`` der Klasse ``Circle`` erstellen:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1 = Circle()
 
@@ -64,7 +65,7 @@ dies klarer:
    der Klasse ``Circle`` ist, die in Ihrem aktuellen ``__main__`` Namespace
    definiert ist:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> type(c1)
         <class '__main__.Circle'>
@@ -72,7 +73,7 @@ dies klarer:
 #. Ihr könnt genau dieselben Informationen auch durch Zugriff auf das
    ``__class__``-Attribut der Instanz erhalten:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.__class__
         <class '__main__.Circle'>
@@ -80,7 +81,7 @@ dies klarer:
 #. Ihr könnt auch explizit überprüfen, ob die beiden Klassenobjekte identisch
    sind:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> c1.__class__ == Circle
         True
@@ -94,7 +95,7 @@ dies klarer:
    :func:`python3:issubclass`
         stellt fest, ob eine Klasse die Unterklasse einer anderen ist.
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> issubclass(Circle, Form)
         True
@@ -153,16 +154,16 @@ erneut unsere ``Form``-Klasse mit der Standardmethode ``__init__`` um Instanzen
 der Klasse zu initialisieren, sondern auch eine ``__str__``-Methode um
 Zeichenketten zurückzugeben, die Instanzen in einem lesbaren Format darstellen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Form:
     ...     def __init__(self, x, y):
     ...         self.x = x
     ...         self.y = y
     ...     def __str__(self):
-    ...         return "Position: x={0}, y={1}".format (self.x, self.y)
+    ...         return "Position: x={0}, y={1}".format(self.x, self.y)
     ...
-    >>> f = Form(2,3)
+    >>> f = Form(2, 3)
     >>> print(f)
     Position: x=2, y=3
 

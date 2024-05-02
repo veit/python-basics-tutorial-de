@@ -147,8 +147,8 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        * `ZeroVer <https://0ver.org/>`_
 
     Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z.B. (zum
-    Beispiel)` `hatch-semver <https://github.com/Nagidal/hatch-semver>`_ für
-    `Semantic Versioning <https://semver.org>`_.
+    Beispiel)` `hatch-semver <https://github.com/fleetingbytes/hatch-semver>`_
+    für `Semantic Versioning <https://semver.org>`_.
 
     Mit dem Version-Source-Plugin `hatch-vcs
     <https://github.com/ofek/hatch-vcs>`_ könnt ihr auch
@@ -229,7 +229,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 .. seealso::
    * `Declaring project metadata
-     <https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata>`_
+     <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
    * :pep:`345`
 
 Optionale Abhängigkeiten
@@ -334,9 +334,10 @@ Form mit, wie sie es nutzen können.
 Wenn ihr das Dokument in :doc:`/document/rest` schreibt, könnt ihr die Inhalte
 auch als ausführliche Beschreibung in euer Paket übernehmen:
 
-.. literalinclude:: dataprep/setup.py
-   :language: python
-   :lines: 1,4-9,13-14,41
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :lineno-start: 5
+   :lines: 5, 12
 
 Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
 </document/start>` mit ``.. include:: ../../README.rst`` übernehmen.
@@ -351,7 +352,7 @@ Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
     * `github-activity <https://github.com/executablebooks/github-activity>`_
     * `Dinghy <https://github.com/nedbat/dinghy>`_
     * `Python core-workflow blurb
-      <https://github.com/python/core-workflow/tree/master/blurb>`_
+      <https://github.com/python/core-workflow/tree/main/blurb>`_
     * `Release Drafter <https://github.com/release-drafter/release-drafter>`_
     * `towncrier <https://github.com/twisted/towncrier>`_
 
@@ -375,11 +376,10 @@ Eine minimale und dennoch funktionale :download:`dataprep/setup.py` kann
 
 .. literalinclude:: dataprep/setup.py
    :language: python
-   :lines: 4-5, 9-12, 15-21,41
-   :lineno-start: 1
+   :linenos:
 
 `package_dir
-<https://docs.python.org/3/distutils/setupscript.html#listing-whole-packages>`_
+<https://docs.python.org/3.11/distutils/setupscript.html#listing-whole-packages>`_
 verweist auf das Verzeichnis :file:`src`, in dem sich ein oder mehrere Pakete
 befinden können. Anschließend könnt ihr mit setuptools’s `find_packages()
 <https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#finding-simple-packages>`_

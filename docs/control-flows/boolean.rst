@@ -15,7 +15,7 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
     sind logischen Operatoren, mit denen die oben genannten Überprüfungen
     verknüpft werden können.
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> x = 3
    >>> y = 3.0
@@ -41,7 +41,7 @@ an zwei Stellen auf dasselbe Objekt verweisen.
 Am häufigsten werden ``is`` und ``is not`` in Verbindung mit
 :doc:`../types/none` verwendet:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x is None
     False
@@ -54,7 +54,7 @@ None`` verwenden, sondern stattdessen ``x is None`` eingeben.
 
 Ihr solltet jedoch nie berechnete Fließkommazahlen miteinander vergleichen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> u = 0.6 * 7
     >>> v = 0.7 * 6

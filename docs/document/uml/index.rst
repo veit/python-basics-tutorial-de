@@ -37,12 +37,9 @@ Installation
 
    .. code-block:: python
 
-      extensions = [
-         ...,
-         'sphinxcontrib.plantuml',
-         ]
+      extensions = [..., "sphinxcontrib.plantuml"]
 
-      plantuml = '/PATH/TO/PLANTUML'
+      plantuml = "/PATH/TO/PLANTUML"
 
    .. note::
       Auch in Windows werden in der Pfadangabe ``/`` angegeben.

@@ -7,7 +7,7 @@ Schleifen
 Die ``while``-Schleife wird so lange ausgeführt, wie die Bedingung (hier: ``x >
 y``) wahr ist:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -35,7 +35,7 @@ Zeilen 8 und 9
     gibt die Ergebnisse der ``while``-Schleife aus bevor die Ausführung mit
     ``break`` unterbrochen wurde.
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 6, 3
@@ -65,7 +65,7 @@ Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 <https://de.wikipedia.org/wiki/Division_mit_Rest#Modulo>`_-Operator ``%`` als
 Bedingung für as erste Vorkommen einer ganzen Zahl, die durch ``5`` teilbar ist:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> items = [1, "fünf", 5.0, 10, 11, 15]
     >>> d = 5
@@ -90,7 +90,7 @@ Schleifen mit einem Index
 Ihr könnt in einer ``for``-Schleife auch den Index ausgeben, :abbr:`z.B. (zum
 Beispiel)` mit :py:func:`enumerate`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> data_types = ["Data types", "Numbers", "Lists"]
    >>> for index, title in enumerate(data_types):
@@ -105,11 +105,11 @@ List Comprehensions
 
 Üblicherweise wird eine Liste folgendermaßen generiert:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> squares = []
    >>> for i in range(8):
-   ...     squares.append(i ** 2)
+   ...     squares.append(i**2)
    ...
    >>> squares
    [0, 1, 4, 9, 16, 25, 36, 49]
@@ -118,9 +118,9 @@ Anstatt eine leere Liste zu erstellen und jedes Element am Ende einzufügen,
 definiert ihr mit List Comprehensions einfach die Liste und ihren Inhalt
 gleichzeitig mit nur einer einzigen Code-Zeile:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> squares = [i ** 2 for i in range(8)]
+   >>> squares = [i**2 for i in range(8)]
    >>> squares
    [0, 1, 4, 9, 16, 25, 36, 49]
 
@@ -145,8 +145,8 @@ Jede List Comprehension in Python enthält drei Elemente:
 Ihr könnt mit List Comprehensions auch optional Bedingungen verwenden, die
 üblicherweise am Ende des Ausdruck angehängt werden:
 
-.. code-block:: python
+.. code-block:: pycon
 
-   >>> squares = [i ** 2 for i in range(8) if i >= 4]
+   >>> squares = [i**2 for i in range(8) if i >= 4]
    >>> squares
    [16, 25, 36, 49]

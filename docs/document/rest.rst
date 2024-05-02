@@ -48,15 +48,15 @@ Links
 Externe Links
 ~~~~~~~~~~~~~
 
-`Hyperlink <http://en.wikipedia.org/wiki/Hyperlink>`_ `Link`_
+`Hyperlink <https://en.wikipedia.org/wiki/Hyperlink>`_ `Link`_
 
-.. _Link: http://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
+.. _Link: https://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
 
 .. code-block:: rest
 
-   `Hyperlink <http://en.wikipedia.org/wiki/Hyperlink>`_ `Link`_
+   `Hyperlink <https://en.wikipedia.org/wiki/Hyperlink>`_ `Link`_
 
-   .. _Link: http://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
+   .. _Link: https://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)
 
 .. note::
    Vor einer mit ``..`` beginnenden Direktive muss immer eine Leerzeile
@@ -97,7 +97,7 @@ Dokumente herunterladen
 :::::::::::::::::::::::
 
 Link zu einem Dokument, das nicht von Sohinx gerendert werden soll, :abbr:`z.B.
-(zum Beispiel)` zu :download:`docstrings-example.rst`.
+(zum Beispiel)` zu :download:`autodoc-examples.rst`.
 
 .. code-block:: rest
 

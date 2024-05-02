@@ -2,7 +2,7 @@ Intersphinx
 ===========
 
 `sphinx.ext.intersphinx
-<http://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`_
+<https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`_
 ermöglicht die Verknüpfung mit anderen Projektdokumentationen.
 
 Konfiguration
@@ -12,10 +12,7 @@ In ``docs/conf.py`` muss Intersphinx als Erweiterung angegeben werden:
 
 .. code-block:: python
 
-    extensions = [
-        ...
-        'sphinx.ext.intersphinx',
-        ]
+    extensions = [..., "sphinx.ext.intersphinx"]
 
 Externe Sphinx-Dokumentation kann dann angegeben werden, :abbr:`z.B. (zum
 Beispiel)` mit:
@@ -23,8 +20,8 @@ Beispiel)` mit:
 .. code-block:: python
 
     intersphinx_mapping = {
-        'python': ('https://docs.python.org/3', None),
-        'bokeh':  ('https://bokeh.pydata.org/en/latest/', None)
+        "python": ("https://docs.python.org/3", None),
+        "bokeh": ("https://bokeh.pydata.org/en/latest/", None),
     }
 
 Es können jedoch auch alternative Dateien für eine Bestandsaufnahme angegeben werden, :abbr:`z.B. (zum Beispiel)`:
@@ -32,8 +29,7 @@ Es können jedoch auch alternative Dateien für eine Bestandsaufnahme angegeben 
 .. code-block:: python
 
     intersphinx_mapping = {
-        'python': ('https://docs.python.org/3', (None, 'python-inv.txt'),
-        ...
+        "python": ("https://docs.python.org/3", None, "python-inv.txt"),
     }
 
 Bestimmen von Linkzielen

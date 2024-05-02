@@ -8,7 +8,7 @@ Python hat einen mächtigen eingebauten Listentyp:
 
     []
     [1]
-    [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
 
 Eine Liste kann eine Mischung anderer Typen als Elemente enthalten, darunter
 Zeichenketten, Tupel, Listen, Dictionaries, Funktionen, Dateiobjekte und jede
@@ -17,10 +17,10 @@ Art von Zahl.
 Eine Liste kann von vorne oder hinten indiziert werden. Ihr könnt euch auch auf
 ein Teilsegment einer Liste beziehen, indem ihr die Slice-Notation verwendet:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
     >>> x[0]
     '1'
     >>> x[1]
@@ -56,10 +56,10 @@ Zeilen 14, 16 und 18
 Ihr könnt diese Notation verwenden, um Elemente in einer Liste hinzuzufügen, zu
 entfernen und zu ersetzen oder um ein Element oder eine neue Liste zu erhalten, die ein Slice davon ist, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1,5.2)]
+    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
     >>> x[1] = "zweitens"
     >>> x[2:3] = []
     >>> x
@@ -80,7 +80,7 @@ womit jedes Element aus einer Sequenz zwischen den Indizes genommen wird. Bei
 einem Stride von ``2`` wird jedes zweite Element übernommen :abbr:`usw. (und so
 weiter)`:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x[0:3:2]
@@ -93,7 +93,7 @@ weiter)`:
 Der Stride-Wert kann auch negativ sein. Ein ``-1``-Stride bedeutet, von rechts
 nach links gezählt wird:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x[3:0:-2]
@@ -113,7 +113,7 @@ Zeile 5
 
 Einige Funktionen der Slice-Notation können auch mit speziellen Operationen wausgeführt werden, wodurch die Lesbarkeit des Codes verbessert wird:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
    >>> x.reverse()
@@ -125,7 +125,7 @@ und ``min``), einige Operatoren (``in``, ``+`` und ``*``), die ``del``-Anweisung
 und die Listenmethoden (``append``, ``count``, ``extend``, ``index``,
 ``insert``, ``pop``, ``remove``, ``reverse`` und ``sort``) für Listen verwenden:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> len(x)

@@ -13,7 +13,7 @@ Wenn wir diese Klassen nun in einem Zeichenprogramm verwenden wollen, müssen wi
 definieren, wo auf der Zeichenfläche sich eine Instanz befindet soll. Wir können
 dies tun, indem wir ``x``- und ``y``-Koordinaten für jede Instanz definieren:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Square:
@@ -27,6 +27,7 @@ dies tun, indem wir ``x``- und ``y``-Koordinaten für jede Instanz definieren:
     ...         self.diameter = diameter
     ...         self.x = x
     ...         self.y = y
+    ...
 
 Dieser Ansatz funktioniert, führt aber zu einer Menge sich wiederholenden Codes,
 wenn ihr die Anzahl der Form-Klassen erhöht, da ihr vermutlich wollt, dass jede
@@ -37,7 +38,7 @@ allgemeine Form-Klasse abstrahieren und jede Klasse, die eine bestimmte Form
 definiert, von dieser allgemeinen Klasse erben lassen. In Python sieht diese
 Technik wie folgt aus:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> class Form:
@@ -54,6 +55,7 @@ Technik wie folgt aus:
     ...     def __init__(self, diameter=1, x=0, y=0):
     ...         super().__init__(x, y)
     ...         self.diameter = diameter
+    ...
 
 Zeilen 6 und 11
     ``Square`` und ``Circle`` erben von der ``Form``-Klasse.
@@ -82,7 +84,7 @@ ist. Um diesen Effekt zu sehen, definiert eine weitere Methode in der Klasse
 ``Form`` mit dem Namen ``move``, die eine Form in den ``x``- und
 ``y``-Koordinaten verschiebt. Die Definition für ``Form`` lautet nun:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
     :emphasize-lines: 5-7
 
@@ -93,19 +95,21 @@ ist. Um diesen Effekt zu sehen, definiert eine weitere Methode in der Klasse
     ...     def move(self, delta_x, delta_y):
     ...         self.x = self.x + delta_x
     ...         self.y = self.y + delta_y
+    ...
 
 ..
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> class Circle(Form):
         ...     def __init__(self, diameter=1, x=0, y=0, delta_x=0, delta_y=0):
         ...         super().__init__(x, y)
         ...         self.diameter = diameter
+        ...
 
 Wenn ihr die Parameter ``delta_x`` und ``delta_y`` der Methode ``move`` in den
 ``__init__``-Methoden von ``Circle`` und ``Square`` übernehmt, könnt ihr :abbr:`z.B. (zum Beispiel)` folgende interaktive Sitzung ausführen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> c = Circle(3)
     >>> c.move(4, 5)

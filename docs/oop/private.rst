@@ -24,7 +24,7 @@ privat; alles andere ist nicht privat.
 
 Betrachten wir als Beispiel die folgende Klassendefinition:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class MyClass:
     ...     def __init__(self):
@@ -44,7 +44,7 @@ Betrachten wir als Beispiel die folgende Klassendefinition:
 Die ``print_y``-Methode ist nicht privat, und da sie sich in der
 ``MyClass``-Klasse befindet, kann sie auf ``__y`` zugreifen und ausgeben:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> m.print_y()
     2
@@ -56,7 +56,7 @@ Die ``print_y``-Methode ist nicht privat, und da sie sich in der
     zu Bytecode kompiliert wird. Konkret bedeutet dies, dass
     :samp:`_{ClassName}` dem Variablennamen vorangestellt wird:
 
-    .. code-block:: python
+    .. code-block:: pycon
 
         >>> dir(m)
         ['_MyClass__y', '__class__', …]

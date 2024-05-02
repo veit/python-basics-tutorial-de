@@ -11,8 +11,8 @@ werden. Dabei werden die Jinja-Template-Variablen in die Skripte integriert,
 
 .. code-block:: python
 
-    if 'Not open source' == '{{ cookiecutter.license }}':
-        remove_file('LICENSE')
+    if "Not open source" == "{{ cookiecutter.license }}":
+        remove_file("LICENSE")
 
 In einem Pre-Generate-Hook können :abbr:`z.B. (zum Beispiel)` Variablen
 validiert werden:
@@ -23,12 +23,12 @@ validiert werden:
     import sys
 
 
-    MODULE_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
+    MODULE_REGEX = r"^[_a-zA-Z][_a-zA-Z0-9]+$"
 
-    module_name = '{{ cookiecutter.module_name }}'
+    module_name = "{{ cookiecutter.module_name }}"
 
     if not re.match(MODULE_REGEX, module_name):
-        print(f'ERROR: {module_name} is not a valid Python module name!')
+        print(f"ERROR: {module_name} is not a valid Python module name!")
 
         # exits with status 1 to indicate failure
         sys.exit(1)
@@ -72,7 +72,8 @@ Alternativ kann auch die Python-API verwendet werden:
 .. code-block:: python
 
     from cookiecutter.main import cookiecutter
-    cookiecutter('gh:'veit/cookiecutter-namespace-template, replay=True)
+
+    cookiecutter("gh:veit/cookiecutter-namespace-template", replay=True)
 
 Diese Funktion ist hilfreich, wenn ihr z.B. ein Projekt aus einer aktualisierten
 Vorlage erstellen wollt.
@@ -109,5 +110,5 @@ und in ``cookiecutter-namespace-template/hooks/post_gen_project.py``:
 
 .. code-block:: python
 
-    if 'Not open source' == '{{ cookiecutter.license }}':
-        remove_file('LICENSE')
+    if "Not open source" == "{{ cookiecutter.license }}":
+        remove_file("LICENSE")

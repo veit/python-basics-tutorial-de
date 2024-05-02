@@ -7,7 +7,7 @@ Glossar
        ``build`` ist ein :pep:`517`-kompatibler Python-Paket-Builder. Er bietet
        eine CLI zum Erstellen von Paketen sowie eine Python-API.
 
-       `Docs <https://pypa-build.readthedocs.io/en/stable/index.html>`__ |
+       `Docs <https://build.pypa.io/en/stable/index.html>`__ |
        `GitHub <https://github.com/pypa/build>`__ |
        `PyPI <https://pypi.org/project/build>`__
 
@@ -23,7 +23,7 @@ Glossar
        <wheel>` für alle gängigen Plattformen und Python-Versionen auf den
        meisten CI-Systemen erstellt.
 
-       `Docs <https://cibuildwheel.readthedocs.io/>`__ |
+       `Docs <https://cibuildwheel.pypa.io/>`__ |
        `GitHub <https://github.com/pypa/cibuildwheel>`__ |
        `PyPI <https://pypi.org/project/cibuildwheel>`__
 
@@ -39,7 +39,7 @@ Glossar
 
        Conda installiert keine Pakete von :term:`PyPI` und kann nur von den
        offiziellen Continuum-Repositories oder von `anaconda.org
-       <https://anaconda.org>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
+       <https://anaconda.org/>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
        Intranet-) Paketservern installieren. Beachtet jedoch, dass :term:`pip`
        in conda installiert werden und Seite an Seite arbeiten kann, um
        Distributionen von :term:`PyPI` zu verwalten.
@@ -51,12 +51,12 @@ Glossar
             <https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html>`_
 
    devpi
-       `devpi <https://devpi.net/>`_ ist ein leistungsstarker
+       `devpi <https://www.devpi.net/>`_ ist ein leistungsstarker
        :term:`PyPI`-kompatibler Server und ein PyPI-Proxy-Cache mit einem
        Befehlszeilenwerkzeug um Paketierungs-, Test- und
        Veröffentlichungsaktivitäten zu ermöglichen.
 
-       `Docs <http://doc.devpi.net/latest/>`__ |
+       `Docs <https://devpi.net/docs/>`__ |
        `GitHub <https://github.com/devpi/devpi>`__ |
        `PyPI <https://pypi.org/project/devpi>`__
 
@@ -78,12 +78,12 @@ Glossar
        Ein :term:`Built Distribution`-Format, das von :term:`Setuptools`
        eingeführt wurde und nun durch :term:`wheel` ersetzt wird. Weitere
        Informationen findet ihr unter `The Internal Structure of Python Eggs
-       <https://setuptools.readthedocs.io/en/latest/deprecated/python_eggs.html>`_
+       <https://setuptools.pypa.io/en/latest/deprecated/python_eggs.html>`_
        und `Python Eggs <http://peak.telecommunity.com/DevCenter/PythonEggs>`_.
 
    enscons
        enscons ist ein Python-Paketierungswerkzeug, das auf `SCons
-       <http://scons.org/>`_ basiert. Es erstellt :term:`pip`-kompatible
+       <https://scons.org/>`_ basiert. Es erstellt :term:`pip`-kompatible
        :term:`Source Distributions <Source Distribution>` und :term:`wheels
        <wheel>` ohne Verwendung von :term:`distutils` oder :term:`setuptools`,
        einschließlich Distributionen mit C-Erweiterungen. enscons hat eine
@@ -107,7 +107,7 @@ Glossar
        Distributionen zu erstellen, oder auf :term:`twine`, um sie auf
        :term:`PyPI` hochzuladen.
 
-       `Docs <https://flit.readthedocs.io/en/latest/>`__ |
+       `Docs <https://flit.pypa.io>`__ |
        `GitHub <https://github.com/pypa/flit>`__ |
        `PyPI <https://pypi.org/project/flit>`__
 
@@ -181,8 +181,8 @@ Glossar
        speziellen :file:`__main__.py`-Datei, die das Deployment von
        Python-Applikationen stark vereinfachen können.
 
-       `Docs <https://pex.readthedocs.io/en/latest/>`__ |
-       `GitHub <https://github.com/pantsbuild/pex/>`__ |
+       `Docs <https://docs.pex-tool.org/>`__ |
+       `GitHub <https://github.com/pex-tool/pex>`__ |
        `PyPI <https://pypi.org/project/pex>`__
 
    pip
@@ -209,7 +209,7 @@ Glossar
    Pipenv
        Pipenv bündelt :term:`Pipfile`, :term:`pip` und :term:`virtualenv` in
        einer einzigen Toolchain. Es kann die ``requirements.txt`` automatisch
-       importieren und mithilfe von `safety <https://pyup.io/safety>`_ die
+       importieren und mithilfe von `safety <https://safetycli.com>`_ die
        Umgebung auch auf CVEs prüfen. Schließlich erleichtert es auch die
        Deinstallation von Paketen und deren Abhängigkeiten.
 
@@ -224,14 +224,14 @@ Glossar
        ``requirements.txt``-Datei. Die :pep:`PEP 508 Environment Markers
        <508#environment-markers>` werden ebenfalls unterstützt.
 
-       `Docs <https://pipenv.pypa.io/en/latest/pipfile/>`__ |
+       `Docs <https://pipenv.pypa.io/en/latest/pipfile.html>`__ |
        `GitHub <https://github.com/pypa/pipfile>`__
 
    pipx
        pipx untertüzt euch, Abhängigkeitskonflikte mit anderen auf dem System
        installierten Paketen zu vermeiden.
 
-       `Docs <https://pypa.github.io/pipx/>`__ |
+       `Docs <https://pipx.pypa.io/stable/>`__ |
        `GitHub <https://github.com/pypa/pipx>`__ |
        `PyPI <https://pypi.org/project/pipx/>`__
 
@@ -333,13 +333,13 @@ Glossar
        aber mit steiler Lernkurve und hohem Konfigurationsaufwand. Ab Version
        61.0.0 unterstützen die setuptools auch :term:`pyproject.toml`-Dateien.
 
-       `Docs <https://setuptools.readthedocs.io/en/latest/>`__ |
+       `Docs <https://setuptools.readthedocs.io/>`__ |
        `GitHub <https://github.com/pypa/setuptools>`__ |
        `PyPI <https://pypi.org/project/setuptools>`__
 
        .. seealso::
           `Packaging and distributing projects
-          <https://packaging.python.org/guides/distributing-packages-using-setuptools/>`_
+          <https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/>`_
 
    shiv
        Kommandozeilenprogramm zur Erstellung von Python-Zip-Apps, wie sie in
@@ -416,14 +416,14 @@ Glossar
        .. seealso::
           * :ref:`virtuelle-umgebungen`
           * `Creating Virtual Environments
-            <https://packaging.python.org/tutorials/installing-packages/#creating-and-using-virtual-environments>`_
+            <https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>`_
 
    Warehouse
        Die aktuelle Codebasis, die den :term:`Python Package Index`
        (:term:`PyPI`) antreibt. Sie wird auf :term:`pypi.org` gehostet.
 
        `Docs <https://warehouse.pypa.io/>`__ |
-       `GitHub <https://github.com/pypa/warehouse>`__
+       `GitHub <https://github.com/pypi/warehouse>`__
 
    wheel
        Distributionsformat, das mit :pep:`427` eingeführt wurde. Es soll das

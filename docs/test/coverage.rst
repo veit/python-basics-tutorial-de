@@ -218,7 +218,7 @@ enthalten, der so oder so ähnlich aussieht:
 
 .. code-block:: python
 
-    if __name__ == '__main__':
+    if __name__ == "__main__":
         main()
 
 Dieser Befehl weist Python an, :func:`main()` auszuführen, wenn wir das Modul
@@ -228,7 +228,7 @@ einer einfachen Pragma-Anweisung vom Testen ausgeschlossen:
 
 .. code-block:: python
 
-    if __name__ == '__main__': # pragma: no cover
+    if __name__ == "__main__":  # pragma: no cover
         main()
 
 Damit wird Coverage.py angewiesen, entweder eine einzelne Zeile oder einen

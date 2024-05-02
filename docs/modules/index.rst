@@ -69,7 +69,7 @@ Zeilen 25 und 26
     * zum Importieren in der Python-Shell oder einem anderen Python-Skript ist
       ``__name__`` der Dateiname:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> import wc
          >>> wc.words_occur()
@@ -79,7 +79,7 @@ Zeilen 25 und 26
 
       Alternativ könnt ihr auch ``words_occur`` direkt importieren:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> from wc import words_occur
          >>> words_occur()
@@ -94,7 +94,7 @@ Zeilen 25 und 26
       müsst ihr die Funktion ``reload`` aus dem
       :doc:`importlib <python3:library/importlib>`-Modul verwenden:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> import wc, importlib
          >>> importlib.reload(wc)

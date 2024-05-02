@@ -5,7 +5,7 @@ Die grundlegende Syntax für eine Python-Funktionsdefinition lautet
 
 .. code-block:: python
 
-    def function_name(param1, param2, ...):
+    def function_name(param1, param2):
         body
 
 Wie bei :doc:`Kontrollströmen </control-flows/index>` verwendet Python
@@ -15,7 +15,7 @@ aufrufen könnt, um die `Fakultät
 <https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik)>`_ einer Zahl zu
 erhalten:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> def fact(n):
@@ -25,6 +25,7 @@ erhalten:
     ...         f = f * n
     ...         n = n - 1
     ...     return f
+    ...
 
 Zeile 2
     Dies ist ein optionaler Dokumentationsstring, oder ``docstring``. Ihr könnt
@@ -51,7 +52,7 @@ Zeile 7
 Obwohl alle Python-Funktionen Werte zurückgeben, liegt es an euch, wie der
 Rückgabewert einer Funktion verwendet wird:
 
-.. code-block:: python
+.. code-block:: pycon
    :linenos:
 
     >>> fact(3)
@@ -72,14 +73,14 @@ Parameter
 
 Python bietet flexible Mechanismen zur Übergabe von Argumenten an Funktionen:
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> x, y = 2, 3
     >>> def func1(u, v, w):
-    ...     value = u + 2*v + w**2
+    ...     value = u + 2 * v + w**2
     ...     if value > 0:
-    ...         return u + 2*v + w**2
+    ...         return u + 2 * v + w**2
     ...     else:
     ...         return 0
     ...
@@ -88,7 +89,7 @@ Python bietet flexible Mechanismen zur Übergabe von Argumenten an Funktionen:
     >>> func1(x, w=y, v=2)
     15
     >>> def func2(u, v=1, w=1):
-    ...     return u + 4 * v + w ** 2
+    ...     return u + 4 * v + w**2
     ...
     >>> func2(5, w=6)
     45

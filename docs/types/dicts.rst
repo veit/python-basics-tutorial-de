@@ -10,7 +10,7 @@ Wie bei :doc:`lists` sind mehrere Dictionary-Methoden (:py:meth:`clear
 :py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`, :py:meth:`update
 <dict.update>` und :py:meth:`values <dict.values>`) verfügbar.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = {1: "eins", 2: "zwei"}
     >>> x[3] = "drei"
@@ -46,7 +46,7 @@ enthalten ist.
 :py:meth:`setdefault <dict.setdefault>` kann verwendet werden, um Zähler für
 die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> titles = ["Data types", "Lists", "Sets", "Lists"]
    >>> for title in titles:
@@ -62,7 +62,7 @@ die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
    wurde. Diese Klasse kann die oben genannten Operationen viel einfacher
    durchführen:
 
-   .. code-block:: python
+   .. code-block:: pycon
 
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
@@ -73,7 +73,7 @@ Dictionaries zusammenführen
 Ihr könnt zwei Dictionaries zu einem einzigen Dictionary zusammenfügen mit der
 :py:meth:`dict.update`-Methode:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
    >>> new_titles = {7.0: "Data types", 7.3: "Sets"}

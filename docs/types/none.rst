@@ -14,7 +14,7 @@ Das Vorhandensein von ``None`` lässt sich leicht überprüfen, da es in Python
 nur eine Instanz von ``None`` gibt (alle Verweise auf ``None`` verweisen auf
 dasselbe Objekt), und ``None`` ist nur mit sich selbst identisch:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> MyType = type(None)
    >>> MyType() is None
@@ -25,13 +25,16 @@ dasselbe Objekt), und ``None`` ist nur mit sich selbst identisch:
 
 In Python verlassen wir uns oft darauf, dass :class:`None` *falsy* ist:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> bool(None)
    False
 
 So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
-<../control-flows/if-elif-else>` überprüfen, ob :doc:`../types/strings` leer sind:
+<../control-flows/if-elif-else>` überprüfen, ob :doc:`../types/strings` leer
+sind:
+
+.. code-block:: pycon
 
    >>> myval = ""
    >>> if not myval:
@@ -42,7 +45,7 @@ So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
 :class:`None` steht für Leere
 -----------------------------
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
    >>> third_title = titles.get("7.3")
@@ -55,7 +58,7 @@ Der Standardrückgabewert einer Funktion ist :class:`None`
 Eine Prozedur in Python ist beispielsweise nur eine Funktion, die nicht explizit
 einen Wert zurückgibt, was bedeutet, dass sie standardmäßig ``None`` zurückgibt:
 
-.. code-block:: python
+.. code-block:: pycon
 
    >>> def myfunc():
    ...     pass

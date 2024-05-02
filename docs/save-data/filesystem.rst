@@ -111,7 +111,7 @@ Relative Pfadnamen
       :func:`python3:os.getcwd`, um das aktuelle Arbeitsverzeichnis von Python
       zu ermitteln:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> import os
          >>> os.getcwd()
@@ -131,7 +131,7 @@ Relative Pfadnamen
       Um euch die Inhalte des aktuellen Verzeichnisses anzeigen zu lassen,
       könnt ihr folgendes eingeben:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
          >>> os.listdir(os.curdir)
          ['.gnupg', '.bashrc', '.local', '.bash_history', '.ssh', '.bash_logout', '.profile', '.idlerc', '.viminfo', '.config', 'Downloads', 'Documents', '.python_history']
@@ -139,9 +139,9 @@ Relative Pfadnamen
       Ihr könnt jedoch auch in ein anderes Verzeichnis wechseln und euch dann
       das aktuelle Arbeitsverzeichnis ausgeben lassen:
 
-      .. code-block:: python
+      .. code-block:: pycon
 
-         >>> os.chdir('Downloads')
+         >>> os.chdir("Downloads")
          >>> os.getcwd()
          '/home/veit/Downloads'
 
@@ -156,10 +156,10 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     konstruiert Pfadnamen für verschiedene Betriebssysteme, :abbr:`z.B. (zum
     Beispiel)` unter Windows:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> print(os.path.join('save-data', 'filesystem.rst'))
+        >>> print(os.path.join("save-data", "filesystem.rst"))
         save-data\filesystem.rst
 
     Dabei werden die Argumente interpretiert als eine Reihe von
@@ -171,10 +171,10 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     Wenn ihr das Gleiche unter Linux/macOS ausführt, erhaltet ihr hingegen als
     Separator ``/``:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> print(os.path.join('save-data', 'filesystem.rst'))
+        >>> print(os.path.join("save-data", "filesystem.rst"))
         save-data/filesystem.rst
 
     Ihr könnt mit dieser Methode also Dateipfade unabhängig vom Betriebssystem,
@@ -186,17 +186,21 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     unter Windows, wobei entweder Schrägstriche (``/``) oder doppelte
     Backslashes (``\\``) in den Zeichenketten verwendet werden können:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> print(os.path.join('python-basics-tutorial-de\\docs', 'save-data\\filesystem.rst'))
+        >>> print(
+        ...     os.path.join(
+        ...         "python-basics-tutorial-de\\docs", "save-data\\filesystem.rst"
+        ...     )
+        ... )
         python-basics-tutorial-de\docs\save-data\filesystem.rst
 
 :func:`os.path.split`
     gibt ein Tupel mit zwei Elementen zurück, das den Basisnamen eines Pfades
     vom Rest des Pfades trennt, :abbr:`z.B. (zum Beispiel)` unter macOS:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
         >>> print(os.path.split(os.getcwd()))
@@ -205,7 +209,7 @@ betriebssystemspezifische Syntax verwenden zu müssen.
 :func:`python3:os.path.basename`
     gibt nur den Basisnamen des Pfades zurück:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
         >>> print(os.path.basename(os.getcwd()))
@@ -214,7 +218,7 @@ betriebssystemspezifische Syntax verwenden zu müssen.
 :func:`python3:os.path.dirname`
     gibt den Pfad bis zum Basisnamen zurück:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
         >>> print(os.path.dirname(os.getcwd()))
@@ -224,10 +228,10 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     gibt die gepunktete Erweiterungsnotation aus, die von den meisten
     Dateisystemen verwendet wird, um den Dateityp anzugeben:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> print(os.path.splitext('filesystem.rst'))
+        >>> print(os.path.splitext("filesystem.rst"))
         ('filesystem', '.rst')
 
     Das letzte Element des zurückgegebenen Tupels enthält die gepunktete
@@ -239,18 +243,18 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     geeignet um das Verzeichnis der untersten Ebene zu finden, das jede Datei
     in einer Gruppe von Dateien enthält:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> print(os.path.commonpath(['save-data/filesystem.rst', 'save-data/index.rst']))
+        >>> print(os.path.commonpath(["save-data/filesystem.rst", "save-data/index.rst"]))
         save-data
 
 :func:`python3:os.path.expandvars`
     erweitert Umgebungsvariablen in Pfaden:
 
-    .. code-block::
+    .. code-block:: pycon
 
-        >>> os.path.expandvars('$HOME/python-basics-tutorial-de')
+        >>> os.path.expandvars("$HOME/python-basics-tutorial-de")
         '/home/veit/python-basics-tutorial-de'
 
 Nützliche Konstanten und Funktionen
@@ -261,7 +265,7 @@ Nützliche Konstanten und Funktionen
     betriebssystemspezifischen Details zu handhaben, :abbr:`z.B. (zum
     Beispiel)`:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
         >>> os.name
@@ -274,15 +278,16 @@ Nützliche Konstanten und Funktionen
     Auf macOS und Linux lautet die Antwort ``posix``. Je nach Plattform könnt
     ihr mit dieser Antwort spezielle Operationen durchführen:
 
-    .. code-block::
+    .. code-block:: pycon
 
         >>> import os
-        >>> if os.name == 'posix':
-        ...     root_dir = '/'
-        ... elif os.name == 'nt':
-        ...     root_dir = 'C:\\'
+        >>> if os.name == "posix":
+        ...     root_dir = "/"
+        ... elif os.name == "nt":
+        ...     root_dir = "C:\\"
         ... else:
-        ...     print('The operating system was not recognised!')
+        ...     print("The operating system was not recognised!")
+        ...
 
 Informationen über Dateien erhalten
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -336,16 +341,16 @@ es werden jedoch auch spezifischere Dateisystemfunktionen bereitgestellt.
     benennt oder verschiebt eine Datei oder ein Verzeichnis, :abbr:`z.B. (zum
     Beispiel)`
 
-    .. code-block:: python
+    .. code-block:: pycon
 
-        >>> os.rename('filesystem.rst', 'save-data/filesystem.rst')
+        >>> os.rename("filesystem.rst", "save-data/filesystem.rst")
 
 :func:`os.remove`
     löscht Dateien, :abbr:`z.B. (zum Beispiel)`
 
-    .. code-block:: python
+    .. code-block:: pycon
 
-        >>> os.remove('filesystem.rst')
+        >>> os.remove("filesystem.rst")
 
 :func:`os.rmdir`
     löscht ein leeres Verzeichnis. Um nicht leere Verzeichnisse zu entfernen,
@@ -355,9 +360,9 @@ es werden jedoch auch spezifischere Dateisystemfunktionen bereitgestellt.
 :func:`os.makedirs`
     erstellt ein Verzeichnis mit allen notwendigen Zwischenverzeichnissen, :abbr:`z.B. (zum Beispiel)`
 
-    .. code-block:: python
+    .. code-block:: pycon
 
-        >>> os.makedirs('save-data/filesystem')
+        >>> os.makedirs("save-data/filesystem")
 
 Verarbeitung aller Dateien in einem Verzeichnis
 -----------------------------------------------
@@ -385,7 +390,7 @@ onerror=None, followlinks= False)``.
     werden. Üblicherweise wird symbolische Links nicht gefolgt, es sei denn, ihr
     gebt den Parameter ``follow-links=True`` an.
 
-.. code-block:: python
+.. code-block:: pycon
     :linenos:
 
     >>> import os

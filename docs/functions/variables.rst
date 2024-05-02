@@ -7,7 +7,7 @@ Lokale, nicht-lokale und globale Variablen
 Hier kehren wir zur Definition von ``fact`` vom Anfang dieses
 :doc:`index`-Kapitels zurück:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def fact(n):
     ...     """Return the factorial of the given number."""
@@ -16,6 +16,7 @@ Hier kehren wir zur Definition von ``fact`` vom Anfang dieses
     ...         f = f * n
     ...         n = n - 1
     ...     return f
+    ...
 
 Sowohl die Variablen ``f`` als auch ``n`` sind lokal für einen bestimmten Aufruf
 der Funktion ``fact``; Änderungen an ihnen, die während der Ausführung der
@@ -32,14 +33,15 @@ sie als global deklarieren, oder von Code, der sich nicht innerhalb einer
 Funktion befindet, aufgerufen und geändert werden. Hier ein Beispiel, das den
 Unterschied zwischen lokalen und globalen Variablen verdeutlicht:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> def my_func():
     ...     global x
     ...     x = 1
     ...     y = 2
+    ...
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = 3
     >>> y = 4

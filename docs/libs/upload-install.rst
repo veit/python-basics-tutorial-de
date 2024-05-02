@@ -9,7 +9,7 @@ Hierfür müsst ihr euch bei *Test PyPI* registrieren. *Test-PyPI* ist eine
 separate Instanz, die zum Testen und Experimentieren vorgesehen ist. Um dort
 ein Konto einzurichten, geht ihr auf https://test.pypi.org/account/register/.
 Weitere Informationen findet ihr unter `Using TestPyPI
-<https://packaging.python.org/guides/using-testpypi/>`_.
+<https://packaging.python.org/en/latest/guides/using-testpypi/>`_.
 
 Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
 

@@ -10,7 +10,7 @@ beliebige ``Square``-Instanz zu berechnen und zurückzugeben. Wie die meisten
 benutzerdefinierten Methoden wird ``circumference`` mit einer Syntax aufgerufen,
 die dem Zugriff auf Instanzvariablen ähnelt:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Square:
     ...     def __init__(self):
@@ -32,7 +32,7 @@ Diese Praxis ist weniger praktisch und wird fast nie angewandt, da das erste
 Argument einer Methode, die auf diese Weise aufgerufen wird, eine Instanz der
 Klasse sein muss, in der die Methode definiert ist, und weniger klar ist:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> print(Square.circumference(s))
     20
@@ -48,13 +48,14 @@ diese Argumente akzeptieren. Diese Version von ``Square`` fügt der
 bestimmten Kantenlänge erstellen könnt, ohne die Kantenlänge nach der Erstellung
 eines Quadrats festlegen zu müssen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> class Square:
     ...     def __init__(self, length):
     ...         self.length = length
     ...     def circumference(self):
     ...         return 4 * self.length
+    ...
 
 .. warning::
 
@@ -70,16 +71,16 @@ Mit dieser Definition von ``Square`` könnt ihr Quadrate mit beliebigen
 Kantenlängen mit einem Aufruf der Klasse ``Square`` erstellen. Im Folgenden wird
 ein Quadrat mit der Kantenlänge ``3`` erstellt:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    s = Square(3)
+    ...     s = Square(3)
 
 Alle Standardfunktionen von Python – Standardargumente, zusätzliche Argumente,
 Schlüsselwortargumente :abbr:`usw. (und so weiter)` – können mit Methoden
 verwendet werden. Ihr hättet die erste Zeile von ``__init__`` wie folgt
 definieren können:
 
-.. code-block:: python
+.. code-block:: pycon
 
     ...     def __init__(self, length=1):
 
@@ -121,7 +122,7 @@ Zeile 11
 Zeile 14
     fügt initialisierte ``Circle``-Instanzen der ``circles``-Liste hinzu.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import circle
     >>> c1 = circle.Circle(1)
@@ -156,7 +157,7 @@ Zeile 22
     Durch die Verwendung einer Klassenmethode anstelle einer statischen Methode
     müsst ihr den Klassennamen nicht hart in ``circumferences`` codieren.
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import circle_cm
     >>> c1 = circle_cm.Circle(1)

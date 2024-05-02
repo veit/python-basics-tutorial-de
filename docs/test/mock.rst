@@ -212,7 +212,7 @@ verschieben, denn wir werden ihn in vielen Testmethoden brauchen:
 
     @pytest.fixture()
     def mock_itemsdb():
-        with mock.patch.object(items"ItemsDB") as MockItemsDB:
+        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
             yield MockItemsDB.return_value
 
 Diese Fixture mockt das ``ItemsDB``-Objekt und gibt den ``return_value`` zurück,
@@ -269,7 +269,7 @@ der Erstellung gelöst werden:
 
     @pytest.fixture()
     def mock_itemsdb():
-        with mock.patch.object(items"ItemsDB", autospec=True) as MockItemsDB:
+        with mock.patch.object(items, "ItemsDB", autospec=True) as MockItemsDB:
             yield MockItemsDB.return_value
 
 Üblicherweise wird dieser Schutz mit ``autospec`` immer eingebaut. Die einzige
@@ -476,7 +476,7 @@ Es gibt auch einige spezielle Mocking-Bibliotheken:
   - `pytest-dynamodb <https://pypi.org/project/pytest-dynamodb/>`_.
 
 - Zum Testen von HTTP-Servern könnt ihr `pytest-httpserver
-  <https://pypi.org/project/pytest-httpserver/>`_ verwenden.
+  <https://pypi.org/project/pytest_httpserver/>`_ verwenden.
 - Zum Mocken von `requests <https://pypi.org/project/requests/>`_ könnt ihr
   `responses <https://pypi.org/project/responses/>`_ oder `betamax
   <https://pypi.org/project/betamax/>`_ verwenden.

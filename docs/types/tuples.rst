@@ -19,7 +19,7 @@ benötigt.
     ()
     (1,)
     (1, 2, 3, 5)
-    (1, "2.", 3.0, ["4a", "4b"], (5.1,5.2))
+    (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
 
 Zeile 2
     Ein Tupel mit einem Element benötigt ein Komma.
@@ -31,7 +31,7 @@ Zeile 4
 Eine Liste kann mit Hilfe der eingebauten Funktion ``tuple`` in ein Tupel
 umgewandelt werden:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = [1, 2, 3, 5]
     >>> tuple(x)
@@ -40,7 +40,7 @@ umgewandelt werden:
 Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion list in eine Liste
 umgewandelt werden:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> x = (1, 2, 3, 4)
     >>> list(x)

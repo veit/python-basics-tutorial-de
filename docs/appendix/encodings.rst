@@ -13,13 +13,13 @@ folgenden String-Konstanten, die alle in den ASCII-Zeichensatz fallen:
 .. code-block:: python
 
     # Some strings for ctype-style character classification
-    whitespace = ' \t\n\r\v\f'
-    ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-    ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    whitespace = " \t\n\r\v\f"
+    ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
+    ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     ascii_letters = ascii_lowercase + ascii_uppercase
-    digits = '0123456789'
-    hexdigits = digits + 'abcdef' + 'ABCDEF'
-    octdigits = '01234567'
+    digits = "0123456789"
+    hexdigits = digits + "abcdef" + "ABCDEF"
+    octdigits = "01234567"
     punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
     printable = digits + ascii_letters + punctuation + whitespace
 
@@ -28,7 +28,7 @@ sein. ``hexdigits`` und ``octdigits`` beziehen sich auf die
 Hexadezimal- :abbr:`bzw. (beziehungsweise)` Oktalwerte. Ihr könnt diese
 Konstanten für alltägliche String-Manipulation verwenden:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import string
     >>> hepy = "Hello Pythonistas!"
@@ -80,7 +80,7 @@ nicht von vornherein mit einer Kodierung versehen sind.
 :meth:`python3:str.encode` und :meth:`python3:bytes.decode` sind die Methoden
 des Übergangs vom einen zum anderen:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> "schön".encode("utf-8")
     b'sch\xc3\xb6n'
@@ -102,9 +102,9 @@ zwei Bytes, ``c3`` und ``b6`` als Hexadezimalwerte.
 Mit :meth:`python3:bytes.fromhex` könnt ihr die Hexadezimalwerte in Bytes
 umwandeln:
 
-.. code-block:: python
+.. code-block:: pycon
 
-    >>> bytes.fromhex('c3 b6')
+    >>> bytes.fromhex("c3 b6")
     b'\xc3\xb6'
 
 UTF-16 und UTF-32
@@ -114,7 +114,7 @@ Der Unterschied zwischen diesen und UTF-8 ist in der Praxis erheblich. Im
 Folgenden möchte ich euch nur kurz an einem Beispiel zeigen, dass hier eine
 eine Round-Trip-Konvertierung einfach fehlschlagen kann:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> hepy = "Hello Pythonistas!"
     >>> hepy.encode("utf-8")
@@ -153,7 +153,7 @@ Die einzige Ausnahme könnte :func:`open() <python3:open>` sein, das
 plattformabhängig ist und daher vom Wert von
 :func:`python3:locale.getpreferredencoding` abhängt:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import locale
     >>> locale.getpreferredencoding()
