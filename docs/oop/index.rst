@@ -18,3 +18,4 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    property
    namespaces
    types
+   design/index
