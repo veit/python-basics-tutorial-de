@@ -35,25 +35,30 @@ In Python können wir dies mit :py:class:`abc.ABC` und
 
     from abc import ABC, abstractmethod
 
+
     # Abstract Products
     class Oval(ABC):
         @abstractmethod
         def circumference(self):
             pass
 
+
     class Polygon(ABC):
         @abstractmethod
         def circumference(self):
             pass
+
 
     # Concrete Products
     class Circular(Oval):
         def circumference(self):
             return "Circular Oval"
 
+
     class SquarePolygon(Polygon):
         def circumference(self):
             return "Square Polygon"
+
 
     # Abstract Factory
     class FormFactory(ABC):
@@ -65,6 +70,7 @@ In Python können wir dies mit :py:class:`abc.ABC` und
         def create_polygon(self):
             pass
 
+
     # Concrete Factories
     class CircularFactory(FormFactory):
         def create_oval(self):
@@ -72,6 +78,7 @@ In Python können wir dies mit :py:class:`abc.ABC` und
 
         def create_polygon(self):
             return None  # Circular doesn’t make polygons
+
 
     class SquareFactory(FormFactory):
         def create_oval(self):
