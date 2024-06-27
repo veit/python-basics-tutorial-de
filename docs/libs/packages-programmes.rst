@@ -55,9 +55,19 @@ PyInstaller and PyOxidizer
 <https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bündeln eine
 Python-Anwendung und alle ihre Abhängigkeiten in einem einzigen Paket.
 
+.. _briefcase:
+
 Briefcase
 ---------
 
-`Briefcase <https://beeware.org/project/projects/tools/briefcase/>`_ ist ein
+`Briefcase <https://beeware.org/project/projects/tools/briefcase/>`__ ist ein
 Werkzeug zur Konvertierung eines Python-Projekts in eine eigenständige native
 Anwendung für Mac, Windows, Linux, iPhone/iPad und Android.
+
+.. _beeware:
+
+BeeWare
+-------
+
+`BeeWare <https://beeware.org>`__ konvertiert euer Python-Projekt in eine
+eigenständige iOS, Android, Windows, MacOS, Linux, Web und tvOS-App.
