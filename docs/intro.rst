@@ -94,10 +94,20 @@ Variablentypen
     aber die Anzahl der Typfehler ist meist überschaubar und die Flexibilität
     der dynamischen Typisierung wiegt die Probleme meist auf.
 Unterstützung für mobile Geräte
-    Auch wenn in den letzten Jahren die Anzahl der mobilen Geräte stark
-    zugenommen hat, so ist Python in diesem Bereich doch nicht stark vertreten.
-    Es gibt zwar ein paar Optionen, Python auf mobile Geräte zu verteilen und
-    auszuführen, dies ist jedoch nicht immer einfach.
+    Es gibt mittlerweile einige Optionen, Python auf mobilen Geräten laufen zu
+    lassen, :abbr:`z.B. (zum Beispiel)` mit :ref:`briefcase` oder
+    :ref:`beeware`. Python selbst wird ab Version 3.13 `Tier 3
+    <https://peps.python.org/pep-0011/#tier-3>`_ :abbr:`u.a. (unter anderem)`
+    für Windows, iOS und Pi OS bieten. Zudem soll es zukünftig einfacher werden,
+    :ref:`wheels` auch für mobile Endgeräte zu erstellen, indem Tools wie
+    :doc:`libs/cibuildwheel` und :term:`setuptools` erweitert werden.
+
+    .. seealso::
+       * `The Python Language Summit 2024: Python on Mobile
+         <https://pyfound.blogspot.com/2024/06/python-language-summit-2024-python-on-mobile.html>`_
+       * :pep:`730`
+       * :pep:`738`
+
 Unterstützung für nebenläufige Berechnungen
     Prozessoren mit mehreren Kernen sind inzwischen weit verbreitet und führen
     in vielen Bereichen zu erheblichen Leistungssteigerungen. Die
