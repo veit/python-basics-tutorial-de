@@ -1,5 +1,5 @@
-Vererbung
-=========
+Klassen und Vererbung
+=====================
 
 Die Vererbung in Python ist einfacher und flexibler als die Vererbung in
 kompilierten Sprachen wie Java und C++, da die dynamische Natur von Python der
