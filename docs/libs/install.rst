@@ -72,6 +72,32 @@ auch nur für euch selbst nutzbar ist:
 
    * :doc:`python3:installing/index`
 
+Proxy-Server
+~~~~~~~~~~~~
+
+Um Python-Pakete über einen Proxy-Server zu installieren, könnt ihr folgendes
+eingeben: :samp:`python -m pip install --proxy
+http://{USER_NAME}{:{PASSWORD}}@{PROXYSERVER_NAME}:{PORT} {PKG_NAME}`
+
+Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
+
+.. tab:: Linux
+
+   :abbr:`z.B. (zum Beispiel)` in der :file:`~/.bashrc` mit:
+
+   .. code-block:: bashrc
+
+      HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
+      Export HTTP_PROXY
+
+.. tab:: Windows
+
+   Fügt die folgende Zeile den Umgebungsvariablen hinzu:
+
+   .. code-block:: ps1
+
+      set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
+
 .. _virtuelle-umgebungen:
 
 Virtuelle Umgebungen
