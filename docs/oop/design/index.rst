@@ -28,6 +28,14 @@ Menge Boilerplate-Code zu reduzieren. Im folgenden :doc:`Strategiemuster
 <strategy>`-Abschnitt werden wir das Strategiemuster mithilfe von
 Funktionsobjekten refaktorisieren.
 
+.. seealso::
+   * Harry Percival, Bob Gregory: `Architecture Patterns with Python
+     <https://www.oreilly.com/library/view/architecture-patterns-with/9781492052197/>`_
+   * Leonardo Giordani: `Clean Architectures in Python
+     <https://www.thedigitalcatbooks.com/pycabook-introduction/>`_
+   * Gregor Hohpe, Bobby Woolf: `Enterprise Integration Patterns
+     <https://www.pearson.de/enterprise-integration-patterns-designing-building-and-deploying-messaging-solutions-9780133065107>`_
+
 ----
 
 .. [#] Ralph Johnson, Co-Autor des `Entwurfsmuster
