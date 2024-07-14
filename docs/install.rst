@@ -1,43 +1,57 @@
 Installation
 ============
 
-Die Installation von Python ist einfach. Der erste Schritt besteht darin, die
-aktuelle Version von `www.python.org/downloads
+Die Installation von Python kann einfach sein. Der erste Schritt besteht darin,
+die aktuelle Version von `www.python.org/downloads
 <https://www.python.org/downloads/>`_ herunterzuladen. Das Tutorial basiert auf
-Python 3.10, falls ihr jedoch Python 3.7 oder 3.8 installiert habt, ist das auch
-kein Problem.
+Python 3.12.4, falls ihr jedoch Python 3.8 oder neuer installiert habt, sollte
+das auch kein Problem sein.
 
 .. tab:: Linux
 
-   Bei den meisten Linux-Distributionen ist Python bereits installiert. Wenn
-   eine vorkompilierte Version von Python in eurer Linux-Distribution existiert,
-   empfehle ich euch, diese zu verwenden.
-
-   Wenn ihr dennoch eine aktuellere Python-Version installieren wollt, könnt ihr
-   dies :abbr:`z.B. (zum Beispiel)` für Debian oder Ubuntu wie folgt tun:
+   Python ist bereits in der `Linux Standard Base
+   <https://wiki.linuxfoundation.org/lsb/start>`_ enthalten. Die meisten
+   Linux-Distributionen wollen jedoch nichts mit dem sprachspezifischen
+   Paketmanager zu tun haben, sondern alles über ``rpm``-/``deb``- :abbr:`o.ä.
+   (oder ähnliche)` Paketmanager etc. verwalten. Sie wollen auch nicht, dass
+   ihre Pakete für andere Dinge als Systemzwecke verwendet werden. Daher solltet
+   ihr euch euer eigenes Python installieren. Unter Ubuntu geht dies :abbr:`z.B.
+   (zum Beispiel)` mit:
 
    .. code-block:: console
 
-      $ wget https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
-      $ tar xf Python-3.12.3.tgz
-      $ cd Python-3.12.3
+      $ wget https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tgz
+      $ tar xf Python-3.12.4.tgz
+      $ cd Python-3.12.4
       $ ./configure --enable-optimizations
       $ sudo make altinstall
 
+   .. warning::
+      Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst,
+      um nach Sicherheitsupdates zu suchen, da es keinen integrierten
+      Auto-Updater gibt.
+
+   Werden ältere Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
+   Bibliotheken mit :doc:`test/tox` zu testen, verwende ich `deadsnakes
+   <https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa>`_.
+
 .. tab:: macOS
 
-   Ihr benötigt eine Python-Version, die zu eurem macOS und eurem Prozessor
-   passt. Wenn ihr die richtige Variante ermittelt habt, könnt ihr die
-   Image-Datei herunterladen und mit einem Doppelklick mounten und anschließend
-   das darin enthaltene Installationsprogramm starten. Anschließend befindet
-   sich Python im :file:`Programme`-Ordner.
+   Ihr könnt Python direkt von https://www.python.org/downloads/macos/ beziehen.
+   Die ``universal2``-Installer sind auch auf Intel-basierten Umgebungen
+   lauffähig.
 
-   Wenn ihr `Homebrew <https://brew.sh/>`_ verwendet, könnt ihr Python auch
-   einfach im Terminal installieren mit:
+   Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst, um
+   nach Sicherheitsupdates zu suchen, da es keinen integrierten Auto-Updater
+   gibt. Alternativ könnt ihr auch `MOPUp <https://pypi.org/project/MOPUp/>`_
+   installieren mit ``python -m pip install MOPUp`` und anschließend regelmäßig
+   ``mopup`` aufrufen, um die aktuellste Version eurer Python-Installation zu
+   erhalten.
 
-   .. code-block:: console
-
-      $ brew install python3
+   Werden ältere Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
+   Bibliotheken mit :doc:`test/tox` zu testen, kann  `python-build-standalone
+   <https://gregoryszorc.com/docs/python-build-standalone/main/building.html#macos>`_
+   verwendet werden.
 
 .. tab:: Windows
 
@@ -47,12 +61,12 @@ kein Problem.
    #. Ladet das aktuelle Installationsprogramm von `Python Releases for Windows
       <https://www.python.org/downloads/windows/>`_ herunter, :abbr:`z.B. (zum
       Beispiel)` `Windows installer (64-bit)
-      <https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe>`_.
+      <https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe>`_.
    #. Startet das Installationsprogramm. Sofern ihr die notwendigen
       Berechtigungen habt, installiert Python mit der Option *Install launcher
       for all users*. Dies sollte Python in
-      :file:`C:\\Program Files\\Python310-64` installieren. Außerdem sollte *Add
-      Python 3.10 to PATH* aktiviert sein damit dieser Pfad zur
+      :file:`C:\\Program Files\\Python312-64` installieren. Außerdem sollte *Add
+      Python 3.12 to PATH* aktiviert sein damit dieser Pfad zur
       Python-Installation auch in der Liste der ``PATH``-Umgebungsvariablen
       eingetragen wird.
    #. Schließlich könnt ihr die Installation nun überprüfen, indem ihr in der
@@ -61,9 +75,9 @@ kein Problem.
       .. code-block:: ps1con
 
          C:\> python -V
-         Python 3.10.6
+         Python 3.12.4
 
-.. note::
-   Wenn auf eurem System bereits Python installiert ist, könnt ihr problemlos
-   euer eigenes Python installieren. Eine neue Version ersetzt nicht die alte
-   sondern wird an einem anderen Ort installiert.
+   .. warning::
+      Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst,
+      um nach Sicherheitsupdates zu suchen, da es keinen integrierten
+      Auto-Updater gibt.
