@@ -4,111 +4,49 @@ Hinzufügen weiterer Python-Bibliotheken
 Obwohl Pythons :doc:`batteries`-Philosophie bedeutet, dass ihr mit der
 Standardinstallation von Python bereits eine Menge machen könnt, wird
 unweigerlich die Situation kommen, in der ihr eine Funktionalität benötigt,
-die nicht in Python enthalten ist. Dieser Abschnitt gibt einen Überblick über
-die euch dann zur Verfügung stehenden Möglichkeiten.
-
-Wenn ihr Glück habt, findet ihr die zusätzlich benötigte Funktionalität in einem
-Paket für euer Betriebssystem – mit einem ausführbaren Windows- oder
-macOS-Installationsprogramm oder einem Paket für eure Linux-Distribution.
-
-Dies ist eine der einfachsten Möglichkeiten, eine Bibliothek zu eurer
-Python-Installation hinzuzufügen, da sich das Installationsprogramm oder euer
-Paketmanager um alle Details kümmert, um das Modul korrekt zu eurem System
-hinzuzufügen. Im Allgemeinen sind solche vorgefertigten Pakete jedoch nicht die
-Regel für Python-Software.
-
-Installation von Python-Bibliotheken mit ``pip`` und ``venv``
--------------------------------------------------------------
+die nicht in Python enthalten ist.
 
 Wenn ihr ein Modul eines Drittanbieters benötigt, das nicht für eure Plattform
-vorgefertigt ist, müsst ihr euch an dessen Quelldistribution wenden. Dies bringt
+vorgefertigt ist, müsst ihr dessen Quelldistribution verwenden. Dies bringt
 jedoch zwei Probleme mit sich:
 
 #. Um die Quelldistribution zu installieren, müsst ihr sie finden und
    herunterladen.
 #. Es werden bestimmte Python-Pfade und Berechtigungen eures Systems erwartet.
 
-Python bietet :term:`pip` als aktuelle Lösung für beide Probleme an. ``pip``
+Python bietet :ref:`pip` als aktuelle Lösung für beide Probleme an. ``pip``
 versucht, das Modul im :term:`Python Package Index` (:term:`PyPI`) zu finden,
 lädt es und alle Abhängigkeiten herunter und kümmert sich um die Installation.
-Die grundlegende Syntax von ``pip`` ist recht einfach: um :abbr:`z.B. (zum
-Beispiel)` die beliebte ``requests``-Bibliothek von der Kommandozeile aus zu
-installieren, müsst ihr nur Folgendes tun:
+Ihr könnt auch :term:`pypi.org` direkt aufrufen und nach Paketen zu suchen oder
+die Pakete nach Kategorien filtern.
 
-.. code-block:: console
+.. warning::
+   Installiert niemals irgendetwas mit ``pip`` in das globale Python, auch nicht
+   mit dem ``--user`` Flag. Verwendet immer :ref:`virtuelle-umgebungen`. So
+   vermeidet ihr, dass eure Python-Installation mit Bibliotheken verunreinigt
+   wird, die ihr installiert und dann vergesst. Jedes Mal, wenn ihr etwas Neues
+   machen müsst, solltet ihr eine neue virtuelle Umgebung erstellen. Damit
+   vermeidet ihr auch Bibliothekskonflikte zwischen verschiedenen Projekten.
 
-    $ python3.8 -m pip install requests
+.. tip::
+   wir empfehlen euch, ``pip`` so zu konfigurieren, dass es nicht möglich ist,
+   Python-Pakete global zu installieren. Hierfür könnt ihr folgendes in eure
+   :file:`~/.config/pip/pip.conf` eintragen:
 
-Wenn ihr eine bestimmte Version eines Pakets angeben wollt, könnt ihr die
-Versionsnummern einfach anhängen:
+   .. code-block:: ini
 
-.. code-block:: console
-
-    $ python3.8 -m pip install requests==2.28.1
-
-oder
-
-.. code-block:: console
-
-    $ python3.8 -m pip install requests>=2.28.0
-
-Installieren mit der ``--user``-Option
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Häufig werdet ihr ein Python-Paket jedoch nicht in der Hauptinstanz von Python
-installieren können oder wollen. Vielleicht benötigt ihr eine aktuellere Version
-einer Bibliothek, aber eine andere Anwendung benötigt noch eine ältere Version.
-Oder vielleicht habt ihr keine ausreichenden Administratorrechte, um das
-Standard-Python des Systems zu ändern. In solchen Fällen besteht eine
-Möglichkeit darin, die Bibliothek mit dem ``--user``-Flag zu installieren:
-dieses installiert die Bibliothek in das Home-Verzeichnis, wo es dann allerdings
-auch nur für euch selbst nutzbar ist:
-
-.. code-block:: console
-
-    $ python3.8 -m pip install --user requests
-
-.. seealso::
-
-   * :doc:`python3:installing/index`
-
-Proxy-Server
-~~~~~~~~~~~~
-
-Um Python-Pakete über einen Proxy-Server zu installieren, könnt ihr folgendes
-eingeben: :samp:`python -m pip install --proxy
-http://{USER_NAME}{:{PASSWORD}}@{PROXYSERVER_NAME}:{PORT} {PKG_NAME}`
-
-Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
-
-.. tab:: Linux
-
-   :abbr:`z.B. (zum Beispiel)` in der :file:`~/.bashrc` mit:
-
-   .. code-block:: bashrc
-
-      HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
-      Export HTTP_PROXY
-
-.. tab:: Windows
-
-   Fügt die folgende Zeile den Umgebungsvariablen hinzu:
-
-   .. code-block:: ps1
-
-      set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
+      [global]
+      require-virtualenv = true
 
 .. _virtuelle-umgebungen:
 
 Virtuelle Umgebungen
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
-Es gibt jedoch noch eine bessere Möglichkeit, wenn ihr die Installation von
-Bibliotheken im Python-System vermeiden wollt. Diese Option wird als *virtuelle
-Umgebung* (``virtualenv``) bezeichnet. Sie ist eine in sich geschlossene
+Eine *virtuelle Umgebung* (``virtualenv``) ist eine in sich geschlossene
 Verzeichnisstruktur, die sowohl eine Installation von Python als auch die
-zusätzlichen Pakete enthält. Da die gesamte Python-Umgebung in der virtuellen
-Umgebung enthalten ist, können die dort installierten Bibliotheken und Module
+zusätzlichen Pakete enthält. Da die gesamte Python-Umgebung in diesem
+Verzeichnis enthalten ist, können die dort installierten Bibliotheken und Module
 nicht mit denen im Hauptsystem oder in anderen virtuellen Umgebungen
 kollidieren, so dass verschiedene Anwendungen unterschiedliche Versionen von
 Python und seinen Paketen verwenden können. Das Erstellen und Verwenden einer
@@ -124,12 +62,12 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1
 
-         > python -m venv myenv
+         > py -m venv myenv
 
    Hiermit wird die Umgebung mit Python und :term:`pip` in einem Verzeichnis
-   namens ``myenv`` erstellt.
+   namens :samp:`myenv` erstellt.
 
 #. Anschließend könnt ihr diese Umgebung aktivieren, sodass beim nächsten Aufruf
    von ``python`` das Python aus eurer neuen Umgebung verwendet wird:
@@ -138,28 +76,28 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
       .. code-block:: console
 
-         $ source myenv/bin/activate
+         $ . myenv/bin/activate
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1
 
          > myenv\Scripts\activate.bat
 
-#. Python-Pakete nur für diese virtuelle Umgebung
-   installieren:
+#. Python-Pakete nur für diese virtuelle Umgebung installieren, :abbr:`z.B. (zum
+Beispiel)` die beliebte ``pandas``-Bibliothek:
 
    .. tab:: Linux/macOS
 
       .. code-block:: console
 
-         (myenv) $ python -m pip install requests
+         (myenv) $ python -m pip install pandas
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1
 
-         (myenv) > python.exe -m pip install requests
+         (myenv) > python.exe -m pip install pandas
 
 #. Wenn ihr eure Arbeit an diesem Projekt beenden wollt, könnt ihr die virtuelle
    Umgebung wieder deaktivieren mit
@@ -172,17 +110,103 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
    .. tab:: Windows
 
-      .. code-block:: console
+      .. code-block:: ps1
 
          (myenv) > deactivate
 
 .. seealso::
    * :doc:`python3:tutorial/venv`
 
-PyPI
-~~~~
+.. _pip:
 
-Der :term:`Python Package Index` (:term:`PyPI`) ist der Standard-Paket-Index,
-jedoch keineswegs das einzige Repository für Python-Code. Ihr könnt ihn direkt
-unter :term:`pypi.org` aufrufen und nach Paketen suchen oder die Pakete nach
-Kategorien filtern.
+``pip``
+-------
+
+Die grundlegende Syntax von ``pip`` ist recht einfach:
+
+.. code-block:: console
+
+    $ python -m pip install pandas
+
+Wenn ihr eine bestimmte Version eines Pakets angeben wollt, könnt ihr die
+Versionsnummern einfach anhängen:
+
+.. code-block:: console
+
+    $ python -m pip install pandas==2.2.2
+
+oder
+
+.. code-block:: console
+
+    $ python -m pip install "pandas>=2"
+
+Proxy-Server
+~~~~~~~~~~~~
+
+Um Python-Pakete über einen Proxy-Server zu installieren, könnt ihr folgendes
+eingeben: :samp:`python -m pip install --proxy
+http://{USER_NAME}{:{PASSWORD}}@{PROXYSERVER_NAME}:{PORT} {PKG_NAME}`
+
+Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
+
+.. tab:: Linux
+
+   :abbr:`z.B. (zum Beispiel)` in der :file:`~/.bashrc` mit:
+
+   .. code-block:: bash
+
+      export HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
+
+.. tab:: Windows
+
+   Fügt die folgende Zeile den Umgebungsvariablen hinzu:
+
+   .. code-block:: ps1
+
+      set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
+
+Festschreiben der Versionsnummern
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+… von Paketen
+:::::::::::::
+
+Für eine stabile Umgebung ist es sinnvoll, die Versionsnummern der
+Abhängigkeiten festzuschreiben.
+
+.. tip::
+   In keinem unserer Bibliotheksprojekte passiert so viel, dass die
+   :doc:`Git-History <Python4DataScience:productive/git/review>` vorwiegend aus
+   Updates bestehen sollte. Lediglich bei Problemen schränken wir dort die zu
+   verwendenden Versionsnummern ein. Bei Anwendungen (:abbr:`engl. (englisch)`:
+   Apps) schreiben wir die Versionsnummern jedoch fest.
+
+Um für unsere Anwendungen die Versionen festzuschreiben und
+plattformübergreifende Lock-Dateien zu erhalten, verwenden wir `PDM
+<https://pdm-project.org/en/latest>`_. Zudem unterstützt PDM die Verwaltung
+virtueller Umgebungen mit ``pdm venv activate``.
+
+… von Python
+::::::::::::
+
+Im Gegensatz zu Anwendungen unterstützen unsere Pakete normalerweise mehr als
+eine Python-Version. Dennoch fügen wir auch bei :doc:`Paketen <distribution>`
+üblicherweise die aktuelle Standard-Version in :file:`.python-version` hinzu:
+
+.. literalinclude:: ../../.python-version
+   :caption: .python-version
+
+Das Schöne daran ist, dass wir die gleiche Datei in GitHub Actions als Eingabe
+für `setup-python <https://github.com/actions/setup-python>`_ verwenden können:
+
+.. literalinclude:: ../../.github/workflows/ci.yml
+   :caption: .github/workflows/ci.yml
+   :lines: 20-29
+   :emphasize-lines: 10
+
+In unseren
+:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd`-Pipelines
+verwenden wir jedoch ``requires-python`` aus der :ref:`pyproject-toml`-Datei, um
+:doc:`Docker-Container mit der passenden Python-Version
+<Python4DataScience:productive/git/advanced/gitlab/docker>` zu bauen.
