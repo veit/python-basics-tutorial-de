@@ -13,9 +13,6 @@ Status
 .. image:: https://readthedocs.org/projects/python-basics-tutorial-de/badge/?version=latest
    :alt: Docs
    :target: https://python-basics-tutorial.readthedocs.io/de/latest/
-.. image:: https://pyup.io/repos/github/veit/python-basics-tutorial-de/shield.svg
-   :alt: Pyup
-   :target: https://pyup.io/repos/github/veit/python-basics-tutorial-de/
 
 Installation
 ------------
