@@ -6,6 +6,6 @@ matplotlib
 sphinx_copybutton
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
-sphinxcontrib-svg2pdfconverter
+sphinxcontrib-svg2pdfconverter==1.2.2
 pygments_pytest
 sphinx-lint
