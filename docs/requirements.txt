@@ -1,4 +1,4 @@
-furo
+furo==2024.5.6
 sphinxext.opengraph
 # matplotlib is required for social cards
 matplotlib
