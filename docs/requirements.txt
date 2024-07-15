@@ -8,4 +8,4 @@ sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
 sphinxcontrib-svg2pdfconverter
 pygments_pytest
-sphinx-lint
+sphinx-lint==0.9.1
