@@ -2,7 +2,7 @@ furo
 sphinxext.opengraph
 # matplotlib is required for social cards
 matplotlib
-sphinx_copybutton
+sphinx_copybutton==0.5.2
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
 sphinxcontrib-svg2pdfconverter
