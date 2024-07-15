@@ -7,5 +7,5 @@ sphinx_copybutton
 sphinx-inline-tabs
 sphinxcontrib.plantuml --no-binary=sphinxcontrib.plantuml
 sphinxcontrib-svg2pdfconverter
-pygments_pytest
+pygments_pytest==2.4.0
 sphinx-lint
