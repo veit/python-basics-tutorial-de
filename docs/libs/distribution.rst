@@ -5,6 +5,10 @@ Verteilungspakete (engl.: :term:`Distribution Packages <Distribution Package>`
 sind Archive, die in einen Paket-Index wie :abbr:`z.B. (zum Beispiel)`
 :term:`pypi.org` hochgeladen und mit :term:`pip` installiert werden können.
 
+.. tip::
+   `cusy Seminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+
 Einige der folgenden Befehle erfordern eine neue Version von pip, sodass ihr
 sicherstellen solltet, dass ihr die neueste Version installiert habt:
 

@@ -21,6 +21,10 @@ das :doc:`xml <xml>`-Modul
     könnt ihr ebenfalls verwenden um Daten in verschiedene Sprachen in einer
     lesbaren Form auszutauschen.
 
+.. tip::
+   `cusy Seminar: Daten lesen, schreiben und bereitstellen mit Python
+   <https://cusy.io/de/unsere-schulungsangebote/daten-lesen-schreiben-und-bereitstellen-mit-python>`_
+
 Die Python-Datenbank-API
 ------------------------
 

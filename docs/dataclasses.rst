@@ -6,7 +6,11 @@ ein spezieller Shortcut, mit der wir Klassen erstellen können, die Daten speich
 bietet einen speziellen :doc:`Dekorator <../functions/decorators>`, wenn wir eine solche
 Klasse erstellen wollen.
 
-.. note::
+.. tip::
+   `cusy Deminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+
+.. tip::
    Für Tabellendaten verwende ich im Allgemeinen :doc:`pandas Series oder
    DataFrames <Python4DataScience:workspace/pandas/data-structures>` und wenn
    ich Matrizen mit Zahlen speichern muss, verwende ich :doc:`Numpy

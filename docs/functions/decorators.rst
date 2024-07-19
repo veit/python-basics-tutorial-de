@@ -65,6 +65,10 @@ Zeile 7
     Die umhüllte Funktion wird aufgerufen, nachdem die Dekorator-Funktion fertig
     ist.
 
+.. tip::
+   `cusy Seminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+
 ``functools``
 -------------
 
