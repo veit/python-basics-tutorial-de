@@ -113,11 +113,11 @@ Damit ist das Open-Closed-Prinzip erfüllt.
    <https://www.mitp.de/IT-WEB/Software-Entwicklung/Refactoring.html>`_
 
 .. note::
-   Sicheres Refactoring ist auf :doc:`Tests <python-basics:test/index>`
-   angewiesen. Wenn ihr den Code wirklich umgestaltet, ohne das Verhalten zu
-   ändern, sollten die vorhandenen Tests bei jedem Schritt weiterhin erfolgreich
-   sein. Die Tests sind ein Sicherheitsnetz, das das Vertrauen in die neue
-   Anordnung des Codes rechtfertigt. Wenn sie versagen,
+   Sicheres Refactoring ist auf :doc:`Tests </test/index>` angewiesen. Wenn ihr
+   den Code wirklich umgestaltet, ohne das Verhalten zu ändern, sollten die
+   vorhandenen Tests bei jedem Schritt weiterhin erfolgreich sein. Die Tests
+   sind ein Sicherheitsnetz, das das Vertrauen in die neue Anordnung des Codes
+   rechtfertigt. Wenn sie versagen,
 
    * habt ihr den Code versehentlich beschädigt,
    * oder die vorhandenen Tests sind fehlerhaft.
@@ -156,11 +156,10 @@ verschieben:
    (4, 5, 2, 3)
 
 .. note::
-   Das Liskovsche Substitutionsprinzip gilt auch für
-   :ref:`python-basics:duck-typing`: jedes Objekt, das behauptet, eine Ente zu
-   sein, muss die API der Ente vollständig implementieren. Duck-Types sollten
-   gegeneinander austauschbar sein. Die Logik über verschiedene Datentypen von
-   Objekten hinweg anzuwenden, nennt sich
+   Das Liskovsche Substitutionsprinzip gilt auch für :ref:`duck-typing`: jedes
+   Objekt, das behauptet, eine Ente zu sein, muss die API der Ente vollständig
+   implementieren. Duck-Types sollten gegeneinander austauschbar sein. Die Logik
+   über verschiedene Datentypen von Objekten hinweg anzuwenden, nennt sich
    `Polymorphie <https://de.wikipedia.org/wiki/Polymorphie_(Programmierung)>`_.
 
 .. _interface-segregation:
@@ -204,7 +203,7 @@ werden als
     Abstraktionen abhängen.
 
 – `Robert C. Martin: The Dependency Inversion Principle
-<https://www.cs.utexas.edu/users/downing/papers/DIP-1996.pdf>`_
+<https://www.cs.utexas.edu/~downing/papers/DIP-1996.pdf>`_
 
 :func:`circumferences` sollte nicht bereits in der :class:`Form`-Klasse
 definiert werden, da es auch Formen ohne Umfang gibt.

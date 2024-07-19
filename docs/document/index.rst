@@ -38,7 +38,7 @@ erhalten können.
    * `Google Technical Writing Courses for Engineers
      <https://developers.google.com/tech-writing/overview>`_
    * `Cusy Design System: Schreiben
-     <https://cusy-design-system.readthedocs.io/de/latest/writing/index.html>`_
+     <https://www.cusy.design/de/latest/writing/index.html>`_
 
 .. toctree::
    :titlesonly:

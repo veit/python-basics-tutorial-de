@@ -23,12 +23,13 @@ den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
 ``py2exe`` und ``py2app``
 -------------------------
 
-`py2exe <https://www.py2exe.org/>`_ erstellt eigenständige Windows-Programme und `py2app <https://py2app.readthedocs.io/>`_ dasselbe für macOS. In beiden Fällen
-handelt es sich um einzelne ausführbare Dateien, die auch auf Rechnern laufen
-können, auf denen Python nicht installiert ist. In vielerlei Hinsicht sind
-jedoch eigenständige ausführbare Dateien nicht ideal, da sie tendenziell größer
-und weniger flexibel sind als native Python-Anwendungen, aber in manchen
-Situationen können sie auch die beste oder einzige Lösung sein.
+`py2exe <https://www.py2exe.org/>`_ erstellt eigenständige Windows-Programme und
+`py2app <https://py2app.readthedocs.io/en/latest/>`_ dasselbe für macOS. In
+beiden Fällen handelt es sich um einzelne ausführbare Dateien, die auch auf
+Rechnern laufen können, auf denen Python nicht installiert ist. In vielerlei
+Hinsicht sind jedoch eigenständige ausführbare Dateien nicht ideal, da sie
+tendenziell größer und weniger flexibel sind als native Python-Anwendungen, aber
+in manchen Situationen können sie auch die beste oder einzige Lösung sein.
 
 ``freeze``
 ----------
