@@ -39,3 +39,7 @@ definiert, wie die Größe jedes Eintrags bestimmt werden soll. Mithilfe einer
 Lambda-Funktion, die jede Zeichenkette in eine ganze Zahl umwandelt, kann
 ``max`` die numerischen Werte vergleichen und so das erwartete Ergebnis
 ermitteln.
+
+.. tip::
+   `cusy Seminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_

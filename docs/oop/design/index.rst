@@ -37,6 +37,10 @@ Funktionsobjekten refaktorisieren.
 :doc:`SOLID <solid>` ist ein Akronym für fünf Designprinzipien, die
 objektorientierte Designs verständlicher, flexibler und wartbarer machen sollen.
 
+.. tip::
+   `cusy Seminar: Entwurfsmuster in Python
+   <https://cusy.io/de/unsere-schulungsangebote/entwurfsmuster-in-python>`_
+
 .. seealso::
    * Harry Percival, Bob Gregory: `Architecture Patterns with Python
      <https://www.oreilly.com/library/view/architecture-patterns-with/9781492052197/>`_

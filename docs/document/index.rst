@@ -26,6 +26,14 @@ Alle gemeinsam benötigen Informationen, wie das Produkt lizenziert ist
 (``LICENSE``-Datei oder ``LICENSES``-Ordner) und wie sie bei Bedarf Hilfe
 erhalten können.
 
+.. tip::
+   cusy Seminare:
+
+   * `Software-Dokumentation mit Sphinx
+     <https://cusy.io/de/unsere-schulungsangebote/software-dokumentation-mit-sphinx>`_
+   * `Technisches Schreiben
+     <https://cusy.io/de/unsere-schulungsangebote/technisches-schreiben>`_
+
 .. seealso::
    * `Eric Holscher: Why You Shouldn’t Use “Markdown” for Documentation
      <https://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/>`_
