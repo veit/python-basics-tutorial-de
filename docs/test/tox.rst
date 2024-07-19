@@ -373,7 +373,7 @@ den pytest-Argumenten ein. In diesem Fall wählen wir ``test_version``-Tests mit
 der Schlüsselwort-Option ``-k`` aus. Wir verwenden auch ``--no-cov``, um die
 Abdeckung zu deaktivieren:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 1, 3
 
     $ tox -e py312 -- -k test_version --no-cov

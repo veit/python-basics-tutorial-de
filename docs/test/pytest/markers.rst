@@ -115,7 +115,7 @@ Die Angabe eines Grundes ist zwar optional, aber sie hilft bei der weiteren
 Entwicklung.  Wenn wir übersprungene Tests ausführen, werden sie als ``s``
 angezeigt:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 6
 
     $ pytest --tb=short tests/test_compare.py
@@ -129,7 +129,7 @@ angezeigt:
 
 … oder verbos als ``SKIPPED``:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 1, 10
 
     $ pytest -v -ra tests/test_compare.py
@@ -260,7 +260,7 @@ Auswirkungen der Verwendung von ``strict``. Das erste Beispiel verwendet auch
 den optionalen Parameter ``condition``, der wie die Bedingungen von ``skipif``
 funktioniert. Und so sieht das Ergebnis aus:
 
-.. code-block:: pytest
+.. code-block::
 
     pytest -v -ra tests/test_xfail.py
     ============================= test session starts ==============================
@@ -397,7 +397,7 @@ benutzerdefinierte Marker registrieren, indem wir einen Marker-Abschnitt zu
 
 Jetzt warnt uns pytest nicht mehr vor einem unbekannten Marker:
 
-.. code-block:: pytest
+.. code-block::
    :emphasize-lines: 4
 
     $ pytest -v -m smoke tests/test_start.py
@@ -635,7 +635,7 @@ Schließlich können wir auch Marker und Keywords für die Auswahl kombinieren,
 :abbr:`z.B. (zum Beispiel)` um Smoke-Tests auszuführen, die nicht Teil der
 Klasse :class:`TestFinish` sind:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v -m smoke -k "not TestFinish"
     ============================= test session starts ==============================

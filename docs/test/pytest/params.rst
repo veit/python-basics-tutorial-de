@@ -181,7 +181,7 @@ Argument von ``@pytest.mark.parametrize()`` überein.
 pytest führt diesen Test einmal für jedes ``(start_summary, start_state)``-Paar
 durch und meldet jeden als separaten Test:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
@@ -224,7 +224,7 @@ macht jeden Testfall komplexer. Ändern wir die Parametrisierung in
 Wenn wir die Tests jetzt ausführen, konzentrieren sie sich auf die Veränderung,
 die uns wichtig ist:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
@@ -284,7 +284,7 @@ Funktionsparametrisierung verwendet haben, jedoch ohne den Dekorator
 einmal für jeden Wert auf, der an die ``start_state()``-Fixture übergeben wird.
 Und nach all dem sieht die Ausgabe genauso aus wie vorher:
 
-.. code-block:: pytest
+.. code-block::
 
     $ pytest -v tests/test_finish.py
     ============================= test session starts ==============================
