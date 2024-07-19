@@ -67,8 +67,8 @@ durch :term:`wheel` kaum noch vorhanden. Einige Nachteile bleiben dennoch:
 * Die Installation aus den Sourcen bleibt weiterhin kompliziert.
 * Ggf. gibt es kein passendes :term:`wheel` für den verwendeten Build des
   CPython-Interpreters oder alternativen Interpretern wie `PyPy
-  <https://www.pypy.org/>`__, `IronPython <https://ironpython.net/>`_ oder
-  `Jython <https://www.jython.org/>`_.
+  <https://pypy.org/>`__, `IronPython <https://ironpython.net/>`_ oder `Jython
+  <https://www.jython.org/>`_.
 * Die Wartung und Pflege der Pakete ist aufwändiger da die Maintainer nicht nur
   mit Python sondern auch mit einer anderen Sprache und der CPython C-API
   vertraut sein müssen. Zudem erhöht sich die Komplexität, wenn neben dem
@@ -142,10 +142,10 @@ können den Wartungsaufwand im Vergleich zu Wrapper-Modulen deutlich reduzieren.
   Wrapping großer APIs.
 
 * `cffi <https://cffi.readthedocs.io/>`_ ist das Projekt einiger Personen aus
-  dem `PyPy <https://www.pypy.org/>`__-Entwicklungsteam, um C-Module einfacher
-  für Python-Anwendungen verfügbar zu machen. Es macht das Wrapping eines
-  C-Moduls basierend auf seinen Header-Dateien relativ einfach, auch wenn man
-  sich mit C selbst nicht auskennt.
+  dem `PyPy <https://pypy.org/>`__-Entwicklungsteam, um C-Module einfacher für
+  Python-Anwendungen verfügbar zu machen. Es macht das Wrapping eines C-Moduls
+  basierend auf seinen Header-Dateien relativ einfach, auch wenn man sich mit C
+  selbst nicht auskennt.
 
   Einer der Hauptvorteile von cffi besteht darin, dass es mit dem PyPy-JIT
   kompatibel ist, sodass CFFI-Wrapper-Module vollständig von den
