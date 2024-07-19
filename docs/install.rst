@@ -81,3 +81,9 @@ das auch kein Problem sein.
       Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst,
       um nach Sicherheitsupdates zu suchen, da es keinen integrierten
       Auto-Updater gibt.
+
+.. tip::
+   `direnv <https://direnv.net>`_ erlaubt euch, Umgebungsvariablen je nach
+   Verzeichnis zu setzen. Damit lassen sich Umgebungsvariablen von `The
+   twelve-factor apps <https://12factor.net>`_, projektspezifische Umgebungen
+   installieren und Secrets für das Deployment bereitstellen.
