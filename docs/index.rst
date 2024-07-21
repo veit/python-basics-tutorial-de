@@ -37,6 +37,8 @@ Trainings:
 +---------------+--------------------------------------------------------------+
 | 1 Tag         | `Software-Dokumentation mit Sphinx`_                         |
 +---------------+--------------------------------------------------------------+
+| 2 Tage        | `Technisches Schreiben`_                                     |
++---------------+--------------------------------------------------------------+
 | 3 Tage        | `Jupyter-Notebooks für effiziente Data-Science-Workflows`_   |
 +---------------+--------------------------------------------------------------+
 | 2 Tage        | `Numerische Berechnungen mit NumPy`_                         |
@@ -49,9 +51,11 @@ Trainings:
 +---------------+--------------------------------------------------------------+
 | 5 Tage        | `Daten visualisieren mit Python`_                            |
 +---------------+--------------------------------------------------------------+
-| 3 Tage        | `Code und Daten versioniert und reproduzierbar speichern`_   |
-+---------------+--------------------------------------------------------------+
 | 1 Tag         | `Datenvisualisierungen gestalten`_                           |
++---------------+--------------------------------------------------------------+
+| 2 Tage        | `Dashboards erstellen`_                                      |
++---------------+--------------------------------------------------------------+
+| 3 Tage        | `Code und Daten versioniert und reproduzierbar speichern`_   |
 +---------------+--------------------------------------------------------------+
 | Abonnement    | `Neues aus Python für Data-Science`_                         |
 | à 2 h im      |                                                              |
@@ -68,6 +72,8 @@ Trainings:
    https://cusy.io/de/unsere-schulungsangebote/effizient-testen-mit-python
 .. _`Software-Dokumentation mit Sphinx`:
    https://cusy.io/de/unsere-schulungsangebote/software-dokumentation-mit-sphinx
+.. _`Technisches Schreiben`:
+   https://cusy.io/de/unsere-schulungsangebote/technisches-schreiben
 .. _`Jupyter-Notebooks für effiziente Data-Science-Workflows`:
    https://cusy.io/de/unsere-schulungsangebote/jupyter-notebooks-fuer-effiziente-data-science-workflows
 .. _`Numerische Berechnungen mit NumPy`:
@@ -80,10 +86,12 @@ Trainings:
    https://cusy.io/de/unsere-schulungsangebote/daten-bereinigen-und-validieren-mit-python
 .. _`Daten visualisieren mit Python`:
    https://cusy.io/de/unsere-schulungsangebote/daten-visualisieren-mit-python
-.. _`Code und Daten versioniert und reproduzierbar speichern`:
-   https://cusy.io/de/unsere-schulungsangebote/code-und-daten-versioniert-und-reproduzierbar-speichern
 .. _`Datenvisualisierungen gestalten`:
    https://cusy.io/de/unsere-schulungsangebote/datenvisualisierungen-gestalten
+.. _`Dashboards erstellen`:
+   https://cusy.io/de/unsere-schulungsangebote/dashboards-erstellen
+.. _`Code und Daten versioniert und reproduzierbar speichern`:
+   https://cusy.io/de/unsere-schulungsangebote/code-und-daten-versioniert-und-reproduzierbar-speichern
 .. _`Neues aus Python für Data-Science`:
    https://cusy.io/de/unsere-schulungsangebote/neues-aus-python-fuer-data-science
 

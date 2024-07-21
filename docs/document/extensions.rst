@@ -62,6 +62,9 @@ Erweiterungen von Drittanbietern
     `git <https://git-scm.com/>`_-Changelog für Sphinx.
 `Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
     fügt git Zeitstempel im Kontext ein
+`sphinx-issues <https://pypi.org/project/sphinx-issues/>`_
+    erstellt Links zu GitHub or GitLab Issues, Pull-Requests und
+    Benutzerprofilen.
 `sphinx-intl <https://pypi.org/project/sphinx-intl/>`_
     Sphinx-Erweiterung für Übersetzungen.
 `sphinx-autobuild <https://github.com/sphinx-doc/sphinx-autobuild>`_
