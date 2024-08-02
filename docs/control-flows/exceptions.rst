@@ -19,13 +19,29 @@ Ausnahmeobjekt zugreifen, um weitere Informationen zu erhalten. Wird kein
 geeigneter Exception-Handler gefunden, bricht das Programm mit einer
 Fehlermeldung ab.
 
+.. note::
+   Die Art und Weise, wie Python Fehlersituationen im Allgemeinen behandelt,
+   unterscheidet sich von manch anderen Sprachen, :abbr:`z.B. (zum Beispiel)`
+   Java. Diese Sprachen prüfen mögliche Fehler so weit wie möglich, bevor sie
+   auftreten, da die Behandlung von Exceptions nach ihrem Auftreten kostspielig
+   ist. Dies wird manchmal als :abbr:`LBYL (Look before you leap, Erst schauen,
+   dann springen)`-Ansatz bezeichnet.
+
+   Bei Python hingegen verlässt man sich eher auf Exceptions, um Fehler zu
+   behandeln, nachdem sie aufgetreten sind. Obwohl dieses Vertrauen riskant
+   erscheinen mag, ist der Code weniger schwerfällig und leichter zu lesen, wenn
+   Exceptions richtig eingesetzt werden, und Fehler werden nur dann behandelt,
+   wenn sie auftreten. Diese pythonische Herangehensweise zur Behandlung von
+   Fehlern wird oft als :abbr:`EAFP (easier to ask forgiveness than permission,
+   engl.: leichter um Vergebung zu bitten als um Erlaubnis)` beschrieben.
+
 Es ist möglich, verschiedene Arten von Ausnahmen zu erzeugen, um die
 tatsächliche Ursache des gemeldeten Fehlers oder außergewöhnlichen Umstandes zu
 reflektieren. Eine Übersicht über die Klassenhierarchie eingebauter Exceptions
 erhaltet ihr unter `Exception hierarchy
 <https://docs.python.org/3/library/exceptions.html#exception-hierarchy>`_ in der
 Python-Dokumentation. Jeder Ausnahmetyp ist eine Python-Klasse, die von ihrem
-übergeordneten Exception-Typ erbt. So ist :abbr:`z.B. (zum Beispiel` ein
+übergeordneten Exception-Typ erbt. So ist :abbr:`z.B. (zum Beispiel)` ein
 ``ZeroDivisionError`` durch Vererbung auch ein ``ArithmeticError``, eine
 ``Exception`` und auch eine ``BaseException``. Diese Hierarchie ist gewollt: Die
 meisten Ausnahmen erben von ``Exception``, und es wird dringend empfohlen, dass
