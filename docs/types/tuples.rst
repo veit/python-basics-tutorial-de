@@ -66,3 +66,15 @@ Zusammenfassung
 +===============+===============+===============+===============+===============+
 | Tuple         | ❌            | ✅            | ✅            | ✅            |
 +---------------+---------------+---------------+---------------+---------------+
+
+Checks
+------
+
+* Erläutert, warum die folgenden Operationen nicht auf das Tuple ``t``
+  angewendet werden können:
+
+  * ``t.append(1)``
+  * ``t[2] = 2``
+  * ``del t[3]``
+
+* Wie könnt ihr die Elemente eines Tuple sortieren?

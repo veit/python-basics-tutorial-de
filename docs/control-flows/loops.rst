@@ -150,3 +150,23 @@ Ihr könnt mit List Comprehensions auch optional Bedingungen verwenden, die
    >>> squares = [i**2 for i in range(8) if i >= 4]
    >>> squares
    [16, 25, 36, 49]
+
+Checks
+------
+
+* Entfernt aus der Liste ``x = [ -2, -1, 0, 1, 2, 3]``, alle negativen Zahlen.
+
+* Welche List-Comprehension würdet ihr verwenden, um zum selben Ergebnis zu
+  kommen?
+
+* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[-[1, 0, 1],
+  [-1, 1, 3], [-2, 0, 2]]`` zählen?
+
+* Erstellt einen Generator, der nur ungerade Zahlen von 1 bis 10 liefert.
+
+  .. tip::
+     Eine Zahl ist ungerade, wenn bei der Division durch 2 ein Rest übrig
+     bleibt; also wenn ``% 2`` wahr ist.
+
+* Schreibt ein :doc:`Dict </types/dicts>` mit den Kantenlängen und Volumen von
+  Würfeln.

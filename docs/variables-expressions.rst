@@ -110,3 +110,18 @@ Variablen ``z``:
    eine ganze Zahl zurück. Ab Python 3 gibt die Division eine Fließkommazahl
    zurück. Wenn die traditionelle Ganzzahldivision mit einer Ganzzahl
    zurückgegeben werden soll, könnt ihr stattdessen ``//`` verwenden.
+
+Checks
+------
+
+* Erstellt in der Python-Shell einige Variablen. Was passiert, wenn ihr
+  Leerzeichen, Bindestriche oder andere Zeichen in den Variablennamen einfügt?
+
+* Ändern sich die Ergebnisse, wenn ihr Klammern verwendet, um Zahlen auf
+  verschiedene Weise zu gruppieren?
+
+* Welche der folgenden Variablen- und Funktionsnamen sind eurer Meinung nach
+  kein guter Python-Stil, und warum?
+
+  ``var*``, ``varname``, ``func_name()``, ``varName``, ``VARNAME``,
+  ``very_very__long_var_name``

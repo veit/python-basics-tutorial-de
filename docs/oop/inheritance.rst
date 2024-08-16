@@ -124,3 +124,15 @@ können alle Instanzen von ``Circle`` die ``move``-Methode verwenden. In
 OOP-Begriffen könnte man sagen, dass alle Python-Methoden virtuell sind – :abbr:`d.h. (das heißt)`, wenn eine Methode in der aktuellen Klasse nicht existiert,
 wird die Liste der Oberklassen nach der Methode durchsucht und die erste
 gefundene verwendet.
+
+Check
+-----
+
+* Schreibt den Code für eine :class:`Triangle`-Klasse um, sodass sie von
+  :class:`Form` erbt.
+
+* Wie würdet ihr den Code schreiben, um eine Methode :func:`area` für die Klasse
+  :class:`Triangle` hinzuzufügen? Sollte die Methode :func:`area` in die
+  Basisklasse :class:`Form` verschoben und an :class:`Circle`, :class:`Square`
+  und :class:`Triangle` vererbt werden? Welche Probleme würde diese Änderung
+  verursachen?

@@ -187,3 +187,9 @@ Methodenattribute meist nur in einer der folgenden beiden Fälle:
   :abbr:`z.B. (zum Beispiel)` Listen, die als balancierte Bäume implementiert
   sind, um das Einfügen zu beschleunigen, kann ich die speziellen
   Methodenattribute definieren.
+
+Checks
+------
+
+* Was wäre der Unterschied zwischen der Verwendung von :func:`type` und
+  :func:`isinstance` in :ref:`Check: Listen <check-list>`?

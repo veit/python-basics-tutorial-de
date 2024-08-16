@@ -613,7 +613,8 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`re`          | sucht und ersetzt Text mit regulären Ausdrücken                               |
 +-----------------------+-------------------------------------------------------------------------------+
-| :py:mod:`struct`      | interpretiert Bytes als gepackte Binärdaten                                   |
+| :py:mod:`struct`      | konvertiert zwischen Python-Werten und C-Strukturen, die als                  |
+|                       | Python-Bytes-Objekte dargestellt werden.                                      |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`difflib`     | hilft beim Berechnen von Deltas, beim Auffinden von Unterschieden zwischen    |
 |                       | Zeichenketten oder Sequenzen und beim Erstellen von Patches und Diff-Dateien  |
@@ -624,3 +625,42 @@ ihr Zeichenketten managen könnt:
 .. seealso::
    * :doc:`Manipulation von Zeichenketten mit pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
+
+Checks
+------
+
+* Könnt ihr :abbr:`z.B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
+  addieren oder multiplizieren, oder mit einer Gleitkommazahl oder einer
+  komplexen Zahl?
+
+* Wie könnt ihr eine Überschrift wie ``variables and expressions`` so abändern,
+  dass sie keine Leerzeichen mehr enthält und besser als Dateinamen verwendet
+  werden kann?
+
+* Welche der folgenden Zeichenketten können nicht in Zahlen umgewandelt werden
+  und warum?
+
+  * ``int("1e2")``
+  * ``int(1e+2)``
+  * ``int("1+2")``
+  * ``int("+2")``
+
+* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` begintt, welche
+  Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
+
+* Angenommen, ihr habt eine Zeichenkette mit Satzzeichen, Anführungszeichen und
+  Zeilenumbrüchen. Wie können diese aus der Zeichenkette entfernt werden?
+
+* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
+  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
+  nützlich wäre?
+
+  * beim Lesen und Schreiben einer Binärdatei
+  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
+    gespeichert werden sollen, wie sie übermittelt wurden
+
+* Welchen regulären Ausdruck würdet ihr verwenden, um Zeichenfolgen zu finden,
+  die die Zahlen zwischen -3 und +3 darstellen?
+
+* Welchen regulären Ausdruck würdet ihr verwenden, um Hexadezimalwerte zu
+  finden?

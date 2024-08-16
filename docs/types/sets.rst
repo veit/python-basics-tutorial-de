@@ -92,3 +92,9 @@ eine Datenstruktur verwenden, die sich die Reihenfolge merkt.
 +---------------+---------------+---------------+---------------+---------------+
 | Frozensets    | ❌            | ❌            | ❌            | ❌            |
 +---------------+---------------+---------------+---------------+---------------+
+
+Checks
+------
+
+* Wieviele Elemente hat ein Set, wenn es aus der folgenden Liste
+  ``[4, 2, 3, 2, 1]`` gebildet wird?

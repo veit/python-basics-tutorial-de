@@ -27,7 +27,7 @@ Mit Modulen könnt ihr in eurem Hauptprogramm auf die Funktionen
 Modulnamen sorgt dafür, dass die beiden ``my_func``-Funktionen nicht verwechselt
 werden, da Python :abbr:`sog. (sogenannte)` Namespaces verwendet. Ein Namespace
 ist im Wesentlichen ein Wörterbuch mit Bezeichnungen für die dort zur Verfügung
-stehenden Funktionen, Klassen, Module :abbr:`usw. (und so weiter)`.
+stehenden Funktionen, Klassen, Module :abbr:`usw (und so weiter)`.
 
 Module werden auch verwendet, um Python selbst überschaubarer zu machen. Die
 meisten Standardfunktionen von Python sind nicht in den Kern der Sprache
@@ -192,3 +192,28 @@ Zudem wird automatisch eine Hilfeoption ``-h`` oder ``--help`` erzeugt:
      -h, --help            show this help message and exit
      -f FILENAME, --file FILENAME
                            read data from the file
+
+Checks
+------
+
+* Wenn ihr ein Modul :mod:`my_math` erstellt habt, das eine Funktion
+  :func:`divide` enthält, welche Möglichkeiten gibt es, diese Funktion zu
+  importieren und dann zu verwenden? Was sind die Vor- und Nachteile der
+  einzelnen Möglichkeiten?
+
+* Eine Variable ``min`` ist im Modul :mod:`scope.py` enthalten. In welchem der
+  folgenden Kontexte kann ``min`` verwendet werden?
+
+  #. Mit dem Modul selbst
+  #. Innerhalb der Funktion :func:`scope` des Moduls
+  #. Innerhalb eines Skripts, das das Modul :mod:`scope.py` importiert hat
+
+* Packt die Funktionen, die ihr am Ende von :doc:`/functions/decorators`
+  erstellt haben, als eigenständiges Modul. Dabei soll die Funktionen zunächst
+  lediglich von einem anderen Skript aus vollständig nutzbar sein.
+
+* Macht euer Modul ausführbar.
+
+* Schreibt eure Version des :mod:`wc`-Dienstprogramms so um, dass es sowohl die
+  Unterscheidung zwischen Bytes und Zeichen als auch die Möglichkeit, aus
+  Dateien und von der Standardeingabe zu lesen, implementiert.
