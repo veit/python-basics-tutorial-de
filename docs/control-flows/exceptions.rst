@@ -93,3 +93,26 @@ Zeile 17
 Zeile 19
     Die ``finally``-Klausel ist optional; sie wird am Ende des Blocks
     ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht.
+
+Checks
+------
+
+* Schreibt  Code, der zwei Zahlen erhält und die erste Zahl durch die zweite
+  dividiert. Prüft, ob der :class:`python3:ZeroDivisionError` auftritt, wenn die
+  zweite Zahl ``0`` ist, und fangt diese ab.
+
+* Wenn :class:`MyError` von :class:`Exception` erbt, was ist dann der
+  Unterschied zwischen ``except Exception as e`` und ``except MyError as e``?
+
+* Schreibt ein einfaches Programm, das eine Zahl erhält und dann die Anweisung
+  :func:`assert` verwendet, um eine :class:`python3:Exception` auszulösen, wenn
+  die Zahl ``0`` ist.
+
+* Schreibt eine benutzerdefinierte Ausnahme :class:`Outliers`, die eine
+  :class:`Exception` auslöst, wenn die Variable ``x`` größer oder kleiner als
+  ``3`` ist?
+
+* Handelt es sich bei der Überprüfung, ob ein Objekt eine Liste ist
+  (:ref:`Check: list <check-list>`) um eine Programmierung im Stil von
+  :abbr:`LBYL (look before you leap)` oder :abbr:`EAFP (easier to ask
+  forgiveness than permission)`?

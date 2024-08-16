@@ -155,3 +155,41 @@ Zusammenfassung
 +===============+===============+===============+===============+===============+
 | Liste         | ✅            | ✅            | ✅            | ✅            |
 +---------------+---------------+---------------+---------------+---------------+
+
+Checks
+------
+
+* Was gibt :func:`len` für jeden der folgenden Fälle zurück:
+
+  * ``[3]``
+  * ``[]``
+  * ``[[1, [2, 3], 4], "5 6"]``
+
+* Wie würdet ihr mit :func:`len` und Slices wisst, die zweite Hälfte einer Liste
+  ermitteln, wenn ihr nicht wisst, wie groß sie ist?
+
+* Wie könntet ihr die letzten zwei Einträge einer Liste an den Anfang
+  verschieben, ohne die Reihenfolge der beiden zu ändern?
+
+* Welcher der folgenden Fälle löst eine Exception aus?
+
+  * ``min(["1", "2", "3"])``
+  * ``max([1, 2, "3"])``
+  * ``[1,2,3].count("1")``
+
+* ``max([1, 2, "3"])``, da Strings und Ganzzahlen nicht verglichen werden
+  können; daher ist es unmöglich, einen Maximalwert zu erhalten.
+
+* Wenn ihr eine Liste ``l`` habt, wie könnt ihr daraus einen bestimmten Wert
+  ``i`` entfernen?
+
+  .. code-block:: pycon
+
+     >>> if i in l:
+     ...     l.remove(i)
+     ...
+
+.. _check-list:
+
+* Stellt sicher, dass das Objekt ``my_collection`` eine Liste ist, bevor ihr
+  versucht, daran Daten anzuhängen.

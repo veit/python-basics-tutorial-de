@@ -62,3 +62,14 @@ Die ``print_y``-Methode ist nicht privat, und da sie sich in der
         ['_MyClass__y', '__class__', …]
 
     Damit soll also lediglich ein versehentlicher Zugriff verhindert werden.
+
+Checks
+------
+
+* Ändert den Code der Klasse :class:`Triangle`, um die Dimensionsvariablen
+  privat zu machen. Welche Einschränkung wird diese Änderung für die Verwendung
+  der Klasse mit sich bringen?
+
+* Aktualisiert die Dimensionen der Klasse :class:`Triangle`, damit sie
+  Eigenschaften mit Gettern und Settern sind, die keine negativen Größen
+  zulassen.

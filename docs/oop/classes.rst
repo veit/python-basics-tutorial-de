@@ -87,3 +87,8 @@ anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
         >>> my_square.length = 3
         >>> print(f"Der Umfang des Quadrats ist {4 * my_square.length}.")
         Der Umfang des Quadrats ist 12.
+
+Checks
+------
+
+# Schreibt eine :class:`Triangle`-Klasse, die auch die Fläche berechnen kann.

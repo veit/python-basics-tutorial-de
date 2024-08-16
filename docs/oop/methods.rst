@@ -164,3 +164,9 @@ Zeile 22
     >>> c2 = circle_cm.Circle(2)
     >>> circle_cm.Circle.circumferences()
     9.424769999999999
+
+Checks
+------
+
+* Schreibt eine Klassenmethode, die ähnlich wie :func:`circumferences` ist, aber
+  die Gesamtfläche aller Kreise zurückgibt.

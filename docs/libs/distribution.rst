@@ -567,3 +567,17 @@ Anschließend könnt ihr Python aufrufen und euer ``loaders``-Modul importieren:
    setup.py sdist`. Dies wird jedoch heutzutage von Teilen der `Python Packaging
    Authority (PyPA) <https://github.com/pypa/>`_ als `Anti-Pattern
    <https://x.com/pganssle/status/1152695229105000453>`_ angesehen.
+
+Checks
+------
+
+* Wenn ihr ein Paket für eine Aufgabenverwaltung erstellen wollt, das die
+  Aufgaben in eine Datenbank schreibt und über ein Python-:abbr:`API (engl.:
+  Application Programming Interface)` und eine Befehlszeilenschnittstelle
+  (:abbr:`CLI (engl.: Command-Line Interface)` bereitstellt, wie würdet ihr die
+  Dateien strukturieren?
+
+* Überlegt euch, wie ihr die oben genannten Aufgaben erledigen wollt. Welche
+  Bibliotheken und Module fallen euch ein, die diese Aufgabe erfüllen könnten?
+  Skizziert den Code für die Module der Python-API, der
+  Befehlszeilenschnittstelle und der Datenbankanbindung.

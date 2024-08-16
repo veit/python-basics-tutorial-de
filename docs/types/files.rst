@@ -191,7 +191,7 @@ Zeichenkette eingebettet sind, wie im folgenden Beispiel:
 
 .. code-block:: python
 
-    f.write("Hi, Pythinistas!\n\n")
+   f.write("Hi, Pythinistas!\n\n")
 
 Die Methode ``writelines`` ist jedoch verwirrend, weil sie nicht unbedingt
 mehrere Zeilen schreibt; sie nimmt eine Liste von Zeichenketten als Argument und
@@ -309,7 +309,8 @@ ihr Dateien managen könnt:
 | :py:mod:`quopri`,                 |                                                                               |
 | :py:mod:`uu`                      |                                                                               |
 +-----------------------------------+-------------------------------------------------------------------------------+
-| :py:mod:`struct`                  | liest und schreibt strukturierte Daten in und aus Dateien                     |
+| :py:mod:`struct`                  | konvertiert zwischen Python-Werten und C-Strukturen, die als                  |
+|                                   | als Python-Bytes-Objekte dargestellt werden.                                  |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`zlib`,                   | für das Arbeiten mit Archivdateien und Komprimierungen                        |
 | :py:mod:`gzip`,                   |                                                                               |
@@ -334,3 +335,68 @@ ihr Dateien managen könnt:
      <Python4DataScience:data-processing/serialisation-formats/toml/example>`
      und :doc:`Pickle
      <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`.
+
+Checks
+------
+
+* Verwendet die Funktionen des :mod:`python3:os`-Moduls, um einen Pfad zu einer
+  Datei namens :file:`example.log` zu nehmen und einen neuen Dateipfad im selben
+  Verzeichnis für eine Datei namens :file:`example.log1` zu erstellen.
+
+* Welche Bedeutung hat das Hinzufügen von ``b`` als Parameter von
+  :func:`python3:open`?
+
+* Öffnet eine Datei :file:`my_file.txt` und fügt zusätzlichen Text am Ende der
+  Datei ein. Welchen Befehl würdet ihr verwenden, um :file:`my_file.txt` zu
+  öffnen? Welchen Befehl würdet ihr verwenden, um die Datei erneut zu öffnen und
+  von Anfang an zu lesen?
+
+* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
+  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
+  nützlich wäre?
+
+* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
+  Anwendungsfälle geeignet sein oder auch nicht:
+
+  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten
+  #. Aufbewahren von Auswertungsergebnissen
+  #. Speichern von Benutzernamen und Passwörtern
+  #. Speichern eines großen Wörterbuchs mit englischen Begriffen
+
+* Wenn ihr euch die `Manpage für das wc-Dienstprogramm
+  <https://linux.die.net/man/1/wc>`_ anseht, seht ihr zwei
+  Befehlszeilenoptionen:
+
+  ``-c``
+      zählt die Bytes in der Datei
+  ``-m``
+      zählt die Zeichen, die im Falle einiger Unicode-Zeichen zwei oder mehr
+      Bytes lang sein können
+
+  Außerdem sollte unser Modul, wenn eine Datei angegeben wird, aus dieser Datei
+  lesen und sie verarbeiten, aber wenn keine Datei angegeben wird, sollte es aus
+  ``stdin`` lesen und verarbeiten.
+
+* Schreibt eure Version des :mod:`wc`-Dienstprogramms so um, dass es sowohl die
+  Unterscheidung zwischen Bytes und Zeichen als auch die Möglichkeit, aus
+  Dateien und von der Standardeingabe zu lesen, implementiert.
+
+* Wenn ein Kontext-Manager in einem Skript verwendet wird, das mehrere Dateien
+  liest und/oder schreibt, welche der folgenden Ansätze wäre eurer Meinung nach
+  am besten?
+
+  #. Legt das gesamte Skript in einen Block, der von einer ``with``-Anweisung
+     verwaltet wird.
+  #. Verwendet eine ``with``-Anweisung für alle Lesevorgänge und eine weitere
+     für alle Schreibvorgänge.
+  #. Verwendet jedes Mal eine ``with``-Anweisung, wenn ihr eine Datei lest oder
+     schreibt, :abbr:`d.h. (das heißt)` für jede Zeile.
+  #. Verwendet für jede Datei, die ihr lest oder schreibt, eine
+     ``with``-Anweisung.
+
+* Archiviert :file:`*.txt`-Dateien aus dem aktuellen Verzeichnis im Verzeichnis
+  :file:`archive` als :file:`*.zip`-Dateien mit dem aktuellen Datum als
+  Dateiname.
+
+  * Welche Module benötigt ihr hierfür?
+  * Schreibt eine mögliche Lösung.

@@ -321,3 +321,24 @@ ihr Zahlen managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`operator`    | für Standardoperatoren als Funktionen                                         |
 +-----------------------+-------------------------------------------------------------------------------+
+
+Checks
+------
+
+* Erstellt einige Zahlenvariablen (Ganzzahlen, Gleitkommazahlen und komplexe
+  Zahlen). Experimentiert ein wenig damit, was passiert, wenn ihr Operationen
+  mit ihnen durchführt, auch typübergreifend.
+
+* Ladet das Modul :mod:`math` und probiert einige der Funktionen aus. Ladet dann
+  auch das Modul :mod:`cmath` und macht dasselbe.
+
+* Wie könnt ihr die Funktionen des :mod:`math`-Moduls wiederherstellen?
+
+* Entscheidet, ob die folgenden Aussagen wahr oder falsch sind:
+
+  * ``1``
+  * ``0``
+  * ``-1``
+  * ``[0]``
+  * ``1 and 0``
+  * ``1 > 0 or []``

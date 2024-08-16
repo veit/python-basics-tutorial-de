@@ -23,10 +23,27 @@ des Alters aus dem Geburtsjahr:
 .. code-block:: pycon
 
     >>> import datetime
-    >>> currentDateTime = datetime.datetime.now()
-    >>> year = currentDateTime.year
+    >>> current = datetime.datetime.now()
+    >>> year = current.year
     >>> year_birth = input("Geburtsjahr? ")
     Geburtsjahr? 1964
     >>> age = year - int(year_birth)
     >>> print("Alter:", age, "Jahre")
     Alter: 58 Jahre
+
+Checks
+------
+
+* Wie könnt ihr mit der :func:`input`-Funktion String- und Integer-Werte
+  erhalten?
+
+* Wie wirkt es sich aus, wenn ihr :func:`int` nicht verwendet um den Aufruf von
+  :func:`input` für Integer-Eingaben zu verwenden?
+
+* Könnt ihr den Code so abändern, dass er eine Fließkommazahl akzeptiert?
+
+* Was passiert, wenn ihr einen *falschen* Werttyp eingebt?
+
+* Schreibt den Code, um für drei User jeweils nach Namen und Alter zu fragen.
+  Nachdem die Werte eingegeben wurden, fragt nach einem der Namen und gebt das
+  zugehörige Alter aus.

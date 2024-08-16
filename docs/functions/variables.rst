@@ -74,3 +74,9 @@ sich ``nonlocal`` auf jede Variable in einem umschließenden Bereich.
 
     * :ref:`python3:nonlocal`
     * :pep:`3104`
+
+Checks
+------
+
+* Angenommen, ``x = 1``, welchen Wert hat ``x`` nach der Ausführung von
+  ``func()`` und ``gfunc()``?

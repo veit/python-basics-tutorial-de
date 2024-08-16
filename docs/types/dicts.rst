@@ -93,3 +93,25 @@ Erweiterungen
     I/O-Shortcuts.
 :doc:`pandas <Python4DataScience:workspace/pandas/python-data-structures>`
     kann Dicts in Series und DataFrames überführen.
+
+Checks
+------
+
+* Angenommen, ihr habt die beiden Dictionaries ``x = {"a": 1, "b": 2, "c": 3,
+  "d": 4}`` und ``y = {"a": 5, "e": 6, "f": 7}``. Was wäre der Inhalt von ``x``,
+  nachdem die folgenden Codeschnipsel ausgeführt wurden?
+
+  .. code-block:: pycon
+
+     >>> del x["b"]
+     >>> z = x.setdefault("e", 8)
+     >>> x.update(y)
+
+# Welcher der folgenden Ausdrücke kann ein Schlüssel eines Dictionary sein:
+  ``1``; ``"Veit"``; ``("Veit", [1])``; ``[("Veit", [1])]``; ``["Veit"]``;
+  ``("Veit", "Tim", "Monique")``
+
+* Ihr könnt ein :doc:`Dictionary </types/dicts>` verwenden, und das wie ein
+  Sheet einer Tabellenkalkulation verwenden, indem ihr :doc:`/types/tuples` als
+  Schlüssel Zeilen- und Spaltenwerte verwendet. Schreibt Beispielcode, um Werte
+  hinzuzufügen und wieder abzufragen.

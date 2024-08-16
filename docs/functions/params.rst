@@ -207,3 +207,9 @@ Die Variable ``x`` wird nicht geändert, da sie unveränderlich ist. Stattdessen
 wird der Funktionsparameter ``n`` so gesetzt, dass er auf den neuen Wert ``6``
 verweist. Bei ``y`` gibt es jedoch eine Änderung, weil die Liste, auf die sie
 verweist, geändert wurde.
+
+Checks
+------
+
+* Schreibt eine Funktion, die eine beliebige Anzahl von unbenannten Argumenten
+  annehmen und deren Werte in umgekehrter Reihenfolge ausgeben kann?
