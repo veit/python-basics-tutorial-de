@@ -475,7 +475,7 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
 
 Die Actions-Syntax ist gut dokumentiert. Ein guter Startpunkt in der
 GitHub-Actions-Dokumentation ist die Seite `Building and Testing Python
-<https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_.
+<https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`_.
 Die Dokumentation zeigt euch auch, wie ihr pytest direkt ohne tox ausführen
 könnt und wie ihr die Matrix auf mehrere Betriebssysteme erweitern könnt. Sobald
 ihr eure :file:`*.yml`-Datei eingerichtet und in euer GitHub-Repository
@@ -494,9 +494,9 @@ folgenden Screenshot dargestellt:
 
 .. seealso::
    * `Building and testing Python
-     <https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_
+     <https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`_
    * `Workflow syntax for GitHub Actions
-     <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
+     <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>`_
 
 Badge anzeigen
 --------------

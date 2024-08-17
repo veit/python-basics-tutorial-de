@@ -42,7 +42,7 @@ Um Linux-, macOS- und Windows-Wheels erstellen zu können, erstellt eine
 
     .. seealso::
        * `release
-         <https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release>`_
+         <https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#release>`_
 
 Nun können die :term:`Wheels <wheel>` gebaut werden mit:
 
@@ -81,7 +81,7 @@ Nun könnt ihr endlich die Artefakte beider Jobs auf den :term:`PyPI` hochladen:
 
 .. seealso::
    * `Workflow syntax for GitHub Actions
-     <https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>`_
+     <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>`_
 
 GitLab CI/CD
 ------------
