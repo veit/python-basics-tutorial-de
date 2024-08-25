@@ -126,7 +126,7 @@ Checks
      >>> len([[1, [2, 3], 4], "5 6"])
      2
 
-* Wie würdet ihr mit :func:`len` und Slices wisst, die zweite Hälfte einer Liste
+* Wie würdet ihr mit :func:`len` und Slices die zweite Hälfte einer Liste
   ermitteln, wenn ihr nicht wisst, wie groß sie ist?
 
   .. code-block:: pycon
@@ -174,6 +174,15 @@ Checks
         ...     l.remove(i)
         ...
         >>> l = list(l)
+
+* Wenn ihr eine verschachtelte Liste ``ll`` habt, wie könnt ihr eine Kopie
+  ``nll`` dieser Liste erhalten, in der ihr die Elemente ändern könnt, ohne den
+  Inhalt von ``ll`` zu verändern?
+
+  .. code-block:: pycon
+
+     >>> import copy
+     >>> nll = copy.deepcopy(ll)
 
 * Stellt sicher, dass das Objekt ``my_collection`` eine Liste ist, bevor ihr
   versucht, daran Daten anzuhängen.
