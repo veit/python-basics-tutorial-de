@@ -1,32 +1,150 @@
 Tupel
 =====
 
-Tupel ähneln Listen, sind aber unveränderlich, :abbr:`d.h. (das heißt)` sie
-können nach ihrer Erstellung nicht mehr geändert werden. Die Operatoren (``in``,
-``+`` und ``*``) und eingebauten Funktionen (``len``, ``max`` und ``min``)
-arbeiten mit ihnen auf die gleiche Weise wie mit :doc:`lists`, da keine dieser
-Funktionen das Original verändert. Die Index- und die Slice-Notation
-funktionieren auf die gleiche Weise, um Elemente oder Slices zu erhalten, können
-aber nicht zum Hinzufügen, Entfernen oder Ersetzen von Elementen verwendet
-werden. Außerdem gibt es nur zwei Tupelmethoden: ``count`` und ``index``. Ein
-wichtiger Zweck von Tupeln ist die Verwendung als Schlüssel für :doc:`dicts`.
-Sie sind auch effizienter zu verwenden, wenn man keine Änderungsmöglichkeit
-benötigt.
+Tupel ähneln :doc:`lists`, können jedoch nicht geändert sondern nur erstellt
+werden. Tupel haben die wichtige Aufgabe, effizient :abbr:`z.B. (zum Beispiel)`
+Schlüssel für :doc:`dicts` zu erstellen.
 
-.. code-block:: python
-    :linenos:
+Tupel werden ähnlich wie die Listen erstellt: einer Variablen wird eine Folge
+von Werten zugewiesen, die jedoch nicht in eckige sondern in runde Klammern
+eingeschlossen werden:
 
-    ()
-    (1,)
-    (1, 2, 3, 5)
-    (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+.. code-block:: pycon
 
-Zeile 2
-    Ein Tupel mit einem Element benötigt ein Komma.
-Zeile 4
-    Ein Tupel kann, wie eine :doc:`Liste <lists>`, eine Mischung anderer Typen
-    als Elemente enthalten, darunter beliebige :doc:`numbers`, :doc:`strings`,
-    :doc:`tuples`, :doc:`lists`, :doc:`dicts`, :doc:`files` und Funktionen.
+   >>> x = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+
+Diese Zeile erzeugt ein Tupel mit fünf Elementen. Nachdem ein Tupel erstellt
+wurde, kann es ähnlich wie die eine Liste verwendet werden:
+
+.. code-block:: pycon
+
+   >>> x[1]
+   '2.'
+   >>> x[1:]
+   ('2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+   >>> len(x)
+   5
+   >>> max(x[:3:2])
+   3.0
+   >>> min(x[:3:2])
+   1
+   >>> 1 in x
+   True
+   >>> 5.1 not in x
+   True
+
+Die Operatoren (:ref:`in, not in <python3:in>`, ``+`` und ``*``) und die
+eingebauten Funktionen (``len``, ``max`` und ``min``) arbeiten mit Tupeln auf
+die gleiche Weise wie mit :doc:`lists`, da keine dieser Funktionen das Original
+verändert. Es gibt jedoch nur zwei Tupelmethoden: ``count`` und ``index``.
+
+Mit den ``+``- und ``*``-Operatoren könnt ihr Tupel aus bestehenden Tupeln
+erstellen:
+
+.. code-block:: pycon
+
+   >>> x + x
+   (1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2), 1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+   >>> 2 * x
+   (1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2), 1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+
+Eine Kopie eines Tupels kann auf die gleiche Weise wie bei Listen erstellt
+werden:
+
+.. code-block:: pycon
+
+   >>> x[:]
+   (1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+   >>> x * 1
+   (1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+   >>> x + ()
+   (1, '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+
+Der Versuch, ein Tupel zu ändern, führt jedoch zu einer
+Fehlermeldung:
+
+.. code-block:: pycon
+
+   >>> x[1] = "zweitens"
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+   TypeError: 'tuple' object does not support item assignment
+
+Ein-Element-Tupel
+-----------------
+
+Einen kleinen syntaktischen Unterschied gibt es jedoch zu Listen: während
+``[1]`` eine Liste mit einem Element erstellt, ist ``(1)`` eine Ganzzahl und
+kein Tupel. Der Hintergrund hierfür ist, dass runde Klammern auch dazu verwendet
+werden, Elemente in Ausdrücken zu gruppieren, um eine bestimmte
+Auswertungsreihenfolge zu erzwingen. Daher enthält jedes Tupel mit einem oder
+mehr Elementen ein oder mehr Kommas:
+
+.. blacken-docs:off
+
+.. code-block:: pycon
+
+    >>> y = ()
+    >>> type(y)
+    <class 'tuple'>
+    >>> z = (1 + 3.0)
+    >>> type(z)
+    <class 'float'>
+    >>> z = (1 + 3.0,)
+    >>> type(z)
+    <class 'tuple'>
+
+.. blacken-docs:on
+
+Packen und Entpacken von Tupeln
+-------------------------------
+
+Tupel können auf der linken Seite eines Zuweisungsoperators erscheinen. In
+diesem Fall erhalten die Variablen im Tupel die entsprechenden Werte aus dem
+Tupel auf der rechten Seite des Zuweisungsoperators. Hier ist ein einfaches
+Beispiel:
+
+.. code-block:: pycon
+
+   >>> (v, w, x, y, z) = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+   >>> v
+   1
+   >>> w
+   '2.'
+
+Dieses Beispiel kann noch weiter einfacht werden, da Python Tupel in einem
+Zuweisungskontext auch ohne die runden Klammern erkennt:
+
+.. code-block:: pycon
+
+   >>> v, w, x, y, z = 1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)
+   >>> y
+   ['4a', '4b']
+   >>> z
+   (5.1, 5.2)
+
+Mit ``*`` wird das Entpacken noch erweitert um eine beliebige Anzahl von
+Elementen aufzunehmen, die nicht zu den sonstigen Elementen passen:
+
+.. code-block:: pycon
+
+   >>> x = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
+   >>> a, b, *c = x
+   >>> a, b, c
+   (1, '2.', [3.0, ['4a', '4b'], (5.1, 5.2)])
+   >>> a, *b, c = x
+   >>> a, b, c
+   (1, ['2.', 3.0, ['4a', '4b']], (5.1, 5.2))
+   >>> a, *b, c, d, e, f = x
+   >>> a, b, c, d, e, f
+   (1, [], '2.', 3.0, ['4a', '4b'], (5.1, 5.2))
+
+.. note::
+   Das mit ``*`` versehene Element erhält alle überzähligen Elemente als Liste
+   und, wenn keine überzähligen Elemente vorhanden sind, eine leere Liste.
+
+Konvertieren zwischen Listen und Tupeln
+---------------------------------------
 
 Eine Liste kann mit Hilfe der eingebauten Funktion ``tuple`` in ein Tupel
 umgewandelt werden:
