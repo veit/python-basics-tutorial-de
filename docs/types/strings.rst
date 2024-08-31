@@ -14,10 +14,20 @@ viele Optionen zur Begrenzung von Zeichenketten:
 
 Zeichenketten können durch einfache (``' '``), doppelte (``" "``), dreifache
 einfache (``''' '''``) oder dreifache doppelte (``""" """``) Anführungszeichen
-getrennt werden und können Tabulator- (``\t``) und Zeilenumbruchzeichen (``\n``)
-enthalten. Allgemein können Backslashes ``\`` als Escape-Zeichen verwendet
-werden. So kann :abbr:`z.B. (zum Beispiel)` ``\\`` für einen einzelnen Backslash
-und ``\'`` für ein einfaches Anführungszeichen verwendet werden, wodurch es die
+getrennt werden.
+
+Eine normale Zeichenkette kann nicht auf mehrere Zeilen aufgeteilt werden. Der
+folgende Code wird also nicht funktionieren:
+
+.. code-block::
+
+   "Dies ist ein fehlerhafter Versuch, einen einen Zeilenumbruch in
+   eine Zeichenkette einzufügen, ohne \n zu verwenden."
+
+Sie können auch Tabulator- (``\t``) und *Newline*-Zeichen (``\n``) enthalten.
+Allgemein können Backslashes ``\`` als Escape-Zeichen verwendet werden. So kann
+:abbr:`z.B. (zum Beispiel)` ``\\`` für einen einzelnen Backslash und ``\'`` für
+ein einfaches Anführungszeichen verwendet werden, wodurch es die
 Zeichenfolge nicht beendet:
 
 .. blacken-docs:off
@@ -28,6 +38,19 @@ Zeichenfolge nicht beendet:
    'However, this wouldn\'t work without a backslash.'
 
 .. blacken-docs:on
+
+Python bietet jedoch auch Zeichenketten in dreifachen Anführungszeichen
+(``"""``), die dies ermöglichen und einfache und doppelte Anführungszeichen ohne
+Backslashes ``\`` als Escape-Zeichen enthalten können.
+
+Sonderzeichen und Escape-Sequenzen
+----------------------------------
+
+``\n`` steht für das *Newline*-Zeichen und ``\t`` für das Tabulatorzeichen.
+Zeichenfolgen, die mit einem Backslash beginnen und zur Darstellung anderer
+Zeichen verwendet werden, werden Escape-Sequenzen genannt. Escape-Sequenzen
+werden in der Regel verwendet, um Sonderzeichen darzustellen, :abbr:`d.h. (das
+heißt)` Zeichen, für die es keine einstellige druckbare Darstellung gibt.
 
 Hier sind weitere Zeichen, die ihr mit dem Escape-Zeichen erhalten könnt:
 
@@ -58,23 +81,22 @@ Hier sind weitere Zeichen, die ihr mit dem Escape-Zeichen erhalten könnt:
 | :samp:`\N{{SNAKE}}`      | ``🐍``                   | Unicode Emoji name       |
 +--------------------------+--------------------------+--------------------------+
 
-Eine normale Zeichenkette kann nicht auf mehrere Zeilen aufgeteilt werden. Der
-folgende Code wird nicht funktionieren:
+Zeilen 1–7
+    Der ASCII-Zeichensatz, der von Python verwendet wird und der
+    Standardzeichensatz auf fast allen Computern ist, definiert eine ganze Reihe
+    weiterer Sonderzeichen.
+Zeilen 8–9
+    Unicode-Escape-Sequenzen.
+Zeile 10
+    Unicode-Namen zur Angabe eines Unicode-Zeichens.
 
-.. code-block::
+Operatoren und Funktionen
+-------------------------
 
-   "Dies ist ein fehlerhafter Versuch, einen einen Zeilenumbruch in
-   eine Zeichenkette einzufügen, ohne \n zu verwenden."
-
-Python bietet jedoch Zeichenketten in dreifachen Anführungszeichen (``"""``),
-die dies ermöglichen und einfache und doppelte Anführungszeichen ohne
-Backslashes enthalten können.
-
-Zeichenketten sind außerdem unveränderlich. Die Operatoren und Funktionen, die
-mit ihnen arbeiten, geben neue, vom Original abgeleitete Zeichenketten zurück.
-Die Operatoren (``in``, ``+`` und ``*``) und eingebauten Funktionen (``len``,
-``max`` und ``min``) arbeiten mit Zeichenketten genauso wie mit Listen und
-Tupeln.
+Die Operatoren und Funktionen, die mit Zeichenketten arbeiten, geben neue, vom
+Original abgeleitete Zeichenketten zurück. Die Operatoren (``in``, ``+`` und
+``*``) und eingebauten Funktionen (``len``, ``max`` und ``min``) arbeiten mit
+Zeichenketten genauso wie mit Listen und Tupeln.
 
 .. code-block:: pycon
 
@@ -90,8 +112,11 @@ Tupeln.
    >>> min(welcome)
    '\n'
 
-Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um Elemente
-oder Slices zu erhalten:
+Indizierung und Slicing
+-----------------------
+
+Die Index- und Slice-Notation funktioniert auf die gleiche Weise, um einzelne
+Elemente oder Slices zu erhalten:
 
 .. code-block:: pycon
 
@@ -101,7 +126,8 @@ oder Slices zu erhalten:
    'pythonistas!'
 
 Die Index- und Slice-Notation kann jedoch nicht verwendet werden, um Elemente
-hinzuzufügen, zu entfernen oder zu ersetzen:
+hinzuzufügen, zu entfernen oder zu ersetzen, da Zeichenketten unveränderlich
+sind:
 
 .. code-block:: pycon
 
@@ -110,13 +136,12 @@ hinzuzufügen, zu entfernen oder zu ersetzen:
      File "<stdin>", line 1, in <module>
    TypeError: 'str' object does not support item assignment
 
-``string``
-----------
+String-Methoden
+---------------
 
-Für Zeichenketten gibt es in der Standard-Python-Bibliothek :doc:`string
-<python3:library/string>` mehrere Methoden, um mit ihrem Inhalt zu arbeiten
-:abbr:`u.a. (unter anderem)` :py:meth:`str.split`, :py:meth:`str.replace` und
-:py:meth:`str.strip`:
+Die meisten der Python-:ref:`String-Methoden <python3:string-methods>` sind im
+:ref:`str <python3:textseq>`-Typ integriert, so dass alle ``str``-Objekte
+automatisch über sie verfügen:
 
 .. code-block:: pycon
 
@@ -198,6 +223,179 @@ Im Folgenden findet ihr einen Überblick über die häufigsten
 |                           | zu erhalten.                                                  |
 +---------------------------+---------------------------------------------------------------+
 
+``str.split`` und ``str.join``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Während :meth:`python3:str.split` eine Liste von Zeichenfolgen zurückgibt, nimmt
+:meth:`python3:str.join` eine Liste von Zeichenketten und fügt sie zu einer
+einzigen Zeichenkette zusammen. Normalerweise verwendet
+:meth:`python3:str.split` Leerraum als Begrenzungszeichen für die aufzuteilenden
+Zeichenketten, aber ihr könnt dieses Verhalten mit einem optionalen
+:doc:`../functions/params` ändern.
+
+.. warning::
+   Die Verkettung von Zeichenketten mit ``+`` ist zwar nützlich, aber nicht
+   effizient, wenn es darum geht, eine große Anzahl von Zeichenketten zu einer
+   einzigen Zeichenkette zusammenzufügen, da jedes Mal, wenn ``+`` angewendet
+   wird, ein neues Zeichenketten-Objekt erstellt wird. :samp:`"Hello" +
+   "Pythonistas!"` erzeugt zwei Objekte, von denen eines sofort wieder verworfen
+   wird.
+
+Wenn ihr mit :meth:`python3:str.join` Zeichenfolgen zusammenführt, könnt ihr
+zwischen die Zeichenfolgen beliebige Zeichen einfügen:
+
+.. code-block:: pycon
+
+   >>> " :: ".join(["License", "OSI Approved"])
+   'License :: OSI Approved'
+
+Ihr könnt auch eine leere Zeichenkette, ``""``, verwenden, :abbr:`z.B. (zum
+Beispiel)` für die CamelCase-Schreibweise von Python-Klassen:
+
+.. code-block:: pycon
+
+   >>> "".join(["My", "Class"])
+   'MyClass'
+
+:meth:`python3:str.split` wird meist verwendet um Zeichenketten an Leerräumen zu
+trennen. Ihr könnt eine Zeichenkette jedoch auch an einer bestimmten anderen
+Zeichenfolge trennen, indem ihr einen optionalen :doc:`../functions/params`
+übergebt:
+
+.. code-block:: pycon
+
+   >>> example = "1. You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string."
+   >>> example.split()
+   ['1.', 'You', 'can', 'have', 'whitespaces,', 'newlines', 'and', 'tabs', 'mixed', 'in', 'the', 'string.']
+   >>> license = "License :: OSI Approved"
+   >>> license.split(" :: ")
+   ['License', 'OSI Approved']
+
+Manchmal ist es nützlich, dem letzten Feld in einer Zeichenkette zu erlauben,
+beliebigen Text zu enthalten. Ihr könnt dies tun, indem ihr einen optionalen
+zweiten :doc:`../functions/params` angebt, wie viele Teilungen durchgeführt
+werden sollen:
+
+.. code-block:: pycon
+
+   >>> example.split(" ", 1)
+   ['1.', 'You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string.']
+
+Wenn ihr :meth:`python3:str.split` mit dem optionalen zweiten Argument verwendenwollt, müsst ihr zunächst ein erstes Argument angeben. Um zu erreichen, dass bei
+allen Leerzeichen geteilt wird, verwendet :doc:`none` als erstes Argument:
+
+.. code-block:: pycon
+
+   >>> example.split(None, 8)
+   ['1.', 'You', 'can', 'have', 'whitespaces,', 'newlines', 'and', 'tabs', 'mixed in\n\tthe string.']
+
+.. tip::
+   Ich verwende :meth:`python3:str.split` und :meth:`python3:str.join`
+   ausgiebig, meist für Textdateien, die von anderen Programmen erzeugt wurden.
+   Zum Schreiben von
+   :doc:`Python4DataScience:data-processing/serialisation-formats/csv/index`-
+   oder
+   :doc:`Python4DataScience:data-processing/serialisation-formats/json/index`-Dateien
+   verwende ich jedoch meist die zugehörigen Python-Bibliotheken.
+
+Leerraum entfernen
+~~~~~~~~~~~~~~~~~~
+
+:py:meth:`str.strip` gibt eine neue Zeichenkette zurück, die sich von der
+ursprünglichen Zeichenkette nur dadurch unterscheidet, dass alle Leerzeichen am
+Anfang oder Ende der Zeichenkette entfernt wurden. :py:meth:`str.lstrip` und
+:py:meth:`str.rstrip` arbeiten ähnlich, entfernen jedoch nur die Leerzeichen am
+linken :abbr:`bzw. (beziehungsweise)` rechten Ende der ursprünglichen
+Zeichenkette:
+
+.. code-block:: pycon
+
+   >>> example = "    whitespaces, newlines \n\tand tabs. \n"
+   >>> example.strip()
+   'whitespaces, newlines \n\tand tabs.'
+   >>> example.lstrip()
+   'whitespaces, newlines \n\tand tabs. \n'
+   >>> example.rstrip()
+   '    whitespaces, newlines \n\tand tabs.'
+
+In diesem Beispiel werden die *Newlines* ``\n`` als Leerzeichen betrachtet. Die
+genaue Zuordnung kann sich von Betriebssystem zu Betriebssystem unterscheiden.
+Ihr könnt herausfinden, was Python als Leerzeichen betrachtet, indem ihr auf die
+Konstante :py:data:`string.whitespace` zugreift. Bei mir wird das folgende
+zurückgegeben:
+
+.. code-block:: pycon
+
+   >>> import string
+   >>> string.whitespace
+   ' \t\n\r\x0b\x0c'
+
+Die im Hexadezimalformat (``\x0b``, ``\x0c``) angegebenen Zeichen stellen die
+vertikalen Tabulator- und Vorschubzeichen dar.
+
+.. tip::
+   Ändert nicht den Wert dieser Variablen um die Funktionsweise von
+   :py:meth:`str.strip` :abbr:`usw. (und so weiter)` zu beeinflussen. Welche
+   Zeichen diese Methoden entfernen, könnt ihr Zeichen als zusätzlichen
+   :doc:`../functions/params` übergeben:
+
+   .. code-block:: pycon
+
+      >>> url = "https://www.cusy.io/"
+      >>> url.strip("htps:/w.")
+      'cusy.io'
+
+Suche in Zeichenketten
+~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`str <python3:textseq>`-Objekte bieten mehrere Methoden für die einfache
+Suche nach Zeichenketten: Die vier grundlegenden Methoden für die Suche nach
+Zeichenketten sind :py:meth:`str.find`, :py:meth:`str.rfind`,
+:py:meth:`str.index` und :py:meth:`str.rindex`. Eine verwandte Methode,
+:py:meth:`str.count`, zählt, wie oft eine Zeichenfolge in einer anderen
+Zeichenfolge gefunden werden kann.
+
+:py:meth:`str.find` benötigt einen einzigen :doc:`../functions/params`: die
+gesuchte Teilzeichenkette; zurückgegeben wird dann die Position des ersten
+Vorkommens oder ``-1``, wenn es kein Vorkommen gibt:
+
+.. code-block:: pycon
+
+   >>> hipy = "Hello Pythonistas!\n"
+   >>> hipy.find("\n")
+   18
+
+:py:meth:`str.find` kann auch ein oder zwei zusätzliche
+:doc:`../functions/params` annehmen:
+
+``start``
+    Zahl, der Zeichen am Anfang der zu durchsuchenden Zeichenkette, die
+    ignoriert werden soll.
+``end``
+    Zahl, der Zeichen am Ende der zu durchsuchenden Zeichenkette, die ignoriert
+    werden soll.
+
+Im Gegensatz zu :py:meth:`find` beginnt :py:meth:`rfind` die Suche am Ende der
+Zeichenkette und gibt daher die Position des letzten Vorkommens zurück.
+
+:py:meth:`index` und :py:meth:`rindex` unterscheiden sich von :py:meth:`find`
+und :py:meth:`rfind` dadurch, dass statt dem Rückgabewert ``-1`` eine
+:class:`python3:ValueError`-Ausnahme ausgelöst wird.
+
+Ihr könnt zwei weitere :ref:`String-Methoden <python3:string-methods>`
+verwenden, um Strings zu suchen: :py:meth:`str.startswith` und
+:py:meth:`str.endswith`. Diese Methoden geben ``True``- oder ``False`` als
+Ergebnis zurück, je nachdem, ob die Zeichenkette, auf die sie angewendet werden,
+mit einer der als :doc:`../functions/params` angegebenen Zeichenketten beginnt
+oder endet:
+
+.. code-block:: pycon
+
+   >>> hipy.endswith("\n")
+   True
+   >>> hipy.endswith(("\n", "\r"))
+   True
+
 Darüber hinaus gibt es einige Methoden, mit denen die Eigenschaft einer
 Zeichenkette überprüft werden kann:
 
@@ -215,15 +413,50 @@ Zeichenkette überprüft werden kann:
 | :py:meth:`str.isdecimal`  | ❌            | ❌            | ❌            | ❌            | ✅            |
 +---------------------------+---------------+---------------+---------------+---------------+---------------+
 
-:py:meth:`str.isspace` prüft auf Leerzeichen:
-``[ \t\n\r\f\v\x1c-\x1f\x85\xa0\u1680…]``.
+:py:meth:`str.isspace` prüft auf Leerzeichen.
+
+Zeichenketten ändern
+~~~~~~~~~~~~~~~~~~~~
+
+:ref:`str <python3:textseq>`-Objekte sind unveränderlich, aber sie verfügen über
+mehrere Methoden, die eine modifizierte Version der ursprünglichen Zeichenkette
+zurückgeben können.
+
+:py:meth:`str.replace` könnt ihr verwenden, um Vorkommen des ersten :doc:`../functions/params` durch den zweiten zu ersetzen, :abbr:`z.B. (zum Beispiel)`:
+
+.. code-block:: pycon
+
+   >>> hipy.replace("\n", "\n\r")
+   'Hello Pythonistas!\n\r'
+
+:py:meth:`str.maketrans` und :py:meth:`str.translate` können zusammen verwendet
+werden, um Zeichen in Zeichenketten in andere Zeichen zu übersetzen, :abbr:`z.B.
+(zum Beispiel)`:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> hipy = "Hello Pythonistas!\n"
+   >>> trans_map = hipy.maketrans(" ", "-", "!\n")
+   >>> hipy.translate(trans_map)
+   'Hello-Pythonistas'
+
+Zeile 2
+    :py:meth:`str.maketrans` wird verwendet, um eine Übersetzungstabelle aus den
+    beiden Zeichenketten-Argumenten zu erstellen. Die beiden Argumente müssen
+    jeweils die gleiche Anzahl von Zeichen enthalten. Als drittes Argument
+    werden Zeichen übergeben, die nicht zurückgegeben werden sollen.
+Zeile 3
+    Die von :py:meth:`str.maketrans` erzeugte Tabelle wird an
+    :py:meth:`str.translate` übergeben.
 
 ``re``
 ------
 
 Die Python-Standard-Bibliothek :doc:`re <python3:library/re>` enthält ebenfalls
 Funktionen für die Arbeit mit Zeichenketten. Dabei bietet ``re`` ausgefeiltere
-Möglichkeiten zur Musterextraktion und -ersetzung als ``string``.
+Möglichkeiten zur Musterextraktion und -ersetzung als der
+:ref:`str <python3:textseq>`-Typ.
 
 .. code-block:: pycon
 
@@ -361,6 +594,101 @@ Ausdrücke:
    * :doc:`../../appendix/regex`
    * :doc:`python3:howto/regex`
    * :doc:`python3:library/re`
+
+Konvertieren von Zeichenketten in Zahlen
+----------------------------------------
+
+Ihr könnt die Funktionen :class:`python3:int` und :class:`python3:float`
+verwenden, um Zeichenketten in Ganzzahl- bzw. Fließkommazahlen zu konvertieren.
+Wenn eine Zeichenkette übergeben wird, die nicht als Zahl des angegebenen Typs
+interpretiert werden kann, lösen diese Funktionen eine
+:class:`python3:ValueError`-Ausnahme aus. Ausnahmen werden in
+:doc:`../control-flows/exceptions` ausführlicher erklärt. Darüber hinaus könnt
+ihr :class:`python3:int` ein optionaler zweiter :doc:`../functions/params`
+übergeben, das die numerische Basis angibt, die bei der Interpretation der
+Zeichenfolge verwendet werden soll:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> float("12.34")
+   12.34
+   >>> float("12e3")
+   12000.0
+   >>> int("1000")
+   1000
+   >>> int("1000", base=10)
+   1000
+   >>> int("1000", 8)
+   512
+   >>> int("1000", 2)
+   8
+   >>> int("1234", 2)
+   Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+   ValueError: invalid literal for int() with base 2: '1234'
+
+Zeilen 5–8
+    Wird kein zweiter :doc:`../functions/params` angegeben, rechnet
+    :class:`python3:int` mit einer Basis von ``10``.
+Zeilen 9, 10
+    ``1000`` wird als `Oktalzahl <https://de.wikipedia.org/wiki/Oktalsystem>`_
+    interpretiert.
+Zeilen 11, 12
+    ``1000`` wird als `Dualzahl <https://de.wikipedia.org/wiki/Dualsystem>`_
+    interpretiert.
+Zeilen 13–16
+    ``1234`` kann nicht als Ganzzahl auf der Basis ``2`` angegeben werden. Daher
+    wird eine :class:`python3:ValueError`-Ausnahme ausgelöst.
+
+Ändern von Zeichenketten mit Listenmanipulationen
+-------------------------------------------------
+
+Da :ref:`str <python3:textseq>`-Objekte unveränderlich sind, gibt es keine
+Möglichkeit, sie direkt zu verändern wie :doc:`lists`. Ihr könnt sie jedoch in
+Listen umwandeln:
+
+.. code-block:: pycon
+
+   >>> palindromes = "lol level gag"
+   >>> palindromes_list = list(palindromes)
+   >>> palindromes_list.reverse()
+   >>> "".join(palindromes_list)
+   'gag level lol'
+
+Objekte in Zeichenketten konvertieren
+-------------------------------------
+
+In Python kann fast alles in eine Zeichenkette mit der eingebauten Funktion
+:ref:`str <python3:textseq>` umgewandelt werden:
+
+.. code-block:: pycon
+
+   >>> data_types = [(7, "Data types", 19), (7.1, "Numbers", 19), (7.2, "Lists", 23)]
+   >>> (
+   ...     "The title of chapter "
+   ...     + str(data_types[0][0])
+   ...     + " is «"
+   ...     + data_types[0][1]
+   ...     + "»."
+   ... )
+   'The title of chapter 7 is «Data types».'
+
+Das Beispiel verwendet :ref:`str <python3:textseq>`, um eine Ganzzahl aus der
+Liste ``data_types`` in eine Zeichenkette umzuwandeln, die dann wieder
+konkateniert werden, um die endgültige Zeichenkette zu bilden.
+
+.. note::
+   Während :ref:`str <python3:textseq>` meist verwendet wird, um für Menschen
+   lesbare Texte zu erzeugen, wird :func:`python3:repr` eher für
+   Debugging-Ausgaben oder Statusberichte verwendet, :abbr:`z.B. (zum
+   Beispiel)`, um Informationen über die eingebaute Python-Funktion
+   :func:`python3:len` zu erhalten:
+
+   .. code-block:: pycon
+
+      >>> repr(len)
+      '<built-in function len>'
 
 ``print()``
 -----------
@@ -645,11 +973,14 @@ Checks
   * ``int("1+2")``
   * ``int("+2")``
 
-* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` begintt, welche
+* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
   Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
 
-* Angenommen, ihr habt eine Zeichenkette mit Satzzeichen, Anführungszeichen und
-  Zeilenumbrüchen. Wie können diese aus der Zeichenkette entfernt werden?
+* Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
+  und Zeilenumbrruch. Wie können diese aus der Zeichenkette entfernt werden?
+
+* Wie könnt ihr **alle** Leerräume und Satzzeichen aus einer Zeichenfolge in
+  einen Bindestrich (``-``) ändern?
 
 * Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
   :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten

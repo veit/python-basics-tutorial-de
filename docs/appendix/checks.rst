@@ -341,7 +341,7 @@ Checks
 
   .. blacken-docs:on
 
-* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` begintt, welche
+* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
   Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
 
   .. code-block:: pycon
@@ -351,13 +351,26 @@ Checks
      >>> x[:9] == ".. note::"
      True
 
-* Angenommen, ihr habt eine Zeichenkette mit Satzzeichen, Anführungszeichen und
-  Zeilenumbrüchen. Wie können diese aus der Zeichenkette entfernt werden?
+* Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
+  und Zeilenumbrruch. Wie können diese aus der Zeichenkette entfernt werden?
 
   .. code-block:: pycon
 
-     >>> hipy = ["‘Hello", "Pythonistas!’\n"]
-     >>> string.strip("‘’!\n")
+     >>> hipy = "„Hello Pythonistas!“\n"
+     >>> hipy.strip("„“!\n")
+     'Hello Pythonistas'
+
+* Wie könnt ihr **alle** Leerräume und Satzzeichen aus einer Zeichenfolge in
+  einen Bindestrich (``-``) ändern?
+
+  .. code-block:: pycon
+
+     >>> from string import punctuation, whitespace
+     >>> chars = punctuation + whitespace
+     >>> subs = str.maketrans(chars, len(chars) * "-")
+     >>> hipy = "Hello Pythonistas!\n"
+     >>> hipy.translate(subs)
+     'Hello-Pythonistas--'
 
 * Welchen regulären Ausdruck würdet ihr verwenden, um Zeichenfolgen zu finden,
   die die Zahlen zwischen -3 und +3 darstellen?
