@@ -328,9 +328,13 @@ Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 45-50
+   :lines: 45-51
    :lineno-start: 45
 
+``include-hidden-files``
+    ist mit `actions/upload-artifact v4.4.0
+    <https://github.com/actions/upload-artifact/releases/tag/v4.4.0>`_ notwendig
+    geworden.
 ``if-no-files-found: ignore``
     ist sinnvoll, wenn nicht für alle Python-Versionen die Testabdeckung
     gemessen werden soll um schneller zum Ergebnis zu kommen. Daher solltet ihr
@@ -342,8 +346,8 @@ der die Ergebnisse zusammenführt:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 52-90
-   :lineno-start: 52
+   :lines: 53-91
+   :lineno-start: 53
 
 ``needs: tests``
     stellt sicher, dass alle Tests durchgeführt werden. Wenn euer Job, der die
@@ -378,8 +382,8 @@ speichern. Hierfür erweitern wir unsere :download:`ci.yaml` folgendermaßen:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 92-
-   :lineno-start: 92
+   :lines: 93-
+   :lineno-start: 93
 
 Zeile 97
     ``GIST_TOKEN`` ist ein persönliches GitHub-Zugangs-Token.
