@@ -175,6 +175,7 @@ wir die Bibliothek über das :doc:`pre-commit
 <Python4DataScience:productive/git/advanced/hooks/pre-commit>`-Framework ein:
 
 .. code-block:: yaml
+   :caption: .pre-commit-config.yaml
 
    - repo: https://github.com/adamchainz/blacken-docs
      rev: "v1.12.1"
@@ -193,6 +194,45 @@ blacken-docs unterstützt aktuell die folgenden black-Optionen:
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#s-skip-string-normalization>`_
 * `target-version
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#t-target-version>`_
+
+Rechtschreibung
+---------------
+
+Die englische Rechtschreibung lässt sich überprüfen mit `codespell
+<https://github.com/codespell-project/codespell>`_. Es nutzt eine erweiterte
+Version der auf `Wikipedia
+<https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines>`_
+verfügbaren Wörterbücher. :abbr:`Ggf. (Gegebenenfalls)` könnt ihr jedoch auch
+eigene Wörterbucher mit der ``--builtin``-Option bereitstellen.
+
+Ihr könnt ``codespell`` in der :file:`pyproject.toml` konfigurieren, :abbr:`z.B.
+(zum Beispiel)`:
+
+.. code-block:: toml
+   :caption: pyproject.toml
+
+   [project.optional-dependencies]
+   docs = [
+       "...",
+       "codespell",
+   ]
+
+   [tool.codespell]
+   ignore-words-list = "uint"
+   skip = "./.*, *.po, ./docs/_build"
+   count = true
+   quiet-level = 3
+
+Ihr könnt ``codespell`` automatisch vor jedem Git-Commit ausführen, indem ihr
+folgendes in die :file:`.pre-commit-config.yaml`-Datei eintragt:
+
+.. code-block:: yaml
+   :caption: .pre-commit-config.yaml
+
+   - repo: https://github.com/codespell-project/codespell
+     rev: v2.3.0
+     hooks:
+       - id: codespell
 
 .. _docstrings-coverage:
 
