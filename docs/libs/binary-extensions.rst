@@ -294,14 +294,13 @@ Zufallszahlen mit Werten zwischen 1 und 1000 erstellt.
    Der `CPython Extending and Embedding guide
    <https://docs.python.org/3/extending/>`_ enthält eine Einführung in das
    Schreiben eigener Extension-Module in C: `Extending Python with C or C++
-   <https://docs.python.org/3/extending/extending.html>`_. Beachtet jedoch
-   bitte, dass diese Einführung nur die grundlegenden Tools zum Erstellen von
-   Erweiterungen beshreibt, die im Rahmen von CPython bereitgestellt werden.
-   Third-Party-Tools wie `Cython <https://cython.org/>`__, `cffi
-   <https://cffi.readthedocs.io/>`_, `SWIG <https://www.swig.org/>`__ und `Numba
-   <https://numba.pydata.org/>`__ bieten sowohl einfachere als auch
-   ausgeklügeltere Ansätze zum Erstellen von C- und C ++- Erweiterungen für
-   Python.
+   <https://docs.python.org/3/extending/extending.html>`_. Beachtet jedoch, dass
+   diese Einführung nur die grundlegenden Tools zum Erstellen von Erweiterungen
+   beshreibt, die im Rahmen von CPython bereitgestellt werden. Third-Party-Tools
+   wie `Cython <https://cython.org/>`__, `cffi <https://cffi.readthedocs.io/>`_,
+   `SWIG <https://www.swig.org/>`__ und `Numba <https://numba.pydata.org/>`__
+   bieten sowohl einfachere als auch ausgeklügeltere Ansätze zum Erstellen von
+   C- und C ++- Erweiterungen für Python.
 
    `Python Packaging User Guide: Binary Extensions
    <https://packaging.python.org/en/latest/guides/packaging-binary-extensions/>`_

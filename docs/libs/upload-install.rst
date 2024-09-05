@@ -24,9 +24,9 @@ Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
     username = veit
 
 .. seealso::
-    Wenn ihr die PyPI-Anmeldung automatisieren wollt, lest bitte `Careful With
-    That PyPI
-    <https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html>`_.
+   Wenn ihr die PyPI-Anmeldung automatisieren wollt, lest zunächst `Careful
+   With That PyPI
+   <https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html>`_.
 
 Nachdem ihr registriert seid, könnt ihr euer :term:`Distribution Package` mit
 :term:`twine` hochladen. Hierzu müsst ihr jedoch zunächst twine installieren
@@ -148,8 +148,8 @@ importiert und auf die ``name``-Eigenschaft referenziert, die zuvor in
 README
 ~~~~~~
 
-Überprüft bitte auch, ob die :file:`README.rst`-Datei auf der Test-PyPI-Seite
-korrekt angezeigt wird.
+Überprüft auch, ob die :file:`README.rst`-Datei auf der Test-PyPI-Seite korrekt
+angezeigt wird.
 
 PyPI
 ----
