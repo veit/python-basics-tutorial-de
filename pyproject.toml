@@ -1,0 +1,42 @@
+[project]
+name = "python-basics-tutorial-de"
+version = "24.2.0"
+authors = [
+  { name="Veit Schiele", email="veit@cusy.io" },
+]
+description = "Schulungsmaterialen für unseren Python-Basis-Kurs: https://cusy.io/de/seminare"
+readme = "README.rst"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+docs = [
+    "furo",
+    "sphinxext.opengraph", # matplotlib is required for social cards
+    "matplotlib",
+    "sphinx_copybutton",
+    "sphinx-inline-tabs",
+    "sphinxcontrib.plantuml",
+    "sphinxcontrib-svg2pdfconverter",
+    "sphinx-lint",
+    "pygments-pytest",
+]
+
+dev = [
+    "python-basics-tutorial-de[docs]",
+    "pre-commit",
+    "codespell",
+    "vale"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/veit/python-basics-tutorial-de/"
+"Bug Tracker" = "https://github.com/veit/python-basics-tutorial-de/issues"
+
+[tool.codespell]
+skip = "*.rst, *.svg"
