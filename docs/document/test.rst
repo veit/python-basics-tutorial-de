@@ -244,7 +244,7 @@ von
 
 * GitLab (`.vale.ini
   <https://gitlab.com/gitlab-org/gitlab/blob/master/.vale.ini>`_, `Regeln
-  <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab>`__)
+  <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab_base>`__)
 * Homebrew (`.vale.ini
   <https://github.com/Homebrew/brew/blob/master/.vale.ini>`__, `Regeln
   <https://github.com/Homebrew/brew/tree/master/docs/vale-styles/Homebrew>`__)
@@ -253,7 +253,7 @@ Mit Vale selbst kommen die folgenden Stile mit:
 
 `Microsoft <https://github.com/errata-ai/Microsoft>`_
     Eine Implementierung des `Microsoft Writing Style Guide
-    <https://docs.microsoft.com/en-us/style-guide/welcome/>`__.
+    <https://learn.microsoft.com/en-us/style-guide/welcome/>`__.
 `Google <https://github.com/errata-ai/Google>`_
     Eine Implementierung des Styleguides für den `Google developer documentation
     style guide <https://developers.google.com/style/>`__.
