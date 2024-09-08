@@ -5,7 +5,7 @@ Variablen
 ---------
 
 Der am häufigsten verwendete Befehl in Python ist die Zuweisung. Der Python-Code
-um eine Vairiable namens ``x`` zu erstellen, die den Wert ``π`` erhalten soll,
+um eine Variable namens ``x`` zu erstellen, die den Wert ``π`` erhalten soll,
 lautet:
 
 .. code-block:: pycon
