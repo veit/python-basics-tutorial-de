@@ -106,7 +106,7 @@ Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass ihr es installie
    .. code-block:: console
 
       $ python3 -m venv .
-      $ . bin/acitvate
+      $ . bin/activate
       $ python -m pip install tox
 
 .. tab:: Windows

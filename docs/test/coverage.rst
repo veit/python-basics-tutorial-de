@@ -177,7 +177,7 @@ vorherigen Coverage-Run erstellt:
 
     $ cd /PATH/TO/items
     $ python3 -m venv .
-    $ . bin/acitvate
+    $ . bin/activate
     $ python -m pip install ".[dev]"
     $ pytest --cov=items --cov-report=html
 
