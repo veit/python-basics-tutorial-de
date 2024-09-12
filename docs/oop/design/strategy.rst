@@ -89,7 +89,7 @@ werden und die abstrakte Klasse :class:`Promotion` entfernt wird.
 
 Zeile 33:
     Um einen Rabatt zu berechnen, ruft einfach die Funktion
-    :func:`self.promotion()` auf.
+    :func:`self.promotion` auf.
 Zeile 40:
     Jede Strategie ist eine Funktion und keine Klasse.
 
@@ -139,7 +139,7 @@ So kann :py:func:`globals` dazu verwendet werden, um alle im Modul verfügbaren
    :lineno-start: 60
 
 Dies iteriert über jeden Namen im :doc:`Dictionary <../../types/dicts>`, das von
-:py:func:`globals()` zurückgegeben wird und wählt nur diejenigen Namen aus, die
+:py:func:`globals` zurückgegeben wird und wählt nur diejenigen Namen aus, die
 mit dem Suffix ``_promo`` enden.
 
 Um die :samp:`{special}_promo`-Funktionen in einem anderen Modul zu finden, kann

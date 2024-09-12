@@ -147,7 +147,7 @@ wir :func:`mock.patch.object` als Kontextmanager verwenden:
             assert items_cli("version") == items.__version__
 
 In unserem Testcode importieren wir ``items``. Das resultierende items-Objekt
-ist das, was wir patchen werden. Der Aufruf von :func:`mock.patch.object()`, der
+ist das, was wir patchen werden. Der Aufruf von :func:`mock.patch.object`, der
 als :doc:`Kontextmanager <../control-flows/with>` innerhalb eines
 ``with``-Blocks verwendet wird, gibt ein Mock-Objekt zurück, das nach dem
 ``with``-Block aufgeräumt wird:
@@ -155,15 +155,14 @@ als :doc:`Kontextmanager <../control-flows/with>` innerhalb eines
 #. In diesem Fall wird das Attribut ``__version__`` von ``items`` für die Dauer
    des ``with``-Blocks durch ``"100.0.0"`` ersetzt.
 #. Anschließend verwenden wir :func:`items_cli`, um unsere CLI-Anwendung mit dem
-   Befehl ``"version"`` aufzurufen. Wenn die Methode :func:`version()`
-   aufgerufen wird, ist das Attribut ``__version__`` jedoch nicht der
-   ursprüngliche String, sondern der String, den wir mit
-   :func:`mock.patch.object()` ersetzt haben.
+   Befehl ``"version"`` aufzurufen. Wenn die Methode :func:`version` aufgerufen
+   wird, ist das Attribut ``__version__`` jedoch nicht der ursprüngliche String,
+   sondern der String, den wir mit :func:`mock.patch.object` ersetzt haben.
 
 Mocking von Klassen und Methoden
 --------------------------------
 
-In :file:`src/items/cli.py` haben wir :func:`config()` folgendermaßen definiert:
+In :file:`src/items/cli.py` haben wir :func:`config` folgendermaßen definiert:
 
 .. code-block:: python
 
@@ -172,10 +171,10 @@ In :file:`src/items/cli.py` haben wir :func:`config()` folgendermaßen definiert
         with items_db() as db:
             print(db.path())
 
-:func:`items_db()` ist ein :doc:`Kontextmanager <../control-flows/with>`, der
-ein ``items.ItemsDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
-``db`` verwendet, um :func:`db.path()` aufzurufen. Wir sollten hier also zwei
-Dinge zu mocken: ``items.ItemsDB`` und eine seiner Methoden, :func:`path()`.
+:func:`items_db` ist ein :doc:`Kontextmanager <../control-flows/with>`, der ein
+``items.ItemsDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
+``db`` verwendet, um :func:`db.path` aufzurufen. Wir sollten hier also zwei
+Dinge zu mocken: ``items.ItemsDB`` und eine seiner Methoden, :func:`path`.
 Beginnen wir mit der Klasse:
 
 .. code-block:: python
@@ -257,7 +256,7 @@ Implementierung verwendet werden. Standardmäßig werden sie jedoch jeden Zugrif
 akzeptieren. Wenn das echte Objekt beispielsweise :func:`.start(index)` zulässt,
 sollen unsere Mock-Objekte ebenfalls :func:`.start(index)` zulassen. Dabei gibt
 es jedoch ein Problem. Mock-Objekte sind standardmäßig zu flexibel: sie
-würden auch :func:`stort()` oder andere falsch geschriebene, umbenannte oder
+würden auch :func:`stort` oder andere falsch geschriebene, umbenannte oder
 gelöschte Methoden oder Parameter akzeptieren. Dabei kann es im Laufe der Zeit
 zum :abbr:`sog. (sogenannten)` Mock-Drift kommen, wenn sich die Schnittstelle,
 die ihr nachbildet, ändert, euer Mock in eurem Testcode jedoch nicht. Diese Form
@@ -280,8 +279,8 @@ dynamische Methoden hat oder wenn Attribute zur Laufzeit hinzugefügt werden.
    Die Python-Dokumentation hat einen großen Abschnitt über ``autospec``:
    :ref:`python3:auto-speccing`.
 
-Aufruf überprüfen mit :func:`assert_called_with()`
---------------------------------------------------
+Aufruf überprüfen mit :func:`assert_called_with`
+------------------------------------------------
 
 Bisher haben wir die Rückgabewerte einer Mocking-Methode verwendet, um
 sicherzustellen, dass unser Anwendungscode mit den Rückgabewerten richtig
@@ -292,7 +291,7 @@ Aufruf von :func:`items_cli("add some tasks -o veit")` wird nicht die API
 verwendet, um zu prüfen, ob das Element in die Datenbank gelangt ist, sondern
 ein Mock, um sicherzustellen, dass die CLI die richtige API-Methode korrekt
 aufgerufen hat. Die Implementierung des Befehls :func:`add` ruft schließlich
-:func:`db.add_item()` mit einem ``Item``-Objekt auf:
+:func:`db.add_item` mit einem ``Item``-Objekt auf:
 
 .. _test_add_with_owner:
 
@@ -304,7 +303,7 @@ aufgerufen hat. Die Implementierung des Befehls :func:`add` ruft schließlich
         expected = items.Item("some task", owner="veit", state="todo")
         mock_itemsdb.add_item.assert_called_with(expected)
 
-Wenn :func:`add_item()` nicht aufgerufen wird oder mit dem falschen Typ oder dem
+Wenn :func:`add_item` nicht aufgerufen wird oder mit dem falschen Typ oder dem
 falschen Objektinhalt aufgerufen wird, schlägt der Test fehl. Wenn wir
 :abbr:`z.B. (zum Beispiel)` in ``expected`` den String ``"Veit"`` groß
 schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
@@ -331,7 +330,7 @@ schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
     ============================== 1 failed in 0.08s ===============================
 
 .. seealso::
-   Es gibt eine ganze Reihe von Varianten von :func:`assert_called()`. Eine
+   Es gibt eine ganze Reihe von Varianten von :func:`assert_called`. Eine
    vollständige Liste und Beschreibung erhaltet ihr in
    `unittest.mock.Mock.assert_called
    <https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called>`_.
@@ -442,7 +441,7 @@ Verhalten vollständig über die CLI testen. Dazu müsste möglicherweise die
 Ausgabe der Items-Liste geparst werden, um den korrekten Datenbankinhalt zu
 überprüfen.
 
-In der API gibt :func:`add_item()` einen Index zurück und bietet eine
+In der API gibt :func:`add_item` einen Index zurück und bietet eine
 :func:`get_item(index)`-Methode, die beim Testen hilft. Beide Methoden sind in
 der CLI nicht vorhanden, könnten es aber sein. Wir könnten vielleicht die
 Befehle ``items get index`` oder ``items info index`` hinzufügen, damit wir ein

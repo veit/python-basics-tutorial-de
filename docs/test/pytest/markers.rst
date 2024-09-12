@@ -529,7 +529,7 @@ Wir können auch nur bestimmte Testfälle eines parametrisierten Tests markieren
         s = items_db.get_item(i)
         assert s.state == "done"
 
-Die :func:`test_finish()`-Funktion ist nicht direkt markiert, sondern nur einer
+Die :func:`test_finish`-Funktion ist nicht direkt markiert, sondern nur einer
 ihrer Parameter: :samp:`pytest.param("in progress", marks=pytest.mark.smoke)`.
 Ihr könnt mehr als einen Marker verwenden, indem ihr die Listenform verwendet:
 :samp:`marks=[pytest.mark.{ONE}, pytest.mark.{TWO}]`. Wenn ihr alle Testfälle
@@ -562,7 +562,7 @@ jedoch auch Fixtures auf die gleiche Weise markieren:
         assert s.state == "done"
 
 Wenn ihr einer Funktion mehr als eine Markierung hinzufügen wollt, könnt ihr
-einfach stapeln. Zum Beispiel wird :func:`test_finish_non_existent()` sowohl mit
+einfach stapeln. Zum Beispiel wird :func:`test_finish_non_existent` sowohl mit
 ``@pytest.mark.smoke`` als auch mit ``@pytest.mark.exception`` markiert:
 
 .. code-block:: python
@@ -823,8 +823,8 @@ notwendig:
     pytest-Repräsentation eines Tests.  ``get_closest_marker('num_items')`` gibt
     ein Marker-Objekt zurück, wenn der Test mit ``num_items`` markiert ist,
     andernfalls gibt es ``None`` zurück. Die
-    :func:`get_closest_marker()`-Funktion gibt den Marker zurück, der dem Test
-    am nächsten liegt, und das ist normalerweise das, was wir wollen.
+    :func:`get_closest_marker`-Funktion gibt den Marker zurück, der dem Test am
+    nächsten liegt, und das ist normalerweise das, was wir wollen.
    Zeile 19
     Der Ausdruck ist wahr, wenn der Test mit ``num_items`` markiert ist und ein
     Argument angegeben wird. Die zusätzliche ``len``-Prüfung dient dazu, dass,
@@ -836,9 +836,9 @@ notwendig:
     Verfügung.
 
     * Für das Feld ``summary`` funktioniert die Methode
-      :func:`faker.sentence()`.
+      :func:`faker.sentence`.
     * Für das Feld ``Owner`` funktioniert die Methode
-      :func:`faker.first_name()`.
+      :func:`faker.first_name`.
 
     .. seealso::
        * Es gibt noch viele andere Möglichkeiten, die ihr mit Faker nutzen
@@ -868,7 +868,7 @@ funktioniert:
 
 .. note::
    Damit ihr einen Eindruck bekommt, wie die Daten von Faker aussehen, könnt ihr
-   eine ``print``-Anweisung zu :func:`test_four_items()` hinzufügen:
+   eine ``print``-Anweisung zu :func:`test_four_items` hinzufügen:
 
    .. code-block:: python
       :emphasize-lines: 4-

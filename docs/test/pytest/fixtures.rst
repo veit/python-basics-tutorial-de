@@ -49,19 +49,19 @@ den Fixture-Namen in die Parameter-Liste einer Testfunktion aufnehmt, weiß
 pytest, dass die Funktion vor der Ausführung des Tests ausgeführt werden soll.
 Fixtures können Arbeit verrichten und auch Daten an die Testfunktion
 zurückgeben. In diesem Fall dekoriert ``@pytest.fixture()`` die Funktion
-:func:`some_data()`. Der Test :func:`test_some_data()` hat den Namen der
-Fixture, :func:`some_data` als Parameter. pytest erkennt dies und sucht nach
+:func:`some_data`. Der Test :func:`test_some_data` hat den Namen der Fixture,
+:func:`some_data` als Parameter. pytest erkennt dies und sucht nach
 einer Fixture mit diesem Namen.
 
 Testfixtures in pytest beziehen sich auf den Mechanismus, der die Trennung von
 *Vorbereitungen für*- und *Aufräumen nach*-Code von euren Testfunktionen
 ermöglicht. pytest behandelt Exceptions während Fixtures anders als während
 einer Testfunktion. Eine ``Exception`` oder ein ``assert``-Fehler oder ein
-Aufruf von :func:`pytest.fail()`, die während des eigentlichen Testcodes
-auftritt, führt zu einem ``Fail``-Ergebnis. Während einer Fixture wird die
-Testfunktion jedoch als ``Error`` gemeldet. Diese Unterscheidung ist hilfreich
-bei der Fehlersuche, wenn ein Test nicht bestanden wurde. Wenn ein Test mit
-``Fail`` endet, liegt der Fehler irgendwo in der Testfunktion, wenn ein Test mit
+Aufruf von :func:`pytest.fail`, die während des eigentlichen Testcodes auftritt,
+führt zu einem ``Fail``-Ergebnis. Während einer Fixture wird die Testfunktion
+jedoch als ``Error`` gemeldet. Diese Unterscheidung ist hilfreich bei der
+Fehlersuche, wenn ein Test nicht bestanden wurde. Wenn ein Test mit ``Fail``
+endet, liegt der Fehler irgendwo in der Testfunktion, wenn ein Test mit
 ``Error`` endet, liegt der Fehler irgendwo in einer Fixture.
 
 .. _setup-and-teardown-fixtures:
@@ -91,19 +91,19 @@ große Hilfe sein werden:
             db.close()
             assert count == 0
 
-Um :func:`count()` aufrufen zu können, benötigen wir ein Datenbankobjekt, das
-wir durch den Aufruf von :func:`items.ItemsDB(db_path)` erhalten. Die Funktion
-:func:`items.ItemsDB()` gibt ein ``ItemsDB``-Objekt zurück. Der Parameter
+Um :func:`count` aufrufen zu können, benötigen wir ein Datenbankobjekt, das wir
+durch den Aufruf von :func:`items.ItemsDB(db_path)` erhalten. Die Funktion
+:func:`items.ItemsDB` gibt ein ``ItemsDB``-Objekt zurück. Der Parameter
 ``db_path`` muss ein ``pathlib.Path``-Objekt sein, das auf das
 Datenbankverzeichnis zeigt. Zum Testen funktioniert ein temporäres Verzeichnis,
-das wir mit :func:`tempfile.TemporaryDirectory()` erhalten.
+das wir mit :func:`tempfile.TemporaryDirectory` erhalten.
 
 Diese Testfunktion enthält jedoch einige Probleme: Der Code, um die Datenbank
-einzurichten, bevor wir :func:`count()` aufrufen, ist nicht wirklich das, was wir
+einzurichten, bevor wir :func:`count` aufrufen, ist nicht wirklich das, was wir
 testen wollen. Auch kann die ``assert``-Anweisung nicht vor dem Aufruf von
-:func:`db.close()` erfolgen, denn wenn die ``assert``-Anweisung fehlschlägt,
-wird de Datenbankverbindung nicht mehr geschlossen. Diese Probleme lassen sich
-mit pytest-Fixture lösen:
+:func:`db.close` erfolgen, denn wenn die ``assert``-Anweisung fehlschlägt, wird
+de Datenbankverbindung nicht mehr geschlossen. Diese Probleme lassen sich mit
+pytest-Fixture lösen:
 
 .. code-block:: python
 
@@ -139,7 +139,7 @@ unabhängig davon, was während der Tests passiert.
 In unserem Beispiel erfolgt ``yield`` innerhalb eines Kontextmanagers mit einem
 temporären Verzeichnis. Dieses Verzeichnis bleibt bestehen, während das Fixture
 verwendet wird und die Tests laufen. Nach Beendigung des Tests wird die
-Kontrolle wieder an das Fixture übergeben, :func:`db.close()` kann ausgeführt
+Kontrolle wieder an das Fixture übergeben, :func:`db.close` kann ausgeführt
 werden und der ``with``-Block kann den Zugriff auf das Verzeichnis schließen.
 
 Wir können Fixtures auch in mehreren Tests verwenden, :abbr:`z.B. (zum
@@ -152,11 +152,11 @@ Beispiel)` in
         items_db.add_item(items.Item("something else"))
         assert items_db.count() == 2
 
-:func:`test_count()` verwendet dasselbe ``items_db``-Fixture. Diesmal nehmen wir
+:func:`test_count` verwendet dasselbe ``items_db``-Fixture. Diesmal nehmen wir
 die leere Datenbank und fügen zwei Items hinzu, bevor wir die Anzahl überprüfen.
 Wir können ``items_db`` nun für jeden Test verwenden, der eine konfigurierte
-Datenbank benötigt. Die einzelnen Tests, wie :func:`test_empty()` und
-:func:`test_count()`, können kleiner gehalten werden und konzentrieren sich auf
+Datenbank benötigt. Die einzelnen Tests, wie :func:`test_empty` und
+:func:`test_count`, können kleiner gehalten werden und konzentrieren sich auf
 das, was wir wirklich testen wollen, und nicht auf *Setup* und *Teardown*.
 
 Fixture-Ausführung mit ``--setup-show`` anzeigen
@@ -587,7 +587,7 @@ Fixture-Scope dynamisch festlegen
 
 Nehmen wir an, wir haben die Fixtures so eingerichtet wie jetzt, mit ``db`` im
 ``session``-Scope und ``items_db`` im ``function``-Scope. Nun besteht jedoch die
-Gefahr, dass das ``items_db``-Fixture leer ist, weil es :func:`delete_all()`
+Gefahr, dass das ``items_db``-Fixture leer ist, weil es :func:`delete_all`
 aufruft. Deshalb wollen wir eine Möglichkeit schaffen, die Datenbank für jede
 Testfunktion vollständig einzurichten, indem wir den Scope der ``db``-Fixture
 zur Laufzeit dynamisch festlegen. Hierfür ändern wir zuerst den Scope von
@@ -745,7 +745,7 @@ Fixtures umbenennen
 Der Name einer Fixture, der in der Parameterliste von Tests und anderen Fixtures
 aufgeführt ist, die diese Fixture verwenden, ist normalerweise derselbe wie der
 Funktionsname der Fixture. Pytest erlaubt jedoch das Umbenennen von Fixtures mit
-einem Namensparameter an ``@pytest.fixture()``:
+einem Namensparameter an ``@pytest.fixture``:
 
 .. code-block:: python
 
