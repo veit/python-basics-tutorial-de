@@ -53,8 +53,8 @@ kennen, und verschiedene Empfänger können durch verschiedene
 Die Frage ist nun, ob wir in Python wirklich einen solchen objektorientierten
 Ersatz für Callbacks brauchen? Können wir stattdessen nicht dem :obj:`Caller`
 einfach eine Funktion geben? Anstatt also :func:`Command.execute` aufzurufen,
-könnte der :class:`Caller` einfach :func:`command()` aufrufen. Dabei kann
-:class:`Command` eine Klasse sein, die :func:`__call__()` implementiert und
+könnte der :class:`Caller` einfach :func:`command` aufrufen. Dabei kann
+:class:`Command` eine Klasse sein, die :func:`__call__` implementiert und
 Instanzen von :class:`Command` wären dann :abbr:`sog. (sogenannte)` *callables*,
 die jeweils eine Liste von Funktionen für zukünftige Aufrufe enthalten,
 :abbr:`z.B. (zum Beispiel)`:

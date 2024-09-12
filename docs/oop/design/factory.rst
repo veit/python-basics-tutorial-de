@@ -44,10 +44,9 @@ Diese einfache Fabrik wurde erfolgreich ausgeführt: das zurückgegebene Datum i
 vom Typ ``datetime.date``.
 
 .. note::
-   Ich habe das Verb :func:`convert_date()` als Namen für diese Funktion
-   gewählt, und nicht ein Substantiv wie :func:`date_factory()`, da er
-   ausdrückt, was die Funktion tut, anstatt mir zu sagen, was für eine Art von
-   Funtion sie ist.
+   Ich habe das Verb :func:`convert_date` als Namen für diese Funktion gewählt,
+   und nicht ein Substantiv wie :func:`date_factory`, da er ausdrückt, was die
+   Funktion tut, anstatt mir zu sagen, was für eine Art von Funtion sie ist.
 
 Einige Legacy-Sprachen unterstützen nur die Übergabe von Klasseninstanzen, nicht
 auch aufrufbare Funktionen. Mit dieser Einschränkung müsste jede einfache Fabrik
@@ -98,7 +97,7 @@ resultierende Objekt übergeben werden:
 Schließlich soll m Entwurfsmuster *Abstrakte Fabrik* die Spezifikation von der
 Implementierung getrennt werden, indem eine abstrakte Klasse erstellt wird. Eure
 abstrakte Klasse würde lediglich versprechen, dass das
-:class:`DateFactory`-Argument für :func:`load()` eine Klasse sein wird, die der
+:class:`DateFactory`-Argument für :func:`load` eine Klasse sein wird, die der
 erforderlichen Schnittstelle entspricht:
 
 .. code-block:: python

@@ -202,7 +202,7 @@ wurden:
 .. image:: missing.png
    :alt: raise MissingSummary
 
-Es sieht so aus, als hätte die Funktion :func:`add_item()` eine Exception
+Es sieht so aus, als hätte die Funktion :func:`add_item` eine Exception
 ``MissingSummary``, die bisher nicht getestet wird.
 
 Code von der Testabdeckung ausschließen
@@ -221,7 +221,7 @@ enthalten, der so oder so ähnlich aussieht:
     if __name__ == "__main__":
         main()
 
-Dieser Befehl weist Python an, :func:`main()` auszuführen, wenn wir das Modul
+Dieser Befehl weist Python an, :func:`main` auszuführen, wenn wir das Modul
 direkt aufrufen mit ``python my_module.py``, aber den Code nicht auszuführen,
 wenn das Modul importiert wird. Diese Arten von Code-Blöcken werden häufig mit
 einer einfachen Pragma-Anweisung vom Testen ausgeschlossen:
