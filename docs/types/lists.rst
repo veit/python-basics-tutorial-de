@@ -390,6 +390,9 @@ Vergleich dieser Typen jedoch keinen Sinn ergibt, führt dies zu einem Fehler:
    >>> max(x)
    5
    >>> hipy_list = ["Say", "hi", "to", "all", "Pythonistas", "!"]
+   >>> max(hipy_list)
+   'to'
+   >>> max(x + hipy_list)
    Traceback (most recent call last):
      File "<stdin>", line 1, in <module>
    TypeError: '>' not supported between instances of 'str' and 'int'
