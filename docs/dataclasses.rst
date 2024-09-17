@@ -7,7 +7,7 @@ bietet einen speziellen :doc:`Dekorator <../functions/decorators>`, wenn wir ein
 Klasse erstellen wollen.
 
 .. tip::
-   `cusy Deminar: Fortgeschrittenes Python
+   `cusy Seminar: Fortgeschrittenes Python
    <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
 
 .. tip::
