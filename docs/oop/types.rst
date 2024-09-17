@@ -10,12 +10,12 @@ ist. Ihr könnt einfach folgendes ausprobieren:
 
 .. code-block:: pycon
 
-    >>> type(3)
-    <class 'int'>
-    >>> type("Hello")
-    <class 'str'>
-    >>> type(["Hello", "Pythonistas"])
-    <class 'list'>
+   >>> type(3)
+   <class 'int'>
+   >>> type("Hello")
+   <class 'str'>
+   >>> type(["Hello", "Pythonistas"])
+   <class 'list'>
 
 In diesen Beispielen seht ihr die eingebaute :class:`type`-Funktion in Python.
 Sie kann auf jedes Python-Objekt angewendet werden und gibt den Typ des Objekts
@@ -30,10 +30,10 @@ vergleichen:
 
 .. code-block:: pycon
 
-    >>> type("Hello") == type("Pythonistas!")
-    True
-    >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
-    False
+   >>> type("Hello") == type("Pythonistas!")
+   True
+   >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
+   False
 
 Mit dieser Technik könnt ihr :abbr:`u.a. (unter anderem)` eine Typüberprüfung
 in euren Funktions- und Methodendefinitionen durchführen. Die häufigste Frage
@@ -43,48 +43,48 @@ dies klarer:
 
 #. Zunächst definieren wir zwei Klassen mit einer Vererbungshierarchie:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> class Form:
-        ...     pass
-        ...
-        >>> class Square(Form):
-        ...     pass
-        ...
-        >>> class Circle(Form):
-        ...     pass
-        ...
+      >>> class Form:
+      ...     pass
+      ...
+      >>> class Square(Form):
+      ...     pass
+      ...
+      >>> class Circle(Form):
+      ...     pass
+      ...
 
 #. Nun könnt ihr eine Instanz ``c1`` der Klasse ``Circle`` erstellen:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1 = Circle()
+      >>> c1 = Circle()
 
 #. Wie erwartet, gibt die type-Funktion auf ``c1`` aus, dass ``c1`` eine Instanz
    der Klasse ``Circle`` ist, die in Ihrem aktuellen ``__main__`` Namespace
    definiert ist:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> type(c1)
-        <class '__main__.Circle'>
+      >>> type(c1)
+      <class '__main__.Circle'>
 
 #. Ihr könnt genau dieselben Informationen auch durch Zugriff auf das
    ``__class__``-Attribut der Instanz erhalten:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1.__class__
-        <class '__main__.Circle'>
+      >>> c1.__class__
+      <class '__main__.Circle'>
 
 #. Ihr könnt auch explizit überprüfen, ob die beiden Klassenobjekte identisch
    sind:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> c1.__class__ == Circle
-        True
+      >>> c1.__class__ == Circle
+      True
 
 #. Zwei eingebaute Funktionen bieten jedoch benutzerfreundlichere Möglichkeit,
    die meisten der normalerweise benötigten Informationen zu erhalten:
@@ -95,24 +95,24 @@ dies klarer:
    :func:`python3:issubclass`
         stellt fest, ob eine Klasse die Unterklasse einer anderen ist.
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> issubclass(Circle, Form)
-        True
-        >>> issubclass(Square, Form)
-        True
-        >>> isinstance(c1, Form)
-        True
-        >>> isinstance(c1, Square)
-        False
-        >>> isinstance(c1, Circle)
-        True
-        >>> issubclass(c1.__class__, Form)
-        True
-        >>> issubclass(c1.__class__, Square)
-        False
-        >>> issubclass(c1.__class__, Circle)
-        True
+      >>> issubclass(Circle, Form)
+      True
+      >>> issubclass(Square, Form)
+      True
+      >>> isinstance(c1, Form)
+      True
+      >>> isinstance(c1, Square)
+      False
+      >>> isinstance(c1, Circle)
+      True
+      >>> issubclass(c1.__class__, Form)
+      True
+      >>> issubclass(c1.__class__, Square)
+      False
+      >>> issubclass(c1.__class__, Circle)
+      True
 
 .. _duck-typing:
 
@@ -156,16 +156,16 @@ Zeichenketten zurückzugeben, die Instanzen in einem lesbaren Format darstellen:
 
 .. code-block:: pycon
 
-    >>> class Form:
-    ...     def __init__(self, x, y):
-    ...         self.x = x
-    ...         self.y = y
-    ...     def __str__(self):
-    ...         return "Position: x={0}, y={1}".format(self.x, self.y)
-    ...
-    >>> f = Form(2, 3)
-    >>> print(f)
-    Position: x=2, y=3
+   >>> class Form:
+   ...     def __init__(self, x, y):
+   ...         self.x = x
+   ...         self.y = y
+   ...     def __str__(self):
+   ...         return "Position: x={0}, y={1}".format(self.x, self.y)
+   ...
+   >>> f = Form(2, 3)
+   >>> print(f)
+   Position: x=2, y=3
 
 Auch wenn unser spezielles ``__str__``-Methodenattribut nicht von unserem Code
 explizit aufgerufen wurde, konnte es dennoch von Python verwendet werden, da
