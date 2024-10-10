@@ -13,13 +13,13 @@ wenig Aufwand zu finden.
 
       .. code-block:: console
 
-         $ bin/python -m pip install hypothesis
+         $ python -m pip install hypothesis
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> Scripts\python -m pip install hypothesis
+         C:> python -m pip install hypothesis
 
    Alternativ kann Hypothesis auch mit Erweiterungen installiert werden, z.B.:
 
@@ -27,13 +27,13 @@ wenig Aufwand zu finden.
 
       .. code-block:: console
 
-         $ bin/python -m pip install hypothesis[numpy,pandas]
+         $ python -m pip install hypothesis[numpy,pandas]
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> Scripts\python -m pip install hypothesis[numpy,pandas]
+         C:> python -m pip install hypothesis[numpy,pandas]
 
 #. Schreibt einen Test:
 
@@ -57,7 +57,7 @@ wenig Aufwand zu finden.
 
       .. code-block:: console
 
-           $ bin/python -m pytest test_hypothesis.py
+           $ python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
            platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
            rootdir: /Users/veit/cusy/trn/python-basics/docs/test
@@ -97,7 +97,7 @@ wenig Aufwand zu finden.
 
       .. code-block:: console
 
-           C:> Scripts\python -m pytest test_hypothesis.py
+           C:> python -m pytest test_hypothesis.py
            ============================= test session starts ==============================
            platform win32 -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
            rootdir: C:\Users\veit\python-basics\docs\test

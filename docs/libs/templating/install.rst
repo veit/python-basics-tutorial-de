@@ -48,5 +48,5 @@ Installation
     $ python3 -m venv cookiecutter_env
     $ cd !$
     cd cookiecutter_env
-    $ source bin/activate
+    $ . bin/activate
     $ python -m pip install cookiecutter

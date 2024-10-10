@@ -298,8 +298,8 @@ Beispiel)` mit:
    .. code-block:: console
 
       $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
-      $ python3 -m venv .
-      $ source bin/activate
+      $ python3 -m venv .venv
+      $ . .venv/bin/activate
       $ python -m pip install --upgrade pip
       $ python -m pip install -e '.[dev]'
 
@@ -308,8 +308,8 @@ Beispiel)` mit:
    .. code-block:: ps1
 
       > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
-      > python3 -m venv .
-      > Scripts\activate.bat
+      > python3 -m venv .venv
+      > .venv\Scripts\activate.bat
       > python -m pip install --upgrade pip
       > python -m pip install -e '.[dev]'
 
@@ -545,14 +545,14 @@ Testen
 
       $ mkdir test_env
       $ cd test_env
-      $ python3 -m venv .
-      $ . bin/activate
-      $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
-      Processing ./dist/dataprep-0.1.0-py3-none-any.whl
-      Collecting pandas
-        Using cached pandas-1.3.4-cp39-cp39-macosx_10_9_x86_64.whl (11.6 MB)
+      $ python3 -m venv .venv
+      $ . .venv/bin/activate
+      $ python -m pip install dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
+      Processing ./dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
+      Collecting Cython (from dataprep==0.1.0)
+        Using cached Cython-3.0.11-py2.py3-none-any.whl.metadata (3.2 kB)
       …
-      Successfully installed dataprep-0.1.0 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
+      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
 
 .. tab:: Windows
 
@@ -560,14 +560,14 @@ Testen
 
       > mkdir test_env
       > cd test_env
-      > python -m venv .
-      > Scripts\activate.bat
-      > python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
-      Processing ./dist/dataprep-0.1.0-py3-none-any.whl
-      Collecting pandas
-        Using cached pandas-1.3.4-cp39-cp39-macosx_10_9_x86_64.whl (11.6 MB)
+      > python -m venv .venv
+      > .venv\Scripts\activate.bat
+      > python -m pip install dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
+      Processing ./dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
+      Collecting Cython (from dataprep==0.1.0)
+        Using cached Cython-3.0.11-cp313-cp313-win_amd64.whl.metadata (3.2 kB)
       …
-      Successfully installed dataprep-0.1.0 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
+      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
 
 Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
 
