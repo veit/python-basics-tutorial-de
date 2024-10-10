@@ -48,7 +48,7 @@ Absolute Pfadnamen
 
     .. code-block:: console
 
-        C:\Program Files\Python 3.9\
+        C:\Program Files\Python 3.13\
         D:\backup\2022\06\
 
     Und hier sind zwei absolute Linux-Pfadnamen und ein absoluter
@@ -58,7 +58,7 @@ Absolute Pfadnamen
 
         /bin/python3
         /cdrom/backup/2022/06/
-        /Applications/Python\ 3.10/
+        /Applications/Python\ 3.13/
 
 Relative Pfadnamen
     geben die Position einer Datei relativ zu einem anderen Punkt im Dateisystem
@@ -83,14 +83,14 @@ Relative Pfadnamen
 
     * Der relative Pfad wird an einen vorhandenen absoluten Pfad anzuhängt,
       wodurch ein neuer absoluter Pfad entsteht. Wenn ihr einen relativen
-      Windows-Pfad :samp:`{Start Menu\\Programs\\Python 3.8}` und einen
+      Windows-Pfad :samp:`{Start Menu\\Programs\\Python 3.13}` und einen
       absoluten Pfad :samp:`{C:\\Users\\Veit}` habt, dann kann durch Anhängen
       des relativen Pfads ein neuer absoluter Pfad:
-      :samp:`C:\\Users\\Veit\\Start Menu\\Programs\\Python 3.8` erstellt werden.
-      Wenn ihr denselben relativen Pfad an einen anderen absoluten Pfad anhängt
-      (:abbr:`z.B. (zum Beispiel)` an :samp:`C:\\Users\\Tim`, so erhaltet ihr
-      einen neuen Pfad, der sich auf ein anderes :samp:`HOME`-Verzeichnis
-      (:samp:`{Tim}`) bezieht.
+      :samp:`C:\\Users\\Veit\\Start Menu\\Programs\\Python 3.13` erstellt
+      werden. Wenn ihr denselben relativen Pfad an einen anderen absoluten Pfad
+      anhängt (:abbr:`z.B. (zum Beispiel)` an :samp:`C:\\Users\\Tim`, so
+      erhaltet ihr einen neuen Pfad, der sich auf ein anderes
+      :samp:`HOME`-Verzeichnis (:samp:`{Tim}`) bezieht.
     * Relative Pfade können auch einen Kontext erhalten durch den impliziten
       Verweis auf das aktuelle Arbeitsverzeichnis, also das Verzeichnis, in dem
       sich ein Python-Programm zum Zeitpunkt seiner Ausführung, befindet.

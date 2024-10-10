@@ -21,7 +21,7 @@ Installation
 
 .. code-block:: console
 
-    $ python3.8 -m pip install cruft
+    $ python -m pip install cruft
 
 Ein neues Projekt erstellen
 ---------------------------
