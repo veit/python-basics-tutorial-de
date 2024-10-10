@@ -36,13 +36,13 @@ Ihr könnt einen Report für die Testabdeckung erstellen mit Coverage.py.
 
    .. code-block:: console
 
-      $ bin/python -m pip install coverage pytest-cov
+      $ python -m pip install coverage pytest-cov
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> Scripts\python -m pip install coverage pytest-cov
+      C:> python -m pip install coverage pytest-cov
 
 .. note::
    Wollt ihr die Testabdeckung für Python 2 and Python<3.6 ermitteln, müsst ihr
@@ -58,8 +58,8 @@ Auf die normale pytest-Ausgabe folgt der Abdeckungsbericht, wie hier gezeigt:
 .. code-block:: pytest
 
     $ cd /PATH/TO/items
-    $ python3 -m venv .
-    $ . bin/activate
+    $ python3 -m venv .venv
+    $ . .venv/bin/activate
     $ python -m pip install ".[dev]"
     $ pytest --cov=items
     ============================= test session starts ==============================
@@ -176,8 +176,8 @@ vorherigen Coverage-Run erstellt:
 .. code-block:: console
 
     $ cd /PATH/TO/items
-    $ python3 -m venv .
-    $ . bin/activate
+    $ python3 -m venv .venv
+    $ . .venv/bin/activate
     $ python -m pip install ".[dev]"
     $ pytest --cov=items --cov-report=html
 

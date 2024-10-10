@@ -10,13 +10,13 @@ Installation und Start
 
       .. code-block:: console
 
-         $ python3 -m venv venv
+         $ python3 -m venv .venv
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> python -m venv venv
+         C:> python -m venv .venv
 
 #. Wechselt in die virtuelle Umgebung und installiert dort Sphinx:
 
@@ -24,20 +24,15 @@ Installation und Start
 
       .. code-block:: console
 
-         $ cd !$
-         cd venv
-         $ bin/python -m pip install sphinx
-         Creating a virtualenv for this project…
-         …
+         $ . .venv/bin/activate
+         $ python -m pip install sphinx
 
    .. tab:: Windows
 
       .. code-block:: ps1con
 
-         C:> cd venv
-         C:> bin/python -m pip install sphinx
-         Creating a virtualenv for this project…
-         …
+         C:> .venv\Scripts\activate
+         C:> python -m pip install sphinx
 
 #. Erstellt euer Sphinx-Dokumentationsprojekt:
 
@@ -45,7 +40,7 @@ Installation und Start
 
       .. code-block:: console
 
-         $ bin/sphinx-quickstart docs
+         $ sphinx-quickstart docs
          Selected root path: docs
          > Separate source and build directories (y/n) [n]:
          > Name prefix for templates and static dir [_]:
@@ -77,7 +72,7 @@ Installation und Start
 
       .. code-block:: ps1con
 
-         C:> Scripts\sphinx-quickstart docs
+         C:> sphinx-quickstart docs
          Selected root path: docs
          > Separate source and build directories (y/n) [n]:
          > Name prefix for templates and static dir [_]:
@@ -110,7 +105,7 @@ Sphinx-Layout
 
 ::
 
-    venv
+    .
     └── docs
         ├── Makefile
         ├── _static
@@ -132,13 +127,13 @@ Ihr könnt die Dokumentation nun generieren, :abbr:`z.B. (zum Beispiel)` mit:
 
    .. code-block:: console
 
-      $ bin/sphinx-build -ab html docs/ docs/_build
+      $ sphinx-build -ab html docs/ docs/_build
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> Scripts\sphinx-build -ab html docs\ docs\_build
+      C:> sphinx-build -ab html docs\ docs\_build
 
 ``a``
     generiert alle Seiten der Dokumentation neu.

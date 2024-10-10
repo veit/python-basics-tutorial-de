@@ -106,16 +106,16 @@ Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass ihr es installie
 
    .. code-block:: console
 
-      $ python3 -m venv .
-      $ . bin/activate
+      $ python3 -m venv .venv
+      $ . .venv/bin/activate
       $ python -m pip install tox
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m venv .
-      C:> Scripts\activate
+      C:> python -m venv .venv
+      C:> .venv\Scripts\activate.bat
       C:> python -m pip install tox
 
 Um tox auszuführen, startet einfach tox:

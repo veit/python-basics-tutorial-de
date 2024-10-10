@@ -19,13 +19,13 @@ also :abbr:`z.B. (zum Beispiel)` mit:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -nb html docs/ docs/_build/
+       $ python -m sphinx -nb html docs/ docs/_build/
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -nb html docs\ docs\_build\
+       C:> python -m sphinx -nb html docs\ docs\_build\
 
 .. _link-checks:
 
@@ -41,13 +41,13 @@ könnt mit:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -b linkcheck docs/ docs/_build/
+       $ python -m sphinx -b linkcheck docs/ docs/_build/
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
+       C:> python -m sphinx -b linkcheck docs\ docs\_build\
 
 Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
@@ -55,7 +55,7 @@ Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
    .. code-block:: console
 
-       $ bin/python -m sphinx -b linkcheck docs/ docs/_build/
+       $ python -m sphinx -b linkcheck docs/ docs/_build/
        Running Sphinx v3.5.2
        loading translations [de]... done
        …
@@ -74,7 +74,7 @@ Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
 
    .. code-block:: ps1con
 
-       C:> Scripts\python -m sphinx -b linkcheck docs\ docs\_build\
+       C:> python -m sphinx -b linkcheck docs\ docs\_build\
        Running Sphinx v3.5.2
        loading translations [de]... done
        …
