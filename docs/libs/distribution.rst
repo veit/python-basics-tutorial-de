@@ -182,6 +182,39 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        [tool.setuptools.dynamic]
        version = {attr = "dataprep.VERSION"}
 
+    .. tip::
+       Wenn die Version in mehreren Textdateien steht, kann sich die Vwerwendung
+       von `Bump My Version
+       <https://github.com/callowayproject/bump-my-version>`_ empfehlen.
+
+       Die Konfigurationsdatei :file:`.bumpversion.toml` kann :abbr:`z.B. (zum
+       Beispiel)` so aussehen:
+
+       .. code-block:: toml
+
+          [tool.bumpversion]
+          current_version = "0.1.0"
+          parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
+          serialize = ["{major}.{minor}.{patch}"]
+          search = "{current_version}"
+          replace = "{new_version}"
+          regex = false
+          ignore_missing_version = false
+          tag = false
+          sign_tags = false
+          tag_name = "v{new_version}"
+          tag_message = "Bump version: {current_version} → {new_version}"
+          allow_dirty = false
+          commit = false
+          message = "Bump version: {current_version} → {new_version}"
+          commit_args = ""
+
+          [[tool.bumpversion.files]]
+          filename = "src/dataprep/__init__.py"
+
+          [[tool.bumpversion.files]]
+          filename = "docs/conf.py"
+
     .. seealso::
 
        * `Configuring setuptools using pyproject.toml files: Dynamic Metadata
