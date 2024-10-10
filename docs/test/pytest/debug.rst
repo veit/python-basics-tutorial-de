@@ -153,17 +153,18 @@ haben diese Funktion bereits in unserer :file:`tox.ini` für Items eingerichtet:
 
    [gh-actions]
    python =
-     3.8: py38
      3.9: py39
      3.10: py310
      3.11: py311
+     3.12: py312
+     3.13: py313
 
-Wir möchten die Python 3.11-Umgebung ausführen und den Debugger bei einem
-fehlgeschlagenen Test starten mit ``tox -e py311 -- --pdb --no-cov``. Das
+Wir möchten die Python 3.13-Umgebung ausführen und den Debugger bei einem
+fehlgeschlagenen Test starten mit ``tox -e py313 -- --pdb --no-cov``. Das
 bringt uns in den pdb, genau an der *Assertion*, die fehlgeschlagen ist.
 
 Nachdem wir den Fehler gefunden und behoben haben, können wir die Tox-Umgebung
-mit diesem einen Testfehler erneut ausführen: ``tox -e py311 -- --lf --tb=no
+mit diesem einen Testfehler erneut ausführen: ``tox -e py313 -- --lf --tb=no
 --no-cov``.
 
 Überblick über die gebräuchlichsten pytest-Debugger-Optionen
