@@ -545,3 +545,39 @@ Hooks erstellt. Der folgende Codeschnipsel würde zum Beispiel ein neues --my
 .. seealso::
    * `Extending tox <https://tox.wiki/en/latest/plugins.html>`_
    * `tox development team <https://github.com/orgs/tox-dev/repositories>`_
+
+.. _tox_uv:
+
+``tox-uv``
+----------
+
+`tox-uv <https://pypi.org/project/tox-uv/>`_ ist ein Tox-Plugin, das
+:term:`virtualenv` und :term:`pip` durch :term:`uv` in euren Tox-Umgebungen
+ersetzt.
+
+Ihr könnt ``tox`` und ``tox-uv`` installieren mit:
+
+.. code-block:: console
+
+   $ uv tool install tox --with tox-uv
+
+``uv.lock``-Unterstützung
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wenn ihr für eine Tox-Umgebung ``uv sync`` mit einer ``uv.lock``-Datei verwenden
+wollt, müsst ihr für diese Tox-Umgebung den Runner auf ``uv-venv-lock-runner``
+ändern. Außerdem solltet ihr in solchen Umgebungen die ``extras``-Konfiguration
+verwenden, um ``uv`` anzuweisen, die angegebenen Extras zu installieren, zum
+Beispiel:
+
+.. code-block:: ini
+   :caption: tox.ini
+
+   [testenv]
+   runner = uv-venv-lock-runner
+   extras =
+       dev
+   commands = pytest
+
+``dev`` verwendet den ``uv-venv-lock-runner`` und nutzt ``uv sync``, um
+Abhängigkeiten in der Umgebung mit den ``dev``-Extras zu installieren.

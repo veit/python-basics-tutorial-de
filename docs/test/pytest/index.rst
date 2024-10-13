@@ -17,8 +17,7 @@ Merkmale
 Installation
 ------------
 
-Ihr könnt pytest in :ref:`virtuellen Umgebungen <virtuelle-umgebungen>`
-installieren mit:
+Ihr könnt pytest in :ref:`virtuellen Umgebungen <venv>` installieren mit:
 
 .. tab:: Linux/macOS
 
