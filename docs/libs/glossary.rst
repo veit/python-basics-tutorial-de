@@ -391,6 +391,14 @@ Glossar
        `GitHub <https://github.com/pypa/twine>`__ |
        `PyPI <https://pypi.org/project/twine>`__
 
+   uv
+       Ein extrem schneller Python-Paket- und Projektmanager, geschrieben in
+       `Rust <https://www.rust-lang.org>`_.
+
+       `Docs <https://docs.astral.sh/uv/>`__ |
+       `GitHub <https://github.com/astral-sh/uv>`__ |
+       `PyPI <https://pypi.org/project/uv/>`__
+
    venv
        Paket, das ab Python ≥ 3.3 in der Python-Standardbibliothek ist und zur
        Erstellung :term:`virtueller Umgebungen <Virtuelle Umgebung>` gedacht
@@ -414,7 +422,7 @@ Glossar
        bestimmte Anwendung ermöglicht, anstatt sie systemweit zu installieren.
 
        .. seealso::
-          * :ref:`virtuelle-umgebungen`
+          * :ref:`venv`
           * `Creating Virtual Environments
             <https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>`_
 
