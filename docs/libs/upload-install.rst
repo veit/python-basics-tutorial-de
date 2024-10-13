@@ -5,10 +5,11 @@ Schließlich könnt ihr das Paket auf dem :term:`Python Package Index`
 (:term:`PyPI`) oder einem anderen Index, :abbr:`z.B. (zum Beispiel)`
 :doc:`gitlab` oder :term:`devpi`, bereitstellen.
 
-Hierfür müsst ihr euch bei *Test PyPI* registrieren. *Test-PyPI* ist eine
-separate Instanz, die zum Testen und Experimentieren vorgesehen ist. Um dort
-ein Konto einzurichten, geht ihr auf https://test.pypi.org/account/register/.
-Weitere Informationen findet ihr unter `Using TestPyPI
+Für den :term:`Python Package Index` müsst ihr euch bei *Test PyPI*
+registrieren. *Test-PyPI* ist eine separate Instanz, die zum Testen und
+Experimentieren vorgesehen ist. Um dort ein Konto einzurichten, geht ihr auf
+https://test.pypi.org/account/register/. Weitere Informationen findet ihr unter
+`Using TestPyPI
 <https://packaging.python.org/en/latest/guides/using-testpypi/>`_.
 
 Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
@@ -34,29 +35,18 @@ mit:
 
 .. code-block:: console
 
-    $ python -m pip install --upgrade pip build twine
-    …
-    All dependencies are now up-to-date!
+    $ uv add --upgrade twine
 
-.. note::
+.. tip::
    Führt diesen Befehl vor jedem Release aus um sicherzustellen, dass alle
    Release-Tools auf dem neuesten Stand sind.
 
-Nun könnt ihr eure :term:`Distribution Packages <Distribution Package>`
-erstellen mit:
+Nach der Installation von ``twine`` könnt ihr alle Archive unter ``/dist`` auf
+den Python Package Index hochladen mit:
 
 .. code-block:: console
 
-    $ cd /path/to/your/distribution_package
-    $ rm -rf build dist
-    $ pyproject-build .
-
-Nach der Installation von Twine könnt ihr alle Archive unter ``/dist`` auf den
-Python Package Index hochladen mit:
-
-.. code-block:: console
-
-    $ twine upload -r test -s dist/*
+    $ uv run twine upload -r test -s dist/*
 
 ``-r``, ``--repository``
     Das Repository zum Hochladen des Pakets.
@@ -67,8 +57,9 @@ Python Package Index hochladen mit:
 ``-s``, ``--sign``
     signiert die hochzuladenden Dateien mit GPG.
 
-Ihr werdet nach eurem Passwort gefragt, mit dem ihr euch bei *Test PyPI*
-registriert habt. Anschließend solltet ihr eine ähnliche Ausgabe sehen:
+Ihr werdet nach dem Passwort eures Signaturschlüssels gefragt, mit dem ihr euch
+bei *Test PyPI* registriert habt. Anschließend solltet ihr eine ähnliche Ausgabe
+sehen:
 
 .. code-block:: console
 
@@ -85,7 +76,7 @@ registriert habt. Anschließend solltet ihr eine ähnliche Ausgabe sehen:
 
    .. code-block:: console
 
-    The user 'veit' isn't allowed to upload to project 'example'
+      The user 'veit' isn't allowed to upload to project 'example'
 
    müsst ihr einen eindeutigen Namen für euer Paket auswählen:
 
@@ -99,43 +90,33 @@ registriert habt. Anschließend solltet ihr eine ähnliche Ausgabe sehen:
 Installation
 ~~~~~~~~~~~~
 
-Ihr könnt :term:`pip` verwenden um euer Paket zu installieren und zu überprüfen,
-ob es funktioniert. Erstellt eine neue :term:`virtuelle Umgebung` und
-installiert euer Paket von *Test PyPI*:
+Ihr könnt ``uv`` verwenden um euer Paket von *Test PyPI* zu installieren und zu
+überprüfen, ob es funktioniert:
 
 .. code-block:: console
 
-    $ python3 -m venv test_env
-    $ . test_env/bin/activate
-    $ pip install -i https://test.pypi.org/simple/ minimal_example
+    $ uv add -i https://test.pypi.org/simple/ mypack
 
 .. note::
    Wenn ihr einen anderen Paketnamen verwendet habt, ersetzt ihn im obigen
    Befehl durch euren Paketnamen.
 
-:term:`pip` sollte das Paket von *Test PyPI* installieren und die Ausgabe sollte
+``uv add`` sollte das Paket von *Test PyPI* installieren und die Ausgabe sollte
 in etwa so aussehen:
 
 .. code-block:: console
 
-    Looking in indexes: https://test.pypi.org/simple/
-    Collecting minimal_example
-      …
-    Installing collected packages: minimal_example
-    Successfully installed minimal_example-0.0.1
+   Resolved 8 packages in 5ms
+   Installed 7 packages in 36ms
+    + mypack==0.1.0
 
-Ihr könnt testen, ob euer Paket korrekt installiert wurde indem ihr das Modul
-importiert und auf die ``name``-Eigenschaft referenziert, die zuvor in
-``__init__.py`` eingegeben wurde:
+Ihr könnt testen, ob euer Paket korrekt installiert wurde indem ihr :func:`main`
+aufruft:
 
 .. code-block:: console
 
-    $ python
-    Python 3.13.0 (main, Oct  7 2024, 05:02:14) [Clang 15.0.0 (clang-1500.1.0.2.5)] on darwin
-    …
-    >>> import minimal_example
-    >>> minimal_example.name
-    'minimal_example'
+   $ uv run mypack
+   Hello from mypack!
 
 .. note::
 
@@ -186,7 +167,7 @@ Schließlich könnt ihr nun euer Paket auf PyPI veröffentlichen:
 
 .. code-block:: console
 
-    $ twine upload -r pypi -s dist/*
+    $ uv run twine upload -r pypi -s dist/*
 
 .. note::
     Ihr könnt Releases nicht einfach ersetzen da ihr Pakete mit derselben
@@ -201,8 +182,8 @@ Schließlich könnt ihr nun euer Paket auf PyPI veröffentlichen:
    ``==`` oder ``===`` angegeben wurde.
 
 .. seealso::
-    * `PyPI Release Checklist
-      <https://cookiecutter-namespace-template.readthedocs.io/en/latest/pypi-release-checklist.html>`_
+   * `PyPI Release Checklist
+     <https://cookiecutter-namespace-template.readthedocs.io/en/latest/pypi-release-checklist.html>`_
 
 GitHub Action
 -------------
@@ -213,6 +194,7 @@ folgendermaßen aussehen:
 
 .. code-block:: yaml
    :linenos:
+   :emphasize-lines: 3-5, 12, 31, 36, 38-
 
    name: Publish Python Package
 
@@ -228,34 +210,47 @@ folgendermaßen aussehen:
        needs: [test]
        steps:
        - name: Checkout
-         uses: actions/checkout@v2
+         uses: actions/checkout@v4
          with:
            fetch-depth: 0
        - name: Set up Python
          uses: actions/setup-python@v5
          with:
-           python-version: '3.11'
-           cache: pip
+           python-version-file: .python-version
            cache-dependency-path: '**/pyproject.toml'
-       - name: Install dependencies
+       - name: Setup cached uv
+         uses: hynek/setup-cached-uv@v2
+       - name: Create venv and install twine
          run: |
-           python -m pip install -U pip
-           python -m pip install -U setuptools build twine wheel
+           uv venv
+           echo "$PWD/.venv/bin" >> $GITHUB_PATH
+           uv add --upgrade twine
        - name: Build
          run: |
-           python -m build
-       - name: Publish
-         env:
-           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-         run: |
-           twine upload dist/*
+           uv build
+       - name: Retrieve and publish
+         steps:
+         - name: Retrieve release distributions
+           uses: actions/download-artifact@v4
+         - name: Publish package distributions to PyPI
+           uses: pypa/gh-action-pypi-publish@release/v1
+           with:
+             username: __token__
+             password: ${{ secrets.PYPI_TOKEN }}
 
 Zeilen 3–5
     Dies stellt sicher, dass der Arbeitsablauf jedes Mal ausgeführt wird, wenn
     ein neues GitHub-Release für das Repository erstellt wird.
 Zeile 12
     Der Job wartet auf das Bestehen des ``test``-Jobs bevor er ausgeführt wird.
+Zeile 31
+    Hier sollte :samp:`{mypack}` durch euren Paketnamen ersetzt werden.
+Zeile 36
+    Die GitHub-Aktion ``actions/download-artifact`` stellt die gebauten
+    Verteilungspakete bereit.
+Zeile 38–41
+    Die GitHub-Aktion ``pypa/gh-action-pypi-publish`` veröffentlicht die Pakete
+    mit dem Upload-Token auf :term:`PyPI`.
 
 .. seealso::
 
@@ -266,9 +261,9 @@ Trusted Publishers
 ------------------
 
 `Trusted Publishers <https://docs.pypi.org/trusted-publishers/>`_ ist ein
-alternatives Verfahren zum Veröffentlichen von Paketen auf dem :term:`PyPI`. Sie
-basiert auf OpenID Connect und erfordert weder Passwort noch Token. Dazu sind
-lediglich die folgenden Schritte erforderlich:
+Verfahren zum Veröffentlichen von Paketen auf dem :term:`PyPI`. Es  basiert auf
+OpenID Connect und erfordert weder Passwort noch Token. Dazu sind lediglich die
+folgenden Schritte erforderlich:
 
 #. Fügt einen *Trusted Publishers*  auf PyPI hinzu
 
@@ -307,37 +302,34 @@ lediglich die folgenden Schritte erforderlich:
    Hierfür erstellen wir nun die Datei :file:`.github/workflows/publish.yml` in
    unserem Repository:
 
-   .. code-block:: yaml
-      :linenos:
+   .. code-block:: diff
+      :lineno-start: 10
+      :emphasize-lines: 3, 4-5
 
-      …
-      jobs:
-        …
-        deploy:
-          runs-on: ubuntu-latest
-          environment: release
-          permissions:
-            id-token: write
-          needs: [test]
-          steps:
-          - name: Checkout
-            …
-          - name: Set up Python
-            …
-          - name: Install dependencies
-            …
-          - name: Build
-            …
-          - name: Publish
+          package-and-deploy:
+            runs-on: ubuntu-latest
+        +   environment: release
+        +   permissions:
+        +     id-token: write
+            needs: [test]
+            steps:
+
+   Zeile 12
+       Die Angabe einer GitHub-Umgebung ist optional, wird aber dringend
+       empfohlen.
+   Zeilen 13–14
+       Die ``write``-Berechtigung ist für *Trusted Publishing* erforderlich.
+
+   .. code-block:: diff
+      :lineno-start: 40
+      :emphasize-lines: 3-
+
+          - name: Publish package distributions to PyPI
             uses: pypa/gh-action-pypi-publish@release/v1
+       -    with:
+       -      username: __token__
+       -      password: ${{ secrets.PYPI_TOKEN }}
 
-   Zeile 6
-       Dies wird benötigt, weil wir eine Umgebung in :term:`PyPI` konfiguriert
-       haben.
-   Zeilen 7–8
-       Sie sind erforderlich, damit die OpenID Connect-Token-Authentifizierung
-       funktioniert.
-   Zeilen 19–20
-       Das Paket verwendet die Aktion `github.com/pypa/gh-action-pypi-publish
-       <https://github.com/pypa/gh-action-pypi-publish>`_, um das Paket zu
-       veröffentlichen.
+   Zeilen 42–44
+       ``username`` und ``password`` werden für die GitHub-Aktion
+       ``pypa/gh-action-pypi-publish`` nicht mehr benötigt.
