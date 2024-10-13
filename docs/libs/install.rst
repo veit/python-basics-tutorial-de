@@ -22,11 +22,11 @@ die Pakete nach Kategorien filtern.
 
 .. warning::
    Installiert niemals irgendetwas mit ``pip`` in das globale Python, auch nicht
-   mit dem ``--user`` Flag. Verwendet immer :ref:`virtuelle-umgebungen`. So
-   vermeidet ihr, dass eure Python-Installation mit Bibliotheken verunreinigt
-   wird, die ihr installiert und dann vergesst. Jedes Mal, wenn ihr etwas Neues
-   machen müsst, solltet ihr eine neue virtuelle Umgebung erstellen. Damit
-   vermeidet ihr auch Bibliothekskonflikte zwischen verschiedenen Projekten.
+   mit dem ``--user`` Flag. Verwendet immer :ref:`venv`. So vermeidet ihr, dass
+   eure Python-Installation mit Bibliotheken verunreinigt wird, die ihr
+   installiert und dann vergesst. Jedes Mal, wenn ihr etwas Neues machen müsst,
+   solltet ihr eine neue virtuelle Umgebung erstellen. Damit vermeidet ihr auch
+   Bibliothekskonflikte zwischen verschiedenen Projekten.
 
 .. tip::
    wir empfehlen euch, ``pip`` so zu konfigurieren, dass es nicht möglich ist,
@@ -38,10 +38,10 @@ die Pakete nach Kategorien filtern.
       [global]
       require-virtualenv = true
 
-.. _virtuelle-umgebungen:
+.. _venv:
 
-Virtuelle Umgebungen
---------------------
+``venv``
+--------
 
 Eine *virtuelle Umgebung* (``virtualenv``) ist eine in sich geschlossene
 Verzeichnisstruktur, die sowohl eine Installation von Python als auch die
@@ -210,3 +210,65 @@ In unseren
 verwenden wir jedoch ``requires-python`` aus der :ref:`pyproject-toml`-Datei, um
 :doc:`Docker-Container mit der passenden Python-Version
 <Python4DataScience:productive/git/advanced/gitlab/docker>` zu bauen.
+
+.. _uv:
+
+``uv``
+------
+
+:term:`uv` vereinfacht das Erstellen einer initialen Projektstruktur und die
+Verwaltung eurer Abhängigkeiten.
+
+Installation
+~~~~~~~~~~~~
+
+``uv`` hängt nicht von von Python ab. Vorkompilierte, eigenständige Binärdateien
+können auf Linux, macOS und Windows installiert werden:
+
+.. tab:: Linux/macOS
+
+   .. code-block:: console
+
+      $ curl -LsSf https://astral.sh/uv/install.sh | sh
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      > powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+``uv`` aktualisiert sich bei dieser Installation regelmäßig selbst.
+
+Automatische Shell-Vervollständigung
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Um die automatische Shell-Vervollständigung für ``uv``-Befehle zu aktivieren,
+führt einen der folgenden Schritte aus:
+
+.. tab:: Linux/macOS
+
+   Bestimmt eure Shell, :abbr:`z.B. (zum Beispiel)` mit ``echo $SHELL``, dann
+   führt einen der folgenden Befehle aus:
+
+   .. code-block:: console
+
+      $ echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
+      $ echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+      $ echo 'uv generate-shell-completion fish | source' >> ~/.config/fish/config.fish
+      $ echo 'eval (uv generate-shell-completion elvish | slurp)' >> ~/.elvish/rc.elv
+
+.. tab:: Windows
+
+   .. code-block:: ps1
+
+      Add-Content -Path $PROFILE -Value '(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression'
+      Add-Content -Path $PROFILE -Value '(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression'
+
+Startet dann die Shell neu oder ruft ``source`` mit eurer
+Shell-Konfigurationsdatei ein.
+
+Projektstruktur erstellen
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Je nachdem, ob ihr eine :doc:`Bibliothek <distribution>` oder :doc:`Anwendung
+<../apps>` erstellen wollt, kann ``uv`` eine passende Projektstruktur erstellen.

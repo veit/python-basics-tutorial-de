@@ -111,6 +111,7 @@ Trainings:
    functions/index
    modules/index
    libs/index
+   apps
    oop/index
    save-data/index
    dataclasses

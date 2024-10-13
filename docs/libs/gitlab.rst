@@ -65,10 +65,17 @@ der ``~/.pypirc``-Datei :abbr:`z.B. (zum Beispiel)` folgendes hinzufügen:
 
     image: python:latest
 
-    run:
-      script:
-        - pip install build twine
-        - python -m build
+    - name: Setup cached uv
+      uses: hynek/setup-cached-uv@v2
+    - name: Create venv and install twine
+      run: |
+        uv venv
+        echo "$PWD/.venv/bin" >> $GITHUB_PATH
+        uv add --upgrade twine
+    - name: Build
+      run: |
+        uv build
+    - name: Retrieve and publish
         - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python -m twine upload --repository-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*
 
 … für den Zugriff auf Pakete innerhalb einer Gruppe
@@ -83,12 +90,12 @@ Ihr könnt euer Paket mit Hilfe von :term:`twine` veröffentlichen:
 
 .. code-block:: console
 
-    python3 -m twine upload --repository gitlab dist/*
+    $ uv run twine upload -r gitlab dist/*
 
 .. note::
    Wenn ihr versucht, ein Paket zu veröffentlichen, das bereits mit demselben
    Namen und derselben Version existiert, erhaltet ihr den Fehler ``400 Bad
-   Request``; ihr müssen das vorhandene Paket dann zuerst löschen.
+   Request``; ihr müsst das vorhandene Paket dann zuerst löschen.
 
 Installieren des Pakets
 -----------------------
@@ -98,16 +105,18 @@ Beispiel)` mit
 
 .. code-block:: console
 
-   pip install --index-url https://{NAME}:{PERSONAL_ACCESS_TOKEN}@ce.cusy.io/api/v4/projects/{PROJECT_ID}/packages/pypi/simple --no-deps {PACKAGE_NAME}
+   uv add -i https://{NAME}:{PERSONAL_ACCESS_TOKEN}@ce.cusy.io/api/v4/projects/{PROJECT_ID}/packages/pypi/simple --no-deps {PACKAGE_NAME}
 
 … oder von der Gruppenebene aus mit
 
 .. code-block:: console
 
-   pip install --index-url https://{NAME}:{PERSONAL_ACCESS_TOKEN}@ce.cusy.io/api/v4/groups/{GROUP_ID}/-/packages/pypi/simple --no-deps {PACKAGE_NAME}
+   uv add -i https://{NAME}:{PERSONAL_ACCESS_TOKEN}@ce.cusy.io/api/v4/groups/{GROUP_ID}/-/packages/pypi/simple --no-deps {PACKAGE_NAME}
 
-… oder in der :file:`requirements.txt`-Datei mit
+… oder in der :file:`pyproject.toml`-Datei mit:
 
-.. code-block::
+.. code-block:: toml
+   :caption: pyproject.toml
 
-   --extra-index-url https://ce.cusy.io/api/v4/projects/{PROJECT_ID}/packages/pypi/simple {PACKAGE_NAME}
+   [tool.uv]
+   extra-index-url = ["https://ce.cusy.io/api/v4/projects/{PROJECT_ID}/packages/pypi/simple {PACKAGE_NAME}"]

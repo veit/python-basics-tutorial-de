@@ -9,25 +9,11 @@ sind Archive, die in einen Paket-Index wie :abbr:`z.B. (zum Beispiel)`
    `cusy Seminar: Fortgeschrittenes Python
    <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
 
-Einige der folgenden Befehle erfordern eine neue Version von pip, sodass ihr
-sicherstellen solltet, dass ihr die neueste Version installiert habt:
-
-.. tab:: Linux/macOS
-
-   .. code-block:: console
-
-      $ python3 -m pip install --upgrade pip
-
-.. tab:: Windows
-
-   .. code-block:: ps1
-
-      > python  -m pip install --upgrade pip
-
 Struktur
 --------
 
-Ein minimales Distribution Package kann :abbr:`z.B. (zum Beispiel)` so aussehen:
+Ein minimales *Distribution Package* kann :abbr:`z.B. (zum Beispiel)` so
+aussehen:
 
 .. code-block:: console
 
@@ -460,7 +446,58 @@ Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
    Wenn Dateien und Verzeichnisse aus :file:`MANIFEST.in` auch installiert
    werden sollen, :abbr:`z.B. (zum Beispiel)` wenn es sich um laufzeitrelevante
    Daten handelt, könnt ihr dies mit ``include_package_data=True`` in eurem
-   ``setup()``-Aufruf angeben.
+   :func:`setup`-Aufruf angeben.
+
+.. _uv-package-structure:
+
+Paketstruktur erstellen
+-----------------------
+
+Mit :samp:`uv init --package {MYPACK}` lässt sich einfach eine initiale
+Dateistruktur für Pakete erstellen:
+
+.. code-block:: console
+
+   $ uv init --package mypack
+   $  tree mypack -a
+   mypack
+   ├── .git
+   │   └── ...
+   ├── .gitignore
+   ├── .python-version
+   ├── README.md
+   ├── pyproject.toml
+   └── src
+       └── mypack
+           └── __init__.py
+
+:file:`mypack/pyproject.toml`
+    Die Datei :file:`pyproject.toml` enthält einen ``scripts``-Einstiegspunkt
+    ``mypack:main``:
+
+    .. literalinclude:: mypack/pyproject.toml
+       :caption: mypack/pyproject.toml
+       :emphasize-lines: 12-13
+
+:file:`mypack/src/mypack/__init__.py`
+    Das Modul definiert eine CLI-Funktion :func:`main`:
+
+    .. literalinclude:: mypack/src/mypack/__init__.py
+       :caption: mypack/src/mypack/__init__.py
+
+    Sie kann mit ``uv run`` aufgerufen werden:
+
+    .. code-block:: console
+
+       $ uv run mypack
+       Hello from mypack!
+
+    .. note::
+       :abbr:`Ggf. (Gegebenenfalls)` erstellt ``uv run`` eine :ref:`virtuelle
+       Python-Umgebung <venv>` im Ordner :file:`.venv` bevor :func:`main`
+       ausgeführt wird.
+
+.. _uv-build:
 
 Build
 -----
@@ -469,8 +506,6 @@ Der nächste Schritt besteht darin, Distributionspakete für das Paket zu
 erstellen. Dies sind Archive, die in den :term:`Python Package Index`
 (:term:`PyPI`) hochgeladen und von :term:`pip` installiert werden können.
 
-Stellt sicher, dass ihr die neueste Version von ``build`` installiert habt:
-
 Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
 :file:`pyproject.toml` befindet:
 
@@ -478,40 +513,30 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
 
    .. code-block:: console
 
-      $ python -m pip install build
-      $ cd /PATH/TO/YOUR/DISTRIBUTION_PACKAGE
-      $ rm -rf build dist
-      $ python -m build
+      $ uv build
+      Building source distribution...
+      Building wheel from source distribution...
+        Successfully built dist/mypack-0.1.0.tar.gz and dist/mypack-0.1.0-py3-none-any.whl
 
 .. tab:: Windows
 
    .. code-block:: ps1
 
-      > python -m pip install build
-      > cd C:\PATH\TO\YOUR\DISTRIBUTION_PACKAGE
-      > rm -rf build dist
-      > python -m build
+      > uv build
+      Building source distribution...
+      Building wheel from source distribution...
+        Successfully built dist/mypack-0.1.0.tar.gz and dist/mypack-0.1.0-py3-none-any.whl
 
-Die zweite Zeile stellt sicher, dass ein sauberes Build ohne Artefakte früherer
-Builds erstellt wird. Die dritte Zeile sollte eine Menge Text ausgeben und nach
-Abschluss zwei Dateien im :file:`dist`-Verzeichnis erzeugen:
+:file:`dist/mypack-0.1.0-py3-none-any.whl`
+    ist eine Build-Distribution. :term:`pip` installiert bevorzugt
+    Build-Distributionen und greift lediglich auf die Source-Distributionen
+    zurück, wenn keine passende Build-Distribution vorhanden ist. Ihr solltet
+    immer eine Source-Distribution hochladen und Build-Distributionen für die
+    Plattformen bereitstellen, mit denen euer Projekt kompatibel ist. In diesem
+    Fall ist unser Beispielpaket mit Python auf jeder Plattform kompatibel, so
+    dass nur eine Build-Distribution benötigt wird:
 
-.. code-block:: console
-
-   dist
-   ├── dataprep-0.1.0-py3-none-any.whl
-   └── dataprep-0.1.0.tar.gz
-
-:file:`dataprep-0.1.0-py3-none-any.whl`
-    ist eine Build-Distribution. Neuere pip-Versionen installieren bevorzugt
-    Build-Distributionen, greifen aber bei Bedarf auf Source-Distributionen
-    zurück. Ihr solltet immer eine Source-Distribution hochladen und
-    Build-Distributionen für die Plattformen bereitstellen, mit denen euer
-    Projekt kompatibel ist. In diesem Fall ist unser Beispielpaket mit Python
-    auf jeder Plattform kompatibel, so dass nur eine Build-Distribution benötigt
-    wird:
-
-    ``dataprep``
+    ``mypack``
         ist der normalisierte Paketname
     ``0.1.0``
         ist die Version des Distrubitionspakets
@@ -525,74 +550,62 @@ Abschluss zwei Dateien im :file:`dist`-Verzeichnis erzeugen:
         ``any`` eignet sich für jede Prozessorarchitektur, ``x86_64`` hingegen
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
 
-:file:`dataprep-0.1.0.tar.gz`
+:file:`mypack-0.1.0.tar.gz`
     ist eine :term:`Source Distribution`.
 
 .. seealso::
     Die Referenz für die Dateinamen findet ihr in :pep:`427`.
 
-    Weitere Infos zu Source-Distributionen erhaltet ihr in `Creating a Source
-    Distribution
-    <https://docs.python.org/2/distutils/sourcedist.html#creating-a-source-distribution>`__.
-    und :pep:`376`.
+    Weitere Infos zu Source-Distributionen erhaltet ihr in `Core metadata
+    specifications
+    <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
+    und `PyPA specifications
+    <https://packaging.python.org/en/latest/specifications/>`_.
 
 Testen
 ------
-
-.. tab:: Linux/macOS
-
-   .. code-block:: console
-
-      $ mkdir test_env
-      $ cd test_env
-      $ python3 -m venv .venv
-      $ . .venv/bin/activate
-      $ python -m pip install dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
-      Processing ./dist/dataprep-0.1.0-cp313-cp313-macosx_13_0_arm64.whl
-      Collecting Cython (from dataprep==0.1.0)
-        Using cached Cython-3.0.11-py2.py3-none-any.whl.metadata (3.2 kB)
-      …
-      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
-
-.. tab:: Windows
-
-   .. code-block:: console
-
-      > mkdir test_env
-      > cd test_env
-      > python -m venv .venv
-      > .venv\Scripts\activate.bat
-      > python -m pip install dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
-      Processing ./dist/dataprep-0.1.0-cp313-cp313-win_amd64.whl
-      Collecting Cython (from dataprep==0.1.0)
-        Using cached Cython-3.0.11-cp313-cp313-win_amd64.whl.metadata (3.2 kB)
-      …
-      Successfully installed Cython-3.0.11 dataprep-0.1.0 numpy-2.1.2 pandas-2.2.3 python-dateutil-2.9.0.post0 pytz-2024.2 six-1.16.0 tzdata-2024.2
 
 Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
 
 .. code-block:: console
 
-    $ python -m pip install check-wheel-contents
-    $ check-wheel-contents dist/*.whl
-    dist/dataprep-0.1.0-py3-none-any.whl: OK
+    $ uv add check-wheel-contents
+    Resolved 17 packages in 8ms
+       Built mypack @ file:///Users/veit/sandbox/mypack
+    Prepared 1 package in 442ms
+    Uninstalled 1 package in 0.89ms
+    Installed 10 packages in 5ms
+     + annotated-types==0.7.0
+     + attrs==24.2.0
+     + check-wheel-contents==0.6.0
+     + click==8.1.7
+     ~ mypack==0.1.0 (from file:///Users/veit/sandbox/mypack)
+     + packaging==24.1
+     + pydantic==2.9.2
+     + pydantic-core==2.23.4
+     + typing-extensions==4.12.2
+     + wheel-filename==1.4.1
+    $ uv run check-wheel-contents dist/*.whl
+    dist/mypack-0.1.0-py3-none-any.whl: W007: Wheel library is empty
+    dist/mypack-0.1.0-py3-none-any.whl: W008: Wheel is empty
 
 Alternativ könnt ihr das Paket auch installieren:
 
 .. code-block:: console
 
-    $ python -m pip install dist/dataprep-0.1.0-py3-none-any.whl
-    Processing ./dist/dataprep-0.1-py3-none-any.whl
-    Collecting pandas
-    …
-    Installing collected packages: numpy, pytz, six, python-dateutil, pandas, dataprep
-    Successfully installed dataprep-0.1 numpy-1.21.4 pandas-1.3.4 python-dateutil-2.8.2 pytz-2021.3 six-1.16.0
+  $ uv init --app myapp
+  $ cd myapp
+  $ uv add ../mypack/dist/mypack-0.1.0-py3-none-any.whl
+  Resolved 8 packages in 130ms
+  Installed 1 package in 3ms
+   + mypack==0.1.0 (from file:///Users/veit/sandbox/mypack/dist/mypack-0.1.0-py3-none-any.whl)
 
-Anschließend könnt ihr Python aufrufen und euer ``loaders``-Modul importieren:
+Anschließend könnt ihr ``mypack`` mit ``uv run`` aufrufen können:
 
-.. code-block:: python
+.. code-block:: console
 
-    from dataprep import loaders
+    $ uv run mypack
+    Hello from mypack!
 
 .. note::
    Es gibt immer noch viele Anleitungen, die einen Schritt zum Aufruf der
