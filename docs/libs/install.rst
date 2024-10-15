@@ -22,11 +22,12 @@ die Pakete nach Kategorien filtern.
 
 .. warning::
    Installiert niemals irgendetwas mit ``pip`` in das globale Python, auch nicht
-   mit dem ``--user`` Flag. Verwendet immer :ref:`virtuelle-umgebungen`. So
-   vermeidet ihr, dass eure Python-Installation mit Bibliotheken verunreinigt
-   wird, die ihr installiert und dann vergesst. Jedes Mal, wenn ihr etwas Neues
-   machen müsst, solltet ihr eine neue virtuelle Umgebung erstellen. Damit
-   vermeidet ihr auch Bibliothekskonflikte zwischen verschiedenen Projekten.
+   mit dem ``--user`` Flag. Verwendet immer :ref:`virtuelle Umgebungen
+   <virtuelle-umgebungen>`. So vermeidet ihr, dass eure Python-Installation mit
+   Bibliotheken verunreinigt wird, die ihr installiert und dann vergesst. Jedes
+   Mal, wenn ihr etwas Neues machen müsst, solltet ihr eine neue virtuelle
+   Umgebung erstellen. Damit vermeidet ihr auch Bibliothekskonflikte zwischen
+   verschiedenen Projekten.
 
 .. tip::
    wir empfehlen euch, ``pip`` so zu konfigurieren, dass es nicht möglich ist,
