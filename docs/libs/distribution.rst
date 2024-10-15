@@ -448,34 +448,8 @@ Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
    Daten handelt, könnt ihr dies mit ``include_package_data=True`` in eurem
    :func:`setup`-Aufruf angeben.
 
-``uv``
-------
-
-Mit :term:`uv` könnt ihr eine initiale Paketstruktur für eine Programmbibliothek
-erstellen:
-
-Installation
-~~~~~~~~~~~~
-
-``uv`` hängt nicht von von Python ab. Vorkompilierte, eigenständige Binärdateien
-können auf Linux, macOS und Windows installiert werden:
-
-.. tab:: Linux/macOS
-
-   .. code-block:: console
-
-      $ curl -LsSf https://astral.sh/uv/install.sh | sh
-
-.. tab:: Windows
-
-   .. code-block:: ps1
-
-      > powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-``uv`` aktualisiert sich bei dieser Installation regelmäßig selbst.
-
 Paketstruktur erstellen
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Mit :samp:`uv init --package {MYPACK}` lässt sich einfach eine initiale
 Dateistruktur für Pakete erstellen:
@@ -517,9 +491,9 @@ Dateistruktur für Pakete erstellen:
        Hello from mypack!
 
     .. note::
-       :abbr:`Ggf. (Gegebenenfalls)` erstellt ``uv run`` eine :ref:`virtuellen
-       Python-Umgebung <virtuelle-umgebungen>` im Ordner :file:`.venv` bevor
-       :func:`main` ausgeführt wird.
+       :abbr:`Ggf. (Gegebenenfalls)` erstellt ``uv run`` eine :ref:`virtuelle
+       Python-Umgebung <venv>` im Ordner :file:`.venv` bevor :func:`main`
+       ausgeführt wird.
 
 Build
 -----

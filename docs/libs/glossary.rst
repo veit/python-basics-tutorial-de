@@ -422,7 +422,7 @@ Glossar
        bestimmte Anwendung ermöglicht, anstatt sie systemweit zu installieren.
 
        .. seealso::
-          * :ref:`virtuelle-umgebungen`
+          * :ref:`venv`
           * `Creating Virtual Environments
             <https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>`_
 

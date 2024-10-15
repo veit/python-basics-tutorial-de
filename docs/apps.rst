@@ -41,9 +41,8 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
        $ uv run hello.py
        Hello from myapp!
 
-    Alternativ könnt ihr auch eine :ref:`virtuelle Umgebung
-    <virtuelle-umgebungen>` bauen und dann :func:`main` aus Python heraus
-    aufrufen:
+    Alternativ könnt ihr auch eine :ref:`virtuelle Umgebung <venv>` bauen und
+    dann :func:`main` aus Python heraus aufrufen:
 
     .. code-block:: console
 
