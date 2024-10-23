@@ -54,6 +54,9 @@ Ablauf eines Test:
 `pytest-xdist <https://pypi.org/project/pytest-xdist/>`_
     führt Tests parallel aus, entweder mit mehreren CPUs auf einer Maschine oder
     mehreren entfernten Maschinen.
+`pytest-freethreaded <https://pypi.org/project/pytest-freethreaded/>`_
+    für die Überprüfung, ob Tests und Bibliotheken mit dem experimentellen
+    Freethreaded-Modus von Python 3.13 thread-sicher sind.
 `pytest-rerunfailures <https://pypi.org/project/pytest-rerunfailures/>`_
     führt fehlgeschlagene Tests erneut aus und ist :abbr:`v.a. (vor allem)`
     hilfreich bei fehlerhaften Tests.
@@ -78,6 +81,8 @@ verändern:
     fehlgeschlagenen Tests direkt nach dem Fehlschlag meldet. Normalerweise
     meldet pytest Tracebacks und Ausgaben von fehlgeschlagenen Tests erst,
     nachdem alle Tests abgeschlossen wurden.
+`pytest-edit <https://pypi.org/project/pytest-edit/>`_
+    öffnet einen Editor nach einem fehlgeschlagenen Test.
 `pytest-sugar <https://pypi.org/project/pytest-sugar/>`_
     zeigt grüne Häkchen anstelle von Punkten für bestandene Tests und hat einen
     schönen Fortschrittsbalken. Es zeigt, wie pytest-instafail auch, Fehlschläge
@@ -96,17 +101,19 @@ verändern:
 pytest wird ausgiebig für das Testen von Webprojekten verwendet und es gibt eine
 lange Liste von Plugins, die das Testen weiter vereinfachen:
 
+`pytest-httpx <https://pypi.org/project/pytest-httpx/>`_
+    erleichtert das Testen von `HTTPX <https://www.python-httpx.org>`_ und
+    `FastAPI <https://fastapi.tiangolo.com>`_-Anwendungen.
+`Playwright for Python <https://pypi.org/project/playwright/>`_
+    wurde speziell für End-to-End-Tests entwickelt. Playwright unterstützt alle
+    modernen Rendering-Engines wie Chromium, WebKit und Firefox mit einer
+    einzigen :abbr:`API (Application Programming Interface)`.
+`pyleniumio <https://pypi.org/project/pyleniumio/#test-example>`_
+    ist ein dünner Python-Wrapper um Selenium mit einfacher und klarer Syntax.
 `pytest-selenium <https://pypi.org/project/pytest-selenium/>`_
     stellt Fixtures zur Verfügung, die eine einfache Konfiguration von
     browserbasierten Tests mit `Selenium <https://www.selenium.dev>`_
     ermöglichen.
-`pytest-splinter <https://pypi.org/project/pytest-splinter/>`_
-    bieten die High-Level-API des auf Selenium aufbauenden `Splinter
-    <https://pypi.org/project/splinter/>`_ um einfacher von pytest aus verwendet
-    zu werden.
-`pytest-httpx <https://pypi.org/project/pytest-httpx/>`_
-    erleichtert das Testen von `HTTPX <https://www.python-httpx.org>`_ und
-    `FastAPI <https://fastapi.tiangolo.com>`_-Anwendungen.
 
 .. _fake_plugins:
 
@@ -125,9 +132,6 @@ Bedarf decken:
 `pytest-factoryboy <https://pypi.org/project/pytest-factoryboy/>`_
     enthält Fixtures für `factory-boy <https://pypi.org/project/factory-boy/>`_,
     einen Datenbankmodelldatengenerator.
-`pytest-mimesis <https://pypi.org/project/pytest-mimesis/>`_
-    erzeugt Fake-Daten ähnlich wie Faker, aber `Mimesis
-    <https://pypi.org/project/mimesis/>`_ ist um einiges schneller.
 
 … für Verschiedenes
 ~~~~~~~~~~~~~~~~~~~
@@ -142,9 +146,8 @@ Bedarf decken:
     testet asynchrone Funktionen.
 `pytest-mock <https://pypi.org/project/pytest-mock/>`_
     ist ein dünner Wrapper um die :doc:`unittest.mock <../mock>`-Patching-API.
-`pytest-freezegun <https://pypi.org/project/pytest-freezegun/>`_
-    friert die Zeit ein, so dass jeder Code, der die Zeit, Datum oder Uhrzeit,
-    liest, während eines Tests denselben Wert erhält.
+`pytest-patterns <https://pypi.org/project/pytest-patterns/>`_
+    stellt eine für Tests optimierte Pattern-Matching-Engine bereit.
 :doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
     ist ein Pytest-Plugin für
     :doc:`Python4DataScience:data-processing/apis/grpc/index`.
