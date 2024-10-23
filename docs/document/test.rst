@@ -164,6 +164,32 @@ ein:
    Dokumentation entweder mit :doc:`../test/pytest/index` oder mit
    :doc:`../test/unittest` überprüfen.
 
+.. _test_code:
+
+Code
+----
+
+Mit der eingebauten Python-Bibliothek :doc:`../test/doctest` könnt ihr auch Code
+in eurer Dokumentation mit der :func:`doctest.testfile`-Methode testen:
+
+.. code-block:: Python
+
+   import doctest
+
+   doctest.testfile("example.rst")
+
+Dieses kurze Skript führt alle interaktiven Python-Beispiele aus, die in der
+Datei :file:`example.rst` enthalten sind, und überprüft sie. Der Inhalt der
+Datei wird so behandelt, als wäre er ein einziger riesiger Docstring.
+
+.. seealso::
+   Ein einfaches Beispiel findet ihr in der Python-Dokumentation: `Simple Usage:
+   Checking Examples in a Text File
+   <https://docs.python.org/3/library/doctest.html#simple-usage-checking-examples-in-a-text-file>`_.
+
+   Eine andere Möglichkeit, Code in Dokumentationen zu testen ist
+   `pytest-doctestplus <https://github.com/scientific-python/pytest-doctestplus>`_.
+
 Code-Formatierung
 -----------------
 
