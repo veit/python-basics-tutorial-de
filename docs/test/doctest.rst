@@ -1,8 +1,8 @@
 Doctest
 =======
 
-Das Python-Modul  :doc:`doctest <python3:library/doctest>` prüft, ob die in
-einem Docstring angegebenen Tests erfüllt sind.
+Das Python-Modul  :doc:`doctest <python3:library/doctest>` prüft, ob Tests in
+einem Docstring oder in einer anderen Textdatei erfüllt sind.
 
 #. In :download:`arithmetic.py` könnt ihr folgenden Docstring hinzufügen:
 
@@ -114,3 +114,8 @@ einem Docstring angegebenen Tests erfüllt sind.
       :language: python
       :lines: 38-
       :lineno-start: 38
+
+.. seealso::
+   :doc:`doctest <python3:library/doctest>` hat auch die Fähigkeit, Tests in
+   eurer Dokumentation auszuführen: :ref:`Dokumentieren → Testen → Code
+   <test_code>`.
