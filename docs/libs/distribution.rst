@@ -322,8 +322,25 @@ eurem Arbeitsverzeichnis ausgeführt werden.
     Projektnamen übereinstimmen um die Konfiguration zu vereinfachen und für
     diejenigen, die das Paket installieren, besser erkennbar zu sein.
 :file:`__init__.py`
-    ist erforderlich, um das Verzeichnis als Paket zu importieren. Die Datei
-    sollte leer sein.
+    ist erforderlich, um das Verzeichnis als Paket zu importieren. Dies erlaubt
+    euch folgende Importe:
+
+    .. code-block:: python
+
+       import dataprep.loaders
+
+    oder
+
+    .. code-block:: python
+
+       from dataprep import loaders
+
+    Obwohl :file:`__init__.py`-Dateien oft leer sind, können sie auch Code
+    enthalten.
+
+    .. seealso::
+       * :ref:`python3:tut-packages`
+
 :file:`loaders.py`
     ist ein Beispiel für ein Modul innerhalb des Pakets, das die Logik
     (Funktionen, Klassen, Konstanten, :abbr:`etc. (et cetera)`) eures Pakets
