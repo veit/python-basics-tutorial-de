@@ -953,6 +953,7 @@ ihr Zeichenketten managen könnt:
 .. seealso::
    * :doc:`Manipulation von Zeichenketten mit pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
+   * `humanize <https://humanize.readthedocs.io/en/stable/>`_
 
 Checks
 ------
