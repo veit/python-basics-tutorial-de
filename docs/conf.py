@@ -51,7 +51,7 @@ extensions = [
     "sphinx_inline_tabs",
 ]
 
-plantuml = "/usr/bin/plantuml"
+plantuml = "plantuml"
 plantuml_output_format = "svg"
 
 intersphinx_mapping = {
