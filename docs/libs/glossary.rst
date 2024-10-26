@@ -32,7 +32,7 @@ Glossar
 
    conda
        Paketmanagement-Tool für die `Anaconda
-       <https://docs.continuum.io/anaconda/index.html>`_-Distribution von
+       <https://docs.anaconda.com/anaconda/index.html>`_-Distribution von
        `Continuum Analytics <https://www.anaconda.com/>`_. Sie ist speziell
        auf die wissenschaftliche Gemeinschaft ausgerichtet, insbesondere auf
        Windows, wo die Installation von binären Erweiterungen oft schwierig ist.
@@ -139,7 +139,7 @@ Glossar
        und ist in der Lage, die Anforderungen der meisten komplexen
        Build-Konfigurationen zu erfüllen.
 
-       `Docs <https://meson-python.readthedocs.io/en/latest/>`__ |
+       `Docs <https://mesonbuild.com/meson-python/>`__ |
        `GitHub <https://github.com/mesonbuild/meson-python>`__ |
        `PyPI <https://pypi.org/project/meson-python/>`__
 

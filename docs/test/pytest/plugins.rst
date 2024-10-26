@@ -108,7 +108,7 @@ lange Liste von Plugins, die das Testen weiter vereinfachen:
     wurde speziell für End-to-End-Tests entwickelt. Playwright unterstützt alle
     modernen Rendering-Engines wie Chromium, WebKit und Firefox mit einer
     einzigen :abbr:`API (Application Programming Interface)`.
-`pyleniumio <https://pypi.org/project/pyleniumio/#test-example>`_
+`pyleniumio <https://pypi.org/project/pyleniumio/>`_
     ist ein dünner Python-Wrapper um Selenium mit einfacher und klarer Syntax.
 `pytest-selenium <https://pypi.org/project/pytest-selenium/>`_
     stellt Fixtures zur Verfügung, die eine einfache Konfiguration von
