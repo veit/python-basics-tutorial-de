@@ -17,6 +17,11 @@ wir Zweige für ältere Versionen starten müssen.
 `Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/24.3.0...HEAD>`_
 ---------------------------------------------------------------------------------------
 
+Added
+~~~~~
+
+* 📝 Add conversion to reST
+
 Changed
 ~~~~~~~
 
