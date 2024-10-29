@@ -371,8 +371,8 @@ Form mit, wie sie es nutzen können.
     * `Make a README <https://www.makeareadme.com>`_
     * `readme.so <https://readme.so>`_
 
-Wenn ihr das Dokument in :doc:`/document/rest` schreibt, könnt ihr die Inhalte
-auch als ausführliche Beschreibung in euer Paket übernehmen:
+Wenn ihr das Dokument in :doc:`/document/sphinx/rest` schreibt, könnt ihr die
+Inhalte auch als ausführliche Beschreibung in euer Paket übernehmen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
@@ -380,7 +380,7 @@ auch als ausführliche Beschreibung in euer Paket übernehmen:
    :lines: 5, 12
 
 Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
-</document/start>` mit ``.. include:: ../../README.rst`` übernehmen.
+</document/sphinx/start>` mit ``.. include:: ../../README.rst`` übernehmen.
 
 :file:`CHANGELOG.rst`
 ~~~~~~~~~~~~~~~~~~~~~

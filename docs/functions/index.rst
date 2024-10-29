@@ -41,7 +41,7 @@ Zeile 2
     Zeile folgen zu lassen und mit dem Rest der Informationen zu enden.
 
     .. seealso::
-        * :doc:`../document/docstrings`
+        * :doc:`../document/sphinx/docstrings`
 
 Zeile 7
     Der Wert wird nach dem Aufruf der Funktion zurückgegeben. Ihr könnt auch
