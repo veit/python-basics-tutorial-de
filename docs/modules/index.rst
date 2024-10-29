@@ -56,8 +56,8 @@ dieser Datei vorkommenden Wörter ermittelt.
    :linenos:
 
 Zeilen 1 und 5
-    :doc:`../document/docstrings` sind Standardmethoden zur Dokumentation von
-    Modulen, Funktionen, Methoden und Klassen.
+    :doc:`../document/sphinx/docstrings` sind Standardmethoden zur Dokumentation
+    von Modulen, Funktionen, Methoden und Klassen.
 Zeile 10
     ``read`` gibt eine Zeichenkette zurück, die alle Zeichen in einer Datei
     enthält, und ``split`` gibt eine Liste der Wörter einer Zeichenkette zurück,
