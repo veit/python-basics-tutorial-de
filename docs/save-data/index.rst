@@ -31,7 +31,7 @@ Die Python-Datenbank-API
 Die Python Database :abbr:`API (Application Programming Interface)` definiert
 eine Standardschnittstelle für Python-Datenbankzugriffsmodule. Sie ist in
 :pep:`249` definiert und wird häufig verwendet, :abbr:`z.B. (zum Beispiel)` von
-:doc:`sqlite <sqlite>`, :doc:`psycopg <psycopg>`, and `mysql-python
+:doc:`sqlite <sqlite/index>`, :doc:`psycopg <psycopg>`, and `mysql-python
 <https://sourceforge.net/projects/mysql-python/>`_.
 
 SQLAlchemy
@@ -59,13 +59,5 @@ lassen. Dann solltet ihr zumindest einen Blick auf
    filesystem
    pickle
    xml
-   sqlite
-   create-db
-   create-data
-   create-data-from-csv
-   query-data
-   update-data
-   delete-data
-   normalise
-   query-normalised
+   sqlite/index
    psycopg

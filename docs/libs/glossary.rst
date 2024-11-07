@@ -19,7 +19,7 @@ Glossar
        :term:`Source Distribution`, die einen Build-Schritt erfordern.
 
    cibuildwheel
-       :doc:`/libs/cibuildwheel` ist ein Python-Paket, das :term:`wheels
+       :doc:`/packs/cibuildwheel` ist ein Python-Paket, das :term:`wheels
        <wheel>` für alle gängigen Plattformen und Python-Versionen auf den
        meisten CI-Systemen erstellt.
 
@@ -131,7 +131,7 @@ Glossar
 
    maturin
        Vormals pyo3-pack, ist ein :pep:`621`-kompatibles Build-Tool für
-       :doc:`binäre Erweiterungen <binary-extensions>` in Rust.
+       :doc:`binäre Erweiterungen <../packs/binary-extensions>` in Rust.
 
    meson-python
        Build-Backend, das das `Meson <https://mesonbuild.com>`_-Build-System

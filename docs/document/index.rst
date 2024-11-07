@@ -53,5 +53,6 @@ erhalten können.
    :hidden:
 
    sphinx/index
+   doctest
    badges
    shot-scraper

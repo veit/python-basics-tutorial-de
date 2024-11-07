@@ -44,7 +44,7 @@ Im Allgemeinen werden Datenklassen als syntaktischer Zucker für die Erstellung
 von Klassen, die Daten speichern, verwendet. Ihr könnt euren Klassen
 zusätzliche Funktionalität verleihen, indem ihr Methoden definiert. Wir werden
 der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
-<types/dicts>` erstellt:
+<../types/dicts>` erstellt:
 
 .. code-block:: pycon
 

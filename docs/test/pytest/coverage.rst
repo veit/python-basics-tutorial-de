@@ -21,8 +21,8 @@ Testsuite durchlaufen wird.
 `Coverage.py <https://coverage.readthedocs.io/en/latest/>`_ ist das bevorzugte
 Python-Tool, das die Codeabdeckung misst. Und `pytest-cov
 <https://pytest-cov.readthedocs.io/en/latest/>`_ ist ein beliebtes
-:doc:`Pytest-Plugin <pytest/plugins>`, das oft in Verbindung mit Coverage.py
-verwendet wird.
+:doc:`Pytest-Plugin <plugins>`, das oft in Verbindung mit Coverage.py verwendet
+wird.
 
 Coverage.py mit pytest-cov verwenden
 ------------------------------------

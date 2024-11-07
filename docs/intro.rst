@@ -100,7 +100,7 @@ Unterstützung für mobile Geräte
     <https://peps.python.org/pep-0011/#tier-3>`_ :abbr:`u.a. (unter anderem)`
     für Windows, iOS und Pi OS bieten. Zudem soll es zukünftig einfacher werden,
     :ref:`wheels` auch für mobile Endgeräte zu erstellen, indem Tools wie
-    :doc:`libs/cibuildwheel` und :term:`setuptools` erweitert werden.
+    :doc:`packs/cibuildwheel` und :term:`setuptools` erweitert werden.
 
     .. seealso::
        * `The Python Language Summit 2024: Python on Mobile

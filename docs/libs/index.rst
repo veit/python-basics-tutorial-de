@@ -1,5 +1,5 @@
-Programmbibliotheken
-====================
+Bibliotheken
+============
 
 Mehrere :doc:`/modules/index` können in einer Programmbibliothek zusammengefasst
 werden. Solche Bibliotheken ermöglichen euch, Module in Verzeichnissen und
@@ -14,11 +14,4 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
 
    batteries
    install
-   packages-programmes
-   distribution
-   templating/index
-   upload-install
-   gitlab
-   cibuildwheel
-   binary-extensions
    glossary

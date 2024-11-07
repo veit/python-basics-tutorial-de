@@ -25,8 +25,14 @@ Added
 Changed
 ~~~~~~~
 
-* 📝 Rearrange documentation section
+* 🎨 Restructure the documentation
 
+  * Move packages outside libraries
+  * Move apps in packages
+  * Remove unittest2
+  * Move doctests to Sphinx
+  * Move the sqlite database test to unittest
+  * Move Sphinx to a subchapter
 
 `24.3.0 <https://github.com/veit/python-basics-tutorial-de/compare/24.2.0...24.3.0>`_
 -------------------------------------------------------------------------------------

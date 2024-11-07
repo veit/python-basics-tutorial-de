@@ -3,7 +3,7 @@ Pakete und Programme
 
 .. _wheels:
 
-wheels
+Pakete
 ------
 
 Das derzeitige Standardformat zur Verteilung von Python-Bibliotheken und
@@ -20,8 +20,23 @@ den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
    * `Python Package Build Tools
      <https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-build-tools.html>`_
 
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   distribution
+   templating/index
+   upload-install
+   gitlab
+   cibuildwheel
+   binary-extensions
+   apps
+
+Programme
+---------
+
 ``py2exe`` und ``py2app``
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `py2exe <https://www.py2exe.org/>`_ erstellt eigenständige Windows-Programme und
 `py2app <https://py2app.readthedocs.io/en/latest/>`_ dasselbe für macOS. In
@@ -32,7 +47,7 @@ tendenziell größer und weniger flexibel sind als native Python-Anwendungen, ab
 in manchen Situationen können sie auch die beste oder einzige Lösung sein.
 
 ``freeze``
-----------
+~~~~~~~~~~
 
 Auch das ``freeze``-Tool erstellt ein ausführbares Python-Programm, das auf
 Rechnern läuft, auf denen Python nicht installiert ist. Wenn ihr das
@@ -50,7 +65,7 @@ bereitstellt.
     * `Tools/freeze <https://github.com/python/cpython/tree/main/Tools/freeze>`_
 
 PyInstaller and PyOxidizer
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `PyInstaller <https://pyinstaller.org/en/stable/index.html#>`_ und `PyOxidizer
 <https://pyoxidizer.readthedocs.io/en/pyoxidizer-0.17/index.html>`_ bündeln eine
@@ -59,7 +74,7 @@ Python-Anwendung und alle ihre Abhängigkeiten in einem einzigen Paket.
 .. _briefcase:
 
 Briefcase
----------
+~~~~~~~~~
 
 `Briefcase <https://beeware.org/project/projects/tools/briefcase/>`__ ist ein
 Werkzeug zur Konvertierung eines Python-Projekts in eine eigenständige native
@@ -68,7 +83,7 @@ Anwendung für Mac, Windows, Linux, iPhone/iPad und Android.
 .. _beeware:
 
 BeeWare
--------
+~~~~~~~
 
 `BeeWare <https://beeware.org>`__ konvertiert euer Python-Projekt in eine
 eigenständige iOS, Android, Windows, MacOS, Linux, Web und tvOS-App.

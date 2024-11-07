@@ -38,7 +38,7 @@ Kommentare
 
 Meist ist alles, was hinter ``#`` folgt ein Kommentar und wird bei der
 Ausführung des Codes nicht beachtet. Die offensichtliche Ausnahme ist ``#`` in
-einer :doc:`Zeichenkette <types/strings>`:
+einer :doc:`Zeichenkette <types/strings/index>`:
 
 .. code-block:: pycon
 

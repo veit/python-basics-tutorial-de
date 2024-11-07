@@ -19,9 +19,9 @@ auf Python-Versionen beschränkt. Ihr könnt es zum Testen mit verschiedenen
 Abhängigkeits-Konfigurationen und verschiedenen Konfigurationen für verschiedene
 Betriebssysteme verwenden. tox verwendet dabei Projektinformationen aus der
 :file:`setup.py`- oder :file:`pyproject.toml`-Datei für das zu testende Paket,
-um eine installierbare :doc:`Distribution eures Pakets <../libs/distribution>`
-zu erstellen. Es sucht in der :file:`tox.ini`-Datei nach einer Liste von
-Umgebungen, und führt dann jeweils folgende Schritte aus:
+um eine installierbare :doc:`Distribution eures Pakets
+<../packs/distribution>` zu erstellen. Es sucht in der :file:`tox.ini`-Datei
+nach einer Liste von Umgebungen, und führt dann jeweils folgende Schritte aus:
 
 #. erstellt eine :term:`virtuelle Umgebung <Virtuelle Umgebung>`,
 #. installiert einige Abhängigkeiten mit :term:`pip`,

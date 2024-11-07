@@ -51,3 +51,4 @@ Ihr könnt pytest in :ref:`virtuellen Umgebungen <venv>` installieren mit:
    plugins
    config
    debug
+   coverage

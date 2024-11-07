@@ -89,6 +89,8 @@ Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
        …
        (accessibility/color: line  114) broken    https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl - 404 Client Error: Not Found for url: https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl
 
+.. _ci-docs:
+
 Kontinuierliche Integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -169,8 +171,8 @@ ein:
 Code
 ----
 
-Mit der eingebauten Python-Bibliothek :doc:`../../test/doctest` könnt ihr auch
-Code in eurer Dokumentation mit der :func:`doctest.testfile`-Methode testen:
+Mit der eingebauten Python-Bibliothek :doc:`../doctest` könnt ihr auch Code in
+eurer Dokumentation mit der :func:`doctest.testfile`-Methode testen:
 
 .. code-block:: Python
 

@@ -17,3 +17,16 @@ in vielen anderen Anwendungen.
    * `sqlite home <https://www.sqlite.org/>`_
    * :doc:`python3:library/sqlite3`
    * `W3Schools SQL tutorial <https://www.w3schools.com/sql/>`_
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   create-db
+   create-data
+   create-data-from-csv
+   query-data
+   update-data
+   delete-data
+   normalise
+   query-normalised

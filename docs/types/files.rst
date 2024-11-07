@@ -290,7 +290,7 @@ ihr Dateien managen könnt:
 | :py:mod:`json`                    | JSON-Kodierer und -Dekodierer                                                 |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`sqlite3`                 | bietet eine DB-API 2.0-Schnittstelle für SQLite-Datenbanken, :abbr:`s.a.      |
-|                                   | (siehe auch)` :doc:`../save-data/sqlite`                                      |
+|                                   | (siehe auch)` :doc:`../save-data/sqlite/index`                                |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`xml`,                    | liest und schreibt XML-Dateien, :abbr:`s.a. (siehe auch)`                     |
 | :py:mod:`xml.parsers.expat`,      | :doc:`../save-data/xml`                                                       |

@@ -137,7 +137,7 @@ Bedarf decken:
 ~~~~~~~~~~~~~~~~~~~
 
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
-    führt die :doc:`../coverage` beim Testen aus.
+    führt die :doc:`../pytest/coverage` beim Testen aus.
 `pytest-benchmark <https://pypi.org/project/pytest-benchmark/>`_
     führt Benchmark-Timing für Code innerhalb von Tests durch.
 `pytest-timeout <https://pypi.org/project/pytest-timeout/>`_
