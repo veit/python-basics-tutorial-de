@@ -5,5 +5,3 @@ Anhang
    :titlesonly:
 
    checks
-   regex
-   encodings

@@ -191,8 +191,9 @@ virtueller Umgebungen mit ``pdm venv activate``.
 ::::::::::::
 
 Im Gegensatz zu Anwendungen unterstützen unsere Pakete normalerweise mehr als
-eine Python-Version. Dennoch fügen wir auch bei :doc:`Paketen <distribution>`
-üblicherweise die aktuelle Standard-Version in :file:`.python-version` hinzu:
+eine Python-Version. Dennoch fügen wir auch bei :doc:`Paketen
+<../packs/distribution>` üblicherweise die aktuelle Standard-Version in
+:file:`.python-version` hinzu:
 
 .. literalinclude:: ../../.python-version
    :caption: .python-version
@@ -270,5 +271,6 @@ Shell-Konfigurationsdatei ein.
 Projektstruktur erstellen
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Je nachdem, ob ihr eine :doc:`Bibliothek <distribution>` oder :doc:`Anwendung
-<../apps>` erstellen wollt, kann ``uv`` eine passende Projektstruktur erstellen.
+Je nachdem, ob ihr eine :doc:`Bibliothek <../packs/distribution>` oder
+:doc:`Anwendung <../packs/apps>` erstellen wollt, kann ``uv`` eine passende
+Projektstruktur erstellen.

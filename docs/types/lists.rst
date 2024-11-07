@@ -4,11 +4,11 @@ Listen
 Eine Liste in Python ist ähnlich wie ein Array in Java oder C: eine geordnete
 Kollektion von Objekten. Anders als Listen in vielen anderen Sprachen können
 Python-Listen jedoch verschiedene Arten von Elementen enthalten; ein
-Listenelement kann ein beliebiges Python-Objekt sein, darunter :doc:`strings`,
-:doc:`tuples`, :doc:`lists`, :doc:`dicts`, :doc:`../functions/index`,
-:doc:`files` und jede Art von :doc:`numbers`. Ihr erstellt eine Liste, indem ihr
-kein oder durch Komma getrennte Elemente in eckige Klammern einschließt, etwa
-so:
+Listenelement kann ein beliebiges Python-Objekt sein, darunter
+:doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
+:doc:`../functions/index`, :doc:`files` und jede Art von :doc:`numbers`. Ihr
+erstellt eine Liste, indem ihr kein oder durch Komma getrennte Elemente in
+eckige Klammern einschließt, etwa so:
 
 .. code-block:: python
    :linenos:
@@ -282,8 +282,8 @@ Benutzerdefinierte Sortierung
 
 .. note::
    Für eine benutzerdefinierte Sortierung müsst ihr :doc:`../functions/index`
-   definieren können. Und auch die Verarbeitung von :doc:`strings` wird später
-   noch ausführlicher behandelt.
+   definieren können. Und auch die Verarbeitung von :doc:`strings/index` wird
+   später noch ausführlicher behandelt.
 
 Üblicherweise sortiert Python Wörter lexikografisch – Großbuchstaben vor
 Kleinbuchstaben. Wir möchten jedoch stattdessen eine Liste von Wörtern

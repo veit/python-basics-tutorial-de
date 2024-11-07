@@ -116,6 +116,5 @@ einem Docstring oder in einer anderen Textdatei erfüllt sind.
       :lineno-start: 38
 
 .. seealso::
-   :doc:`doctest <python3:library/doctest>` hat auch die Fähigkeit, Tests in
-   eurer Dokumentation auszuführen: :ref:`Dokumentieren → Testen → Code
-   <test_code>`.
+   :doc:`doctest <python3:library/doctest>` kann auch zum kontinuierlichen
+   Testen der Dokumentation verwendet werden: :ref:`ci-docs`.

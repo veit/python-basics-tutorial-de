@@ -282,8 +282,8 @@ Checks
      >>> print(sheet[("A", 1)])
      2
 
-:doc:`/types/strings`
----------------------
+:doc:`/types/strings/index`
+---------------------------
 
 * Könnt ihr :abbr:`z.B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
   addieren oder multiplizieren, oder mit einer Gleitkommazahl oder einer
@@ -974,8 +974,8 @@ Checks
      >>> t1.x
      3
 
-:doc:`/libs/distribution`
--------------------------
+:doc:`/packs/distribution`
+--------------------------
 
 * Wenn ihr ein Paket für eine Aufgabenverwaltung erstellen wollt, das die
   Aufgaben in eine Datenbank schreibt und über ein Python-:abbr:`API (engl.:

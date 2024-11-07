@@ -30,7 +30,7 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
             unterstützt euch bei der Automatisierung von Tests.
         :doc:`mock`
             erlaubt euch das Erstellen und Verwenden von Mock-Objekten.
-        :doc:`doctest`
+        :doc:`../document/doctest`
             ermöglicht das Testen von in Python Docstrings geschriebenen Tests.
         :doc:`tox`
             ermöglicht das Testen in verschiedenen Umgebungen.
@@ -51,13 +51,9 @@ Grundsätzlich wird zwischen statischen und dynamischen Testverfahren unterschie
    :titlesonly:
    :hidden:
 
-   unittest
-   sqlite
-   doctest
-   hypothesis
    pytest/index
-   coverage
+   unittest
    mock
+   hypothesis
    tox
-   unittest2
    glossary

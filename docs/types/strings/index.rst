@@ -231,7 +231,7 @@ Während :meth:`python3:str.split` eine Liste von Zeichenfolgen zurückgibt, nim
 einzigen Zeichenkette zusammen. Normalerweise verwendet
 :meth:`python3:str.split` Leerraum als Begrenzungszeichen für die aufzuteilenden
 Zeichenketten, aber ihr könnt dieses Verhalten mit einem optionalen
-:doc:`../functions/params` ändern.
+:doc:`../../functions/params` ändern.
 
 .. warning::
    Die Verkettung von Zeichenketten mit ``+`` ist zwar nützlich, aber nicht
@@ -259,7 +259,7 @@ Beispiel)` für die CamelCase-Schreibweise von Python-Klassen:
 
 :meth:`python3:str.split` wird meist verwendet um Zeichenketten an Leerräumen zu
 trennen. Ihr könnt eine Zeichenkette jedoch auch an einer bestimmten anderen
-Zeichenfolge trennen, indem ihr einen optionalen :doc:`../functions/params`
+Zeichenfolge trennen, indem ihr einen optionalen :doc:`../../functions/params`
 übergebt:
 
 .. code-block:: pycon
@@ -273,7 +273,7 @@ Zeichenfolge trennen, indem ihr einen optionalen :doc:`../functions/params`
 
 Manchmal ist es nützlich, dem letzten Feld in einer Zeichenkette zu erlauben,
 beliebigen Text zu enthalten. Ihr könnt dies tun, indem ihr einen optionalen
-zweiten :doc:`../functions/params` angebt, wie viele Teilungen durchgeführt
+zweiten :doc:`../../functions/params` angebt, wie viele Teilungen durchgeführt
 werden sollen:
 
 .. code-block:: pycon
@@ -282,7 +282,7 @@ werden sollen:
    ['1.', 'You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string.']
 
 Wenn ihr :meth:`python3:str.split` mit dem optionalen zweiten Argument verwendenwollt, müsst ihr zunächst ein erstes Argument angeben. Um zu erreichen, dass bei
-allen Leerzeichen geteilt wird, verwendet :doc:`none` als erstes Argument:
+allen Leerzeichen geteilt wird, verwendet :doc:`../none` als erstes Argument:
 
 .. code-block:: pycon
 
@@ -337,7 +337,7 @@ vertikalen Tabulator- und Vorschubzeichen dar.
    Ändert nicht den Wert dieser Variablen um die Funktionsweise von
    :py:meth:`str.strip` :abbr:`usw. (und so weiter)` zu beeinflussen. Welche
    Zeichen diese Methoden entfernen, könnt ihr Zeichen als zusätzlichen
-   :doc:`../functions/params` übergeben:
+   :doc:`../../functions/params` übergeben:
 
    .. code-block:: pycon
 
@@ -355,7 +355,7 @@ Zeichenketten sind :py:meth:`str.find`, :py:meth:`str.rfind`,
 :py:meth:`str.count`, zählt, wie oft eine Zeichenfolge in einer anderen
 Zeichenfolge gefunden werden kann.
 
-:py:meth:`str.find` benötigt einen einzigen :doc:`../functions/params`: die
+:py:meth:`str.find` benötigt einen einzigen :doc:`../../functions/params`: die
 gesuchte Teilzeichenkette; zurückgegeben wird dann die Position des ersten
 Vorkommens oder ``-1``, wenn es kein Vorkommen gibt:
 
@@ -366,7 +366,7 @@ Vorkommens oder ``-1``, wenn es kein Vorkommen gibt:
    18
 
 :py:meth:`str.find` kann auch ein oder zwei zusätzliche
-:doc:`../functions/params` annehmen:
+:doc:`../../functions/params` annehmen:
 
 ``start``
     Zahl, der Zeichen am Anfang der zu durchsuchenden Zeichenkette, die
@@ -386,8 +386,8 @@ Ihr könnt zwei weitere :ref:`String-Methoden <python3:string-methods>`
 verwenden, um Strings zu suchen: :py:meth:`str.startswith` und
 :py:meth:`str.endswith`. Diese Methoden geben ``True``- oder ``False`` als
 Ergebnis zurück, je nachdem, ob die Zeichenkette, auf die sie angewendet werden,
-mit einer der als :doc:`../functions/params` angegebenen Zeichenketten beginnt
-oder endet:
+mit einer der als :doc:`../../functions/params` angegebenen Zeichenketten
+beginnt oder endet:
 
 .. code-block:: pycon
 
@@ -422,7 +422,9 @@ Zeichenketten ändern
 mehrere Methoden, die eine modifizierte Version der ursprünglichen Zeichenkette
 zurückgeben können.
 
-:py:meth:`str.replace` könnt ihr verwenden, um Vorkommen des ersten :doc:`../functions/params` durch den zweiten zu ersetzen, :abbr:`z.B. (zum Beispiel)`:
+:py:meth:`str.replace` könnt ihr verwenden, um Vorkommen des ersten
+:doc:`../../functions/params` durch den zweiten zu ersetzen, :abbr:`z.B. (zum
+Beispiel)`:
 
 .. code-block:: pycon
 
@@ -534,8 +536,8 @@ des Musters:
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` gibt ein :doc:`tuples` zurück, das alle Untergruppen
-der Übereinstimmung enthält.
+:py:meth:`re.Match.groups` gibt ein :doc:`../tuples` zurück, das alle
+Untergruppen der Übereinstimmung enthält.
 
 :py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
 Gruppen enthält:
@@ -591,9 +593,14 @@ Ausdrücke:
 
 
 .. seealso::
-   * :doc:`../../appendix/regex`
    * :doc:`python3:howto/regex`
    * :doc:`python3:library/re`
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   regex
 
 Konvertieren von Zeichenketten in Zahlen
 ----------------------------------------
@@ -603,10 +610,10 @@ verwenden, um Zeichenketten in Ganzzahl- bzw. Fließkommazahlen zu konvertieren.
 Wenn eine Zeichenkette übergeben wird, die nicht als Zahl des angegebenen Typs
 interpretiert werden kann, lösen diese Funktionen eine
 :class:`python3:ValueError`-Ausnahme aus. Ausnahmen werden in
-:doc:`../control-flows/exceptions` ausführlicher erklärt. Darüber hinaus könnt
-ihr :class:`python3:int` einen optionalen zweiten :doc:`../functions/params`
-übergeben, der die numerische Basis angibt, die bei der Interpretation der
-Zeichenfolge verwendet werden soll:
+:doc:`../../control-flows/exceptions` ausführlicher erklärt. Darüber hinaus
+könnt ihr :class:`python3:int` einen optionalen zweiten
+:doc:`../../functions/params` übergeben, der die numerische Basis angibt, die
+bei der Interpretation der Zeichenfolge verwendet werden soll:
 
 .. code-block:: pycon
    :linenos:
@@ -629,7 +636,7 @@ Zeichenfolge verwendet werden soll:
    ValueError: invalid literal for int() with base 2: '1234'
 
 Zeilen 5–8
-    Wird kein zweiter :doc:`../functions/params` angegeben, rechnet
+    Wird kein zweiter :doc:`../../functions/params` angegeben, rechnet
     :class:`python3:int` mit einer Basis von ``10``.
 Zeilen 9, 10
     ``1000`` wird als `Oktalzahl <https://de.wikipedia.org/wiki/Oktalsystem>`_
@@ -645,8 +652,8 @@ Zeilen 13–16
 -------------------------------------------------
 
 Da :ref:`str <python3:textseq>`-Objekte unveränderlich sind, gibt es keine
-Möglichkeit, sie direkt zu verändern wie :doc:`lists`. Ihr könnt sie jedoch in
-Listen umwandeln:
+Möglichkeit, sie direkt zu verändern wie :doc:`../lists`. Ihr könnt sie jedoch
+in Listen umwandeln:
 
 .. code-block:: pycon
 
@@ -954,6 +961,12 @@ ihr Zeichenketten managen könnt:
    * :doc:`Manipulation von Zeichenketten mit pandas
      <Python4DataScience:workspace/pandas/string-manipulation>`
    * `humanize <https://humanize.readthedocs.io/en/stable/>`_
+
+.. toctree::
+   :titlesonly:
+   :hidden:
+
+   encodings
 
 Checks
 ------

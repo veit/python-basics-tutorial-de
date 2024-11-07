@@ -429,7 +429,8 @@ Verbleibende Built-in-Fixtures
 |                               | und ähnliche Optionen.                        |
 +-------------------------------+-----------------------------------------------+
 | ``doctest_namespace``         | nützlich, wenn ihr pytest verwenden möchtet,  |
-|                               | um :doc:`Doctests <../doctest>`               |
+|                               | um :doc:`Doctests                             |
+|                               | <../../document/doctest>`                     |
 |                               | durchzuführen.                                |
 +-------------------------------+-----------------------------------------------+
 | ``pytestconfig``              | wird verwendet, um Zugriff auf                |

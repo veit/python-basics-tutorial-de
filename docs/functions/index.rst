@@ -33,7 +33,7 @@ Zeile 2
     Docstrings ist es, das Verhalten einer Funktion und die Parameter, die sie
     annimmt, zu beschreiben, während Kommentare interne Informationen über die
     Funktionsweise des Codes dokumentieren sollen. Docstrings sind
-    :doc:`/types/strings`, die unmittelbar auf die erste Zeile einer
+    :doc:`/types/strings/index`, die unmittelbar auf die erste Zeile einer
     Funktionsdefinition folgen und normalerweise in dreifachen Anführungszeichen
     stehen, um mehrzeilige Beschreibungen zu ermöglichen. Bei mehrzeiligen
     Dokumentationsstrings ist es üblich, in der ersten Zeile eine
