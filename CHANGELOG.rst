@@ -12,7 +12,7 @@ Die erste Zahl der Version ist das Jahr. Die zweite Zahl wird mit jeder Version
 erhöht, beginnend bei 1 für jedes Jahr. Die dritte Zahl ist für Notfälle, wenn
 wir Zweige für ältere Versionen starten müssen.
 
-.. _changelog:
+.. unreleased
 
 `Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/24.3.0...HEAD>`_
 ---------------------------------------------------------------------------------------
@@ -20,6 +20,7 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add What’s new?
 * 📝 Add conversion to reST
 
 Changed

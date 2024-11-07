@@ -100,6 +100,7 @@ Trainings:
    :hidden:
 
    intro
+   changelog
    install
    editors
    explore
