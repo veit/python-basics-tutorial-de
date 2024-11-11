@@ -20,6 +20,7 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add tip for a stride of -1
 * 📝 Add What’s new?
 * 📝 Add conversion to reST
 

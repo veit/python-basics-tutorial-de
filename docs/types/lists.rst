@@ -92,7 +92,7 @@ so weiter)`:
    >>> x[1::2]
    ['zweitens', (5.1, 5.2)]
 
-Der *Stride*-Wert kann auch negativ sein. Ein ``-1``-*Stride* bedeutet, von
+Der *Stride*-Wert kann auch negativ sein. Ein ``-1``-*Stride* bedeutet, dass von
 rechts nach links gezählt wird:
 
 .. code-block:: pycon
@@ -112,6 +112,11 @@ Zeile 3
     Die Ausnahme ist, wenn ihr die Start- und Endindizes weglasst.
 Zeile 5
     Ein *Stride* von ``-1`` kehrt die Reihenfolge um.
+
+    .. tip::
+       Zum Umkehren der Reihenfolge dürfte jedoch :func:`list.reverse` besser
+       lesbar sein als ein  *Stride* von ``-1``, :abbr:`s.a. (siehe auch)`
+       :ref:`list.reverse() <reverse>`.
 
 .. seealso::
    * :doc:`Daten auswählen und filtern mit pandas
@@ -151,6 +156,8 @@ Zeile 11
 
 Einige Funktionen der Slice-Notation können auch mit speziellen Operationen
 ausgeführt werden, wodurch die Lesbarkeit des Codes verbessert wird:
+
+.. _reverse:
 
 .. code-block:: pycon
    :linenos:
