@@ -27,6 +27,7 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Expand the contextmanager section
 * 🎨 Restructure the documentation
 
   * Move packages outside libraries
