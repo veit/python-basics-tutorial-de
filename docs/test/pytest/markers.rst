@@ -780,7 +780,7 @@ notwendig:
 
    .. code-block:: python
       :linenos:
-      :emphasize-lines: 5, 12-
+      :emphasize-lines: 5, 13-
 
       import os
       from pathlib import Path
@@ -814,23 +814,23 @@ notwendig:
    Zeile 13
     Wir haben ``request`` und ``faker`` in die Liste der ``items_db``-Parameter
     aufgenommen.
-   Zeile 17
+   Zeile 18
     Dies setzt die Zufälligkeit von Faker, so dass wir jedes Mal die gleichen
     Daten erhalten. Dabei verwenden wir Faker hier nicht für sehr zufällige
     Daten, sondern um zu vermeiden, dass wir selbst Daten erfinden müssen.
-   Zeile 18
+   Zeile 19
     Hier verwenden wir ``request``, genauer ``request.node`` für die
     pytest-Repräsentation eines Tests.  ``get_closest_marker('num_items')`` gibt
     ein Marker-Objekt zurück, wenn der Test mit ``num_items`` markiert ist,
     andernfalls gibt es ``None`` zurück. Die
     :func:`get_closest_marker`-Funktion gibt den Marker zurück, der dem Test am
     nächsten liegt, und das ist normalerweise das, was wir wollen.
-   Zeile 19
+   Zeile 20
     Der Ausdruck ist wahr, wenn der Test mit ``num_items`` markiert ist und ein
     Argument angegeben wird. Die zusätzliche ``len``-Prüfung dient dazu, dass,
     falls jemand versehentlich nur ``pytest.mark.num_items`` verwendet, ohne die
     Anzahl der Items anzugeben, dieser Teil übersprungen wird.
-   Zeile 20–22
+   Zeile 21–24
     Sobald wir wissen, wie viele Items wir erstellen müssen, lassen wir Faker
     einige Daten für uns erstellen. Faker stellt die Faker-Fixture zur
     Verfügung.

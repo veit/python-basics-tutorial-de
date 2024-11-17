@@ -28,8 +28,9 @@ Datentypen und Zahlen.
 String-Module
 ~~~~~~~~~~~~~
 
-.. include:: ../types/strings.rst
-   :start-after: string-modules
+.. include:: ../types/strings/index.rst
+   :start-after: string-modules:
+   :end-before: end-string-modules:
 
 Module für Datentypen
 ~~~~~~~~~~~~~~~~~~~~~
@@ -63,7 +64,8 @@ Module für Zahlen
 ~~~~~~~~~~~~~~~~~
 
 .. include:: ../types/numbers.rst
-   :start-after: number-modules
+   :start-after: number-modules:
+   :end-before: end-number-modules:
 
 .. _files-storage:
 
@@ -71,7 +73,8 @@ Module für Zahlen
 ------------------
 
 .. include:: ../types/files.rst
-   :start-after: file-modules
+   :start-after: file-modules:
+   :end-before: end-file-modules:
 
 .. _os:
 

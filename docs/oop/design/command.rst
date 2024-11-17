@@ -62,6 +62,7 @@ die jeweils eine Liste von Funktionen für zukünftige Aufrufe enthalten,
 .. literalinclude:: caller.py
    :language: python
    :linenos:
+   :emphasize-lines: 4-5, 7-8
 
 Zeilen 4–5
     erstellt eine Liste aus den Befehlsargumenten und stellt sicher, dass sie

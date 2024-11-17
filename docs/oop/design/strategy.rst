@@ -86,6 +86,7 @@ werden und die abstrakte Klasse :class:`Promotion` entfernt wird.
    :language: python
    :linenos:
    :lines: 1-57
+   :emphasize-lines: 33, 40
 
 Zeile 33:
     Um einen Rabatt zu berechnen, ruft einfach die Funktion

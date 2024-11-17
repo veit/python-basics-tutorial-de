@@ -1,4 +1,4 @@
-filename = "myfile1.py"
+filename = "myFile1.py"
 try:
     f = open(filename, "r")
     for line in f:

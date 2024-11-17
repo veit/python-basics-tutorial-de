@@ -866,14 +866,14 @@ ihre Bedeutung aufgeführt:
 .. [#] Der Formatbezeichner ``n`` formatiert eine Zahl in einer lokal angepassten
     Weise, :abbr:`z.B. (zum Beispiel)`:
 
-     .. code-block:: pycon
+    .. code-block:: pycon
 
-        >>> value = 635372
-        >>> import locale
-        >>> locale.setlocale(locale.LC_NUMERIC, "en_US.utf-8")
-        'en_US.utf-8'
-        >>> print(f"{value:n}")
-        635,372
+       >>> value = 635372
+       >>> import locale
+       >>> locale.setlocale(locale.LC_NUMERIC, "en_US.utf-8")
+       'en_US.utf-8'
+       >>> print(f"{value:n}")
+       635,372
 
 .. tip::
    Eine gute Quelle für F-Strings ist die Hilfe-Funktion:
@@ -956,6 +956,8 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`textwrap`    | umbricht und füllt Text, formatiert Text mit Zeilenumbrüchen oder Leerzeichen |
 +-----------------------+-------------------------------------------------------------------------------+
+
+.. _end-string-modules:
 
 .. seealso::
    * :doc:`Manipulation von Zeichenketten mit pandas
