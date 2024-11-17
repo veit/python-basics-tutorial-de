@@ -32,7 +32,7 @@ Beispiel
 Zunächst wollten wir mit einem einfachen Beispiel starten und überprüfen, ob die
 Arbeitstage von Montag bis Freitag korrekt ermittelt werden.
 
-Zunächst importieren wir ``datetime.datetime`` und ``Mock``:
+#. Zunächst importieren wir ``datetime.datetime`` und ``Mock``:
 
    .. literalinclude:: test_mock.py
       :language: python

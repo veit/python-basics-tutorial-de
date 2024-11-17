@@ -31,15 +31,6 @@ das auch kein Problem sein.
       um nach Sicherheitsupdates zu suchen, da es keinen integrierten
       Auto-Updater gibt.
 
-   .. _various-python-versions:
-
-   Werden verschiedene Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
-   Bibliotheken mit :doc:`test/tox` zu testen, verwende ich
-   `uv <https://docs.astral.sh/uv/guides/install-python/>`_. Damit lassen sich
-   nicht nur ältere CPython-Versionen installieren sondern :abbr:`z.B. (zum
-   Beispiel)` auch `PyPy <https://pypy.org>`_ oder Free-threaded Python 3.13 mit
-   ``uv python install pypy@3.12`` oder ``uv python install 3.13t``.
-
 .. tab:: macOS
 
    Ihr könnt Python direkt von https://www.python.org/downloads/macos/ beziehen.
@@ -86,6 +77,15 @@ das auch kein Problem sein.
       Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst,
       um nach Sicherheitsupdates zu suchen, da es keinen integrierten
       Auto-Updater gibt.
+
+.. _various-python-versions:
+
+Werden verschiedene Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
+Bibliotheken mit :doc:`test/tox` zu testen, verwende ich `uv
+<https://docs.astral.sh/uv/guides/install-python/>`_. Damit lassen sich nicht
+nur ältere CPython-Versionen installieren sondern :abbr:`z.B. (zum Beispiel)`
+auch `PyPy <https://pypy.org>`_ oder Free-threaded Python 3.13 mit ``uv python
+install pypy@3.12`` oder ``uv python install 3.13t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ erlaubt euch, Umgebungsvariablen je nach

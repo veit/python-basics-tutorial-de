@@ -322,6 +322,8 @@ ihr Zahlen managen könnt:
 | :py:mod:`operator`    | für Standardoperatoren als Funktionen                                         |
 +-----------------------+-------------------------------------------------------------------------------+
 
+.. _end-number-modules:
+
 Checks
 ------
 
