@@ -30,6 +30,7 @@ Changed
 
 * 📝 Expand the pytest plugins section
 * 📝 Rearrange functions section
+* 📝 Update installation of freethreaded Python
 * 📝 Expand the contextmanager section
 * 🎨 Restructure the documentation
 
