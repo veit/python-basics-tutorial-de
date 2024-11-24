@@ -117,7 +117,13 @@ Installation
 Folgt uns
 ---------
 
+.. _follow-us:
+
 * `GitHub <https://github.com/veit/python-basics-tutorial-de>`_
+* `Mastodon <https://mastodon.social/@Python4DataScience>`_
+* `Bluesky <https://bsky.app/profile/python4data.science>`_
+
+.. _end-follow-us:
 
 Pull-Requests
 -------------

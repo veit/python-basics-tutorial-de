@@ -95,6 +95,12 @@ Trainings:
 .. _`Neues aus Python für Data-Science`:
    https://cusy.io/de/unsere-schulungsangebote/neues-aus-python-fuer-data-science
 
+Folgt uns auf…
+
+.. include:: ../README.rst
+   :start-after: follow-us:
+   :end-before: end-follow-us:
+
 .. toctree::
    :titlesonly:
    :hidden:

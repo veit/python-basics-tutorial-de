@@ -20,6 +20,11 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 🔧 📝 Add social media support
+
+  * Add OpenGraph tag for mastodon
+  * Add social media links
+
 * 📝 Add PyPI digital attestations
 * 📝 Add tip for a stride of -1
 * 📝 Add What’s new?
