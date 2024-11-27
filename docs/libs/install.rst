@@ -52,22 +52,27 @@ kollidieren, so dass verschiedene Anwendungen unterschiedliche Versionen von
 Python und seinen Paketen verwenden können. Das Erstellen und Verwenden einer
 virtuellen Umgebung erfolgt in zwei Schritten:
 
-#. Zuerst erstellen wir die Umgebung:
+#. Zuerst erstellen wir ein Projektverzeichnis und dann darin die virtuelle
+   Umgebung:
 
    .. tab:: Linux/macOS
 
       .. code-block:: console
 
-         $ python3 -m venv myenv
+         $ mkdir myproj
+         $ cd myproj
+         $ python3 -m venv .venv
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         > py -m venv myenv
+         > mkdir myproj
+         > cd myproj
+         > py -m venv .venv
 
    Hiermit wird die Umgebung mit Python und :term:`pip` in einem Verzeichnis
-   namens :samp:`myenv` erstellt.
+   namens :samp:`.venv` erstellt.
 
 #. Anschließend könnt ihr diese Umgebung aktivieren, sodass beim nächsten Aufruf
    von ``python`` das Python aus eurer neuen Umgebung verwendet wird:
@@ -76,13 +81,13 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
       .. code-block:: console
 
-         $ . myenv/bin/activate
+         $ . .venv/bin/activate
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         > myenv\Scripts\activate.bat
+         > .venv\Scripts\activate
 
 #. Python-Pakete nur für diese virtuelle Umgebung installieren, :abbr:`z.B. (zum
 Beispiel)` die beliebte ``pandas``-Bibliothek:
@@ -91,13 +96,13 @@ Beispiel)` die beliebte ``pandas``-Bibliothek:
 
       .. code-block:: console
 
-         (myenv) $ python -m pip install pandas
+         (.venv) $ python -m pip install pandas
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         (myenv) > python.exe -m pip install pandas
+         (.venv) > python.exe -m pip install pandas
 
 #. Wenn ihr eure Arbeit an diesem Projekt beenden wollt, könnt ihr die virtuelle
    Umgebung wieder deaktivieren mit
@@ -106,13 +111,13 @@ Beispiel)` die beliebte ``pandas``-Bibliothek:
 
       .. code-block:: console
 
-         (myenv) $ deactivate
+         (.venv) $ deactivate
 
    .. tab:: Windows
 
       .. code-block:: ps1
 
-         (myenv) > deactivate
+         (.venv) > deactivate
 
 .. seealso::
    * :doc:`python3:tutorial/venv`
