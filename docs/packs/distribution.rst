@@ -606,7 +606,8 @@ Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
     dist/mypack-0.1.0-py3-none-any.whl: W007: Wheel library is empty
     dist/mypack-0.1.0-py3-none-any.whl: W008: Wheel is empty
 
-Alternativ könnt ihr das Paket auch installieren:
+Alternativ könnt ihr das Paket auch in einem neuen Projekt installieren,
+:abbr:`z.B. (zum Beispiel)` in :samp:`myapp`:
 
 .. code-block:: console
 
