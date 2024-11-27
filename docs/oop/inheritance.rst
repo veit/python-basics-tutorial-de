@@ -17,7 +17,7 @@ dies tun, indem wir ``x``- und ``y``-Koordinaten für jede Instanz definieren:
     :linenos:
 
     >>> class Square:
-    ...     def __init__(self, length=1, x=1, y=1):
+    ...     def __init__(self, length=1, x, y):
     ...         self.length = length
     ...         self.x = x
     ...         self.y = y
