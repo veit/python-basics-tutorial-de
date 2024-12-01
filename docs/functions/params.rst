@@ -204,17 +204,13 @@ Beispiel)`:
 
 .. code-block:: pycon
 
-    >>> def server(ip, port, **other):
-    ...     print(
-    ...         "ip: {0}, port: {1}, keys in 'other': {2}".format(
-    ...             ip, port, list(other.keys())
-    ...         )
-    ...     )
-    ...     total = 0
-    ...     for k in other.keys():
-    ...         total = total + other[k]
-    ...     print("The sum of the other values is {0}".format(total))
-    ...
+   >>> def server(ip, port, **other):
+   ...     print(f"ip: {ip}, port: {port}, other: {other}")
+   ...     total = 0
+   ...     for k in other.keys():
+   ...         total = total + other[k]
+   ...     print(f"The sum of the other values is {total}")
+   ...
 
 Das Ausprobieren dieser Funktion zeigt, dass sie  die Argumente addieren kann,
 die unter den Schlüsselwörtern ``foo``,  ``bar`` und ``baz`` übergeben werden,
@@ -223,9 +219,9 @@ Parameternamen sind:
 
 .. code-block:: pycon
 
-    >>> server("127.0.0.1", port="8080", foo=3, bar=5, baz=2)
-    ip: 127.0.0.1, port: 8080, keys in 'other': ['foo', 'bar', 'baz']
-    The sum of the other values is 10
+   >>> server("127.0.0.1", port="8080", foo=3, bar=5, baz=2)
+   ip: 127.0.0.1, port: 8080, other: {'foo': 3, 'bar': 5, 'baz': 2}
+   The sum of the other values is 10
 
 Techniken zur Argumentübergabe mischen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
