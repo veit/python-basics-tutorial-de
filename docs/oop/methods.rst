@@ -147,11 +147,11 @@ gehören, als erster Parameter übergeben:
     :lines: 23-
     :lineno-start: 23
 
-Zeile 18
+Zeile 23
     Der ``@classmethod``-Dekorator wird vor der Methode ``def`` verwendet.
-Zeile 19
+Zeile 24
     Der Klassenparameter ist traditionell ``cls``.
-Zeile 22
+Zeile 27
     Ihr könnt ``cls`` anstelle von ``self.__class__`` verwenden.
 
     Durch die Verwendung einer Klassenmethode anstelle einer statischen Methode
