@@ -17,6 +17,9 @@ dependencies = []
 [project.optional-dependencies]
 docs = [
     "furo",
+    "ipython",
+    "ipywidgets",
+    "nbsphinx",
     "sphinxext.opengraph", # matplotlib is required for social cards
     "matplotlib",
     "sphinx_copybutton",
@@ -39,4 +42,4 @@ dev = [
 "Bug Tracker" = "https://github.com/veit/python-basics-tutorial-de/issues"
 
 [tool.codespell]
-skip = "*.rst, *.svg"
+skip = "*.ipynb, *.rst, *.svg"

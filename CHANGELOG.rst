@@ -20,6 +20,7 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add logging section from Python4DataScience
 * 🔧 📝 Add social media support
 
   * Add OpenGraph tag for mastodon
