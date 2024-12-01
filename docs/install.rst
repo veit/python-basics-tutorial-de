@@ -70,7 +70,7 @@ das auch kein Problem sein.
 
       .. code-block:: ps1con
 
-         C:\> python -V
+         C:\> py -V
          Python 3.13.0
 
    .. warning::
