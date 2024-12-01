@@ -28,6 +28,7 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Expand the pytest plugins section
 * 📝 Expand the contextmanager section
 * 🎨 Restructure the documentation
 
