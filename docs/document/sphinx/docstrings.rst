@@ -13,6 +13,9 @@ Direktiven können angegeben werden:
 Diese dokumentieren ein Modul, eine Klasse oder eine Funktion unter Verwendung
 des jeweiligen Docstrings.
 
+.. seealso::
+   :pep:`257`
+
 Installation
 ------------
 
