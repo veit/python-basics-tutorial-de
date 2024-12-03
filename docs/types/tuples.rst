@@ -36,7 +36,7 @@ wurde, kann es ähnlich wie die eine Liste verwendet werden:
 Die Operatoren (:ref:`in, not in <python3:in>`, ``+`` und ``*``) und die
 eingebauten Funktionen (``len``, ``max`` und ``min``) arbeiten mit Tupeln auf
 die gleiche Weise wie mit :doc:`lists`, da keine dieser Funktionen das Original
-verändert. Es gibt jedoch nur zwei Tupelmethoden: ``count`` und ``index``.
+verändert. Es gibt jedoch nur zwei Tupel-Methoden: ``count`` und ``index``.
 
 Mit den ``+``- und ``*``-Operatoren könnt ihr Tupel aus bestehenden Tupeln
 erstellen:
@@ -112,7 +112,7 @@ Beispiel:
    >>> w
    '2.'
 
-Dieses Beispiel kann noch weiter einfacht werden, da Python Tupel in einem
+Dieses Beispiel kann noch weiter vereinfacht werden, da Python Tupel in einem
 Zuweisungskontext auch ohne die runden Klammern erkennt:
 
 .. code-block:: pycon

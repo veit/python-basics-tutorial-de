@@ -60,7 +60,7 @@ Tests mit Klassen gruppieren
 ----------------------------
 
 Bislang haben wir Testfunktionen innerhalb von Testmodulen in einem
-Dateisystemverzeichnis geschrieben. Diese Strukturierung des Testcodes
+Dateisystem-Verzeichnis geschrieben. Diese Strukturierung des Testcodes
 funktioniert eigentlich ganz gut und ist für viele Projekte ausreichend.
 pytest erlaubt uns jedoch auch, Tests mit Klassen zu gruppieren. Nehmen wir
 einige der Testfunktionen, die sich auf die Gleichheit  der Items beziehen, und

@@ -91,4 +91,4 @@ anderes Ergebnis ausgibt als die vorherige ``print``-Anweisung:
 Checks
 ------
 
-# Schreibt eine :class:`Triangle`-Klasse, die auch die Fläche berechnen kann.
+* Schreibt eine :class:`Triangle`-Klasse, die auch die Fläche berechnen kann.

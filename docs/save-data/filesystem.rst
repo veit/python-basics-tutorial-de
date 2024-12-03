@@ -330,12 +330,12 @@ Weitere ähnliche Funktionen stellen speziellere Abfragen bereit:
 :func:`python3:os.path.getatime`
     gibt de letzte Zugriffszeit für eine Datei oder ein Verzeichnis an.
 
-Weitere Dateisystemoperationen
-------------------------------
+Weitere Dateisystem-Operationen
+-------------------------------
 
 Python verfügt über weitere, sehr nützlicher Befehle im :mod:`python3:os`-Modul:
 Im Folgenden beschreibe ich nur einige betriebssystemübergreifende Operationen,
-es werden jedoch auch spezifischere Dateisystemfunktionen bereitgestellt.
+es werden jedoch auch spezifischere Dateisystem-Funktionen bereitgestellt.
 
 :func:`os.rename`
     benennt oder verschiebt eine Datei oder ein Verzeichnis, :abbr:`z.B. (zum

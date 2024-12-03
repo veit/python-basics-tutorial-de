@@ -36,11 +36,11 @@ werden.
 Inline-Auszeichnung
 -------------------
 
-*Kursiv*, **fett** und ``vorformattiert``
+*Kursiv*, **fett** und ``vorformatiert``
 
 .. code-block:: rest
 
-   *Kursiv*, **fett** und ``vorformattiert``
+   *Kursiv*, **fett** und ``vorformatiert``
 
 Links
 -----

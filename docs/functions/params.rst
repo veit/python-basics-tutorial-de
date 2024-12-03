@@ -40,7 +40,7 @@ Zeile 2
     Funktionen werden mit Hilfe der ``def``-Anweisung definiert.
 Zeile 5
     Die ``return``-Anweisung wird von einer Funktion verwendet, um einen Wert
-    urückzugeben. Dieser Wert kann von beliebigem Typ sein. Wird keine
+    zurückzugeben. Dieser Wert kann von beliebigem Typ sein. Wird keine
     ``return``-Anweisung gefunden, wird der Wert ``None`` von Python
     zurückgegeben.
 Zeile 11
@@ -70,7 +70,7 @@ Positionsbezogene Parameter
 Die einfachste Art, Parameter an eine Funktion in Python zu übergeben, ist die
 Übergabe an der Position. In der ersten Zeile der Funktion gebt ihr den
 Variablennamen für jeden Parameter an; wenn die Funktion aufgerufen wird, werden
-die im aufrufenden Code verwendeten Parameter den Parametervariablen der
+die im aufrufenden Code verwendeten Parameter den Parameter-Variablen der
 Funktion auf der Grundlage ihrer Reihenfolge zugeordnet. Die folgende Funktion
 berechnet ``x`` als Potenz von ``y``:
 
@@ -107,7 +107,7 @@ so:
         pass
 
 Es können beliebig viele Parameter mit Standardwerten versehen werden wobei
-Parameter mit Standardwerten als letzte in der Parameterliste definiert werden
+Parameter mit Standardwerten als letzte in der Parameter-Liste definiert werden
 müssen.
 
 Die folgende Funktion berechnet ``x`` ebenfalls als Potenz von ``y``. Wenn ``y``
@@ -148,7 +148,7 @@ dem vorherigen Beispiels könnt ihr Folgendes eingeben:
 Da die Argumente für die Potenz im letzten Aufruf mit ``x`` und ``y`` benannt
 sind, ist ihre Reihenfolge irrelevant; die Argumente sind mit den gleichnamigen
 Parametern in der Definition der Potenz verknüpft, und man erhält ``2^6``
-zurück. Diese Art der Argumentübergabe wird als Schlüsselwortübergabe
+zurück. Diese Art der Argument-Übergabe wird als Schlüsselwort-Übergabe
 bezeichnet. Die Übergabe von Schlüsselwörtern kann in Kombination mit den
 Standardargumenten von Python-Funktionen sehr nützlich sein, wenn ihr Funktionen
 mit einer großen Anzahl von möglichen Argumenten definiert, von denen die
@@ -162,11 +162,11 @@ Anzahl von Argumenten umgehen können. Dies ist auf zweierlei Arten möglich. Di
 eine Methode sammelt eine unbekannte Anzahl von Argumenten in einer :doc:`Liste
 </types/lists>`. Die andere Methode kann eine beliebige Anzahl von Argumenten,
 die mit einem Schlüsselwort übergeben wurde und die keinen entsprechend
-benannten Parameter in der Funktionsparameterliste hat, in einem :doc:`Dict
-</types/dicts>` sammeln.
+benannten Parameter in der Liste der Funktionsparameter hat, in einem
+:doc:`Dict </types/dicts>` sammeln.
 
 Bei einer unbestimmten Anzahl von Positionsargumenten bewirkt das Voranstellen
-eines ``*`` vor den endgültigen Parameternamen der Funktion, dass alle
+eines ``*`` vor den endgültigen Parameter-Namen der Funktion, dass alle
 überschüssigen Nicht-Schlüsselwort-Argumente in einem Funktionsaufruf,
 :abbr:`d.h. (das heißt)` die Positionsargumente, die keinem anderen Parameter
 zugewiesen sind, gesammelt und als Tupel dem angegebenen Parameter zugewiesen
@@ -191,7 +191,7 @@ mit:
     >>> mean(3, 5, 2, 4, 6)
     4.0
 
-Eine beliebige Anzahl von Schlüsselwortargumenten kann ebenfalls verarbeitet
+Eine beliebige Anzahl von Schlüsselwort-Argumenten kann ebenfalls verarbeitet
 werden, wenn dem letzten Parameter in der Parameterliste das Präfix ``**``
 vorangestellt ist. Dann werden alle Argumente, die mit einem Schlüsselwort
 übergeben wurden, in einem :doc:`Dict </types/dicts>` gesammelt. Der Schlüssel
@@ -223,10 +223,10 @@ Parameternamen sind:
    ip: 127.0.0.1, port: 8080, other: {'foo': 3, 'bar': 5, 'baz': 2}
    The sum of the other values is 10
 
-Techniken zur Argumentübergabe mischen
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Techniken zur Argument-Übergabe mischen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Es ist möglich, alle Argumentübergabe-Möglichkeiten von Python-Funktionen
+Ihr könnt alle Möglichkeiten zur Argument-Übergabe von Python-Funktionen
 gleichzeitig zu verwenden, obwohl dies verwirrend sein kann, wenn ihr es nicht
 sorgfältig macht. Dabei sollten  die Positionsargumente an erster Stelle stehen,
 dann benannte Argumente, gefolgt von unbestimmten Positionsargumenten mit einem

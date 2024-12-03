@@ -5,7 +5,7 @@ Die Wiederverwendung gemeinsamer Fixtures ist eine so gute Idee, dass pytest
 einige häufig verwendete Fixtures integriert hat. Die eingebauten Fixtures,
 helfen euch, einige sehr nützliche Dinge in euren Tests einfach und konsistent
 zu tun. Unter anderem enthält pytest eingebaute Fixtures, die mit temporären
-Verzeichnissen und Dateien umgehen, auf Kommandozeilenoptionen zugreifen,
+Verzeichnissen und Dateien umgehen, auf Kommandozeilen-Optionen zugreifen,
 zwischen Testsitzungen kommunizieren, Ausgabeströme validieren,
 Umgebungsvariablen verändern und Warnungen abfragen können.
 
@@ -81,7 +81,7 @@ Ihr könnt auch euer eigenes Basisverzeichnis angeben mit :samp:`pytest
 
 Manchmal soll der Anwendungscode etwas auf ``stdout``, ``stderr`` :abbr:`usw.
 (und so weiter)` ausgeben. Das Items-Beispielprojekt hat deswegen auch eine
-Kommandozeilenschnittstelle, die wir nun testen wollen.
+Kommandozeilen-Schnittstelle, die wir nun testen wollen.
 
 Der Befehl ``items version`` soll die Version ausgeben:
 
@@ -167,10 +167,10 @@ Wenn wir den Test jedoch ausführen, sehen wir keine Ausgabe:
 
     ============================== 1 passed in 0.00s ===============================
 
-pytest fängt die gesamte Ausgabe auf. Dies hilft zwar, die Kommandozeilensitzung
-sauber zu halten, es kann jedoch vorkommen, dass wir die gesamte Ausgabe sehen
-wollen, auch bei bestandenen Tests. Hierfür können die Option ``-s`` oder
-``--capture=no`` verwenden:
+pytest fängt die gesamte Ausgabe auf. Dies hilft zwar, die
+Kommandozeilen-Sitzung sauber zu halten, es kann jedoch vorkommen, dass wir die
+gesamte Ausgabe sehen wollen, auch bei bestandenen Tests. Hierfür können die
+Option ``-s`` oder ``--capture=no`` verwenden:
 
 .. code-block:: pytest
    :emphasize-lines: 7

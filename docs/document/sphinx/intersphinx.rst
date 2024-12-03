@@ -72,7 +72,7 @@ Benutzerdefinierte Links
 ------------------------
 
 Ihr könnt auch eure eigenen ``intersphinx``-Zuweisungen erstellen, wenn
-:abbr:`z.B. (zum Beispiel)` ``objects.inv`` Fehler aufweis wie bei `Beautiful
+:abbr:`z.B. (zum Beispiel)` ``objects.inv`` Fehler aufweist wie bei `Beautiful
 Soup <https://bugs.launchpad.net/beautifulsoup/+bug/1453370>`_.
 
 Der Fehler kann mit korrigiert werden:

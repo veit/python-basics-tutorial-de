@@ -1,27 +1,27 @@
 Variablen
 =========
 
-Instanzvariablen
-----------------
+Instanz-Variablen
+-----------------
 
-Im vorigen Beispiel ist ``length`` eine Instanzvariable von
+Im vorigen Beispiel ist ``length`` eine Instanz-Variable von
 ``Square``-Instanzen, :abbr:`d.h. (das heißt)`, jede Instanz der Klasse
 ``Square`` hat ihre eigene Kopie von ``length``, und der in dieser Kopie
 gespeicherte Wert kann sich von den Werten unterscheiden, die in der
 ``length``-Variable in anderen Instanzen gespeichert sind. In Python könnt ihr
-Instanzvariablen nach Bedarf erstellen, indem ihr sie dem Feld einer
+Instanz-Variablen nach Bedarf erstellen, indem ihr sie dem Feld einer
 Klasseninstanz zuweist. Wenn die Variable noch nicht existiert, wird sie
 automatisch erstellt.
 
-Alle Verwendungen von Instanzvariablen, sowohl die Zuweisung als auch der
+Alle Verwendungen von Instanz-Variablen, sowohl die Zuweisung als auch der
 Zugriff, erfordern die explizite Erwähnung der enthaltenen Instanz, :abbr:`d.h.
 (das heißt)` ``instance.variable``. Ein Verweis auf eine Variable an sich ist
-kein Verweis auf eine Instanzvariable, sondern auf eine lokale Variable in der
+kein Verweis auf eine Instanz-Variable, sondern auf eine lokale Variable in der
 ausführenden Methode. Dies ist ein Unterschied zu C++ und Java, wo
-Instanzvariablen auf die gleiche Weise referenziert werden wie lokale
+Instanz-Variablen auf die gleiche Weise referenziert werden wie lokale
 Funktionsvariablen der Methode. Python schreibt hier die explizite Erwähnung der
 enthaltenen Instanz vor, und dies ermöglicht eine klare Unterscheidung zwischen
-Instanzvariablen und lokalen Funktionsvariablen.
+Instanz-Variablen und lokalen Funktionsvariablen.
 
 Klassenvariablen
 ----------------
@@ -33,7 +33,7 @@ Informationen auf Klassenebene zu speichern, :abbr:`z.B. (zum Beispiel)` wie
 viele Instanzen der Klasse zu einem bestimmten Zeitpunkt erstellt wurden. Python
 stellt Klassenvariablen zur Verfügung, obwohl deren Verwendung etwas mehr
 Aufwand erfordert als in den meisten anderen Sprachen. Außerdem müsst ihr auf
-eine Wechselwirkung zwischen Klassen- und Instanzvariablen achten.
+eine Wechselwirkung zwischen Klassen- und Instanz-Variablen achten.
 
 Eine Klassenvariable wird durch eine Zuweisung in der Klasse, jedoch außerhalb
 der ``__init__``-Funktion, erzeugt. Nachdem sie erstellt wurde, kann sie von
@@ -110,18 +110,19 @@ könnte, wenn ihr euch dessen nicht bewusst seid.
 
 .. warning::
 
-    Wenn Python eine Instanzvariable sucht und keine Instanzvariable mit diesem
-    Namen findet, wird der Wert in einer Klassenvariablen mit demselben Namen
-    gesucht und zurückzugeben. Nur wenn keine passende Klassenvariable gefunden
-    werden kann, gibt Python einen Fehler aus. Damit können zwar effizient
-    Standardwerte für Instanzvariablen implementiert werden;  dies führt jedoch
-    auch leicht dazu, versehentlich auf eine Instanzvariable statt auf eine
-    Klassenvariable zu verweisen, ohne dass ein Fehler gemeldet wird.
+    Wenn Python eine Instanz-Variable sucht und keine Instanz-Variable mit
+    diesem Namen findet, wird der Wert in einer Klassenvariablen mit demselben
+    Namen gesucht und zurückzugeben. Nur wenn keine passende Klassenvariable
+    gefunden werden kann, gibt Python einen Fehler aus. Damit können zwar
+    effizient Standardwerte für Instanz-Variablen implementiert werden;  dies
+    führt jedoch auch leicht dazu, versehentlich auf eine Instanz-Variable
+    statt auf eine Klassenvariable zu verweisen, ohne dass ein Fehler gemeldet
+    wird.
 
     Zunächst könnt ihr euch auf die Variable ``c.pi`` beziehen, obwohl ``c``
-    keine zugehörige Instanzvariable namens ``pi`` hat. Python versucht
-    zunächst, eine solche Instanzvariable zu finden und erst, wenn es keine
-    Instanzvariable finden kann, wird eine Klassenvariable ``pi`` in ``Circle``
+    keine zugehörige Instanz-Variable namens ``pi`` hat. Python versucht
+    zunächst, eine solche Instanz-Variable zu finden und erst, wenn es keine
+    Instanz-Variable finden kann, wird eine Klassenvariable ``pi`` in ``Circle``
     gesucht:
 
     .. code-block:: pycon
@@ -140,7 +141,7 @@ könnte, wenn ihr euch dessen nicht bewusst seid.
         >>> c1.pi
         3.141592653589793
 
-    Ihr habt jetzt jedoch lediglich ``c1`` eine neue Instanzvariable ``pi``
+    Ihr habt jetzt jedoch lediglich ``c1`` eine neue Instanz-Variable ``pi``
     hinzugefügt. Die Klassenvariable ``Circle.pi`` und alle anderen daraus
     abgeleiteten Instanzen haben weiterhin nur fünf Nachkommastellen:
 

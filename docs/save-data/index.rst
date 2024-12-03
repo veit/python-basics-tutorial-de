@@ -29,7 +29,7 @@ Die Python-Datenbank-API
 ------------------------
 
 Die Python Database :abbr:`API (Application Programming Interface)` definiert
-eine Standardschnittstelle für Python-Datenbankzugriffsmodule. Sie ist in
+eine Standardschnittstelle für Python-Datenbank-Zugriffsmodule. Sie ist in
 :pep:`249` definiert und wird häufig verwendet, :abbr:`z.B. (zum Beispiel)` von
 :doc:`sqlite <sqlite/index>`, :doc:`psycopg <psycopg>`, and `mysql-python
 <https://sourceforge.net/projects/mysql-python/>`_.
@@ -42,7 +42,7 @@ verbreitetes Datenbank-Toolkit. Es bietet nicht nur als ein :abbr:`ORM (Object
 Relational Mapper)`, sondern bietet auch eine allgemeine API zum Schreiben von
 datenbankagnostischem Code ohne SQL.
 :doc:`Python4DataScience:data-processing/postgresql/alembic` basiert auf
-SQLAlchemy und dient als Datenbankmigrationswerkzeug.
+SQLAlchemy und dient als Datenbank-Migrationswerkzeug.
 
 
 NoSQL-Datenbanken

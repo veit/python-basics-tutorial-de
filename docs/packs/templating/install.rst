@@ -29,7 +29,7 @@ Voraussetzungen
 
   .. tab:: Windows
 
-     Stellt sicher, dass das Verzeichnis, in dem CookieCutter installiert wird,
+     Stellt sicher, dass das Verzeichnis, in dem Cookiecutter installiert wird,
      sich in eurem ``Path`` befindet, damit ihr es direkt aufrufen könnt. Sucht
      dazu auf eurem Computer nach *Environment Variables* und fügt dieses
      Verzeichnis zu ``Path`` hinzu, also :abbr:`z.B.(zum Beispiel)`

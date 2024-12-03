@@ -7,7 +7,7 @@ UI-Elemente und Interaktionen
    sollten mit :rst:role:`guilabel` gekennzeichnet werden. Jede in der
    Oberfläche verwendete Beschriftung sollte mit dieser Rolle gekennzeichnet
    werden, einschließlich Beschriftung von Schaltflächen, Fenstertiteln,
-   Feldnamen, Menü- und Menüauswahlnamen und sogar Werte in Auswahllisten.
+   Feld-, Menü- und Menüauswahl-Namen und sogar Werte in Auswahllisten.
 
    Ein Tastenkürzel für die GUI-Beschriftung kann mit einem et-Zeichen (&)
    eingefügt werden; dieses führt in der Ausgabe zur Unterstreichung des
@@ -43,7 +43,7 @@ UI-Elemente und Interaktionen
 
    Eine Menüauswahl sollte mit der Rolle ``menuselection`` markiert werden.
    Diese wird verwendet, um eine komplette Sequenz zu markieren, einschließlich
-   der Auswahl von Untermenüs und der Auswahl bestimmter Operationein oder
+   der Auswahl von Untermenüs und der Auswahl bestimmter Operationen oder
    beliebiger Untersequenzen. Die Namen der einzelnen Auswahlen sollten durch
    ``-->`` getrennt werden.
 

@@ -7,10 +7,10 @@ unweigerlich die Situation kommen, in der ihr eine Funktionalität benötigt,
 die nicht in Python enthalten ist.
 
 Wenn ihr ein Modul eines Drittanbieters benötigt, das nicht für eure Plattform
-vorgefertigt ist, müsst ihr dessen Quelldistribution verwenden. Dies bringt
+vorgefertigt ist, müsst ihr dessen Quell-Distribution verwenden. Dies bringt
 jedoch zwei Probleme mit sich:
 
-#. Um die Quelldistribution zu installieren, müsst ihr sie finden und
+#. Um die Quell-Distribution zu installieren, müsst ihr sie finden und
    herunterladen.
 #. Es werden bestimmte Python-Pfade und Berechtigungen eures Systems erwartet.
 

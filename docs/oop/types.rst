@@ -4,9 +4,9 @@ Datentypen als Objekte
 Inzwischen habt ihr die grundlegenden Python-:doc:`../types/index`
 kennengelernt und wisst, wie ihr mit Hilfe von :doc:`classes` eure eigenen
 Datentypen erstellen könnt. Beachtet dabei, dass Python dynamisch typisiert ist,
-:abbr:`d.h.(das heißt)`, die Typen werden zur Laufzeit bestimmt, nicht zur
-Kompilierzeit. Dies ist einer der Gründe, warum Python so einfach zu benutzen
-ist. Ihr könnt einfach folgendes ausprobieren:
+:abbr:`d.h.(das heißt)`, die Typen werden zur Laufzeit bestimmt, nicht beim
+Kompilieren. Dies ist einer der Gründe, warum Python so einfach zu benutzen ist.
+Ihr könnt einfach folgendes ausprobieren:
 
 .. code-block:: pycon
 
@@ -25,7 +25,7 @@ zurück. In diesem Beispiel sagt euch die Funktion, dass ``3`` ein ``int``
 Von größerem Interesse dürfte jedoch die Tatsache sein, dass Python als Antwort
 auf die Aufrufe von :class:`type` Objekte zurückgibt; ``<class 'int'>``,
 ``<class 'str'>`` und ``<class 'list'>`` sind die Bildschirmdarstellungen der
-zurückgegebenen Objekte. Ihr könnt diese Python-Pbjekte also miteinander
+zurückgegebenen Objekte. Ihr könnt diese Python-Objekte also miteinander
 vergleichen:
 
 .. code-block:: pycon
@@ -35,7 +35,7 @@ vergleichen:
    >>> type("Hello") == type("Pythonistas!") == type(["Hello", "Pythonistas"])
    False
 
-Mit dieser Technik könnt ihr :abbr:`u.a. (unter anderem)` eine Typüberprüfung
+Mit dieser Technik könnt ihr :abbr:`u.a. (unter anderem)` eine Typ-Überprüfung
 in euren Funktions- und Methodendefinitionen durchführen. Die häufigste Frage
 zu den Typen von Objekten ist jedoch, ob ein bestimmtes Objekt eine Instanz
 einer Klasse ist. Ein Beispiel mit einer einfachen Vererbungshierarchie macht
@@ -131,10 +131,10 @@ Duck-Typing:
 Dies bezieht sich auf Pythons Art und Weise zu bestimmen, ob ein Objekt der
 erforderliche Typ für eine Operation ist, wobei der Schwerpunkt auf der
 Schnittstelle eines Objekts liegt. Kurz gesagt müsst ihr euch in Python nicht um
-die Typüberprüfung von Funktions- oder Methodenargumenten und Ähnlichem kümmern,
-sondern euch stattdessen auf lesbaren und dokumentierten Code in Verbindung mit
-Tests verlassen, um sicherzustellen, dass ein Objekt bei Bedarf *„wie eine Ente
-quakt.“*
+die Typ-Überprüfung von Funktions- oder Methodenargumenten und Ähnlichem
+kümmern, sondern euch stattdessen auf lesbaren und dokumentierten Code in
+Verbindung mit Tests verlassen, um sicherzustellen, dass ein Objekt bei Bedarf
+*„wie eine Ente quakt.“*
 
 Duck-Typing kann die Flexibilität von gut geschriebenem Code erhöhen und gibt
 euch in Kombination mit fortgeschrittenen objektorientierten Funktionen die
@@ -147,8 +147,8 @@ dieser Klasse aufgerufen.
 
 Eines der einfachsten Beispiele für eine spezielle Methode ist
 :meth:`object.__str__`. Wenn es in einer Klasse definiert ist, wird das
-``__str__``-Methodenattribut jedes Mal aufgerufen, wenn eine Instanz dieser
-Klasse verwendet wird und Python eine benutzerlesbare Zeichenkettendarstellung
+``__str__``-Methoden-Attribut jedes Mal aufgerufen, wenn eine Instanz dieser
+Klasse verwendet wird und Python eine benutzerlesbare Zeichenketten-Darstellung
 dieser Instanz benötigt. Um dieses Attribut in Aktion zu sehen, verwenden wir
 erneut unsere ``Form``-Klasse mit der Standardmethode ``__init__`` um Instanzen
 der Klasse zu initialisieren, sondern auch eine ``__str__``-Methode um
@@ -167,26 +167,26 @@ Zeichenketten zurückzugeben, die Instanzen in einem lesbaren Format darstellen:
    >>> print(f)
    Position: x=2, y=3
 
-Auch wenn unser spezielles ``__str__``-Methodenattribut nicht von unserem Code
+Auch wenn unser spezielles ``__str__``-Methoden-Attribut nicht von unserem Code
 explizit aufgerufen wurde, konnte es dennoch von Python verwendet werden, da
 Python weiß, dass das ``__str__``-Attribut, falls vorhanden, eine Methode zur
 Umwandlung von Objekten in benutzerlesbare Zeichenketten definiert. Und genau
-dies zeichnet die speziellen Methodenattribute aus. So ist es :abbr:`z.B. (zum
+dies zeichnet die speziellen Methoden-Attribute aus. So ist es :abbr:`z.B. (zum
 Beispiel)` oft eine gute Idee, das ``__str__``-Attribut für eine Klasse zu
 definieren, damit ihr im Debugging-Code ``print(instance)`` aufrufen könnt und
 eine informative Aussage über euer Objekt zu erhalten.
 
 Umgekehrt kann es jedoch auch verwundern, dass ein Objekttyp anders auf
-spezielle Methodenattribute reagiert. Daher verwende ich spezielle
-Methodenattribute meist nur in einer der folgenden beiden Fälle:
+spezielle Methoden-Attribute reagiert. Daher verwende ich spezielle
+Methoden-Attribute meist nur in einer der folgenden beiden Fälle:
 
 * in einer häufig verwendeten Klasse, meist für Sequenzen, die sich ähnlich wie
   ein in Python eingebauter Typ verhält, und die durch spezielle
-  Methodenattribute nützlicher wird.
+  Methoden-Attribute nützlicher wird.
 * in einer Klasse, die sich fast identisch zu einer eingebauten Klasse verhält,
   :abbr:`z.B. (zum Beispiel)` Listen, die als balancierte Bäume implementiert
   sind, um das Einfügen zu beschleunigen, kann ich die speziellen
-  Methodenattribute definieren.
+  Methoden-Attribute definieren.
 
 Checks
 ------

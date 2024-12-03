@@ -77,8 +77,8 @@ also Funktionen, die auf andere Funktionen wirken oder diese zurückgeben. Meist
 könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
 
 :func:`functools.cache`
-    Einfacher, leichtgewichtiger, Funktionscache ab Python ≥ 3.9, der manchmal
-    auch *memoize* genannt wird. Er gibt dasselbe zurück wie
+    Einfacher, leichtgewichtiger, Cache für Funktionen ab Python ≥ 3.9, der
+    manchmal auch *memoize* genannt wird. Er gibt dasselbe zurück wie
     :func:`functools.lru_cache` mit dem Parameter ``maxsize=None``, wobei
     zusätzlich ein :doc:`/types/dicts` mit den Funktionsargumenten erstellt
     wird. Da alte Werte nie gelöscht werden müssen, ist diese Funktion dann

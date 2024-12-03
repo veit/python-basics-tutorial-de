@@ -46,7 +46,7 @@ Backslashes ``\`` als Escape-Zeichen enthalten können.
 Sonderzeichen und Escape-Sequenzen
 ----------------------------------
 
-``\n`` steht für das *Newline*-Zeichen und ``\t`` für das Tabulatorzeichen.
+``\n`` steht für das *Newline*-Zeichen und ``\t`` für das Tabulator-Zeichen.
 Zeichenfolgen, die mit einem Backslash beginnen und zur Darstellung anderer
 Zeichen verwendet werden, werden Escape-Sequenzen genannt. Escape-Sequenzen
 werden in der Regel verwendet, um Sonderzeichen darzustellen, :abbr:`d.h. (das
@@ -83,8 +83,8 @@ Hier sind weitere Zeichen, die ihr mit dem Escape-Zeichen erhalten könnt:
 
 Zeilen 1–7
     Der ASCII-Zeichensatz, der von Python verwendet wird und der
-    Standardzeichensatz auf fast allen Computern ist, definiert eine ganze Reihe
-    weiterer Sonderzeichen.
+    Standard-Zeichensatz auf fast allen Computern ist, definiert eine ganze
+    Reihe weiterer Sonderzeichen.
 Zeilen 8–9
     Unicode-Escape-Sequenzen.
 Zeile 10
@@ -191,12 +191,12 @@ Im Folgenden findet ihr einen Überblick über die häufigsten
 |                           | ``ValueError`` aus, wenn es nicht gefunden wurde.             |
 +---------------------------+---------------------------------------------------------------+
 | :py:meth:`str.find`       | gibt die Position des ersten Zeichens des ersten Vorkommens   |
-|                           | der Teilzeichenkette in der Zeichenkette zurück; wie          |
+|                           | der Teil-Zeichenkette in der Zeichenkette zurück; wie         |
 |                           | ``index``, gibt aber ``-1`` zurück, wenn nichts gefunden      |
 |                           | wurde.                                                        |
 +---------------------------+---------------------------------------------------------------+
 | :py:meth:`str.rfind`      | Rückgabe der Position des ersten Zeichens des letzten         |
-|                           | Vorkommens der Teilzeichenkette in der Zeichenkette; gibt     |
+|                           | Vorkommens der Teil-Zeichenkette in der Zeichenkette; gibt    |
 |                           | ``-1`` zurück, wenn nichts gefunden wurde.                    |
 +---------------------------+---------------------------------------------------------------+
 | :py:meth:`str.replace`    | ersetzt Vorkommen einer Zeichenkette durch eine andere        |
@@ -206,7 +206,7 @@ Im Folgenden findet ihr einen Überblick über die häufigsten
 | :py:meth:`str.rstrip`,    |                                                               |
 | :py:meth:`str.lstrip`     |                                                               |
 +---------------------------+---------------------------------------------------------------+
-| :py:meth:`str.split`      | zerlegt eine Zeichenkette in eine Liste von Teilzeichenketten |
+| :py:meth:`str.split`      | zerlegt eine Zeichenkette in eine Liste von Teil-Zeichenketten|
 |                           | unter Verwendung des übergebenen Trennzeichens.               |
 +---------------------------+---------------------------------------------------------------+
 | :py:meth:`str.lower`      | konvertiert alphabetische Zeichen in Kleinbuchstaben.         |
@@ -281,7 +281,8 @@ werden sollen:
    >>> example.split(" ", 1)
    ['1.', 'You can have\n\twhitespaces, newlines\n   and tabs mixed in\n\tthe string.']
 
-Wenn ihr :meth:`python3:str.split` mit dem optionalen zweiten Argument verwendenwollt, müsst ihr zunächst ein erstes Argument angeben. Um zu erreichen, dass bei
+Wenn ihr :meth:`python3:str.split` mit dem optionalen zweiten Argument verwenden
+wollt, müsst ihr zunächst ein erstes Argument angeben. Um zu erreichen, dass bei
 allen Leerzeichen geteilt wird, verwendet :doc:`../none` als erstes Argument:
 
 .. code-block:: pycon
@@ -356,7 +357,7 @@ Zeichenketten sind :py:meth:`str.find`, :py:meth:`str.rfind`,
 Zeichenfolge gefunden werden kann.
 
 :py:meth:`str.find` benötigt einen einzigen :doc:`../../functions/params`: die
-gesuchte Teilzeichenkette; zurückgegeben wird dann die Position des ersten
+gesuchte Teil-Zeichenkette; zurückgegeben wird dann die Position des ersten
 Vorkommens oder ``-1``, wenn es kein Vorkommen gibt:
 
 .. code-block:: pycon
@@ -521,9 +522,9 @@ Anfang der Zeichenkette steht.
 Angenommen, ihr möchtet E-Mail-Adressen finden und gleichzeitig jede Adresse in
 ihre drei Komponenten aufteilen:
 
-#. Personenname
-#. Domänenname
-#. Domänensuffix
+#. Personen-Name
+#. Domänen-Name
+#. Domänen-Suffix
 
 Dazu setzt ihr zunächst runde Klammern ``()`` um die zu segmentierenden Teile
 des Musters:
@@ -683,7 +684,7 @@ In Python kann fast alles in eine Zeichenkette mit der eingebauten Funktion
 
 Das Beispiel verwendet :ref:`str <python3:textseq>`, um eine Ganzzahl aus der
 Liste ``data_types`` in eine Zeichenkette umzuwandeln, die dann wieder
-konkateniert werden, um die endgültige Zeichenkette zu bilden.
+aneinanderhängt werden, um die endgültige Zeichenkette zu bilden.
 
 .. note::
    Während :ref:`str <python3:textseq>` meist verwendet wird, um für Menschen
@@ -993,7 +994,7 @@ Checks
   Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
 
 * Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
-  und Zeilenumbrruch. Wie können diese aus der Zeichenkette entfernt werden?
+  und Zeilenumbruch. Wie können diese aus der Zeichenkette entfernt werden?
 
 * Wie könnt ihr **alle** Leerräume und Satzzeichen aus einer Zeichenfolge in
   einen Bindestrich (``-``) ändern?

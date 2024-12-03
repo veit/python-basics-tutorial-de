@@ -5,7 +5,7 @@ Module werden in Python verwendet, um größere Projekte zu organisieren. Die
 Python-Standardbibliothek ist in Module aufgeteilt, um sie überschaubarer zu
 machen. Ihr müsst euren eigenen Code zwar nicht in Modulen organisieren, aber
 wenn ihr umfangreichere Programme schreibt, oder Code, den ihr wiederverwenden
-möchten, solltet ihr dies tun.
+möchtet, solltet ihr dies tun.
 
 Was ist ein Modul?
 ------------------
@@ -111,9 +111,10 @@ Zeilen 25 und 26
          File README.rst has 332 words (191 are unique)
          {'Schnelleinstieg': 1, ...}
 
-Speichert diesen Code zunächst in einem der Verzeichnisse des Modulsuchpfads,
-die in der Liste von ``sys.path`` zu finden ist. Als Dateinamensendung empfiehlt
-sich ``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen wird.
+Speichert diesen Code zunächst in einem der Verzeichnisse des Modul-Suchpfads,
+die in der Liste von ``sys.path`` zu finden ist. Als Ende des Dateinamens
+empfiehlt sich ``.py``, da hierdurch die Datei als Python-Quellcode ausgewiesen
+wird.
 
 .. note::
    Die Liste von Verzeichnissen, die mit ``sys.path`` angezeigt wird, hängt von

@@ -36,7 +36,7 @@ Sie Konfigurationsdatei legt das oberste Verzeichnis fest, von dem aus
 ``pytest`` gestartet wird.
 
 Schauen wir uns einige dieser Dateien im Zusammenhang mit einer
-Projektverzeichnisstruktur an:
+Projekt-Verzeichnisstruktur an:
 
 .. code-block:: console
    :emphasize-lines: 3, 7, 8
@@ -122,7 +122,7 @@ Zeilen durch:
 
 .. seealso::
    In den Konfigurationsdateien könnt ihr viele weitere
-   Konfigurationseinstellungen und Befehlszeilenoptionen angeben, die ihr euch
+   Konfigurationseinstellungen und Befehlszeilen-Optionen angeben, die ihr euch
    mit dem Befehl ``pytest --help`` anzeigen lassen könnt.
 
 Andere Konfigurationsdateien verwenden

@@ -20,8 +20,9 @@ Logging erfüllt üblicherweise zwei verschiedene Zwecke:
 * Monitoring:
 
   * Das Logging zeichnet Ereignisse für benutzerdefinierten Heuristiken auf,
-    z.B. für Geschäftsanalysen. Diese Aufzeichnungen können für Berichte oder
-    Optimierungen der Geschäftsziele verwendet und ggf. visualisiert werden.
+    :abbr:`z.B. (zum Beispiel)` für Geschäftsanalysen. Diese Aufzeichnungen
+    können für Berichte oder Optimierungen der Geschäftsziele verwendet und
+    :abbr:`ggf. (gegebenenfalls)` visualisiert werden.
 
 Welche Vorteile bietet ``logging`` nun gegenüber ``print``?
 

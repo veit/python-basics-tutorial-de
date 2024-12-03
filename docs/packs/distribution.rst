@@ -169,7 +169,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        version = {attr = "dataprep.VERSION"}
 
     .. tip::
-       Wenn die Version in mehreren Textdateien steht, kann sich die Vwerwendung
+       Wenn die Version in mehreren Textdateien steht, kann sich die Verwendung
        von `Bump My Version
        <https://github.com/callowayproject/bump-my-version>`_ empfehlen.
 
@@ -207,7 +207,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
          <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>`_
 
 ``authors``
-    wird verwendet, um die Autoren des Pakets anahnd ihrer Namen und
+    wird verwendet, um die Autoren des Pakets anhand ihrer Namen und
     E-Mail-Adressen zu identifizieren.
 
     Ihr könnt auch ``maintainers`` im selben Format auflisten.
@@ -235,8 +235,8 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
     Außerdem haben sie eine nützliche Zusatzfunktion: Um zu verhindern, dass ein
     Paket zu :term:`PyPI` hochgeladen wird, verwendet den speziellen
-    Klassifikator ``"Private :: Do Not Upload"``. :term:`PyPI` wird immer Pakete
-    ablehnen, deren Klassifizierer mit ``"Private ::"`` beginnt.
+    Klassifizierer ``"Private :: Do Not Upload"``. :term:`PyPI` wird immer
+    Pakete ablehnen, deren Klassifizierer mit ``"Private ::"`` beginnt.
 
 ``dependencies``
     gibt die Abhängigkeiten für euer Paket in einem Array an.
@@ -550,7 +550,7 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
     zurück, wenn keine passende Build-Distribution vorhanden ist. Ihr solltet
     immer eine Source-Distribution hochladen und Build-Distributionen für die
     Plattformen bereitstellen, mit denen euer Projekt kompatibel ist. In diesem
-    Fall ist unser Beispielpaket mit Python auf jeder Plattform kompatibel, so
+    Fall ist unser Beispiel-Paket mit Python auf jeder Plattform kompatibel, so
     dass nur eine Build-Distribution benötigt wird:
 
     ``mypack``
