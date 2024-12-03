@@ -586,6 +586,9 @@ Checks
      ...     l.remove(i)
      ...
 
+* Wie könnt ihr alle Dupletten aus einer Liste entfernen ohne die Reihenfolge
+  der Elemente in der Liste zu ändern?
+
 * Wenn ihr eine verschachtelte Liste ``ll`` habt, wie könnt ihr eine Kopie
   ``nll`` dieser Liste erhalten, in der ihr die Elemente ändern könnt, ohne den
   Inhalt von ``ll`` zu verändern?
