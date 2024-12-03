@@ -42,6 +42,7 @@ Zeile 2
 
     .. seealso::
         * :doc:`../document/sphinx/docstrings`
+        * :pep:`257`
 
 Zeile 7
     Der Wert wird nach dem Aufruf der Funktion zurückgegeben. Ihr könnt auch
