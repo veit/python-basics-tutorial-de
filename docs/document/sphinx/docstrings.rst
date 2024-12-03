@@ -64,7 +64,7 @@ Die Ausgabe ist :doc:`autodoc-examples`.
 Mit :pep:`484` wurde eine Standardmethode für den Ausdruck von Typen in
 Python-Code eingeführt. Damit können Typen auch in Docstrings unterschiedlich
 ausgedrückt werden. Die Variante mit Typen nach PEP 484 hat den Vorteil, dass
-Typtester und IDEs zur statischen Codeanalyse eingesetzt werden können.
+Typ-Tester und IDEs zur statischen Codeanalyse eingesetzt werden können.
 
 Python 3 Type-Annotations:
 
@@ -125,7 +125,7 @@ Abschnitte in Docstrings zu definieren, einschließlich:
 * ``Warning``
 * ``Yield``
 
-Es gibt zwei Arten von docstrings in ``sphinx.ext.napoleon``:
+Es gibt zwei Arten von Docstrings in ``sphinx.ext.napoleon``:
 
 * `Google
   <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_

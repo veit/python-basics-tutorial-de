@@ -1,7 +1,7 @@
 Übersicht
 =========
 
-Ein minimales CookieCutter-Template sieht so aus:
+Ein minimales Cookiecutter-Template sieht so aus:
 
 .. code-block:: console
    :linenos:

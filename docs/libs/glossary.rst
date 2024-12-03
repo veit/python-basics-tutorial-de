@@ -113,7 +113,7 @@ Glossar
 
    Hatch
        Hatch ist ein Kommandozeilenwerkzeug, das ihr zum Konfigurieren und
-       Versionieren von Paketen, zum Spezifizieren von Abhängigkeitengenutzt
+       Versionieren von Paketen, zum Spezifizieren von Abhängigkeiten genutzt
        werden kann. Das Plugin-System ermöglicht die einfache Erweiterung der
        Funktionalitäten.
 
@@ -154,7 +154,8 @@ Glossar
 
        Extension Module
            In der Regel in eine einzelne dynamisch ladbare vorkompilierte
-           Datei, z. B. einer gemeinsamen Objektdatei (``.so``).
+           Datei, :abbr:`z.B. (zum Beispiel)` einer gemeinsamen Objektdatei
+           (``.so``).
 
    multibuild
        ``multibuild`` ist ein Satz von CI-Skripten zum Erstellen und Testen von
@@ -175,7 +176,7 @@ Glossar
        `PyPI <https://pypi.org/project/pdm>`__
 
    pex
-       Bibliothek und Werkzeug zur Erzeugung von Python EXecutable
+       Bibliothek und Werkzeug zur Erzeugung von Python Executable
        (:file:`.pex`)-Dateien, die eigenständige Python-Umgebungen sind.
        .pex-Dateien sind Zip-Dateien mit ``#!/usr/bin/env python`` und einer
        speziellen :file:`__main__.py`-Datei, die das Deployment von
@@ -265,7 +266,7 @@ Glossar
        `PyPI <https://pypi.org/project/pybind11/>`__
 
    pypi.org
-       `pypi.org  <https://pypi.org/>`_ ist der Domainname für den
+       `pypi.org  <https://pypi.org/>`_ ist der Domain-Name für den
        :term:`Python Package Index` (:term:`PyPI`). Er löste 2017 den alten
        Index-Domain-Namen ``pypi.python.org`` ab. Er wird von :term:`warehouse`
        unterstützt.

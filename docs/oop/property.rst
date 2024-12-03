@@ -1,7 +1,7 @@
 ``@property``-Dekorator
 =======================
 
-In Python könnt ihr direkt auf Instanzvariablen zugreifen, ohne zusätzliche
+In Python könnt ihr direkt auf Instanz-Variablen zugreifen, ohne zusätzliche
 Getter- und Setter-Methoden, die häufig in Java und anderen objektorientierten
 Sprachen verwendet werden. Dies macht das Schreiben von Python-Klassen sauberer
 und einfacher, aber in manchen Situationen kann die Verwendung von Getter- und
@@ -9,11 +9,11 @@ Setter-Methoden auch nützlich sein. Nehmen wir an, dass ihr einen Wert benötig
 bevor ihr ihn in eine Instanzvariable setzt, oder ihr einfach den Wert eines
 Attributs herausfinden möchtet. In beiden Fällen würden Getter- und
 Setter-Methoden die Aufgabe erfüllen, allerdings um den Preis, dass der einfache
-Zugriff auf Instanzvariablen in Python verloren ginge.
+Zugriff auf Instanz-Variablen in Python verloren ginge.
 
 Die Antwort ist die Verwendung einer *Property*. Diese kombiniert die
 Möglichkeit, den Zugriff auf eine Instanzvariable über Methoden wie Getter und
-Setter zu übergeben, mit dem einfachen Zugriff auf Instanzvariablen über die
+Setter zu übergeben, mit dem einfachen Zugriff auf Instanz-Variablen über die
 Punktnotation.  Um eine *Property* zu erstellen, wird der
 :class:`python3:property`-Dekorator mit einer Methode verwendet, die den Namen
 der Eigenschaft hat:
@@ -55,7 +55,7 @@ unserem Fall in ``length.setter``:
     8
 
 Ein großer Vorteil von Pythons Fähigkeit, Eigenschaften hinzuzufügen, besteht
-darin, dass ihr zu Beginn der Entwicklung mit einfachen alten Instanzvariablen
+darin, dass ihr zu Beginn der Entwicklung mit einfachen alten Instanz-Variablen
 arbeiten und dann nahtlos zu *Property*-Variablen wechseln könnt, wann immer
 und wo immer ihr dies benötigt, ohne den Client-Code zu ändern. Der Zugriff ist
 immer noch derselbe, unter Verwendung der Punktnotation.

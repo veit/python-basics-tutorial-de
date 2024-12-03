@@ -19,7 +19,7 @@ Installation
 Verwendung
 ----------
 
-shot-scraper kann auf zweierleis Art verwendet werden
+shot-scraper kann auf zweierlei Art verwendet werden
 
 #. …für einzelne Screenshots auf der Kommandozeile:
 
@@ -64,7 +64,7 @@ GitHub-Actions
 --------------
 
 shot-scraper lässt sich einfach in GitHub Actions einbinden. Im
-shot-scraper-demo-Repository findet sich auch eine examplarische `shots.yml
+shot-scraper-demo-Repository findet sich auch eine exemplarische `shots.yml
 <https://github.com/simonw/shot-scraper-demo/blob/main/.github/workflows/shots.yml>`_.
 Einmal am Tag werden zwei Screenshots erzeugt und zurück in das Repository
 übertragen. Beachtet jedoch, dass das Speichern von Bilddateien, die sich häufig

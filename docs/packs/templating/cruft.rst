@@ -3,7 +3,8 @@ cruft
 
 Ein Problem mit cookiecutter-Vorlagen besteht darin, dass Projekte, die auf
 älteren Versionen der Vorlage basieren, veralten, wenn sich nur die Vorlage im
-Laufe der Zeit den sich ändeernden Anforderungen angepasst wird. `cruft <https://cruft.github.io/cruft/>`_ versucht, die Übernahme von Änderungen im
+Laufe der Zeit den sich ändernden Anforderungen angepasst wird. `cruft
+<https://cruft.github.io/cruft/>`_ versucht, die Übernahme von Änderungen im
 Git-Repository des :doc:`Cookiecutter-Templates <templates>` in daraus
 abgeleitete Projekte zu vereinfachen.
 
@@ -80,10 +81,10 @@ die Datei :file:`.cruft.json` aktualisieren.
 Ein Projekt überprüfen
 ----------------------
 
-Um festzustellen, ob ein Projekt eine Vorlagenaktualisierung verpasst hat, könnt
-ihr ganz einfach, ``cruft check`` aufrufen. Wenn das Projekt veraltet ist, wird
-ein Fehler und der :samp:`Exit-Code 1` zurückgegeben. ``cruft check`` kann auch
-zu :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` und
+Um festzustellen, ob ein Projekt eine Vorlagen-Aktualisierung verpasst hat,
+könnt ihr ganz einfach, ``cruft check`` aufrufen. Wenn das Projekt veraltet ist,
+wird ein Fehler und der :samp:`Exit-Code 1` zurückgegeben. ``cruft check`` kann
+auch zu :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` und
 CI-Pipelines hinzugefügt werden, um sicherzustellen, dass Projekte nicht
 ungewollt veralten.
 

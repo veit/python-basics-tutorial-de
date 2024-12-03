@@ -8,7 +8,7 @@ definiert ihr eine weitere Methode, ``circumference``, für die Klasse
 ``Square``; diese Methode kann verwendet werden, um den Umfang für eine
 beliebige ``Square``-Instanz zu berechnen und zurückzugeben. Wie die meisten
 benutzerdefinierten Methoden wird ``circumference`` mit einer Syntax aufgerufen,
-die dem Zugriff auf Instanzvariablen ähnelt:
+die dem Zugriff auf Instanz-Variablen ähnelt:
 
 .. code-block:: pycon
 
@@ -61,7 +61,7 @@ eines Quadrats festlegen zu müssen:
 
     ``self.length`` und ``length`` sind nicht dasselbe!
 
-    * ``self.length`` ist die Instanzvariable namens ``length``
+    * ``self.length`` ist die Instanz-Variable namens ``length``
     * ``length`` ist der lokale Funktionsparameter
 
     In der Praxis würdet ihr den lokalen Funktionsparameter wahrscheinlich als
@@ -76,7 +76,7 @@ ein Quadrat mit der Kantenlänge ``3`` erstellt:
     ...     s = Square(3)
 
 Alle Standardfunktionen von Python – Standardargumente, zusätzliche Argumente,
-Schlüsselwortargumente :abbr:`usw. (und so weiter)` – können mit Methoden
+Schlüsselwort-Argumente :abbr:`usw. (und so weiter)` – können mit Methoden
 verwendet werden. Ihr hättet die erste Zeile von ``__init__`` wie folgt
 definieren können:
 
@@ -86,7 +86,7 @@ definieren können:
 
 Dann würde der Aufruf von ``Square`` mit oder ohne zusätzliches Argument
 funktionieren; ``Square()`` würde ein Quadrat mit der Kantenlänge ``1`` und
-``Square(3)`` ein Quadratmit der Kantenlänge ``3`` zurückgeben.
+``Square(3)`` ein Quadrat mit der Kantenlänge ``3`` zurückgeben.
 
 Bei einem Methodenaufruf ``instance.method(arg1, arg2, …)`` wandelt Python
 diesen in einen normalen Funktionsaufruf um, indem es die folgenden Regeln

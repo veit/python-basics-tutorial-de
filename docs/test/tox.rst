@@ -281,7 +281,7 @@ Abhängigkeiten ein, wie :abbr:`z.B. (zum Beispiel)` Coverage. Wir erweitern dan
 
 Bei der Verwendung von Coverage mit ``tox`` kann es manchmal sinnvoll sein, in
 der  :file:`pyproject.toml`-Datei einen Abschnitt einzurichten, der Coverage
-mitteilt, welche Quelltextpfade als identisch betrachtet werden sollen:
+mitteilt, welche Quelltext-Pfade als identisch betrachtet werden sollen:
 
 .. code-block:: ini
 

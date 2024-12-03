@@ -40,9 +40,9 @@ erhaltet ihr mit
 
 #. den **Namensraum der Instanz** mit
 
-   * Instanzvariablen
-   * privaten Instanzvariablen und
-   * Instanzvariablen der Superklasse,
+   * Instanz-Variablen
+   * privaten Instanz-Variablen und
+   * Instanz-Variablen der Superklasse,
 
 
 #. den **Namensraum der Klasse** mit
@@ -57,7 +57,7 @@ erhaltet ihr mit
    * Methoden der Superklasse und
    * Klassenvariablen der Superklasse.
 
-Diese drei Namensräume werden ebenfalls in dieser Reihenfolge druchsucht.
+Diese drei Namensräume werden ebenfalls in dieser Reihenfolge durchsucht.
 
 Den Namensraum der Instanz könnt ihr nun :abbr:`z.B. (zum Beispiel)` analysieren
 mit der Methode ``instance_variables``:
@@ -78,7 +78,7 @@ mit der Methode ``instance_variables``:
 .. note::
 
     Während ihr auf die Methode ``move`` der Superklasse ``form`` mit ``self``
-    zugreifen könnt, sind jedoch private Instanzvariablen, private Methoden und
+    zugreifen könnt, sind jedoch private Instanz-Variablen, private Methoden und
     private Klassenvariablen der Superklasse so nicht zugänglich.
 
 Wenn ihr nur Instanzen einer bestimmten Klasse ändern wollt, könnt ihr dies

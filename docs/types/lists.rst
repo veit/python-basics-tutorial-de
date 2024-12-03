@@ -370,7 +370,7 @@ Fällen ``append`` vorziehen, um die Liste zu Beginn des Programms zu vergröße
    [None, None, None, None]
 
 Der Operator für ``list``-Multiplikationen ``*`` wiederholt das Kopieren der
-Elemnete einer Liste die angegebene Zahl und fügt alle Kopien zu einer neuen
+Elemente einer Liste die angegebene Zahl und fügt alle Kopien zu einer neuen
 Liste zusammen. Dabei wird üblicherweise eine Liste mit einer einzelnen Instanz
 von :doc:`/types/none` für die Listenmultiplikation verwendet, aber die Liste
 kann alles sein:
@@ -388,7 +388,7 @@ Minimum oder Maximum einer Liste
 Ihr könnt :func:`max` und :func:`min` verwenden, um das größte und kleinste
 Element einer Liste zu finden. Wahrscheinlich werdet ihr :func:`max` und
 :func:`min` vor allem bei :doc:`numerischen </types/numbers>` Listen verwenden,
-aber ihr könnt sie auch bei Listen mit beliebigen Elementen einsetzen; Dwenn der
+aber ihr könnt sie auch bei Listen mit beliebigen Elementen einsetzen; wenn der
 Vergleich dieser Typen jedoch keinen Sinn ergibt, führt dies zu einem Fehler:
 
 .. code-block:: pycon
@@ -586,7 +586,7 @@ Checks
      ...     l.remove(i)
      ...
 
-* Wie könnt ihr alle Dupletten aus einer Liste entfernen ohne die Reihenfolge
+* Wie könnt ihr alle Dubletten aus einer Liste entfernen ohne die Reihenfolge
   der Elemente in der Liste zu ändern?
 
 * Wenn ihr eine verschachtelte Liste ``ll`` habt, wie könnt ihr eine Kopie

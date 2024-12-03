@@ -17,13 +17,13 @@ Beispiel zusammenfassen:
        Die ``__init__``-Methode benötigt eine Instanz (``self``) und zwei
        Parameter
    Zeilen 5 und 6
-       Auf die beiden Instanzvariablen ``x`` und ``y``, auf die über ``self``
+       Auf die beiden Instanz-Variablen ``x`` und ``y``, auf die über ``self``
        zugegriffen wird.
    Zeile 7
        Die ``move``-Methode benötigt eine Instanz (``self``) und zwei
        Parameter.
    Zeilen 8 und 9
-       Instanzvariablen, die in der ``move``-Methode gesetzt werden.
+       Instanz-Variablen, die in der ``move``-Methode gesetzt werden.
 
 #. Als nächstes erstellt eine Unterklasse, die von der Basisklasse ``Form``
    erbt:

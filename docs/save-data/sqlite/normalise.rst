@@ -10,7 +10,7 @@ Beispiel
 --------
 
 Im folgenden Beispiel normalisieren wir die Sprache, in der die Bücher
-veräffentlicht wurden.
+veröffentlicht wurden.
 
 #. Hierfür erstellen wir zunächst eine neue Tabelle ``languages`` mit den
    Spalten ``id`` und ``language_code`` anlegen:

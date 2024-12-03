@@ -403,7 +403,7 @@ Bedarf decken:
 
 `pytest-factoryboy <https://pypi.org/project/pytest-factoryboy/>`_
     enthält Fixtures für `factory-boy <https://pypi.org/project/factory-boy/>`_,
-    einen Datenbankmodelldatengenerator.
+    einen Datenbankmodell-Datengenerator.
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-factoryboy
        :alt: Stars

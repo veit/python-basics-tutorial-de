@@ -2,8 +2,8 @@ Decorator
 =========
 
 Der Decorator ist ein Strukturmuster (:abbr:`engl. (englisch)` *structural
-patterns*). Das Muster ist eine flexible Alternative zur Unterklassenbildung, um
-eine Klasse um zusätzliche Funktionalitäten zu erweitern.
+patterns*). Das Muster ist eine flexible Alternative zur Unterklassen-Bildung,
+um eine Klasse um zusätzliche Funktionalitäten zu erweitern.
 
 .. warning::
    Das Decorator-Pattern hat nichts mit Python-:doc:`../../functions/decorators`

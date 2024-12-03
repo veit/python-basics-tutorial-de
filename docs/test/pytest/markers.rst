@@ -845,7 +845,7 @@ notwendig:
          könnt. Schaut hierfür in die `Faker-Dokumentation
          <https://faker.readthedocs.io/>`_.
 
-       * Neben Faker gibt es nach weitere Bibliothkeen, die Fake-Daten
+       * Neben Faker gibt es nach weitere Bibliotheken, die Fake-Daten
          bereitstellen, siehe :ref:`Fake Plugins <fake_plugins>`.
 
 Führen wir die Tests nun aus, um sicherzustellen, dass alles richtig

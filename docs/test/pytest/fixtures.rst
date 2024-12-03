@@ -616,8 +616,8 @@ Anstelle eines bestimmten Bereichs haben wir einen Funktionsnamen eingegeben:
 
 Es gibt viele Möglichkeiten, wie wir herausfinden können, welchen Bereich wir
 verwenden sollen. In diesem Fall habe ich mich für eine neue
-Kommandozeilenoption ``--fdb`` entschieden. Damit wir diese neue Option mit
-pytestverwenden können, müssen wir eine Hook-Funktion in der
+Kommandozeilen-Option ``--fdb`` entschieden. Damit wir diese neue Option mit
+pytest verwenden können, müssen wir eine Hook-Funktion in der
 :file:`conftest.py`-Datei schreiben, die ich in :doc:`plugins` näher erläutern
 werde:
 
@@ -692,7 +692,7 @@ abgebaut.
 ----------------------------------------------------
 
 Bisher wurden alle von Tests verwendeten Fixtures durch die Tests oder eine
-andere Fixture in einer Parameterliste benannt. Ihr könnt jedoch
+andere Fixture in einer Parameter-Liste benannt. Ihr könnt jedoch
 ``autouse=True`` verwenden, um ein Fixture immer laufen zu lassen. Dies eignet
 sich gut für Code, der zu bestimmten Zeiten ausgeführt werden soll, aber Tests
 sind nicht wirklich von einem Systemzustand oder Daten aus der Fixture abhängig,
@@ -742,10 +742,10 @@ sind nicht wirklich von einem Systemzustand oder Daten aus der Fixture abhängig
 Fixtures umbenennen
 -------------------
 
-Der Name einer Fixture, der in der Parameterliste von Tests und anderen Fixtures
-aufgeführt ist, die diese Fixture verwenden, ist normalerweise derselbe wie der
-Funktionsname der Fixture. Pytest erlaubt jedoch das Umbenennen von Fixtures mit
-einem Namensparameter an ``@pytest.fixture``:
+Der Name einer Fixture, der in der Parameter-Liste von Tests und anderen
+Fixtures aufgeführt ist, die diese Fixture verwenden, ist normalerweise
+derselbe wie der Funktionsname der Fixture. Pytest erlaubt jedoch das Umbenennen
+von Fixtures mit einem Namensparameter an ``@pytest.fixture``:
 
 .. code-block:: python
 

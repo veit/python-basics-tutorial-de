@@ -329,7 +329,7 @@ Checks
 
 * Erstellt einige Zahlenvariablen (Ganzzahlen, Gleitkommazahlen und komplexe
   Zahlen). Experimentiert ein wenig damit, was passiert, wenn ihr Operationen
-  mit ihnen durchführt, auch typübergreifend.
+  mit ihnen durchführt, auch Typ-übergreifend.
 
 * Ladet das Modul :mod:`math` und probiert einige der Funktionen aus. Ladet dann
   auch das Modul :mod:`cmath` und macht dasselbe.

@@ -230,7 +230,7 @@ Die englische Rechtschreibung lässt sich überprüfen mit `codespell
 Version der auf `Wikipedia
 <https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines>`_
 verfügbaren Wörterbücher. :abbr:`Ggf. (Gegebenenfalls)` könnt ihr jedoch auch
-eigene Wörterbucher mit der ``--builtin``-Option bereitstellen.
+eigene Wörterbücher mit der ``--builtin``-Option bereitstellen.
 
 Ihr könnt ``codespell`` in der :file:`pyproject.toml` konfigurieren, :abbr:`z.B.
 (zum Beispiel)`:

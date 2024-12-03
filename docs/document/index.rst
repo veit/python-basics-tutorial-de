@@ -2,13 +2,13 @@ Dokumentieren
 =============
 
 Damit euer Software-Paket sinnvoll genutzt werden kann, sind Dokumentationen
-ierforderlich, die Beschreiben, wie eure Software installiert, betrieben,
+erforderlich, die Beschreiben, wie eure Software installiert, betrieben,
 genutzt und verbessert werden kann:
 
 * Diejenigen, die euer Paket nutzen wollen, benötigen Informationen,
 
   * welche Probleme eure Software löst und was die Hauptfunktionen und
-    Limitationen der Software sind (``README``)
+    Einschränkungen der Software sind (``README``)
   * wie das Software beispielhaft verwendet werden kann
   * welche Veränderungen in aktuelleren Software-Versionen gekommen sind
     (``CHANGELOG``)

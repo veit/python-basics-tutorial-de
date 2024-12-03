@@ -57,7 +57,7 @@ Checks
 
 * Erstellt einige Zahlenvariablen (Ganzzahlen, Gleitkommazahlen und komplexe
   Zahlen). Experimentiert ein wenig damit, was passiert, wenn ihr Operationen
-  mit ihnen durchführt, auch typübergreifend.
+  mit ihnen durchführt, auch Typ-übergreifend.
 
   .. blacken-docs:off
 
@@ -177,7 +177,7 @@ Checks
 
      Dies ändert jedoch auch die Reihenfolge der Elemente.
 
-* Wie könnt ihr alle Dupletten aus einer Liste entfernen **ohne** die
+* Wie könnt ihr alle Dubletten aus einer Liste entfernen **ohne** die
   Reihenfolge der Elemente in der Liste zu ändern?
 
   Hierfür können die Schlüssel eines :doc:`/types/dicts` verwendet werden:
@@ -363,7 +363,7 @@ Checks
      True
 
 * Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
-  und Zeilenumbrruch. Wie können diese aus der Zeichenkette entfernt werden?
+  und Zeilenumbruch. Wie können diese aus der Zeichenkette entfernt werden?
 
   .. code-block:: pycon
 

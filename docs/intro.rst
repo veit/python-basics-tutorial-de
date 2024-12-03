@@ -90,8 +90,8 @@ Variablentypen
     Anders als in vielen anderen Sprachen sind Variablen keine Container,
     sondern eher Etiketten, die auf verschiedene Objekte verweisen: Ganzzahlen,
     Zeichenketten, Klasseninstanzen und vieles mehr. Manche empfinden es als
-    Nachteil, dass Python hier nicht einfach eine Typvalidierung durchführt,
-    aber die Anzahl der Typfehler ist meist überschaubar und die Flexibilität
+    Nachteil, dass Python hier nicht einfach eine Typ-Validierung durchführt,
+    aber die Anzahl der Typ-Fehler ist meist überschaubar und die Flexibilität
     der dynamischen Typisierung wiegt die Probleme meist auf.
 Unterstützung für mobile Geräte
     Es gibt mittlerweile einige Optionen, Python auf mobilen Geräten laufen zu

@@ -51,7 +51,7 @@ Schließen von Dateien
 ---------------------
 
 Nachdem alle Daten aus einem Datei-Objekt gelesen oder in dieses geschrieben
-wurden, sollte das Datei-Pbjekt wieder geschlossen werden damit Systemressourcen
+wurden, sollte das Datei-Objekt wieder geschlossen werden damit Systemressourcen
 freigegeben werden, das Lesen oder Schreiben der zugrunde liegenden Datei durch
 anderen Code ermöglicht wird und das Programm insgesamt zuverlässiger wird. Bei
 kleinen Skripten hat dies in der Regel keine großen Auswirkungen, da
@@ -140,10 +140,10 @@ Strings mit einen String pro Zeile zurückgibt:
     >>> f.close()
 
 Wenn ihr alle Zeilen einer großen Datei zählt, kann diese Methode dazu führen,
-dass der Speicher vollläuft, weil die gesamte Datei auf einmal geliesen wird. Es
+dass der Speicher vollläuft, weil die gesamte Datei auf einmal gelesen wird. Es
 ist auch möglich, dass der Speicher mit :mod:`python3:readline` überläuft, wenn
 ihr versucht, eine Zeile aus einer großen Datei zu lesen, die keine
-Zeilenumbruchzeichen enthältist. Um mit solchen Situationen besser umgehen zu
+Zeilenumbruchzeichen enthält. Um mit solchen Situationen besser umgehen zu
 können, haben beide Methoden ein optionales Argument, das die Menge der zu einem
 Zeitpunkt gelesenen Daten beeinflusst. Eine andere Möglichkeit, über alle Zeilen
 einer Datei zu iterieren, besteht darin, das Dateiobjekt als Iterator in einer

@@ -81,7 +81,7 @@ Erweiterungen von Drittanbietern
 `Sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_
     ermöglicht euch, Mermaid-Grafiken in Ihre Dokumente einzubetten.
 `Sphinx Sitemap Generator Extension <https://github.com/jdillard/sphinx-sitemap>`_
-    generiert multiversion- und multilanguage `sitemaps
+    generiert multiversion- und multilanguage-`sitemaps
     <https://www.sitemaps.org/protocol.html>`_ für die HTML-Version
 `Sphinx Lint <https://github.com/sphinx-contrib/sphinx-lint>`_
     basiert auf `rstlint.py

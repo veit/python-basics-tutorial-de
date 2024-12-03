@@ -9,7 +9,7 @@ Daten abfragen
       :lineno-start: 7
 
    Für die ``print``-Ausgabe verwenden wir durch ein vorangestelltes ``f``
-   ein formatiertes Stringliteral oder :term:`python3:f-string`.
+   ein formatiertes String-Literal oder :term:`python3:f-string`.
 
 #. Alle Daten auswählen und nach Autor sortieren:
 

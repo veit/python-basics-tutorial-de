@@ -13,7 +13,7 @@ lautet:
     >>> pi = 3.14159
 
 In Python ist, anders als in vielen anderen Programmiersprachen, weder eine
-Variablendeklaration noch ein Zeilenendebegrenzer notwendig. Die Zeile wird
+Variablendeklaration noch ein Zeilenende-Begrenzer notwendig. Die Zeile wird
 durch das Ende der Zeile abgeschlossen. Variablen werden automatisch erstellt,
 wenn sie zum ersten Mal zugewiesen werden.
 
@@ -44,7 +44,7 @@ wenn sie zum ersten Mal zugewiesen werden.
       1 4 1
 
    In diesem Fall verweisen nach der dritten Zeile ``x``, ``y`` und ``z`` alle
-   auf dasselbe unveränderlichee Integer-Objekt mit dem Wert ``1``. Die nächste
+   auf dasselbe unveränderliche Integer-Objekt mit dem Wert ``1``. Die nächste
    Zeile, ``y = 4``, bewirkt, dass ``y`` auf das Integer-Objekt ``4`` verweist,
    dies ändert jedoch nicht die Referenzen von ``x`` oder ``z``.
 

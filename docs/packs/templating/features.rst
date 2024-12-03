@@ -1,4 +1,4 @@
-CookieCutter-Features
+Cookiecutter-Features
 =====================
 
 * Cross-platform: Windows, Mac und Linux werden unterstützt
@@ -20,7 +20,7 @@ CookieCutter-Features
 
     $ cookiecutter cookiecutter-namespace-template
 
-* Alternativ könnt ihr CookieCutter auch mit Python verwenden:
+* Alternativ könnt ihr Cookiecutter auch mit Python verwenden:
 
   .. code-block:: console
 
@@ -71,7 +71,7 @@ CookieCutter-Features
         github_username: "veit"
     cookiecutters_dir: "~/.cookiecutters/"
 
-* CookieCutter-Templates, die aus einem Repository geladen wurden, werden
+* Cookiecutter-Templates, die aus einem Repository geladen wurden, werden
   üblicherweise in ``~/.cookiecutters/`` gespeichert. Anschließend können sie
   direkt über ihren Verzeichnisnamen referenziert werden, also z.B. mit:
 

@@ -46,7 +46,7 @@ der Kund*innen und der bestellten Artikel.
 
 Nehmen wir ein Online-Geschäft mit den folgenden Rabattregeln:
 
-- Kunden mit tausend oder mehr Treuepunkten erhalten einen globalen Rabatt von
+- Kunden mit tausend oder mehr Treue-Punkten erhalten einen globalen Rabatt von
   5 % pro Bestellung.
 - Ein Rabatt von 10 % wird auf jede Position mit zehn oder mehr Einheiten in
   derselben Bestellung gewährt.
@@ -78,7 +78,7 @@ Funktionsorientierte Strategie
 
 Jede konkrete Strategie im vorigen Beispiel ist eine Klasse mit einer einzigen
 Methode, :func:`discount`. Darüber hinaus haben die Strategieinstanzen keinen
-Zustand (keine Instanzattribute). Im folgenden Beispiel machen wir ein
+Zustand (keine Instanz-Attribute). Im folgenden Beispiel machen wir ein
 Refactoring, wobei die konkreten Strategien durch einfache Funktionen ersetzt
 werden und die abstrakte Klasse :class:`Promotion` entfernt wird.
 
@@ -114,7 +114,7 @@ Musters. In der Zwischenzeit türmen sich die Codemenge und die Wartungskosten.
 .. tip::
    In einem schwierigeren Anwendungsfall mit komplexen konkreten Strategien,
    die einen internen Zustand enthalten, können alle Teile des Strategie- und
-   Fliegengewichtmusters kombiniert werden. Aber oft haben konkrete Strategien
+   Fliegengewicht-Musters kombiniert werden. Aber oft haben konkrete Strategien
    keinen internen Zustand; sie verarbeiten nur Daten aus dem Kontext. In diesem
    Fall solltet Sie auf jeden Fall einfache Funktionen verwenden, anstatt
    Ein-Methoden-Klassen zu kodieren, die eine Ein-Methoden-Schnittstelle

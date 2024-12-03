@@ -53,8 +53,8 @@ leer sind:
    >>> print(third_title)
    None
 
-Der Standardrückgabewert einer Funktion ist :class:`None`
----------------------------------------------------------
+Der Standard-Rückgabewert einer Funktion ist :class:`None`
+----------------------------------------------------------
 
 Eine Prozedur in Python ist beispielsweise nur eine Funktion, die nicht explizit
 einen Wert zurückgibt, was bedeutet, dass sie standardmäßig ``None`` zurückgibt:

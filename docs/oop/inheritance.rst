@@ -75,7 +75,7 @@ sehen könnt:
    die ``super``-Funktion, genauer durch die Zeilen ``super().__init__(x,y)``.
    Dieser Code ruft die Initialisierungsfunktion von ``Form`` mit der zu
    initialisierenden Instanz und den entsprechenden Argumenten auf. Andernfalls
-   würden für die Instanzen von ``Circle`` und ``Square`` die Instanzvariablen
+   würden für die Instanzen von ``Circle`` und ``Square`` die Instanz-Variablen
    ``x`` und ``y`` nicht gesetzt.
 
 Die Vererbung kommt auch dann zum Tragen, wenn ihr versucht, eine Methode zu
