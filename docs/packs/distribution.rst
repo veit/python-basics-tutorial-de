@@ -603,8 +603,7 @@ Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
      + typing-extensions==4.12.2
      + wheel-filename==1.4.1
     $ uv run check-wheel-contents dist/*.whl
-    dist/mypack-0.1.0-py3-none-any.whl: W007: Wheel library is empty
-    dist/mypack-0.1.0-py3-none-any.whl: W008: Wheel is empty
+    dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternativ könnt ihr das Paket auch in einem neuen Projekt installieren,
 :abbr:`z.B. (zum Beispiel)` in :samp:`myapp`:
