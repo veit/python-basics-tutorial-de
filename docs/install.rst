@@ -81,12 +81,11 @@ das auch kein Problem sein.
 .. _various-python-versions:
 
 Werden verschiedene Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
-Bibliotheken mit :doc:`test/tox` zu testen, verwende ich `uv
-<https://docs.astral.sh/uv/guides/install-python/>`_. Damit lassen sich nicht
-nur ältere CPython-Versionen installieren sondern :abbr:`z.B. (zum Beispiel)`
-auch `PyPy <https://pypy.org>`_ oder Free-threaded Python 3.13 mit ``uv python
-install pypy@3.12`` oder ``uv python install --python-preference only-managed
-3.13t``.
+Bibliotheken mit :doc:`test/tox` zu testen, verwende ich :term:`uv`. Damit
+lassen sich nicht nur ältere CPython-Versionen installieren sondern :abbr:`z.B.
+(zum Beispiel)` auch `PyPy <https://pypy.org>`_ oder Free-threaded Python 3.13
+mit ``uv python install pypy@3.12`` oder ``uv python install --python-preference
+only-managed 3.13t``.
 
 .. tip::
    `direnv <https://direnv.net>`_ erlaubt euch, Umgebungsvariablen je nach
