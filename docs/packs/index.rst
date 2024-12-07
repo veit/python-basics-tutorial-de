@@ -26,7 +26,7 @@ den Anforderungen und dem Prozess zur Erstellung von wheels findet ihr in
 
    distribution
    templating/index
-   upload-install
+   publish
    gitlab
    cibuildwheel
    binary-extensions

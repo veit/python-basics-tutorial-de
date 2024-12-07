@@ -1,5 +1,5 @@
-Paket hochladen
-===============
+Paket veröffentlichen
+=====================
 
 Schließlich könnt ihr das Paket auf dem :term:`Python Package Index`
 (:term:`PyPI`) oder einem anderen Index, :abbr:`z.B. (zum Beispiel)`

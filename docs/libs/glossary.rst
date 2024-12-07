@@ -404,9 +404,9 @@ Glossar
        * :doc:`Entwickeln von Anwendungen <../packs/apps>`
        * Testen von Bibliotheken mit verschiedenen :ref:`Python-Versionen
          <various-python-versions>` und :ref:`tox_uv`
-       * :doc:`../packs/upload-install`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
+       * :doc:`../packs/upload-install`
 
        `Docs <https://docs.astral.sh/uv/>`__ |
        `GitHub <https://github.com/astral-sh/uv>`__ |
