@@ -406,7 +406,8 @@ Glossar
          <various-python-versions>` und :ref:`tox_uv`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
-       * :doc:`../packs/upload-install`
+       * Pakete veröffentlichen auf :doc:`PyPI <../packs/publish>` und
+         :doc:`GitLab <../packs/gitlab>`
 
        `Docs <https://docs.astral.sh/uv/>`__ |
        `GitHub <https://github.com/astral-sh/uv>`__ |
