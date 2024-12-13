@@ -31,24 +31,28 @@ Glossar
           :term:`multibuild`
 
    conda
-       Paketmanagement-Tool für die `Anaconda
-       <https://docs.anaconda.com/anaconda/index.html>`_-Distribution von
-       `Continuum Analytics <https://www.anaconda.com/>`_. Sie ist speziell
-       auf die wissenschaftliche Gemeinschaft ausgerichtet, insbesondere auf
+       Paketmanagement-Tool für die `Anaconda-Distribution
+       <https://docs.anaconda.com/anaconda/index.html>`_. Sie ist speziell auf
+       die wissenschaftliche Gemeinschaft ausgerichtet, insbesondere auf
        Windows, wo die Installation von binären Erweiterungen oft schwierig ist.
 
        Conda installiert keine Pakete von :term:`PyPI` und kann nur von den
        offiziellen Continuum-Repositories oder von `anaconda.org
        <https://anaconda.org/>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
-       Intranet-) Paketservern installieren. Beachtet jedoch, dass :term:`pip`
-       in conda installiert werden und Seite an Seite arbeiten kann, um
-       Distributionen von :term:`PyPI` zu verwalten.
+       Intranet-) Paketservern installieren.
+
+       .. note::
+          :term:`pip` kann in conda installiert werden und Seite an Seite
+          arbeiten kann, um Distributionen von :term:`PyPI` zu verwalten.
 
        .. seealso::
           * `Conda: Myths and Misconceptions
             <https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/>`_
           * `Conda build variants
             <https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html>`_
+
+       `Docs <https://docs.conda.io/en/latest/>`__ |
+       `GitHub <https://github.com/conda/conda>`__
 
    devpi
        `devpi <https://www.devpi.net/>`_ ist ein leistungsstarker
