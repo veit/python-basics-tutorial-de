@@ -8,6 +8,21 @@ als umfassendes Nachschlagewerk für Python gedacht, sondern das Ziel ist
 vielmehr, euch grundlegend mit Python vertraut zu machen und euch schnell das
 Schreiben eigener Programme zu ermöglichen.
 
+Das Buch ist veröffentlicht unter der `BSD-3-Clause license
+<https://github.com/veit/python-basics-tutorial-de?tab=BSD-3-Clause-1-ov-file#readme>`_,
+so dass ihr das Buch :abbr:`u.a. (unter anderem)` für eure Zwecke anpassen und
+veröffentlichen dürft, sofern ihr die Lizenz und den Copyright-Hinweis
+beibehaltet.
+
+Ich möchte der `cusy GmbH <https://cusy.io/de/front-page>`_ danken, die mir
+großzügig ermöglicht, meine Zeit mit dem Schreiben dieses Buches zu verbringen.
+Darüberhinaus möchte ich Kristian Rother nicht nur für die Unterstützung und
+den Rat danken, den er mir im Laufe der Jahre zu diesem Buch gegeben hat,
+sondern auch für das Lektorat, das dieses Buch besser gemacht hat. Danken möchte
+ich auch Steffen Dahlem, für die Idee und Realisierung einer nachhaltigeren
+Buchproduktion. Ein herzlicher Dank geht schließlich auch an die
+Rezensent*innen, deren Einblicke und Rückmeldungen eine große Hilfe waren.
+
 .. note::
    Wenn ihr Vorschläge für Verbesserungen und Ergänzungen habt, freue ich mich
    über eure :doc:`Verbesserungsvorschläge <contribute>`.
