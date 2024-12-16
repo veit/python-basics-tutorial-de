@@ -1,12 +1,29 @@
 Datentypen
 ==========
 
-Python verfügt über mehrere eingebaute Datentypen, wie :abbr:`z.B. (zum
-Beispiel)` :doc:`numbers` (Ganzzahlen, Gleitkommazahlen, komplexe Zahlen),
-:doc:`strings/index`, :doc:`lists`, :doc:`tuples`, :doc:`dicts`, :doc:`sets` und
-:doc:`files`. Diese Datentypen können mit Hilfe von Sprachoperatoren,
-eingebauten Funktionen, Bibliotheksfunktionen oder den eigenen Methoden eines
-Datentyps manipuliert werden.
+Python verfügt über mehrere eingebaute Datentypen, :abbr:`u.a. (unter anderem)`:
+
++-----------------------+-----------------------------------------------+
+| Datentyp              | Beispiele                                     |
++=======================+===============================================+
+| Numerische Typen      | :class:`int`, :class:`float`, :class:`complex`|
++-----------------------+-----------------------------------------------+
+| Boolscher Typ         | :class:`bool`                                 |
++-----------------------+-----------------------------------------------+
+| Sequenzen             | :class:`list`, :class:`tuple`                 |
++-----------------------+-----------------------------------------------+
+| Sets                  | :class:`set`, :class:`frozenset`              |
++-----------------------+-----------------------------------------------+
+| Mappings              | :class:`dict`                                 |
++-----------------------+-----------------------------------------------+
+| Strings               | :class:`str`                                  |
++-----------------------+-----------------------------------------------+
+| Dateien               | :func:`open <open>`                           |
++-----------------------+-----------------------------------------------+
+
+Diese Datentypen können mit Hilfe von Sprachoperatoren, eingebauten Funktionen,
+Bibliotheksfunktionen oder den eigenen Methoden eines Datentyps manipuliert
+werden.
 
 Ihr könnt auch eure eigenen Klassen definieren und eigene Klasseninstanzen
 erstellen. Für diese Klasseninstanzen könnt ihr Methoden definieren sowie mit
