@@ -56,36 +56,40 @@ Variablennamen unterscheiden Groß- und Kleinschreibung und können jedes
 alphanumerische Zeichen sowie Unterstriche enthalten, müssen aber mit einem
 Buchstaben oder Unterstrich beginnen.
 
-.. note::
-   Wenn ihr einen ``SyntaxError`` erhaltet, prüft, ob der Variablenname ein
-   Schlüsselwort ist. Schlüsselwörter sind für die Verwendung in
-   Python-Sprachkonstrukten reserviert, so dass ihr sie nicht zu Variablen
-   machen könnt. Nach dem Aufruf von :ref:`help` könnt ihr ``keywords``
-   eingeben, um die Schlüsselworte zu erhalten:
+Schlüsselwörter
+---------------
 
-   .. code-block:: pycon
+Wenn ihr einen ``SyntaxError`` erhaltet, prüft, ob der Variablenname ein
+Schlüsselwort ist. Schlüsselwörter sind für die Verwendung in
+Python-Sprachkonstrukten reserviert, so dass ihr sie nicht zu Variablen machen
+könnt. Nach dem Aufruf von :ref:`help` könnt ihr ``keywords`` eingeben, um die
+Schlüsselworte zu erhalten:
 
-      >>> help()
-      help> keywords
+.. code-block:: pycon
 
-      Here is a list of the Python keywords.  Enter any keyword to get more help.
+   >>> help()
+   help> keywords
 
-      False               class               from                or
-      None                continue            global              pass
-      True                def                 if                  raise
-      and                 del                 import              return
-      as                  elif                in                  try
-      assert              else                is                  while
-      async               except              lambda              with
-      await               finally             nonlocal            yield
-      break               for                 not
+   Here is a list of the Python keywords.  Enter any keyword to get more help.
 
-.. note::
-   Ihr könnt mit einem Variablennamen eingebaute (engl.: *built-in*) Funktionen,
-   Typen und andere Objekte überschreiben, sodass der Zugriff anschließend nur
-   noch über das :doc:`builtins <python3:library/builtins>`-Modul erfolgen kann.
-   Daher sollten diese Variablennamen nie verwendet werden. Eine Liste der
-   :mod:`__builtins__`-Objekte erhaltet ihr mit:
+   False               class               from                or
+   None                continue            global              pass
+   True                def                 if                  raise
+   and                 del                 import              return
+   as                  elif                in                  try
+   assert              else                is                  while
+   async               except              lambda              with
+   await               finally             nonlocal            yield
+   break               for                 not
+
+Built-in-Funktionen
+-------------------
+
+Ihr könnt mit einem Variablennamen eingebaute (engl.: *built-in*) Funktionen,
+Typen und andere Objekte überschreiben, sodass der Zugriff anschließend nur noch
+über das :doc:`builtins <python3:library/builtins>`-Modul erfolgen kann. Daher
+sollten diese Variablennamen nie verwendet werden. Eine Liste der
+:mod:`__builtins__`-Objekte erhaltet ihr mit:
 
    .. code-block:: pycon
 
