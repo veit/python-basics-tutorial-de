@@ -537,8 +537,8 @@ des Musters:
    >>> match.groups()
    ('veit', 'cusy', 'io')
 
-:py:meth:`re.Match.groups` gibt ein :doc:`../tuples` zurück, das alle
-Untergruppen der Übereinstimmung enthält.
+:py:meth:`re.Match.groups` gibt ein :doc:`../sequences-sets/tuples` zurück, das
+alle Untergruppen der Übereinstimmung enthält.
 
 :py:meth:`re.Pattern.findall` gibt eine Liste von Tupeln zurück, wenn das Muster
 Gruppen enthält:
@@ -653,8 +653,8 @@ Zeilen 13–16
 -------------------------------------------------
 
 Da :ref:`str <python3:textseq>`-Objekte unveränderlich sind, gibt es keine
-Möglichkeit, sie direkt zu verändern wie :doc:`../lists`. Ihr könnt sie jedoch
-in Listen umwandeln:
+Möglichkeit, sie direkt zu verändern wie :doc:`../sequences-sets/lists`. Ihr
+könnt sie jedoch in Listen umwandeln:
 
 .. code-block:: pycon
 

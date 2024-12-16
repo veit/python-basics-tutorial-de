@@ -46,9 +46,7 @@ speziellen Methodenattribute definiert habt, bearbeitet werden.
    :hidden:
 
    numbers/index
-   lists
-   tuples
-   sets
+   sequences-sets/index
    dicts
    strings/index
    files
