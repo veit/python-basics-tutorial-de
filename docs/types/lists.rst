@@ -6,8 +6,8 @@ Kollektion von Objekten. Anders als Listen in vielen anderen Sprachen können
 Python-Listen jedoch verschiedene Arten von Elementen enthalten; ein
 Listenelement kann ein beliebiges Python-Objekt sein, darunter
 :doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
-:doc:`../functions/index`, :doc:`files` und jede Art von :doc:`numbers`. Ihr
-erstellt eine Liste, indem ihr kein oder durch Komma getrennte Elemente in
+:doc:`../functions/index`, :doc:`files` und jede Art von :doc:`numbers/index`.
+Ihr erstellt eine Liste, indem ihr kein oder durch Komma getrennte Elemente in
 eckige Klammern einschließt, etwa so:
 
 .. code-block:: python
@@ -387,9 +387,10 @@ Minimum oder Maximum einer Liste
 
 Ihr könnt :func:`max` und :func:`min` verwenden, um das größte und kleinste
 Element einer Liste zu finden. Wahrscheinlich werdet ihr :func:`max` und
-:func:`min` vor allem bei :doc:`numerischen </types/numbers>` Listen verwenden,
-aber ihr könnt sie auch bei Listen mit beliebigen Elementen einsetzen; wenn der
-Vergleich dieser Typen jedoch keinen Sinn ergibt, führt dies zu einem Fehler:
+:func:`min` vor allem bei :doc:`numerischen </types/numbers/index>` Listen
+verwenden, aber ihr könnt sie auch bei Listen mit beliebigen Elementen
+einsetzen; wenn der Vergleich dieser Typen jedoch keinen Sinn ergibt, führt dies
+zu einem Fehler:
 
 .. code-block:: pycon
 

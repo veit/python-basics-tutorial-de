@@ -1,11 +1,11 @@
 None
 ====
 
-Zusätzlich zu den Standardtypen wie :doc:`strings/index` und :doc:`numbers`
-verfügt Python über einen speziellen Datentyp, der ein einziges spezielles
-Datenobjekt namens ``None`` definiert. Wie der Name schon sagt, wird ``None``
-verwendet, um einen leeren Wert darzustellen. Er taucht in verschiedenen Formen
-in Python auf.
+Zusätzlich zu den Standardtypen wie :doc:`strings/index` und
+:doc:`numbers/index` verfügt Python über einen speziellen Datentyp, der ein
+einziges spezielles Datenobjekt namens ``None`` definiert. Wie der Name schon
+sagt, wird ``None`` verwendet, um einen leeren Wert darzustellen. Er taucht in
+verschiedenen Formen in Python auf.
 
 ``None`` ist in der alltäglichen Python-Programmierung oft als Platzhalter
 nützlich, um eine Datenstruktur zu kennzeichnen, an der irgendwann sinnvolle

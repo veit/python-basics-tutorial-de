@@ -52,8 +52,8 @@ Checks
       ✅ ok, aber sehr lang und daher nur zu empfehlen, wenn zwischen vielen
       sehr ähnlichen Variablen unterschieden werden soll
 
-:doc:`/types/numbers`
----------------------
+:doc:`/types/numbers/index`
+---------------------------
 
 * Erstellt einige Zahlenvariablen (Ganzzahlen, Gleitkommazahlen und komplexe
   Zahlen). Experimentiert ein wenig damit, was passiert, wenn ihr Operationen
@@ -83,6 +83,9 @@ Checks
 
   .. blacken-docs:on
 
+:doc:`/types/numbers/complex`
+-----------------------------
+
 * Ladet das Modul :mod:`math` und probiert einige der Funktionen aus. Ladet dann
   auch das Modul :mod:`cmath` und macht dasselbe.
 
@@ -102,6 +105,9 @@ Checks
      >>> from math import sqrt
      >>> sqrt(3)
      1.7320508075688772
+
+:doc:`/types/numbers/bool`
+--------------------------
 
 * Entscheidet, ob die folgenden Aussagen wahr oder falsch sind:
 

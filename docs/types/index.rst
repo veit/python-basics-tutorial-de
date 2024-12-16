@@ -45,7 +45,7 @@ speziellen Methodenattribute definiert habt, bearbeitet werden.
    :titlesonly:
    :hidden:
 
-   numbers
+   numbers/index
    lists
    tuples
    sets

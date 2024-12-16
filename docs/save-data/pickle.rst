@@ -43,7 +43,7 @@ einer Datei namens ``data.pickle`` speichern:
    :py:func:`pickle.dump` speichert alles.
 
    Das Pickle-Modul kann fast alles auf diese Weise speichern. Es kann mit
-   :doc:`/types/numbers`, :doc:`/types/lists`, :doc:`/types/tuples`,
+   :doc:`/types/numbers/index`, :doc:`/types/lists`, :doc:`/types/tuples`,
    :doc:`/types/dicts`, :doc:`/types/strings/index` und so ziemlich allem
    umgehen, was aus diesen Objekttypen besteht, also auch mit allen
    Klasseninstanzen. Es geht auch mit gemeinsam genutzten Objekten, zyklischen
