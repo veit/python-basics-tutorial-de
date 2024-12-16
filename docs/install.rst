@@ -4,7 +4,7 @@ Installation
 Die Installation von Python kann einfach sein. Der erste Schritt besteht darin,
 die aktuelle Version von `www.python.org/downloads
 <https://www.python.org/downloads/>`_ herunterzuladen. Das Tutorial basiert auf
-Python 3.13.0, falls ihr jedoch Python 3.8 oder neuer installiert habt, sollte
+Python 3.13.0, falls ihr jedoch Python 3.10 oder neuer installiert habt, sollte
 das auch kein Problem sein.
 
 .. tab:: Linux
@@ -44,8 +44,7 @@ das auch kein Problem sein.
    ``mopup`` aufrufen, um die aktuellste Version eurer Python-Installation zu
    erhalten.
 
-   Werden ältere Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
-   Bibliotheken mit :doc:`test/tox` zu testen, kann  `python-build-standalone
+   Werden ältere Python-Versionen benötigt, kann `python-build-standalone
    <https://gregoryszorc.com/docs/python-build-standalone/main/building.html#macos>`_
    verwendet werden.
 
@@ -80,12 +79,8 @@ das auch kein Problem sein.
 
 .. _various-python-versions:
 
-Werden verschiedene Python-Versionen benötigt, :abbr:`z.B. (zum Beispiel)` um
-Bibliotheken mit :doc:`test/tox` zu testen, verwende ich :term:`uv`. Damit
-lassen sich nicht nur ältere CPython-Versionen installieren sondern :abbr:`z.B.
-(zum Beispiel)` auch `PyPy <https://pypy.org>`_ oder Free-threaded Python 3.13
-mit ``uv python install pypy@3.12`` oder ``uv python install --python-preference
-only-managed 3.13t``.
+Um mehrere Python-Projekte mit unterschiedlichen Versionen zu verwalten
+empfehle ich :term:`uv`.
 
 .. tip::
    `direnv <https://direnv.net>`_ erlaubt euch, Umgebungsvariablen je nach

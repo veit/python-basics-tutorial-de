@@ -273,6 +273,14 @@ führt einen der folgenden Schritte aus:
 Startet dann die Shell neu oder ruft ``source`` mit eurer
 Shell-Konfigurationsdatei ein.
 
+Python-Installation
+~~~~~~~~~~~~~~~~~~~
+
+Mit ``uv`` lassen sich nicht nur ältere CPython-Versionen installieren, sondern
+:abbr:`z.B. (zum Beispiel)` auch `PyPy <https://pypy.org>`_ mit ``uv python
+install pypy@3.12`` oder Free-threaded Python 3.13 mit ``uv python install
+--python-preference only-managed 3.13t``.
+
 Projektstruktur erstellen
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
