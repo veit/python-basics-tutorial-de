@@ -24,8 +24,8 @@ Wie bei :doc:`lists` sind mehrere Dictionary-Methoden (:py:meth:`clear
     >>> x.get(5, "nicht vorhanden")
     'nicht vorhanden'
 
-Schlüssel müssen vom unveränderlichen Typ sein, einschließlich :doc:`numbers`,
-:doc:`strings/index` und Tupel.
+Schlüssel müssen vom unveränderlichen Typ sein, einschließlich
+:doc:`numbers/index`, :doc:`strings/index` und Tupel.
 
 .. warning::
    Auch wenn ihr in einem Dictionary verschiedene Schlüsseltypen verwenden

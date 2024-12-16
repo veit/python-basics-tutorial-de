@@ -43,7 +43,7 @@ Werten bis hin zu komplexeren Strukturen wie Listen, Dictionaries und Dateien.
    :titlesonly:
    :hidden:
 
-   numbers
+   numbers/index
    lists
    tuples
    sets
