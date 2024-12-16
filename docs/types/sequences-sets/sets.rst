@@ -6,6 +6,8 @@ verwendet werden, in denen die Zugehörigkeit und Einzigartigkeit zur Menge die
 wichtigsten Informationen des Objekts sind. Der ``in``-Operator läuft bei Sets
 schneller als bei :doc:`lists`:
 
+.. _set:
+
 ``set``
 -------
 
@@ -56,6 +58,8 @@ Zeile 19
     (das heißt)` Elemente, die in der einen oder der anderen Menge enthalten
     sind, aber nicht in beiden.
 
+.. _frozenset:
+
 ``frozenset``
 -------------
 
@@ -84,14 +88,6 @@ Der Geschwindigkeitsvorteil hat jedoch auch ihren Preis: Sets halten die
 Elemente nicht in der richtigen Reihenfolge, während :doc:`lists` und
 :doc:`tuples` dies tun. Wenn die Reihenfolge für euch wichtig ist, solltet ihr
 eine Datenstruktur verwenden, die sich die Reihenfolge merkt.
-
-+---------------+---------------+---------------+---------------+---------------+
-| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
-+===============+===============+===============+===============+===============+
-| Sets          | ✅            | ❌            | ❌            | ❌            |
-+---------------+---------------+---------------+---------------+---------------+
-| Frozensets    | ❌            | ❌            | ❌            | ❌            |
-+---------------+---------------+---------------+---------------+---------------+
 
 Checks
 ------

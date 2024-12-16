@@ -5,10 +5,10 @@ Pythons eingebauter Dictionary-Datentyp bietet assoziative Array-Funktionalität
 die mit Hilfe von Hash-Tabellen implementiert wird. Die eingebaute Funktion
 ``len`` gibt die Anzahl der Schlüssel-Wert-Paare in einem Wörterbuch zurück. Die
 ``del``-Anweisung kann zum Löschen eines Schlüssel-Wert-Paares verwendet werden.
-Wie bei :doc:`lists` sind mehrere Dictionary-Methoden (:py:meth:`clear
-<dict.clear>`, :py:meth:`copy <dict.copy>`, :py:meth:`get <dict.get>`,
-:py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`, :py:meth:`update
-<dict.update>` und :py:meth:`values <dict.values>`) verfügbar.
+Wie bei :doc:`sequences-sets/lists` sind mehrere Dictionary-Methoden
+(:py:meth:`clear <dict.clear>`, :py:meth:`copy <dict.copy>`, :py:meth:`get
+<dict.get>`, :py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`,
+:py:meth:`update <dict.update>` und :py:meth:`values <dict.values>`) verfügbar.
 
 .. code-block:: pycon
 
@@ -33,10 +33,10 @@ Schlüssel müssen vom unveränderlichen Typ sein, einschließlich
    auch die Sortierung erschwert wird.
 
 Werte können alle Arten von Objekten sein,
-einschließlich veränderlicher Typen wie :doc:`lists` und :doc:`dicts`. Wenn ihr
-versucht, auf den Wert eines Schlüssels zuzugreifen, der nicht im Dictionary
-enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um diesen Fehler zu
-vermeiden, gibt die Dictionary-Methode ``get`` optional einen
+einschließlich veränderlicher Typen wie :doc:`sequences-sets/lists` und
+:doc:`dicts`. Wenn ihr versucht, auf den Wert eines Schlüssels zuzugreifen, der
+nicht im Dictionary enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um
+diesen Fehler zu vermeiden, gibt die Dictionary-Methode ``get`` optional einen
 benutzerdefinierten Wert zurück, wenn ein Schlüssel nicht in einem Wörterbuch
 enthalten ist.
 
@@ -112,6 +112,6 @@ Checks
   ``("Veit", "Tim", "Monique")``
 
 * Ihr könnt ein :doc:`Dictionary </types/dicts>` verwenden, und das wie ein
-  Sheet einer Tabellenkalkulation verwenden, indem ihr :doc:`/types/tuples` als
-  Schlüssel Zeilen- und Spaltenwerte verwendet. Schreibt Beispielcode, um Werte
-  hinzuzufügen und wieder abzufragen.
+  Sheet einer Tabellenkalkulation verwenden, indem ihr
+  :doc:`/types/sequences-sets/tuples` als Schlüssel Zeilen- und Spaltenwerte
+  verwendet. Schreibt Beispielcode, um Werte hinzuzufügen und wieder abzufragen.

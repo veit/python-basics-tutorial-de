@@ -160,10 +160,10 @@ Variable Anzahl von Argumenten
 Python-Funktionen können auch so definiert werden, dass sie mit einer variablen
 Anzahl von Argumenten umgehen können. Dies ist auf zweierlei Arten möglich. Die
 eine Methode sammelt eine unbekannte Anzahl von Argumenten in einer :doc:`Liste
-</types/lists>`. Die andere Methode kann eine beliebige Anzahl von Argumenten,
-die mit einem Schlüsselwort übergeben wurde und die keinen entsprechend
-benannten Parameter in der Liste der Funktionsparameter hat, in einem
-:doc:`Dict </types/dicts>` sammeln.
+</types/sequences-sets/lists>`. Die andere Methode kann eine beliebige Anzahl von
+Argumenten, die mit einem Schlüsselwort übergeben wurde und die keinen
+entsprechend benannten Parameter in der Liste der Funktionsparameter hat, in
+einem :doc:`Dict </types/dicts>` sammeln.
 
 Bei einer unbestimmten Anzahl von Positionsargumenten bewirkt das Voranstellen
 eines ``*`` vor den endgültigen Parameter-Namen der Funktion, dass alle
@@ -236,14 +236,15 @@ Veränderliche Objekte als Argumente
 -----------------------------------
 
 Argumente werden per Objektreferenz übergeben. Der Parameter wird zu einem neuen
-Verweis auf das Objekt. Bei unveränderlichen Objekten wie :doc:`/types/tuples`,
-:doc:`/types/strings/index` und :doc:`/types/numbers/index` hat das, was mit
-einem Parameter gemacht wird, keine Auswirkungen außerhalb der Funktion. Wenn
-ihr jedoch ein veränderliches Objekt übergeben, :abbr:`z.B. (zum Beispiel)` eine
-:doc:`Liste </types/lists>`, ein :doc:`Dict </types/dicts>` oder eine
+Verweis auf das Objekt. Bei unveränderlichen Objekten wie
+:doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` und
+:doc:`/types/numbers/index` hat das, was mit einem Parameter gemacht wird, keine
+Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein veränderliches Objekt
+übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+</types/sequences-sets/lists>`, ein :doc:`Dict </types/dicts>` oder eine
 Klasseninstanz, ändert jede Änderung des Objekts, worauf das Argument außerhalb
-der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen
-auf das Argument.
+der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen auf
+das Argument.
 
 .. code-block:: pycon
 

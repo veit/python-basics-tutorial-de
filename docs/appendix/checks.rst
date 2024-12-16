@@ -118,8 +118,8 @@ Checks
   * ``1 and 0`` → False
   * ``1 > 0 or []`` → True
 
-:doc:`/types/lists`
--------------------
+:doc:`/types/sequences-sets/lists`
+----------------------------------
 
 * Was gibt :func:`len` für jeden der folgenden Fälle zurück:
 
@@ -170,8 +170,8 @@ Checks
   .. note::
      Mit diesem Code wird nur das erste Vorkommen von ``i`` entfernt. Um alle
      Vorkommen von ``i`` aus der Liste zu entfernen, könnte die Liste
-     :abbr:`z.B. (zum Beispiel)` in den :doc:`Set </types/sets>`-Typ umgewandelt
-     werden:
+     :abbr:`z.B. (zum Beispiel)` in den :doc:`Set
+     </types/sequences-sets/sets>`-Typ umgewandelt werden:
 
      .. code-block:: pycon
 
@@ -215,8 +215,8 @@ Checks
 * Welche anderen Optionen könntet ihr neben der expliziten Überprüfung des Typs
   haben?
 
-:doc:`/types/tuples`
---------------------
+:doc:`/types/sequences-sets/tuples`
+-----------------------------------
 
 * Erläutert, warum die folgenden Operationen nicht auf das Tuple ``t``
   angewendet werden können:
@@ -234,8 +234,8 @@ Checks
 
      >>> sorted(t)
 
-:doc:`/types/sets`
-------------------
+:doc:`/types/sequences-sets/sets`
+---------------------------------
 
 * Wieviele Elemente hat ein Set, wenn es aus der folgenden Liste
   ``[4, 2, 3, 2, 1]`` gebildet wird?
@@ -285,9 +285,9 @@ Checks
      >>> d[("Veit", "Tim", "Monique")] = None
 
 * Ihr könnt ein :doc:`Dictionary </types/dicts>` verwenden, und das wie ein
-  Tabelle einer Tabellenkalkulation verwenden, indem ihr :doc:`/types/tuples`
-  als Schlüssel Zeilen- und Spaltenwerte verwendet. Schreibt Beispielcode, um
-  Werte hinzuzufügen und wieder abzufragen.
+  Tabelle einer Tabellenkalkulation verwenden, indem ihr
+  :doc:`/types/sequences-sets/tuples` als Schlüssel Zeilen- und Spaltenwerte
+  verwendet. Schreibt Beispielcode, um Werte hinzuzufügen und wieder abzufragen.
 
   .. code-block:: pycon
 

@@ -5,10 +5,10 @@ Eine Liste in Python ist ähnlich wie ein Array in Java oder C: eine geordnete
 Kollektion von Objekten. Anders als Listen in vielen anderen Sprachen können
 Python-Listen jedoch verschiedene Arten von Elementen enthalten; ein
 Listenelement kann ein beliebiges Python-Objekt sein, darunter
-:doc:`strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`dicts`,
-:doc:`../functions/index`, :doc:`files` und jede Art von :doc:`numbers/index`.
-Ihr erstellt eine Liste, indem ihr kein oder durch Komma getrennte Elemente in
-eckige Klammern einschließt, etwa so:
+:doc:`../strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`../dicts`,
+:doc:`../../functions/index`, :doc:`../files` und jede Art von
+:doc:`../numbers/index`. Ihr erstellt eine Liste, indem ihr kein oder durch Komma
+getrennte Elemente in eckige Klammern einschließt, etwa so:
 
 .. code-block:: python
    :linenos:
@@ -288,8 +288,8 @@ Benutzerdefinierte Sortierung
 :::::::::::::::::::::::::::::
 
 .. note::
-   Für eine benutzerdefinierte Sortierung müsst ihr :doc:`../functions/index`
-   definieren können. Und auch die Verarbeitung von :doc:`strings/index` wird
+   Für eine benutzerdefinierte Sortierung müsst ihr :doc:`../../functions/index`
+   definieren können. Und auch die Verarbeitung von :doc:`../strings/index` wird
    später noch ausführlicher behandelt.
 
 Üblicherweise sortiert Python Wörter lexikografisch – Großbuchstaben vor
@@ -315,11 +315,11 @@ Die Funktion ``sorted``
 
 Listen haben eine eingebaute Methode, um sich selbst zu sortieren
 :meth:`python3:list.sort`. Andere *Iterables* in Python, wie :abbr:`z.B. (zum
-Beispiel)` die Schlüssel von :doc:`dicts`, haben jedoch keine Sortiermethode.
+Beispiel)` die Schlüssel von :doc:`../dicts`, haben jedoch keine Sortiermethode.
 Python bietet hierfür jedoch die eingebaute Funktion :func:`python3:sorted` an,
 die eine sortierte Liste aus einer beliebigen  *Iterables* zurückgibt.
-:func:`python3:sorted` verwendet die gleichen :doc:`../functions/params` ``key``
-und ``reverse`` wie die Methode :meth:`python3:list.sort`:
+:func:`python3:sorted` verwendet die gleichen :doc:`../../functions/params`
+``key`` und ``reverse`` wie die Methode :meth:`python3:list.sort`:
 
 .. code-block:: pycon
 
@@ -544,15 +544,6 @@ ihr hat Auswirkungen auf die Originalliste:
    [[1], 1]
    >>> sup
    [[0], 1]
-
-Zusammenfassung
----------------
-
-+---------------+---------------+---------------+---------------+---------------+
-| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
-+===============+===============+===============+===============+===============+
-| Liste         | ✅            | ✅            | ✅            | ✅            |
-+---------------+---------------+---------------+---------------+---------------+
 
 Checks
 ------
