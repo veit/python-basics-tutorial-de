@@ -3,7 +3,7 @@ Tupel
 
 Tupel ähneln :doc:`lists`, können jedoch nicht geändert sondern nur erstellt
 werden. Tupel haben die wichtige Aufgabe, effizient :abbr:`z.B. (zum Beispiel)`
-Schlüssel für :doc:`dicts` zu erstellen.
+Schlüssel für :doc:`../dicts` zu erstellen.
 
 Tupel werden ähnlich wie die Listen erstellt: einer Variablen wird eine Folge
 von Werten zugewiesen, die jedoch nicht in eckige sondern in runde Klammern
@@ -173,17 +173,8 @@ Die Vorteile von Tupeln gegenüber :doc:`lists` sind:
 
 * Tupel können nicht verändert werden und sind daher *schreibgeschützt*.
 
-* Tupel können als Schlüssel in :doc:`dicts` und Werte in :doc:`sets` verwendet
-  werden.
-
-Zusammenfassung
----------------
-
-+---------------+---------------+---------------+---------------+---------------+
-| Datentyp      | veränderlich  | geordnet      | indiziert     | Duplikate     |
-+===============+===============+===============+===============+===============+
-| Tuple         | ❌            | ✅            | ✅            | ✅            |
-+---------------+---------------+---------------+---------------+---------------+
+* Tupel können als Schlüssel in :doc:`../dicts` und Werte in :doc:`sets`
+  verwendet werden.
 
 Checks
 ------
