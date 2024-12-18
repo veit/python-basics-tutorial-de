@@ -1,47 +1,95 @@
 Dictionaries
 ============
 
-Pythons eingebauter Dictionary-Datentyp bietet assoziative Array-Funktionalität,
-die mit Hilfe von Hash-Tabellen implementiert wird. Die eingebaute Funktion
-``len`` gibt die Anzahl der Schlüssel-Wert-Paare in einem Wörterbuch zurück. Die
-``del``-Anweisung kann zum Löschen eines Schlüssel-Wert-Paares verwendet werden.
-Wie bei :doc:`sequences-sets/lists` sind mehrere Dictionary-Methoden
-(:py:meth:`clear <dict.clear>`, :py:meth:`copy <dict.copy>`, :py:meth:`get
-<dict.get>`, :py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`,
-:py:meth:`update <dict.update>` und :py:meth:`values <dict.values>`) verfügbar.
-
-.. code-block:: pycon
-
-    >>> x = {1: "eins", 2: "zwei"}
-    >>> x[3] = "drei"
-    >>> x["viertes"] = "vier"
-    >>> list(x.keys())
-    [1, 2, 3, 'viertes']
-    >>> x[1]
-    'eins'
-    >>> x.get(1, "nicht vorhanden")
-    'eins'
-    >>> x.get(5, "nicht vorhanden")
-    'nicht vorhanden'
-
-Schlüssel müssen vom unveränderlichen Typ sein, einschließlich
-:doc:`numbers/index`, :doc:`strings/index` und Tupel.
+Dictionaries bestehen aus Schlüssel-Wert-Paaren. Schlüssel müssen vom
+unveränderlichen Typ sein, einschließlich :doc:`numbers/index`,
+:doc:`strings/index` und :doc:`sequences-sets/tuples`.
 
 .. warning::
    Auch wenn ihr in einem Dictionary verschiedene Schlüsseltypen verwenden
    könnt, solltet ihr das vermeiden, da dadurch nicht nur die Lesbarkeit sondern
    auch die Sortierung erschwert wird.
 
-Werte können alle Arten von Objekten sein,
-einschließlich veränderlicher Typen wie :doc:`sequences-sets/lists` und
-:doc:`dicts`. Wenn ihr versucht, auf den Wert eines Schlüssels zuzugreifen, der
-nicht im Dictionary enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um
-diesen Fehler zu vermeiden, gibt die Dictionary-Methode ``get`` optional einen
+Werte können alle Arten von Objekten sein, einschließlich veränderlicher Typen
+wie :doc:`sequences-sets/lists` und :doc:`dicts`.
+
+.. code-block:: pycon
+
+   >>> dict = {
+   ...     "2022-01-31": -0.751442,
+   ...     "2022-02-01": 0.816935,
+   ...     "2022-02-02": -0.272546,
+   ... }
+   >>> dict["2022-02-03"] = -0.268295
+
+Wenn ihr versucht, auf den Wert eines Schlüssels zuzugreifen, der nicht im
+Dictionary enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um diesen
+Fehler zu vermeiden, gibt die Dictionary-Methode ``get`` optional einen
 benutzerdefinierten Wert zurück, wenn ein Schlüssel nicht in einem Wörterbuch
 enthalten ist.
 
+.. code-block:: pycon
+
+   >>> dict["2022-02-03"]
+   -0.268295
+   >>> dict["2022-02-04"]
+   Traceback (most recent call last):
+     File "<python-input-15>", line 1, in <module>
+       dict["2022-02-04"]
+       ~~~~^^^^^^^^^^^^^^
+   KeyError: '2022-02-04'
+   >>> dict.get("2022-02-03", "Messwert nicht vorhanden")
+   -0.268295
+   >>> dict.get("2022-02-04", "Messwert nicht vorhanden")
+   'Messwert nicht vorhanden'
+
+Weitere Dict-Methoden
+---------------------
+
+Die in Dicts eingebaute Funktion ``len`` gibt die Anzahl der
+Schlüssel-Wert-Paare zurück. Die ``del``-Anweisung kann zum Löschen eines
+Schlüssel-Wert-Paares verwendet werden. Wie bei :doc:`sequences-sets/lists` sind
+mehrere Dictionary-Methoden (:py:meth:`clear <dict.clear>`, :py:meth:`copy
+<dict.copy>`, :py:meth:`get <dict.get>`, :py:meth:`items <dict.items>`,
+:py:meth:`keys <dict.keys>`, :py:meth:`update <dict.update>` und
+:py:meth:`values <dict.values>`) verfügbar.
+
+Die Methoden :py:meth:`keys <dict.keys>`, :py:meth:`values <dict.values>` und
+:py:meth:`items <dict.items>` geben keine Listen zurück, sondern
+Dictionary-View-Objekte, die sich wie Sequenzen verhalten, aber dynamisch
+aktualisiert werden, wenn sich das Dictionary ändert. Aus diesem Grund müsst ihr
+die Funktion ``list`` verwenden, damit sie in diesen Beispielen zu einer Liste
+werden:
+
+.. code-block:: pycon
+
+   >>> list(dict.keys())
+   ['2022-01-31', '2022-02-01', '2022-02-02', '2022-02-03']
+
+Ab Python 3.6 behalten Dictionaries die Reihenfolge bei, in der die Schlüssel
+erstellt wurden, und sie werden mit :py:meth:`keys <dict.keys>` auch in dieser
+Reihenfolge zurückgegeben.
+
+Dicts zusammenführen
+~~~~~~~~~~~~~~~~~~~~
+
+Mit der :py:meth:`dict.update`-Methode könnt ihr zwei Dictionaries zu einem
+einzigen Dictionary zusammenfügen:
+
+.. code-block:: pycon
+
+   >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
+   >>> new_titles = {7.0: "Data types", 7.3: "Sets"}
+   >>> titles.update(new_titles)
+   >>> titles
+   {7.0: 'Data types', 7.1: 'Lists', 7.2: 'Tuples', 7.3: 'Sets'}
+
+.. note::
+   Die Reihenfolge der Operanden ist wichtig, da ``7.0`` dupliziert wird und der
+   Wert des letzten Schlüssel den vorhergehenden überschreibt.
+
 ``setdefault``
---------------
+~~~~~~~~~~~~~~
 
 :py:meth:`setdefault <dict.setdefault>` kann verwendet werden, um Zähler für
 die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
@@ -66,24 +114,6 @@ die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
 
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
-
-Dictionaries zusammenführen
----------------------------
-
-Ihr könnt zwei Dictionaries zu einem einzigen Dictionary zusammenfügen mit der
-:py:meth:`dict.update`-Methode:
-
-.. code-block:: pycon
-
-   >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
-   >>> new_titles = {7.0: "Data types", 7.3: "Sets"}
-   >>> titles.update(new_titles)
-   >>> titles
-   {7.0: 'Data types', 7.1: 'Lists', 7.2: 'Tuples', 7.3: 'Sets'}
-
-.. note::
-   Die Reihenfolge der Operanden ist wichtig, da ``7.0`` dupliziert wird und der
-   Wert des letzten Schlüssel den vorhergehenden überschreibt.
 
 Erweiterungen
 -------------
