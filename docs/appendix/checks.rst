@@ -326,15 +326,8 @@ Checks
        File "<stdin>", line 1, in <module>
      TypeError: can't multiply sequence by non-int of type 'complex'
 
-* Wie könnt ihr eine Überschrift wie ``variables and expressions`` so abändern,
-  dass sie statt Leerzeichen Bindestriche  enthält und so besser als Dateinamen
-  verwendet werden kann?
-
-  .. code-block:: pycon
-
-     >>> ve = "variables and expressions"
-     >>> "-".join(ve.split())
-     'variables-and-expressions'
+:doc:`/types/strings/operators-functions`
+-----------------------------------------
 
 * Welche der folgenden Zeichenketten können nicht in Zahlen umgewandelt werden
   und warum?
@@ -357,6 +350,19 @@ Checks
      2
 
   .. blacken-docs:on
+
+:doc:`/types/strings/built-in-modules/string`
+---------------------------------------------
+
+* Wie könnt ihr eine Überschrift wie ``variables and expressions`` so abändern,
+  dass sie statt Leerzeichen Bindestriche  enthält und so besser als Dateinamen
+  verwendet werden kann?
+
+  .. code-block:: pycon
+
+     >>> ve = "variables and expressions"
+     >>> "-".join(ve.split())
+     'variables-and-expressions'
 
 * Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
   Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
@@ -389,6 +395,9 @@ Checks
      >>> hipy.translate(subs)
      'Hello-Pythonistas--'
 
+:doc:`/types/strings/built-in-modules/re`
+-----------------------------------------
+
 * Welchen regulären Ausdruck würdet ihr verwenden, um Zeichenfolgen zu finden,
   die die Zahlen zwischen -3 und +3 darstellen?
 
@@ -405,137 +414,8 @@ Checks
       kleinen oder großen ``x``, gefolgt von einem oder mehreren Zeichen in den
       Bereichen ``0-9``, ``a-f`` oder ``A-F``.
 
-:doc:`/types/files`
--------------------
-
-* Verwendet die Funktionen des :mod:`python3:os`-Moduls, um einen Pfad zu einer
-  Datei namens :file:`example.log` zu nehmen und einen neuen Dateipfad im selben
-  Verzeichnis für eine Datei namens :file:`example.log1` zu erstellen.
-
-  .. code-block:: pycon
-
-     >>> import os
-     >>> path = os.path.abspath("example.log")
-     >>> print(path)
-     /Users/veit/python-basics-tutorial-de/example.log
-     >>> new_path = f"{path}2"
-     >>> print(new_path)
-     /Users/veit/python-basics-tutorial-de/example.log2
-
-* Welche Bedeutung hat das Hinzufügen von ``b`` als Parameter von
-  :func:`python3:open`?
-
-  Dadurch wird die Datei im Binärmodus geöffnet, :abbr:`d.h. (das heißt)` es
-  werden Bytes und keine Zeichen gelesen und geschrieben.
-
-* Öffnet eine Datei :file:`my_file.txt` und fügt zusätzlichen Text am Ende der
-  Datei ein. Welchen Befehl würdet ihr verwenden, um :file:`my_file.txt` zu
-  öffnen? Welchen Befehl würdet ihr verwenden, um die Datei erneut zu öffnen und
-  von Anfang an zu lesen?
-
-  .. code-block:: pycon
-
-     >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythinistas!\n")
-     ...
-     17
-     >>> with open("my_file") as f:
-     ...     print(f.readlines())
-     ...
-     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
-
-* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
-  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
-  nützlich wäre?
-
-  * beim Lesen und Schreiben einer Binärdatei
-  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
-    gespeichert werden sollen, wie sie übermittelt wurden
-
-* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
-  Anwendungsfälle geeignet sein oder auch nicht:
-
-  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten ✅
-  #. Aufbewahren von Auswertungsergebnissen ❌, da Pickle abhängig von der
-     jeweiligen Python-Version sind
-  #. Speichern von Benutzernamen und Passwörtern ❌, da Pickle nicht sicher sind
-  #. Speichern eines großen Wörterbuchs mit englischen Begriffen ❌, da der
-     gesamte Pickle in den Speicher geladen werden müsste
-
-* Wenn ihr euch die `Manpage für das wc-Dienstprogramm
-  <https://linux.die.net/man/1/wc>`_ anseht, seht ihr zwei
-  Befehlszeilenoptionen:
-
-  ``-c``
-      zählt die Bytes in der Datei
-  ``-m``
-      zählt die Zeichen, die im Falle einiger Unicode-Zeichen zwei oder mehr
-      Bytes lang sein können
-
-  Außerdem sollte unser Modul, wenn eine Datei angegeben wird, aus dieser Datei
-  lesen und sie verarbeiten, aber wenn keine Datei angegeben wird, sollte es aus
-  ``stdin`` lesen und verarbeiten.
-
-  .. seealso::
-     :ref:`_wcargv_stdin.py <wcargv_stdin>`
-
-* Wenn ein Kontext-Manager in einem Skript verwendet wird, das mehrere Dateien
-  liest und/oder schreibt, welche der folgenden Ansätze wäre eurer Meinung nach
-  am besten?
-
-  #. Legt das gesamte Skript in einen Block, der von einer ``with``-Anweisung
-     verwaltet wird.
-  #. Verwendet eine ``with``-Anweisung für alle Lesevorgänge und eine weitere
-     für alle Schreibvorgänge.
-  #. Verwendet jedes Mal eine ``with``-Anweisung, wenn ihr eine Datei lest oder
-     schreibt, :abbr:`d.h. (das heißt)` für jede Zeile.
-  #. Verwendet für jede Datei, die ihr lest oder schreibt, eine
-     ``with``-Anweisung.
-
-  Wahrscheinlich ist 4. der beste Ansatz, da ein Teil der Aufgabe des
-  Kontextmanagers beim Dateizugriff darin besteht, sicherzustellen, dass eine
-  Datei geschlossen ist.
-
-* Archiviert :file:`*.txt`-Dateien aus dem aktuellen Verzeichnis im Verzeichnis
-  :file:`archive` als :file:`*.zip`-Dateien mit dem aktuellen Datum als
-  Dateiname.
-
-  * Welche Module benötigt ihr hierfür?
-
-    :mod:`python3:datetime`, :mod:`python3:pathlib` und :mod:`python3:zipfile`.
-
-  * Schreibt eine mögliche Lösung.
-
-    .. code-block:: pycon
-       :linenos:
-
-       >>> import datetime
-       >>> import pathlib
-       >>> import zipfile
-       >>> file_pattern = "*.txt"
-       >>> archive_path = "archive"
-       >>> today = f"{datetime.date.today():%Y-%m-%d}"
-       >>> cur_path = pathlib.Path(".")
-       >>> paths = cur_path.glob(file_pattern)
-       >>> zip_path = cur_path.joinpath(archive_path, today + ".zip")
-       >>> zip_file = zipfile.ZipFile(str(zip_path), "w")
-       >>> for path in paths:
-       ...     zip_file.write(str(path))
-       ...     path.unlink()
-       ...
-
-    Zeile 9
-        erstellt den Pfad zur ZIP-Datei im Archivverzeichnis.
-    Zeile 10
-        öffnet das neue ZIP-Dateiobjekt zum Schreiben; :func:`str` wird
-        benötigt, um einen Pfad in eine Zeichenkette umzuwandeln.
-    Zeile 12
-        schreibt die aktuelle Datei in die Zip-Datei.
-    Zeile 13
-        entfernt die aktuelle Datei aus dem Arbeitsverzeichnis.
-
-:doc:`/input`
--------------
+:doc:`/types/strings/input`
+---------------------------
 
 * Wie könnt ihr mit der :func:`input`-Funktion String- und Integer-Werte
   erhalten?
@@ -1129,3 +1009,132 @@ Checks
   .. seealso::
      Ein vollständiges Beispiel findet ihr in `github.com/veit/items
      <https://github.com/veit/items/>`_.
+
+:doc:`/save-data/files`
+-----------------------
+
+* Verwendet die Funktionen des :mod:`python3:os`-Moduls, um einen Pfad zu einer
+  Datei namens :file:`example.log` zu nehmen und einen neuen Dateipfad im selben
+  Verzeichnis für eine Datei namens :file:`example.log1` zu erstellen.
+
+  .. code-block:: pycon
+
+     >>> import os
+     >>> path = os.path.abspath("example.log")
+     >>> print(path)
+     /Users/veit/python-basics-tutorial-de/example.log
+     >>> new_path = f"{path}2"
+     >>> print(new_path)
+     /Users/veit/python-basics-tutorial-de/example.log2
+
+* Welche Bedeutung hat das Hinzufügen von ``b`` als Parameter von
+  :func:`python3:open`?
+
+  Dadurch wird die Datei im Binärmodus geöffnet, :abbr:`d.h. (das heißt)` es
+  werden Bytes und keine Zeichen gelesen und geschrieben.
+
+* Öffnet eine Datei :file:`my_file.txt` und fügt zusätzlichen Text am Ende der
+  Datei ein. Welchen Befehl würdet ihr verwenden, um :file:`my_file.txt` zu
+  öffnen? Welchen Befehl würdet ihr verwenden, um die Datei erneut zu öffnen und
+  von Anfang an zu lesen?
+
+  .. code-block:: pycon
+
+     >>> with open("my_file", "a") as f:
+     ...     f.write("Hi, Pythinistas!\n")
+     ...
+     17
+     >>> with open("my_file") as f:
+     ...     print(f.readlines())
+     ...
+     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
+
+* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
+  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
+  nützlich wäre?
+
+  * beim Lesen und Schreiben einer Binärdatei
+  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
+    gespeichert werden sollen, wie sie übermittelt wurden
+
+* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
+  Anwendungsfälle geeignet sein oder auch nicht:
+
+  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten ✅
+  #. Aufbewahren von Auswertungsergebnissen ❌, da Pickle abhängig von der
+     jeweiligen Python-Version sind
+  #. Speichern von Benutzernamen und Passwörtern ❌, da Pickle nicht sicher sind
+  #. Speichern eines großen Wörterbuchs mit englischen Begriffen ❌, da der
+     gesamte Pickle in den Speicher geladen werden müsste
+
+* Wenn ihr euch die `Manpage für das wc-Dienstprogramm
+  <https://linux.die.net/man/1/wc>`_ anseht, seht ihr zwei
+  Befehlszeilenoptionen:
+
+  ``-c``
+      zählt die Bytes in der Datei
+  ``-m``
+      zählt die Zeichen, die im Falle einiger Unicode-Zeichen zwei oder mehr
+      Bytes lang sein können
+
+  Außerdem sollte unser Modul, wenn eine Datei angegeben wird, aus dieser Datei
+  lesen und sie verarbeiten, aber wenn keine Datei angegeben wird, sollte es aus
+  ``stdin`` lesen und verarbeiten.
+
+  .. seealso::
+     :ref:`_wcargv_stdin.py <wcargv_stdin>`
+
+* Wenn ein Kontext-Manager in einem Skript verwendet wird, das mehrere Dateien
+  liest und/oder schreibt, welche der folgenden Ansätze wäre eurer Meinung nach
+  am besten?
+
+  #. Legt das gesamte Skript in einen Block, der von einer ``with``-Anweisung
+     verwaltet wird.
+  #. Verwendet eine ``with``-Anweisung für alle Lesevorgänge und eine weitere
+     für alle Schreibvorgänge.
+  #. Verwendet jedes Mal eine ``with``-Anweisung, wenn ihr eine Datei lest oder
+     schreibt, :abbr:`d.h. (das heißt)` für jede Zeile.
+  #. Verwendet für jede Datei, die ihr lest oder schreibt, eine
+     ``with``-Anweisung.
+
+  Wahrscheinlich ist 4. der beste Ansatz, da ein Teil der Aufgabe des
+  Kontextmanagers beim Dateizugriff darin besteht, sicherzustellen, dass eine
+  Datei geschlossen ist.
+
+* Archiviert :file:`*.txt`-Dateien aus dem aktuellen Verzeichnis im Verzeichnis
+  :file:`archive` als :file:`*.zip`-Dateien mit dem aktuellen Datum als
+  Dateiname.
+
+  * Welche Module benötigt ihr hierfür?
+
+    :mod:`python3:datetime`, :mod:`python3:pathlib` und :mod:`python3:zipfile`.
+
+  * Schreibt eine mögliche Lösung.
+
+    .. code-block:: pycon
+       :linenos:
+
+       >>> import datetime
+       >>> import pathlib
+       >>> import zipfile
+       >>> file_pattern = "*.txt"
+       >>> archive_path = "archive"
+       >>> today = f"{datetime.date.today():%Y-%m-%d}"
+       >>> cur_path = pathlib.Path(".")
+       >>> paths = cur_path.glob(file_pattern)
+       >>> zip_path = cur_path.joinpath(archive_path, today + ".zip")
+       >>> zip_file = zipfile.ZipFile(str(zip_path), "w")
+       >>> for path in paths:
+       ...     zip_file.write(str(path))
+       ...     path.unlink()
+       ...
+
+    Zeile 9
+        erstellt den Pfad zur ZIP-Datei im Archivverzeichnis.
+    Zeile 10
+        öffnet das neue ZIP-Dateiobjekt zum Schreiben; :func:`str` wird
+        benötigt, um einen Pfad in eine Zeichenkette umzuwandeln.
+    Zeile 12
+        schreibt die aktuelle Datei in die Zip-Datei.
+    Zeile 13
+        entfernt die aktuelle Datei aus dem Arbeitsverzeichnis.

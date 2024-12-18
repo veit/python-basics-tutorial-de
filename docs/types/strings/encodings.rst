@@ -1,6 +1,53 @@
 Unicode und Zeichenkodierungen
 ==============================
 
+Sonderzeichen und Escape-Sequenzen
+----------------------------------
+
+``\n`` steht für das *Newline*-Zeichen und ``\t`` für das Tabulator-Zeichen.
+Zeichenfolgen, die mit einem Backslash beginnen und zur Darstellung anderer
+Zeichen verwendet werden, werden Escape-Sequenzen genannt. Escape-Sequenzen
+werden in der Regel verwendet, um Sonderzeichen darzustellen, :abbr:`d.h. (das
+heißt)` Zeichen, für die es keine einstellige druckbare Darstellung gibt.
+
+Hier sind weitere Zeichen, die ihr mit dem Escape-Zeichen erhalten könnt:
+
++--------------------------+--------------------------+--------------------------+
+| Escape-Sequenz           | Ausgabe                  | Erläuterung              |
++==========================+==========================+==========================+
+| ``\\``                   | ``\``                    | Backslash                |
++--------------------------+--------------------------+--------------------------+
+| ``\'``                   | ``'``                    | einfaches                |
+|                          |                          | Anführungszeichen        |
++--------------------------+--------------------------+--------------------------+
+| ``\"``                   | ``"``                    | doppeltes                |
+|                          |                          | Anführungszeichen        |
++--------------------------+--------------------------+--------------------------+
+| ``\b``                   |                          | Backspace (``BS``)       |
++--------------------------+--------------------------+--------------------------+
+| ``\n``                   |                          | ASCII Linefeed ``(LF``)  |
++--------------------------+--------------------------+--------------------------+
+| ``\r``                   |                          | ASCII Carriage Return    |
+|                          |                          | (``CR``)                 |
++--------------------------+--------------------------+--------------------------+
+| ``\t``                   |                          | Tabulator (``TAB``)      |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\u{00B5}`         | ``µ``                    | Unicode 16 bit           |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\U{000000B5}`     | ``µ``                    | Unicode 32 bit           |
++--------------------------+--------------------------+--------------------------+
+| :samp:`\N{{SNAKE}}`      | ``🐍``                   | Unicode Emoji name       |
++--------------------------+--------------------------+--------------------------+
+
+Zeilen 1–7
+    Der ASCII-Zeichensatz, der von Python verwendet wird und der
+    Standard-Zeichensatz auf fast allen Computern ist, definiert eine ganze
+    Reihe weiterer Sonderzeichen.
+Zeilen 8–9
+    Unicode-Escape-Sequenzen.
+Zeile 10
+    Unicode-Namen zur Angabe eines Unicode-Zeichens.
+
 Es gibt Dutzende von Zeichenkodierungen. Einen Überblick über die Encodings von
 Python erhaltet ihr in :ref:`python3:encodings-overview`.
 
@@ -70,12 +117,12 @@ Codepunkten und definiert mehrere verschiedene Kodierungen aus einem einzigen
 Zeichensatz. UTF-8 ist ein Kodierungsschema für die Darstellung von
 Unicode-Zeichen als Binärdaten mit einem oder mehreren Bytes pro Zeichen.
 
-Kodierung und Dekodierung in Python 3
--------------------------------------
+Kodierung und Dekodierung
+-------------------------
 
 Der :ref:`str <python3:textseq>`-Typ ist für die Darstellung von
 menschenlesbarem Text gedacht und kann alle Unicode-Zeichen enthalten. Der
-:ref:`bytes-Typ <python3:typebytes>` hingegen repräsentiert Binärdaten, die
+:ref:`bytes <python3:typebytes>`-Typ hingegen repräsentiert Binärdaten, die
 nicht von vornherein mit einer Kodierung versehen sind.
 :meth:`python3:str.encode` und :meth:`python3:bytes.decode` sind die Methoden
 des Übergangs vom einen zum anderen:
