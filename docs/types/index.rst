@@ -49,5 +49,4 @@ speziellen Methodenattribute definiert habt, bearbeitet werden.
    sequences-sets/index
    dicts
    strings/index
-   files
    none
