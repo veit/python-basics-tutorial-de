@@ -6,7 +6,7 @@ Kollektion von Objekten. Anders als Listen in vielen anderen Sprachen können
 Python-Listen jedoch verschiedene Arten von Elementen enthalten; ein
 Listenelement kann ein beliebiges Python-Objekt sein, darunter
 :doc:`../strings/index`, :doc:`tuples`, :doc:`lists`, :doc:`../dicts`,
-:doc:`../../functions/index`, :doc:`../files` und jede Art von
+:doc:`../../functions/index`, :doc:`../../save-data/files` und jede Art von
 :doc:`../numbers/index`. Ihr erstellt eine Liste, indem ihr kein oder durch Komma
 getrennte Elemente in eckige Klammern einschließt, etwa so:
 

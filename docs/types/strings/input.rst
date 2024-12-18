@@ -1,5 +1,5 @@
-Input
-=====
+``input()``
+===========
 
 Ihr könnt die Funktion :func:`python3:input` verwenden, um Dateneingaben zu
 erhalten. Verwendet den Prompt-String, den ihr anzeigen möchtet, als Parameter
