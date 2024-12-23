@@ -32,8 +32,8 @@ In Python verlassen wir uns oft darauf, dass :class:`None` *falsy* ist:
    False
 
 So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
-<../control-flows/if-elif-else>` überprüfen, ob :doc:`../types/strings/index`
-leer sind:
+<../control-flow/conditional>` überprüfen, ob :doc:`../types/strings/index` leer
+sind:
 
 .. code-block:: pycon
 

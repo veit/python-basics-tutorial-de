@@ -148,9 +148,9 @@ wir :func:`mock.patch.object` als Kontextmanager verwenden:
 
 In unserem Testcode importieren wir ``items``. Das resultierende items-Objekt
 ist das, was wir patchen werden. Der Aufruf von :func:`mock.patch.object`, der
-als :doc:`Kontextmanager <../control-flows/with>` innerhalb eines
-``with``-Blocks verwendet wird, gibt ein Mock-Objekt zurück, das nach dem
-``with``-Block aufgeräumt wird:
+als :doc:`Kontextmanager <../control-flow/with>` innerhalb eines ``with``-Blocks
+verwendet wird, gibt ein Mock-Objekt zurück, das nach dem ``with``-Block
+aufgeräumt wird:
 
 #. In diesem Fall wird das Attribut ``__version__`` von ``items`` für die Dauer
    des ``with``-Blocks durch ``"100.0.0"`` ersetzt.
@@ -171,7 +171,7 @@ In :file:`src/items/cli.py` haben wir :func:`config` folgendermaßen definiert:
         with items_db() as db:
             print(db.path())
 
-:func:`items_db` ist ein :doc:`Kontextmanager <../control-flows/with>`, der ein
+:func:`items_db` ist ein :doc:`Kontextmanager <../control-flow/with>`, der ein
 ``items.ItemsDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
 ``db`` verwendet, um :func:`db.path` aufzurufen. Wir sollten hier also zwei
 Dinge zu mocken: ``items.ItemsDB`` und eine seiner Methoden, :func:`path`.

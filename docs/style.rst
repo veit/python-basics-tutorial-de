@@ -6,7 +6,7 @@ Einrückung und Blöcke
 
 Python unterscheidet sich von den meisten anderen Programmiersprachen, weil es
 Einrückungen verwendet, um die Struktur zu bestimmen (:abbr:`d.h.(das heißt)` um
-zu bestimmen, was die :doc:`while <control-flows/loops>`-Klausel einer Bedingung
+zu bestimmen, was die :doc:`while <control-flow/loops>`-Klausel einer Bedingung
 :abbr:`usw. (und so weiter)` darstellt). Die meisten anderen Sprachen verwenden
 dazu geschweifte Klammern. Im folgenden Beispiel wird durch die Einrückung der
 Zeilen 3–6 festgelegt, dass sie zur ``while``-Anweisung gehören:
@@ -78,7 +78,7 @@ ihr in der folgenden Tabelle:
 +-----------------------+-------------------------------+-------------------------------+
 | Vergleiche            | nicht explizit mit ``True``   | ``if my_var:``,               |
 |                       | oder ``False``,siehe auch     | ``if not my_var:``            |
-|                       | :doc:`control-flows/boolean`  |                               |
+|                       | :doc:`control-flow/boolean`   |                               |
 +-----------------------+-------------------------------+-------------------------------+
 
 .. seealso::
