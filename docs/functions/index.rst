@@ -8,7 +8,7 @@ Die grundlegende Syntax für eine Python-Funktionsdefinition lautet
     def function_name(param1, param2):
         body
 
-Wie bei :doc:`Kontrollströmen </control-flows/index>` verwendet Python
+Wie bei :doc:`Kontrollströmen </control-flow/index>` verwendet Python
 Einrückungen, um die Funktion von der Funktionsdefinition abzugrenzen. Das
 folgende einfache Beispiel fügt den Code in eine Funktion ein, so dass ihr diese
 aufrufen könnt, um die `Fakultät

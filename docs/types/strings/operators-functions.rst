@@ -56,10 +56,10 @@ verwenden, um Zeichenketten in Ganzzahl- bzw. Fließkommazahlen zu konvertieren.
 Wenn eine Zeichenkette übergeben wird, die nicht als Zahl des angegebenen Typs
 interpretiert werden kann, lösen diese Funktionen eine
 :class:`python3:ValueError`-Ausnahme aus. Ausnahmen werden in
-:doc:`../../control-flows/exceptions` ausführlicher erklärt. Darüber hinaus
-könnt ihr :class:`python3:int` einen optionalen zweiten
-:doc:`../../functions/params` übergeben, der die numerische Basis angibt, die
-bei der Interpretation der Zeichenfolge verwendet werden soll:
+:doc:`../../control-flow/exceptions` ausführlicher erklärt. Darüber hinaus könnt
+ihr :class:`python3:int` einen optionalen zweiten :doc:`../../functions/params`
+übergeben, der die numerische Basis angibt, die bei der Interpretation der
+Zeichenfolge verwendet werden soll:
 
 .. code-block:: pycon
    :linenos:

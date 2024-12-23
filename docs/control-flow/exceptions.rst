@@ -10,35 +10,31 @@ Ausnahmen für eure eigenen Zwecke definieren.
 
 Der gesamte Exception-Mechanismus in Python ist :doc:`objektorientiert
 </oop/index>`: Eine Exception ist ein Objekt, das automatisch von
-Python-Funktionen mit einer ``raise``-Anweisung erzeugt wird. Diese
-``raise``-Anweisung veranlasst die Ausführung des Python-Programms auf eine
-andere Art und Weise, als üblicherweise vorgesehen: Die aktuelle Aufrufkette
-wird nach einem Handler durchsucht, der die erzeugte Ausnahme behandeln kann.
-Wenn ein solcher Handler gefunden wird, wird er aufgerufen und kann auf das
-Ausnahmeobjekt zugreifen, um weitere Informationen zu erhalten. Wird kein
-geeigneter Exception-Handler gefunden, bricht das Programm mit einer
-Fehlermeldung ab.
+Python-Funktionen mit einer :ref:`raise <python3:raise>`-Anweisung erzeugt wird,
+:abbr:`z.B. (zum Beispiel)` mit:
 
-.. note::
-   Die Art und Weise, wie Python Fehlersituationen im Allgemeinen behandelt,
-   unterscheidet sich von manch anderen Sprachen, :abbr:`z.B. (zum Beispiel)`
-   Java. Diese Sprachen prüfen mögliche Fehler so weit wie möglich, bevor sie
-   auftreten, da die Behandlung von Exceptions nach ihrem Auftreten kostspielig
-   ist. Dies wird manchmal als :abbr:`LBYL (Look before you leap, Erst schauen,
-   dann springen)`-Ansatz bezeichnet.
+.. literalinclude:: exceptions.py
+   :language: python
+   :linenos:
+   :lines: 11-12
+   :lineno-start: 11
 
-   Bei Python hingegen verlässt man sich eher auf Exceptions, um Fehler zu
-   behandeln, nachdem sie aufgetreten sind. Obwohl dieses Vertrauen riskant
-   erscheinen mag, ist der Code weniger schwerfällig und leichter zu lesen, wenn
-   Exceptions richtig eingesetzt werden, und Fehler werden nur dann behandelt,
-   wenn sie auftreten. Diese pythonische Herangehensweise zur Behandlung von
-   Fehlern wird oft als :abbr:`EAFP (easier to ask forgiveness than permission,
-   engl.: leichter um Vergebung zu bitten als um Erlaubnis)` beschrieben.
+Diese :ref:`raise <python3:raise>`-Anweisung veranlasst die Ausführung des
+Python-Programms auf eine andere Art und Weise, als üblicherweise vorgesehen:
+Die aktuelle Aufrufkette wird nach einem Handler durchsucht, der die erzeugte
+Ausnahme behandeln kann. Wenn ein solcher Handler gefunden wird, wird er
+aufgerufen und kann auf das Ausnahmeobjekt zugreifen, um weitere Informationen
+zu erhalten, wie in unserem Beispiel :class:`EmptyFileError`:
 
-Es ist möglich, verschiedene Arten von Ausnahmen zu erzeugen, um die
-tatsächliche Ursache des gemeldeten Fehlers oder außergewöhnlichen Umstandes zu
-reflektieren. Eine Übersicht über die Klassenhierarchie eingebauter Exceptions
-erhaltet ihr unter `Exception hierarchy
+.. literalinclude:: exceptions.py
+   :language: python
+   :linenos:
+   :lines: 1-2
+
+Dies definiert euren eigenen Ausnahmetyp, der vom Basistyp ``Exception`` erbt.
+
+Eine Übersicht über die Klassenhierarchie eingebauter Exceptions erhaltet ihr
+unter `Exception hierarchy
 <https://docs.python.org/3/library/exceptions.html#exception-hierarchy>`_ in der
 Python-Dokumentation. Jeder Ausnahmetyp ist eine Python-Klasse, die von ihrem
 übergeordneten Exception-Typ erbt. So ist :abbr:`z.B. (zum Beispiel)` ein
@@ -48,13 +44,27 @@ meisten Ausnahmen erben von ``Exception``, und es wird dringend empfohlen, dass
 alle benutzerdefinierten Ausnahmen auch die Unterklasse von ``Exception``  und
 nicht von ``BaseException`` bilden:
 
+Es ist möglich, verschiedene Arten von Ausnahmen zu erzeugen, um die
+tatsächliche Ursache des gemeldeten Fehlers oder außergewöhnlichen Umstandes zu
+reflektieren.
+
+.. literalinclude:: exceptions.py
+   :language: python
+   :linenos:
+   :lines: 8-16
+   :lineno-start: 8
+
+Wenn während der Ausführung von :func:`open` im ``try``-Block ein ``OSError``
+oder ein ``EmptyFileError`` auftritt, wird der jeweils zugehörige
+``except``-Block ausgeführt.
+
+Wird kein geeigneter Exception-Handler gefunden, bricht das
+Programm mit einer Fehlermeldung ab.
+
 .. literalinclude:: exceptions.py
    :language: python
    :linenos:
    :lines: 1-2
-
-Dies definiert ihr euren eigenen Ausnahmetyp, der vom Basistyp ``Exception``
-erbt.
 
 .. literalinclude:: exceptions.py
    :language: python
@@ -93,6 +103,22 @@ Zeile 17
 Zeile 19
     Die ``finally``-Klausel ist optional; sie wird am Ende des Blocks
     ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht.
+
+.. note::
+   Die Art und Weise, wie Python Fehlersituationen im Allgemeinen behandelt,
+   unterscheidet sich von manch anderen Sprachen, :abbr:`z.B. (zum Beispiel)`
+   Java. Diese Sprachen prüfen mögliche Fehler so weit wie möglich, bevor sie
+   auftreten, da die Behandlung von Exceptions nach ihrem Auftreten kostspielig
+   ist. Dies wird manchmal als :abbr:`LBYL (Look before you leap, Erst schauen,
+   dann springen)`-Ansatz bezeichnet.
+
+   Bei Python hingegen verlässt man sich eher auf Exceptions, um Fehler zu
+   behandeln, nachdem sie aufgetreten sind. Obwohl dieses Vertrauen riskant
+   erscheinen mag, ist der Code weniger schwerfällig und leichter zu lesen, wenn
+   Exceptions richtig eingesetzt werden, und Fehler werden nur dann behandelt,
+   wenn sie auftreten. Diese pythonische Herangehensweise zur Behandlung von
+   Fehlern wird oft als :abbr:`EAFP (easier to ask forgiveness than permission,
+   engl.: leichter um Vergebung zu bitten als um Erlaubnis)` beschrieben.
 
 Checks
 ------
