@@ -128,7 +128,7 @@ Folgt uns auf…
    style
    variables-expressions
    types/index
-   control-flows/index
+   control-flow/index
    functions/index
    modules/index
    libs/index

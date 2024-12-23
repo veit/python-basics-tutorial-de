@@ -160,7 +160,7 @@ Fehlschlagen mit ``pytest.fail()`` und Exceptions
 
 Das Fehlschlagen von Behauptungen ist die Hauptursache dafür, dass Tests
 fehlgeschlagen. Aber das ist nicht der einzige Weg. Ein Test schlägt auch fehl,
-wenn es eine nicht abgefangene :doc:`/control-flows/exceptions` gibt. Das kann
+wenn es eine nicht abgefangene :doc:`/control-flow/exceptions` gibt. Das kann
 passieren, wenn
 
 * eine ``assert``-Anweisung fehlschlägt, was zu einer

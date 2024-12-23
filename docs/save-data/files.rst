@@ -43,7 +43,7 @@ absoluten Speicherort – :samp:`{C:\Meine Dokumente\\myfile.txt}`:
 
     In diesem Beispiel wird das Schlüsselwort ``with`` verwendet, :abbr:`d.h.
     (das heißt)`, dass die Datei mit einem Kontextmanager geöffnet wird, der
-    in :doc:`/control-flows/with` näher erläutert wird. Diese Art des Öffnens
+    in :doc:`/control-flow/with` näher erläutert wird. Diese Art des Öffnens
     von Dateien verwaltet mögliche I/O-Fehler besser und sollte im Allgemeinen
     bevorzugt werden.
 
@@ -67,7 +67,7 @@ nicht mehr benötigt wird:
     >>> line = f.readline()
     >>> f.close()
 
-Die Verwendung eines :doc:`/control-flows/with` bleibt meist jedoch die bessere
+Die Verwendung eines :doc:`/control-flow/with` bleibt meist jedoch die bessere
 Möglichkeit, um Dateien automatisch zu schließen, wenn ihr fertig seid:
 
 .. code-block:: pycon
