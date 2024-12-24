@@ -15,17 +15,16 @@ aufrufen könnt, um die `Fakultät
 <https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik)>`_ einer Zahl zu
 erhalten:
 
-.. code-block:: pycon
+.. code-block:: python
    :linenos:
 
-    >>> def fact(n):
-    ...     """Return the factorial of the given number."""
-    ...     f = 1
-    ...     while n > 0:
-    ...         f = f * n
-    ...         n = n - 1
-    ...     return f
-    ...
+    def fact(n):
+        """Return the factorial of the given number."""
+        f = 1
+        while n > 0:
+            f = f * n
+            n = n - 1
+        return f
 
 Zeile 2
     Dies ist ein optionaler Dokumentationsstring, oder ``docstring``. Ihr könnt
@@ -65,9 +64,45 @@ Rückgabewert einer Funktion verwendet wird:
 Zeile 1
     Der Rückgabewert ist nicht mit einer Variablen verknüpft.
 Zeile 2
-    Der Wert der ``fact``-Funktion wird nur im Interpreter ausgegeben.
+    Der Wert der :func:`fact`-Funktion wird nur im Interpreter ausgegeben.
 Zeile 3
     Der Rückgabewert ist mit der Variablen ``x`` verknüpft.
+
+Inspiriert durch :doc:`Python4DataScience:productive/qa/mypy` wurden in Python
+:abbr:`sog. (sogenannte)` *Type Hints* eingeführt, womit die Typen für
+:doc:`params` und Rückgabewerte definiert werden können, in unserem
+:func:`fact`-Beispiel mit:
+
+.. blacken-docs:off
+.. code-block:: python
+
+   def fact(n: int) -> int:
+       ...
+.. blacken-docs:on
+
+oder:
+
+.. blacken-docs:off
+.. code-block:: python
+
+   def factlist(flist: list[float]) -> list[float]:
+       ...
+.. blacken-docs:on
+
+Wir erhalten zur Laufzeit die Typen mit dem ``__annotations__``-Attribut:
+
+.. code-block:: pycon
+
+   >>> fact.__annotations__
+   {'n': <class 'int'>, 'return': <class 'int'>}
+   >>> factlist.__annotations__
+   {'list': list[float], 'return': list[float]}
+
+Es findet jedoch zur Laufzeit **keine** Typüberprüfung statt.
+
+.. seealso::
+   * :pep:`484`
+   * :doc:`python3:library/typing`
 
 .. toctree::
    :titlesonly:
