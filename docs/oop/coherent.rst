@@ -1,28 +1,28 @@
-Zusammenfassung
-===============
+Zusammenhängendes Beispiel
+==========================
 
 Die bisher angesprochenen Punkte, sind die Grundlagen der Verwendung von Klassen
-und Objekten in Python. Diese Grundlagen werde ich nun in einem einzigen
-Beispiel zusammenfassen:
+und Objekten in Python. Diese Grundlagen werde ich nun in einem
+zusammenhängenden Beispiel dargestellt: :download:`form.py`.
 
 #. Zunächst erstellen wir eine Basisklasse:
 
    .. literalinclude:: form.py
       :language: python
       :linenos:
-      :lines: 1-9
+      :lines: 1-12
       :lineno-start: 1
 
-   Zeile 4
+   Zeile 7
        Die ``__init__``-Methode benötigt eine Instanz (``self``) und zwei
        Parameter
-   Zeilen 5 und 6
+   Zeilen 8 und 9
        Auf die beiden Instanz-Variablen ``x`` und ``y``, auf die über ``self``
        zugegriffen wird.
-   Zeile 7
+   Zeile 10
        Die ``move``-Methode benötigt eine Instanz (``self``) und zwei
        Parameter.
-   Zeilen 8 und 9
+   Zeilen 11 und 12
        Instanz-Variablen, die in der ``move``-Methode gesetzt werden.
 
 #. Als nächstes erstellt eine Unterklasse, die von der Basisklasse ``Form``
@@ -31,16 +31,16 @@ Beispiel zusammenfassen:
    .. literalinclude:: form.py
       :language: python
       :linenos:
-      :lines: 11-17
-      :lineno-start: 11
+      :lines: 16-21
+      :lineno-start: 16
 
-   Zeile 11
+   Zeile 16
        Die Klasse ``Square`` erbt von der Klasse ``Form``.
-   Zeile 13
+   Zeile 19
        ``Square``’s ``__init__`` nimmt eine Instanz (``self``) und drei
        Parameter, alle mit Voreinstellungen.
-   Zeile 14
-       ``__init__`` von Circle verwendet ``super()``, um ``__init__`` von
+   Zeile 20
+       ``__init__`` von Square verwendet ``super()``, um ``__init__`` von
        ``Form`` aufzurufen.
 
 #. Schließlich erstellen wir eine weitere Unterklasse, die zudem eine statische
@@ -49,18 +49,18 @@ Beispiel zusammenfassen:
    .. literalinclude:: form.py
       :language: python
       :linenos:
-      :lines: 19-35
-      :lineno-start: 19
+      :lines: 27-43
+      :lineno-start: 27
 
-   Zeilen 21 und 22
+   Zeilen 29 und 30
        ``pi`` und ``circles`` sind Klassenvariablen für ``Circle``.
-   Zeile 26
+   Zeile 34
        In der ``__init__``-Methode fügt sich die Instanz in die Liste
        ``circles`` ein.
-   Zeilen 29 und 30
+   Zeilen 37 und 38
        ``circumferences`` ist eine Klassenmethode und nimmt die Klasse selbst
        (``cls``) als Parameter.
-   Zeile 33
+   Zeile 41
        verwendet den Parameter ``cls`` für den Zugriff auf die Klassenvariable
        ``circles``.
 
