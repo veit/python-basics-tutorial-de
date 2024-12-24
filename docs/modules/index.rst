@@ -12,21 +12,19 @@ Was ist ein Modul?
 
 Ein Modul ist eine Datei, die Code enthält. Sie definiert eine Gruppe von
 Python-Funktionen oder anderen Objekten, und der Name des Moduls wird vom Namen
-der Datei abgeleitet. Module enthalten meist Python-Quellcode, können aber auch
-kompilierte C- oder C++-Objektdateien sein. Kompilierte Module und
-Python-Source-Module werden auf die gleiche Weise verwendet.
-
-Module fassen nicht nur verwandte Python-Objekte zusammen, sondern helfen auch, Namenskonflikte zu vermeiden. Do könnt ihr für euer Programm ein Modul namens
-``mymodule`` schreiben, das eine Funktion namens ``my_func`` definiert. Im
-selben Programm möchtet ihr vielleicht auch ein anderes Modul namens
-``othermodule`` verwenden, das ebenfalls eine Funktion namens ``my_func``
-definiert, aber etwas anderes tut als eure ``my_func``-Funktion. Ohne Module
-wäre es unmöglich, zwei verschiedene Funktionen mit demelben Namen zu verwenden.
-Mit Modulen könnt ihr in eurem Hauptprogramm auf die Funktionen
-``mymodule.my_func`` und ``othermodule.my_func`` verweisen. Die Verwendung der
-Modulnamen sorgt dafür, dass die beiden ``my_func``-Funktionen nicht verwechselt
-werden, da Python :abbr:`sog. (sogenannte)` Namespaces verwendet. Ein Namespace
-ist im Wesentlichen ein Wörterbuch mit Bezeichnungen für die dort zur Verfügung
+der Datei abgeleitet. Module enthalten meist Python-Quellcode [#]_, fassen
+verwandte Python-Objekte zusammen und helfen, Namenskonflikte zu vermeiden. So
+könnt ihr für euer Programm ein Modul namens ``mymodule`` schreiben, das eine
+Funktion namens :func:`my_func` definiert. Im selben Programm möchtet ihr
+vielleicht auch ein anderes Modul namens ``othermodule`` verwenden, das
+ebenfalls eine Funktion namens :func:`my_func` definiert, aber etwas anderes tut
+als :func:`mymodule.my_func`. Ohne Module wäre es unmöglich, zwei verschiedene
+Funktionen mit demelben Namen zu verwenden. Mit Modulen könnt ihr in eurem
+Hauptprogramm auf die Funktionen :func:`mymodule.my_func` und
+:func:`othermodule.my_func` verweisen. Die Verwendung der Modulnamen sorgt
+dafür, dass die beiden :func:`my_func`-Funktionen nicht verwechselt werden, da
+Python :abbr:`sog. (sogenannte)` Namespaces verwendet. Ein Namespace ist im
+Wesentlichen ein Wörterbuch mit Bezeichnungen für die dort zur Verfügung
 stehenden Funktionen, Klassen, Module :abbr:`usw (und so weiter)`.
 
 Module werden auch verwendet, um Python selbst überschaubarer zu machen. Die
@@ -219,3 +217,9 @@ Checks
 * Schreibt eure Version des :mod:`wc`-Dienstprogramms so um, dass es sowohl die
   Unterscheidung zwischen Bytes und Zeichen als auch die Möglichkeit, aus
   Dateien und von der Standardeingabe zu lesen, implementiert.
+
+----
+
+.. [#] Module enthalten zwar meist Python-Quellcode, können aber auch
+   kompilierte C- oder C++-Objektdateien sein. Kompilierte Module und
+   Python-Source-Module werden auf die gleiche Weise verwendet.
