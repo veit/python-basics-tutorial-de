@@ -20,6 +20,7 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add type hints
 * 👥 Add license and acknowledgement
 * 📝 Add logging section from Python4DataScience
 * 🔧 📝 Add social media support
