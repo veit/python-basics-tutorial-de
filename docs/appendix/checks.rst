@@ -657,8 +657,9 @@ Checks
 :doc:`/functions/variables`
 ---------------------------
 
-* Angenommen, ``x = 1``, welchen Wert hat ``x`` nach der Ausführung von
-  ``func()`` und ``gfunc()``?
+* Angenommen, ``x = 1``, :func:`func` setze die lokale Variable ``x`` auf ``2``
+  und :func:`gfunc` die globale Variable ``x`` auf ``3``, welchen Wert nimmt
+  ``x`` an, nachdem :func:`func` und :func:`gfunc` durchlaufen wurden?
 
   .. code-block:: pycon
 
