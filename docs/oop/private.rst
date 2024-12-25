@@ -49,19 +49,19 @@ Die ``print_y``-Methode ist nicht privat, und da sie sich in der
     >>> m.print_y()
     2
 
-.. note::
+.. warning::
 
-    Der Mechanismus, der zur Gewährleistung der Privatsphäre verwendet wird,
-    verfälscht den Namen privater Variablen und privater Methoden, wenn der Code
-    zu Bytecode kompiliert wird. Konkret bedeutet dies, dass
-    :samp:`_{ClassName}` dem Variablennamen vorangestellt wird:
+   Der Mechanismus, der zur Gewährleistung der Privatsphäre verwendet wird,
+   verfälscht den Namen privater Variablen und privater Methoden, wenn der Code
+   zu Bytecode kompiliert wird. Konkret bedeutet dies, dass :samp:`_{ClassName}`
+   dem Variablennamen vorangestellt wird:
 
-    .. code-block:: pycon
+   .. code-block:: pycon
 
-        >>> dir(m)
-        ['_MyClass__y', '__class__', …]
+      >>> dir(m)
+      ['_MyClass__y', '__class__', …]
 
-    Damit soll also lediglich ein versehentlicher Zugriff verhindert werden.
+   Damit soll also lediglich ein versehentlicher Zugriff verhindert werden.
 
 Checks
 ------

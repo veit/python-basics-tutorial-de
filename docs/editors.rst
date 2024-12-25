@@ -1,6 +1,8 @@
 Editoren
 ========
 
+.. _interactive_shell:
+
 Interaktive Shell
 -----------------
 
