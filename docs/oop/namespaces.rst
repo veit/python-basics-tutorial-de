@@ -1,6 +1,21 @@
 Namensräume
 ===========
 
+Ein Namensraum ist eine Sammlung von aktuell definierten symbolischen Namen und
+Informationen über ein Objekt. Ihr könnt euch einen Namensraum als ein
+Wörterbuch vorstellen, in dem die Schlüssel die Objektnamen und die Werte die
+Objekte selbst sind. Jedes dieser Schlüssel-Wert-Paare ordnet einen Namen dem
+entsprechenden Objekt zu.
+
+    Namespaces are one honking great idea – let’s do more of those!
+
+– `The Zen of Python <https://peps.python.org/pep-0020/>`_, von Tim Peters
+
+Python verwendet Namensräume mittlerweile sehr ausgiebig. Einige davon haben wir
+bereits in :doc:`Funktionsvariablen <../functions/variables>` kennengelernt:
+:ref:`lokale <local_variables>`, :ref:`globale <global_variables>` und
+:ref:`nicht-lokale <nonlocal_variables>` Variablen.
+
 Wenn ihr euch in der Methode einer Klasse befindet, habt ihr direkten Zugriff
 
 #. auf den **lokalen Namensraum** mit den Parametern und Variablen, die in
@@ -22,7 +37,7 @@ erhaltet ihr mit
 .. literalinclude:: form_ns.py
     :language: python
     :linenos:
-    :lines: 65-70
+    :lines: 65-71
     :lineno-start: 65
 
 .. code-block:: pycon
@@ -30,6 +45,7 @@ erhaltet ihr mit
     >>> import form_ns
     >>> c1 = form_ns.Circle()
     >>> c1.namespaces()
+    ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BaseExceptionGroup', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EncodingWarning', 'EnvironmentError', 'Exception', 'ExceptionGroup', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'PythonFinalizationError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '_', '_IncompleteInputError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
     Global namespace: ['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__file__', '__cached__', '__builtins__', 'Form', 'Square', 'Circle']
     Superclass namespace: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'move']
     Class namespace: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'circles', 'circumference', 'circumferences', 'diameter', 'instance_variables', 'move', 'namespaces', 'pi']
@@ -65,8 +81,8 @@ mit der Methode ``instance_variables``:
 .. literalinclude:: form_ns.py
     :language: python
     :linenos:
-    :lines: 72-
-    :lineno-start: 72
+    :lines: 73-
+    :lineno-start: 73
 
 .. code-block:: pycon
 

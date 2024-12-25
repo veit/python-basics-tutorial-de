@@ -51,7 +51,7 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    coherent
    private
    property
-   namespaces
    types
+   namespaces
    dataclasses
    design/index

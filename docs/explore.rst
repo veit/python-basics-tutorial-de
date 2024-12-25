@@ -61,7 +61,7 @@ Methoden und Daten lokal oder für ein bestimmtes Objekt verfügbar sind:
    ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'x']
 
 So können wir uns :abbr:`z.B. (zum Beispiel)` mit ``dir(__builtins__)`` eine
-Liste dessen anzeigen lassen, was in der Python-Standardinstallation bereits
+Liste dessen anzeigen lassen, was in der Python-Standardbibliothek bereits
 verfügbar ist:
 
 .. code-block:: pycon

@@ -1,6 +1,8 @@
 Variablen
 =========
 
+.. _local_variables:
+
 Lokale Variablen
 ----------------
 
@@ -38,6 +40,8 @@ Variablen, die innerhalb einer Funktion durch eine Zuweisung erzeugt werden, wie
      File "<python-input-28>", line 1, in <module>
        n
    NameError: name 'n' is not defined
+
+.. _global_variables:
 
 Globale Variablen
 -----------------
@@ -78,6 +82,8 @@ Zuweisung diese globale Variable so, dass sie den Wert ``1`` anstelle des Wertes
 innerhalb von ``my_func`` verweist zunächst auf denselben Wert wie die Variable
 ``y`` außerhalb von ``my_func``, aber die Zuweisung bewirkt, dass ``y`` auf
 einen neuen Wert verweist, der für die Funktion ``my_func`` lokal ist.
+
+.. _nonlocal_variables:
 
 Nicht-lokale Variablen
 ----------------------
