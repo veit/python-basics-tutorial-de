@@ -1,8 +1,8 @@
 Python erkunden
 ===============
 
-Egal, ob ihr IDLE oder die interaktive Shell nutzt, es gibt einige nützliche
-Funktionen, um Python zu erkunden.
+Egal, ob ihr :ref:`idle` oder die :ref:`interactive_shell` nutzt, es gibt einige
+nützliche Funktionen, um Python zu erkunden.
 
 .. _help:
 
@@ -39,29 +39,32 @@ Typ- oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
      |
      |  __abs__(self, /)
      |      abs(self)
-    ...
+     ...
 
-``dir()``, ``globals()`` und ``locals()``
------------------------------------------
+So erfahrt ihr :abbr:`z.B. (zum Beispiel)`, dass ``x`` vom Typ ``float`` ist und
+eine Funktion :func:`__add__` hat, die ihr mit Punkt-Notation verwenden könnt:
 
-:py:func:`dir` ist eine weitere nützliche Funktion, die Objekte in einem
-bestimmten :doc:`Namensraum <oop/namespaces>` auflistet. Wenn ihr sie ohne
-Parameter verwendet, könnt ihr herausfinden, welche Methoden und Daten lokal
-verfügbar sind. Alternativ kann sie auch Objekte für ein Modul oder einen Typ
-auflisten.
+.. code-block:: pycon
+
+   >>> x.__add__(1)
+   5.2
+
+``dir()``
+---------
+
+:py:func:`dir` ist eine weitere nützliche Funktion um herauszufinden, welche
+Methoden und Daten lokal oder für ein bestimmtes Objekt verfügbar sind:
 
 .. code-block:: pycon
 
    >>> dir()
    ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'x']
-   >>> dir(x)
-   ['__abs__', '__add__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getformat__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__int__', '__le__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__pos__', '__pow__', '__radd__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rmod__', '__rmul__', '__round__', '__rpow__', '__rsub__', '__rtruediv__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', 'as_integer_ratio', 'conjugate', 'fromhex', 'hex', 'imag', 'is_integer', 'real']
 
-Im Gegensatz zu :py:func:`dir` zeigen sowohl :py:func:`globals` als auch
-:py:func:`locals` die mit den Objekten verbundenen Werte an. Aktuell geben beide
-Funktionen dasselbe zurück:
+So können wir uns :abbr:`z.B. (zum Beispiel)` mit ``dir(__builtins__)`` eine
+Liste dessen anzeigen lassen, was in der Python-Standardinstallation bereits
+verfügbar ist:
 
 .. code-block:: pycon
 
-   >>> globals()
-   {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'x': 4.2}
+   >>> dir(__builtins__)
+   ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BaseExceptionGroup', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EncodingWarning', 'EnvironmentError', 'Exception', 'ExceptionGroup', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'PythonFinalizationError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'ZeroDivisionError', '_', '_IncompleteInputError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'aiter', 'all', 'anext', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
