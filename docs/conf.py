@@ -181,6 +181,10 @@ html_static_path = ["_static"]
 html_logo = "_static/images/logo/logo.png"
 html_favicon = "_static/images/logo/favicon.ico"
 
+html_css_files = [
+    "css/cusy.css",
+]
+
 
 # -- Options for HTMLHelp output ---------------------------------------
 
