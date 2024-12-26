@@ -54,4 +54,3 @@ Python bietet volle Unterstützung für `Objektorientierte Programmierung
    types
    namespaces
    dataclasses
-   design/index

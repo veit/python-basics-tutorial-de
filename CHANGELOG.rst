@@ -51,6 +51,11 @@ Changed
   * Move the sqlite database test to unittest
   * Move Sphinx to a subchapter
 
+Removed
+~~~~~~~
+
+* Remove OOP design
+
 `24.3.0 <https://github.com/veit/python-basics-tutorial-de/compare/24.2.0...24.3.0>`_
 -------------------------------------------------------------------------------------
 
