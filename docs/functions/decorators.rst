@@ -65,10 +65,6 @@ Zeile 7
     Die umhüllte Funktion wird aufgerufen, nachdem die Dekorator-Funktion fertig
     ist.
 
-.. tip::
-   `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
-
 ``functools``
 -------------
 
@@ -138,3 +134,7 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
         'wrapper'
         >>> example.__doc__
         'Wrapper docstring'
+
+.. tip::
+   `cusy Seminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
