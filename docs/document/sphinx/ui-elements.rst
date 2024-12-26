@@ -1,58 +1,51 @@
 UI-Elemente und Interaktionen
 =============================
 
-.. rst:role:: guilabel
+Für die Dokumentation des User Interfaces und dessen Interaktionen stellt Sphinx
+drei verschiedene Rollen bereit: ``guilabel``, ``kbd`` und ``menuselection``:
 
-   Label, die als Teil einer interaktiven Benutzeroberfläche dargestellt werden,
-   sollten mit :rst:role:`guilabel` gekennzeichnet werden. Jede in der
-   Oberfläche verwendete Beschriftung sollte mit dieser Rolle gekennzeichnet
-   werden, einschließlich Beschriftung von Schaltflächen, Fenstertiteln,
-   Feld-, Menü- und Menüauswahl-Namen und sogar Werte in Auswahllisten.
+.. list-table::
+   :header-rows: 1
 
-   Ein Tastenkürzel für die GUI-Beschriftung kann mit einem et-Zeichen (&)
-   eingefügt werden; dieses führt in der Ausgabe zur Unterstreichung des
-   Folgebuchstabens.
+   * - Eingabe
+     - Ausgabe
+     - Anmerkungen
+   * - .. code-block:: rest
 
-   :guilabel:`&Cancel` erzielt ihr :abbr:`z.B. (zum Beispiel)` mit folgender
-   Auszeichnung:
+          :guilabel:`Cancel`
+     -  :guilabel:`Cancel`
+     - Jede im User Interface verwendete Beschriftung kann mit dieser Rolle
+       gekennzeichnet werden, einschließlich der Beschriftung von Schaltflächen,
+       Fenstertiteln, Feld-, Menü- und Menüauswahl-Namen und Werten in
+       Auswahllisten.
+   * - .. code-block:: rest
 
-   .. code-block:: rest
+          :guilabel:`&Cancel`
+     -  :guilabel:`&Cancel`
+     - Tastenkürzel für die GUI-Beschriftung können mit einem et-Zeichen (``&``)
+       eingefügt werden; dieses führt in der Ausgabe zur Unterstreichung des
+       Folgebuchstabens.
 
-      :guilabel:`&Cancel`
+       .. note::
+          Wenn ihr ein et-Zeichen einfügen wollt, könnt ihr es einfach
+          verdoppeln.
+   * - .. code-block:: rest
 
-   .. note::
-      Wenn ihr ein et-Zeichen einfügen wollt, könnt ihr es einfach verdoppeln.
+          :kbd:`Ctrl-s`
+     -  :kbd:`Ctrl-s`
+     - Dies stellt eine Folge von Tasteneingaben dar. Welche Form die
+       Tastenfolge hat, kann von plattform- oder anwendungsspezifischen
+       Konventionen abhängen. Dabei sollten die Namen von Modifikatortasten
+       ausgeschrieben werden, um die Zugänglichkeit zu verbessern.
+       Tastaturbeschriftung referenziert werden.
+   * - .. code-block:: rest
 
-.. rst:role:: kbd
+          :menuselection:`File --> Save`
+     - :menuselection:`File --> Save`
+     - Eine Menüauswahl wird mit der Rolle ``menuselection`` gekennzeichnet.
+       Diese markiert komplette Sequenz, einschließlich der Auswahl von
+       Untermenüs, bestimmter Operationen oder beliebiger Untersequenzen. Die
+       Namen der einzelnen Auswahlen werden durch ``-->`` getrennt.
 
-   Dies stellt eine Folge von Tasteneingaben dar. Welche Form die Tastenfolge
-   hat, kann von plattform- oder anwendungsspezifischen Konventionen abhängen.
-   Wenn es keine entsprechenden Konventionen gibt, sollten die Namen von
-   Modifikatortasten ausgeschrieben werden, um die Zugänglichkeit zu verbessern.
-   Auch sollte nicht auf eine bestimmte Tastaturbeschriftung referenziert
-   werden.
-
-   :kbd:`Ctrl-s` erzielt ihr :abbr:`z.B. (zum Beispiel)` mit folgender
-   Auszeichnung:
-
-   .. code-block:: rest
-
-      :kbd:`Ctrl-s`
-
-.. rst:role:: menuselection
-
-   Eine Menüauswahl sollte mit der Rolle ``menuselection`` markiert werden.
-   Diese wird verwendet, um eine komplette Sequenz zu markieren, einschließlich
-   der Auswahl von Untermenüs und der Auswahl bestimmter Operationen oder
-   beliebiger Untersequenzen. Die Namen der einzelnen Auswahlen sollten durch
-   ``-->`` getrennt werden.
-
-   :menuselection:`View --> Cell Toolbar --> Slideshow` erzielt ihr :abbr:`z.B.
-   (zum Beispiel)` mit folgender Auszeichnung:
-
-   .. code-block:: rest
-
-      :menuselection:`View --> Cell Toolbar --> Slideshow`
-
-   :rst:role:`menuselection` unterstützt genau wie :rst:role:`guilabel` auch
-   Tastaturkürzel mit einem et-Zeichen (&).
+       :rst:role:`menuselection` unterstützt genau wie :rst:role:`guilabel`
+       Tastaturkürzel mit einem et-Zeichen (``&``).
