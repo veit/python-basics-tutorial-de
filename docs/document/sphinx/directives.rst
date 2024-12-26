@@ -8,12 +8,6 @@ werden. Sphinx macht hiervon ausgiebig Gebrauch. Hier sind einige Beispiele:
 Inhaltsverzeichnis
 ------------------
 
-.. toctree::
-   :maxdepth: 2
-
-   start
-   docstrings
-
 .. code-block:: rest
 
    .. toctree::
@@ -21,6 +15,7 @@ Inhaltsverzeichnis
 
       start
       docstrings
+      ...
 
 Meta-Informationen
 ~~~~~~~~~~~~~~~~~~
