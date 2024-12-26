@@ -7,10 +7,6 @@ bietet einen speziellen :doc:`Dekorator <../functions/decorators>`, wenn wir ein
 Klasse erstellen wollen.
 
 .. tip::
-   `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
-
-.. tip::
    Für Tabellendaten verwende ich im Allgemeinen :doc:`pandas Series oder
    DataFrames <Python4DataScience:workspace/pandas/data-structures>` und wenn
    ich Matrizen mit Zahlen speichern muss, verwende ich :doc:`Numpy
@@ -63,3 +59,7 @@ der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
    ... }
    >>> Item.from_dict(item_dict)
    Item(summary='My first item', owner='veit', state='todo', id=1)
+
+.. tip::
+   `cusy Seminar: Fortgeschrittenes Python
+   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
