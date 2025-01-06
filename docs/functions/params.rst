@@ -1,7 +1,8 @@
 Parameter
 =========
 
-Python bietet flexible Mechanismen zur Übergabe von Argumenten an Funktionen:
+Python bietet flexible Mechanismen zur Übergabe von :term:`Argumenten
+<Argument>` an :term:`Funktionen <Funktion>`:
 
 .. code-block:: pycon
    :linenos:

@@ -1,9 +1,9 @@
 Kontrollflüsse
 ==============
 
-Python verfügt über eine ganze Reihe von Strukturen zur Kontrolle der
-Code-Ausführung und des Programmablaufs, einschließlich gängiger Verzweigungen
-und Schleifen:
+Python verfügt über eine ganze Reihe von :term:`Kontrollflüssen
+<Kontrollfluss>` um die  Code-Ausführung und den Programmablauf, einschließlich
+gängiger Verzweigungen und Schleifen, zu steuern:
 
 :doc:`boolean`
     überprüfen Werte und Identität und ermöglichen Verknüpfungen zwischen

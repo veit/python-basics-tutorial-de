@@ -106,6 +106,8 @@ anwendet:
    verschoben werden. So wird ``instance.method(arg1, arg2, …)`` zu
    ``class.method(instance, arg1, arg2, …)``.
 
+.. _staticmethod:
+
 Statische Methoden
 ------------------
 
@@ -132,6 +134,8 @@ Zeile 14
     >>> c2.diameter = 3
     >>> circle.Circle.circumferences()
     12.56636
+
+.. _classmethod:
 
 Klassenmethoden
 ---------------

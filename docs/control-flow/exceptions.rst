@@ -1,12 +1,13 @@
 Exceptions
 ==========
 
-In diesem Abschnitt geht es um Ausnahmen, :abbr:`d.h. (das heißt)` um
-Sprachfunktionen, die speziell ungewöhnliche Umstände während der Ausführung
-eines Programms behandeln. Die häufigste Ausnahme ist die Behandlung von
-Fehlern, aber sie können auch für viele andere Zwecke effektiv eingesetzt
-werden. Python bietet einen umfassenden Satz von Ausnahmen, und ihr könnt neue
-Ausnahmen für eure eigenen Zwecke definieren.
+In diesem Abschnitt geht es um :term:`Ausnahmen <Ausnahme>` (englisch
+*exceptions*), :abbr:`d.h. (das heißt)` um Sprachfunktionen, die speziell
+ungewöhnliche Umstände während der Ausführung eines Programms behandeln. Die
+häufigste Ausnahme ist die Behandlung von Fehlern, aber sie können auch für
+viele andere Zwecke effektiv eingesetzt werden. Python bietet einen umfassenden
+Satz von Ausnahmen, und ihr könnt neue Ausnahmen für eure eigenen Zwecke
+definieren.
 
 Eine Exception ist ein Objekt, das automatisch von Python-Funktionen mit einer
 :ref:`raise <python3:raise>`-Anweisung erzeugt wird, :abbr:`z.B. (zum Beispiel)`
@@ -97,16 +98,14 @@ Zeile 19
    unterscheidet sich von manch anderen Sprachen, :abbr:`z.B. (zum Beispiel)`
    Java. Diese Sprachen prüfen mögliche Fehler so weit wie möglich, bevor sie
    auftreten, da die Behandlung von Exceptions nach ihrem Auftreten kostspielig
-   ist. Dies wird manchmal als :abbr:`LBYL (Look before you leap, Erst schauen,
-   dann springen)`-Ansatz bezeichnet.
+   ist. Dies wird manchmal als :term:`LBYL`-Ansatz bezeichnet.
 
    Bei Python hingegen verlässt man sich eher auf Exceptions, um Fehler zu
    behandeln, nachdem sie aufgetreten sind. Obwohl dieses Vertrauen riskant
    erscheinen mag, ist der Code weniger schwerfällig und leichter zu lesen, wenn
    Exceptions richtig eingesetzt werden, und Fehler werden nur dann behandelt,
    wenn sie auftreten. Diese pythonische Herangehensweise zur Behandlung von
-   Fehlern wird oft als :abbr:`EAFP (easier to ask forgiveness than permission,
-   engl.: leichter um Vergebung zu bitten als um Erlaubnis)` beschrieben.
+   Fehlern wird oft als :term:`EAFP` beschrieben.
 
 Checks
 ------
@@ -128,5 +127,4 @@ Checks
 
 * Handelt es sich bei der Überprüfung, ob ein Objekt eine Liste ist
   (:ref:`Check: list <check-list>`) um eine Programmierung im Stil von
-  :abbr:`LBYL (look before you leap)` oder :abbr:`EAFP (easier to ask
-  forgiveness than permission)`?
+  :term:`LBYL` oder :term:`EAFP`?

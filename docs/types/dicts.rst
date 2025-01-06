@@ -23,10 +23,10 @@ wie :doc:`sequences-sets/lists` und :doc:`dicts`.
    >>> dict["2022-02-03"] = -0.268295
 
 Wenn ihr versucht, auf den Wert eines Schlüssels zuzugreifen, der nicht im
-Dictionary enthalten ist, wird eine ``KeyError``-Exception ausgelöst. Um diesen
-Fehler zu vermeiden, gibt die Dictionary-Methode ``get`` optional einen
-benutzerdefinierten Wert zurück, wenn ein Schlüssel nicht in einem Wörterbuch
-enthalten ist.
+Dictionary enthalten ist, wird eine ``KeyError``-:doc:`/control-flow/exceptions`
+ausgelöst. Um diesen Fehler zu vermeiden, gibt die Dictionary-Methode ``get``
+optional einen benutzerdefinierten Wert zurück, wenn ein Schlüssel nicht in
+einem Wörterbuch enthalten ist.
 
 .. code-block:: pycon
 
