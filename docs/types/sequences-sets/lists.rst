@@ -273,7 +273,7 @@ um zu bestimmen, wie die Elemente einer Liste sortiert werden sollen.
 Die Standard-``key``-Methode, die von :meth:`python3:list.sort` verwendet wird,
 erfordert jedoch, dass alle Elemente in der Liste von vergleichbarem Typ sind.
 In einer Liste, die sowohl Zahlen als auch Zeichenketten enthält, wird daher
-eine :class:`python3:Exception` ausgelöst:
+eine :term:`Exception` ausgelöst:
 
 .. code-block:: pycon
 

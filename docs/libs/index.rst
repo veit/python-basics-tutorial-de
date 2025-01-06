@@ -14,4 +14,3 @@ Initialisierungsdatei für jedes Paket oder Unterpaket.
 
    batteries
    install
-   glossary

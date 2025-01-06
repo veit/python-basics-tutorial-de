@@ -125,8 +125,8 @@ eines Objekts oder einer Klasse korrekt zu bestimmen. Python hat jedoch auch
 eine Funktion, die die Verwendung von Objekten noch einfacher macht:
 Duck-Typing:
 
-    *„If it walks like a duck and it quacks like a duck, then it must be a
-    duck.“*
+    „Wenn es wie eine Ente aussieht und wie eine Ente quakt, muss es eine
+    Ente sein.“
 
 Dies bezieht sich auf Pythons Art und Weise zu bestimmen, ob ein Objekt der
 erforderliche Typ für eine Operation ist, wobei der Schwerpunkt auf der

@@ -22,6 +22,8 @@ Beispiel)`:
    ... )
    Pi ist 3.141592653589793 und der Umfang bei einem Durchmesser von 28 Zoll ist 87.96459430051421 Zoll.
 
+.. _f-strings:
+
 F-Strings
 ---------
 

@@ -155,6 +155,8 @@ Wenn wir den Test nun mit Python durchführen, erhalten wir folgendes Ergebnis:
 Das sagt uns nicht viel. Die pytest-Ausgabe gibt uns viel mehr Informationen
 darüber, warum unsere Annahmen fehlgeschlagen sind.
 
+.. _pytest_fail:
+
 Fehlschlagen mit ``pytest.fail()`` und Exceptions
 -------------------------------------------------
 

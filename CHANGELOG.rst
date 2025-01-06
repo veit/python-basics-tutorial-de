@@ -36,6 +36,7 @@ Added
 Changed
 ~~~~~~~
 
+* 🎨 Rearrange glossaries
 * 📝 Update conda term
 * 📝 Update GitLab package registry
 * 📝 Expand the pytest plugins section
