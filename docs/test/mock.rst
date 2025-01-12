@@ -298,10 +298,10 @@ aufgerufen hat. Die Implementierung des Befehls :func:`add` ruft schließlich
 .. code-block:: python
    :emphasize-lines: 4
 
-    def test_add_with_owner(mock_itemsdb, items_cli):
-        items_cli("add some task -o veit")
-        expected = items.Item("some task", owner="veit", state="todo")
-        mock_itemsdb.add_item.assert_called_with(expected)
+   def test_add_with_owner(mock_itemsdb, items_cli):
+       items_cli("add some task -o veit")
+       expected = items.Item("some task", owner="veit", state="todo")
+       mock_itemsdb.add_item.assert_called_with(expected)
 
 Wenn :func:`add_item` nicht aufgerufen wird oder mit dem falschen Typ oder dem
 falschen Objektinhalt aufgerufen wird, schlägt der Test fehl. Wenn wir
@@ -311,23 +311,23 @@ schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
 .. code-block:: pytest
    :emphasize-lines: 10-13, 16
 
-    $ pytest -s tests/cli/test_add.py::test_add_with_owner
-    ============================= test session starts ==============================
-    ...
-    configfile: pyproject.toml
-    plugins: cov-4.1.0, Faker-19.11.0
-    collected 1 item
+   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   ============================= test session starts ==============================
+   ...
+   configfile: pyproject.toml
+   plugins: cov-4.1.0, Faker-19.11.0
+   collected 1 item
 
-    tests/cli/test_add.py F
-    ...
-    >           raise AssertionError(_error_message()) from cause
-    E           AssertionError: expected call not found.
-    E           Expected: add_item(Item(summary='some task', owner='Veit', state='todo', id=None))
-    E           Actual: add_item(Item(summary='some task', owner='veit', state='todo', id=None))
-    ...
-    =========================== short test summary info ============================
-    FAILED tests/cli/test_add.py::test_add_with_owner - AssertionError: expected call not found.
-    ============================== 1 failed in 0.08s ===============================
+   tests/cli/test_add.py F
+   ...
+   >           raise AssertionError(_error_message()) from cause
+   E           AssertionError: expected call not found.
+   E           Expected: add_item(Item(summary='some task', owner='Veit', state='todo', id=None))
+   E           Actual: add_item(Item(summary='some task', owner='veit', state='todo', id=None))
+   ...
+   =========================== short test summary info ============================
+   FAILED tests/cli/test_add.py::test_add_with_owner - AssertionError: expected call not found.
+   ============================== 1 failed in 0.08s ===============================
 
 .. seealso::
    Es gibt eine ganze Reihe von Varianten von :func:`assert_called`. Eine
@@ -408,12 +408,12 @@ folgendermaßen testen:
 
 .. code-block:: python
 
-    def test_add_with_owner(items_db, items_cli):
-        items_cli("add some task -o veit")
-        expected = items.Item("some task", owner="veit", state="todo")
-        all = items_db.list_items()
-        assert len(all) == 1
-        assert all[0] == expected
+   def test_add_with_owner(items_db, items_cli):
+       items_cli("add some task -o veit")
+       expected = items.Item("some task", owner="veit", state="todo")
+       all = items_db.list_items()
+       assert len(all) == 1
+       assert all[0] == expected
 
 Mocking testet die Implementierung der Befehlszeilenschnittstelle und stellt
 sicher, dass ein API-Aufruf mit bestimmten Parametern erfolgt. Beim
@@ -425,16 +425,16 @@ schnell:
 
 .. code-block:: pytest
 
-    $ pytest -s tests/cli/test_add.py::test_add_with_owner
-    ============================= test session starts ==============================
-    ...
-    configfile: pyproject.toml
-    plugins: cov-4.1.0, Faker-19.11.0
-    collected 1 item
+   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   ============================= test session starts ==============================
+   …
+   configfile: pyproject.toml
+   plugins: cov-4.1.0, Faker-19.11.0
+   collected 1 item
 
-    tests/cli/test_add.py .
+   tests/cli/test_add.py .
 
-    ============================== 1 passed in 0.03s ===============================
+   ============================== 1 passed in 0.03s ===============================
 
 Wir könnten Mocking auch auf eine andere Weise vermeiden. Wir könnten das
 Verhalten vollständig über die CLI testen. Dazu müsste möglicherweise die

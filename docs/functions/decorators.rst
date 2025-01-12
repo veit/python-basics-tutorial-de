@@ -11,21 +11,21 @@ kann dann anstelle der ursprünglichen Funktion verwendet werden:
 .. code-block:: pycon
    :linenos:
 
-    >>> def inf(func):
-    ...     print("Information about", func.__name__)
-    ...     def details(*args):
-    ...         print("Execute function", func.__name__, "with the argument(s)")
-    ...         return func(*args)
-    ...     return details
-    ...
-    >>> def my_func(*params):
-    ...     print(params)
-    ...
-    >>> my_func = inf(my_func)
-    Information about my_func
-    >>> my_func("Hello", "Pythonistas!")
-    Execute function my_func with the argument(s)
-    ('Hello', 'Pythonistas!')
+   >>> def inf(func):
+   ...     print("Information about", func.__name__)
+   ...     def details(*args):
+   ...         print("Execute function", func.__name__, "with the argument(s)")
+   ...         return func(*args)
+   ...     return details
+   ...
+   >>> def my_func(*params):
+   ...     print(params)
+   ...
+   >>> my_func = inf(my_func)
+   Information about my_func
+   >>> my_func("Hello", "Pythonistas!")
+   Execute function my_func with the argument(s)
+   ('Hello', 'Pythonistas!')
 
 Zeile 2
     Die ``inf``-Funktion gibt den Namen der Funktion, die sie umhüllt, aus.
@@ -50,14 +50,14 @@ zurückgeben, wie folgt:
 .. code-block:: pycon
    :linenos:
 
-    >>> @inf
-    ... def my_func(*params):
-    ...     print(params)
-    ...
-    Information about my_func
-    >>> my_func("Hello", "Pythonistas!")
-    Execute function my_func with the argument(s)
-    ('Hello', 'Pythonistas!')
+   >>> @inf
+   ... def my_func(*params):
+   ...     print(params)
+   ...
+   Information about my_func
+   >>> my_func("Hello", "Pythonistas!")
+   Execute function my_func with the argument(s)
+   ('Hello', 'Pythonistas!')
 
 Zeile 1
     Die Funktion ``my_func`` wird mit ``@inf`` dekoriert.

@@ -81,7 +81,9 @@ Parsen mit ElementTree
 
    .. code-block:: pycon
 
-      <Element 'catalog' at 0x10b009620>
+      >>> from elementtree_example import parseXML
+      >>> parseXML("books.xml")
+      <Element 'catalog' at 0x101863790>
       tag=catalog, attrib={}
 
 #. Ausgeben der XML-Kindelemente von ``book``:
@@ -93,6 +95,10 @@ Parsen mit ElementTree
 
    .. code-block:: pycon
 
+      >>> from elementtree_example import parseXML
+      >>> parseXML("books.xml")
+      <Element 'catalog' at 0x101863790>
+      tag=catalog, attrib={}
       book {'id': '1'}
       title
       language
@@ -111,6 +117,9 @@ Parsen mit ElementTree
 
    .. code-block:: pycon
 
+      >>> from elementtree_example import parseXML
+      >>> parseXML("books.xml")
+      ...
       --------------------
       Iterating using iter
       --------------------

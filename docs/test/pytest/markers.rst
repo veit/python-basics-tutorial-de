@@ -76,21 +76,21 @@ Und er scheitert:
 
 .. code-block:: pytest
 
-    pytest --tb=short tests/test_compare.py
-    ============================= test session starts ==============================
-    ...
-    collected 2 items
+   pytest --tb=short tests/test_compare.py
+   ============================= test session starts ==============================
+   …
+   collected 2 items
 
-    tests/test_compare.py F.                                                 [100%]
+   tests/test_compare.py F.                                                 [100%]
 
-    =================================== FAILURES ===================================
-    ________________________________ test_less_than ________________________________
-    tests/test_compare.py:7: in test_less_than
-        assert i1 < i2
-    E   TypeError: '<' not supported between instances of 'Item' and 'Item'
-    =========================== short test summary info ============================
-    FAILED tests/test_compare.py::test_less_than - TypeError: '<' not supported between instances of 'Item' and 'Item'
-    ========================= 1 failed, 1 passed in 0.03s ==========================
+   =================================== FAILURES ===================================
+   ________________________________ test_less_than ________________________________
+   tests/test_compare.py:7: in test_less_than
+       assert i1 < i2
+   E   TypeError: '<' not supported between instances of 'Item' and 'Item'
+   =========================== short test summary info ============================
+   FAILED tests/test_compare.py::test_less_than - TypeError: '<' not supported between instances of 'Item' and 'Item'
+   ========================= 1 failed, 1 passed in 0.03s ==========================
 
 Der Fehler liegt einfach daran, dass wir diese Funktion noch nicht implementiert
 haben. Dennoch müssen wir diesen Test nicht wieder wegwerfen; wir können ihn
@@ -99,50 +99,50 @@ einfach auslassen:
 .. code-block:: python
    :emphasize-lines: 1, 6
 
-    import pytest
+   import pytest
 
-    from items import Item
+   from items import Item
 
 
-    @pytest.mark.skip(reason="Items do not yet allow a < comparison")
-    def test_less_than():
-        i1 = Item("Update pytest section")
-        i2 = Item("Update cibuildwheel section")
-        assert i1 < i2
+   @pytest.mark.skip(reason="Items do not yet allow a < comparison")
+   def test_less_than():
+       i1 = Item("Update pytest section")
+       i2 = Item("Update cibuildwheel section")
+       assert i1 < i2
 
 Der Marker ``@pytest.mark.skip()`` weist pytest an, den Test zu überspringen.
 Die Angabe eines Grundes ist zwar optional, aber sie hilft bei der weiteren
 Entwicklung.  Wenn wir übersprungene Tests ausführen, werden sie als ``s``
 angezeigt:
 
-.. code-block::
+.. code-block:: pytest
    :emphasize-lines: 6
 
-    $ pytest --tb=short tests/test_compare.py
-    ============================= test session starts ==============================
-    ...
-    collected 2 items
+   $ pytest --tb=short tests/test_compare.py
+   ============================= test session starts ==============================
+   …
+   collected 2 items
 
-    tests/test_compare.py s.                                                 [100%]
+   tests/test_compare.py s.                                                 [100%]
 
-    ========================= 1 passed, 1 skipped in 0.00s =========================
+   ========================= 1 passed, 1 skipped in 0.00s =========================
 
-… oder verbos als ``SKIPPED``:
+oder verbos als ``SKIPPED``:
 
-.. code-block::
+.. code-block:: pytest
    :emphasize-lines: 1, 10
 
-    $ pytest -v -ra tests/test_compare.py
-    ============================= test session starts ==============================
-    ...
-    collected 2 items
+   $ pytest -v -ra tests/test_compare.py
+   ============================= test session starts ==============================
+   …
+   collected 2 items
 
-    tests/test_compare.py::test_less_than SKIPPED (Items do not yet allo...) [ 50%]
-    tests/test_compare.py::test_equality PASSED                              [100%]
+   tests/test_compare.py::test_less_than SKIPPED (Items do not yet allo...) [ 50%]
+   tests/test_compare.py::test_equality PASSED                              [100%]
 
-    =========================== short test summary info ============================
-    SKIPPED [1] tests/test_compare.py:6: Items do not yet allow a < comparison
-    ========================= 1 passed, 1 skipped in 0.00s =========================
+   =========================== short test summary info ============================
+   SKIPPED [1] tests/test_compare.py:6: Items do not yet allow a < comparison
+   ========================= 1 passed, 1 skipped in 0.00s =========================
 
 Da wir pytest mit ``-r`` angewiesen haben, eine kurze Zusammenfassung unserer
 Tests auszugeben, erhalten wir eine zusätzliche Zeile am unteren Ende, die den
@@ -264,7 +264,7 @@ funktioniert. Und so sieht das Ergebnis aus:
 
     pytest -v -ra tests/test_xfail.py
     ============================= test session starts ==============================
-    ...
+    …
     collected 3 items
 
     tests/test_xfail.py::test_less_than XFAIL (The comparison with < is ...) [ 33%]
@@ -371,7 +371,7 @@ Option ``-m smoke`` verwenden:
 
     $ pytest -v -m smoke tests/test_start.py
     ============================= test session starts ==============================
-    ...
+    …
     collected 2 items / 1 deselected / 1 selected
 
     tests/test_start.py::test_start PASSED                                   [100%]
@@ -391,24 +391,24 @@ benutzerdefinierte Marker registrieren, indem wir einen Marker-Abschnitt zu
 
 .. code-block:: ini
 
-    [pytest]
-    markers =
-        smoke: Small subset of all tests
+   [pytest]
+   markers =
+       smoke: Small subset of all tests
 
 Jetzt warnt uns pytest nicht mehr vor einem unbekannten Marker:
 
-.. code-block::
+.. code-block:: pytest
    :emphasize-lines: 4
 
-    $ pytest -v -m smoke tests/test_start.py
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 2 items / 1 deselected / 1 selected
+   $ pytest -v -m smoke tests/test_start.py
+   ============================= test session starts ==============================
+   …
+   configfile: pytest.ini
+   collected 2 items / 1 deselected / 1 selected
 
-    tests/test_start.py::test_start PASSED                                   [100%]
+   tests/test_start.py::test_start PASSED                                   [100%]
 
-    ======================= 1 passed, 1 deselected in 0.00s ========================
+   ======================= 1 passed, 1 deselected in 0.00s ========================
 
 Machen wir dasselbe mit der ``exception``-Markierung für
 ``test_start_non_existent``.
@@ -445,7 +445,7 @@ Machen wir dasselbe mit der ``exception``-Markierung für
 
       $ pytest -v -m exception tests/test_start.py
       ============================= test session starts ==============================
-      ...
+      …
       configfile: pytest.ini
       collected 2 items / 1 deselected / 1 selected
 
@@ -587,7 +587,7 @@ anstatt eine Testdatei auszuwählen:
     $ cd tests
     $ tests % pytest -v -m exception
     ============================= test session starts ==============================
-    ...
+    …
     configfile: pytest.ini
     collected 36 items / 34 deselected / 2 selected
 
@@ -608,7 +608,7 @@ zusammen mit Schlüsselwörtern zur Auswahl von Testfällen in :ref:`Testsuite
 
     pytest -v -m "finish and exception"
     ============================= test session starts ==============================
-    ...
+    …
     configfile: pytest.ini
     collected 36 items / 35 deselected / 1 selected
 
@@ -620,34 +620,34 @@ Wir können auch alle logischen Verknüpfungen zusammen verwenden:
 
 .. code-block:: pytest
 
-     $ pytest -v -m "(exception or smoke) and (not finish)"
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 34 deselected / 2 selected
+   $ pytest -v -m "(exception or smoke) and (not finish)"
+   ============================= test session starts ==============================
+   …
+   configfile: pytest.ini
+   collected 36 items / 34 deselected / 2 selected
 
-    test_start.py::test_start PASSED                                         [ 50%]
-    test_start.py::test_start_non_existent PASSED                            [100%]
+   test_start.py::test_start PASSED                                         [ 50%]
+   test_start.py::test_start_non_existent PASSED                            [100%]
 
-    ======================= 2 passed, 34 deselected in 0.08s =======================
+   ======================= 2 passed, 34 deselected in 0.08s =======================
 
 Schließlich können wir auch Marker und Keywords für die Auswahl kombinieren,
 :abbr:`z.B. (zum Beispiel)` um Smoke-Tests auszuführen, die nicht Teil der
 Klasse :class:`TestFinish` sind:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v -m smoke -k "not TestFinish"
-    ============================= test session starts ==============================
-    ...
-    configfile: pytest.ini
-    collected 36 items / 33 deselected / 3 selected
+   $ pytest -v -m smoke -k "not TestFinish"
+   ============================= test session starts ==============================
+   …
+   configfile: pytest.ini
+   collected 36 items / 33 deselected / 3 selected
 
-    test_finish.py::test_finish[in progress] PASSED                          [ 33%]
-    test_finish.py::test_finish_non_existent PASSED                          [ 66%]
-    test_start.py::test_start PASSED                                         [100%]
+   test_finish.py::test_finish[in progress] PASSED                          [ 33%]
+   test_finish.py::test_finish_non_existent PASSED                          [ 66%]
+   test_start.py::test_start PASSED                                         [100%]
 
-    ======================= 3 passed, 33 deselected in 0.07s =======================
+   ======================= 3 passed, 33 deselected in 0.07s =======================
 
 Bei der Verwendung von Markern und Keywords ist zu beachten, dass die Namen der
 Marker bei der Option :samp:`-m {MARKERNAME}` vollständig sein müssen, während
@@ -677,7 +677,7 @@ Wenn diese Warnung stattdessen ein Fehler sein soll, können wir die Option
       :emphasize-lines: 3-4
 
       [pytest]
-      ...
+      …
       addopts =
           --strict-markers
 
@@ -769,7 +769,7 @@ notwendig:
 
       [pytest]
       markers =
-          ...
+          …
           num_items: Number of items to be pre-filled for the items_db fixture
 
 #. Nun modifizieren wir die ``items_db``-Fixture in der
@@ -855,7 +855,7 @@ funktioniert:
 
     $ pytest -v -s test_items.py
     ============================= test session starts ==============================
-    ...
+    …
     configfile: pytest.ini
     plugins: Faker-19.10.0
     collected 3 items
@@ -887,7 +887,7 @@ funktioniert:
 
       $ pytest -v -s test_items.py
       ============================= test session starts ==============================
-      ...
+      …
       configfile: pytest.ini
       plugins: Faker-19.10.0
       collected 3 items
@@ -913,7 +913,7 @@ Built-in-Marker. Und wenn wir anfangen, :doc:`plugins` zu verwenden, können noc
 weitere Marker hinzukommen. Um alle verfügbaren Marker mit Beschreibungen und
 Parameter aufzulisten, könnt ihr ``pytest --markers`` ausführen:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest --markers
    @pytest.mark.exception: Only run expected exceptions
@@ -925,7 +925,7 @@ Parameter aufzulisten, könnt ihr ``pytest --markers`` ausführen:
    @pytest.mark.num_items: Number of items to be pre-filled for the items_db fixture
 
    @pytest.mark.filterwarnings(warning): add a warning filter to the given test. see https://docs.pytest.org/en/stable/how-to/capture-warnings.html#pytest-mark-filterwarnings
-   ...
+   …
 
 Dies ist eine sehr praktische Funktion, mit der wir schnell nach Markern suchen
 können, und ein guter Grund, nützliche Beschreibungen zu unseren eigenen Markern

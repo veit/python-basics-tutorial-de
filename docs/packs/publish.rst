@@ -262,18 +262,18 @@ folgenden Schritte erforderlich:
    Hierfür erstellen wir nun die Datei :file:`.github/workflows/publish.yml` in
    unserem Repository:
 
-   .. code-block:: diff
+   .. code-block:: yaml
       :caption: .github/workflows/pypi.yml
       :lineno-start: 10
       :emphasize-lines: 3, 4-5
 
-          package-and-deploy:
-            runs-on: ubuntu-latest
-        +   environment: release
-        +   permissions:
-        +     id-token: write
-            needs: [test]
-            steps:
+      package-and-deploy:
+          runs-on: ubuntu-latest
+      +   environment: release
+      +   permissions:
+      +     id-token: write
+          needs: [test]
+          steps:
 
    Zeile 12
        Die Angabe einer GitHub-Umgebung ist optional, wird aber dringend
@@ -285,7 +285,7 @@ folgenden Schritte erforderlich:
        ``username`` und ``password`` werden für die GitHub-Aktion
        ``pypa/gh-action-pypi-publish`` nicht mehr benötigt.
 
-       .. code-block:: diff
+       .. code-block:: yaml
           :caption: .github/workflows/pypi.yml
           :lineno-start: 40
           :emphasize-lines: 3-

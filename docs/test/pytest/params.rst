@@ -29,9 +29,9 @@ Tests für die API-Methode ``finish()`` aus :file:`src/items/api.py`:
 
 .. code-block:: python
 
-    def finish(self, item_id: int):
-        """Set an item state to done."""
-        self.update_item(item_id, Item(state="done"))
+   def finish(self, item_id: int):
+       """Set an item state to done."""
+       self.update_item(item_id, Item(state="done"))
 
 Die in der Anwendung verwendeten Zustände sind *todo*, *in progress* und *done*,
 und ``finish()`` setzt den Zustand einer Karte auf *done*. Um dies zu testen,
@@ -47,47 +47,47 @@ oder sogar schon "done" sein. Lasst uns alle drei testen:
 
 .. code-block:: python
 
-    from items import Item
+   from items import Item
 
 
-    def test_finish_from_in_prog(items_db):
-        index = items_db.add_item(
-            Item("Update pytest section", state="in progress")
-        )
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   def test_finish_from_in_prog(items_db):
+       index = items_db.add_item(
+           Item("Update pytest section", state="in progress")
+       )
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 
-    def test_finish_from_done(items_db):
-        index = items_db.add_item(
-            Item("Update cibuildwheel section", state="done")
-        )
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   def test_finish_from_done(items_db):
+       index = items_db.add_item(
+           Item("Update cibuildwheel section", state="done")
+       )
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 
-    def test_finish_from_todo(items_db):
-        index = items_db.add_item(Item("Update mock tests", state="todo"))
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   def test_finish_from_todo(items_db):
+       index = items_db.add_item(Item("Update mock tests", state="todo"))
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 Lassen wir es laufen:
 
 .. code-block:: pytest
 
-    pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish_from_in_prog PASSED                    [ 33%]
-    tests/test_finish.py::test_finish_from_done PASSED                       [ 66%]
-    tests/test_finish.py::test_finish_from_todo PASSED                       [100%]
+   tests/test_finish.py::test_finish_from_in_prog PASSED                    [ 33%]
+   tests/test_finish.py::test_finish_from_done PASSED                       [ 66%]
+   tests/test_finish.py::test_finish_from_todo PASSED                       [100%]
 
-    ============================== 3 passed in 0.00s ===============================
+   ============================== 3 passed in 0.00s ===============================
 
 Die Testfunktionen sind sehr ähnlich. Die einzigen Unterschiede sind der
 Ausgangszustand und die Zusammenfassung.  Eine Möglichkeit, den redundanten Code
@@ -96,32 +96,32 @@ zusammenzufassen, etwa so:
 
 .. code-block:: python
 
-    from items import Item
+   from items import Item
 
 
-    def test_finish(items_db):
-        for i in [
-            Item("Update pytest section", state="done"),
-            Item("Update cibuildwheel section", state="in progress"),
-            Item("Update mock tests", state="todo"),
-        ]:
-            index = items_db.add_item(i)
-            items_db.finish(index)
-            item = items_db.get_item(index)
-            assert item.state == "done"
+   def test_finish(items_db):
+       for i in [
+           Item("Update pytest section", state="done"),
+           Item("Update cibuildwheel section", state="in progress"),
+           Item("Update mock tests", state="todo"),
+       ]:
+           index = items_db.add_item(i)
+           items_db.finish(index)
+           item = items_db.get_item(index)
+           assert item.state == "done"
 
 Nun lassen wir :file:`tests/test_finish.py` erneut laufen:
 
 .. code-block:: pytest
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 1 item
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 1 item
 
-    tests/test_finish.py::test_finish PASSED                                 [100%]
+   tests/test_finish.py::test_finish PASSED                                 [100%]
 
-    ============================== 1 passed in 0.00s ===============================
+   ============================== 1 passed in 0.00s ===============================
 
 Auch dieser Test ist bestanden, und wir haben den überflüssigen Code eliminiert.
 Aber es ist doch nicht dasselbe:
@@ -144,25 +144,25 @@ zu übergebenden Argumente zu definieren, etwa so:
 
 .. code-block:: python
 
-    import pytest
+   import pytest
 
-    from items import Item
+   from items import Item
 
 
-    @pytest.mark.parametrize(
-        "start_summary, start_state",
-        [
-            ("Update pytest section", "done"),
-            ("Update cibuildwheel section", "in progress"),
-            ("Update mock tests", "todo"),
-        ],
-    )
-    def test_finish(items_db, start_summary, start_state):
-        initial_item = Item(summary=start_summary, state=start_state)
-        index = items_db.add_item(initial_item)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   @pytest.mark.parametrize(
+       "start_summary, start_state",
+       [
+           ("Update pytest section", "done"),
+           ("Update cibuildwheel section", "in progress"),
+           ("Update mock tests", "todo"),
+       ],
+   )
+   def test_finish(items_db, start_summary, start_state):
+       initial_item = Item(summary=start_summary, state=start_state)
+       index = items_db.add_item(initial_item)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 Die ``test_finish()``-Funktion  hat jetzt ihre ursprüngliche
 ``items_db``-Fixture als Parameter, aber auch zwei neue Parameter:
@@ -181,18 +181,18 @@ Argument von ``@pytest.mark.parametrize()`` überein.
 pytest führt diesen Test einmal für jedes ``(start_summary, start_state)``-Paar
 durch und meldet jeden als separaten Test:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[Update pytest section-done] PASSED    [ 33%]
-    tests/test_finish.py::test_finish[Update cibuildwheel section-in progress] PASSED [ 66%]
-    tests/test_finish.py::test_finish[Update mock tests-todo] PASSED        [100%]
+   tests/test_finish.py::test_finish[Update pytest section-done] PASSED    [ 33%]
+   tests/test_finish.py::test_finish[Update cibuildwheel section-in progress] PASSED [ 66%]
+   tests/test_finish.py::test_finish[Update mock tests-todo] PASSED        [100%]
 
-    ============================== 3 passed in 0.00s ===============================
+   ============================== 3 passed in 0.00s ===============================
 
 Diese Verwendung von ``parametrize()`` funktioniert für unsere Zwecke.
 Allerdings ist es für diesen Test ``start_summary`` nicht wirklich wichtig und
@@ -201,41 +201,41 @@ macht jeden Testfall komplexer. Ändern wir die Parametrisierung in
 
 .. code-block:: python
 
-    import pytest
+   import pytest
 
-    from items import Item
+   from items import Item
 
 
-    @pytest.mark.parametrize(
-        "start_state",
-        [
-            "done",
-            "in progress",
-            "todo",
-        ],
-    )
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   @pytest.mark.parametrize(
+       "start_state",
+       [
+           "done",
+           "in progress",
+           "todo",
+       ],
+   )
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 Wenn wir die Tests jetzt ausführen, konzentrieren sie sich auf die Veränderung,
 die uns wichtig ist:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[done] PASSED                           [ 33%]
-    tests/test_finish.py::test_finish[in progress] PASSED                    [ 66%]
-    tests/test_finish.py::test_finish[todo] PASSED                           [100%]
+   tests/test_finish.py::test_finish[done] PASSED                           [ 33%]
+   tests/test_finish.py::test_finish[in progress] PASSED                    [ 66%]
+   tests/test_finish.py::test_finish[todo] PASSED                           [100%]
 
-    ============================== 3 passed in 0.01s ===============================
+   ============================== 3 passed in 0.01s ===============================
 
 Die Ausgabe der beiden Beispiele, unterscheidet sich insofern, dass jetzt nur
 noch der Ausgangszustand aufgelistet wird, also *todo*, *in progress* und
@@ -255,22 +255,22 @@ jeden Fixture-Wert einmal aufgerufen. Auch die Syntax ist anders:
 
 .. code-block:: python
 
-    import pytest
+   import pytest
 
-    from items import Item
-
-
-    @pytest.fixture(params=["done", "in progress", "todo"])
-    def start_state(request):
-        return request.param
+   from items import Item
 
 
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   @pytest.fixture(params=["done", "in progress", "todo"])
+   def start_state(request):
+       return request.param
+
+
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 Das bedeutet, dass pytest ``start_state()`` dreimal aufruft, jeweils einmal für
 alle Werte in ``params``. Jeder Wert von ``params`` wird in ``request.param``
@@ -284,18 +284,18 @@ Funktionsparametrisierung verwendet haben, jedoch ohne den Dekorator
 einmal für jeden Wert auf, der an die ``start_state()``-Fixture übergeben wird.
 Und nach all dem sieht die Ausgabe genauso aus wie vorher:
 
-.. code-block::
+.. code-block:: console
 
-    $ pytest -v tests/test_finish.py
-    ============================= test session starts ==============================
-    …
-    collected 3 items
+   $ pytest -v tests/test_finish.py
+   ============================= test session starts ==============================
+   …
+   collected 3 items
 
-    tests/test_finish.py::test_finish[done] PASSED                          [ 33%]
-    tests/test_finish.py::test_finish[in progress] PASSED                   [ 66%]
-    tests/test_finish.py::test_finish[todo] PASSED                          [100%]
+   tests/test_finish.py::test_finish[done] PASSED                          [ 33%]
+   tests/test_finish.py::test_finish[in progress] PASSED                   [ 66%]
+   tests/test_finish.py::test_finish[todo] PASSED                          [100%]
 
-    ============================== 3 passed in 0.01s ===============================
+   ============================== 3 passed in 0.01s ===============================
 
 Auf den ersten Blick erfüllt die Fixture-Parametrisierung in etwa den gleichen
 Zweck wie die Funktionsparametrisierung, allerdings mit etwas mehr Code. Die
@@ -323,20 +323,20 @@ sieht wie folgt aus:
 
 .. code-block:: python
 
-    from items import Item
+   from items import Item
 
 
-    def pytest_generate_tests(metafunc):
-        if "start_state" in metafunc.fixturenames:
-            metafunc.parametrize("start_state", ["done", "in progress", "todo"])
+   def pytest_generate_tests(metafunc):
+       if "start_state" in metafunc.fixturenames:
+           metafunc.parametrize("start_state", ["done", "in progress", "todo"])
 
 
-    def test_finish(items_db, start_state):
-        i = Item("Update pytest section", state=start_state)
-        index = items_db.add_item(i)
-        items_db.finish(index)
-        item = items_db.get_item(index)
-        assert item.state == "done"
+   def test_finish(items_db, start_state):
+       i = Item("Update pytest section", state=start_state)
+       index = items_db.add_item(i)
+       items_db.finish(index)
+       item = items_db.get_item(index)
+       assert item.state == "done"
 
 Die ``test_finish()``-Funktion hat sich nicht geändert; wir haben nur die Art
 und Weise geändert, wie pytest den Wert für ``initial_state`` bei jedem
