@@ -12,16 +12,16 @@ die dem Zugriff auf Instanz-Variablen ähnelt:
 
 .. code-block:: pycon
 
-    >>> class Square:
-    ...     def __init__(self):
-    ...         self.length = 1
-    ...     def circumference(self):
-    ...         return 4 * self.length
-    ...
-    >>> s = Square()
-    >>> s.length = 5
-    >>> print(s.circumference())
-    20
+   >>> class Square:
+   ...     def __init__(self):
+   ...         self.length = 1
+   ...     def circumference(self):
+   ...         return 4 * self.length
+   ...
+   >>> s = Square()
+   >>> s.length = 5
+   >>> print(s.circumference())
+   20
 
 Die Syntax für Methodenaufrufe besteht aus einer Instanz, gefolgt von einem
 Punkt, gefolgt von der Methode, die auf der Instanz aufgerufen werden soll. Wenn
@@ -34,8 +34,8 @@ Klasse sein muss, in der die Methode definiert ist, und weniger klar ist:
 
 .. code-block:: pycon
 
-    >>> print(Square.circumference(s))
-    20
+   >>> print(Square.circumference(s))
+   20
 
 Wie ``__init__`` wird auch die ``circumference``-Methode als Funktion innerhalb
 der Klasse definiert. Das erste Argument jeder Methode ist die Instanz, von der
@@ -50,22 +50,22 @@ eines Quadrats festlegen zu müssen:
 
 .. code-block:: pycon
 
-    >>> class Square:
-    ...     def __init__(self, length):
-    ...         self.length = length
-    ...     def circumference(self):
-    ...         return 4 * self.length
-    ...
+   >>> class Square:
+   ...     def __init__(self, length):
+   ...         self.length = length
+   ...     def circumference(self):
+   ...         return 4 * self.length
+   ...
 
 .. warning::
 
-    ``self.length`` und ``length`` sind nicht dasselbe!
+   ``self.length`` und ``length`` sind nicht dasselbe!
 
-    * ``self.length`` ist die Instanz-Variable namens ``length``
-    * ``length`` ist der lokale Funktionsparameter
+   * ``self.length`` ist die Instanz-Variable namens ``length``
+   * ``length`` ist der lokale Funktionsparameter
 
-    In der Praxis würdet ihr den lokalen Funktionsparameter wahrscheinlich als
-    ``lng`` oder ``l`` bezeichnen, um Verwechslungen zu vermeiden.
+   In der Praxis würdet ihr den lokalen Funktionsparameter wahrscheinlich als
+   ``lng`` oder ``l`` bezeichnen, um Verwechslungen zu vermeiden.
 
 Mit dieser Definition von ``Square`` könnt ihr Quadrate mit beliebigen
 Kantenlängen mit einem Aufruf der Klasse ``Square`` erstellen. Im Folgenden wird
@@ -73,7 +73,7 @@ ein Quadrat mit der Kantenlänge ``3`` erstellt:
 
 .. code-block:: pycon
 
-    ...     s = Square(3)
+   ...     s = Square(3)
 
 Alle Standardfunktionen von Python – Standardargumente, zusätzliche Argumente,
 Schlüsselwort-Argumente :abbr:`usw. (und so weiter)` – können mit Methoden
@@ -82,7 +82,7 @@ definieren können:
 
 .. code-block:: pycon
 
-    ...     def __init__(self, length=1):
+   ...     def __init__(self, length=1):
 
 Dann würde der Aufruf von ``Square`` mit oder ohne zusätzliches Argument
 funktionieren; ``Square()`` würde ein Quadrat mit der Kantenlänge ``1`` und
@@ -126,14 +126,14 @@ Zeile 14
 
 .. code-block:: pycon
 
-    >>> import circle
-    >>> c1 = circle.Circle(1)
-    >>> c2 = circle.Circle(2)
-    >>> circle.Circle.circumferences()
-    9.424769999999999
-    >>> c2.diameter = 3
-    >>> circle.Circle.circumferences()
-    12.56636
+   >>> import circle
+   >>> c1 = circle.Circle(1)
+   >>> c2 = circle.Circle(2)
+   >>> circle.Circle.circumferences()
+   9.424769999999999
+   >>> c2.diameter = 3
+   >>> circle.Circle.circumferences()
+   12.56636
 
 .. _classmethod:
 
@@ -163,11 +163,11 @@ Zeile 27
 
 .. code-block:: pycon
 
-    >>> import circle_cm
-    >>> c1 = circle_cm.Circle(1)
-    >>> c2 = circle_cm.Circle(2)
-    >>> circle_cm.Circle.circumferences()
-    9.424769999999999
+   >>> import circle_cm
+   >>> c1 = circle_cm.Circle(1)
+   >>> c2 = circle_cm.Circle(2)
+   >>> circle_cm.Circle.circumferences()
+   9.424769999999999
 
 Checks
 ------

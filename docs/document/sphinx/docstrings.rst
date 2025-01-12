@@ -24,7 +24,7 @@ Sphinx-Konfigurationsdatei ``docs/conf.py`` angegeben:
 
 .. code-block:: python
 
-    extensions = ["sphinx.ext.autodoc", ...]
+   extensions = ["sphinx.ext.autodoc", ...]
 
 Wenn euer Paket und die zugehörige Dokumentation Teil desselben Repository
 sind, werden sie immer dieselbe relative Position im Dateisystem haben. In
@@ -33,8 +33,8 @@ bearbeiten, um den relativen Pfad zum Paket anzugeben, also:
 
 .. code-block:: python
 
-    sys.path.insert(0, os.path.abspath(".."))
-    import MODULE
+   sys.path.insert(0, os.path.abspath(".."))
+   import MODULE
 
 Wenn ihr eure Sphinx-Dokumentation in einer virtuellen Umgebung installiert
 habt, könnt ihr euer Paket auch dort mitinstallieren, :abbr:`z.B. (zum
@@ -67,42 +67,40 @@ ausgedrückt werden. Die Variante mit Typen nach PEP 484 hat den Vorteil, dass
 Typ-Tester und IDEs zur statischen Codeanalyse eingesetzt werden können.
 
 Python 3 Type-Annotations:
-
     .. code-block:: python
 
-        def func(arg1: int, arg2: str) -> bool:
-            """Summary line.
+       def func(arg1: int, arg2: str) -> bool:
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1: Description of arg1
-                arg2: Description of arg2
+           Args:
+               arg1: Description of arg1
+               arg2: Description of arg2
 
-            Returns:
-                Description of return value
+           Returns:
+               Description of return value
 
-            """
-            return True
+           """
+           return True
 
 Typen in Docstrings:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1 (int): Description of arg1
-                arg2 (str): Description of arg2
+           Args:
+               arg1 (int): Description of arg1
+               arg2 (str): Description of arg2
 
-            Returns:
-                bool: Description of return value
+           Returns:
+               bool: Description of return value
 
-            """
-            return True
+           """
+           return True
 
 .. note::
    :pep:`484#suggested-syntax-for-python-2-7-and-straddling-code` are currently
@@ -136,47 +134,45 @@ Der Hauptunterschied besteht darin, dass Google Einrückungen verwendet und NumP
 Unterstreichungen:
 
 Google:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Args:
-                arg1 (int): Description of arg1
-                arg2 (str): Description of arg2
+           Args:
+               arg1 (int): Description of arg1
+               arg2 (str): Description of arg2
 
-            Returns:
-                bool: Description of return value
+           Returns:
+               bool: Description of return value
 
-            """
-            return True
+           """
+           return True
 
 NumPy:
-
     .. code-block:: python
 
-        def func(arg1, arg2):
-            """Summary line.
+       def func(arg1, arg2):
+           """Summary line.
 
-            Extended description of function.
+           Extended description of function.
 
-            Parameters
-            ----------
-            arg1 : int
-                Description of arg1
-            arg2 : str
-                Description of arg2
+           Parameters
+           ----------
+           arg1 : int
+               Description of arg1
+           arg2 : str
+               Description of arg2
 
-            Returns
-            -------
-            bool
-                Description of return value
+           Returns
+           -------
+           bool
+               Description of return value
 
-            """
-            return True
+           """
+           return True
 
 Detaillierte Konfigurationsoptionen findet ihr in `sphinxcontrib.napoleon.Config
 <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/sphinxcontrib.napoleon.html#sphinxcontrib.napoleon.Config>`_.

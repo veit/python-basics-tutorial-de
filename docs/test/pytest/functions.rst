@@ -141,16 +141,16 @@ anzeigt. Um den Test direkt von Python aus aufrufen zu können, müssen wir eine
 
 Wenn wir den Test nun mit Python durchführen, erhalten wir folgendes Ergebnis:
 
-.. code-block:: console
+.. code-block:: python
 
-    python tests/test_item_fails.py
-    Traceback (most recent call last):
-      File "tests/test_item_fails.py", line 11, in <module>
-        test_equality_fails()
-      File "tests/test_item_fails.py", line 7, in test_equality_fails
-        assert i1 == i2
-               ^^^^^^^^
-    AssertionError
+   python tests/test_item_fails.py
+   Traceback (most recent call last):
+     File "tests/test_item_fails.py", line 11, in <module>
+       test_equality_fails()
+     File "tests/test_item_fails.py", line 7, in test_equality_fails
+       assert i1 == i2
+              ^^^^^^^^
+   AssertionError
 
 Das sagt uns nicht viel. Die pytest-Ausgabe gibt uns viel mehr Informationen
 darüber, warum unsere Annahmen fehlgeschlagen sind.

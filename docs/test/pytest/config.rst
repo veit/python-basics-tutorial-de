@@ -61,15 +61,15 @@ Speichern von Einstellungen und Optionen in :file:`pytest.ini`
 
 .. code-block:: ini
 
-    [pytest]
-    addopts =
-        --strict-markers
-        --strict-config
-        -ra
-    testpaths = tests
-    markers =
-        smoke: Small subset of all tests
-        exception: Only run expected exceptions
+   [pytest]
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+   testpaths = tests
+   markers =
+       smoke: Small subset of all tests
+       exception: Only run expected exceptions
 
 ``[pytest]`` kennzeichnet den Beginn des pytest-Abschnitts. Danach folgen die
 einzelnen Einstellungen. Bei Konfigurationseinstellungen, die
@@ -149,19 +149,19 @@ das Format auch ein wenig anders:
 
 .. code-block:: toml
 
-    [tool.pytest.ini_options]
-    addopts = [
-        "--strict-markers",
-        "--strict-config",
-        "-ra"
-        ]
-    testpaths = "tests"
-    markers = [
-        "exception: Only run expected exceptions",
-        "finish: Only run finish tests",
-        "smoke: Small subset of all tests",
-        "num_items: Number of items to be pre-filled for the items_db fixture"
-        ]
+   [tool.pytest.ini_options]
+   addopts = [
+       "--strict-markers",
+       "--strict-config",
+       "-ra"
+       ]
+   testpaths = "tests"
+   markers = [
+       "exception: Only run expected exceptions",
+       "finish: Only run finish tests",
+       "smoke: Small subset of all tests",
+       "num_items: Number of items to be pre-filled for the items_db fixture"
+       ]
 
 Anstelle von ``[pytest]`` beginnt der Abschnitt mit
 ``[tool.pytest.ini_options]``, die Werte müssen in Anführungszeichen gesetzt
@@ -175,15 +175,15 @@ Das Dateiformat der :file:`setup.cfg` entspricht einer :file:`.ini`-Datei:
 
 .. code-block:: ini
 
-    [tool:pytest]
-    addopts =
-        --strict-markers
-        --strict-config
-        -ra
-    testpaths = tests
-    markers =
-        smoke: Small subset of all tests
-        exception: Only run expected exceptions
+   [tool:pytest]
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+   testpaths = tests
+   markers =
+       smoke: Small subset of all tests
+       exception: Only run expected exceptions
 
 Der einzige Unterschied zwischen dieser und der :file:`pytest.ini` ist die
 Angabe des Abschnitts ``[tool:pytest]``.
@@ -220,16 +220,16 @@ findet:
 .. code-block:: pytest
    :emphasize-lines: 5, 6
 
-    $ cd items
-    $ pytest
-    ============================= test session starts ==============================
-    ...
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: Faker-19.11.0
-    collected 39 items
-    ...
+   $ cd items
+   $ pytest
+   ============================= test session starts ==============================
+   …
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: Faker-19.11.0
+   collected 39 items
+   …
 
 :file:`conftest.py` für die gemeinsame Nutzung von lokalen Fixtures und Hook-Funktionen
 ---------------------------------------------------------------------------------------
@@ -288,7 +288,7 @@ in beiden Verzeichnissen liegt:
 
     $ pytest
     ============================= test session starts ==============================
-    ...
+    …
     rootdir: /Users/veit/cusy/prj/items
     configfile: pyproject.toml
     testpaths: tests

@@ -135,26 +135,26 @@ Beispiel: SQLite-Datenbank testen
    <python3:library/unittest>` auch noch :download:`create_db.py
    <../save-data/sqlite/create_db.py>` und :doc:`os <python3:library/os>`:
 
-      .. literalinclude:: ../save-data/sqlite/test_sqlite.py
-         :language: python
-         :lines: 1-5
-         :lineno-start: 1
+   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+      :language: python
+      :lines: 1-5
+      :lineno-start: 1
 
 #. Anschließend definieren wir zunächst eine Testklasse ``TestCreateDB``:
 
-      .. literalinclude:: ../save-data/sqlite/test_sqlite.py
-         :language: python
-         :lines: 8
-         :lineno-start: 8
+   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+      :language: python
+      :lines: 8
+      :lineno-start: 8
 
 #. In ihr definieren wir dann die Testmethode ``test_db_exists``, in der wir mit
    ``assert`` die Annahme treffen, dass die Datei in :doc:`os.path
    <python3:library/os.path>` existiert:
 
-      .. literalinclude:: ../save-data/sqlite/test_sqlite.py
-         :language: python
-         :lines: 9-10
-         :lineno-start: 9
+   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+      :language: python
+      :lines: 9-10
+      :lineno-start: 9
 
 #. Nun überprüfen wir auch noch, ob die Tabelle ``books`` angelegt wurde.
    Hierfür versuchen wir, die Tabelle erneut anzulegen und erwarten mit

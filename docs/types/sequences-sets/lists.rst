@@ -13,9 +13,9 @@ getrennte Elemente in eckige Klammern einschließt, etwa so:
 .. code-block:: python
    :linenos:
 
-    []
-    [1]
-    [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
+   []
+   [1]
+   [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
 
 .. tip::
    Ich empfehle euch, **nicht** den in Python verfügbaren
@@ -36,11 +36,11 @@ Hier sind ein paar Beispiele:
 .. code-block:: pycon
    :linenos:
 
-    >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
-    >>> x[0]
-    '1'
-    >>> x[1]
-    '2.'
+   >>> x = [1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2)]
+   >>> x[0]
+   '1'
+   >>> x[1]
+   '2.'
 
 Eine Liste kann von vorne oder hinten indiziert werden. Ihr könnt euch auch auf
 ein Teilsegment einer Liste beziehen, indem ihr die *Slice*-Notation verwendet:
@@ -48,20 +48,20 @@ ein Teilsegment einer Liste beziehen, indem ihr die *Slice*-Notation verwendet:
 .. code-block:: pycon
    :lineno-start: 6
 
-    >>> x[-1]
-    (5.1, 5.2)
-    >>> x[-2]
-    ['4a', '4b']
-    >>> x[1:-1]
-    ['2.', 3.0, ['4a', '4b']]
-    >>> x[0:3]
-    [1, '2.', 3.0]
-    >>> x[:3]
-    [1, '2.', 3.0]
-    >>> x[-4:-1]
-    ['2.', 3.0, ['4a', '4b']]
-    >>> x[-4:]
-    ['2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
+   >>> x[-1]
+   (5.1, 5.2)
+   >>> x[-2]
+   ['4a', '4b']
+   >>> x[1:-1]
+   ['2.', 3.0, ['4a', '4b']]
+   >>> x[0:3]
+   [1, '2.', 3.0]
+   >>> x[:3]
+   [1, '2.', 3.0]
+   >>> x[-4:-1]
+   ['2.', 3.0, ['4a', '4b']]
+   >>> x[-4:]
+   ['2.', 3.0, ['4a', '4b'], (5.1, 5.2)]
 
 Zeilen 2 und 4
     Index von vorne unter Verwendung positiver Indizes beginnend mit ``0`` als

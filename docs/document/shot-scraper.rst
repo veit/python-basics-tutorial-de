@@ -25,32 +25,32 @@ shot-scraper kann auf zweierlei Art verwendet werden
 
    .. code-block:: console
 
-        $  shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
+      $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
 
    …oder mit zusätzlichen Optionen, z.B. für JavaScript- und CSS-Selektoren:
 
-    .. code-block::
+   .. code-block::
 
-        $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
+      $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
 
 #. …für eine Reihe von Screenshots, die in einer YAML-Datei konfiguriert sind:
 
    .. code-block:: yaml
 
-        - url: https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html
-          output: ~/Downloads/clean-prep.png
-        - url: https://www.example.org/
-          width: 736
-          quality: 40
-          output: example.jpg
+      - url: https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html
+        output: ~/Downloads/clean-prep.png
+      - url: https://www.example.org/
+        width: 736
+        quality: 40
+        output: example.jpg
 
    Anschließend kann ``shot-scraper multi`` verwendet werden, z.B.:
 
    .. code-block:: console
 
-        $ shot-scraper multi shots.yaml
-        Screenshot of 'https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html' written to '~(Downloads/clean-prep.png'
-        Screenshot of 'https://www.example.org/' written to 'example.jpg'
+      $ shot-scraper multi shots.yaml
+      Screenshot of 'https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html' written to '~(Downloads/clean-prep.png'
+      Screenshot of 'https://www.example.org/' written to 'example.jpg'
 
    .. seealso::
       * In der `README.md

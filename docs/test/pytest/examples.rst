@@ -18,7 +18,7 @@ Tests ausgelöst wird, führt dazu, dass der Test fehlschlägt.
 pytest ausführen
 ----------------
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ cd docs/test/pytest
    $ pytest test_one.py
@@ -36,7 +36,7 @@ der Testsitzung bisher durchgeführt wurden. Da es nur einen Test gibt,
 entspricht ein Test 100% der Tests. Wenn ihr mehr Informationen benötigt, könnt
 ihr ``-v`` oder ``--verbose`` verwenden:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_one.py
    ============================= test session starts ==============================
@@ -49,7 +49,7 @@ ihr ``-v`` oder ``--verbose`` verwenden:
 
 :file:`test_two.py` schlägt hingegen fehl:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest test_two.py
    collected 1 item
@@ -76,7 +76,7 @@ erste Fehler ist. Dieser zusätzliche Abschnitt wird Traceback genannt. Das sind
 schon eine Menge Informationen, aber es gibt eine Zeile, die besagt, dass wir
 mit ``-v`` den kompletten Diff erhalten. Lasst uns das tun:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_two.py
    ============================= test session starts ==============================
@@ -114,7 +114,7 @@ gesucht, die mit :file:`test_` beginnen oder mit :file:`_test` enden. Wenn ihr
 pytest im Verzeichnis :file:`docs/test/pytest` ohne Optionen startet, werden
 zwei Dateien mit Tests ausgeführt:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest --tb=no
    ============================= test session starts ==============================
@@ -135,7 +135,7 @@ Wir können auch eine Testfunktion innerhalb einer Testdatei angeben, die
 ausgeführt werden soll, indem wir :samp:`::test_{name}` zum Dateinamen
 hinzufügen:
 
-.. code-block:: console
+.. code-block:: pytest
 
    $ pytest -v test_one.py::test_sorted
    ============================= test session starts ==============================
