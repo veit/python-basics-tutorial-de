@@ -183,15 +183,6 @@ Checks
 
      Dies ändert jedoch auch die Reihenfolge der Elemente.
 
-* Wie könnt ihr alle Dubletten aus einer Liste entfernen **ohne** die
-  Reihenfolge der Elemente in der Liste zu ändern?
-
-  Hierfür können die Schlüssel eines :doc:`/types/dicts` verwendet werden:
-
-  .. code-block:: pycon
-
-     >>> list(dict.fromkeys(l))
-
 * Wenn ihr eine verschachtelte Liste ``ll`` habt, wie könnt ihr eine Kopie
   ``nll`` dieser Liste erhalten, in der ihr die Elemente ändern könnt, ohne den
   Inhalt von ``ll`` zu verändern?
@@ -298,6 +289,15 @@ Checks
      >>> sheet[("B", 1)] = 4
      >>> print(sheet[("A", 1)])
      2
+
+* Wie könnt ihr alle Dubletten aus einer Liste entfernen **ohne** die
+  Reihenfolge der Elemente in der Liste zu ändern?
+
+  Hierfür können die Schlüssel eines :doc:`/types/dicts` verwendet werden:
+
+  .. code-block:: pycon
+
+     >>> list(dict.fromkeys(l))
 
 :doc:`/types/strings/index`
 ---------------------------
