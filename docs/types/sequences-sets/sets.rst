@@ -14,19 +14,28 @@ schneller als bei :doc:`lists`:
 Sets erstellen
 ~~~~~~~~~~~~~~
 
-Ihr könnt Sets erstellen, indem ihr ``set`` auf eine Sequenz anwendet,
+Ihr könnt Sets erstellen, indem ihr :class:`set` auf eine Sequenz anwendet,
 :abbr:`z.B. (zum Beispiel)` auf eine :doc:`Liste <lists>`.
 
 .. code-block:: pycon
 
-   >>> x = set([4, 2, 3, 2, 1])
-   >>> y = set([3, 4, 5])
-   >>> x
-   {1, 2, 3, 4}
-   >>> y
-   {3, 4, 5}
+   >>> sequences = set(["list", "tuple", "tuple"])
+   >>> sequences
+   {'tuple', 'list'}
 
-Wenn eine Sequenz zu einem Set gemacht wird, werden Duplikate entfernt.
+Wenn eine Sequenz zu einem Set gemacht wird, werden Duplikate entfernt,
+allerdings geht dann auch die Reihenfolge verloren.
+
+Auch können einzelne Elemente nicht mit Slicing ausgewählt werden:
+
+.. code-block:: pycon
+
+   >>> sequences[0]
+   Traceback (most recent call last):
+     File "<python-input-27>", line 1, in <module>
+       sequences[0]
+       ~~~~~~~~~^^^
+   TypeError: 'set' object is not subscriptable
 
 Werte überprüfen
 ~~~~~~~~~~~~~~~~
@@ -36,9 +45,9 @@ einer Menge zu prüfen.
 
 .. code-block:: pycon
 
-   >>> 1 in x
+   >>> "list" in sequences
    True
-   >>> 1 in y
+   >>> "set" in sequences
    False
 
 Werte hinzufügen und löschen
@@ -48,12 +57,15 @@ Mit ``add`` und ``remove`` könnt ihr Werte hinzufügen und löschen.
 
 .. code-block:: pycon
 
-   >>> x.add(0)
-   >>> x
-   {0, 1, 2, 3, 4}
-   >>> x.remove(4)
-   >>> x
-   {0, 1, 2, 3}
+   >>> quantities = sequences.add("set")
+   >>> quantities
+   {'list', 'tuple', 'set'}
+   >>> quantities.remove("set")
+   >>> quantities
+   {'list', 'tuple'}
+
+Die Elemente sind ungeordnet, :abbr:`d.h. (das heißt)` die Werte innerhalb
+einer Sequens können sich verschieben, wenn neue Elemente hinzugefügt werden.
 
 Mengenbildung
 ~~~~~~~~~~~~~
@@ -61,6 +73,8 @@ Mengenbildung
 Vereinigungsmenge
    .. code-block:: pycon
 
+      x = {4, 2, 3, 2, 1}
+      y = {3, 4, 5}
       >>> x.union(y)
       {0, 1, 2, 3, 4, 5}
 
@@ -87,17 +101,27 @@ können sie auch Mitglieder anderer Mengen sein:
 .. code-block:: pycon
    :linenos:
 
-   >>> x = set([4, 2, 3, 2, 1])
-   >>> z = frozenset(x)
-   >>> z
-   frozenset({1, 2, 3, 4})
-   >>> z.add(5)
+   >>> sequences = frozenset(["list", "tuple", "set", "tuple"])
+   >>> sequences
+   frozenset({'list', 'tuple', 'set'})
+   >>> dicts = {"dict"}
+   >>> sequences.add(dicts)
    Traceback (most recent call last):
-     File "<stdin>", line 1, in <module>
+     File "<python-input-18>", line 1, in <module>
+       sequences.add(dicts)
+       ^^^^^^^^^^^^^
    AttributeError: 'frozenset' object has no attribute 'add'
-   >>> x.add(z)
-   >>> x
-   {1, 2, 3, 4, frozenset({1, 2, 3, 4})}
+   >>> dicts.add(sequences)
+   >>> dicts
+   {frozenset({'list', 'tuple', 'set'}), 'dict'}
+
+Performance
+-----------
+
+Sets sind sehr schnell bei der Überprüfung, ob Elemente in einer Menge enthalten
+sind. Auch zum Auffinden von gemeinsamen und eindeutigen Werten zweier Mengen
+ist die mengenarithmetik von Sets gut geeignet. Hierfür kann es sinnvoll sein,
+:doc:`lists` oder :doc:`tuples` in Sets umzuwandeln.
 
 Reihenfolge
 -----------
@@ -105,7 +129,14 @@ Reihenfolge
 Der Geschwindigkeitsvorteil hat jedoch auch ihren Preis: Sets halten die
 Elemente nicht in der richtigen Reihenfolge, während :doc:`lists` und
 :doc:`tuples` dies tun. Wenn die Reihenfolge für euch wichtig ist, solltet ihr
-eine Datenstruktur verwenden, die sich die Reihenfolge merkt.
+nur für bestimmte Operationen die Elemente in ein Set umwandeln, :abbr:`z.B.
+(zum Beispiel)` um zu überprüfen, ob die Elemente einer Liste eindeutig sind mit
+
+.. code-block:: pycon
+
+   >>> sequences = ["list", "tuple", "set", "tuple"]
+   >>> len(sequences) == len(set(sequences))
+   False
 
 Checks
 ------

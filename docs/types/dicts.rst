@@ -145,3 +145,6 @@ Checks
   Sheet einer Tabellenkalkulation verwenden, indem ihr
   :doc:`/types/sequences-sets/tuples` als Schlüssel Zeilen- und Spaltenwerte
   verwendet. Schreibt Beispielcode, um Werte hinzuzufügen und wieder abzufragen.
+
+* Wie könnt ihr alle Dubletten aus einer Liste entfernen ohne die Reihenfolge
+  der Elemente in der Liste zu ändern?

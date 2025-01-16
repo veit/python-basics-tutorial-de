@@ -545,6 +545,8 @@ ihr hat Auswirkungen auf die Originalliste:
    >>> sup
    [[0], 1]
 
+.. _check-list:
+
 Checks
 ------
 
@@ -569,14 +571,9 @@ Checks
 * Wenn ihr eine Liste ``l`` habt, wie könnt ihr daraus einen bestimmten Wert
   ``i`` entfernen?
 
-* Wie könnt ihr alle Dubletten aus einer Liste entfernen ohne die Reihenfolge
-  der Elemente in der Liste zu ändern?
-
 * Wenn ihr eine verschachtelte Liste ``ll`` habt, wie könnt ihr eine Kopie
   ``nll`` dieser Liste erhalten, in der ihr die Elemente ändern könnt, ohne den
   Inhalt von ``ll`` zu verändern?
-
-.. _check-list:
 
 * Stellt sicher, dass das Objekt ``my_collection`` eine Liste ist, bevor ihr
   versucht, daran Daten anzuhängen.
