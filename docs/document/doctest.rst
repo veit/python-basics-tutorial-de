@@ -8,7 +8,7 @@ einem Docstring oder in einer anderen Textdatei erfüllt sind.
 
    .. literalinclude:: arithmetic.py
       :language: python
-      :lines: 9-18
+      :lines: 9-19
       :lineno-start: 9
 
 #. Anschließend könnt ihr ihn testen mit:
@@ -28,12 +28,12 @@ einem Docstring oder in einer anderen Textdatei erfüllt sind.
         Expecting nothing
         ok
         Trying:
-            divide(x, y)
+            round(divide(x, y), 8)
         Expecting:
-            -1.1666666666666667
+            -1.16666667
         ok
         Trying:
-            divide(x, z)
+            divide(x, y)
         Expecting:
             Traceback (most recent call last):
               File "<stdin>", line 1, in <module>
@@ -75,12 +75,12 @@ einem Docstring oder in einer anderen Textdatei erfüllt sind.
         Expecting nothing
         ok
         Trying:
-            divide(x, y)
+            round(divide(x, y), 8)
         Expecting:
-            -1.1666666666666667
+            -1.16666667
         ok
         Trying:
-            divide(x, z)
+            divide(x, y)
         Expecting:
             Traceback (most recent call last):
               File "<stdin>", line 1, in <module>
