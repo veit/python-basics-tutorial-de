@@ -36,6 +36,10 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update uv sections
+
+  * Reproducing and updating uv environments
+
 * 🎨 Rearrange glossaries
 * 📝 Update conda term
 * 📝 Update GitLab package registry

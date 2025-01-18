@@ -557,15 +557,19 @@ Glossar
        uv vereinfacht Entwicklung und Deployment von Python-Projekten erheblich:
 
        * :ref:`Installation <uv>`
-       * :doc:`Python-Umgebungen <Python4DataScience:productive/envs/uv/index>`
-       * :ref:`uv-package-structure`
+       * :ref:`Pakete erstellen <uv-package-structure>` und auf :doc:`PyPI
+         <../packs/publish>` oder :doc:`GitLab <../packs/gitlab>`
+         veröffentlichen
        * :doc:`Entwickeln von Anwendungen <../packs/apps>`
        * Testen von Bibliotheken mit verschiedenen :ref:`Python-Versionen
          <various-python-versions>` und :ref:`tox_uv`
+       * :ref:`Reproduzieren <reproduce-virtual-env>` und :ref:`aktualisieren
+         <update-uv-lock>` der Python-Umgebung,
+         :abbr:`ggf. (gegebenenfalls)` auch mit einem
+         :doc:`Python4DataScience:productive/envs/uv/dependency-bot`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
-       * Pakete veröffentlichen auf :doc:`PyPI <../packs/publish>` und
-         :doc:`GitLab <../packs/gitlab>`
+       * Schwachstellen überprüfen mit :ref:`uv-secure <check-vulnerabilities>`
 
        .. seealso::
           * `Docs <https://docs.astral.sh/uv/>`__
