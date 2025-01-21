@@ -71,7 +71,9 @@ ihr in der folgenden Tabelle:
 +-----------------------+-------------------------------+-------------------------------+
 | Klassennamen          | CamelCase-Schreibweise        | ``MyClass``                   |
 +-----------------------+-------------------------------+-------------------------------+
-| Konstantennamen       | Versalien mit Unterstrichen   | ``PI``                        |
+| Namen für             | Versalien mit Unterstrichen   | ``PI``                        |
+| :term:`Konstanten     |                               |                               |
+| <Konstante>`          |                               |                               |
 +-----------------------+-------------------------------+-------------------------------+
 | Einrückung            | Vier Leerzeichen pro Ebene,   |                               |
 |                       | keine Tabs                    |                               |

@@ -119,7 +119,7 @@ Erweiterte numerische Funktionen
 --------------------------------
 
 Fortgeschrittenere numerische Funktionen wie Trigonometrie sowie einige
-nützliche Konstanten sind nicht in Python integriert, sondern werden in einem
+nützliche Variablen sind nicht in Python integriert, sondern werden in einem
 Standardmodul namens :doc:`math <python3:library/math>` bereitgestellt.
 :doc:`Module </modules/index>` werden später noch ausführlicher erklärt. Für den
 Moment genügt, dass ihr die mathematischen Funktionen in diesem Abschnitt
@@ -161,7 +161,7 @@ Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
   :func:`python3:math.sin`,
 * die hyperbolischen Funktionen :func:`python3:math.cosh`,
   :func:`python3:math.sinh` und :func:`python3:math.tanh`
-* und die Konstanten :data:`python3:math.e` und :data:`python3:math.pi`.
+* und die Variablen :data:`python3:math.e` und :data:`python3:math.pi`.
 
 Kaufmännisch runden
 -------------------

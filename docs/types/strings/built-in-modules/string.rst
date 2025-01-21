@@ -184,7 +184,7 @@ Zeichenkette:
 In diesem Beispiel werden die *Newlines* ``\n`` als Leerzeichen betrachtet. Die
 genaue Zuordnung kann sich von Betriebssystem zu Betriebssystem unterscheiden.
 Ihr könnt herausfinden, was Python als Leerzeichen betrachtet, indem ihr auf die
-Konstante :py:data:`string.whitespace` zugreift. Bei mir wird das folgende
+Variable :py:data:`string.whitespace` zugreift. Bei mir wird das folgende
 zurückgegeben:
 
 .. code-block:: pycon
@@ -281,9 +281,9 @@ Zeichenkette überprüft werden kann:
 Zeichenketten ändern
 --------------------
 
-:ref:`str <python3:textseq>`-Objekte sind unveränderlich, aber sie verfügen über
-mehrere Methoden, die eine modifizierte Version der ursprünglichen Zeichenkette
-zurückgeben können.
+:ref:`str <python3:textseq>`-Objekte sind :term:`unveränderlich
+<Unveränderlich>`, aber sie verfügen über mehrere Methoden, die eine
+modifizierte Version der ursprünglichen Zeichenkette zurückgeben können.
 
 :py:meth:`str.replace` könnt ihr verwenden, um Vorkommen des ersten
 :doc:`../../../functions/params` durch den zweiten zu ersetzen, :abbr:`z.B. (zum

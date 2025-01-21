@@ -32,7 +32,8 @@ wenn sie zum ersten Mal zugewiesen werden.
       >>> print(x)
       [4, 2, 3]
 
-   Variablen können sich jedoch auch auf Konstanten beziehen:
+   Variablen können jedoch auch auf :term:`unveränderliche <Unveränderlich>`
+   Objekte zeigen:
 
    .. code-block:: pycon
 
@@ -44,9 +45,10 @@ wenn sie zum ersten Mal zugewiesen werden.
       1 4 1
 
    In diesem Fall verweisen nach der dritten Zeile ``x``, ``y`` und ``z`` alle
-   auf dasselbe unveränderliche Integer-Objekt mit dem Wert ``1``. Die nächste
-   Zeile, ``y = 4``, bewirkt, dass ``y`` auf das Integer-Objekt ``4`` verweist,
-   dies ändert jedoch nicht die Referenzen von ``x`` oder ``z``.
+   auf dasselbe :term:`unveränderliche <Unveränderlich>` Integer-Objekt mit dem
+   Wert ``1``. Die nächste Zeile, ``y = 4``, bewirkt, dass ``y`` auf das
+   Integer-Objekt ``4`` verweist, dies ändert jedoch nicht die Referenzen von
+   ``x`` oder ``z``.
 
 Python-Variablen können auf jedes beliebige Objekt gesetzt werden, während in
 vielen anderen Sprachen Variablen nur im deklarierten Typ gespeichert werden

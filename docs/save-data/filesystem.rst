@@ -28,7 +28,7 @@ für jedes Laufwerk ein eigenes Stammverzeichnis hat, das mit ``C:\`` :abbr:`usw
 (und so weiter)` bezeichnet wird. Aufgrund dieser Unterschiede haben die
 Dateien auf den verschiedenen Betriebssystemen unterschiedliche Pfadnamen. Eine
 Datei namens :samp:`C:\data\myfile` unter Windows könnte unter Linux und macOS
-:samp:`/data/myfile` sein. Python bietet Funktionen und Konstanten, mit denen
+:samp:`/data/myfile` sein. Python bietet Funktionen und Variablen, mit denen
 ihr gängige Pfadnamenmanipulationen durchführen könnt, ohne sich um solche
 syntaktischen Details kümmern zu müssen. Mit ein wenig Sorgfalt können ihr eure
 Python-Programme so schreiben, dass sie unabhängig vom zugrunde liegenden
@@ -119,8 +119,8 @@ Relative Pfadnamen
 
       .. note::
          ``os.getcwd()`` wird als Funktionsaufruf ohne Argumente verwendet um zu
-         verdeutlichen, dass der zurückgegebene Wert keine Konstante ist,
-         sondern sich ändert, wenn ihr den Wert des aktuellen
+         verdeutlichen, dass der zurückgegebene Wert keine :term:`Konstante`
+         ist, sondern sich ändert, wenn ihr den Wert des aktuellen
          Arbeitsverzeichnisses ändert. Im obigen Beispiel ist das Ergebnis das
          Home-Verzeichnis auf einem meiner Linux-Rechner. Auf Windows-Rechnern
          würden zusätzliche Backslashes in den Pfad eingefügt:
@@ -257,8 +257,8 @@ betriebssystemspezifische Syntax verwenden zu müssen.
        >>> os.path.expandvars("$HOME/python-basics-tutorial-de")
        '/home/veit/python-basics-tutorial-de'
 
-Nützliche Konstanten und Funktionen
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nützliche Variablen und Funktionen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :data:`python3:os.name`
     gibt den Namen des Python-Moduls zurück, das importiert wurde, um die

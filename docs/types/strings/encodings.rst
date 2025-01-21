@@ -55,25 +55,22 @@ Das ``string``-Modul
 --------------------
 
 Das :doc:`string <python3:library/string>`-Modul von Python unterscheidet die
-folgenden String-Konstanten, die alle in den ASCII-Zeichensatz fallen:
+folgenden String-Variablen, die alle in den ASCII-Zeichensatz fallen:
 
-.. code-block:: python
+* :py:data:`string.whitespace` ``= " \t\n\r\v\f"``
+* :py:data:`string.ascii_lowercase` ``= "abcdefghijklmnopqrstuvwxyz"``
+* :py:data:`string.ascii_uppercase` ``= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"``
+* :py:data:`string.ascii_letters` ``= ascii_lowercase + ascii_uppercase``
+* :py:data:`string.digits` ``= "0123456789"``
+* :py:data:`string.hexdigits` ``= digits + "abcdef" + "ABCDEF"``
+* :py:data:`string.octdigits` ``= "01234567"``
+* :py:data:`string.punctuation` ``= r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""``
+* :py:data:`string.printable` ``= digits + ascii_letters + punctuation + whitespace``
 
-    # Some strings for ctype-style character classification
-    whitespace = " \t\n\r\v\f"
-    ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
-    ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    ascii_letters = ascii_lowercase + ascii_uppercase
-    digits = "0123456789"
-    hexdigits = digits + "abcdef" + "ABCDEF"
-    octdigits = "01234567"
-    punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
-    printable = digits + ascii_letters + punctuation + whitespace
-
-Die meisten dieser Konstanten sollten in ihrem Bezeichnernamen selbsterklärend
-sein. ``hexdigits`` und ``octdigits`` beziehen sich auf die
-Hexadezimal- :abbr:`bzw. (beziehungsweise)` Oktalwerte. Ihr könnt diese
-Konstanten für alltägliche String-Manipulation verwenden:
+meisten dieser Variablen sollten in ihrem Bezeichnernamen selbsterklärend sein.
+``hexdigits`` und ``octdigits`` beziehen sich auf die Hexadezimal- :abbr:`bzw.
+(beziehungsweise)` Oktalwerte. Ihr könnt diese Variablen für alltägliche
+String-Manipulation verwenden:
 
 .. code-block:: pycon
 

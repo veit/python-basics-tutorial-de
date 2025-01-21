@@ -237,15 +237,15 @@ Veränderliche Objekte als Argumente
 -----------------------------------
 
 Argumente werden per Objektreferenz übergeben. Der Parameter wird zu einem neuen
-Verweis auf das Objekt. Bei unveränderlichen Objekten wie
-:doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` und
+Verweis auf das Objekt. Bei :term:`unveränderlichen <Unveränderlich>` Objekten
+wie :doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` und
 :doc:`/types/numbers/index` hat das, was mit einem Parameter gemacht wird, keine
 Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein veränderliches Objekt
 übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 </types/sequences-sets/lists>`, ein :doc:`Dict </types/dicts>` oder eine
 Klasseninstanz, ändert jede Änderung des Objekts, worauf das Argument außerhalb
-der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen auf
-das Argument.
+der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen
+auf das Argument.
 
 .. code-block:: pycon
 
@@ -259,10 +259,10 @@ das Argument.
     >>> x, y
     (5, [2, 4, 6, 1])
 
-Die Variable ``x`` wird nicht geändert, da sie unveränderlich ist. Stattdessen
-wird der Funktionsparameter ``n`` so gesetzt, dass er auf den neuen Wert ``6``
-verweist. Bei ``y`` gibt es jedoch eine Änderung, weil die Liste, auf die sie
-verweist, geändert wurde.
+Die Variable ``x`` wird nicht geändert, da sie :term:`unveränderlich
+<Unveränderlich>` ist. Stattdessen wird der Funktionsparameter ``n`` so gesetzt,
+dass er auf den neuen Wert ``6`` verweist. Bei ``y`` gibt es jedoch eine
+Änderung, weil die Liste, auf die sie verweist, geändert wurde.
 
 Checks
 ------

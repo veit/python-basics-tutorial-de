@@ -343,7 +343,7 @@ eurem Arbeitsverzeichnis ausgeführt werden.
 
 :file:`loaders.py`
     ist ein Beispiel für ein Modul innerhalb des Pakets, das die Logik
-    (Funktionen, Klassen, Konstanten, :abbr:`etc. (et cetera)`) eures Pakets
+    (Funktionen, Klassen, Variablen, :abbr:`etc. (et cetera)`) eures Pakets
     enthalten könnte.
 
 Andere Dateien
