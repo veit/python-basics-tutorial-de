@@ -52,8 +52,10 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
     Wenn ``x`` und ``z[0]`` die gleiche ID im Speicher haben, bedeutet das, dass
     wir an zwei Stellen auf dasselbe Objekt verweisen.
 
-    Am häufigsten werden ``is`` und ``is not`` in Verbindung mit
-    :doc:`../types/none` verwendet:
+    Der ``is``-Operator wird meist bei Werten verwendet, die nur einmal im
+    Speicher vorhanden sind, :abbr:`sog. (sogenannte)` :term:`Singleton-Objekte
+    <Singleton-Objekt>`. So ist die Überprüfung auf :doc:`../types/none` die
+    häufigste Verwendung des ``is``-Operators.
 
     .. code-block:: pycon
 
@@ -62,9 +64,10 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> x is not None
        True
 
-    Der Python-Style-Guide in :pep:`8` besagt, dass ihr Identität verwenden
-    solltet, um mit :doc:`../types/none` zu vergleichen. Ihr solltet also
-    niemals ``x == None``, sondern stattdessen ``x is None``  verwenden.
+    Auch der Python-Style-Guide in :pep:`8` empfiehlt, dass ihr auf Identität
+    mit :doc:`../types/none` und nicht auf Werte überprüfen solltet, also
+    niemals ``x == None``, sondern stattdessen immer ``x is None``  verwenden
+    solltet.
 
 ``and``, ``not``, ``or``
     sind logische Operatoren, mit denen wir die oben genannten Überprüfungen

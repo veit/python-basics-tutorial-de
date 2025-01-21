@@ -9,7 +9,7 @@ ihr Zeichenketten managen könnt:
 +-----------------------+-------------------------------------------------------------------------------+
 | Modul                 | Beschreibung                                                                  |
 +=======================+===============================================================================+
-| :py:mod:`string`      | vergleicht mit Konstanten wie :py:data:`string.digits` oder                   |
+| :py:mod:`string`      | vergleicht mit Variablen wie :py:data:`string.digits` oder                    |
 |                       | :py:data:`string.whitespace`                                                  |
 +-----------------------+-------------------------------------------------------------------------------+
 | :py:mod:`re`          | sucht und ersetzt Text mit regulären Ausdrücken                               |

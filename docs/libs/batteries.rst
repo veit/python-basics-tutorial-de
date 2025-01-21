@@ -2,7 +2,7 @@
 ======================
 
 In Python kann eine Bibliothek aus mehreren Komponenten bestehen, einschließlich
-eingebauter Datentypen und Konstanten, die ohne eine Importanweisung verwendet
+eingebauter Datentypen und Variablen, die ohne eine Importanweisung verwendet
 werden können, wie :abbr:`z.B. (zum Beispiel)` :doc:`/types/numbers/index` und
 :doc:`/types/sequences-sets/lists`, sowie einiger eingebauter
 :doc:`/functions/index` und :doc:`/control-flow/exceptions`. Der größte Teil der

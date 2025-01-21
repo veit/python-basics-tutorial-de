@@ -35,8 +35,8 @@ einzelne Elemente zu erhalten:
    'pythonistas!'
 
 Die Index- und Slice-Notation kann jedoch nicht verwendet werden, um Elemente
-hinzuzufügen, zu entfernen oder zu ersetzen, da Zeichenketten unveränderlich
-sind:
+hinzuzufügen, zu entfernen oder zu ersetzen, da Zeichenketten
+:term`unveränderlich <Unveränderlich>` sind:
 
 .. code-block:: pycon
 
@@ -97,9 +97,9 @@ Zeilen 13–16
 Ändern von Zeichenketten mit Listenmanipulationen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Da :ref:`str <python3:textseq>`-Objekte unveränderlich sind, gibt es keine
-Möglichkeit, sie direkt zu verändern wie :doc:`../sequences-sets/lists`. Ihr
-könnt sie jedoch in Listen umwandeln:
+Da :ref:`str <python3:textseq>`-Objekte :term:`unveränderlich <Unveränderlich>`
+sind, gibt es keine Möglichkeit, sie direkt zu verändern wie
+:doc:`../sequences-sets/lists`. Ihr könnt sie jedoch in Listen umwandeln:
 
 .. code-block:: pycon
 

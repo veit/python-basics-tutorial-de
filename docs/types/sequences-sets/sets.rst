@@ -95,8 +95,9 @@ Differenz- oder Restmenge
 ``frozenset``
 -------------
 
-Neben ``set`` gibt es noch ``frozenset``, einen unveränderlichen Datentyp. Damit
-können sie auch Mitglieder anderer Mengen sein:
+Neben ``set`` gibt es noch ``frozenset``, einen :term:`unveränderlichen
+<Unveränderlich>` Datentyp. Damit können sie auch Mitglieder anderer Mengen
+sein:
 
 .. code-block:: pycon
    :linenos:

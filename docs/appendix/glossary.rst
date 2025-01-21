@@ -99,6 +99,12 @@ Glossar
        .. seealso::
           * :py:mod:`gc`
 
+   Konstante
+       Python hat zwar :term:`unveränderliche <Unveränderlich>` Objekte, aber
+       keine konstanten Variablen. Variablen verweisen auf Objekte, es gibt
+       jedoch keine Möglichkeit, zu verhindern, dass eine neue Zuweisung
+       erfolgt.
+
    Kontrollfluss
    Control flow
        Zeitliche Abfolge der einzelnen Befehle eines Computerprogramms.
@@ -124,6 +130,18 @@ Glossar
 
        .. seealso::
           * :doc:`/functions/params`
+
+   Singleton-Objekt
+       Eine Singleton-Klasse kann nur eine Instanz von sich selbst erzeugen.
+       :doc:`../types/none` ist ein Beispiel für eine Singleton-Klasse in
+       Python.
+
+   Unveränderlich
+   Immutable
+       Ein Objekt, das nicht verändert (:abbr:`d.h. (das heißt)` mutiert) werden
+       kann. Der Wert eines unveränderlichen Objekts kann sich nicht ändern.
+       :doc:`Tupel <../types/sequences-sets/tuples>` sind Beispiele für
+       unveränderliche Objekte.
 
    Zen of Python
        Auflistung von Python-Designprinzipien und -Philosophien, die für das
@@ -484,7 +502,6 @@ Glossar
           * `Docs <https://scikit-build.readthedocs.io/en/latest/>`__
           * `GitHub <https://github.com/scikit-build/scikit-build>`__
           * `PyPI <https://pypi.org/project/scikit-build>`__
-
 
    setuptools
        setuptools sind das klassische Build-System, das sehr leistungsfähig ist,
