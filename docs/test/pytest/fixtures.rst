@@ -53,7 +53,7 @@ zurückgeben. In diesem Fall dekoriert ``@pytest.fixture()`` die Funktion
 :func:`some_data` als Parameter. pytest erkennt dies und sucht nach
 einer Fixture mit diesem Namen.
 
-Testfixtures in pytest beziehen sich auf den Mechanismus, der die Trennung von
+Test-Fixtures in pytest beziehen sich auf den Mechanismus, der die Trennung von
 *Vorbereitungen für*- und *Aufräumen nach*-Code von euren Testfunktionen
 ermöglicht. pytest behandelt Exceptions während Fixtures anders als während
 einer Testfunktion. Eine ``Exception`` oder ein ``assert``-Fehler oder ein
@@ -485,8 +485,8 @@ Ich habe die alte ``items_db`` in ``db`` umbenannt und sie in den
 Session-Bereich verschoben.
 
 Die ``items_db``-Fixture hat ``db`` in ihrer Parameter-Liste, was bedeutet, dass
-sie von der ``db``-Fixture abhängt. Außerdem ist ``items_db``
-``function``-orientiert, was einen engeren Bereich als ``db`` darstellt. Wenn
+sie von der ``db``-Fixture abhängt. Außerdem ist ``items_db`` im
+``function``-Bereich, was einen engeren Bereich als ``db`` darstellt. Wenn
 Fixtures von anderen Fixtures abhängen, können sie nur Fixtures verwenden, die
 den gleichen oder einen größeren Geltungsbereich haben.
 
@@ -586,8 +586,8 @@ Fixture-Scope dynamisch festlegen
 ---------------------------------
 
 Nehmen wir an, wir haben die Fixtures so eingerichtet wie jetzt, mit ``db`` im
-``session``-Scope und ``items_db`` im ``function``-Scope. Nun besteht jedoch die
-Gefahr, dass das ``items_db``-Fixture leer ist, weil es :func:`delete_all`
+``session``-Scope und ``items_db`` im ``function``-Bereich. Nun besteht jedoch
+die Gefahr, dass das ``items_db``-Fixture leer ist, weil es :func:`delete_all`
 aufruft. Deshalb wollen wir eine Möglichkeit schaffen, die Datenbank für jede
 Testfunktion vollständig einzurichten, indem wir den Scope der ``db``-Fixture
 zur Laufzeit dynamisch festlegen. Hierfür ändern wir zuerst den Scope von
@@ -616,10 +616,10 @@ Anstelle eines bestimmten Bereichs haben wir einen Funktionsnamen eingegeben:
 
 Es gibt viele Möglichkeiten, wie wir herausfinden können, welchen Bereich wir
 verwenden sollen. In diesem Fall habe ich mich für eine neue
-Kommandozeilen-Option ``--fdb`` entschieden. Damit wir diese neue Option mit
-pytest verwenden können, müssen wir eine Hook-Funktion in der
-:file:`conftest.py`-Datei schreiben, die ich in :doc:`plugins` näher erläutern
-werde:
+Kommandozeilen-Option ``--fdb`` für den ``function``-Bereich der Datenbank
+entschieden. Damit wir diese neue Option mit pytest verwenden können, müssen wir
+eine Hook-Funktion in der :file:`conftest.py`-Datei schreiben, die ich in
+:doc:`plugins` näher erläutern werde:
 
 .. code-block:: python
 
@@ -657,7 +657,7 @@ Nach all dem ist das Standardverhalten dasselbe wie vorher, mit ``db`` im
     ============================== 3 passed in 0.00s ===============================
 
 Wenn wir jedoch die neue Option verwenden, erhalten wir eine ``db``-Fixture im
-``function``-Scope:
+``function``-Bereich:
 
 .. code-block:: pytest
 

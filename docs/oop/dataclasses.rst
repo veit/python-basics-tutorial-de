@@ -9,7 +9,7 @@ Klasse erstellen wollen.
 .. tip::
    Für Tabellendaten verwende ich im Allgemeinen :doc:`pandas Series oder
    DataFrames <Python4DataScience:workspace/pandas/data-structures>` und wenn
-   ich Matrizen mit Zahlen speichern muss, verwende ich :doc:`Numpy
+   ich Matrizen mit Zahlen speichern muss, verwende ich :doc:`NumPy
    <Python4DataScience:workspace/numpy/index>`.
 
 Nehmen wir an, wir wollen eine Klasse speichern, die ein Item repräsentiert mit

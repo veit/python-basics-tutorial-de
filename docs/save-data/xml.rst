@@ -16,8 +16,8 @@ Im folgenden Beispiel analysieren wir :download:`books.xml`:
    :lines: 1-
    :lineno-start: 1
 
-#. Hierzu impportieren wir zunächst das ``minidom``-Modul und geben ihm
-   denselben Namen, damit es leichter referenziert werden kann:
+#. Hierzu importieren wir zunächst das ``minidom``-Modul und geben ihm denselben
+   Namen, damit es leichter referenziert werden kann:
 
    .. literalinclude:: minidom_example.py
       :language: py

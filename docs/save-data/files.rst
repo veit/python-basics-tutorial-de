@@ -82,7 +82,7 @@ Möglichkeit, um Dateien automatisch zu schließen, wenn ihr fertig seid:
 Das zweite Argument des Befehls :func:`python3:open` ist eine Zeichenkette, die
 angibt, wie die Datei geöffnet werden soll. ``"r"`` öffnet die Datei zum Lesen
 (engl. *read*), ``"w"`` öffnet die Datei zum Schreiben (engl. *write*) und
-``"a"`` offnet die Datei zum Anhängen (engl. *attach*). Wenn ihr die Datei zum
+``"a"`` öffnet die Datei zum Anhängen (engl. *attach*). Wenn ihr die Datei zum
 Lesen öffnen wollen, könnt ihr das zweite Argument weglassen, da ``"r"`` der
 Standardwert ist. Das folgende kurze Programm schreibt :samp:`Hi, Pythonistas!`
 in eine Datei:

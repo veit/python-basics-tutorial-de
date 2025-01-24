@@ -1,5 +1,5 @@
-Boolsche Werte
-==============
+Boolesche Werte
+===============
 
 In den folgenden Beispielen werden Boolesche Werte verwendet:
 

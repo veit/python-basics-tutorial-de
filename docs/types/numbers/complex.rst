@@ -62,7 +62,7 @@ Funktionen für komplexe Zahlen arbeiten im
 Um im Code deutlich zu machen, dass es sich bei diesen Funktionen um spezielle
 Funktionen für komplexe Zahlen handelt, und um Namenskonflikte mit den
 normaleren Äquivalenten zu vermeiden, empfiehlt sich der einfache Import des
-Moduls um bei der Verwendung der Funktion ausdrücklich auf das ``cmath``-Paket
+Moduls um bei der Verwendung der Funktion ausdrücklich auf das ``cmath``-Modul
 zu verweisen, :abbr:`z.B. (zum Beispiel)`:
 
 .. code-block:: pycon

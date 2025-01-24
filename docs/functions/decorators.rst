@@ -44,8 +44,8 @@ Verwendung eines Dekorators besteht ganz einfach aus zwei Teilen:
 #. der Verwendung eines ``@``, gefolgt von dem Dekorator, unmittelbar bevor die
    umhüllte Funktion definiert wird.
 
-Die Dekorfunktion sollte eine Funktion als Parameter annehmen und eine Funktion
-zurückgeben, wie folgt:
+Die Dekorator-Funktion sollte eine Funktion als Parameter annehmen und eine
+Funktion zurückgeben, wie folgt:
 
 .. code-block:: pycon
    :linenos:

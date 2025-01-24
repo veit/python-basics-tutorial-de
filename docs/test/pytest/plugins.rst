@@ -350,7 +350,7 @@ lange Liste von Plugins, die das Testen weiter vereinfachen:
 
 `pytest-selenium <https://pypi.org/project/pytest-selenium/>`_
     stellt Fixtures zur Verfügung, die eine einfache Konfiguration von
-    browserbasierten Tests mit `Selenium <https://www.selenium.dev>`_
+    Browser-basierten Tests mit `Selenium <https://www.selenium.dev>`_
     ermöglichen.
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-selenium

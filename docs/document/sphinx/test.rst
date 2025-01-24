@@ -211,7 +211,7 @@ wir die Bibliothek über das :doc:`pre-commit
        additional_dependencies:
        - black
 
-blacken-docs unterstützt aktuell die folgenden black-Optionen:
+blacken-docs unterstützt aktuell die folgenden Black-Optionen:
 
 * `line-length
   <https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#l-line-length>`_

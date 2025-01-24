@@ -53,7 +53,7 @@ und entweder einen Pfad zu dem Code angeben, den ihr messen wollt, oder das
 installierte Paket, das ihr testet. In unserem Fall ist das Projekt Items ein
 installiertes Paket, so dass wir es mit ``--cov=items`` testen werden.
 
-Auf die normale pytest-Ausgabe folgt der Abdeckungsbericht, wie hier gezeigt:
+Auf die normale pytest-Ausgabe folgt der Coverage-Bericht, wie hier gezeigt:
 
 .. code-block:: pytest
 
