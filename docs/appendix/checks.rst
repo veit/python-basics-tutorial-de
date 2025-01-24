@@ -833,7 +833,7 @@ Checks
   ``.y`` verfügbar.
 
 * Aktualisiert die Dimensionen der Klasse :class:`Triangle`, damit sie
-  Eigenschaften mit Gettern und Settern sind, die keine negativen Größen
+  Eigenschaften mit Getter- und Setter-Methoden sind, die keine negativen Größen
   zulassen.
 
   .. code-block:: pycon
@@ -1042,13 +1042,13 @@ Checks
   .. code-block:: pycon
 
      >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythinistas!\n")
+     ...     f.write("Hi, Pythonistas!\n")
      ...
      17
      >>> with open("my_file") as f:
      ...     print(f.readlines())
      ...
-     ['Hi, Pythinistas!\n', 'Hi, Pythinistas!\n']
+     ['Hi, Pythonistas!\n', 'Hi, Pythonistas!\n']
 
 * Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
   :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten

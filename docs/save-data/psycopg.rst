@@ -39,7 +39,7 @@ Das ``psycopg``-Modul
       :lines: 3-4
       :lineno-start: 3
 
-#. Abragen der Datenbank:
+#. Abfragen der Datenbank:
 
    .. literalinclude:: psycopg.py
       :language: python

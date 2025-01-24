@@ -65,7 +65,7 @@ Mit ``add`` und ``remove`` könnt ihr Werte hinzufügen und löschen.
    {'list', 'tuple'}
 
 Die Elemente sind ungeordnet, :abbr:`d.h. (das heißt)` die Werte innerhalb
-einer Sequens können sich verschieben, wenn neue Elemente hinzugefügt werden.
+einer Sequenz können sich verschieben, wenn neue Elemente hinzugefügt werden.
 
 Mengenbildung
 ~~~~~~~~~~~~~

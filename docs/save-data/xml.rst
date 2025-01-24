@@ -16,8 +16,8 @@ Im folgenden Beispiel analysieren wir :download:`books.xml`:
    :lines: 1-
    :lineno-start: 1
 
-#. Hierzu impportieren wir zunächst das ``minidom``-Modul und geben ihm
-   denselben Namen, damit es leichter referenziert werden kann:
+#. Hierzu importieren wir zunächst das ``minidom``-Modul und geben ihm denselben
+   Namen, damit es leichter referenziert werden kann:
 
    .. literalinclude:: minidom_example.py
       :language: py
@@ -119,7 +119,7 @@ Parsen mit ElementTree
 
       >>> from elementtree_example import parseXML
       >>> parseXML("books.xml")
-      ...
+      …
       --------------------
       Iterating using iter
       --------------------
@@ -132,4 +132,4 @@ Parsen mit ElementTree
       date=2021-10-28
       book=
       title=Jupyter Tutorial
-      ...
+      …

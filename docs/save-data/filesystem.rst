@@ -27,9 +27,9 @@ als erstes Zeichen im Pfadnamen verwiesen wird, während das Windows-Dateisystem
 für jedes Laufwerk ein eigenes Stammverzeichnis hat, das mit ``C:\`` :abbr:`usw.
 (und so weiter)` bezeichnet wird. Aufgrund dieser Unterschiede haben die
 Dateien auf den verschiedenen Betriebssystemen unterschiedliche Pfadnamen. Eine
-Datei namens :samp:`C:\data\myfile` unter Windows könnte unter Linux und macOS
+Datei namens :samp:`C:\\data\\myfile` unter Windows könnte unter Linux und macOS
 :samp:`/data/myfile` sein. Python bietet Funktionen und Variablen, mit denen
-ihr gängige Pfadnamenmanipulationen durchführen könnt, ohne sich um solche
+ihr gängige Pfadnamen-Manipulationen durchführen könnt, ohne sich um solche
 syntaktischen Details kümmern zu müssen. Mit ein wenig Sorgfalt können ihr eure
 Python-Programme so schreiben, dass sie unabhängig vom zugrunde liegenden
 Dateisystem korrekt ausgeführt werden.
@@ -81,7 +81,7 @@ Relative Pfadnamen
     Dieser Kontext wird in der Regel auf eine der beiden folgenden Arten
     bereitgestellt:
 
-    * Der relative Pfad wird an einen vorhandenen absoluten Pfad anzuhängt,
+    * Der relative Pfad wird an einen vorhandenen absoluten Pfad angehängt,
       wodurch ein neuer absoluter Pfad entsteht. Wenn ihr einen relativen
       Windows-Pfad :samp:`{Start Menu\\Programs\\Python 3.13}` und einen
       absoluten Pfad :samp:`{C:\\Users\\Veit}` habt, dann kann durch Anhängen
@@ -124,7 +124,7 @@ Relative Pfadnamen
          Arbeitsverzeichnisses ändert. Im obigen Beispiel ist das Ergebnis das
          Home-Verzeichnis auf einem meiner Linux-Rechner. Auf Windows-Rechnern
          würden zusätzliche Backslashes in den Pfad eingefügt:
-         ``C:\\Users\\Veit``, da Windows den Backslash ``\`` als Pfadseparator
+         ``C:\\Users\\Veit``, da Windows den Backslash ``\`` als Pfad-Separator
          verwendet, der in :doc:`/types/strings/index` jedoch eine andere
          Bedeutung hat.
 

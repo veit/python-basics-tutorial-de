@@ -11,7 +11,7 @@ bekommen, könnt ihr euch den Quellcode dieser Seite unter dem Link `Page source
 Ursprünglich wurde Sphinx für die Dokumentation von Python entwickelt und wird
 heute in fast allen Python-Projekten verwendet, darunter `NumPy and SciPy
 <https://docs.scipy.org/doc/>`_, `Matplotlib
-<https://matplotlib.org/stable/users/index.html>`_, `Pandas
+<https://matplotlib.org/stable/users/index.html>`_, `pandas
 <https://pandas.pydata.org/docs/>`_ und `SQLAlchemy
 <https://docs.sqlalchemy.org/>`_.
 

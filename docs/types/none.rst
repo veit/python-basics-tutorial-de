@@ -21,10 +21,10 @@ dasselbe Objekt), und ``None`` ist nur mit sich selbst identisch:
    >>> MyType() is None
    True
 
-:class:`None` ist *falsy*
--------------------------
+:class:`None` ist ``False``
+---------------------------
 
-In Python verlassen wir uns oft darauf, dass :class:`None` *falsy* ist:
+In Python verlassen wir uns oft darauf, dass :class:`None` ``False`` ist:
 
 .. code-block:: pycon
 

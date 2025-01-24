@@ -1,7 +1,7 @@
 Platzhalter
 -----------
 
-Sphinx unterscheidet die folgenden Platzhaltervariablen:
+Sphinx unterscheidet die folgenden Platzhalter-Variablen:
 
 .. rst:role:: envvar
 

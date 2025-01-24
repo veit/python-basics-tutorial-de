@@ -64,7 +64,7 @@ Früher war der Hauptnachteil bei der Verwendung von Beschleunigungsmodulen, das
 dadurch die Distribution der Software erschwert wurde. Heute ist dieser Nachteil
 durch :term:`wheel` kaum noch vorhanden. Einige Nachteile bleiben dennoch:
 
-* Die Installation aus den Sourcen bleibt weiterhin kompliziert.
+* Die Installation aus dem Quellcode bleibt weiterhin kompliziert.
 * Ggf. gibt es kein passendes :term:`wheel` für den verwendeten Build des
   CPython-Interpreters oder alternativen Interpretern wie `PyPy
   <https://pypy.org/>`__, `IronPython <https://ironpython.net/>`_ oder `Jython
@@ -88,7 +88,7 @@ sollten auch eine Reihe anderer Alternativen in Betracht gezogen werden:
 
 * Sucht nach vorhandenen optimierten Alternativen. Die CPython-Standardbibliothek
   enthält eine Reihe optimierter Datenstrukturen und Algorithmen, insbesondere in
-  den builtins und den Modulen ``collections`` und ``itertools``.
+  den builtins und den Modulen :mod:`collections` und :mod:`itertools`.
 
   Gelegentlich bietet auch der :term:`Python Package Index` (:term:`PyPI`)
   zusätzliche Alternativen. Manchmal kann ein Modul eines Drittanbieters die

@@ -141,7 +141,7 @@ anzeigt. Um den Test direkt von Python aus aufrufen zu können, müssen wir eine
 
 Wenn wir den Test nun mit Python durchführen, erhalten wir folgendes Ergebnis:
 
-.. code-block:: python
+.. code-block:: console
 
    python tests/test_item_fails.py
    Traceback (most recent call last):

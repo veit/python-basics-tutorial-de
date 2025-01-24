@@ -79,7 +79,7 @@ ihr in der folgenden Tabelle:
 |                       | keine Tabs                    |                               |
 +-----------------------+-------------------------------+-------------------------------+
 | Vergleiche            | nicht explizit mit ``True``   | ``if my_var:``,               |
-|                       | oder ``False``,siehe auch     | ``if not my_var:``            |
+|                       | oder ``False``, siehe auch    | ``if not my_var:``            |
 |                       | :doc:`control-flow/boolean`   |                               |
 +-----------------------+-------------------------------+-------------------------------+
 

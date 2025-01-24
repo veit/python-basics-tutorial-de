@@ -216,7 +216,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     ist eine kurze Zusammenfassung des Pakets, die aus einem Satz besteht.
 ``readme``
     ist ein Pfad zu einer Datei, die eine detaillierte Beschreibung des Pakets
-    enthält. Diese wird auf der Paketdetailseite auf :term:`Python Package
+    enthält. Diese wird auf der Paket-Detailseite auf :term:`Python Package
     Index` (:term:`PyPI`) angezeigt. In diesem Fall wird die Beschreibung aus
     ``README.rst`` geladen.
 ``requires-python``

@@ -101,8 +101,8 @@ Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
     gibt das größte Element in einem :term:`python3:iterable` oder das größte
     von zwei oder mehr Argumenten zurück.
 :func:`python3:min`
-    gibt das kleinste Element in einem Iterable oder das kleinste von zwei oder
-    mehr Argumenten zurück.
+    gibt das kleinste Element in einem  :term:`python3:iterable` oder das
+    kleinste von zwei oder mehr Argumenten zurück.
 :func:`python3:oct`
     konvertiert eine Integer-Zahl in eine oktale Zeichenkette mit dem Präfix
     ``0o``. Das Ergebnis ist ein gültiger Python-Ausdruck. Wenn ``x`` kein
@@ -111,9 +111,10 @@ Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
 :func:`python3:pow`
     gibt *base* als Potenz von *exp* zurück.
 :func:`python3:round`
-    gibt eine Zahl zurück, die auf *ndigits* nach dem Dezimalpunkt gerundet ist.
-    Wird *ndigits* weggelassen oder ist *None*, wird die nächstgelegene Ganzzahl
-    zur Eingabe zurückgegeben.
+    gibt eine Zahl zurück, die auf :samp:`{N}` Stellen nach dem Dezimalpunkt
+    gerundet ist.
+    Wird :samp:`{N}` weggelassen oder ist :doc:`../none`, wird die nächstgelegene
+    Ganzzahl zur Eingabe zurückgegeben.
 
 Erweiterte numerische Funktionen
 --------------------------------
