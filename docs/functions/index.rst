@@ -98,7 +98,7 @@ Wir erhalten zur Laufzeit die Typen mit dem ``__annotations__``-Attribut:
    >>> factlist.__annotations__
    {'list': list[float], 'return': list[float]}
 
-Es findet jedoch zur Laufzeit **keine** Typüberprüfung statt.
+Es findet jedoch zur Laufzeit **keine** Typ-Überprüfung statt.
 
 .. seealso::
    * :pep:`484`

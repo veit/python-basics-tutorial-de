@@ -1,12 +1,12 @@
 Testparametrisierung
 ====================
 
-Durch Parametrisierung können wir eine Testfunktion in viele Testfälle
-umwandeln, um mit weniger Arbeit gründlicher zu testen. Hierfür übergeben wir
-dem Test mehrere Sätze von Argumenten, um neue Testfälle zu erstellen. Wir
-werfen einen Blick auf redundanten Code, den wir mit Parametrisierung vermeiden.
-Dann werden wir uns drei Möglichkeiten ansehen, und zwar in der Reihenfolge, in
-der sie ausgewählt werden sollten:
+Durch :term:`Parametrisierung <Parameter>` können wir eine Testfunktion in viele
+Testfälle umwandeln, um mit weniger Arbeit gründlicher zu testen. Hierfür
+übergeben wir dem Test mehrere Sätze von Argumenten, um neue Testfälle zu
+erstellen. Wir werfen einen Blick auf redundanten Code, den wir mit
+Parametrisierung vermeiden. Dann werden wir uns drei Möglichkeiten ansehen, und
+zwar in der Reihenfolge, in der sie ausgewählt werden sollten:
 
 - Parametrisierung von Funktionen
 - Parametrisierung von Fixtures

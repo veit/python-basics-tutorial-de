@@ -108,7 +108,7 @@ Nun könnt ihr euer Paket auf GitLab veröffentlichen mit:
    ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*``.
 
 .. seealso::
-   In :ref:`uv-gitlab` erhaltet ihr weitere Ninweise zur Konfiguration der
+   In :ref:`uv-gitlab` erhaltet ihr weitere Hinweise zur Konfiguration der
    :file:`.gitlab-ci.yml`-Datei.
 
 Installieren des Pakets

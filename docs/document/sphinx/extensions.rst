@@ -22,7 +22,7 @@ Eingebaute Erweiterungen
 `sphinx.ext.intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`_
     ermöglicht das Einbinden anderer Projektdokumentationen.
 `sphinx.ext.mathjax <https://www.sphinx-doc.org/en/master/usage/extensions/math.html#module-sphinx.ext.mathjax>`_
-    Rendertmathematische Formeln über JavaScript.
+    rendert mathematische Formeln über JavaScript.
 `sphinx.ext.napoleon <https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html>`_
     unterstützt NumPy und Google Style Docstrings.
 `sphinx.ext.todo <https://www.sphinx-doc.org/en/master/usage/extensions/todo.html>`_
@@ -51,7 +51,7 @@ Erweiterungen von Drittanbietern
 `numpydoc <https://github.com/numpy/numpydoc>`_
     `NumPy <https://numpy.org/>`_ Sphinx-Erweiterung.
 `Releases <https://github.com/bitprophet/releases>`_
-    schreibt eine Changelog-Datei.
+    schreibt eine :file:`CHANGELOG`-Datei.
 `sphinxcontrib-napoleon <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/>`_
     Präprozessor zum Parsen von NumPy- und Google-Style Docstrings.
 `sphinx-autodoc-annotation <https://github.com/nicolashainaux/sphinx-autodoc-annotation>`_
@@ -79,7 +79,8 @@ Erweiterungen von Drittanbietern
     zeigt ein `JSON Schema <https://json-schema.org>`_ in der
     Sphinx-Dokumentation
 `Sphinxcontrib-mermaid <https://github.com/mgaitan/sphinxcontrib-mermaid>`_
-    ermöglicht euch, Mermaid-Grafiken in Ihre Dokumente einzubetten.
+    ermöglicht euch, `Mermaid <http://mermaid.js.org/>`_-Grafiken in eure
+    Dokumente einzubetten.
 `Sphinx Sitemap Generator Extension <https://github.com/jdillard/sphinx-sitemap>`_
     generiert multiversion- und multilanguage-`sitemaps
     <https://www.sitemaps.org/protocol.html>`_ für die HTML-Version

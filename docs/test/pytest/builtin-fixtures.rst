@@ -307,11 +307,12 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 |                                                       | Arbeitsverzeichnis    |
 +-------------------------------------------------------+-----------------------+
 
-.. [1] Der ``raising``-Parameter teilt pytest mit, ob eine Exception ausgelöst
-       werden soll, wenn das Element (noch) nicht vorhanden ist.
-.. [2] Der ``prepend``-Parameter von ``setenv()`` kann ein Zeichen sein. Wenn er
-       gesetzt ist, wird der Wert der Umgebungsvariablen in :samp:`{VALUE} +
-       prepend + {OLD_VALUE}` geändert.
+.. [1] Der ``raising``-:term:`Parameter` teilt pytest mit, ob eine
+       :doc:`Exception <../../control-flow/exceptions>` ausgelöst werden soll,
+       wenn das Element (noch) nicht vorhanden ist.
+.. [2] Der ``prepend``-:term:`Parameter`von ``setenv()`` kann ein Zeichen sein.
+       Wenn er gesetzt ist, wird der Wert der Umgebungsvariablen in
+       :samp:`{VALUE} + prepend + {OLD_VALUE}` geändert.
 
 Wir können ``monkeypatch`` verwenden, um die :abbr:`CLI (Command Line
 Interface)` auf ein temporäres Verzeichnis für die Datenbank umzuleiten, und
@@ -368,8 +369,8 @@ Kommandozeile:
         result = runner.invoke(items.app, params)
         return result.output.rstrip()
 
-Anschließend können wir dann unseren Test schreiben, der die gesamte
-``get_path()``-Funktion patcht:
+Anschließend können wir dann unseren Test schreiben, der einen Patch für die
+:func:`get_path`-Funktion enthält:
 
 .. code-block:: python
 
@@ -411,62 +412,62 @@ In unserem Fall könnte sinnvoll sein, eine Umgebungsvariable
 Verbleibende Built-in-Fixtures
 ------------------------------
 
-+-------------------------------+-----------------------------------------------+
-| Built-in-Fixture              | Beschreibung                                  |
-+===============================+===============================================+
-| ``capfd``,                    | Varianten von ``capsys``, die mit             |
-| ``capfdbinary``,              | Dateideskriptoren und/oder binärer Ausgabe    |
-| ``capsysbinary``              | arbeiten.                                     |
-+-------------------------------+-----------------------------------------------+
-| ``caplog``                    | ähnlich wie ``capsys``; wird für Meldungen    |
-|                               | verwendet, die mit Pythons Logging-System     |
-|                               | erstellt werden.                              |
-+-------------------------------+-----------------------------------------------+
-| ``cache``                     | wird zum Speichern und Abrufen von Werten     |
-|                               | über mehrere Pytest-Läufe hinweg verwendet.   |
-|                               |                                               |
-|                               | Es erlaubt ``last-failed``, ``failed-first``  |
-|                               | und ähnliche Optionen.                        |
-+-------------------------------+-----------------------------------------------+
-| ``doctest_namespace``         | nützlich, wenn ihr pytest verwenden möchtet,  |
-|                               | um :doc:`Doctests                             |
-|                               | <../../document/doctest>`                     |
-|                               | durchzuführen.                                |
-+-------------------------------+-----------------------------------------------+
-| ``pytestconfig``              | wird verwendet, um Zugriff auf                |
-|                               | Konfigurationswerte, Plugin-Manager und       |
-|                               | -Hooks zu erhalten.                           |
-+-------------------------------+-----------------------------------------------+
-| ``record_property``,          | wird verwendet, um dem Test oder der          |
-| ``record_testsuite_property`` | Testsuite zusätzliche Eigenschaften           |
-|                               | hinzuzufügen.                                 |
-|                               |                                               |
-|                               | Besonders nützlich für das Hinzufügen von     |
-|                               | Daten zu einem Bericht, der von :abbr:`CI     |
-|                               | (Continuous Integration)`-Tools verwendet     |
-|                               | wird.                                         |
-+-------------------------------+-----------------------------------------------+
-| ``recwarn``                   | wird verwendet, um Warnmeldungen zu testen.   |
-|                               |                                               |
-+-------------------------------+-----------------------------------------------+
-| ``request``                   | wird verwendet, um Informationen über die     |
-|                               | ausgeführte Testfunktion bereitzustellen.     |
-|                               |                                               |
-|                               | wird meist bei der Parametrisierung von       |
-|                               | Fixtures verwendet                            |
-+-------------------------------+-----------------------------------------------+
-| ``pytester``, ``testdir``     | Wird verwendet, um ein temporäres             |
-|                               | Testverzeichnis bereitzustellen, um die       |
-|                               | Ausführung und das Testen von pytest-Plugins  |
-|                               | zu unterstützen. ``pytester`` ist der         |
-|                               | ``pathlib``-basierte Ersatz für das           |
-|                               | ``py.path``-basierte ``testdir``.             |
-+-------------------------------+-----------------------------------------------+
-| ``tmpdir``,                   | ähnlich wie ``tmp_path`` und                  |
-| ``tmpdir_factory``            | ``tmp_path_factory``; dient der Rückgabe      |
-|                               | eines ``py.path.local``-Objekts anstelle      |
-|                               | eines ``pathlib.Path``-Objekts.               |
-+-------------------------------+-----------------------------------------------+
++-----------------------------------------------+-----------------------------------------------+
+| Built-in-Fixture                              | Beschreibung                                  |
++==============+================================+===============================================+
+| :fixture:`pytest:capfd`,                      | Varianten von ``capsys``, die mit             |
+| :fixture:`pytest:capfdbinary`,                | Dateideskriptoren und/oder binärer Ausgabe    |
+| :fixture:`pytest:capsysbinary`                | arbeiten.                                     |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:caplog`                      | ähnlich wie ``capsys``; wird für Meldungen    |
+|                                               | verwendet, die mit Pythons Logging-System     |
+|                                               | erstellt werden.                              |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:cache`                       | wird zum Speichern und Abrufen von Werten     |
+|                                               | über mehrere Pytest-Läufe hinweg verwendet.   |
+|                                               |                                               |
+|                                               | Es erlaubt ``last-failed``, ``failed-first``  |
+|                                               | und ähnliche Optionen.                        |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:doctest_namespace`           | nützlich, wenn ihr pytest verwenden möchtet,  |
+|                                               | um :doc:`Doctests                             |
+|                                               | <../../document/doctest>`                     |
+|                                               | durchzuführen.                                |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:pytestconfig`                | wird verwendet, um Zugriff auf                |
+|                                               | Konfigurationswerte, Plugin-Manager und       |
+|                                               | -Hooks zu erhalten.                           |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:record_property`,            | wird verwendet, um dem Test oder der          |
+| :fixture:`pytest:record_testsuite_property`   | Testsuite zusätzliche Eigenschaften           |
+|                                               | hinzuzufügen.                                 |
+|                                               |                                               |
+|                                               | Besonders nützlich für das Hinzufügen von     |
+|                                               | Daten zu einem Bericht, der von :abbr:`CI     |
+|                                               | (Continuous Integration)`-Tools verwendet     |
+|                                               | wird.                                         |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:recwarn`                     | wird verwendet, um Warnmeldungen zu testen.   |
+|                                               |                                               |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:request`                     | wird verwendet, um Informationen über die     |
+|                                               | ausgeführte Testfunktion bereitzustellen.     |
+|                                               |                                               |
+|                                               | wird meist bei der Parametrisierung von       |
+|                                               | Fixtures verwendet                            |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:pytester`,                   | Wird verwendet, um ein temporäres             |
+| :fixture:`pytest:testdir`                     | Testverzeichnis bereitzustellen, um die       |
+|                                               | Ausführung und das Testen von pytest-Plugins  |
+|                                               | zu unterstützen. ``pytester`` ist der         |
+|                                               | ``pathlib``-basierte Ersatz für das           |
+|                                               | ``py.path``-basierte ``testdir``.             |
++-----------------------------------------------+-----------------------------------------------+
+| :fixture:`pytest:tmpdir`,                     | ähnlich wie ``tmp_path`` und                  |
+| :fixture:`pytest:tmpdir_factory`              | ``tmp_path_factory``; dient der Rückgabe      |
+|                                               | eines ``py.path.local``-Objekts anstelle      |
+|                                               | eines ``pathlib.Path``-Objekts.               |
++-----------------------------------------------+-----------------------------------------------+
 
 Ihr könnt die vollständige Liste der Built-in-Fixtures erhalten, indem ihr
 ``pytest --fixtures`` ausführt.

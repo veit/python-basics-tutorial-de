@@ -96,12 +96,12 @@ Link zur :doc:`Startseite <../index>` oder zu :doc:`docstrings`.
 Dokumente herunterladen
 :::::::::::::::::::::::
 
-Link zu einem Dokument, das nicht von Sohinx gerendert werden soll, :abbr:`z.B.
+Link zu einem Dokument, das nicht von Sphinx gerendert werden soll, :abbr:`z.B.
 (zum Beispiel)` zu :download:`autodoc-examples.rst`.
 
 .. code-block:: rest
 
-   Link zu einem Dokument, das nicht von Sohinx gerendert werden soll,
+   Link zu einem Dokument, das nicht von Sphinx gerendert werden soll,
    :abbr:`z.B. (zum Beispiel)` zu :download:`docstrings-example.rst`.
 
 Bilder
@@ -170,14 +170,14 @@ Definitionsliste
 
 Term
     Definition des Begriffs
-EIn anderer Term
+Ein anderer Term
    … und seine Definition
 
 .. code-block:: rest
 
    Term
        Definition des Begriffs
-   EIn anderer Term
+   Ein anderer Term
       … und seine Definition
 
 Verschachtelte Listen

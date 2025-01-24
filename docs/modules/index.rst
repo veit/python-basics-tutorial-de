@@ -19,7 +19,7 @@ Funktion namens :func:`my_func` definiert. Im selben Programm möchtet ihr
 vielleicht auch ein anderes Modul namens ``othermodule`` verwenden, das
 ebenfalls eine Funktion namens :func:`my_func` definiert, aber etwas anderes tut
 als :func:`mymodule.my_func`. Ohne Module wäre es unmöglich, zwei verschiedene
-Funktionen mit demelben Namen zu verwenden. Mit Modulen könnt ihr in eurem
+Funktionen mit demselben Namen zu verwenden. Mit Modulen könnt ihr in eurem
 Hauptprogramm auf die Funktionen :func:`mymodule.my_func` und
 :func:`othermodule.my_func` verweisen. Die Verwendung der Modulnamen sorgt
 dafür, dass die beiden :func:`my_func`-Funktionen nicht verwechselt werden, da

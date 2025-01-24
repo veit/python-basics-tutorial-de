@@ -8,7 +8,7 @@ Direktiven können angegeben werden:
 
 .. rst:directive::  automodule
                     autoclass
-                    autoefunction
+                    autofunction
 
 Diese dokumentieren ein Modul, eine Klasse oder eine Funktion unter Verwendung
 des jeweiligen Docstrings.

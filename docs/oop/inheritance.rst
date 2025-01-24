@@ -72,7 +72,7 @@ sehen könnt:
    ``class`` definiert wird: ``Circle`` und ``Square`` erben beide von ``Form``.
 #. Das zweite Element ist der explizite Aufruf der ``__init__``-Methode der
    geerbten Klasse. Dies erfolgt in Python nicht automatisch, sondern meist über
-   die ``super``-Funktion, genauer durch die Zeilen ``super().__init__(x,y)``.
+   die ``super``-Funktion, genauer durch die Zeilen ``super().__init__(x, y)``.
    Dieser Code ruft die Initialisierungsfunktion von ``Form`` mit der zu
    initialisierenden Instanz und den entsprechenden Argumenten auf. Andernfalls
    würden für die Instanzen von ``Circle`` und ``Square`` die Instanz-Variablen

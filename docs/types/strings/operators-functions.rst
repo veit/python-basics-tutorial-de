@@ -36,7 +36,7 @@ einzelne Elemente zu erhalten:
 
 Die Index- und Slice-Notation kann jedoch nicht verwendet werden, um Elemente
 hinzuzufügen, zu entfernen oder zu ersetzen, da Zeichenketten
-:term`unveränderlich <Unveränderlich>` sind:
+:term:`unveränderlich <Unveränderlich>` sind:
 
 .. code-block:: pycon
 

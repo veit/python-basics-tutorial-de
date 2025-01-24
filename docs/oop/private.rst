@@ -71,5 +71,5 @@ Checks
   der Klasse mit sich bringen?
 
 * Aktualisiert die Dimensionen der Klasse :class:`Triangle`, damit sie
-  Eigenschaften mit Gettern und Settern sind, die keine negativen Größen
+  Eigenschaften mit Getter- und Setter-Methoden sind, die keine negativen Größen
   zulassen.
