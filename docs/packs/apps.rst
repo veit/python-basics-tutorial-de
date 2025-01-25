@@ -98,7 +98,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 
     .. seealso::
        * `Project lockfile
-         <https://docs.astral.sh/uv/concepts/projects/#project-lockfile>`_
+         <https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile>`_
 
 .. _reproduce-virtual-env:
 

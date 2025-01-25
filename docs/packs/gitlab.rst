@@ -20,8 +20,8 @@ Anschließend könnt ihr sowohl mit :term:`pip` als auch mit :term:`uv` das Pake
 nutzen.
 
 .. seealso::
-   `PyPI packages in the Package Registry
-   <https://docs.gitlab.com/ee/user/packages/pypi_repository/#publish-a-pypi-package-by-using-twine>`_
+   `Publish a PyPI package
+   <https://docs.gitlab.com/ee/user/packages/pypi_repository/#publish-a-pypi-package>`_
 
 Authentifizierung
 -----------------

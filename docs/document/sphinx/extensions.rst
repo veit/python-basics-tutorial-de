@@ -73,7 +73,7 @@ Erweiterungen von Drittanbietern
 `Sphinx-Needs <https://sphinx-needs.readthedocs.io/>`_
     erlaubt die Definition, Verlinkung und Filterung von need-Objekten, also
     :abbr:`z.B. (zum Beispiel)` Anforderungen und Testfälle
-`Sphinx-pyreverse <https://github.com/alendit/sphinx-pyreverse>`_
+`Sphinx-pyreverse <https://github.com/sphinx-pyreverse/sphinx-pyreverse>`_
     erstellt ein UML-Diagramm von Python-Modulen
 `sphinx-jsonschema <https://github.com/lnoor/sphinx-jsonschema>`_
     zeigt ein `JSON Schema <https://json-schema.org>`_ in der

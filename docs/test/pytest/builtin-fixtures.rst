@@ -217,15 +217,16 @@ Nun wird sie Ausgabe im ``with``-Block immer angezeigt, auch ohne die
 
 .. seealso::
 
-    ``capfd``
+    :fixture:`pytest:capfd`
         Wie ``capsys``, erfasst aber die Dateideskriptoren 1 und 2, die
         normalerweise dasselbe wie ``stdout`` und ``stderr``
-    ``capsysbinary``
+    :fixture:`pytest:capsysbinary`
         Während capsys Text erfasst, erfasst capsysbinary Bytes
-    ``capfdbinary``
+    :fixture:`pytest:capfdbinary`
         erfasst Bytes in den Dateideskriptoren 1 und 2
-    ``caplog``
-        erfasst Ausgaben, die mit dem Logging-Paket geschrieben wurden
+    :fixture:`pytest:caplog`
+        erfasst Logging-Daten, :abbr:`s.a. (siehe auch)`
+        :doc:`pytest:how-to/logging`
 
 .. _monkeypatch-fixture:
 
@@ -280,37 +281,37 @@ wurde.
 
 Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 
-+-------------------------------------------------------+-----------------------+
-| Funktion                                              | Beschreibung          |
-+=======================================================+=======================+
-| :samp:`setattr(TARGET, NAME, VALUE, raising=True)`    | setzt ein Attribut    |
-| [1]_                                                  |                       |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delattr(TARGET, NAME, raising=True)` [1]_      | löscht ein Attribut   |
-+-------------------------------------------------------+-----------------------+
-| :samp:`setitem(DICT, NAME, VALUE)`                    | setzt einen           |
-|                                                       | Dict-Eintrag          |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delitem(DICT, NAME, raising=True)` [1]_        | löscht einen          |
-|                                                       | Dict-Eintrag          |
-+-------------------------------------------------------+-----------------------+
-| :samp:`setenv(NAME, VALUE, prepend=None)` [2]_        | setzt eine            |
-|                                                       | Umgebungsvariable     |
-+-------------------------------------------------------+-----------------------+
-| :samp:`delenv(NAME, raising=True)` [1]_               | löscht eine           |
-|                                                       | Umgebungsvariable     |
-+-------------------------------------------------------+-----------------------+
-| :samp:`syspath_prepend(PATH)`                         | erweitert den Pfad    |
-|                                                       | ``sys.path``          |
-+-------------------------------------------------------+-----------------------+
-| :samp:`chdir(PATH)`                                   | wechselt das aktuelle |
-|                                                       | Arbeitsverzeichnis    |
-+-------------------------------------------------------+-----------------------+
++-----------------------------------------------+-----------------------+
+| Funktion                                      | Beschreibung          |
++===============================================+=======================+
+| :meth:`pytest.MonkeyPatch.setattr`            | setzt ein Attribut    |
+| [1]_                                          |                       |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.delattr` [1]_       | löscht ein Attribut   |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.setitem`            | setzt einen           |
+|                                               | Dict-Eintrag          |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.delitem` [1]_       | löscht einen          |
+|                                               | Dict-Eintrag          |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.setenv` [2]_        | setzt eine            |
+|                                               | Umgebungsvariable     |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.delenv` [1]_        | löscht eine           |
+|                                               | Umgebungsvariable     |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.syspath_prepend`    | erweitert den Pfad    |
+|                                               | :py:data:`sys.path`   |
++-----------------------------------------------+-----------------------+
+| :meth:`pytest.MonkeyPatch.chdir`              | wechselt das aktuelle |
+|                                               | Arbeitsverzeichnis    |
++-----------------------------------------------+-----------------------+
 
 .. [1] Der ``raising``-:term:`Parameter` teilt pytest mit, ob eine
        :doc:`Exception <../../control-flow/exceptions>` ausgelöst werden soll,
        wenn das Element (noch) nicht vorhanden ist.
-.. [2] Der ``prepend``-:term:`Parameter`von ``setenv()`` kann ein Zeichen sein.
+.. [2] Der ``prepend``-:term:`Parameter` von ``setenv()`` kann ein Zeichen sein.
        Wenn er gesetzt ist, wird der Wert der Umgebungsvariablen in
        :samp:`{VALUE} + prepend + {OLD_VALUE}` geändert.
 
