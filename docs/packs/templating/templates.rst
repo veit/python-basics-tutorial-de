@@ -4,13 +4,25 @@ Verfügbare Templates
 Python
 ------
 
-`cookiecutter-namespace-template <https://github.com/veit/cookiecutter-namespace-template>`_
-    Namespace-Template für Python-Pakete
 `cookiecutter-pypackage <https://github.com/audreyfeldroy/cookiecutter-pypackage>`_
     Template für Python-Pakete
-`cookiecutter-pytest-plugin <https://github.com/pytest-dev/cookiecutter-pytest-plugin>`_
-    Minimales Cookiecutter-Template zum Erstellen von `Pytest
-    <https://docs.pytest.org/>`_-Plugins
+
+    .. image:: https://raster.shields.io/github/stars/audreyfeldroy/cookiecutter-pypackage
+       :alt: Stars
+       :target: https://github.com/audreyfeldroy/cookiecutter-pypackage
+
+    .. image:: https://raster.shields.io/github/contributors/audreyfeldroy/cookiecutter-pypackage
+       :alt: Contributors
+       :target: https://github.com/audreyfeldroy/cookiecutter-pypackage/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/audreyfeldroy/cookiecutter-pypackage
+       :alt: Commit activity
+       :target: https://github.com/audreyfeldroy/cookiecutter-pypackage/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/audreyfeldroy/cookiecutter-pypackage
+       :alt: Lizenz
+       :target: https://github.com/audreyfeldroy/cookiecutter-pypackage?tab=BSD-3-Clause-1-ov-file#readme
+
 `cookiecutter-pylibrary <https://github.com/ionelmc/cookiecutter-pylibrary>`_
     Umfangreiche Vorlage für Python-Pakete mit Unterstützung für Tests und
     Deployments (C-Extension-Support u.a. für `cffi
@@ -25,44 +37,142 @@ Python
     Packaging-Checks u.a. mit `scrutinizer
     <https://scrutinizer-ci.com/docs/guides/python/>`_, `Isort
     <https://github.com/PyCQA/isort>`_ etc.
+
+    .. image:: https://raster.shields.io/github/stars/ionelmc/cookiecutter-pylibrary
+       :alt: Stars
+       :target: https://github.com/ionelmc/cookiecutter-pylibrary
+
+    .. image:: https://raster.shields.io/github/contributors/ionelmc/cookiecutter-pylibrary
+       :alt: Contributors
+       :target: https://github.com/ionelmc/cookiecutter-pylibrary/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/ionelmc/cookiecutter-pylibrary
+       :alt: Commit activity
+       :target: https://github.com/ionelmc/cookiecutter-pylibrary/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/ionelmc/cookiecutter-pylibrary
+       :alt: Lizenz
+       :target: https://github.com/ionelmc/cookiecutter-pylibrary?tab=BSD-2-Clause-1-ov-file#readme
+
+`cookiecutter-pytest-plugin <https://github.com/pytest-dev/cookiecutter-pytest-plugin>`_
+    Minimales Cookiecutter-Template zum Erstellen von `Pytest
+    <https://docs.pytest.org/>`_-Plugins
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/cookiecutter-pytest-plugin
+       :alt: Stars
+       :target: https://github.com/pytest-dev/cookiecutter-pytest-plugin
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/cookiecutter-pytest-plugin
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/cookiecutter-pytest-plugin/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/cookiecutter-pytest-plugin
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/cookiecutter-pytest-plugin/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/cookiecutter-pytest-plugin
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/cookiecutter-pytest-plugin?tab=MIT-1-ov-file#readme
+
 `cookiecutter-python-cli <https://github.com/seanluong/cookiecutter-python-cli>`_
     Template zum Erstellen einer Python-CLI-Anwendung mit `Click
     <https://click.palletsprojects.com/en/stable/>`_
-`widget-cookiecutter <https://github.com/jupyter-widgets/widget-cookiecutter>`_
-    Template zum Erstellen von Jupyter-Widgets
+
+    .. image:: https://raster.shields.io/github/stars/seanluong/cookiecutter-python-cli
+       :alt: Stars
+       :target: https://github.com/seanluong/cookiecutter-python-cli
+
+    .. image:: https://raster.shields.io/github/contributors/seanluong/cookiecutter-python-cli
+       :alt: Contributors
+       :target: https://github.com/seanluong/cookiecutter-python-cli/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/seanluong/cookiecutter-python-cli
+       :alt: Commit activity
+       :target: https://github.com/seanluong/cookiecutter-python-cli/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/seanluong/cookiecutter-python-cli
+       :alt: Lizenz
+       :target: https://github.com/seanluong/cookiecutter-python-cli?tab=BSD-3-Clause-1-ov-file#readme
+
+`cookiecutter-namespace-template <https://github.com/veit/cookiecutter-namespace-template>`_
+    Namespace-Template für Python-Pakete
+
+    .. image:: https://raster.shields.io/github/stars/veit/cookiecutter-namespace-template
+       :alt: Stars
+       :target: https://github.com/veit/cookiecutter-namespace-template
+
+    .. image:: https://raster.shields.io/github/contributors/veit/cookiecutter-namespace-template
+       :alt: Contributors
+       :target: https://github.com/veit/cookiecutter-namespace-template/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/veit/cookiecutter-namespace-template
+       :alt: Commit activity
+       :target: https://github.com/veit/cookiecutter-namespace-template/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/veit/cookiecutter-namespace-template
+       :alt: Lizenz
+       :target: https://github.com/veit/cookiecutter-namespace-template?tab=BSD-3-Clause-1-ov-file#readme
+
+Jupyter Notebooks
+-----------------
+
+`anywidget <https://github.com/manzt/anywidget>`_
+    Spezifikation und Toolkit für die Erstellung von wiederverwendbaren
+    webbasierten Widgets.
+
+    .. image:: https://raster.shields.io/github/stars/manzt/anywidget
+       :alt: Stars
+       :target: https://github.com/manzt/anywidget
+
+    .. image:: https://raster.shields.io/github/contributors/manzt/anywidget
+       :alt: Contributors
+       :target: https://github.com/manzt/anywidget/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/manzt/anywidget
+       :alt: Commit activity
+       :target: https://github.com/manzt/anywidget/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/manzt/anywidget
+       :alt: Lizenz
+       :target: https://github.com/manzt/anywidget?tab=MIT-1-ov-file#readme
+
+`widget-ts-cookiecutter <https://github.com/jupyter-widgets/widget-ts-cookiecutter>`_
+    Cookiecutter-Template für ipywidget-Erweiterungen
+
+    .. image:: https://raster.shields.io/github/stars/jupyter-widgets/widget-ts-cookiecutter
+       :alt: Stars
+       :target: https://github.com/jupyter-widgets/widget-ts-cookiecutter
+
+    .. image:: https://raster.shields.io/github/contributors/jupyter-widgets/widget-ts-cookiecutter
+       :alt: Contributors
+       :target: https://github.com/jupyter-widgets/widget-ts-cookiecutter/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/jupyter-widgets/widget-ts-cookiecutter
+       :alt: Commit activity
+       :target: https://github.com/jupyter-widgets/widget-ts-cookiecutter/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/jupyter-widgets/widget-ts-cookiecutter
+       :alt: Lizenz
+       :target: https://github.com/jupyter-widgets/widget-ts-cookiecutter?tab=BSD-3-Clause-1-ov-file#readme
 
 Ansible
 -------
 
-`cookiecutter-ansible-role-ci <https://github.com/ferrarimarco/cookiecutter-ansible-role>`_
-    Vorlage für Ansible-Roles
+`cookiecutter-ansible-role <https://github.com/idealista/cookiecutter-ansible-role>`_
+    Vorlage zum Erstellen von Ansible-Rollen
 
-C
----
+    .. image:: https://raster.shields.io/github/stars/idealista/cookiecutter-ansible-role
+       :alt: Stars
+       :target: https://github.com/idealista/cookiecutter-ansible-role
 
-`bootstrap.c <https://github.com/vincentbernat/bootstrap.c>`_
-    Template für in C mit `Autotools
-    <https://de.wikipedia.org/wiki/GNU_Build_System>`_ geschriebene Projekte
-`cookiecutter-avr <https://github.com/solarnz/cookiecutter-avr>`_
-    Template für die AVR-Entwicklung
+    .. image:: https://raster.shields.io/github/contributors/idealista/cookiecutter-ansible-role
+       :alt: Contributors
+       :target: https://github.com/idealista/cookiecutter-ansible-role/graphs/contributors
 
-C++
----
+    .. image:: https://raster.shields.io/github/commit-activity/y/idealista/cookiecutter-ansible-role
+       :alt: Commit activity
+       :target: https://github.com/idealista/cookiecutter-ansible-role/graphs/commit-activity
 
-`BoilerplatePP <https://github.com/Paspartout/BoilerplatePP>`_
-    cmake-Template mit Unit Tests für C++-Projekte
-
-Scala
------
-
-`cookiecutter-scala <https://github.com/Plippe/cookiecutter-scala>`_
-    Vorlage für ein *Hello world*-Beispiel mit ein paar wenigen Bibliotheken
-`cookiecutter-scala-spark <https://github.com/jpzk/cookiecutter-scala-spark>`_
-   Template für eine `Apache-Spark <https://spark.apache.org/>`_-Anwendung
-
-LaTeX/XeTeX
------------
-
-`pandoc-talk <https://github.com/larsyencken/pandoc-talk>`_
-    Template für Präsentation mit `pandoc <https://pandoc.org/>`_ und `XeTeX
-    <https://de.wikipedia.org/wiki/XeTeX>`_
+    .. image:: https://raster.shields.io/github/license/idealista/cookiecutter-ansible-role
+       :alt: Lizenz
+       :target: https://github.com/idealista/cookiecutter-ansible-role?tab=Apache-2.0-1-ov-file#readme
