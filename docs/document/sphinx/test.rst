@@ -270,7 +270,7 @@ Vale wird von vielen Open-Source-Projekten genutzt, :abbr:`u.a. (unter anderem)`
 von
 
 * GitLab (`.vale.ini
-  <https://gitlab.com/gitlab-org/gitlab/blob/master/.vale.ini>`_, `Regeln
+  <https://gitlab.com/gitlab-org/gitlab/blob/master/.vale.ini>`__, `Regeln
   <https://gitlab.com/gitlab-org/gitlab/-/tree/master/doc/.vale/gitlab_base>`__)
 * Homebrew (`.vale.ini
   <https://github.com/Homebrew/brew/blob/master/.vale.ini>`__, `Regeln
@@ -308,7 +308,7 @@ Vale wird in der :file:`.vale.ini`-Datei konfiguriert:
    BasedOnStyles = cusy-de
 
 .. seealso::
-   * `Vale Configuration <https://vale.sh/docs/topics/config/>`_
+   * `.vale.ini <https://vale.sh/docs/vale-ini>`__
 
 Anschließend solltet ihr :abbr:`ggf. (gegebenenfalls)` eure :ref:`.gitignore
 <gitignore>`-Datei aktualisieren:

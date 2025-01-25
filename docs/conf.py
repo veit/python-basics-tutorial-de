@@ -245,3 +245,16 @@ texinfo_documents = [
         "Miscellaneous",
     ),
 ]
+
+
+# -- Custom documentation plugin ---------------------------------------
+# https://www.sphinx-doc.org/en/master/development/tutorials/extending_syntax.html#the-setup-function
+
+
+def setup(app: sphinx.application.Sphinx) -> None:
+    app.add_crossref_type(
+        "fixture",
+        "fixture",
+        objname="built-in fixture",
+        indextemplate="pair: %s; fixture",
+    )

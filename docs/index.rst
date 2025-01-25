@@ -34,7 +34,7 @@ und -visualisierung:
 * `Python für Data Science <https://www.python4data.science/de/latest/>`_
 * `PyViz-Tutorial <https://pyviz-tutorial.readthedocs.io/de/latest/>`_
 * `cusy Design-System: Datenvisualisierung
-  <https://www.cusy.design/de/latest/viz/index.html>`_
+  <https://www.cusy.design/viz/index.html>`_
 
 Alle Tutorials dienen als Seminarunterlagen für unsere aufeinander abgestimmten
 Trainings:
