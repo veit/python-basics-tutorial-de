@@ -4,6 +4,8 @@ Zeichenketten
 Die Verarbeitung von Zeichenketten ist eine der Stärken von Python. Es gibt
 viele Optionen zur Begrenzung von Zeichenketten:
 
+.. blacken-docs:off
+
 .. code-block:: python
 
    "Eine Zeichenfolge in doppelten Anführungszeichen kann 'einfache Anführungszeichen' enthalten."
@@ -11,6 +13,8 @@ viele Optionen zur Begrenzung von Zeichenketten:
    """\tEine Zeichenkette, die mit einem Tabulator beginnt und mit einem Zeilenumbruchzeichen endet.\n"""
    """Dies ist eine Zeichenkette in dreifach doppelten Anführungszeichen, die
    einzige Zeichenkette, die echte Zeilenumbrüche enthält."""
+
+.. blacken-docs:on
 
 Zeichenketten können durch einfache (``' '``), doppelte (``" "``), dreifache
 einfache (``''' '''``) oder dreifache doppelte (``""" """``) Anführungszeichen
