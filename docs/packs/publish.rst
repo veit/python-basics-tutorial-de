@@ -12,7 +12,7 @@ https://test.pypi.org/account/register/. Weitere Informationen findet ihr unter
 `Using TestPyPI
 <https://packaging.python.org/en/latest/guides/using-testpypi/>`_.
 
-Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
+Nun könnt ihr eine :file:`~/.config/pip/pip.conf`-Datei erstellen:
 
 .. code-block:: ini
 
@@ -32,10 +32,10 @@ Nun könnt ihr eine :file:`~/.pypirc`-Datei erstellen:
 Nachdem ihr registriert seid, könnt ihr euer :term:`Distribution Package` mit
 ``uv publish`` hochladen.
 
-Anschließend könnt ihr ``uv publish`` entweder mit der Option ``--username
-__token__`` verwenden oder die Umgebungsvariable
-``UV_PUBLISH_USERNAME=__token__`` setzen, um alle Archive unter :file:`/dist`
-auf den :term:`Python Package Index` hochladen.
+Dabei könnt ihr ``uv publish`` entweder mit der Option ``--username __token__``
+verwenden oder die Umgebungsvariable ``UV_PUBLISH_USERNAME=__token__`` setzen,
+um alle Archive unter :file:`/dist` auf den :term:`Python Package Index`
+hochladen:
 
 .. code-block:: console
 
@@ -123,7 +123,7 @@ Schließlich könnt ihr nun euer Paket auf :term:`PyPI` veröffentlichen:
 
 .. code-block:: console
 
-    $ uv upload dist/*
+    $ uv publish dist/*
 
 .. note::
     Ihr könnt Releases nicht einfach ersetzen da ihr Pakete mit derselben
