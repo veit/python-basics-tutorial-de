@@ -8,7 +8,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 .. code-block:: console
 
    $ uv init --package myapp
-   tree myapp -a
+   $ tree myapp -a
    myapp
    ├── .git
    │   └── ...
