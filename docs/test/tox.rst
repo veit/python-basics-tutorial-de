@@ -169,7 +169,7 @@ Python-Versionen hinzuzufügen:
    :emphasize-lines: 2, 4
 
    [tox]
-   envlist = py39, py310, py311, py312, py313
+   envlist = py3{9,10,11,12,13,13t,14,14t}
    isolated_build = True
    skip_missing_interpreters = True
 
@@ -260,7 +260,7 @@ Abhängigkeiten ein, wie :abbr:`z.B. (zum Beispiel)` Coverage. Wir erweitern dan
    :emphasize-lines: 12-
 
    [tox]
-   envlist = py3{9,10,11,12,13}
+   envlist = py3{9,10,11,12,13,13t,14,14t}
    isolated_build = True
    skip_missing_interpreters = True
 
@@ -352,7 +352,7 @@ vornehmen, damit Parameter an pytest übergeben werden können:
    envlist =
        pre-commit
        docs
-       py3{9,10,11,12,13}
+       py3{9,10,11,12,13,13t,14,14t}
        coverage-report
    isolated_build = True
    skip_missing_interpreters = True
