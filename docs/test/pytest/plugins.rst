@@ -425,6 +425,30 @@ Bedarf decken:
 … für Verschiedenes
 ~~~~~~~~~~~~~~~~~~~
 
+`pytest-testinfra <https://github.com/pytest-dev/pytest-testinfra>`_
+    ist ein `Serverspec <https://serverspec.org/>`_-Äquivalent für pytest, um
+    den aktuellen Zustand eurer Server mit Management-Tools wie `Salt
+    <https://saltproject.io>`_, `Ansible
+    <https://www.redhat.com/en/ansible-collaborative>`_, `Puppet
+    <https://www.puppet.com>`_, `Chef <https://www.chef.io>`_ :abbr:`usw. (und
+    so weiter)` zu testen.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-testinfra
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-testinfra/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-testinfra
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-testinfra/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-testinfra
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-testinfra/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-testinfra
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-testinfra?tab=Apache-2.0-1-ov-file
+
 `pytest-cov <https://pypi.org/project/pytest-cov/>`_
     führt die :doc:`../pytest/coverage` beim Testen aus.
 
