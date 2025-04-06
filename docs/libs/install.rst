@@ -212,10 +212,10 @@ für `setup-python <https://github.com/actions/setup-python>`_ verwenden können
    :emphasize-lines: 9
 
 In unseren
-:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd`-Pipelines
+:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`-Pipelines
 verwenden wir jedoch ``requires-python`` aus der :ref:`pyproject-toml`-Datei, um
 :doc:`Docker-Container mit der passenden Python-Version
-<Python4DataScience:productive/git/advanced/gitlab/docker>` zu bauen.
+<Python4DataScience:productive/git/advanced/gitlab/ci-cd/docker>` zu bauen.
 
 .. _uv:
 

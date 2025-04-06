@@ -6,7 +6,7 @@
 Integration (CI) Workflows. Genauer gesagt baut es Manylinux-, macOS 10.9+- und
 Windows-Wheels für CPython und PyPy mit GitHub Actions, Azure Pipelines, Travis
 CI, AppVeyor, CircleCI, oder
-:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd`.
+:doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`.
 
 Darüber hinaus bündelt es gemeinsam genutzte Bibliotheksabhängigkeiten unter
 Linux und macOS durch `auditwheel <https://github.com/pypa/auditwheel>`_ und
@@ -71,8 +71,8 @@ Schließlich können die Tests auch gegen die Wheels laufen.
 .. tab:: GitLab CI/CD
 
     Um Linux-, macOS- und Windows-Wheels mit
-    :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd` zu bauen,
-    erstellt eine  :file:`.gitlab-ci.yml`-Datei in eurem :doc:`Git
+    :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index` zu
+    bauen, erstellt eine  :file:`.gitlab-ci.yml`-Datei in eurem :doc:`Git
     <Python4DataScience:productive/git/index>`-Repository:
 
     .. literalinclude:: .gitlab-ci.yml
