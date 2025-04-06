@@ -3,18 +3,26 @@ Docstrings
 
 Mit der Sphinx-Erweiterung `sphinx.ext.autodoc
 <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_ können
-Docstrings auch in die Dokumentation aufgenommen werden. Die folgenden drei
-Direktiven können angegeben werden:
+Docstrings auch in die Dokumentation aufgenommen werden. Die folgenden
+Direktiven können angegeben werden
+
+… für Klassen und Ausnahmen:
 
 .. rst:directive::  automodule
                     autoclass
-                    autofunction
+                    autoexception
 
-Diese dokumentieren ein Modul, eine Klasse oder eine Funktion unter Verwendung
-des jeweiligen Docstrings.
+… für funktionsähnliche Objekte:
 
-.. seealso::
-   :pep:`257`
+.. rst:directive::  autofunction
+                    automethod
+                    autoproperty
+                    autodecorator
+
+… für Daten und Attribute:
+
+.. rst:directive::  autodata
+                    autoattribute
 
 Installation
 ------------
@@ -52,21 +60,35 @@ Python-:py:mod:`string`-Moduls:
 
 Die Ausgabe ist :doc:`autodoc-examples`.
 
-.. note::
-   Ihr solltet diese Richtlinien befolgen, wenn ihr Docstrings schreibt:
+Richtlinien
+-----------
 
-   * :pep:`8#comments`
-   * :pep:`257#specification`
+In :pep:`8` gibt es nur einen kurzen Hinweise auf Konventionen für einen guten
+Docstring: :pep:`Documentation Strings <8#comments>`. Weitere :abbr:`PEPs (Python Enhancement Proposals)` beziehen sich auf das :pep:`Docstring Processing
+System Framework <256>`:
 
-``sphinx-autodoc-typehints``
-----------------------------
+:pep:`257`
+    beschreibt Docstring-Konventionen:
 
-Mit :pep:`484` wurde eine Standardmethode für den Ausdruck von Typen in
-Python-Code eingeführt. Damit können Typen auch in Docstrings unterschiedlich
-ausgedrückt werden. Die Variante mit Typen nach PEP 484 hat den Vorteil, dass
-Typ-Tester und IDEs zur statischen Codeanalyse eingesetzt werden können.
+    * Was sollte wo dokumentiert werden?
+    * Die erste Zeile soll eine einzeilige Zusammenfassung sein.
 
-Python 3 Type-Annotations:
+:pep:`258`
+    spezifiziert die System zur Verarbeitung von Docstrings.
+
+:pep:`287`
+    spezifiziert die Docstring-Syntax.
+
+Im `Google Python Style Guide
+<https://google.github.io/styleguide/pyguide.html>`_ gibt es darüberhinaus noch
+spezifischere Richtlinien für `Python Konnentare und Docstrings
+<https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings>`_.
+Auch der `NumPy Style guide
+<https://numpydoc.readthedocs.io/en/latest/format.html>`_ liefert noch weitere
+`Docstring-Standards <https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard>`_. Der wesentliche Unterschied zwischen beiden besteht darin,
+dass Google Einrückungen verwendet und NumPy Unterstreichungen:
+
+Google Python Style Guide:
     .. code-block:: python
 
        def func(arg1: int, arg2: str) -> bool:
@@ -75,24 +97,6 @@ Python 3 Type-Annotations:
            Extended description of function.
 
            Args:
-               arg1: Description of arg1
-               arg2: Description of arg2
-
-           Returns:
-               Description of return value
-
-           """
-           return True
-
-Typen in Docstrings:
-    .. code-block:: python
-
-       def func(arg1, arg2):
-           """Summary line.
-
-           Extended description of function.
-
-           Args:
                arg1 (int): Description of arg1
                arg2 (str): Description of arg2
 
@@ -102,59 +106,10 @@ Typen in Docstrings:
            """
            return True
 
-.. note::
-   :pep:`484#suggested-syntax-for-python-2-7-and-straddling-code` are currently
-   not supported by Sphinx and do not appear in the generated documentation.
-
-.. _napoleon:
-
-``sphinx.ext.napoleon``
------------------------
-
-Die Sphinx-Erweiterung `sphinx.ext.napoleon
-<https://sphinxcontrib-napoleon.readthedocs.io/>`_ ermöglicht euch, verschiedene
-Abschnitte in Docstrings zu definieren, einschließlich:
-
-* ``Attributes``
-* ``Example``
-* ``Keyword Arguments``
-* ``Methods``
-* ``Parameters``
-* ``Warning``
-* ``Yield``
-
-Es gibt zwei Arten von Docstrings in ``sphinx.ext.napoleon``:
-
-* `Google
-  <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_
-* `NumPy
-  <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html>`_
-
-Der Hauptunterschied besteht darin, dass Google Einrückungen verwendet und NumPy
-Unterstreichungen:
-
-Google:
+NumPy Style Guide:
     .. code-block:: python
 
-       def func(arg1, arg2):
-           """Summary line.
-
-           Extended description of function.
-
-           Args:
-               arg1 (int): Description of arg1
-               arg2 (str): Description of arg2
-
-           Returns:
-               bool: Description of return value
-
-           """
-           return True
-
-NumPy:
-    .. code-block:: python
-
-       def func(arg1, arg2):
+       def func(arg1: int, arg2: str) -> bool:
            """Summary line.
 
            Extended description of function.
@@ -174,5 +129,41 @@ NumPy:
            """
            return True
 
+.. _napoleon:
+
+``sphinx.ext.napoleon``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Die Sphinx-Erweiterung `sphinx.ext.napoleon
+<https://sphinxcontrib-napoleon.readthedocs.io/>`_ verarbeitet sowohl
+Docstrings, die dem Google Python Style Guide als auch dem NumPy Style Guide
+entsprechen:
+
 Detaillierte Konfigurationsoptionen findet ihr in `sphinxcontrib.napoleon.Config
 <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/sphinxcontrib.napoleon.html#sphinxcontrib.napoleon.Config>`_.
+
+``sphinx-autodoc-typehints``
+----------------------------
+
+Mit :pep:`484` wurde eine Standardmethode für den Ausdruck von Typen in
+Python-Code eingeführt. Damit können Typen auch in Docstrings unterschiedlich
+ausgedrückt werden. Die Variante mit Typen nach PEP 484 hat den Vorteil, dass
+Typ-Tester und IDEs zur statischen Codeanalyse eingesetzt werden können.
+
+Python 3 Type-Annotations in Docstrings:
+    .. code-block:: python
+
+       def func(arg1: int, arg2: str) -> bool:
+           """Summary line.
+
+           Extended description of function.
+
+           Args:
+               arg1 (int): Description of arg1
+               arg2 (str): Description of arg2
+
+           Returns:
+               bool: Description of return value
+
+           """
+           return True
