@@ -4,8 +4,6 @@ Testen
 Grundsätzlich wird zwischen statischen und dynamischen Testverfahren
 unterschieden.
 
-.. glossary::
-
 .. include:: ../appendix/glossary.rst
    :start-after: start-test-procedures:
    :end-before: end-test-procedures:
