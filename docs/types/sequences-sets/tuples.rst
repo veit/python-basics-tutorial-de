@@ -146,7 +146,7 @@ Elementen aufzunehmen, die nicht zu den sonstigen Elementen passen:
 Konvertieren zwischen Listen und Tupeln
 ---------------------------------------
 
-Eine Liste kann mit Hilfe der eingebauten Funktion ``tuple`` in ein Tupel
+Eine Liste kann mit Hilfe der eingebauten Funktion :func:`tuple` in ein Tupel
 umgewandelt werden:
 
 .. code-block:: pycon
@@ -155,7 +155,7 @@ umgewandelt werden:
     >>> tuple(x)
     (1, 2, 3, 5)
 
-Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion ``list`` in eine Liste
+Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion :func:`list` in eine Liste
 umgewandelt werden:
 
 .. code-block:: pycon
