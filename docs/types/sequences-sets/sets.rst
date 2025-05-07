@@ -121,7 +121,7 @@ Performance
 
 Sets sind sehr schnell bei der Überprüfung, ob Elemente in einer Menge enthalten
 sind. Auch zum Auffinden von gemeinsamen und eindeutigen Werten zweier Mengen
-ist die mengenarithmetik von Sets gut geeignet. Hierfür kann es sinnvoll sein,
+ist die Mengenarithmetik von Sets gut geeignet. Hierfür kann es sinnvoll sein,
 :doc:`lists` oder :doc:`tuples` in Sets umzuwandeln.
 
 Reihenfolge

@@ -113,7 +113,7 @@ Mehrere eingebaute Funktionen können mit Zahlen arbeiten:
 :func:`python3:round`
     gibt eine Zahl zurück, die auf :samp:`{N}` Stellen nach dem Dezimalpunkt
     gerundet ist.
-    Wird :samp:`{N}` weggelassen oder ist :doc:`../none`, wird die nächstgelegene
+    Wird :samp:`{N}` weggelassen oder :doc:`../none` ist, wird die nächstgelegene
     Ganzzahl zur Eingabe zurückgegeben.
 
 Erweiterte numerische Funktionen

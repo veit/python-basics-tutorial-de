@@ -228,7 +228,7 @@ Verwaltung eurer Abhängigkeiten.
 Installation
 ~~~~~~~~~~~~
 
-``uv`` hängt nicht von von Python ab. Vorkompilierte, eigenständige Binärdateien
+``uv`` hängt nicht von Python ab. Vorkompilierte, eigenständige Binärdateien
 können auf Linux, macOS und Windows installiert werden:
 
 .. tab:: Linux/macOS

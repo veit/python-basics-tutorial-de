@@ -228,7 +228,7 @@ Techniken zur Argument-Übergabe mischen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ihr könnt alle Möglichkeiten zur Argument-Übergabe von Python-Funktionen
-gleichzeitig zu verwenden, obwohl dies verwirrend sein kann, wenn ihr es nicht
+gleichzeitig verwenden, obwohl dies verwirrend sein kann, wenn ihr es nicht
 sorgfältig macht. Dabei sollten  die Positionsargumente an erster Stelle stehen,
 dann benannte Argumente, gefolgt von unbestimmten Positionsargumenten mit einem
 einfachen ``*`` und zuletzt unbestimmte Schlüsselwortargumente mit ``**``.
@@ -241,7 +241,7 @@ Verweis auf das Objekt. Bei :term:`unveränderlichen <Unveränderlich>` Objekten
 wie :doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` und
 :doc:`/types/numbers/index` hat das, was mit einem Parameter gemacht wird, keine
 Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein veränderliches Objekt
-übergeben, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+übergebt, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
 </types/sequences-sets/lists>`, ein :doc:`Dict </types/dicts>` oder eine
 Klasseninstanz, ändert jede Änderung des Objekts, worauf das Argument außerhalb
 der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen
@@ -268,4 +268,4 @@ Checks
 ------
 
 * Schreibt eine Funktion, die eine beliebige Anzahl von unbenannten Argumenten
-  annehmen und deren Werte in umgekehrter Reihenfolge ausgeben kann?
+  annehmen und deren Werte in umgekehrter Reihenfolge ausgeben kann.

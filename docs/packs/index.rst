@@ -42,7 +42,7 @@ Programme
 `py2app <https://py2app.readthedocs.io/en/latest/>`_ dasselbe für macOS. In
 beiden Fällen handelt es sich um einzelne ausführbare Dateien, die auch auf
 Rechnern laufen können, auf denen Python nicht installiert ist. In vielerlei
-Hinsicht sind jedoch eigenständige ausführbare Dateien nicht ideal, da sie
+Hinsicht sind jedoch eigenständig ausführbare Dateien nicht ideal, da sie
 tendenziell größer und weniger flexibel sind als native Python-Anwendungen, aber
 in manchen Situationen können sie auch die beste oder einzige Lösung sein.
 

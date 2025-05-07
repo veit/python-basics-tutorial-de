@@ -155,7 +155,7 @@ umgewandelt werden:
     >>> tuple(x)
     (1, 2, 3, 5)
 
-Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion list in eine Liste
+Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion ``list`` in eine Liste
 umgewandelt werden:
 
 .. code-block:: pycon

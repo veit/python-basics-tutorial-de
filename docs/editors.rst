@@ -8,7 +8,7 @@ Interaktive Shell
 
 Mit der interaktiven Shell könnt ihr einfach die meisten Beispiele in diesem
 Tutorial ausführen. Später lernt ihr auch, wie ihr Code, der in eine Datei
-geschrieben wurde, einfach als Modul eingebunden werden kann.
+geschrieben wurde, einfach als Modul einbinden könnt.
 
 .. tab:: Linux
 
