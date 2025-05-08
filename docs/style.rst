@@ -61,7 +61,7 @@ ihr in der folgenden Tabelle:
 | Modul- und Paketnamen | kurz, Kleinbuchstaben,        | ``math``, ``sys``             |
 |                       | Unterstriche nur bei Bedarf   |                               |
 +-----------------------+-------------------------------+-------------------------------+
-| Funktionsnamen        | Kleinbuchstaben, :abbr:`ggf.  | ``my_func()``                 |
+| Funktionsnamen        | Kleinbuchstaben, :abbr:`ggf.  | :func:`my_func`               |
 |                       | (gegebenenfalls)` mit         |                               |
 |                       | Unterstrichen                 |                               |
 +-----------------------+-------------------------------+-------------------------------+
