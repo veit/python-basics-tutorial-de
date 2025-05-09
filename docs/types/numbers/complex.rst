@@ -54,7 +54,7 @@ Erweiterte Funktionen
 Die Funktionen im Modul :doc:`math <python3:library/math>` sind nicht auf
 komplexe Zahlen anwendbar; einer der Gründe hierfür dürfte sein, dass die
 Quadratwurzel aus ``-1`` einen Fehler erzeugen soll. Daher wurden ähnliche
-Funktionen für komplexe Zahlen arbeiten im
+Funktionen für komplexe Zahlen im
 :doc:`cmath <python3:library/cmath>`-Modul bereitgestellt:
 
 :func:`python3:cmath.acos`, :func:`python3:cmath.acosh`, :func:`python3:cmath.asin`, :func:`python3:cmath.asinh`, :func:`python3:cmath.atan`, :func:`python3:cmath.atanh`, :func:`python3:cmath.cos`, :func:`python3:cmath.cosh`, :func:`python3:cmath.e`, :func:`python3:cmath.exp`, :func:`python3:cmath.log`, :func:`python3:cmath.log10`, :func:`python3:cmath.pi`, :func:`python3:cmath.sin`, :func:`python3:cmath.sinh`, :func:`python3:cmath.sqrt`, :func:`python3:cmath.tan`, :func:`python3:cmath.tanh`.

@@ -8,7 +8,7 @@ sagt, wird ``None`` verwendet, um einen leeren Wert darzustellen. Er taucht in
 verschiedenen Formen in Python auf.
 
 ``None`` ist in der alltäglichen Python-Programmierung oft als Platzhalter
-nützlich, um eine Datenstruktur zu kennzeichnen, an der irgendwann sinnvolle
+nützlich, um eine Datenstruktur zu kennzeichnen, in der irgendwann sinnvolle
 Daten gefunden werden können, auch wenn diese Daten noch nicht berechnet wurden.
 
 Das Vorhandensein von ``None`` lässt sich leicht überprüfen, da es in Python

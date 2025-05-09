@@ -61,7 +61,7 @@ Open Source
     privater Anwendungen frei verwenden. Dabei wird Python von vielen
     etablierten Unternehmen genutzt und gefördert, :abbr:`u.a. (unter anderem)`
     von Google, Meta und Bloomberg. Und wenn ihr etwas zurückgeben wollt, könnt
-    ihr dies ebenfalls gerne machen : `Python Software Foundation Sponsorship
+    ihr dies ebenfalls gerne machen: `Python Software Foundation Sponsorship
     <https://www.python.org/psf/sponsorship/>`_.
 
 Python hat zwar einige Vorteile, aber keine Sprache ist in allen Bereichen

@@ -123,7 +123,7 @@ Checks
 
 * Schreibt eine benutzerdefinierte Ausnahme :class:`Outliers`, die eine
   :class:`Exception` auslöst, wenn die Variable ``x`` größer oder kleiner als
-  ``3`` ist?
+  ``3`` ist.
 
 * Handelt es sich bei der Überprüfung, ob ein Objekt eine Liste ist
   (:ref:`Check: list <check-list>`) um eine Programmierung im Stil von
