@@ -30,7 +30,7 @@ Indizes
 Elemente können aus einer Python-Liste extrahiert werden, indem eine Notation
 verwendet wird, die der Array-Indizierung in C ähnelt und mit ``0`` beginnt; die
 Frage nach Element ``0`` gibt das erste Element der Liste zurück, die Frage nach
-Element ``1`` gibt das zweite Element zurück :abbr:`u.s.w. (und so weiter)`.
+Element ``1`` gibt das zweite Element zurück :abbr:`usw (und so weiter)`.
 Hier sind ein paar Beispiele:
 
 .. code-block:: pycon
@@ -406,7 +406,7 @@ zu einem Fehler:
    TypeError: '>' not supported between instances of 'str' and 'int'
 
 Beim Vergleich komplexer Objekte werden die Teillisten zuerst nach dem ersten
-Element und dann nach dem zweiten Element :abbr:`u.s.w. /und so weiter)`
+Element und dann nach dem zweiten Element :abbr:`usw. (und so weiter)`
 analysiert.
 
 .. code-block:: pycon

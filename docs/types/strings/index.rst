@@ -25,7 +25,7 @@ folgende Code wird also nicht funktionieren:
 
 .. code-block::
 
-   "Dies ist ein fehlerhafter Versuch, einen einen Zeilenumbruch in
+   "Dies ist ein fehlerhafter Versuch, einen Zeilenumbruch in
    eine Zeichenkette einzufügen, ohne \n zu verwenden."
 
 Sie können auch Tabulator- (``\t``) und *Newline*-Zeichen (``\n``) enthalten.
