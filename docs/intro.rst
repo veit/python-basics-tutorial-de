@@ -8,9 +8,9 @@ Vielleicht stellt ihr euch die Frage, warum ihr Python lernen solltet. Es gibt
 viele Programmiersprachen von C und C++ über Java bis hin zu Lua und Go.
 
 .. figure:: tiobe-index.svg
-   :alt: TIOBE Index für Januar 2025
+   :alt: TIOBE Index für May 2025
 
-   `TIOBE Index für Januar 2025 <https://www.tiobe.com/tiobe-index/>`_
+   `TIOBE Index für May 2025 <https://www.tiobe.com/tiobe-index/>`_
 
 Python
 hat eine sehr große Verbreitung gefunden und einer der Gründe dürfte sein, dass
