@@ -71,7 +71,7 @@ Fixtures für Setup und Teardown verwenden
 
 Fixtures werden uns beim Testen der Items-Anwendung eine große Hilfe sein. Die
 Items-Anwendung besteht aus einer API, die den Großteil der Arbeit und der Logik
-übernimmt, einem schlanken :abbr:`CLI (Command Line Interface)` und eine
+übernimmt, einem schlanken :abbr:`CLI (Command Line Interface)` und einer
 Datenbank. Der Umgang mit der Datenbank ist ein Bereich, in dem Fixtures eine
 große Hilfe sein werden:
 
@@ -102,7 +102,7 @@ Diese Testfunktion enthält jedoch einige Probleme: Der Code, um die Datenbank
 einzurichten, bevor wir :func:`count` aufrufen, ist nicht wirklich das, was wir
 testen wollen. Auch kann die ``assert``-Anweisung nicht vor dem Aufruf von
 :func:`db.close` erfolgen, denn wenn die ``assert``-Anweisung fehlschlägt, wird
-de Datenbankverbindung nicht mehr geschlossen. Diese Probleme lassen sich mit
+die Datenbankverbindung nicht mehr geschlossen. Diese Probleme lassen sich mit
 pytest-Fixture lösen:
 
 .. code-block:: python

@@ -31,7 +31,7 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> v
        4.199999999999999
 
-``is``, ``is not``, ``in``, ``not in``
+``is``, ``is not``
     überprüft die Identität:
 
     .. code-block:: pycon
@@ -40,14 +40,20 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        False
        >>> x is not y
        True
-       >>> x in z
-       True
        >>> id(x)
        4375911432
        >>> id(y)
        4367574480
        >>> id(z[0])
        4375911432
+
+``in``, ``not in``
+      überprüft die Zugehörigkeit:
+
+    .. code-block:: pycon
+
+       >>> x in z
+       True
 
     Wenn ``x`` und ``z[0]`` die gleiche ID im Speicher haben, bedeutet das, dass
     wir an zwei Stellen auf dasselbe Objekt verweisen.

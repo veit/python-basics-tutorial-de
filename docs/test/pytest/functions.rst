@@ -161,7 +161,7 @@ Fehlschlagen mit ``pytest.fail()`` und Exceptions
 -------------------------------------------------
 
 Das Fehlschlagen von Behauptungen ist die Hauptursache dafür, dass Tests
-fehlgeschlagen. Aber das ist nicht der einzige Weg. Ein Test schlägt auch fehl,
+fehlschlagen. Aber das ist nicht der einzige Weg. Ein Test schlägt auch fehl,
 wenn es eine nicht abgefangene :doc:`/control-flow/exceptions` gibt. Das kann
 passieren, wenn
 
@@ -255,7 +255,7 @@ dass fehlgeschlagene Tests nicht in den Traceback aufgenommen werden. Das
 normale ``assert i1 == i2`` wird dann verwendet, um alles außer ``id`` auf
 Gleichheit zu prüfen.
 
-Schließlich werden die IDs überprüft ``pytest.fail()`` verwendet, um den Test
+Schließlich werden die IDs überprüft und ``pytest.fail()`` verwendet, um den Test
 mit einer hilfreichen Meldung fehlschlagen zu lassen. Schauen wir uns an, wie
 das nach der Ausführung aussieht:
 

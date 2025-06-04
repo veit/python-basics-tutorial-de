@@ -637,7 +637,7 @@ Checks
 * Wenn ihr ein Paket für eine Aufgabenverwaltung erstellen wollt, das die
   Aufgaben in eine Datenbank schreibt und über ein Python-:abbr:`API (engl.:
   Application Programming Interface)` und eine Befehlszeilenschnittstelle
-  (:abbr:`CLI (engl.: Command-Line Interface)` bereitstellt, wie würdet ihr die
+  (:abbr:`CLI (engl.: Command-Line Interface))` bereitstellt, wie würdet ihr die
   Dateien strukturieren?
 
 * Überlegt euch, wie ihr die oben genannten Aufgaben erledigen wollt. Welche

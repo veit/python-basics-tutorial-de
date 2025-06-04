@@ -4,7 +4,7 @@ Fortgeschrittene Nutzung
 Hooks
 -----
 
-Ihr könnt :abbr:`sog. (sogenannte)` Pre- oder Post-Generate-Hooks schreiben, di
+Ihr könnt :abbr:`sog. (sogenannte)` Pre- oder Post-Generate-Hooks schreiben, die
 entweder vor oder nach dem Generieren der Vorlage in den Ablauf eingehängt
 werden. Dabei werden die Jinja-Template-Variablen in die Skripte integriert,
 :abbr:`z.B. (zum Beispiel)`:

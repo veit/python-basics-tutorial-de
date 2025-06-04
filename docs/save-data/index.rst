@@ -2,8 +2,8 @@ Daten speichern und abrufen
 ===========================
 
 Ihr könnt eure Daten persistent in :doc:`files` im :doc:`filesystem` speichern.
-In der Python-Standardbibliothek gibt es darüberhinaus mehrere Module, Daten in
-eine lineare Form umzuwandeln. Dieser Prozess wird *Serialisierung* oder
+In der Python-Standardbibliothek gibt es darüberhinaus mehrere Module, um Daten
+in eine lineare Form umzuwandeln. Dieser Prozess wird *Serialisierung* oder
 *Marshalling* genannt. Der umgekehrte Vorgang heißt dann *Deserialisierung* oder
 *Unmarshalling*. Und wenn die :ref:`eingebauten Module <builtin-file-modules>`
 nicht ausreichen sollten, könnt ihr auch die :ref:`pandas-io-tools` verwenden.

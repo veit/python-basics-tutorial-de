@@ -238,7 +238,7 @@ betriebssystemspezifische Syntax verwenden zu müssen.
     Erweiterung der angegebenen Datei.
 
 :func:`python3:os.path.commonpath`
-    ist eine spezialisiertere Funktionen, um Pfadnamen zu manipulieren. Sie
+    ist eine spezialisiertere Funktion, um Pfadnamen zu manipulieren. Sie
     findet den gemeinsamen Pfad für eine Gruppe von Pfaden und ist so gut
     geeignet um das Verzeichnis der untersten Ebene zu finden, das jede Datei
     in einer Gruppe von Dateien enthält:
@@ -315,7 +315,7 @@ Weitere ähnliche Funktionen stellen speziellere Abfragen bereit:
     Sinne keine echten Links und geben ``False`` zurück. Nur mit ``mklink()``
     erstellte Links geben ebenfalls ``True`` zurück.
 :func:`python3:os.path.ismount`
-    gibt unter ``possix``-Dateisystemen ``True`` zurück, wenn der Pfad ein
+    gibt unter ``posix``-Dateisystemen ``True`` zurück, wenn der Pfad ein
     :abbr:`sog. (sogenannter)` *Mount Point* oder Einhängepunkt ist.
 :func:`python3:os.path.samefile`
     gibt ``True`` zurück, wenn die beiden Pfadargumente auf dieselbe Datei
@@ -328,12 +328,12 @@ Weitere ähnliche Funktionen stellen speziellere Abfragen bereit:
 :func:`python3:os.path.getmtime`
     gibt das Änderungsdatum der Datei oder des Verzeichnisses an.
 :func:`python3:os.path.getatime`
-    gibt de letzte Zugriffszeit für eine Datei oder ein Verzeichnis an.
+    gibt die letzte Zugriffszeit für eine Datei oder ein Verzeichnis an.
 
 Weitere Dateisystem-Operationen
 -------------------------------
 
-Python verfügt über weitere, sehr nützlicher Befehle im :mod:`python3:os`-Modul:
+Python verfügt über weitere, sehr nützliche Befehle im :mod:`python3:os`-Modul:
 Im Folgenden beschreibe ich nur einige betriebssystemübergreifende Operationen,
 es werden jedoch auch spezifischere Dateisystem-Funktionen bereitgestellt.
 
@@ -387,7 +387,7 @@ onerror=None, followlinks= False)``.
 ``onerror``
     kann auf eine Funktion gesetzt werden, um Fehler zu behandeln, die aus
     Aufrufen von :func:`os.listdir` resultieren, die standardmäßig ignoriert
-    werden. Üblicherweise wird symbolische Links nicht gefolgt, es sei denn, ihr
+    werden. Üblicherweise wird symbolischen Links nicht gefolgt, es sei denn, ihr
     gebt den Parameter ``follow-links=True`` an.
 
 .. code-block:: pycon

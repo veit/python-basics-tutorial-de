@@ -125,7 +125,7 @@ jedoch nicht in einem Funktionsaufruf angegeben wird, wird der Standardwert
     ...     return p
     ...
 
-Wie sich das Standardargument auswirkt, können ihr im folgenden Beispiel sehen:
+Wie sich das Standardargument auswirkt, könnt ihr im folgenden Beispiel sehen:
 
 .. code-block:: pycon
 

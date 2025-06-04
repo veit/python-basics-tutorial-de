@@ -2,8 +2,8 @@ Hypothesis
 ==========
 
 `Hypothesis <https://hypothesis.readthedocs.io/>`_ ist eine Bibliothek, mit der
-ihr Tests schreiben könnt, die aus einer Quelle von Beispielen :term:`
-`parametrisiert <Parameter>` werden. Anschließend werden einfache und
+ihr Tests schreiben könnt, die aus einer Quelle von Beispielen
+:term:`parametrisiert <Parameter>` werden. Anschließend werden einfache und
 verständliche Beispiele generiert, die dazu verwendet werden können, eure Tests
 fehlschlagen zu lassen und Fehler mit wenig Aufwand zu finden.
 
