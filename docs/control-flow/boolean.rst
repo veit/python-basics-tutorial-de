@@ -31,7 +31,7 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> v
        4.199999999999999
 
-``is``, ``is not``, ``in``, ``not in``
+``is``, ``is not``
     überprüft die Identität:
 
     .. code-block:: pycon
@@ -39,8 +39,6 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> x is y
        False
        >>> x is not y
-       True
-       >>> x in z
        True
        >>> id(x)
        4375911432
@@ -68,6 +66,31 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
     mit :doc:`../types/none` und nicht auf Werte überprüfen solltet, also
     niemals ``x == None``, sondern stattdessen immer ``x is None``  verwenden
     solltet.
+
+
+``in``, ``not in``
+    überprüft die Zugehörigkeit:
+
+    .. code-block:: pycon
+
+       >>> x in z
+       True
+
+    Alle eingebauten Sequenz- und Mengen-Typen unterstützen dies, ebenso wie
+    Dictionaries, bei denen ``in`` überprüft, ob das Dictionary diesen bestimmten
+    Schlüssel hat:
+
+    .. code-block:: pycon
+
+       >>> d = {"a": 1, "b": 2}
+       >>> "a" in d
+       True
+       >>> "c" in d
+       False
+       >>> 1 in d
+       False
+
+
 
 ``and``, ``not``, ``or``
     sind logische Operatoren, mit denen wir die oben genannten Überprüfungen

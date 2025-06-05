@@ -55,9 +55,9 @@ wurden, sollte das Datei-Objekt wieder geschlossen werden damit Systemressourcen
 freigegeben werden, das Lesen oder Schreiben der zugrunde liegenden Datei durch
 anderen Code ermöglicht wird und das Programm insgesamt zuverlässiger wird. Bei
 kleinen Skripten hat dies in der Regel keine großen Auswirkungen, da
-Dateiobjekte werden automatisch geschlossen, wenn das Skript oder Programm
+Dateiobjekte automatisch geschlossen werden, wenn das Skript oder Programm
 beendet wird. Bei größeren Programmen können zu viele offene Datei-Objekte
-jedoch die Systemressourcen erschöpfen, was zum Abbruch des Programms führen.
+jedoch die Systemressourcen erschöpfen, was zum Abbruch des Programms führt.
 Ihr schließt ein Dateiobjekt mit der ``close``-Methode, wenn das Datei-Objekt
 nicht mehr benötigt wird:
 
@@ -174,8 +174,8 @@ befürchten ist. Der andere Vorteil dieser Methode ist, dass sie einfacher und
 lesbarer ist.
 
 Ein mögliches Problem mit der Lesemethode kann jedoch entstehen, wenn auf
-Windows- und macOS Übersetzungen im Textmodus erfolgen, wenn ihr den Befehl
-:func:`open` im Textmodus verwenden, :abbr:`d.h. (das heißt)` ohne ein ``b``
+Windows und macOS Übersetzungen im Textmodus erfolgen, wenn ihr den Befehl
+:func:`open` im Textmodus verwendet, :abbr:`d.h. (das heißt)` ohne ein ``b``
 anzuhängen. Im Textmodus wird auf macOS jedes ``\r`` in ``\n`` umgewandelt,
 während unter Windows ``\r\n``-Paare in ``\n`` umgewandelt werden. Ihr könnt die
 Behandlung von Zeilenumbrüchen festlegen, indem ihr beim Öffnen der Datei den

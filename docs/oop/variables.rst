@@ -37,7 +37,7 @@ eine Wechselwirkung zwischen Klassen- und Instanz-Variablen achten.
 
 Eine Klassenvariable wird durch eine Zuweisung in der Klasse, jedoch außerhalb
 der ``__init__``-Funktion, erzeugt. Nachdem sie erstellt wurde, kann sie von
-allen Instanzen der Klasse gesehen werden. ihr könnt eine Klassenvariable
+allen Instanzen der Klasse gesehen werden. Ihr könnt eine Klassenvariable
 verwenden, um einen Wert für ``pi`` für alle Instanzen der Klasse ``Circle``
 zugänglich zu machen:
 
@@ -68,7 +68,7 @@ Wenn ihr diese Definition eingegeben habt, könnt ihr ``pi`` abfragen mit:
 
 Ihr könnt auch von einer Methode einer Klasse aus über den Klassennamen auf eine
 Klassenvariable zugreifen. Ihr tut dies in der Definition von
-``Circle.circumference``, wo die Funktion ``circumference`` einen speziellen
+``Circle.circumference``, wo die Methode ``circumference`` einen speziellen
 Verweis auf ``Circle.pi`` enthält:
 
 .. code-block:: pycon

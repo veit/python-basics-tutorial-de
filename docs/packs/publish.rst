@@ -35,7 +35,7 @@ Nachdem ihr registriert seid, könnt ihr euer :term:`Distribution Package` mit
 Dabei könnt ihr ``uv publish`` entweder mit der Option ``--username __token__``
 verwenden oder die Umgebungsvariable ``UV_PUBLISH_USERNAME=__token__`` setzen,
 um alle Archive unter :file:`/dist` auf den :term:`Python Package Index`
-hochladen:
+hochzuladen:
 
 .. code-block:: console
 
@@ -111,7 +111,8 @@ PyPI
 
 Registriert euch nun beim :term:`Python Package Index` (:term:`PyPI`) und stellt
 sicher, dass die `Zwei-Faktor-Authentifizierung
-<https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_.
+<https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_
+aktiviert ist.
 
 .. seealso::
     * `PyPI now supports uploading via API token

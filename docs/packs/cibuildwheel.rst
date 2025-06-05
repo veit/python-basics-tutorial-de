@@ -31,7 +31,7 @@ Schließlich können die Tests auch gegen die Wheels laufen.
     ``workflow_dispatch``
         ermöglicht euch, in der grafischen Benutzeroberfläche auf eine
         Schaltfläche zu klicken, um einen Build auszulösen. Das ist perfekt zum
-        manuellen Testen von Wheels vor einer Veröffentlichung eignet, da ihr
+        manuellen Testen von Wheels vor einer Veröffentlichung geeignet, da ihr
         sie einfach von *artifacts* herunterladen könnt.
 
         .. seealso::

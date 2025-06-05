@@ -637,7 +637,7 @@ Glossar
        C-Erweiterungen können als plattformspezifische wheels für Windows, macOS
        und Linux auf dem :term:`PyPI` bereitgestellt werden. Dies hat für euch
        den Vorteil, dass ihr bei der Installation des Pakets dieses nicht
-       kompilieren zu müssen.
+       kompilieren müsst.
 
        .. seealso::
           * `Home <https://pythonwheels.com/>`__

@@ -68,7 +68,7 @@ Checks
   dass sie keine Leerzeichen mehr enthält und besser als Dateinamen verwendet
   werden kann?
 
-* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
+* Wenn ihr überprüfen wollt, ob ein String mit ``.. note::`` beginnt, welche
   Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
 
 * Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
