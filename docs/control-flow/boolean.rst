@@ -47,14 +47,6 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> id(z[0])
        4375911432
 
-``in``, ``not in``
-      überprüft die Zugehörigkeit:
-
-    .. code-block:: pycon
-
-       >>> x in z
-       True
-
     Wenn ``x`` und ``z[0]`` die gleiche ID im Speicher haben, bedeutet das, dass
     wir an zwei Stellen auf dasselbe Objekt verweisen.
 
@@ -74,6 +66,31 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
     mit :doc:`../types/none` und nicht auf Werte überprüfen solltet, also
     niemals ``x == None``, sondern stattdessen immer ``x is None``  verwenden
     solltet.
+
+
+``in``, ``not in``
+    überprüft die Zugehörigkeit:
+
+    .. code-block:: pycon
+
+       >>> x in z
+       True
+
+    Alle eingebauten Sequenz- und Mengen-Typen unterstützen dies, ebenso wie
+    Dictionaries, bei denen ``in`` überprüft, ob das Dictionary diesen bestimmten
+    Schlüssel hat:
+
+    .. code-block:: pycon
+
+       >>> d = {"a": 1, "b": 2}
+       >>> "a" in d
+       True
+       >>> "c" in d
+       False
+       >>> 1 in d
+       False
+
+
 
 ``and``, ``not``, ``or``
     sind logische Operatoren, mit denen wir die oben genannten Überprüfungen
