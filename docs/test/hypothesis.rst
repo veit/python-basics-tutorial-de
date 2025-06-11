@@ -1,11 +1,13 @@
 Hypothesis
 ==========
 
-`Hypothesis <https://hypothesis.readthedocs.io/>`_ ist eine Bibliothek, mit der
-ihr Tests schreiben könnt, die aus einer Quelle von Beispielen :term:`
-`parametrisiert <Parameter>` werden. Anschließend werden einfache und
-verständliche Beispiele generiert, die dazu verwendet werden können, eure Tests
-fehlschlagen zu lassen und Fehler mit wenig Aufwand zu finden.
+`Hypothesis <https://hypothesis.readthedocs.io/>`_ ist eine Bibliothek für
+`Property Testing
+<https://en.wikipedia.org/wiki/Software_testing#Property_testing>`_, mit der ihr
+Tests schreiben könnt, die aus einer Quelle von Beispielen :term:`parametrisiert
+<Parameter>` werden. Anschließend werden einfache und verständliche Beispiele
+generiert, die dazu verwendet werden können, eure Tests fehlschlagen zu lassen
+und Fehler mit wenig Aufwand zu finden.
 
 #. Installiert Hypothesis:
 
