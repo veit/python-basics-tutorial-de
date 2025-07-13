@@ -105,13 +105,13 @@ ergänzt werden:
    [testenv:docs]
    # Keep base_python in sync with ci.yml and .readthedocs.yaml.
    base_python = py312
-   extras = docs
+   dependency_groups = docs
    commands =
      sphinx-build -n -T -W -b html -d {envtmpdir}/doctrees docs docs/_build/html
 
    [testenv:docs-linkcheck]
    base_python = {[testenv:docs]base_python}
-   extras = {[testenv:docs]extras}
+   dependency_groups = docs
    commands = sphinx-build -W -b linkcheck -d {envtmpdir}/doctrees docs docs/_build/html
 
 Anschließend könnt ihr :abbr:`z.B. (zum Beispiel)` für GitHub folgende Jobs
