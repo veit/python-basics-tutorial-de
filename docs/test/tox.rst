@@ -110,13 +110,13 @@ installiert habt:
 
    .. code-block:: console
 
-      $ uv add --extra dev tox-uv
+      $ uv add --group dev tox-uv
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> uv add --extra dev tox-uv
+      C:> uv add --group dev tox-uv
 
 Um tox auszuführen, startet einfach tox:
 
@@ -362,8 +362,7 @@ vornehmen, damit Parameter an pytest übergeben werden können:
    skip_missing_interpreters = True
 
    [testenv]
-   extras =
-     tests: tests
+   dependency_groups = tests
    deps =
      tests: coverage[toml]
    allowlist_externals = coverage
@@ -584,17 +583,16 @@ Ihr könnt ``tox`` und ``tox-uv`` installieren mit:
 
 Wenn ihr für eine Tox-Umgebung ``uv sync`` mit einer ``uv.lock``-Datei verwenden
 wollt, müsst ihr für diese Tox-Umgebung den Runner auf ``uv-venv-lock-runner``
-ändern. Außerdem solltet ihr in solchen Umgebungen die ``extras``-Konfiguration
-verwenden, um ``uv`` anzuweisen, die angegebenen Extras zu installieren, zum
-Beispiel:
+ändern. Außerdem solltet ihr in solchen Umgebungen die
+``dependency_groups``-Konfiguration verwenden, um ``uv`` anzuweisen, die
+angegebenen Extras zu installieren, zum Beispiel:
 
 .. code-block:: ini
    :caption: tox.ini
 
    [testenv]
    runner = uv-venv-lock-runner
-   extras =
-       dev
+   dependency_groups = dev
    commands = pytest
 
 ``dev`` verwendet den ``uv-venv-lock-runner`` und nutzt ``uv sync``, um

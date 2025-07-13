@@ -255,29 +255,29 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
      <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
    * :pep:`345`
 
-Optionale Abhängigkeiten
-~~~~~~~~~~~~~~~~~~~~~~~~
+Abhängigkeitsgruppen
+~~~~~~~~~~~~~~~~~~~~
 
-``project.optional-dependencies``
-    erlaubt euch, optionale Abhängigkeiten für euer Paket anzugeben. Dabei könnt
-    ihr auch zwischen verschiedenen Sets unterscheiden:
+``dependency-groups``
+    erlaubt euch, Abhängigkeitsgruppen für euer Paket anzugeben. Dabei könnt ihr
+    auch zwischen verschiedenen Sets unterscheiden:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
    :lines: 24-34
    :lineno-start: 34
 
-Auch rekursive optionale Abhängigkeiten sind mit pip ≥ 21.2 möglich. So könnt
-ihr beispielsweise für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus
-``docs`` und ``test`` übernehmen:
+Auch rekursive Abhängigkeitsgruppen sind möglich. So könnt ihr beispielsweise
+für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
+``test`` übernehmen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
    :lines: 35-39
    :lineno-start: 35
 
-Ihr könnt diese optionalen Abhängigkeiten installieren, :abbr:`z.B. (zum
-Beispiel)` mit:
+Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z.B. (zum Beispiel)`
+mit:
 
 .. tab:: Linux/macOS
 
@@ -287,7 +287,7 @@ Beispiel)` mit:
       $ python3 -m venv .venv
       $ . .venv/bin/activate
       $ python -m pip install --upgrade pip
-      $ python -m pip install -e '.[dev]'
+      $ python -m pip install --group dev
 
 .. tab:: Windows
 
@@ -297,7 +297,12 @@ Beispiel)` mit:
       > python3 -m venv .venv
       > .venv\Scripts\activate.bat
       > python -m pip install --upgrade pip
-      > python -m pip install -e '.[dev]'
+      > python -m pip install --group dev
+
+.. seealso::
+   * :pep:`735`
+   * `Dependency Groups
+     <https://packaging.python.org/en/latest/specifications/dependency-groups/>`_
 
 :file:`src`-Package
 -------------------
