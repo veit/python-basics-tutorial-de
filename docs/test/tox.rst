@@ -23,14 +23,17 @@ um eine installierbare :doc:`Distribution eures Pakets
 <../packs/distribution>` zu erstellen. Es sucht in der :file:`tox.ini`-Datei
 nach einer Liste von Umgebungen, und führt dann jeweils folgende Schritte aus:
 
-#. erstellt eine :term:`virtuelle Umgebung <Virtuelle Umgebung>`,
-#. installiert einige Abhängigkeiten mit :term:`pip`,
-#. baut euer Paket,
-#. installiert euer Paket mit pip,
-#. führt weitere Tests aus.
+#. erstellt eine :term:`virtuelle Umgebung <Virtuelle Umgebung>`
+#. installiert einige Abhängigkeiten mit :term:`pip`
+#. baut euer Paket
+#. installiert euer Paket mit pip
+#. führt weitere Tests aus
 
 Nachdem alle Umgebungen getestet wurden, gibt tox eine Zusammenfassung der
 Ergebnisse aus.
+
+Um diesen Prozess mit :term:`uv` zu beschleunigen, verwenden wir tox nicht
+direkt, sondern `tox-uv <https://github.com/tox-dev/tox-uv>`_.
 
 .. note::
    Obwohl tox von vielen Projekten verwendet wird, gibt es Alternativen, die
@@ -100,64 +103,65 @@ auszuführen.
 tox ausführen
 -------------
 
-Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass ihr es installiert:
+Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass ihr tox-uv
+installiert habt:
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ python3 -m venv .venv
-      $ . .venv/bin/activate
-      $ python -m pip install tox
+      $ uv add --extra dev tox-uv
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m venv .venv
-      C:> .venv\Scripts\activate.bat
-      C:> python -m pip install tox
+      C:> uv add --extra dev tox-uv
 
 Um tox auszuführen, startet einfach tox:
 
 .. code-block:: pytest
 
-    $ python -m tox
-    py313: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/20/items-0.1.0.tar.gz
-    py313: commands[0]> coverage run -m pytest
-    ============================= test session starts ==============================
-    platform darwin -- Python 3.13.0, pytest-8.3.3, pluggy-1.5.0
-    cachedir: .tox/py313/.pytest_cache
-    rootdir: /Users/veit/cusy/prj/items
-    configfile: pyproject.toml
-    testpaths: tests
-    plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
-    collected 49 items
+   $ uv run tox
+   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps items@/Users/veit/cusy/prj/items/.tox/.tmp/package/57/items-0.1.0.tar.gz
+   py313: commands[0]> python --version --version
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.13.0, pytest-8.4.1, pluggy-1.6.0
+   cachedir: .tox/py313/.pytest_cache
+   rootdir: /Users/veit/cusy/prj/items
+   configfile: pyproject.toml
+   testpaths: tests
+   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   collected 83 items
 
-    tests/api/test_add.py ....                                               [  8%]
-    tests/api/test_config.py .                                               [ 10%]
-    tests/api/test_count.py ...                                              [ 16%]
-    tests/api/test_delete.py ...                                             [ 22%]
-    tests/api/test_finish.py ....                                            [ 30%]
-    tests/api/test_list.py .........                                         [ 48%]
-    tests/api/test_start.py ....                                             [ 57%]
-    tests/api/test_update.py ....                                            [ 65%]
-    tests/api/test_version.py .                                              [ 67%]
-    tests/cli/test_add.py ..                                                 [ 71%]
-    tests/cli/test_config.py ..                                              [ 75%]
-    tests/cli/test_count.py .                                                [ 77%]
-    tests/cli/test_delete.py .                                               [ 79%]
-    tests/cli/test_errors.py ....                                            [ 87%]
-    tests/cli/test_finish.py .                                               [ 89%]
-    tests/cli/test_list.py ..                                                [ 93%]
-    tests/cli/test_start.py .                                                [ 95%]
-    tests/cli/test_update.py .                                               [ 97%]
-    tests/cli/test_version.py .                                              [100%]
+   tests/api/test_add.py ......                                             [  7%]
+   tests/api/test_config.py .                                               [  8%]
+   tests/api/test_count.py ...                                              [ 12%]
+   tests/api/test_delete.py ...                                             [ 15%]
+   tests/api/test_delete_all.py ..                                          [ 18%]
+   tests/api/test_exceptions.py ..                                          [ 20%]
+   tests/api/test_finish.py ....                                            [ 25%]
+   tests/api/test_item.py ...                                               [ 28%]
+   tests/api/test_item_id.py .                                              [ 30%]
+   tests/api/test_list.py .........                                         [ 40%]
+   tests/api/test_list_edge_cases.py ........                               [ 50%]
+   tests/api/test_start.py ....                                             [ 55%]
+   tests/api/test_update.py .....                                           [ 61%]
+   tests/api/test_version.py .                                              [ 62%]
+   tests/cli/test_add.py ..                                                 [ 65%]
+   tests/cli/test_config.py ..                                              [ 67%]
+   tests/cli/test_count.py .                                                [ 68%]
+   tests/cli/test_delete.py .                                               [ 69%]
+   tests/cli/test_errors.py .......                                         [ 78%]
+   tests/cli/test_finish.py .                                               [ 79%]
+   tests/cli/test_help.py .........                                         [ 90%]
+   tests/cli/test_list.py .....                                             [ 96%]
+   tests/cli/test_start.py .                                                [ 97%]
+   tests/cli/test_update.py .                                               [ 98%]
+   tests/cli/test_version.py .                                              [100%]
 
-    ============================== 49 passed in 0.16s ==============================
-    .pkg: _exit> python /Users/veit/cusy/prj/items/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-    py313: OK ✔ in 1.48 seconds
-      congratulations :) (1.48 seconds)
+   ============================== 83 passed in 0.27s ==============================
+   py313: OK ✔ in 1.17 seconds
 
 Mehrere Python-Versionen testen
 -------------------------------
@@ -184,7 +188,7 @@ der folgenden Darstellung lediglich die Unterschiede hervorhebe:
 .. code-block:: pytest
    :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
 
-   $ python -m tox
+   $ uv run tox
    ...
    py39: install_package> python -I -m pip install --force-reinstall --no-deps /Users/veit/cusy/prj/items/.tox/.tmp/package/17/items-0.1.0.tar.gz
    py39: commands[0]> coverage run -m pytest
@@ -296,7 +300,7 @@ Dann befindet es sich :abbr:`z.B. (zum Beispiel)` in
 .. code-block:: console
    :emphasize-lines: 1
 
-   $ python -m tox
+   $ v run tox
    ...
    coverage-report: commands[0]> coverage combine
    Combined data file .coverage.fay.local.19539.XpQXpsGx
@@ -374,23 +378,25 @@ Abdeckung zu deaktivieren:
 .. code-block:: pytest
    :emphasize-lines: 1, 3
 
-   $ tox -e py312 -- -k test_version --no-cov
+   $ uv run tox -e py313 -- -k test_version --no-cov
    ...
-   py312: commands[0]> coverage run -m pytest -k test_version --no-cov
-   ============================= test session starts ==============================
-   …
-   configfile: pyproject.toml
-   testpaths: tests
-   plugins: cov-5.0.0, Faker-25.0.0
-   collected 49 items / 47 deselected / 2 selected
+   coverage-report: commands[0]> coverage combine
+   Combined data file .coverage.fay.local.19539.XpQXpsGx
+   coverage-report: commands[1]> coverage report
+   Name               Stmts   Miss Branch BrPart  Cover   Missing
+   --------------------------------------------------------------
+   src/items/api.py      68      1     12      1    98%   88
+   --------------------------------------------------------------
+   TOTAL                428      1     32      1    99%
 
-   tests/api/test_version.py .                                              [ 50%]
-   tests/cli/test_version.py .                                              [100%]
-
-   ======================= 2 passed, 47 deselected in 0.09s =======================
-   .pkg: _exit> python /Users/veit/cusy/prj/items_env/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-     py312: OK (2.22=setup[1.12]+cmd[1.10] seconds)
-     congratulations :) (2.25 seconds)
+   26 files skipped due to complete coverage.
+     py39: OK (2.12=setup[1.49]+cmd[0.63] seconds)
+     py310: SKIP (0.01 seconds)
+     py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
+     py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
+     py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
+     coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
+     congratulations :) (10.26 seconds)
 
 ``tox`` eignet sich nicht nur hervorragend für die lokale Automatisierung von
 Testprozessen, sondern hilft auch bei Server-basierter :term:`CI`. Fahren wir
@@ -418,30 +424,37 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
 
       jobs:
         coverage:
-          name: Ensure 99% test coverage
+          name: Ensure 100% test coverage
           runs-on: ubuntu-latest
           needs: tests
           if: always()
+
           steps:
             - uses: actions/checkout@v4
+              with:
+                persist-credentials: false
             - uses: actions/setup-python@v5
               with:
-                cache: pip
-                python-version: 3.13
+                python-version-file: .python-version
+            - uses: hynek/setup-cached-uv@v2
             - name: Download coverage data
               uses: actions/download-artifact@v4
               with:
                 pattern: coverage-data-*
                 merge-multiple: true
-            - name: Combine coverage and fail if it’s <99%.
+
+            - name: Combine coverage and fail if it’s <100%.
               run: |
-                python -m pip install --upgrade coverage[toml]
-                python -m coverage combine
-                python -m coverage html --skip-covered --skip-empty
+                uv tool install coverage
+
+                coverage combine
+                coverage html --skip-covered --skip-empty
+
                 # Report and write to summary.
-                python -m coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
-                # Report again and fail if under 99%.
-                python -m coverage report --fail-under=99
+                coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+
+                # Report again and fail if under 100%.
+                coverage report --fail-under=100
 
    ``name``
        kann ein beliebiger Name sein. Er wird in der Benutzeroberfläche von
@@ -458,6 +471,11 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
    ``with: python-version: ${{ matrix.python }}``
        sagt, dass eine Umgebung für jede der in ``matrix.python`` aufgeführten
        Python-Versionen erstellt werden soll.
+   ``uses: hynek/setup-cached-uv@v2``
+       uses :term:`uv` in GitHub Actions.
+
+       .. seealso::
+          * `setup-cached-uv <https://github.com/hynek/setup-cached-uv>`_
 
 #. Anschließend könnt ihr auf :guilabel:`Start commit` klicken. Da wir noch
    weitere Änderungen vornehmen wollen bevor die Tests automatisiert ausgeführt
