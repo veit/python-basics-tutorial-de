@@ -1,0 +1,8 @@
+====================
+Seite nicht gefunden
+====================
+
+Diese Seite ist möglicherweise verschoben worden.
+
+Bitte wählt eine Seite aus dem Seitenmenü oder besucht unsere Homepage unter
+https://python-basics-tutorial.readthedocs.io/de/latest/.
