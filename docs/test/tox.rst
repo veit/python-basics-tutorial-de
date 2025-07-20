@@ -350,7 +350,7 @@ Wir können auch einzelne Tests mit tox aufrufen, indem wir eine weitere Änderu
 vornehmen, damit Parameter an pytest übergeben werden können:
 
 .. code-block:: ini
-   :emphasize-lines: 17
+   :emphasize-lines: 16
 
    [tox]
    envlist =
@@ -568,7 +568,7 @@ Hooks erstellt. Der folgende Codeschnipsel würde zum Beispiel ein neues --my
 ``tox-uv``
 ----------
 
-`tox-uv <https://pypi.org/project/tox-uv/>`_ ist ein Tox-Plugin, das
+`tox-uv <https://pypi.org/project/tox-uv/>`__ ist ein Tox-Plugin, das
 :term:`virtualenv` und :term:`pip` durch :term:`uv` in euren Tox-Umgebungen
 ersetzt.
 
