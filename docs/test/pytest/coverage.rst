@@ -307,15 +307,44 @@ Alternativ kann dies auch für alle Vorkommen konfiguriert werden:
       directory = coverage_html_report
 
 .. seealso::
-   `Configuration reference
-   <https://coverage.readthedocs.io/en/latest/config.html>`_
+   * `covdefaults <https://pypi.org/project/covdefaults/>`_: A coverage plugin
+     to provide sensible default settings
+   * `coverage-conditional-plugin
+     <https://pypi.org/project/coverage-conditional-plugin/>`_: Conditional
+     coverage based on any rules you define
+   * `Coverage.py regex pragmas
+     <https://nedbatchelder.com/blog/202507/coveragepy_regex_pragmas.html>`_
+
+.. _coverage_tip:
+
+.. tip::
+   Viele schließen Tests von der Testabdeckung aus: `omit tests
+   path:**/pyproject.toml
+   <https://github.com/search?q=omit+tests+path%3A**%2Fpyproject.toml&type=code>`_.
+   Dies ist jedoch eine schlechte Idee. Eure Tests sind echter Code, und der
+   ganze Sinn der Testabdeckung besteht darin, euch Informationen über euren
+   Code zu geben. Warum solltet ihr diese Informationen über eure Tests nicht
+   wollen?
+
+   Ihr könntet sagen: *„Alle meine Tests führen den ganzen Code aus, also sind
+   es nutzlose Informationen.“* Wenn ihr jedoch einen neuen Test schreibt und
+   hierfür einen bestehenden Test kopiert und nur die Ausführung ändert, nicht
+   jedoch den Funktionsnamen, so wird nur einer der beiden Testfunktionen
+   ausgeführt. Und seid ihr euch sicher, dass jeder Hilfscode in eurer Testsuite
+   noch benötigt wird? Coverage würde euch in beiden Fällen auf dieses Problem
+   aufmerksam machen.
+
+   Ein Argument gegen die Coverage von Tests ist, dass sie die Reports künstlich
+   aufbläst. Aber ihr könnt mit `[report] skip_covered
+   <https://coverage.readthedocs.io/en/latest/config.html#report-skip-covered>`_
+   diese Dateien auch einfach aus dem Report ausschließen.
 
 Erweiterungen
 -------------
 
 In `Coverage.py plugins
 <https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_ findet ihr
-auch eine Reihe von Erweiterungen für Coverage.
+auch noch andere Erweiterungen für Coverage.
 
 .. _coverage-github-actions:
 
