@@ -310,6 +310,30 @@ Alternativ kann dies auch für alle Vorkommen konfiguriert werden:
    `Configuration reference
    <https://coverage.readthedocs.io/en/latest/config.html>`_
 
+.. _coverage_tip:
+
+.. tip::
+   Viele schließen Tests von der Testabdeckung aus: `omit tests
+   path:**/pyproject.toml
+   <https://github.com/search?q=omit+tests+path%3A**%2Fpyproject.toml&type=code>`_.
+   Dies ist jedoch eine schlechte Idee. Eure Tests sind echter Code, und der
+   ganze Sinn der Testabdeckung besteht darin, euch Informationen über euren
+   Code zu geben. Warum solltet ihr diese Informationen über eure Tests nicht
+   wollen?
+
+   Ihr könntet sagen: *„Alle meine Tests führen den ganzen Code aus, also sind
+   es nutzlose Informationen.“* Wenn ihr jedoch einen neuen Test schreibt und
+   hierfür einen bestehenden Test kopiert und nur die Ausführung ändert, nicht
+   jedoch den Funktionsnamen, so wird nur einer der beiden Testfunktionen
+   ausgeführt. Und seid ihr euch sicher, dass jeder Hilfscode in eurer Testsuite
+   noch benötigt wird? Coverage würde euch in beiden Fällen auf dieses Problem
+   aufmerksam machen.
+
+   Ein Argument gegen die Coverage von Tests ist, dass sie die Reports künstlich
+   aufbläst. Aber ihr könnt mit `[report] skip_covered
+   <https://coverage.readthedocs.io/en/latest/config.html#report-skip-covered>`_
+   diese Dateien auch einfach aus dem Report ausschließen.
+
 Erweiterungen
 -------------
 
