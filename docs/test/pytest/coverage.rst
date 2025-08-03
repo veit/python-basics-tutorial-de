@@ -342,9 +342,29 @@ Alternativ kann dies auch für alle Vorkommen konfiguriert werden:
 Erweiterungen
 -------------
 
-In `Coverage.py plugins
-<https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_ findet ihr
-auch noch andere Erweiterungen für Coverage.
+`Sphinx-Test-Reports <https://sphinx-test-reports.readthedocs.io/en/latest/>`_
+    zeigt Testergebnisse innerhalb von
+    :doc:`/document/sphinx/index`-Dokumentationen an.
+
+    .. image:: https://raster.shields.io/github/stars/useblocks/sphinx-test-reports
+       :alt: Stars
+       :target: https://github.com/useblocks/sphinx-test-reports
+
+    .. image:: https://raster.shields.io/github/contributors/useblocks/sphinx-test-reports
+       :alt: Contributors
+       :target: https://github.com/useblocks/sphinx-test-reports/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/useblocks/sphinx-test-reports
+       :alt: Commit activity
+       :target: https://github.com/useblocks/sphinx-test-reports/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/useblocks/sphinx-test-reports
+       :alt: Lizenz
+
+.. seealso::
+   In `Coverage.py plugins
+   <https://gist.github.com/nedbat/2e9dbf7f33b1e0e857368af5c5d06202>`_ findet
+   ihr auch noch andere Erweiterungen für Coverage.
 
 .. _coverage-github-actions:
 
