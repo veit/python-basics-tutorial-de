@@ -50,6 +50,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
+    "sphinx_sitemap",
     "sphinxcontrib.cairosvgconverter",
     "sphinxcontrib.plantuml",
     "sphinxext.opengraph",
@@ -247,7 +248,6 @@ texinfo_documents = [
     ),
 ]
 
-
 # -- Custom documentation plugin ---------------------------------------
 # https://www.sphinx-doc.org/en/master/development/tutorials/extending_syntax.html#the-setup-function
 
@@ -259,3 +259,14 @@ def setup(app: sphinx.application.Sphinx) -> None:
         objname="built-in fixture",
         indextemplate="pair: %s; fixture",
     )
+
+
+# -- sitemap configuration ---------------------------------------------------
+
+sitemap_url_scheme = "{link}"
+sitemap_excludes = [
+    "404.html",
+    "search.html",
+    "genindex.html",
+]
+sitemap_show_lastmod = True
