@@ -46,19 +46,20 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
    :lineno-start: 1
 
    [build-system]
-   requires = ["hatchling"]
+   requires = ["hatchling>=1.27"]
    build-backend = "hatchling.build"
 
 ``build-system``
     definiert einen Abschnitt, der das Build-System beschreibt
 ``requires``
     definiert eine Liste von Abhängigkeiten, die installiert sein müssen, damit
-    das Build-System funktioniert, in unserem Fall ``hatchling``.
+    das Build-System funktioniert, in unserem Fall ``hatchling>=1.27`` für die
+    Unterstützung von :pep:`639`.
 
     .. note::
        Versionsnummern von Abhängigkeiten sollten üblicherweise jedoch nicht
-       hier festgeschrieben werden sondern in der `requirements.txt
-       <https://pip.pypa.io/en/latest/user_guide/#requirements-files>`_-Datei.
+       hier festgeschrieben werden sondern in der `constraints.txt
+       <https://pip.pypa.io/en/latest/user_guide/#constraints-files>`_-Datei.
 
 ``build-backend``
     identifiziert den Einstiegspunkt für das Build-Backend-Objekt als
@@ -99,7 +100,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 5-19, 21-23, 40-
+   :lines: 5-20, 22-24, 41-
    :lineno-start: 5
 
 ``name``
@@ -147,7 +148,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     .. code-block:: toml
 
        [build-system]
-       requires = ["hatchling", "hatch-vcs"]
+       requires = ["hatchling>=1.27", "hatch-vcs"]
        ...
        [tool.hatch.version]
        source = "vcs"
@@ -158,7 +159,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     .. code-block:: toml
 
        [build-system]
-       requires = ["setuptools>=61.0", "setuptools-scm"]
+       requires = ["setuptools>=77.0", "setuptools-scm"]
        build-backend = "setuptools.build_meta"
 
        [project]
@@ -219,6 +220,26 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     enthält. Diese wird auf der Paket-Detailseite auf :term:`Python Package
     Index` (:term:`PyPI`) angezeigt. In diesem Fall wird die Beschreibung aus
     ``README.rst`` geladen.
+
+.. _license-expression:
+
+``License-Expression``
+    enthält valide `SPDX license expressions
+    <https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/>`_.
+
+    .. seealso::
+       * `License-Expression
+         <https://packaging.python.org/en/latest/specifications/core-metadata/#license-expression>`_
+       * `Add License-Expression field
+         <https://peps.python.org/pep-0639/#add-license-expression-field>`_
+
+``license-files``
+    gibt eine Liste von Dateien mit Lizenzinformationen an.
+
+    .. seealso::
+       * `License-File (multiple use)
+         <https://packaging.python.org/en/latest/specifications/core-metadata/#license-file-multiple-use>`_
+
 ``requires-python``
     gibt die Versionen von Python an, die von eurem Projekt unterstützt werden.
     Dabei werden Installationsprogramme wie :term:`pip` ältere Versionen von
