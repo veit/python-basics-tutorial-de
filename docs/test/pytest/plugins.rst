@@ -401,6 +401,26 @@ Bedarf decken:
        :alt: Lizenz
        :target: https://github.com/joke2k/faker?tab=MIT-1-ov-file#readme
 
+`time-machine <https://github.com/adamchainz/time-machine>`_
+    stellt sowohl eine Fixture als auch einen Marker zur Verfügung, um die Zeit
+    während der Tests zu steuern.
+
+    .. image:: https://raster.shields.io/github/stars/adamchainz/time-machine
+       :alt: Stars
+       :target: https://github.com/pytest-dev/adamchainz/time-machine
+
+    .. image:: https://raster.shields.io/github/contributors/adamchainz/time-machine
+       :alt: Contributors
+       :target: https://github.com/adamchainz/time-machine/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/adamchainz/time-machine
+       :alt: Commit activity
+       :target: https://github.com/adamchainz/time-machine/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/adamchainz/time-machine
+       :alt: Lizenz
+       :target: https://github.com/adamchainz/time-machine?tab=MIT-1-ov-file
+
 `pytest-factoryboy <https://pypi.org/project/pytest-factoryboy/>`_
     enthält Fixtures für `factory-boy <https://pypi.org/project/factory-boy/>`_,
     einen Datenbankmodell-Datengenerator.
@@ -420,7 +440,6 @@ Bedarf decken:
     .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-factoryboy
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-factoryboy?tab=MIT-1-ov-file#readme
-
 
 … für Verschiedenes
 ~~~~~~~~~~~~~~~~~~~
