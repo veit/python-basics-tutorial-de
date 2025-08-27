@@ -284,28 +284,39 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 +-----------------------------------------------+-----------------------+
 | Funktion                                      | Beschreibung          |
 +===============================================+=======================+
-| :meth:`pytest.MonkeyPatch.setattr`            | setzt ein Attribut    |
+| :meth:`monkeypatch.setattr(obj, name, value,  | setzt ein Attribut    |
+| raising=True)                                 |                       |
+| <pytest.MonkeyPatch.setattr>`                 |                       |
 | [1]_                                          |                       |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.delattr` [1]_       | löscht ein Attribut   |
+| :meth:`monkeypatch.delattr(obj, name,         | löscht ein Attribut   |
+| raising=True)                                 |                       |
+| <pytest.MonkeyPatch.delattr>`                 |                       |
+| [1]_                                          |                       |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.setitem`            | setzt einen           |
-|                                               | Dict-Eintrag          |
+| :meth:`monkeypatch.setitem(mapping, name,     | setzt einen           |
+| value) <pytest.MonkeyPatch.setitem>`          | Dict-Eintrag          |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.delitem` [1]_       | löscht einen          |
-|                                               | Dict-Eintrag          |
+| :meth:`monkeypatch.delitem(obj, name,         | löscht einen          |
+| raising=True) <pytest.MonkeyPatch.delitem>`   | Dict-Eintrag          |
+| [1]_                                          |                       |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.setenv` [2]_        | setzt eine            |
-|                                               | Umgebungsvariable     |
+| :meth:`monkeypatch.setenv(name, value,        | setzt eine            |
+| prepend=None) <pytest.MonkeyPatch.setenv>`    | Umgebungsvariable     |
+| [2]_                                          |                       |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.delenv` [1]_        | löscht eine           |
-|                                               | Umgebungsvariable     |
+| :meth:`monkeypatch.delenv(name, raising=True) | löscht eine           |
+| <pytest.MonkeyPatch.delenv>`                  | Umgebungsvariable     |
+| [1]_                                          |                       |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.syspath_prepend`    | erweitert den Pfad    |
-|                                               | :py:data:`sys.path`   |
+| :meth:`monkeypatch.syspath_prepend(path)      | erweitert den Pfad    |
+| <pytest.MonkeyPatch.syspath_prepend>`         | :py:data:`sys.path`   |
 +-----------------------------------------------+-----------------------+
-| :meth:`pytest.MonkeyPatch.chdir`              | wechselt das aktuelle |
-|                                               | Arbeitsverzeichnis    |
+| :meth:`monkeypatch.chdir(path)                | wechselt das aktuelle |
+| <pytest.MonkeyPatch.chdir>`                   | Arbeitsverzeichnis    |
++-----------------------------------------------+-----------------------+
+| :meth:`monkeypatch.context()                  | wechselt den aktuellen|
+| <pytest.MonkeyPatch.context>`                 | Kontext               |
 +-----------------------------------------------+-----------------------+
 
 .. [1] Der ``raising``-:term:`Parameter` teilt pytest mit, ob eine
@@ -314,6 +325,9 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 .. [2] Der ``prepend``-:term:`Parameter` von ``setenv()`` kann ein Zeichen sein.
        Wenn er gesetzt ist, wird der Wert der Umgebungsvariablen in
        :samp:`{VALUE} + prepend + {OLD_VALUE}` geändert.
+
+Monkeypatching von Umgebungsvariablen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wir können ``monkeypatch`` verwenden, um die :abbr:`CLI (Command Line
 Interface)` auf ein temporäres Verzeichnis für die Datenbank umzuleiten, und
@@ -409,6 +423,44 @@ In unserem Fall könnte sinnvoll sein, eine Umgebungsvariable
     def test_env_var(monkeypatch, tmp_path):
         monkeypatch.setenv("ITEMS_DB_DIR", str(tmp_path))
         assert run_items_cli("config") == str(tmp_path)
+
+Monkeypatching von Dictionaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Der Pfad hätte auch in einem Dictionary angegeben sein können, :abbr:`z. B. (zum
+Beispiel)`:
+
+.. code-block:: python
+   :caption: conf.py
+
+   DEFAULT_CONFIG = {"database": "items_db"}
+
+
+   def create_connection(config=None):
+       """Create a connection string from input or defaults."""
+       config = config or DEFAULT_CONFIG
+       return f"Location={config['database']};"
+
+Zum Testen können wir die Werte im ``DEFAULT_CONFIG``-Dictionary ändern:
+
+.. code-block:: python
+   :caption: tests/test_conf.py
+
+   from items import conf
+
+
+   def test_connection(monkeypatch):
+       monkeypatch.setitem(conf.DEFAULT_CONFIG, "database", "test_db")
+
+Alternativ hättet ihr auch ein Fixture definieren können mit:
+
+.. code-block:: python
+   :caption: tests/conftest.py
+
+   @pytest.fixture
+   def mock_test_database(monkeypatch):
+       """Set the DEFAULT_CONFIG database to test_db."""
+       monkeypatch.setitem(app.DEFAULT_CONFIG, "database", "test_db")
 
 Verbleibende Built-in-Fixtures
 ------------------------------

@@ -126,6 +126,9 @@ Beispiel)` die Version in :file:`tests/cli/test_version.py` zu testen:
     def test_version(items_cli):
         assert items_cli("version") == items.__version__
 
+.. seealso::
+   `Typer Learn Testing <https://typer.tiangolo.com/tutorial/testing/>`_
+
 Mocking von Attributen
 ----------------------
 

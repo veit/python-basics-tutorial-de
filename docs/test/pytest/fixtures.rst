@@ -23,6 +23,13 @@ Doch bevor ihr euch mit Fixtures vertraut machen und sie zum Testen von Items
 verwendet, sehen wir uns zunächst ein kleines Beispiel-Fixture an und erfahren,
 wie Fixtures und Testfunktionen miteinander verbunden sind.
 
+.. seealso::
+   * `pytest fixtures <https://docs.pytest.org/en/latest/explanation/fixtures.html>`_
+   * `pytest fixtures reference
+     <https://docs.pytest.org/en/latest/reference/fixtures.html>`_
+   * `How to use fixtures
+     <https://docs.pytest.org/en/latest/how-to/fixtures.html#how-to-fixtures>`_
+
 Erste Schritte mit Fixtures
 ---------------------------
 

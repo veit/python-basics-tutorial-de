@@ -4,6 +4,12 @@ Glossar
 .. glossary::
    :sorted:
 
+   Akzeptanztest
+   User Acceptance Test
+       Überprüfung, ob Software aus Sicht der User wie beabsichtigt funktioniert
+       und diese die Software akzeptieren. Akzeptanztests werden vor allem beim
+       :term:` Extreme Programming` verwendet.
+
    Argument
        Ein Wert, der einer :term:`Funktion` übergeben wird. Es gibt zwei Arten
        von Argumenten:
@@ -76,6 +82,15 @@ Glossar
        falsch erweist. Er zeichnet sich durch viele :term:`try`- und
        :term:`except`-Anweisungen aus. Diese Technik steht im Gegensatz zum
        :term:`LBYL`-Stil, der in vielen anderen Sprachen wie C üblich ist.
+
+   Extreme Programming
+   XP
+       Softwareentwicklungsmethodik, die darauf abzielt, die Softwarequalität
+       und die Reaktionsfähigkeit auf sich ändernde Kundenanforderungen zu
+       verbessern. Als eine Form der agilen Softwareentwicklung werden häufige
+       Releases in kurzen Entwicklungszyklen befürwortet, um die Produktivität
+       zu steigern und Kontrollpunkte einzuführen, an denen neue
+       Anforderungen berücksichtigt werden können.
 
    F-String
        :doc:`String </types/strings/built-in-modules/string>`-Literal, denen ein
@@ -753,8 +768,29 @@ Glossar
    Test-driven development
    TDD
    Testgetriebene Entwicklung
-       Eine Software-Entwicklungsstrategie, bei der die Tests vor dem Code
-       geschrieben werden.
+       Technik zur Erstellung von Software, die die Softwareentwicklung durch
+       das Schreiben von Tests führt. Sie wurde Ende der 1990er Jahre von Kent
+       Beck als Teil von :term:` Extreme Programming` entwickelt. Im
+       Wesentlichen folgen dabei wiederholt drei einfache Schritte:
+
+       #. Schreiben eines Tests für die nächste Funktion, die hinzugefügt werden
+          soll.
+       #. Schreiben des Funktionscode, bis der Test bestanden ist.
+       #. Überarbeiten sowohl den neuen als auch den alten Code, um ihn gut zu
+          strukturieren.
+
+       Obwohl diese drei Schritte, die oft als *„Red – Green – Refactor“*
+       zusammengefasst werden, das Herzstück des Prozesses bilden, gibt es auch
+       einen wichtigen ersten Schritt, bei dem zunächst eine Liste mit
+       Testfällen erstellt wird. Anschließend wird einer dieser Tests
+       ausgewählt, *„Red – Green – Refactor“* darauf angewendet  und dann der
+       nächste Test ausgewählt. Während des Prozesses werden weitere Tests
+       dieser Liste hinzugefügt.
+
+       .. seealso::
+          * Kent Beck: `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_
+          * Kent Beck: `Test-driven development by example
+            <https://archive.org/details/est-driven-development-by-example/test-driven-development-by-example/>`_
 
    ``try``
        Ein Schlüsselwort, das einen Teil des Codes schützt, der eine
