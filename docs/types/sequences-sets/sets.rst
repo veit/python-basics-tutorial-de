@@ -76,19 +76,19 @@ Vereinigungsmenge
       x = {4, 2, 3, 2, 1}
       y = {3, 4, 5}
       >>> x.union(y)
-      {0, 1, 2, 3, 4, 5}
+      {1, 2, 3, 4, 5}
 
 Schnittmenge
    .. code-block:: pycon
 
       >>> x.intersection(y)
-      {3}
+      {3, 4}
 
 Differenz- oder Restmenge
    .. code-block:: pycon
 
       >>> x.difference(y)
-      {0, 1, 2}
+      {1, 2}
 
 .. _frozenset:
 
