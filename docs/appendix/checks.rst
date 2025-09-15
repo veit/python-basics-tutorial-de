@@ -1011,28 +1011,20 @@ Checks
      Ein vollständiges Beispiel findet ihr in `github.com/veit/items
      <https://github.com/veit/items/>`_.
 
-:doc:`/save-data/files`
------------------------
+:doc:`/save-data/files-directories`
+-----------------------------------
 
-* Verwendet die Funktionen des :mod:`python3:os`-Moduls, um einen Pfad zu einer
-  Datei namens :file:`example.log` zu nehmen und einen neuen Dateipfad im selben
-  Verzeichnis für eine Datei namens :file:`example.log1` zu erstellen.
+* Verwendet die Funktionen des :mod:`python3:pathlib`-Moduls, um einen Pfad zu
+  einer Datei namens :file:`instance.log` zu nehmen und einen neuen Dateipfad im
+  selben Verzeichnis für eine Datei namens :file:`instance.log1` zu erstellen.
 
   .. code-block:: pycon
 
-     >>> import os
-     >>> path = os.path.abspath("example.log")
-     >>> print(path)
-     /Users/veit/python-basics-tutorial-de/example.log
-     >>> new_path = f"{path}2"
-     >>> print(new_path)
-     /Users/veit/python-basics-tutorial-de/example.log2
-
-* Welche Bedeutung hat das Hinzufügen von ``b`` als Parameter von
-  :func:`python3:open`?
-
-  Dadurch wird die Datei im Binärmodus geöffnet, :abbr:`d.h. (das heißt)` es
-  werden Bytes und keine Zeichen gelesen und geschrieben.
+     >>> from pathlib import Path
+     >>> l = Path("logs", "instance.log")
+     >>> l1 = Path("logs", "instance.log1")
+     >>> l.rename(l1)
+     PosixPath('logs/instance.log1')
 
 * Öffnet eine Datei :file:`my_file.txt` und fügt zusätzlichen Text am Ende der
   Datei ein. Welchen Befehl würdet ihr verwenden, um :file:`my_file.txt` zu
@@ -1041,32 +1033,12 @@ Checks
 
   .. code-block:: pycon
 
-     >>> with open("my_file", "a") as f:
-     ...     f.write("Hi, Pythonistas!\n")
-     ...
+     >>> from pathlib import Path
+     >>> p = Path("docs", "save-data", "myfile.txt")
+     >>> p.write_text("Hi, Pythonistas!\n")
      17
-     >>> with open("my_file") as f:
-     ...     print(f.readlines())
-     ...
-     ['Hi, Pythonistas!\n', 'Hi, Pythonistas!\n']
-
-* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
-  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
-  nützlich wäre?
-
-  * beim Lesen und Schreiben einer Binärdatei
-  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
-    gespeichert werden sollen, wie sie übermittelt wurden
-
-* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
-  Anwendungsfälle geeignet sein oder auch nicht:
-
-  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten ✅
-  #. Aufbewahren von Auswertungsergebnissen ❌, da Pickle abhängig von der
-     jeweiligen Python-Version sind
-  #. Speichern von Benutzernamen und Passwörtern ❌, da Pickle nicht sicher sind
-  #. Speichern eines großen Wörterbuchs mit englischen Begriffen ❌, da der
-     gesamte Pickle in den Speicher geladen werden müsste
+     >>> p.read_text()
+     'Hi, Pythonistas!\n'
 
 * Wenn ihr euch die `Manpage für das wc-Dienstprogramm
   <https://linux.die.net/man/1/wc>`_ anseht, seht ihr zwei
@@ -1139,3 +1111,24 @@ Checks
         schreibt die aktuelle Datei in die Zip-Datei.
     Zeile 13
         entfernt die aktuelle Datei aus dem Arbeitsverzeichnis.
+
+:doc:`/save-data/modules`
+-------------------------
+
+* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
+  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
+  nützlich wäre?
+
+  * beim Lesen und Schreiben einer Binärdatei
+  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
+    gespeichert werden sollen, wie sie übermittelt wurden
+
+* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
+  Anwendungsfälle geeignet sein oder auch nicht:
+
+  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten ✅
+  #. Aufbewahren von Auswertungsergebnissen ❌, da Pickle abhängig von der
+     jeweiligen Python-Version sind
+  #. Speichern von Benutzernamen und Passwörtern ❌, da Pickle nicht sicher sind
+  #. Speichern eines großen Wörterbuchs mit englischen Begriffen ❌, da der
+     gesamte Pickle in den Speicher geladen werden müsste

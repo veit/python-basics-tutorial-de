@@ -95,3 +95,18 @@ pandas IO tools
     <Python4DataScience:data-processing/serialisation-formats/toml/example>`
   * :doc:`Pickle
     <Python4DataScience:data-processing/serialisation-formats/pickle/pickle-examples>`
+
+Checks
+------
+
+* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
+  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
+  nützlich wäre?
+
+* Warum könnte :doc:`pickle <python3:library/pickle>` für die folgenden
+  Anwendungsfälle geeignet sein oder auch nicht:
+
+  #. Speichern einiger Zustandsvariablen von einem Durchlauf zum nächsten
+  #. Aufbewahren von Auswertungsergebnissen
+  #. Speichern von Benutzernamen und Passwörtern
+  #. Speichern eines großen Wörterbuchs mit englischen Begriffen
