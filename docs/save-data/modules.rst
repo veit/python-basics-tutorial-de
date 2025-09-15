@@ -55,7 +55,6 @@ ihr Dateien managen könnt:
 | :py:mod:`configparser`            | liest und schreibt Windows-ähnliche Konfigurationsdateien (``.ini``)          |
 +-----------------------------------+-------------------------------------------------------------------------------+
 | :py:mod:`base64`,                 | Kodierung/Dekodierung von Dateien oder Streams                                |
-| :py:mod:`binhex`,                 |                                                                               |
 | :py:mod:`binascii`,               |                                                                               |
 | :py:mod:`quopri`,                 |                                                                               |
 | :py:mod:`uu`                      |                                                                               |
