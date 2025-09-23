@@ -169,6 +169,19 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        [tool.setuptools.dynamic]
        version = {attr = "dataprep.VERSION"}
 
+    Wollt ihr diese Version nun in eurem Paket zugänglich machen, könnt ihr
+    folgenden Code verwenden:
+
+    .. code-block:: python
+       :caption: src/dataprep/__init__.py
+
+       import importlib.metadata
+
+       try:
+           __version__ = importlib.metadata.version(__name__)
+       except importlib.metadata.PackageNotFoundError:
+           __version__ = "0.1.dev0"  # Fallback for development mode
+
     .. tip::
        Wenn die Version in mehreren Textdateien steht, kann sich die Verwendung
        von `Bump My Version
@@ -285,8 +298,8 @@ Abhängigkeitsgruppen
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 24-34
-   :lineno-start: 34
+   :lines: 24-35
+   :lineno-start: 24
 
 Auch rekursive Abhängigkeitsgruppen sind möglich. So könnt ihr beispielsweise
 für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
@@ -294,8 +307,8 @@ für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 35-39
-   :lineno-start: 35
+   :lines: 36-40
+   :lineno-start: 36
 
 Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z.B. (zum Beispiel)`
 mit:
