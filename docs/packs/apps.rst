@@ -57,7 +57,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 
     .. code-block:: console
 
-       $  uv add --dev .
+       $  uv add .
        Resolved 1 package in 1ms
        Audited in 0.01ms
        >>> import myapp
@@ -67,7 +67,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 .. _uv_lock:
 
 :file:`uv.lock`-Datei
-    Mit ``uv add --dev .`` wurde auch die :file:`uv.lock`-Datei neben der
+    Mit ``uv add .`` wurde auch die :file:`uv.lock`-Datei neben der
     :file:`pyproject.toml`-Datei erstellt. :file:`uv.lock` ist ein
     plattformübergreifendes Lockfile, das die Pakete erfasst, die über alle
     möglichen Python-Merkmale wie Betriebssystem, Architektur und Python-Version

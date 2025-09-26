@@ -284,6 +284,17 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Allgemeinen könnte dies zum Quellcode, zur Dokumentation, zu
     Aufgabenverwaltungen :abbr:`usw. (und so weiter)` führen.
 
+.. error::
+   Wenn ihr in uv den Fehler :samp:`error: No \`project\` table found in:
+   \`{/PATH/TO/}pyproject.toml\`` erhaltet, habt ihr vermutlich keinen
+   ``[project]``-Abschnitt definiert. Dies kann in Repositorys auftreten, die
+   die :file:`pyproject.toml`-Datei nur für die Konfiguration von Tools wie
+   Black und Ruff verwenden, das Projekt selbst jedoch nicht definieren.
+
+   Um das Problem zu beheben, könnt ihr einen ``[project]``-Abschnitt einfügen,
+   der zumindest ``name`` und ``version`` enthalten muss. Alternativ könnt ihr
+   auch ``uv run`` mit der Option ``--no-project`` verwenden.
+
 .. seealso::
    * `Declaring project metadata
      <https://packaging.python.org/en/latest/specifications/pyproject-toml/#declaring-project-metadata-the-project-table>`_
@@ -527,6 +538,26 @@ Dateistruktur für Pakete erstellen:
        └── mypack
            └── __init__.py
 
+:file:`.python-version`
+    gibt an, welche Python-Version für die Entwicklung des Projekts verwendet
+    werden soll.
+
+    .. error::
+       Wenn ihr die folgende Fehlermeldung erhaltet :samp:`error: The Python
+       request from \`.python-version\` resolved to Python {U.V.W}, which is
+       incompatible with the project's Python requirement: \`>={X.Y}\`. Use \`uv
+       python pin\` to update the \`.python-version\` file to a compatible
+       version.`, weist dies auf einen Konflikt zwischen der Versionsangabe in
+       der :file:`.python-version`-Datei und der ``requires-python``-Angabe in
+       der :file:`pyproject.toml`-Datei hin. Nun habt ihr drei verschiedene
+       Möglichkeiten:
+
+       * Aktualisiert eure :file:`.python-version`-Datei mit :samp:`uv python
+         pin {X.Y.Z}`.
+       * Überschreibt die Python-Version für einen einzelnen Befehl mit
+         :samp:`uv run --python {X.Y} {COMMAND}`.
+       * Aktualisiert ``requires-python``.
+
 :file:`mypack/pyproject.toml`
     Die Datei :file:`pyproject.toml` enthält einen ``scripts``-Einstiegspunkt
     ``mypack:main``:
@@ -606,17 +637,17 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
         ``any`` eignet sich für jede Prozessorarchitektur, ``x86_64`` hingegen
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
 
+    .. seealso::
+        * :pep:`427`
+
 :file:`mypack-0.1.0.tar.gz`
-    ist eine :term:`Source Distribution`.
+    ist eine :term:`Source Distribution`
 
 .. seealso::
-    Die Referenz für die Dateinamen findet ihr in :pep:`427`.
-
-    Weitere Infos zu Source-Distributionen erhaltet ihr in `Core metadata
-    specifications
-    <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
-    und `PyPA specifications
-    <https://packaging.python.org/en/latest/specifications/>`_.
+    * `Core metadata specifications
+      <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
+    * `PyPA specifications
+      <https://packaging.python.org/en/latest/specifications/>`_
 
 Testen
 ------
@@ -625,7 +656,7 @@ Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
 
 .. code-block:: console
 
-    $ uv add check-wheel-contents
+    $ uv add --dev check-wheel-contents
     Resolved 17 packages in 8ms
        Built mypack @ file:///Users/veit/sandbox/mypack
     Prepared 1 package in 442ms
@@ -656,12 +687,16 @@ Alternativ könnt ihr das Paket auch in einem neuen Projekt installieren,
   Installed 1 package in 3ms
    + mypack==0.1.0 (from file:///Users/veit/sandbox/mypack/dist/mypack-0.1.0-py3-none-any.whl)
 
-Anschließend könnt ihr ``mypack`` mit ``uv run`` aufrufen können:
+Anschließend könnt ihr ``mypack`` mit ``uv run`` aufrufen:
 
 .. code-block:: console
 
     $ uv run mypack
     Hello from mypack!
+
+.. seealso::
+   * `Troubleshooting build failures
+     <https://docs.astral.sh/uv/reference/troubleshooting/build-failures/>`_
 
 .. note::
    Es gibt immer noch viele Anleitungen, die einen Schritt zum Aufruf der

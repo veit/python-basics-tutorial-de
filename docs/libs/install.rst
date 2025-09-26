@@ -287,10 +287,15 @@ Ihr könnt uv ganz einfach aktualisieren mit:
 Python-Installation
 ~~~~~~~~~~~~~~~~~~~
 
-Mit ``uv`` lassen sich nicht nur ältere CPython-Versionen installieren, sondern
-:abbr:`z.B. (zum Beispiel)` auch `PyPy <https://pypy.org>`_ mit ``uv python
-install pypy@3.12`` oder Free-threaded Python 3.13 mit ``uv python install
---python-preference only-managed 3.13t``.
+Mit ``uv python install`` lässt sich die aktuelle Python-Version installieren.
+Alternativ lässt sich auch eine spezifische Version installieren mit :samp:`uv
+python install {3.12}`. Es lassen sich jedoch nicht nur ältere CPython-Versionen
+installieren, sondern :abbr:`z.B. (zum Beispiel)` auch `PyPy
+<https://pypy.org>`_ mit :samp:`uv python install pypy@{3.12}` oder
+Free-threaded Python mit :samp:`uv python install --python-preference
+only-managed {3.13t}`. Die bereits installierten Python-Versionen erhaltet ihr
+mit ``uv python list``. Eine installierte Python-Version könnt ihr aufrufen mit
+:samp:`uv run --python {3.12} python`.
 
 Projektstruktur erstellen
 ~~~~~~~~~~~~~~~~~~~~~~~~~
