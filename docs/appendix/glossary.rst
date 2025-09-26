@@ -600,6 +600,7 @@ Glossar
          :abbr:`ggf. (gegebenenfalls)` auch mit einem
          :doc:`Python4DataScience:productive/envs/uv/dependency-bot`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
+       * :doc:`Python4DataScience:productive/envs/uv/claude-cursor`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
        * Schwachstellen überprüfen mit :ref:`uv-secure <check-vulnerabilities>`
 
