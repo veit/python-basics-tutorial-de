@@ -30,9 +30,9 @@ erhalten können.
    cusy Seminare:
 
    * `Software-Dokumentation mit Sphinx
-     <https://cusy.io/de/unsere-schulungsangebote/software-dokumentation-mit-sphinx>`_
+     <https://cusy.io/de/our-training-courses/software-documentation-with-sphinx.html>`_
    * `Technisches Schreiben
-     <https://cusy.io/de/unsere-schulungsangebote/technisches-schreiben>`_
+     <https://cusy.io/de/our-training-courses/technical-writing.html>`_
 
 .. seealso::
    * `Eric Holscher: Why You Shouldn’t Use “Markdown” for Documentation

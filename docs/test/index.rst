@@ -10,7 +10,7 @@ unterschieden.
 
 .. tip::
    `cusy Seminar: Effizient Testen mit Python
-   <https://cusy.io/de/unsere-schulungsangebote/effizient-testen-mit-python>`_
+   <https://cusy.io/de/our-training-courses/efficient-testing-with-python.html>`_
 
 .. seealso::
    * `Python Testing and Continuous Integration

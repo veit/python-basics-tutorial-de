@@ -137,4 +137,4 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
 
 .. tip::
    `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+   <https://cusy.io/de/our-training-courses/advanced-python.html>`_

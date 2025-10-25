@@ -10,7 +10,7 @@ nicht ausreichen sollten, könnt ihr auch die :ref:`pandas-io-tools` verwenden.
 
 .. tip::
    `cusy Seminar: Daten lesen, schreiben und bereitstellen mit Python
-   <https://cusy.io/de/unsere-schulungsangebote/daten-lesen-schreiben-und-bereitstellen-mit-python>`_
+   <https://cusy.io/de/our-training-courses/read-write-and-provide-data-with-python.html>`_
 
 .. toctree::
    :titlesonly:

@@ -7,7 +7,7 @@ sind Archive, die in einen Paket-Index wie :abbr:`z.B. (zum Beispiel)`
 
 .. tip::
    `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+   <https://cusy.io/de/our-training-courses/advanced-python.html>`_
 
 Struktur
 --------

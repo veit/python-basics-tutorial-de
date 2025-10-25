@@ -62,4 +62,4 @@ der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
 
 .. tip::
    `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python>`_
+   <https://cusy.io/de/our-training-courses/advanced-python.html>`_

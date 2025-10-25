@@ -14,7 +14,7 @@ so dass ihr das Buch :abbr:`u.a. (unter anderem)` für eure Zwecke anpassen und
 veröffentlichen dürft, sofern ihr die Lizenz und den Copyright-Hinweis
 beibehaltet.
 
-Ich möchte der `cusy GmbH <https://cusy.io/de/front-page>`_ danken, die mir
+Ich möchte der `cusy GmbH <https://cusy.io/de/index.html>`_ danken, die mir
 großzügig ermöglicht, meine Zeit mit dem Schreiben dieses Buches zu verbringen.
 Darüberhinaus möchte ich Kristian Rother nicht nur für die Unterstützung und
 den Rat danken, den er mir im Laufe der Jahre zu diesem Buch gegeben hat,
@@ -78,37 +78,37 @@ Trainings:
 +---------------+--------------------------------------------------------------+
 
 .. _`Einführung in Python`:
-   https://cusy.io/de/unsere-schulungsangebote/einfuehrung-in-python
+   https://cusy.io/de/our-training-courses/introduction-to-python.html
 .. _`Fortgeschrittenes Python`:
-   https://cusy.io/de/unsere-schulungsangebote/fortgeschrittenes-python
+   https://cusy.io/de/our-training-courses/advanced-python.html
 .. _`Entwurfsmuster in Python`:
-   https://cusy.io/de/unsere-schulungsangebote/entwurfsmuster-in-python
+   https://cusy.io/de/our-training-courses/design-patterns-in-python.html
 .. _`Effizient Testen mit Python`:
-   https://cusy.io/de/unsere-schulungsangebote/effizient-testen-mit-python
+   https://cusy.io/de/our-training-courses/efficient-testing-with-python.html
 .. _`Software-Dokumentation mit Sphinx`:
-   https://cusy.io/de/unsere-schulungsangebote/software-dokumentation-mit-sphinx
+   https://cusy.io/de/our-training-courses/software-documentation-with-sphinx.html
 .. _`Technisches Schreiben`:
-   https://cusy.io/de/unsere-schulungsangebote/technisches-schreiben
+   https://cusy.io/de/our-training-courses/technical-writing.html
 .. _`Jupyter-Notebooks für effiziente Data-Science-Workflows`:
-   https://cusy.io/de/unsere-schulungsangebote/jupyter-notebooks-fuer-effiziente-data-science-workflows
+   https://cusy.io/de/our-training-courses/jupyter-notebooks-for-efficient-data-science-workflows.html
 .. _`Numerische Berechnungen mit NumPy`:
-   https://cusy.io/de/unsere-schulungsangebote/numerische-berechnungen-mit-numpy
+   https://cusy.io/de/our-training-courses/numerical-calculations-with-numpy.html
 .. _`Daten analysieren mit pandas`:
-   https://cusy.io/de/unsere-schulungsangebote/daten-analysieren-mit-pandas
+   https://cusy.io/de/our-training-courses/analysing-data-with-pandas.html
 .. _`Daten lesen, schreiben und bereitstellen mit Python`:
-   https://cusy.io/de/unsere-schulungsangebote/daten-lesen-schreiben-und-bereitstellen-mit-python
+   https://cusy.io/de/our-training-courses/read-write-and-provide-data-with-python.html
 .. _`Daten bereinigen und validieren mit Python`:
-   https://cusy.io/de/unsere-schulungsangebote/daten-bereinigen-und-validieren-mit-python
+   https://cusy.io/de/our-training-courses/cleanse-and-validate-data-with-python.html
 .. _`Daten visualisieren mit Python`:
-   https://cusy.io/de/unsere-schulungsangebote/daten-visualisieren-mit-python
+   https://cusy.io/de/our-training-courses/designing-data-visualisations.html
 .. _`Datenvisualisierungen gestalten`:
-   https://cusy.io/de/unsere-schulungsangebote/datenvisualisierungen-gestalten
+   https://cusy.io/de/our-training-courses/designing-data-visualisations.html
 .. _`Dashboards erstellen`:
-   https://cusy.io/de/unsere-schulungsangebote/dashboards-erstellen
+   https://cusy.io/de/our-training-courses/create-dashboards.html
 .. _`Code und Daten versioniert und reproduzierbar speichern`:
-   https://cusy.io/de/unsere-schulungsangebote/code-und-daten-versioniert-und-reproduzierbar-speichern
+   https://cusy.io/de/our-training-courses/versioned-and-reproducible-storage-of-code-and-data.html
 .. _`Neues aus Python für Data-Science`:
-   https://cusy.io/de/unsere-schulungsangebote/neues-aus-python-fuer-data-science
+   https://cusy.io/de/our-training-courses/news-from-python-for-data-science.html
 
 Folgt uns auf…
 
