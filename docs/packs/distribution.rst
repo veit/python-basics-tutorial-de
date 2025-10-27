@@ -239,7 +239,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
 
 .. _license-expression:
 
-``License-Expression``
+``license-expression``
     enthält valide `SPDX license expressions
     <https://spdx.github.io/spdx-spec/v2.2.2/SPDX-license-expressions/>`_.
 
