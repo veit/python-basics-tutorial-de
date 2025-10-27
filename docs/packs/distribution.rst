@@ -88,9 +88,12 @@ sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
        * `pypackaging-native <https://pypackaging-native.github.io>`_
 
 .. note::
-   With `validate-pyproject
-   <https://validate-pyproject.readthedocs.io/en/latest/>`_ you can check your
-   :file:`pyproject.toml` file.
+   Mit `check-toml
+   <https://github.com/pre-commit/pre-commit-hooks?tab=readme-ov-file#check-toml>`_,
+   `pyproject-fmt
+   <https://pyproject-fmt.readthedocs.io/en/latest/>`_ und `validate-pyproject
+   <https://validate-pyproject.readthedocs.io/en/latest/>`_ könnt ihr die
+   :file:`pyproject.toml`-Datei formattieren und überprüfen.
 
 Metadaten
 ~~~~~~~~~
