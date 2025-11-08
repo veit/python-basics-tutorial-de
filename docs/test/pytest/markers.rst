@@ -744,7 +744,7 @@ einem Test zu sagen, wieviele Items wir haben wollen. Hierfür sind drei Schritt
 notwendig:
 
 #. Zunächst definieren wir drei verschiedene Tests in :file:`test_items.py` mit
-   dem unserem Marker ``@pytest.mark.num_items``:
+   unserem Marker ``@pytest.mark.num_items``:
 
    .. code-block:: python
 
@@ -902,6 +902,149 @@ funktioniert:
       test_items.py::test_thirteen_items PASSED
 
       ============================== 3 passed in 0.09s ===============================
+
+Marker generieren
+-----------------
+
+Angenommen, ihr habt eine Testsuite, die Tests für bestimmte Plattformen
+markiert, nämlich ``pytest.mark.darwin``, ``pytest.mark.win32`` :abbr:`usw. (und
+so weiter)`, und ihr habt auch Tests, die auf allen Plattformen laufen und keine
+spezifische Markierung haben. Wenn ihr nun eine Möglichkeit sucht, nur die
+Tests für eure bestimmte Plattform auszuführen, könnt ihr folgendes verwenden:
+
+.. code-block:: python
+   :caption: conftest.py
+
+   import sys
+
+   import pytest
+
+   ALL = {"win32", "darwin", "linux"}
+
+
+   def pytest_setup(item):
+       supported_platforms = ALL.intersection(
+           mark.name for mark in item.iter_markers()
+       )
+       pf = sys.platform
+       if supported_platforms and pf not in supported_platforms:
+           pytest.skip(f"cannot run on platform {pf}")
+
+Dies führt dazu, dass Tests übersprungen werden, wenn sie für eine andere
+Plattform angegeben wurden. Nun erstellen wir eine kleine Testdatei, um zu
+zeigen, wie das aussieht:
+
+.. code-block:: python
+   :caption: test_platform.py
+
+   import pytest
+
+
+   def test_foo_everywhere():
+       pass
+
+
+   @pytest.mark.win32
+   def test_foo_on_win32():
+       pass
+
+
+   @pytest.mark.darwin
+   def test_foo_on_darwin():
+       pass
+
+
+   @pytest.mark.linux
+   def test_foo_on_linux():
+       pass
+
+Nun können wir pytest ausführen und uns die Begründungen für die übersprungenen
+Tests anzeigen lassen:
+
+.. code-block:: pytest
+
+   $ uv run pytest -rs tests/test_platform.py
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   ...
+   collected 4 items
+
+   tests/test_platform.py ..ss                                              [100%]
+
+   =========================== short test summary info ============================
+   SKIPPED [2] tests/conftest.py:20: cannot run on platform darwin
+   ========================= 2 passed, 2 skipped in 0.03s =========================
+
+oder spezifischer:
+
+.. code-block:: pytest
+
+   $ uv run pytest -m darwin -rs tests/test_platform.py
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   ...
+   collected 4 items / 3 deselected / 1 selected
+
+   tests/test_platform.py .                                                 [100%]
+
+   ======================= 1 passed, 3 deselected in 0.02s ========================
+
+Marker basierend auf Testnamen
+------------------------------
+
+Alternativ können Marker auch über die Namen der Testfunktionen angegeben
+werden, indem ihr einen Hook implementiert, der automatisch Marker definiert:
+
+.. code-block:: python
+   :caption: test_platform.py
+
+   def test_foo_everywhere():
+       pass
+
+
+   def test_foo_on_win32():
+       pass
+
+
+   def test_foo_on_darwin():
+       pass
+
+
+   def test_foo_on_linux():
+       pass
+
+Nun definieren wir in der :file:`conftest.py` in `pytest_collection_modifyitems
+<https://docs.pytest.org/en/latest/reference/reference.html#pytest.hookspec.pytest_collection_modifyitems>`_
+drei Marker dynamisch:
+
+.. code-block:: python
+   :caption: conftest.py
+
+   import pytest
+
+
+   def pytest_collection_modifyitems(items):
+       for item in items:
+           if "win32" in item.nodeid:
+               item.add_marker(pytest.mark.win32)
+           elif "darwin" in item.nodeid:
+               item.add_marker(pytest.mark.darwin)
+           elif "linux" in item.nodeid:
+               item.add_marker(pytest.mark.linux)
+
+Nun können wir die Option ``-m`` verwenden, um einen Satz auszuwählen:
+
+.. code-block:: pytest
+
+   $ uv run pytest -m darwin
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0
+   ...
+   collected 4 items / 3 deselected / 1 selected
+
+   tests/test_platform.py .                                                 [100%]
+
+   ======================= 1 passed, 3 deselected in 0.00s ========================
 
 Marker auflisten
 ----------------

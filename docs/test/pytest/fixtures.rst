@@ -210,10 +210,11 @@ verwendet werden.
 
 Wenn das Einrichten und Verbinden mit der Datenbank oder das Erzeugen großer
 Datensätze jedoch zeitaufwändig ist, kann es jedoch vorkommen, dass ihr dies
-nicht für jeden einzelnen Test ausführen wollt. Wir können einen Bereich so
-ändern, dass der langsame Teil nur einmal für mehrere Tests passiert. Ändern wir
-den Bereich unserer Fixture so, dass die Datenbank nur einmal geöffnet wird,
-indem ``scope="module"`` zum Fixture Decorator hinzugefügt wird:
+nicht für jeden einzelnen Test ausführen wollt. Wir können einen Scope (engl.:
+Bereich) so ändern, dass der langsame Teil nur einmal für mehrere Tests
+ausgeführt wird. Ändern wir den Bereich unserer Fixture so, dass die Datenbank
+nur einmal geöffnet wird, indem ``scope="module"`` zum Fixture-Decorator
+hinzugefügt wird:
 
 .. code-block:: python
 
@@ -589,6 +590,8 @@ verschiedene Scopes in verschiedenen Fixtures genutzt werden können. Es kann
 jedoch vorkommen, dass ihr einen Bereich zur Laufzeit festlegen müsst. Das ist
 mit dynamischem Scoping möglich.
 
+.. _dynamic-fixture-scope:
+
 Fixture-Scope dynamisch festlegen
 ---------------------------------
 
@@ -694,6 +697,9 @@ Wenn wir jedoch die neue Option verwenden, erhalten wir eine ``db``-Fixture im
 
 Die Datenbank wird nun vor jeder Testfunktion aufgebaut und danach wieder
 abgebaut.
+
+.. seealso::
+   * :doc:`command-line-options`
 
 ``autouse`` für Fixtures, die immer verwendet werden
 ----------------------------------------------------

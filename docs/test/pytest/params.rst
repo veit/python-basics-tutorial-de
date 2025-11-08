@@ -368,6 +368,153 @@ Obwohl wir damit im :samp:`{finish()}`-Beispiel nur drei Testfälle aus einer
 Testfunktion erstellen, kann die Parametrisierung eine große Anzahl von
 Testfällen erzeugen.
 
+.. seealso::
+   * `Basic pytest_generate_tests example
+     <https://docs.pytest.org/en/stable/how-to/parametrize.html#basic-pytest-generate-tests-example>`_
+   * `Generating parameters combinations, depending on command line
+     <https://docs.pytest.org/en/stable/example/parametrize.html#generating-parameters-combinations-depending-on-command-line>`_
+   * `A quick port of “testscenarios”
+     <https://docs.pytest.org/en/stable/example/parametrize.html#a-quick-port-of-testscenarios>`_
+   * `Deferring the setup of parametrized resources
+     <https://docs.pytest.org/en/stable/example/parametrize.html#deferring-the-setup-of-parametrized-resources>`_
+   * `Parametrizing test methods through per-class configuration
+     <https://docs.pytest.org/en/stable/example/parametrize.html#parametrizing-test-methods-through-per-class-configuration>`_
+
+Aufschieben der Einrichtung parametrisierter Ressourcen
+-------------------------------------------------------
+
+Die Parametrisierung von Testfunktionen erfolgt zum Zeitpunkt der Erfassung. Es
+empfiehlt sich daher, aufwändige Ressourcen wie Datenbankverbindungen oder
+Unterprozesse erst dann einzurichten, wenn der eigentliche Test ausgeführt wird.
+Hier ist ein einfaches Beispiel, wie ihr dies erreichen könnt.
+
+.. code-block:: python
+   :caption: test_backends.py
+
+   import pytest
+
+
+   def test_db_initialised(items_db):
+       # An example test
+       if items_db.__class__.__name__ == "Sqlite":
+           pytest.fail("Deliberately failing for demonstration purposes")
+
+Wir können nun eine Testkonfiguration hinzufügen, die zwei Aufrufe der Funktion
+``test_db_initialised`` generiert und außerdem eine Factory implementiert, die
+ein Datenbankobjekt für die eigentlichen Testaufrufe erstellt:
+
+.. code-block:: python
+   :caption: conftest.py
+
+   import pytest
+
+
+   def pytest_generate_tests(metafunc):
+       if "items_db" in metafunc.fixturenames:
+           metafunc.parametrize("items_db", ["json", "sqlite"], indirect=True)
+
+
+   class Json:
+       "JSON object"
+
+
+   class Sqlite:
+       "Sqlite database object"
+
+
+   @pytest.fixture
+   def items_db(request):
+       if request.param == "json":
+           return Json()
+       elif request.param == "sqlite":
+           return Sqlite()
+       else:
+           raise ValueError("Invalid internal test config")
+
+Schauen wir uns zunächst einmal an, wie es zum Zeitpunkt der Einrichtung
+aussieht:
+
+.. code-block:: pytest
+   :emphasize-lines: 12-13
+
+   $ uv run pytest tests/test_backends.py --collect-only
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   rootdir: /Users/veit/sandbox/items
+   configfile: pyproject.toml
+   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   collected 2 items
+
+   <Dir items>
+     <Dir tests>
+       <Module test_backends.py>
+         <Function test_db_initialised[json]>
+         <Function test_db_initialised[sqlite]>
+
+   ========================== 2 test collected in 0.01s ===========================
+
+.. code-block:: pytest
+
+   $ uv run pytest -q tests/test_backends.py
+   .F                                                                   [100%]
+   ================================= FAILURES =================================
+   _______________________ test_db_initialised[sqlite] ________________________
+
+   db = <conftest.Sqlite object at 2491125695488>
+
+       def test_db_initialised(items_db):
+           # An example test
+           if db.__class__.__name__ == "Sqlite":
+   >           pytest.fail("Deliberately failing for demo purposes")
+   E           Failed: Deliberately failing for demo purposes
+
+   test_backends.py:8: Failed
+   ========================= short test summary info ==========================
+   FAILED tests/test_backends.py::test_db_initialised[sqlite] - Failed: deli...
+   1 failed, 1 passed in 0.03s
+
+Parametrisierte Exceptions
+--------------------------
+
+`pytest.raises() <https://docs.pytest.org/en/latest/reference/reference.html#pytest.raises>`_
+    kann mit dem Dekorator ``pytest.mark.parametrize`` verwendet werden, um
+    parametrisierte Tests zu schreiben, in denen einige Tests Exceptions
+    auslösen und andere nicht.
+
+`contextlib.nullcontext <https://docs.python.org/3/library/contextlib.html#contextlib.nullcontext>`_
+    kann verwendet werden, um Testfälle zu testen, die voraussichtlich keine
+    Ausnahmen auslösen, aber zu einem bestimmten Wert führen sollten. Der Wert
+    wird als Parameter ``enter_result`` angegeben, der als Ziel der
+    ``with``-Anweisung verfügbar ist.
+
+Beispiel für parametrisierte Exceptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   from contextlib import nullcontext
+
+   import pytest
+
+
+   @pytest.mark.parametrize(
+       "divisor, expectation",
+       [
+           (3, nullcontext(2)),
+           (2, nullcontext(3)),
+           (1, nullcontext(6)),
+           (0, pytest.raises(ZeroDivisionError)),
+       ],
+   )
+   def test_division(divisor, expectation):
+       """Test expected division results."""
+       with expectation as e:
+           assert (6 / divisor) == e
+
+Die ersten drei Testfälle sollten ohne Exceptions ausgeführt werden, während der
+vierte, wie von pytest erwartet, eine ``ZeroDivisionError``-Exception auslösen
+sollte.
+
 ----
 
 .. [#] https://docs.pytest.org/en/latest/reference/reference.html#metafunc
