@@ -51,6 +51,8 @@ ausgeführt, in der er in der Datei erscheint. Manchmal kann es jedoch sinnvoll
 sein, diese Reihenfolge zu ändern. Die folgenden Plugins ändern den üblichen
 Ablauf eines Test:
 
+.. _xdist-plugin:
+
 `pytest-xdist <https://pypi.org/project/pytest-xdist/>`_
     führt Tests parallel aus, entweder mit mehreren CPUs auf einer Maschine oder
     mehreren entfernten Maschinen.

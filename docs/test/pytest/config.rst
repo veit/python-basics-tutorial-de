@@ -81,7 +81,9 @@ Dieses Beispiel ist eine einfache :file:`pytest.ini`-Datei, die ich so, oder so
 ähnlich in fast allen meinen Projekten verwende. Gehen wir kurz die einzelnen
 Zeilen durch:
 
-``addopts =``
+.. _addopts:
+
+``addopts``
     erlaubt die Angabe der pytest-Optionen, die wir immer in diesem Projekt
     ausführen wollen.
 ``--strict-markers``

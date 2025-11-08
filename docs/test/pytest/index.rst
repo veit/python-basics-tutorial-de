@@ -62,5 +62,6 @@ Ihr könnt pytest in :ref:`virtuellen Umgebungen <venv>` installieren mit:
    markers
    plugins
    config
+   command-line-options
    debug
    coverage

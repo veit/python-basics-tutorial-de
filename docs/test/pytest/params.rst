@@ -368,6 +368,99 @@ Obwohl wir damit im :samp:`{finish()}`-Beispiel nur drei Testfälle aus einer
 Testfunktion erstellen, kann die Parametrisierung eine große Anzahl von
 Testfällen erzeugen.
 
+Aufschieben der Einrichtung parametrisierter Ressourcen
+-------------------------------------------------------
+
+Die Parametrisierung von Testfunktionen erfolgt zum Zeitpunkt der Erfassung. Es
+empfiehlt sich daher, aufwändige Ressourcen wie Datenbankverbindungen oder
+Unterprozesse erst dann einzurichten, wenn der eigentliche Test ausgeführt wird.
+Hier ist ein einfaches Beispiel, wie ihr dies erreichen könnt.
+
+.. code-block:: python
+   :caption: test_backends.py
+
+   import pytest
+
+
+   def test_db_initialised(items_db):
+       # An example test
+       if items_db.__class__.__name__ == "Sqlite":
+           pytest.fail("Deliberately failing for demonstration purposes")
+
+Wir können nun eine Testkonfiguration hinzufügen, die zwei Aufrufe der Funktion
+``test_db_initialised`` generiert und außerdem eine Factory implementiert, die
+ein Datenbankobjekt für die eigentlichen Testaufrufe erstellt:
+
+.. code-block:: python
+   :caption: conftest.py
+
+   import pytest
+
+
+   def pytest_generate_tests(metafunc):
+       if "items_db" in metafunc.fixturenames:
+           metafunc.parametrize("items_db", ["json", "sqlite"], indirect=True)
+
+
+   class Json:
+       "JSON object"
+
+
+   class Sqlite:
+       "Sqlite database object"
+
+
+   @pytest.fixture
+   def items_db(request):
+       if request.param == "json":
+           return Json()
+       elif request.param == "sqlite":
+           return Sqlite()
+       else:
+           raise ValueError("Invalid internal test config")
+
+Schauen wir uns zunächst einmal an, wie es zum Zeitpunkt der Einrichtung
+aussieht:
+
+.. code-block:: pytest
+   :emphasize-lines: 12-13
+
+   $ uv run pytest tests/test_backends.py --collect-only
+   ============================= test session starts ==============================
+   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   rootdir: /Users/veit/sandbox/items
+   configfile: pyproject.toml
+   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   collected 2 items
+
+   <Dir items>
+     <Dir tests>
+       <Module test_backends.py>
+         <Function test_db_initialised[json]>
+         <Function test_db_initialised[sqlite]>
+
+   ========================== 2 test collected in 0.01s ===========================
+
+.. code-block:: pytest
+
+   $ uv run pytest -q tests/test_backends.py
+   .F                                                                   [100%]
+   ================================= FAILURES =================================
+   _______________________ test_db_initialised[sqlite] ________________________
+
+   db = <conftest.Sqlite object at 2491125695488>
+
+       def test_db_initialised(items_db):
+           # An example test
+           if db.__class__.__name__ == "Sqlite":
+   >           pytest.fail("Deliberately failing for demo purposes")
+   E           Failed: Deliberately failing for demo purposes
+
+   test_backends.py:8: Failed
+   ========================= short test summary info ==========================
+   FAILED tests/test_backends.py::test_db_initialised[sqlite] - Failed: deli...
+   1 failed, 1 passed in 0.03s
+
 ----
 
 .. [#] https://docs.pytest.org/en/latest/reference/reference.html#metafunc
