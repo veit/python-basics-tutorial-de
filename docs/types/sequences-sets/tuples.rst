@@ -151,24 +151,34 @@ umgewandelt werden:
 
 .. code-block:: pycon
 
-    >>> x = [1, 2, 3, 5]
-    >>> tuple(x)
-    (1, 2, 3, 5)
+    >>> dates = [
+    ...     "2025-11-09",
+    ...     "2025-11-10",
+    ...     "2025-11-11",
+    ...     "2025-11-12",
+    ... ]
+    >>> tuple(dates)
+    ('2025-11-09', '2025-11-10', '2025-11-11', '2025-11-12')
 
-Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion :func:`list` in eine Liste
-umgewandelt werden:
+Umgekehrt kann ein Tupel mit Hilfe der eingebauten Funktion :func:`list` in eine
+Liste umgewandelt werden:
 
 .. code-block:: pycon
 
-    >>> x = (1, 2, 3, 4)
-    >>> list(x)
-    [1, 2, 3, 4]
+    >>> dates = (
+    ...     "2025-11-09",
+    ...     "2025-11-10",
+    ...     "2025-11-11",
+    ...     "2025-11-12",
+    ... )
+    >>> list(dates)
+    ['2025-11-09', '2025-11-10', '2025-11-11', '2025-11-12']
 
 Die Vorteile von Tupeln gegenüber :doc:`lists` sind:
 
 * Tupel sind schneller als Listen.
 
-  Wenn ihr eine konstante Menge von Werten definieren und diese nur durchlaufen
+  Wenn ihr eine konstante Menge von Werten definieren und über diese iterieren
   wollt, solltet ihr ein Tupel anstelle einer Liste verwenden.
 
 * Tupel können nicht verändert werden und sind daher *schreibgeschützt*.

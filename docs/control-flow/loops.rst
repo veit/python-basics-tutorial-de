@@ -161,7 +161,7 @@ Checks
 * Welche List-Comprehension würdet ihr verwenden, um zum selben Ergebnis zu
   kommen?
 
-* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[-[1, 0, 1],
+* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[[-1, 0, 1],
   [-1, 1, 3], [-2, 0, 2]]`` zählen?
 
 * Erstellt einen Generator, der nur ungerade Zahlen von 1 bis 10 liefert.
