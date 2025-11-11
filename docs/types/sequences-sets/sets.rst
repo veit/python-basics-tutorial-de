@@ -89,6 +89,8 @@ Differenz- oder Restmenge
 
       >>> x.difference(y)
       {1, 2}
+      >>> y.difference(x)
+      {5}
 
 .. _frozenset:
 

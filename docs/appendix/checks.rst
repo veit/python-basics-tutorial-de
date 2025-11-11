@@ -282,12 +282,12 @@ Checks
 
   .. code-block:: pycon
 
-     >>> sheet = {}
-     >>> sheet[("A", 0)] = 1
-     >>> sheet[("A", 1)] = 2
-     >>> sheet[("B", 0)] = 3
-     >>> sheet[("B", 1)] = 4
-     >>> print(sheet[("A", 1)])
+     >>> tabular = {}
+     >>> tabular[("A", 0)] = 1
+     >>> tabular[("A", 1)] = 2
+     >>> tabular[("B", 0)] = 3
+     >>> tabular[("B", 1)] = 4
+     >>> print(tabular[("A", 1)])
      2
 
 * Wie könnt ihr alle Dubletten aus einer Liste entfernen **ohne** die
@@ -520,7 +520,7 @@ Checks
      >>> pos
      [0, 1, 2, 3]
 
-* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[-[1, 0, 1],
+* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[[-1, 0, 1],
   [-1, 1, 3], [-2, 0, 2]]`` zählen?
 
   .. code-block:: pycon
@@ -644,15 +644,17 @@ Checks
 
   .. code-block:: pycon
 
-     >> def my_func(*params):
-     ...     for i in reversed(params):
-     ...         print(i)
+     >>> def reverse(*args):
+     ...     reverse_list = []
+     ...     for i in reversed(*args):
+     ...         reverse_list.append(i)
+     ...     return reverse_list
      ...
-     >>> my_func(1, 2, 3, 4)
-     4
-     3
-     2
-     1
+     >>> values = input("Values separated by commas: ")
+     Values separated by commas: 1,3,2,4
+     >>> value_list = values.split(",")
+     >>> reverse(value_list)
+     ['4', '3', '2', '1']
 
 :doc:`/functions/variables`
 ---------------------------

@@ -85,8 +85,8 @@ abgebrochen. Die Ablaufsteuerung wird fortgesetzt, wobei ``x`` auf den nächsten
 Eintrag in der Liste gesetzt wird. Nachdem die erste passende ganze Zahl
 gefunden wurde, wird die Schleife mit der ``break``-Anweisung beendet.
 
-Schleifen mit einem Index
--------------------------
+``for``-Schleifen mit einem Index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ihr könnt in einer ``for``-Schleife auch den Index ausgeben, :abbr:`z.B. (zum
 Beispiel)` mit :py:func:`enumerate`:
@@ -94,15 +94,15 @@ Beispiel)` mit :py:func:`enumerate`:
 .. code-block:: pycon
 
    >>> data_types = ["Data types", "Numbers", "Lists"]
-   >>> for index, title in enumerate(data_types):
-   ...     print(index, title)
+   >>> for key, title in enumerate(data_types):
+   ...     print(key, title)
    ...
    0 Data types
    1 Numbers
    2 Lists
 
 List Comprehensions
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Üblicherweise wird eine Liste folgendermaßen generiert:
 
@@ -153,6 +153,58 @@ Ihr könnt mit List Comprehensions auch optional Bedingungen verwenden, die
    >>> squares
    [16, 25, 36, 49]
 
+Dict Comprehensions
+~~~~~~~~~~~~~~~~~~~
+
+:doc:`../types/sequences-sets/lists` lassen sich folgendermaßen in
+:doc:`../types/dicts` umwandeln:
+
+.. code-block:: pycon
+
+   >>> toc = {}
+   >>> for key, title in enumerate(data_types):
+   ...     toc[key] = title
+   ...
+   >>> toc
+   {0: 'Data types', 1: 'Numbers', 2: 'Lists'}
+
+Mit Dict Comprehensions vereinfacht sich dies:
+
+.. code-block:: pycon
+
+   >>> toc = {key: value for key, value in enumerate(data_types)}
+   >>> toc
+   {0: 'Data types', 1: 'Numbers', 2: 'Lists'}
+
+Das allgemeine Format hierfür ist:
+
+:samp:`{NEW_DICT} = \{{KEY}: {VALUE} for {MEMBER} in {ITERABLE}\}`
+
+Ändern einer ``Collection``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Soll eine ``Collection`` während der Iteration über dieselbe ``Collection``
+modifiziert werden, kann dies schwierig werden. Daher wird stattdessen häufig
+eine Kopie der ``Collection`` verändert:
+
+.. code-block:: pycon
+
+   >>> for key, title in data_types.items():
+   ...     if key == 0:
+   ...         del data_types[key]
+   ...
+   Traceback (most recent call last):
+     File "<python-input-2>", line 1, in <module>
+       for key, title in data_types.items():
+                           ~~~~~~~~~~~~~~~~^^
+   RuntimeError: dictionary changed size during iteration
+   >>> for key, title in data_types.copy().items():
+   ...     if key == 0:
+   ...         del data_types[key]
+   ...
+   >>> data_types
+   {1: 'Numbers', 2: 'Lists'}
+
 Checks
 ------
 
@@ -161,7 +213,7 @@ Checks
 * Welche List-Comprehension würdet ihr verwenden, um zum selben Ergebnis zu
   kommen?
 
-* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[-[1, 0, 1],
+* Wie würdet ihr die Gesamtzahl der negativen Zahlen in der Liste ``[[-1, 0, 1],
   [-1, 1, 3], [-2, 0, 2]]`` zählen?
 
 * Erstellt einen Generator, der nur ungerade Zahlen von 1 bis 10 liefert.
