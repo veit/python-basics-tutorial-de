@@ -4,25 +4,40 @@ Python erkunden
 Egal, ob ihr :ref:`idle` oder die :ref:`interactive_shell` nutzt, es gibt einige
 nützliche Funktionen, um Python zu erkunden.
 
+.. code-block:: pycon
+
+   >>> x = 4.2
+
+``type()``
+----------
+
+Mit :py:func:`type` könnt ihr euch den Objekttyp anzeigen lassen, :abbr:`z. B.
+(zum Beispiel)`:
+
+.. code-block:: pycon
+
+   >>> type(x)
+   <class 'float'>
+
 .. _help:
 
 ``help()``
 ----------
 
-``help()`` hat zwei verschiedene Modi. Wenn ihr ``help()`` eingebt, ruft ihr das
-Hilfesystem auf, mit dem ihr Informationen zu Modulen, Schlüsselwörtern und
-weiteren Themen erhalten könnt. Wenn ihr euch im Hilfesystem befindet, seht ihr
-mit ``help>`` eine Eingabeaufforderung. Ihr könnt nun einen Modulnamen eingeben,
-:abbr:`z.B. (zum Beispiel)` ``float``, um die `Python-Dokumentation
+:py:func:`help` hat zwei verschiedene Modi. Wenn ihr :func:`help` eingebt, ruft
+ihr das Hilfesystem auf, mit dem ihr Informationen zu Modulen, Schlüsselwörtern
+und weiteren Themen erhalten könnt. Wenn ihr euch im Hilfesystem befindet, seht
+ihr mit ``help>`` eine Eingabeaufforderung. Ihr könnt nun einen Modulnamen
+eingeben, :abbr:`z.B. (zum Beispiel)` ``float``, um die `Python-Dokumentation
 <https://docs.python.org/>`_ zu diesem Typ zu durchsuchen.
 
-``help()`` ist Teil der :doc:`pydoc <python3:library/pydoc>`-Bibliothek, die
+:func:`help` ist Teil der :doc:`pydoc <python3:library/pydoc>`-Bibliothek, die
 Zugriff auf die in Python-Bibliotheken integrierte Dokumentation bietet. Da jede
 Python-Installation mit einer vollständigen Dokumentation ausgeliefert wird,
 habt ihr auch offline die gesamte Dokumentation zur Hand.
 
-Alternativ könnt ihr ``help()`` auch gezielter anwenden, indem ihr einen
-Typ- oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
+Alternativ könnt ihr :func:`help` auch gezielter anwenden, indem ihr einen
+Typ- oder Variablennamen als Parameter übergebt, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
 
@@ -40,14 +55,29 @@ Typ- oder Variablennamen als Parameter übergebt, :abbr:`z.B. (zum Beispiel)`:
      |  __abs__(self, /)
      |      abs(self)
      ...
+     |  is_integer(self, /)
+     |      Return True if the float is an integer.
+     ...
 
-So erfahrt ihr :abbr:`z.B. (zum Beispiel)`, dass ``x`` vom Typ ``float`` ist und
-eine Funktion :func:`__add__` hat, die ihr mit Punkt-Notation verwenden könnt:
+So erfahrt ihr :abbr:`z. B. (zum Beispiel)`, dass ``x`` vom Typ ``float`` ist
+und eine Funktion :func:`is_integer` hat, die ihr mit Punkt-Notation verwenden
+könnt:
 
 .. code-block:: pycon
 
-   >>> x.__add__(1)
-   5.2
+   >>> x.is_integer()
+   False
+
+``id()``
+--------
+
+:py:func:`id` gibt die Identifikationsnummer eines Objekts an, :abbr:`z. B. (zum
+Beispiel)`:
+
+.. code-block:: pycon
+
+   >>> id(x)
+   4304262800
 
 ``dir()``
 ---------

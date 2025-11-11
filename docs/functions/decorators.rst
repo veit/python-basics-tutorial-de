@@ -81,24 +81,28 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
     auch kleiner und schneller. Ein Beispiel:
 
     .. code-block:: pycon
-        :linenos:
+       :linenos:
 
-        >>> from functools import cache
-        >>> @cache
-        ... def factorial(n):
-        ...     return n * factorial(n - 1) if n else 1
-        ...
-        >>> factorial(8)
-        40320
-        >>> factorial(10)
-        3628800
+       >>> import timeit
+       ... from functools import cache
+       ... @cache
+       ... def factorial(n):
+       ...     return n * factorial(n - 1) if n else 1
+       ... timeit.timeit("factorial(8)", globals=globals())
+       0.02631620899774134
 
-    Zeile 6
-        Da es kein zuvor gespeichertes Ergebnis gibt, werden neun rekursive
-        Aufrufe gemacht.
-    Zeile 8
-        macht nur zwei neue Aufrufe, da die anderen Ergebnisse aus dem
-        Zwischenspeicher kommen.
+    Zeile 1
+        importiert das :mod:`timeit`-Modul zum Messen der Messen der
+        Ausführungszeit.
+    Zeile 2
+        importiert :func:`functools.cache`.
+    Zeile 5
+        Der ``@cache``-Dekorator wird verwendet, um Zwischenergebnisse zu
+        speichern, die dann erneut verwendet werden können. In unserem Fall
+        wird die Ausführungsgeschwindigkeit ungefähr verzehnfacht.
+    Zeile 10
+        :func:`timeit.timeit` misst die Zeit eines Aufrufs. Sofern nichts
+        anderes angegeben ist, erfolgt der Aufruf eine Millionen mal.
 
 :func:`functools.wraps`
     Dieser Dekorator lässt die Wrapper-Funktion so, so wie die ursprüngliche
