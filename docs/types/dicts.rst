@@ -15,12 +15,12 @@ wie :doc:`sequences-sets/lists` und :doc:`dicts`.
 
 .. code-block:: pycon
 
-   >>> dict = {
+   >>> timeseries = {
    ...     "2022-01-31": -0.751442,
    ...     "2022-02-01": 0.816935,
    ...     "2022-02-02": -0.272546,
    ... }
-   >>> dict["2022-02-03"] = -0.268295
+   >>> timeseries["2022-02-03"] = -0.268295
 
 Wenn ihr versucht, auf den Wert eines Schlüssels zuzugreifen, der nicht im
 Dictionary enthalten ist, wird eine ``KeyError``-:doc:`/control-flow/exceptions`
@@ -30,17 +30,17 @@ einem Wörterbuch enthalten ist.
 
 .. code-block:: pycon
 
-   >>> dict["2022-02-03"]
+   >>> timeseries["2022-02-03"]
    -0.268295
-   >>> dict["2022-02-04"]
+   >>> timeseries["2022-02-04"]
    Traceback (most recent call last):
      File "<python-input-15>", line 1, in <module>
-       dict["2022-02-04"]
+       timeseries["2022-02-04"]
        ~~~~^^^^^^^^^^^^^^
    KeyError: '2022-02-04'
-   >>> dict.get("2022-02-03", "Messwert nicht vorhanden")
+   >>> timeseries.get("2022-02-03", "Messwert nicht vorhanden")
    -0.268295
-   >>> dict.get("2022-02-04", "Messwert nicht vorhanden")
+   >>> timeseries.get("2022-02-04", "Messwert nicht vorhanden")
    'Messwert nicht vorhanden'
 
 Weitere Dict-Methoden
@@ -50,9 +50,9 @@ Die in Dicts eingebaute Funktion ``len`` gibt die Anzahl der
 Schlüssel-Wert-Paare zurück. Die ``del``-Anweisung kann zum Löschen eines
 Schlüssel-Wert-Paares verwendet werden. Wie bei :doc:`sequences-sets/lists` sind
 mehrere Dictionary-Methoden (:py:meth:`clear <dict.clear>`, :py:meth:`copy
-<dict.copy>`, :py:meth:`get <dict.get>`, :py:meth:`items <dict.items>`,
-:py:meth:`keys <dict.keys>`, :py:meth:`update <dict.update>` und
-:py:meth:`values <dict.values>`) verfügbar.
+<dict.copy>`, :py:meth:`fromkeys <dict.fromkeys>`, :py:meth:`get <dict.get>`,
+:py:meth:`items <dict.items>`, :py:meth:`keys <dict.keys>`, :py:meth:`update
+<dict.update>` und :py:meth:`values <dict.values>`) verfügbar.
 
 Die Methoden :py:meth:`keys <dict.keys>`, :py:meth:`values <dict.values>` und
 :py:meth:`items <dict.items>` geben keine Listen zurück, sondern
@@ -63,7 +63,7 @@ werden:
 
 .. code-block:: pycon
 
-   >>> list(dict.keys())
+   >>> list(timeseries.keys())
    ['2022-01-31', '2022-02-01', '2022-02-02', '2022-02-03']
 
 Ab Python 3.6 behalten Dictionaries die Reihenfolge bei, in der die Schlüssel
@@ -141,10 +141,10 @@ Checks
   ``1``; ``"Veit"``; ``("Veit", [1])``; ``[("Veit", [1])]``; ``["Veit"]``;
   ``("Veit", "Tim", "Monique")``
 
-* Ihr könnt ein :doc:`Dictionary </types/dicts>` verwenden, und das wie ein
-  Sheet einer Tabellenkalkulation verwenden, indem ihr
-  :doc:`/types/sequences-sets/tuples` als Schlüssel Zeilen- und Spaltenwerte
-  verwendet. Schreibt Beispielcode, um Werte hinzuzufügen und wieder abzufragen.
+* Ihr könnt ein :doc:`Dictionary </types/dicts>` verwenden, und das wie eine
+  Tabelle verwenden, indem ihr :doc:`/types/sequences-sets/tuples` als Schlüssel
+  für die Zeilen- und Spaltenwerte verwendet. Schreibt Beispielcode, um Werte
+  hinzuzufügen und wieder abzufragen.
 
 * Wie könnt ihr alle Dubletten aus einer Liste entfernen ohne die Reihenfolge
   der Elemente in der Liste zu ändern?

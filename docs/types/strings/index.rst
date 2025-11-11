@@ -76,11 +76,3 @@ Checks
 
 * Wie könnt ihr **alle** Leerräume und Satzzeichen aus einer Zeichenfolge in
   einen Bindestrich (``-``) ändern?
-
-* Welche Anwendungsfälle könnt ihr euch vorstellen, in denen das
-  :mod:`python3:struct`-Modul für das Lesen oder Schreiben von Binärdaten
-  nützlich wäre?
-
-  * beim Lesen und Schreiben einer Binärdatei
-  * beim Lesen von einer externen Schnittstelle, wobei die Daten genau so
-    gespeichert werden sollen, wie sie übermittelt wurden

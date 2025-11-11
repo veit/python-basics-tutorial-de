@@ -18,18 +18,50 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> x == y
        True
 
-    Ihr solltet jedoch nie berechnete Fließkommazahlen miteinander vergleichen:
+    .. warning::
+       Berechnete Fließkommazahlen sollten nie unmittelbar miteinander
+       verglichen werden:
 
-    .. code-block:: pycon
+       .. code-block:: pycon
 
-       >>> u = 0.6 * 7
-       >>> v = 0.7 * 6
-       >>> u == v
-       False
-       >>> u
-       4.2
-       >>> v
-       4.199999999999999
+          >>> u = 0.6 * 7
+          >>> v = 0.7 * 6
+          >>> u == v
+          False
+          >>> u
+          4.2
+          >>> v
+          4.199999999999999
+
+       Stattdessen könnt ihr :func:`math.isclose` verwenden:
+
+       .. code-block:: pycon
+
+          >>> import math
+          >>> math.isclose(u, v)
+          True
+
+       Alternativ könnt ihr auch :func:`round` verwenden:
+
+       .. code-block:: pycon
+
+          >>> round(u, 2) == round(v, 2)
+          True
+
+    .. warning::
+       Ganzzahlen kleiner als -5 oder größer 256 werden jedes Mal neu erstellt,
+       die Ganzzahlen dazwischen sind jedoch vom Interpreter vorinstanziiert und
+       werden wiederverwendet. Daher sollte :py:func:`id` nicht für Vergleiche
+       von Ganzzahlen verwendet werden:
+
+       .. code-block:: pycon
+
+          >>> x = 256
+          >>> y = 257
+          >>> id(x) == id(256)
+          True
+          >>> id(y) == id(257)
+          False
 
 ``is``, ``is not``, ``in``, ``not in``
     überprüft die Identität:
