@@ -30,6 +30,8 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        4.2
        >>> v
        4.199999999999999
+       >>> round(u, 2) == round(v, 2)
+       True
 
 ``is``, ``is not``, ``in``, ``not in``
     überprüft die Identität:
