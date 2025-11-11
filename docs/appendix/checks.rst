@@ -282,12 +282,12 @@ Checks
 
   .. code-block:: pycon
 
-     >>> sheet = {}
-     >>> sheet[("A", 0)] = 1
-     >>> sheet[("A", 1)] = 2
-     >>> sheet[("B", 0)] = 3
-     >>> sheet[("B", 1)] = 4
-     >>> print(sheet[("A", 1)])
+     >>> tabular = {}
+     >>> tabular[("A", 0)] = 1
+     >>> tabular[("A", 1)] = 2
+     >>> tabular[("B", 0)] = 3
+     >>> tabular[("B", 1)] = 4
+     >>> print(tabular[("A", 1)])
      2
 
 * Wie könnt ihr alle Dubletten aus einer Liste entfernen **ohne** die
