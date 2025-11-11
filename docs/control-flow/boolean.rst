@@ -18,7 +18,8 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> x == y
        True
 
-    Ihr solltet jedoch nie berechnete Fließkommazahlen miteinander vergleichen:
+    Ihr solltet jedoch nie berechnete Fließkommazahlen unmittelbar miteinander
+    vergleichen:
 
     .. code-block:: pycon
 
@@ -30,6 +31,21 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        4.2
        >>> v
        4.199999999999999
+
+    Stattdessen könnt ihr :func:`math.isclose` verwenden:
+
+    .. code-block:: pycon
+
+       >>> import math
+       >>> math.isclose(u, v)
+       True
+
+    Alternativ könnt ihr auch :func:`round` verwenden:
+
+    .. code-block:: pycon
+
+       >>> round(u, 2) == round(v, 2)
+       True
 
 ``is``, ``is not``, ``in``, ``not in``
     überprüft die Identität:
