@@ -114,6 +114,24 @@ Codepunkten und definiert mehrere verschiedene Kodierungen aus einem einzigen
 Zeichensatz. UTF-8 ist ein Kodierungsschema für die Darstellung von
 Unicode-Zeichen als Binärdaten mit einem oder mehreren Bytes pro Zeichen.
 
+.. versionadded:: 3.15
+   Python 3.15 verwendet UTF-8 als Standardkodierung, unabhängig von der
+   Systemumgebung. Das bedeutet, dass I/O-Operationen ohne explizite Kodierung,
+   :abbr:`z. B. (zum Beispiel)` :samp:`open("{EXAMPLE.TXT}")`, UTF-8 verwenden.
+   Dies gilt nur, wenn kein Encoding angegeben ist.
+
+   Um Kompatibilität zwischen verschiedenen Python-Versionen zu gewährleisten,
+   sollte immer ein explizites Encoding angegeben werden.
+   :ref:`io-encoding-warning` kann verwendet werden, um Code zu identifizieren,
+   der von dieser Änderung betroffen sein könnte.
+
+   Um das bisherige Verhalten beizubehalten, kann der UTF-8-Modus von Python mit
+   der Umgebungsvariablen ``PYTHONUTF8=0`` oder der Befehlszeilenoption ``-X
+   utf8=0`` deaktiviert werden.
+
+   .. seealso::
+      :pep:`686`
+
 Kodierung und Dekodierung
 -------------------------
 
