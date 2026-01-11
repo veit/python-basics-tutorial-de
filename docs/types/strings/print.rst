@@ -210,23 +210,46 @@ Code innerhalb des F-Strings aufgenommen:
    >>> print(f"My name is {uid.capitalize()=}")
    My name is uid.capitalize()='Veit'
 
-Formatierung von Datums-, Zeitformaten und IP-Adressen
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formatierung von Datums- und Zeitformaten
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :py:mod:`datetime` unterstützt die Formatierung von Zeichenketten mit der
-gleichen Syntax wie die :py:meth:`strftime <datetime.datetime.strftime>`-Methode
-für diese Objekte.
+gleichen Syntax wie die :py:meth:`datetime.strftime
+<datetime.datetime.strftime>`-Methode für diese Objekte.
 
 .. code-block:: pycon
 
    >>> import datetime
    >>> import locale
    >>> locale.setlocale(locale.LC_TIME, "de_DE.utf-8")
-   ... "de_DE.utf-8"
    'de_DE.utf-8'
    >>> today = datetime.date.today()
    >>> print(f"Heute ist {today:%A, %d. %B %Y}.")
-   Heute ist Dienstag, 25. November 2025.
+   Heute ist Freitag, 11. Juli 2025.
+
+Umgekehrt könnt ihr mit :meth:`datetime.strptime <datetime.datetime.strptime>`
+auch Zeichenketten in ``datetime``-Objekte umwandeln:
+
+.. code-block:: pycon
+
+   >>> today_string = "Fri, 11 Jul 2025 18:46:49"
+   >>> today = datetime.datetime.strptime(today_string, "%A, %d. %B %Y")
+
+.. code-block:: pycon
+
+   >>> today_string = "Fri, 11 Jul 2025 18:46:49"
+   >>> today = datetime.datetime.strptime(today_string, "%A, %d. %B %Y")
+
+.. csv-table:: Häufige Formatierungen
+   :header: "Beschreibung", "Beispiel", "Format"
+
+   ISO 8601,              "2025-07-11T18:46:49",       "%Y-%m-%dT%H:%M:%S"
+   ISO 8601 mit Zeitzone, "2025-07-11T18:46:49+0100",  "%Y-%m-%dT%H:%M:%S%z"
+   RFC 2822,              "Fr, 11 Jul 2025 18:46:49",  "%a, %d %b %Y %H:%M:%S"
+   RFC 3339 mit Zeitzone, "2025-07-11 18:46:49+0100",  "%Y-%m-%d %H:%M:%S%z"
+
+Formatierung von IP-Adressen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Das :py:mod:`ipaddress`-Modul von Python unterstützt auch die Formatierung von
 ``IPv4Address``- und ``IPv6Address``-Objekten.
