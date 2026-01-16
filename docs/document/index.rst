@@ -8,10 +8,10 @@ genutzt und verbessert werden kann:
 * Diejenigen, die euer Paket nutzen wollen, benötigen Informationen,
 
   * welche Probleme eure Software löst und was die Hauptfunktionen und
-    Einschränkungen der Software sind (``README``)
+    Einschränkungen der Software sind (→ :ref:`readme`)
   * wie das Software beispielhaft verwendet werden kann
-  * welche Veränderungen in aktuelleren Software-Versionen gekommen sind
-    (``CHANGELOG``)
+  * welche Veränderungen in aktuelleren Software-Versionen gekommen sind (→
+    :ref:`changelog`)
 
 * Diejenigen, die die Software betreiben wollen, benötigen eine
   Installationsanleitung für eure Software und die erforderlichen Abhängigkeiten
@@ -19,12 +19,13 @@ genutzt und verbessert werden kann:
 * Diejenigen, die die Software verbessern wollen, benötigen Informationen
 
   * wie sie mit Fehlerbehebungen zur Verbesserung des Produkts beitragen können
-    (``CONTRIBUTING``)
-  * wie sie mit anderen kommunizieren (``CODE_OF_CONDUCT``) können
+    (→ :ref:`contributing`)
+  * wie sie Sicherheitslücken melden können (→ :ref:`security`)
+  * wie sie mit anderen kommunizieren (→ :ref:`coc`) können
 
 Alle gemeinsam benötigen Informationen, wie das Produkt lizenziert ist
-(``LICENSE``-Datei oder ``LICENSES``-Ordner) und wie sie bei Bedarf Hilfe
-erhalten können.
+(:file:`LICENSE`-Datei oder :file:`LICENSES`-Ordner, → :ref:`license`) und wie
+sie bei Bedarf Hilfe erhalten können.
 
 .. tip::
    cusy Seminare:
