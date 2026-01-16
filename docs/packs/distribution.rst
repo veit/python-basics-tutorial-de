@@ -219,7 +219,6 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
           filename = "docs/conf.py"
 
     .. seealso::
-
        * `Configuring setuptools using pyproject.toml files: Dynamic Metadata
          <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>`_
 
@@ -235,7 +234,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     ist ein Pfad zu einer Datei, die eine detaillierte Beschreibung des Pakets
     enthält. Diese wird auf der Paket-Detailseite auf :term:`Python Package
     Index` (:term:`PyPI`) angezeigt. In diesem Fall wird die Beschreibung aus
-    ``README.rst`` geladen.
+    der :file:`README.rst`-Datei geladen.
 
 .. _license-expression:
 
@@ -402,44 +401,12 @@ eurem Arbeitsverzeichnis ausgeführt werden.
 Andere Dateien
 --------------
 
-:file:`CONTRIBUTORS.rst`
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. _changelog:
 
-.. seealso::
-    * `All contributors <https://allcontributors.org/>`_
+:file:`CHANGELOG`
+~~~~~~~~~~~~~~~~~
 
-:file:`LICENSE`
-~~~~~~~~~~~~~~~
-
-Ausführliche Informationen hierzu findet ihr im Abschnitt
-:doc:`Python4DataScience:productive/licensing`.
-
-:file:`README.rst`
-~~~~~~~~~~~~~~~~~~
-
-Diese Datei teilt denjenigen, die sich für das Paket interessieren, in kurzer
-Form mit, wie sie es nutzen können.
-
-.. seealso::
-    * `Make a README <https://www.makeareadme.com>`_
-    * `readme.so <https://readme.so>`_
-
-Wenn ihr das Dokument in :doc:`/document/sphinx/rest` schreibt, könnt ihr die
-Inhalte auch als ausführliche Beschreibung in euer Paket übernehmen:
-
-.. literalinclude:: dataprep/pyproject.toml
-   :language: toml
-   :emphasize-lines: 5
-   :lineno-start: 5
-   :lines: 5-12
-
-Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
-</document/sphinx/start>` mit ``.. include:: ../../README.rst`` übernehmen.
-
-:file:`CHANGELOG.rst`
-~~~~~~~~~~~~~~~~~~~~~
-
-In der :file:`CHANGELOG.rst`-Datei sollten alle wesentlichen Änderungen eines
+In der :file:`CHANGELOG`-Datei sollten alle wesentlichen Änderungen eines
 Projekts dokumentiert werden. `Keep a Changelog
 <https://keepachangelog.com/en/1.1.0/>`_ empfiehlt hierfür folgendes Format:
 
@@ -472,7 +439,7 @@ Projekts dokumentiert werden. `Keep a Changelog
    …
 
 .. seealso::
-    * `Keep a Changelog <https://keepachangelog.com/>`__
+   * `Keep a Changelog <https://keepachangelog.com/>`__
 
 Es gibt auch etliche Python-Bibliotheken, die euch beim Erstellen der
 :file:`CHANGELOG`-Datei unterstützen:
@@ -617,6 +584,89 @@ Es gibt auch etliche Python-Bibliotheken, die euch beim Erstellen der
 
     .. image:: https://raster.shields.io/github/license/python/blurb
        :alt: Lizenz
+
+.. _coc:
+
+:file:`CODE_OF_CONDUCT`
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Wenn ihr Hinweise geben wollt, wie Fragen an euch gestellt werden können oder
+wie andere zum Projekt beitragen können, kann eine :file:`CODE_OF_CONDUCT`-Datei
+hilfreich sein. Damit könnt ihr festlegen, welche Art der Interaktion ihr
+erwartet. Er legt auch Regeln fest, um euch und andere vor unerwünschten
+Verhaltensweisen zu schützen.
+
+.. seealso::
+   * `SciPy Code of Conduct
+     <https://docs.scipy.org/doc/scipy/dev/conduct/code_of_conduct.html>`_
+
+.. _contributing:
+
+:file:`CONTRIBUTING`
+~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+   * `Python Developer’s Guide <https://devguide.python.org/#contributing>`_
+   * `Contributing to pandas
+     <https://pandas.pydata.org/docs/development/contributing.html>`_
+
+:file:`CONTRIBUTORS`
+~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+   * `All contributors <https://allcontributors.org/>`_
+
+.. _license:
+
+:file:`LICENSE`
+~~~~~~~~~~~~~~~
+
+Ausführliche Informationen hierzu findet ihr im Abschnitt
+:doc:`Python4DataScience:productive/licensing`.
+
+.. _readme:
+
+:file:`README`
+~~~~~~~~~~~~~~
+
+Diese Datei teilt denjenigen, die sich für das Paket interessieren, in kurzer
+Form mit, wie sie es nutzen können.
+
+.. seealso::
+   * `Make a README <https://www.makeareadme.com>`_
+   * `readme.so <https://readme.so>`_
+
+Wenn ihr das Dokument in :doc:`/document/sphinx/rest` schreibt, könnt ihr die
+Inhalte auch als ausführliche Beschreibung in euer Paket übernehmen:
+
+.. literalinclude:: dataprep/pyproject.toml
+   :language: toml
+   :emphasize-lines: 5
+   :lineno-start: 5
+   :lines: 5-12
+
+Zudem könnt ihr sie dann auch in eure :doc:`Sphinx-Dokumentation
+</document/sphinx/start>` mit ``.. include:: ../../README.rst`` übernehmen.
+
+.. _security:
+
+:file:`SECURITY`
+~~~~~~~~~~~~~~~~
+
+Diese Datei sollte Informationen enthalten,
+
+* wie eine Sicherheitslücke gemeldet werden kann ohne dass sie öffentlich
+  sichtbar wird,
+* über den Ablauf und den Zeitplan für die Offenlegung der Schwachstelle,
+* zu Links, :abbr:`z. B. (zum Beispiel)` URLs und E-Mails, unter denen
+  Unterstützung angefragt werden kann.
+
+.. seealso::
+   * GitHub-Dokumentation: `Hinzufügen einer Sicherheitsrichtlinie für dein
+     Repository
+     <https://docs.github.com/de/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/adding-a-security-policy-to-your-repository>`_
+   * `github.com/veit/items/security
+     <https://github.com/veit/items/security>`_
 
 Historische oder für binäre Erweiterungen benötigte Dateien
 -----------------------------------------------------------
@@ -810,16 +860,16 @@ Führt nun den Befehl in demselben Verzeichnis aus, in dem sich
         nur für Chips mit dem x86-Befehlssatz und einer 64-Bit-Architektur
 
     .. seealso::
-        * :pep:`427`
+       * :pep:`427`
 
 :file:`mypack-0.1.0.tar.gz`
     ist eine :term:`Source Distribution`
 
 .. seealso::
-    * `Core metadata specifications
-      <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
-    * `PyPA specifications
-      <https://packaging.python.org/en/latest/specifications/>`_
+   * `Core metadata specifications
+     <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_
+   * `PyPA specifications
+     <https://packaging.python.org/en/latest/specifications/>`_
 
 Testen
 ------
