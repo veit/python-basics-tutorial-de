@@ -309,10 +309,10 @@ Abhängigkeitsgruppen
     erlaubt euch, Abhängigkeitsgruppen für euer Paket anzugeben. Dabei könnt ihr
     auch zwischen verschiedenen Sets unterscheiden:
 
- .. literalinclude:: dataprep/pyproject.toml
-    :language: toml
-    :lines: 34, 40-45
-    :lineno-start: 34
+    .. literalinclude:: dataprep/pyproject.toml
+       :language: toml
+       :lines: 33, 39-44
+       :lineno-start: 33
 
 Auch rekursive Abhängigkeitsgruppen sind möglich. So könnt ihr beispielsweise
 für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
@@ -320,8 +320,8 @@ für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 35-39
-   :lineno-start: 35
+   :lines: 34-38
+   :lineno-start: 34
 
 Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z.B. (zum Beispiel)`
 mit:

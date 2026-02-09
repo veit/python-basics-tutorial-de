@@ -104,6 +104,8 @@ diesem Fall erhalten die Variablen im Tupel die entsprechenden Werte aus dem
 Tupel auf der rechten Seite des Zuweisungsoperators. Hier ist ein einfaches
 Beispiel:
 
+.. blacken-docs:off
+
 .. code-block:: pycon
 
    >>> (v, w, x, y, z) = (1, "2.", 3.0, ["4a", "4b"], (5.1, 5.2))
@@ -111,6 +113,8 @@ Beispiel:
    1
    >>> w
    '2.'
+
+.. blacken-docs:on
 
 Dieses Beispiel kann noch weiter vereinfacht werden, da Python Tupel in einem
 Zuweisungskontext auch ohne die runden Klammern erkennt:
