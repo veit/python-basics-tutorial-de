@@ -73,25 +73,25 @@ Ablauf eines Test:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-xdist?tab=MIT-1-ov-file#readme
 
-`pytest-freethreaded <https://pypi.org/project/pytest-freethreaded/>`_
-    für die Überprüfung, ob Tests und Bibliotheken mit dem experimentellen
-    Freethreaded-Modus von Python 3.13 thread-sicher sind.
+`pytest-randomly <https://pypi.org/project/pytest-randomly/>`_
+    lässt die Tests in zufälliger Reihenfolge ablaufen, zuerst nach Datei, dann
+    nach Klasse, dann schließlich nach Testdatei.
 
-    .. image:: https://raster.shields.io/github/stars/tonybaloney/pytest-freethreaded
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-randomly
        :alt: Stars
-       :target: https://github.com/tonybaloney/pytest-freethreaded/stargazers
+       :target: https://github.com/pytest-dev/pytest-randomly/stargazers
 
-    .. image:: https://raster.shields.io/github/contributors/tonybaloney/pytest-freethreaded
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-randomly
        :alt: Contributors
-       :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/contributors
+       :target: https://github.com/pytest-dev/pytest-randomly/graphs/contributors
 
-    .. image:: https://raster.shields.io/github/commit-activity/y/tonybaloney/pytest-freethreaded
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-randomly
        :alt: Commit activity
-       :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/commit-activity
+       :target: https://github.com/pytest-dev/pytest-randomly/graphs/commit-activity
 
-    .. image:: https://raster.shields.io/github/license/tonybaloney/pytest-freethreaded
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-randomly
        :alt: Lizenz
-       :target: https://github.com/tonybaloney/pytest-freethreaded?tab=MIT-1-ov-file#readme
+       :target: https://github.com/pytest-dev/pytest-randomly?tab=MIT-1-ov-file#readme
 
 `pytest-rerunfailures <https://pypi.org/project/pytest-rerunfailures/>`_
     führt fehlgeschlagene Tests erneut aus und ist :abbr:`v.a. (vor allem)`
@@ -113,25 +113,6 @@ Ablauf eines Test:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-rerunfailures?tab=License-1-ov-file#readme
 
-`pytest-repeat <https://pypi.org/project/pytest-repeat/>`_
-    macht es einfach, einen oder mehrere Tests zu wiederholen.
-
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-repeat
-       :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-repeat/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-repeat
-       :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-repeat/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-repeat
-       :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-repeat/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-repeat
-       :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-repeat?tab=License-1-ov-file#readme
-
 `pytest-order <https://pypi.org/project/pytest-order/>`_
     ermöglicht die Festlegung der Reihenfolge durch :doc:`markers`.
 
@@ -151,26 +132,44 @@ Ablauf eines Test:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-xdist?tab=MIT-1-ov-file#readme
 
-`pytest-randomly <https://pypi.org/project/pytest-randomly/>`_
-    lässt die Tests in zufälliger Reihenfolge ablaufen, zuerst nach Datei, dann
-    nach Klasse, dann schließlich nach Testdatei.
+`pytest-repeat <https://pypi.org/project/pytest-repeat/>`_
+    macht es einfach, einen oder mehrere Tests zu wiederholen.
 
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-randomly
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-repeat
        :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-randomly/stargazers
+       :target: https://github.com/pytest-dev/pytest-repeat/stargazers
 
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-randomly
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-repeat
        :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-randomly/graphs/contributors
+       :target: https://github.com/pytest-dev/pytest-repeat/graphs/contributors
 
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-randomly
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-repeat
        :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-randomly/graphs/commit-activity
+       :target: https://github.com/pytest-dev/pytest-repeat/graphs/commit-activity
 
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-randomly
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-repeat
        :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-randomly?tab=MIT-1-ov-file#readme
+       :target: https://github.com/pytest-dev/pytest-repeat?tab=License-1-ov-file#readme
 
+`pytest-freethreaded <https://pypi.org/project/pytest-freethreaded/>`_
+    für die Überprüfung, ob Tests und Bibliotheken mit dem experimentellen
+    Freethreaded-Modus von Python 3.13 thread-sicher sind.
+
+    .. image:: https://raster.shields.io/github/stars/tonybaloney/pytest-freethreaded
+       :alt: Stars
+       :target: https://github.com/tonybaloney/pytest-freethreaded/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/tonybaloney/pytest-freethreaded
+       :alt: Contributors
+       :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/tonybaloney/pytest-freethreaded
+       :alt: Commit activity
+       :target: https://github.com/tonybaloney/pytest-freethreaded/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/tonybaloney/pytest-freethreaded
+       :alt: Lizenz
+       :target: https://github.com/tonybaloney/pytest-freethreaded?tab=MIT-1-ov-file#readme
 
 … veränderten Output
 ~~~~~~~~~~~~~~~~~~~~
@@ -179,47 +178,6 @@ Die normale pytest-Ausgabe zeigt hauptsächlich Punkte für bestandene Tests und
 Zeichen für andere Ausgaben. Wenn ihr ``-v`` übergebt, seht ihr eine Liste von
 Testnamen mit dem Ergebnis. Es gibt jedoch Plugins, die die Ausgabe noch weiter
 verändern:
-
-`pytest-instafail <https://pypi.org/project/pytest-instafail/>`_
-    fügt eine ``--instafail``-Option hinzu, das Tracebacks und Ausgaben von
-    fehlgeschlagenen Tests direkt nach dem Fehlschlag meldet. Normalerweise
-    meldet pytest Tracebacks und Ausgaben von fehlgeschlagenen Tests erst,
-    nachdem alle Tests abgeschlossen wurden.
-
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-instafail
-       :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-instafail/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-instafail
-       :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-instafail/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-instafail
-       :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-instafail/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-instafail
-       :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-rerunfailures?tab=License-1-ov-file#readme
-
-`pytest-edit <https://pypi.org/project/pytest-edit/>`_
-    öffnet einen Editor nach einem fehlgeschlagenen Test.
-
-    .. image:: https://raster.shields.io/github/stars/mrmino/pytest-edit
-       :alt: Stars
-       :target: https://github.com/mrmino/pytest-edit/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/mrmino/pytest-edit
-       :alt: Contributors
-       :target: https://github.com/MrMino/pytest-edit/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/mrmino/pytest-edit
-       :alt: Commit activity
-       :target: https://github.com/mrmino/pytest-edit/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/mrmino/pytest-edit
-       :alt: Lizenz
-       :target: https://github.com/mrmino/pytest-edit?tab=MIT-1-ov-file#readme
 
 `pytest-sugar <https://pypi.org/project/pytest-sugar/>`_
     zeigt grüne Häkchen anstelle von Punkten für bestandene Tests und hat einen
@@ -263,52 +221,32 @@ verändern:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-html?tab=License-1-ov-file#readme
 
-`pytest-icdiff <https://pypi.org/project/pytest-icdiff/>`_
-    verbessert Diffs in den Fehlermeldungen der Pytest-Assertion mit `ICDiff
-    <https://www.jefftk.com/icdiff>`_.
+.. _pytest-check:
 
-    .. image:: https://raster.shields.io/github/stars/hjwp/pytest-icdiff
+`pytest-check <https://pypi.org/project/pytest-check/>`_
+    lässt mehrere Fehler pro Test zu.
+
+    .. image:: https://raster.shields.io/github/stars/okken/pytest-check
        :alt: Stars
-       :target: https://github.com/hjwp/pytest-icdiff/stargazers
+       :target: https://github.com/okken/pytest-check/stargazers
 
-    .. image:: https://raster.shields.io/github/contributors/hjwp/pytest-icdiff
+    .. image:: https://raster.shields.io/github/contributors/okken/pytest-check
        :alt: Contributors
-       :target: https://github.com/hjwp/pytest-icdiff/graphs/contributors
+       :target: https://github.com/okken/pytest-check/graphs/contributors
 
-    .. image:: https://raster.shields.io/github/commit-activity/y/hjwp/pytest-icdiff
+    .. image:: https://raster.shields.io/github/commit-activity/y/okken/pytest-check
        :alt: Commit activity
-       :target: https://github.com/hjwp/pytest-icdiff/graphs/commit-activity
+       :target: https://github.com/okken/pytest-check/graphs/commit-activity
 
-    .. image:: https://raster.shields.io/github/license/hjwp/pytest-icdiff
+    .. image:: https://raster.shields.io/github/license/okken/pytest-check
        :alt: Lizenz
-       :target: https://github.com/hjwp/pytest-icdiff?tab=MIT-1-ov-file#readme
-
+       :target: https://github.com/okken/pytest-check?tab=MIT-1-ov-file#readme
 
 … für die Webentwicklung
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 pytest wird ausgiebig für das Testen von Webprojekten verwendet und es gibt eine
 lange Liste von Plugins, die das Testen weiter vereinfachen:
-
-`pytest-httpx <https://pypi.org/project/pytest-httpx/>`_
-    erleichtert das Testen von `HTTPX <https://www.python-httpx.org>`_ und
-    `FastAPI <https://fastapi.tiangolo.com>`_-Anwendungen.
-
-    .. image:: https://raster.shields.io/github/stars/Colin-b/pytest_httpx
-       :alt: Stars
-       :target: https://github.com/Colin-b/pytest_httpx/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/Colin-b/pytest_httpx
-       :alt: Contributors
-       :target: https://github.com/Colin-b/pytest_httpx/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/Colin-b/pytest_httpx
-       :alt: Commit activity
-       :target: https://github.com/Colin-b/pytest_httpx/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/Colin-b/pytest_httpx
-       :alt: Lizenz
-       :target: https://github.com/Colin-b/pytest_httpx?tab=MIT-1-ov-file#readme
 
 `Playwright for Python <https://pypi.org/project/playwright/>`_
     wurde speziell für End-to-End-Tests entwickelt. Playwright unterstützt alle
@@ -331,24 +269,25 @@ lange Liste von Plugins, die das Testen weiter vereinfachen:
        :alt: Lizenz
        :target: https://github.com/Microsoft/playwright-python?tab=MIT-1-ov-file#readme
 
-`pyleniumio <https://pypi.org/project/pyleniumio/>`_
-    ist ein dünner Python-Wrapper um Selenium mit einfacher und klarer Syntax.
+`pytest-httpx <https://pypi.org/project/pytest-httpx/>`_
+    erleichtert das Testen von `HTTPX <https://www.python-httpx.org>`_ und
+    `FastAPI <https://fastapi.tiangolo.com>`_-Anwendungen.
 
-    .. image:: https://raster.shields.io/github/stars/ElSnoMan/pyleniumio
+    .. image:: https://raster.shields.io/github/stars/Colin-b/pytest_httpx
        :alt: Stars
-       :target: https://github.com/ElSnoMan/pyleniumio/stargazers
+       :target: https://github.com/Colin-b/pytest_httpx/stargazers
 
-    .. image:: https://raster.shields.io/github/contributors/ElSnoMan/pyleniumio
+    .. image:: https://raster.shields.io/github/contributors/Colin-b/pytest_httpx
        :alt: Contributors
-       :target: https://github.com/ElSnoMan/pyleniumio/graphs/contributors
+       :target: https://github.com/Colin-b/pytest_httpx/graphs/contributors
 
-    .. image:: https://raster.shields.io/github/commit-activity/y/ElSnoMan/pyleniumio
+    .. image:: https://raster.shields.io/github/commit-activity/y/Colin-b/pytest_httpx
        :alt: Commit activity
-       :target: https://github.com/ElSnoMan/pyleniumio/graphs/commit-activity
+       :target: https://github.com/Colin-b/pytest_httpx/graphs/commit-activity
 
-    .. image:: https://raster.shields.io/github/license/ElSnoMan/pyleniumio
+    .. image:: https://raster.shields.io/github/license/Colin-b/pytest_httpx
        :alt: Lizenz
-       :target: https://github.com/ElSnoMan/pyleniumio?tab=MIT-1-ov-file#readme
+       :target: https://github.com/Colin-b/pytest_httpx?tab=MIT-1-ov-file#readme
 
 `pytest-selenium <https://pypi.org/project/pytest-selenium/>`_
     stellt Fixtures zur Verfügung, die eine einfache Konfiguration von
@@ -371,6 +310,24 @@ lange Liste von Plugins, die das Testen weiter vereinfachen:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-selenium?tab=License-1-ov-file#readme
 
+`pyleniumio <https://pypi.org/project/pyleniumio/>`_
+    ist ein dünner Python-Wrapper um Selenium mit einfacher und klarer Syntax.
+
+    .. image:: https://raster.shields.io/github/stars/ElSnoMan/pyleniumio
+       :alt: Stars
+       :target: https://github.com/ElSnoMan/pyleniumio/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/ElSnoMan/pyleniumio
+       :alt: Contributors
+       :target: https://github.com/ElSnoMan/pyleniumio/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/ElSnoMan/pyleniumio
+       :alt: Commit activity
+       :target: https://github.com/ElSnoMan/pyleniumio/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/ElSnoMan/pyleniumio
+       :alt: Lizenz
+       :target: https://github.com/ElSnoMan/pyleniumio?tab=MIT-1-ov-file#readme
 
 .. _fake_plugins:
 
@@ -489,6 +446,44 @@ Bedarf decken:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-cov?tab=MIT-1-ov-file#readme
 
+`pytest-mock <https://pypi.org/project/pytest-mock/>`_
+    ist ein dünner Wrapper um die :doc:`unittest.mock <../mock>`-Patching-API.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-mock
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-mock/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-mock
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-mock/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-mock
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-mock/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-mock
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-mock?tab=MIT-1-ov-file#readme
+
+`pytest-asyncio <https://pypi.org/project/pytest-asyncio/>`_
+    testet asynchrone Funktionen.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-asyncio
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-asyncio/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-asyncio
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-asyncio/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-asyncio
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-asyncio/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-asyncio
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-asyncio?tab=MIT-1-ov-file#readme
+
 `pytest-benchmark <https://pypi.org/project/pytest-benchmark/>`_
     führt Benchmark-Timing für Code innerhalb von Tests durch.
 
@@ -507,6 +502,26 @@ Bedarf decken:
     .. image:: https://raster.shields.io/github/license/ionelmc/pytest-benchmark
        :alt: Lizenz
        :target: https://github.com/ionelmc/pytest-benchmark?tab=BSD-2-Clause-1-ov-file#readme
+
+`pytest-bdd <https://pypi.org/project/pytest-bdd/>`_
+    schreibt :abbr:`BDD (Behavior Driven Development, deutsch:
+    verhaltensgetriebene Softwareentwicklung)`-Tests mit pytest.
+
+    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-bdd
+       :alt: Stars
+       :target: https://github.com/pytest-dev/pytest-bdd/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-bdd
+       :alt: Contributors
+       :target: https://github.com/pytest-dev/pytest-bdd/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-bdd
+       :alt: Commit activity
+       :target: https://github.com/pytest-dev/pytest-bdd/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-bdd
+       :alt: Lizenz
+       :target: https://github.com/pytest-dev/pytest-bdd?tab=MIT-1-ov-file#readme
 
 .. _pytest_memray:
 
@@ -549,63 +564,6 @@ Bedarf decken:
        :alt: Lizenz
        :target: https://github.com/pytest-dev/pytest-timeout?tab=MIT-1-ov-file#readme
 
-`pytest-asyncio <https://pypi.org/project/pytest-asyncio/>`_
-    testet asynchrone Funktionen.
-
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-asyncio
-       :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-asyncio/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-asyncio
-       :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-asyncio/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-asyncio
-       :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-asyncio/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-asyncio
-       :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-asyncio?tab=MIT-1-ov-file#readme
-
-`pytest-mock <https://pypi.org/project/pytest-mock/>`_
-    ist ein dünner Wrapper um die :doc:`unittest.mock <../mock>`-Patching-API.
-
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-mock
-       :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-mock/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-mock
-       :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-mock/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-mock
-       :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-mock/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-mock
-       :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-mock?tab=MIT-1-ov-file#readme
-
-`pytest-patterns <https://pypi.org/project/pytest-patterns/>`_
-    stellt eine für Tests optimierte Pattern-Matching-Engine bereit.
-
-    .. image:: https://raster.shields.io/github/stars/flyingcircusio/pytest-patterns
-       :alt: Stars
-       :target: https://github.com/flyingcircusio/pytest-patterns/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/flyingcircusio/pytest-patterns
-       :alt: Contributors
-       :target: https://github.com/flyingcircusio/pytest-patterns/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/flyingcircusio/pytest-patterns
-       :alt: Commit activity
-       :target: https://github.com/flyingcircusio/pytest-patterns/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/flyingcircusio/pytest-patterns
-       :alt: Lizenz
-       :target: https://github.com/flyingcircusio/pytest-patterns?tab=MIT-1-ov-file#readme
-
 :doc:`pytest-grpc <Python4DataScience:data-processing/apis/grpc/test>`
     ist ein Pytest-Plugin für
     :doc:`Python4DataScience:data-processing/apis/grpc/index`.
@@ -625,26 +583,6 @@ Bedarf decken:
     .. image:: https://raster.shields.io/github/license/kataev/pytest-grpc
        :alt: Lizenz
        :target: https://github.com/kataev/pytest-grpc?tab=MIT-1-ov-file#readme
-
-`pytest-bdd <https://pypi.org/project/pytest-bdd/>`_
-    schreibt :abbr:`BDD (Behavior Driven Development, deutsch:
-    verhaltensgetriebene Softwareentwicklung)`-Tests mit pytest.
-
-    .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-bdd
-       :alt: Stars
-       :target: https://github.com/pytest-dev/pytest-bdd/stargazers
-
-    .. image:: https://raster.shields.io/github/contributors/pytest-dev/pytest-bdd
-       :alt: Contributors
-       :target: https://github.com/pytest-dev/pytest-bdd/graphs/contributors
-
-    .. image:: https://raster.shields.io/github/commit-activity/y/pytest-dev/pytest-bdd
-       :alt: Commit activity
-       :target: https://github.com/pytest-dev/pytest-bdd/graphs/commit-activity
-
-    .. image:: https://raster.shields.io/github/license/pytest-dev/pytest-bdd
-       :alt: Lizenz
-       :target: https://github.com/pytest-dev/pytest-bdd?tab=MIT-1-ov-file#readme
 
 Eigene Plugins
 --------------
