@@ -9,7 +9,7 @@ Konfigurationsdateien gibt es eine Handvoll anderer Dateien, die bei der
 Verwendung von pytest nützlich sind, um die Arbeit beim Schreiben und Ausführen
 von Tests zu erleichtern:
 
-:file:`pytest.ini`
+:file:`pyproject.toml`
     Dies ist die wichtigste Konfigurationsdatei von pytest, mit der ihr das
     Standardverhalten von pytest ändern könnt. Sie legt auch das
     Stammverzeichnis von pytest fest, oder ``rootdir``.
@@ -20,19 +20,17 @@ von Tests zu erleichtern:
     Wenn diese Datei in Test-Unterverzeichnissen abgelegt wird, ermöglicht sie
     die Verwendung identischer Testdateinamen in mehreren Testverzeichnissen.
 
-Wenn ihr bereits eine :file:`tox.ini`, :file:`pyproject.toml` oder
-:file:`setup.cfg` in eurem Projekt habt, können sie an die Stelle der
-:file:`pytest.ini`-Datei treten: :file:`tox.ini` wird von :doc:`../tox`
-verwendet, :file:`pyproject.toml` und :file:`setup.cfg` werden für die
-Paketierung von Python-Projekten verwendet und können zum Speichern von
-Einstellungen für verschiedene Werkzeuge, einschließlich pytest, verwendet
-werden.
+Wenn ihr bereits eine :file:`tox.ini`, :file:`pytest.ini` oder :file:`setup.cfg`
+in eurem Projekt habt, können sie an die Stelle der Konfiguration in
+:file:`pyproject.toml`-Datei treten: :file:`tox.ini` wird von :doc:`../tox`
+verwendet, :file:`setup.cfg` wird für die Paketierung von Python-Projekten
+verwendet und kann zum Speichern von Einstellungen für verschiedene Werkzeuge,
+einschließlich pytest, verwendet werden.
 
-Ihr solltet eine Konfigurationsdatei haben, entweder :file:`pytest.ini`, oder
-einem ``pytest``-Abschnitt in :file:`tox.ini`, :file:`pyproject.toml` oder in
-:file:`setup.cfg`.
+Ihr solltet eine Konfigurationsdatei haben, entweder in :file:`pyproject.toml`,
+:file:`pytest.ini`, :file:`tox.ini` oder :file:`setup.cfg`.
 
-Sie Konfigurationsdatei legt das oberste Verzeichnis fest, von dem aus
+Die Konfigurationsdatei legt das oberste Verzeichnis fest, von dem aus
 ``pytest`` gestartet wird.
 
 Schauen wir uns einige dieser Dateien im Zusammenhang mit einer
@@ -43,7 +41,7 @@ Projekt-Verzeichnisstruktur an:
 
     items
     ├── …
-    ├── pytest.ini
+    ├── pyproject.toml
     ├── src
     │   └── …
     └── tests
@@ -52,60 +50,75 @@ Projekt-Verzeichnisstruktur an:
         └── test_….py
 
 Im Falle des ``items``-Projekts, das wir bisher zum Testen verwendet haben, gibt
-es auf der obersten Ebene eine :file:`pytest.ini`-Datei und ein Verzeichnis
+es auf der obersten Ebene eine :file:`pyproject.toml`-Datei und ein Verzeichnis
 :file:`tests`. Wir werden uns auf diese Struktur beziehen, wenn wir im weiteren
 Verlauf dieses Abschnitts über die verschiedenen Dateien sprechen.
 
-Speichern von Einstellungen und Optionen in :file:`pytest.ini`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Speichern von Einstellungen und Optionen in :file:`pyproject.toml`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: ini
+Die :file:`pyproject.toml`-Datei war ursprünglich für die Paketierung von
+Python-Projekten gedacht; sie kann jedoch auch für die Definition von
+Projekteinstellungen verwendet werden.
 
-   [pytest]
-   addopts =
-       --strict-markers
-       --strict-config
-       -ra
-   testpaths = tests
-   markers =
-       smoke: Small subset of all tests
-       exception: Only run expected exceptions
+.. code-block:: toml
 
-``[pytest]`` kennzeichnet den Beginn des pytest-Abschnitts. Danach folgen die
-einzelnen Einstellungen. Bei Konfigurationseinstellungen, die
-mehr als einen Wert zulassen, können die Werte entweder in eine oder in mehrere
-Zeilen geschrieben werden in der Form :samp:`{EINSTELLUNG} = {WERT1} {WERT2}`.
-Bei ``markers`` hingegen ist nur ein Marker pro Zeile erlaubt.
+   [tool.pytest]
+   minversion = "9.0"
+   addopts = [
+     "--strict-markers",
+     "--strict-config",
+     "-ra",
+   ]
+   testpaths = [
+     "tests",
+   ]
+   markers = [
+     "exception: Only run expected exceptions",
+     "finish: Only run finish tests",
+     "smoke: Small subset of all tests",
+     "num_items: Number of items to be pre-filled for the items_db fixture",
+   ]
 
-Dieses Beispiel ist eine einfache :file:`pytest.ini`-Datei, die ich so, oder so
-ähnlich in fast allen meinen Projekten verwende. Gehen wir kurz die einzelnen
-Zeilen durch:
+``[tool.pytest]`` kennzeichnet den Beginn des pytest-Abschnitts. Danach folgen
+die einzelnen Einstellungen. Bei Konfigurationseinstellungen, die mehr als einen
+Wert zulassen, können die Werte entweder in eine oder in mehrere Zeilen
+geschrieben werden in der Form :samp:`{EINSTELLUNG} = ["{WERT1}", "{WERT2}"]`.
+
+Dieses Beispiel ist eine einfache pytest-Konfiguration in der
+:file:`pyproject.toml`-Datei, die ich so, oder so ähnlich in fast allen meinen
+Projekten verwende. Gehen wir kurz die einzelnen Zeilen durch:
 
 .. _addopts:
 
+``minversion``
+    legt die kleinste pytest-Version fest.
 ``addopts``
     erlaubt die Angabe der pytest-Optionen, die wir immer in diesem Projekt
     ausführen wollen.
-``--strict-markers``
-    weist pytest an, bei jedem nicht registrierten Marker, der im Testcode
-    auftaucht, einen Fehler statt einer Warnung auszugeben. Hierdurch können wir
-    Tippfehler bei Marker-Namen vermeiden.
-``--strict-config``
-    weist pytest an, wenn beim Parsen von Konfigurationsdateien Schwierigkeiten
-    auftauchen, nicht nur eine Warnung sondern einen Fehler auszugeben. Damit
-    vermeiden wir, dass Tippfehler in der Konfigurationsdatei unbemerkt bleiben.
-``-ra``
-    weist pytest an, am Ende eines Testlaufs nicht nur zusätzliche Informationen
-    zu *Failures* und *Errors* anzuzeigen sondern auch eine Testzusammenfassung.
 
-    ``-r``
-        zeigt zusätzliche Informationen zur Testzusammenfassung an.
-    ``a``
-        zeigt alle außer den bestanden Tests an. Dies fügt den *Failures* und
-        *Errors* die Informationen ``skipped``, ``xfailed`` oder ``xpassed``
-        hinzu.
+    ``--strict-markers``
+        weist pytest an, bei jedem nicht registrierten Marker, der im Testcode
+        auftaucht, einen Fehler statt einer Warnung auszugeben. Hierdurch können
+        wir Tippfehler bei Marker-Namen vermeiden.
+    ``--strict-config``
+        weist pytest an, wenn beim Parsen von Konfigurationsdateien
+        Schwierigkeiten auftauchen, nicht nur eine Warnung sondern einen Fehler
+        auszugeben. Damit vermeiden wir, dass Tippfehler in der
+        Konfigurationsdatei unbemerkt bleiben.
+    ``-ra``
+        weist pytest an, am Ende eines Testlaufs nicht nur zusätzliche
+        Informationen zu *Failures* und *Errors* anzuzeigen sondern auch eine
+        Testzusammenfassung.
 
-``testpaths = tests``
+        ``-r``
+            zeigt zusätzliche Informationen zur Testzusammenfassung an.
+        ``a``
+            zeigt alle außer den bestanden Tests an. Dies fügt den *Failures*
+            und *Errors* die Informationen ``skipped``, ``xfailed`` oder
+            ``xpassed`` hinzu.
+
+``testpaths = ["tests",]``
     teilt pytest mit, wo es nach Tests suchen soll, wenn ihr auf der
     Kommandozeile keinen Datei- oder Verzeichnisnamen angegeben habt. In unserem
     Fall sucht pytest im :file:`tests`-Verzeichnis.
@@ -118,7 +131,7 @@ Zeilen durch:
     unsere :file:`src`- oder :file:`docs`- oder andere Verzeichnisse recht groß
     sind.
 
-``markers =``
+``markers = ["exception: Only run expected exceptions", …]``
     wird verwendet, um Marker zu deklarieren, wie in
     :ref:`select-tests-with-markers` beschrieben.
 
@@ -131,44 +144,33 @@ Andere Konfigurationsdateien verwenden
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wenn ihr Tests für ein Projekt schreibt, das bereits eine
-:file:`pyproject.toml`, :file:`tox.ini` oder :file:`setup.cfg`-Datei hat, könnt
-ihr :file:`pytest.ini` verwenden, um eure pytest-Konfigurationseinstellungen zu
-speichern, oder ihr könnt eure Konfigurationseinstellungen in einer dieser
-alternativen Konfigurationsdateien speichern. Die Syntax der beiden
-Nicht-ini-Dateien unterscheidet sich ein wenig, daher werden wir uns beide
-Dateien genauer ansehen.
+:file:`pytest.ini`, :file:`tox.ini` oder :file:`setup.cfg`-Datei hat, könnt
+ihr eure pytest-Konfigurationseinstellungen auch in einer dieser alternativen
+Konfigurationsdateien speichern. Die Syntax der :file:`*.ini`-Dateien
+unterscheidet sich ein wenig, daher werden wir uns beide Dateien genauer
+ansehen.
 
-:file:`pyproject.toml`
-::::::::::::::::::::::
+:file:`pytest.ini`
+::::::::::::::::::
 
-Die :file:`pyproject.toml`-Datei war ursprünglich für die Paketierung von
-Python-Projekten gedacht; sie kann jedoch auch für die Definition von
-Projekteinstellungen verwendet werden.
+Die :file:`pytest.ini`-Datei war ursprünglich für die Konfiguration von pytest
+gedacht.
 
 Da :doc:`Python4DataScience:data-processing/serialisation-formats/toml/index`
 ein anderer Standard für Konfigurationsdateien ist als :file:`.ini`-Dateien, ist
 das Format auch ein wenig anders:
 
-.. code-block:: toml
+.. code-block:: ini
 
-   [tool.pytest.ini_options]
-   addopts = [
-       "--strict-markers",
-       "--strict-config",
-       "-ra"
-       ]
-   testpaths = "tests"
-   markers = [
-       "exception: Only run expected exceptions",
-       "finish: Only run finish tests",
-       "smoke: Small subset of all tests",
-       "num_items: Number of items to be pre-filled for the items_db fixture"
-       ]
-
-Anstelle von ``[pytest]`` beginnt der Abschnitt mit
-``[tool.pytest.ini_options]``, die Werte müssen in Anführungszeichen gesetzt
-werden und Listen von Werten müssen Listen von Zeichenketten in eckigen Klammern
-sein.
+   [pytest]
+   addopts =
+       --strict-markers
+       --strict-config
+       -ra
+   testpaths = tests
+   markers =
+       smoke: Small subset of all tests
+       exception: Only run expected exceptions
 
 :file:`setup.cfg`
 :::::::::::::::::

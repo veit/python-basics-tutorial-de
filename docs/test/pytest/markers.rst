@@ -35,7 +35,7 @@ enthalten sind:
     Mit diesem Marker wird der Test mit einem optionalen Grund übersprungen.
 :samp:`@pytest.mark.skipif({BEDINGUNG}, ...*, {GRUND})`
     Diese Markierung überspringt den Test, wenn eine der Bedingungen True ist.
-:samp:`@pytest.mark.xfail({BEDINGUNG}, ...* {GRUND}, run={True}, raises={None}, strict={xfail_strict})`
+:samp:`@pytest.mark.xfail({BEDINGUNG}, ...* {GRUND}, run={True}, raises={None}, strict={strict_xfail})`
     Dieser Marker teilt pytest mit, dass wir das Fehlschlagen erwarten.
 :samp:`@pytest.mark.parametrize({ARG1, ARG2, ...`
     Dieser Marker ruft eine Testfunktion mehrfach auf, wobei nacheinander
@@ -248,7 +248,7 @@ Schauen wir uns ein Beispiel an:
 
 
     @pytest.mark.xfail(reason="Feature #17: not implemented yet", strict=True)
-    def test_xfail_strict():
+    def test_strict_xfail():
         i1 = Item("Update pytest section")
         i2 = Item("Update pytest section")
         assert i1 == i2
@@ -269,15 +269,15 @@ funktioniert. Und so sieht das Ergebnis aus:
 
     tests/test_xfail.py::test_less_than XFAIL (The comparison with < is ...) [ 33%]
     tests/test_xfail.py::test_xpass XPASS (Feature #17: not implemented yet) [ 66%]
-    tests/test_xfail.py::test_xfail_strict FAILED                            [100%]
+    tests/test_xfail.py::test_strict_xfail FAILED                            [100%]
 
     =================================== FAILURES ===================================
-    ______________________________ test_xfail_strict _______________________________
+    ______________________________ test_strict_xfail _______________________________
     [XPASS(strict)] Feature #17: not implemented yet
     =========================== short test summary info ============================
     XFAIL tests/test_xfail.py::test_less_than - The comparison with < is not yet supported in version 0.1.x.
     XPASS tests/test_xfail.py::test_xpass Feature #17: not implemented yet
-    FAILED tests/test_xfail.py::test_xfail_strict
+    FAILED tests/test_xfail.py::test_strict_xfail
     =================== 1 failed, 1 xfailed, 1 xpassed in 0.02s ====================
 
 Tests, die mit ``xfail`` gekennzeichnet sind:
@@ -295,35 +295,36 @@ wurden, gibt es zwei Möglichkeiten: Wenn sie zu ``XFAIL`` führen sollen, dann
 solltet ihr die Finger von ``strict`` lassen. Wenn sie hingegen ``FAILED``
 ausgeben sollen, dann setzt ``strict``.  Ihr könnt ``strict`` entweder als
 Option für den ``xfail``-Marker setzen, wie wir es in diesem Beispiel getan
-haben, oder ihr könnt es auch global mit der Einstellung ``xfail_strict=True``
-in der pytest-Konfigurationsdatei :file:`pytest.ini` setzen.
+haben, oder ihr könnt es auch global mit der Einstellung ``strict_xfail = true``
+in der pytest-Konfigurationsdatei :file:`pyproject.toml` setzen.
 
-Ein pragmatischer Grund, immer ``xfail_strict=True`` zu verwenden, ist, dass wir
-uns alle fehlgeschlagenen Tests üblicherweise genauer anzuschauen. Und so sehen
-wir uns dann auch die Fälle an, in denen die Erwartungen an den Test nicht mit
-dem Ergebnis übereinstimmen.
+Ein pragmatischer Grund, immer ``strict_xfail = true`` zu verwenden, ist, dass
+wir uns alle fehlgeschlagenen Tests üblicherweise genauer anzuschauen. Und so
+sehen wir uns dann auch die Fälle an, in denen die Erwartungen an den Test nicht
+mit dem Ergebnis übereinstimmen.
 
-``xfail`` kann sehr hilfreich sein wenn ihr in einer testgetriebenen Entwicklung
-arbeitet und ihr Testfälle schreibt, von denen ihr wisst, dass sie noch nicht
-implementiert sind, die ihr aber in Kürze implementieren wollt. Lasst dabei die
-``xfail``-Tests auf dem Feature-Branch, in dem die Funktion implementiert wird.
+``strict_xfail`` kann sehr hilfreich sein wenn ihr in einer testgetriebenen
+Entwicklung arbeitet und ihr Testfälle schreibt, von denen ihr wisst, dass sie
+noch nicht implementiert sind, die ihr aber in Kürze implementieren wollt. Lasst
+dabei die ``strict_xfail``-Tests auf dem Feature-Branch, in dem die Funktion
+implementiert wird.
 
 Oder etwas geht kaputt, ein oder mehrere Test schlagen fehl, und ihr könnt nicht
 sofort sofort an der Behebung arbeiten. Das Markieren der Tests als ``xfail``,
-``strict=true`` mit der Angabe der Fehler-/Issue-Report-ID in ``reason``, ist
-eine gute Möglichkeit, den Test weiterlaufen zu lassen und ihn nicht zu
-vergessen.
+``strict_xfail = true`` mit der Angabe der Fehler-/Issue-Report-ID in
+``reason``, ist eine gute Möglichkeit, den Test weiterlaufen zu lassen und ihn
+nicht zu vergessen.
 
 Wenn ihr jedoch nur ein Brainstorming über die Behaviors eurer Anwendung macht,
-solltet ihr noch keine Tests schreiben und sie mit ``xfail`` oder ``skip``
-markieren: hier würde ich euch :abbr:`YAGNI (‘You Aren’t Gonna Need It’,
-deutsch: „Du wirst es nicht brauchen“)` entgegenhalten. Implementiert Dinge
+solltet ihr noch keine Tests schreiben und sie mit ``strict_xfail`` oder
+``skip`` markieren: hier würde ich euch :abbr:`YAGNI (‘You Aren’t Gonna Need
+It’, deutsch: „Du wirst es nicht brauchen“)` entgegenhalten. Implementiert Dinge
 immer erst dann, wenn sie tatsächlich gebraucht werden und niemals, wenn ihr nur
 ahnt, dass ihr sie brauchen werdet.
 
 .. tip::
-   * Ihr solltet :samp:`xfail_strict = True` in :file:`pytest.ini` setzen, um
-     alle ``XPASSED``-Ergebnisse in ``FAILED`` zu verwandeln.
+   * Ihr solltet :samp:`strict_xfail = true` in :file:`pyproject.toml` setzen,
+     um alle ``XPASSED``-Ergebnisse in ``FAILED`` zu verwandeln.
    * Zudem solltet ihr immer :samp:`-ra` oder zumindest :samp:`-rxX` verwenden
      um euch den Grund anzeigen zu lassen.
    * Und schließlich solltet ihr eine Fehlernummer in ``reason`` angeben.
@@ -385,15 +386,17 @@ Option ``-m smoke`` verwenden:
     ================== 1 passed, 1 deselected, 1 warning in 0.00s ==================
 
 Nun konnten wir zwar nur einen Test durchzuführen, aber wir haben auch eine
-Warnung erhalten: ``PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is this a typo?`` Sie hilft, Tippfehler zu vermeiden. pytest möchte, dass wir
+Warnung erhalten: ``PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is
+this a typo?`` Sie hilft, Tippfehler zu vermeiden. pytest möchte, dass wir
 benutzerdefinierte Marker registrieren, indem wir einen Marker-Abschnitt zu
-:file:`pytest.ini` hinzufügen, :abbr:`z.B. (zum Beispiel)`:
+:file:`pyproject.toml` hinzufügen, :abbr:`z.B. (zum Beispiel)`:
 
-.. code-block:: ini
+.. code-block:: toml
 
-   [pytest]
-   markers =
-       smoke: Small subset of all tests
+   [tool.pytest]
+   markers = [
+       "smoke: Small subset of all tests",
+   ]
 
 Jetzt warnt uns pytest nicht mehr vor einem unbekannten Marker:
 
@@ -403,7 +406,7 @@ Jetzt warnt uns pytest nicht mehr vor einem unbekannten Marker:
    $ pytest -v -m smoke tests/test_start.py
    ============================= test session starts ==============================
    …
-   configfile: pytest.ini
+   configfile: pyproject.toml
    collected 2 items / 1 deselected / 1 selected
 
    tests/test_start.py::test_start PASSED                                   [100%]
@@ -413,15 +416,16 @@ Jetzt warnt uns pytest nicht mehr vor einem unbekannten Marker:
 Machen wir dasselbe mit der ``exception``-Markierung für
 ``test_start_non_existent``.
 
-#. Zuerst registrieren wir den Marker in :file:`pytest.ini`:
+#. Zuerst registrieren wir den Marker in :file:`pyproject.toml`:
 
-   .. code-block:: ini
+   .. code-block:: toml
       :emphasize-lines: 4
 
-      [pytest]
-      markers =
-          smoke: Small subset of tests
-          exception: Only run expected exceptions
+      [tool.pytest]
+      markers = [
+          "smoke: Small subset of tests",
+          "exception: Only run expected exceptions",
+      ]
 
 #. Dann fügen wir den Marker zum Test hinzu:
 
@@ -446,7 +450,7 @@ Machen wir dasselbe mit der ``exception``-Markierung für
       $ pytest -v -m exception tests/test_start.py
       ============================= test session starts ==============================
       …
-      configfile: pytest.ini
+      configfile: pyproject.toml
       collected 2 items / 1 deselected / 1 selected
 
       tests/test_start.py::test_start_non_existent PASSED                      [100%]
@@ -588,7 +592,7 @@ anstatt eine Testdatei auszuwählen:
     $ tests % pytest -v -m exception
     ============================= test session starts ==============================
     …
-    configfile: pytest.ini
+    configfile: pyproject.toml
     collected 36 items / 34 deselected / 2 selected
 
     test_finish.py::test_finish_non_existent PASSED                          [ 50%]
@@ -609,7 +613,7 @@ zusammen mit Schlüsselwörtern zur Auswahl von Testfällen in :ref:`Testsuite
     pytest -v -m "finish and exception"
     ============================= test session starts ==============================
     …
-    configfile: pytest.ini
+    configfile: pyproject.toml
     collected 36 items / 35 deselected / 1 selected
 
     test_finish.py::test_finish_non_existent PASSED                          [100%]
@@ -623,7 +627,7 @@ Wir können auch alle logischen Verknüpfungen zusammen verwenden:
    $ pytest -v -m "(exception or smoke) and (not finish)"
    ============================= test session starts ==============================
    …
-   configfile: pytest.ini
+   configfile: pyproject.toml
    collected 36 items / 34 deselected / 2 selected
 
    test_start.py::test_start PASSED                                         [ 50%]
@@ -640,7 +644,7 @@ Klasse :class:`TestFinish` sind:
    $ pytest -v -m smoke -k "not TestFinish"
    ============================= test session starts ==============================
    …
-   configfile: pytest.ini
+   configfile: pyproject.toml
    collected 36 items / 33 deselected / 3 selected
 
    test_finish.py::test_finish[in progress] PASSED                          [ 33%]
@@ -671,15 +675,16 @@ Wenn diese Warnung stattdessen ein Fehler sein soll, können wir die Option
 .. tip::
    Es empfiehlt sich daher, immer ``--strict-markers`` zu verwenden. Anstatt die
    Option jedoch immer wieder einzugeben, könnt ihr ``--strict-markers`` in den
-   Abschnitt ``addopts`` der :file:`pytest.ini` einfügen:
+   Abschnitt ``addopts`` der :file:`pyproject.toml` einfügen:
 
-   .. code-block:: ini
+   .. code-block:: toml
       :emphasize-lines: 3-4
 
-      [pytest]
+      [tool.pytest]
       …
-      addopts =
-          --strict-markers
+      addopts = [
+          "--strict-markers",
+      ]
 
 .. _marker_fixtures_combined:
 
@@ -762,15 +767,17 @@ notwendig:
        def test_thirteen_items(items_db):
            assert items_db.count() == 13
 
-#. Diesen Marker müssen wir dann in der :file:`pytest.ini`-Datei deklarieren:
+#. Diesen Marker müssen wir dann in der :file:`pyproject.toml`-Datei
+   deklarieren:
 
-   .. code-block:: ini
+   .. code-block:: toml
       :emphasize-lines: 4
 
-      [pytest]
-      markers =
-          …
-          num_items: Number of items to be pre-filled for the items_db fixture
+      [tool.pytest]
+      markers = [
+          "…",
+          "num_items: Number of items to be pre-filled for the items_db fixture",
+      ]
 
 #. Nun modifizieren wir die ``items_db``-Fixture in der
    :file:`conftest.py`-Datei, um den Marker verwenden zu können. Um die
@@ -856,7 +863,7 @@ funktioniert:
     $ pytest -v -s test_items.py
     ============================= test session starts ==============================
     …
-    configfile: pytest.ini
+    configfile: pyproject.toml
     plugins: Faker-19.10.0
     collected 3 items
 
@@ -888,7 +895,7 @@ funktioniert:
       $ pytest -v -s test_items.py
       ============================= test session starts ==============================
       …
-      configfile: pytest.ini
+      configfile: pyproject.toml
       plugins: Faker-19.10.0
       collected 3 items
 
