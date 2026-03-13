@@ -50,6 +50,21 @@ wenn sie zum ersten Mal zugewiesen werden.
    Integer-Objekt ``4`` verweist, dies ändert jedoch nicht die Referenzen von
    ``x`` oder ``z``.
 
+Beim Löschen von Variablen mit der :ref:`del <del>`-Anweisung wird ebenfalls nur
+der Verweis gelöscht, nicht das Objekt selbst:
+
+.. code-block:: pycon
+
+   >>> del y
+   >>> print(y)
+   Traceback (most recent call last):
+     File "<python-input-10>", line 1, in <module>
+       print(y)
+             ^
+   NameError: name 'y' is not defined
+   >>> print(x, z)
+   1 1
+
 Python-Variablen können auf jedes beliebige Objekt gesetzt werden, während in
 vielen anderen Sprachen Variablen nur im deklarierten Typ gespeichert werden
 können.
