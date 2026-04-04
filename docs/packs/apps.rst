@@ -133,6 +133,30 @@ Mit ``uv lock --upgrade`` könnt ihr alle Pakete aktualisieren und mit :samp:`uv
 lock --upgrade-package {PACKAGE}=={VERSION}` lassen sich einzelnes Pakete auf
 eine bestimmte Version aktualisieren.
 
+.. _dependency-cooldowns:
+
+.. tip::
+   Um die Installation von Paketen zu vermeiden, die erst kürzlich auf
+   :term:`PyPI` veröffentlicht wurden und somit den PyPI-Administrator*innen die
+   Möglichkeit zu geben, auf Malware zu reagieren, empfehlen sich *Dependency
+   Cooldowns*. Sie sollten am besten global in :file:`~/.config/uv/uv.toml`
+   konfiguriert werden:
+
+   .. code-block:: toml
+
+      exclude-newer = "P3D"
+
+   ``P3D`` besagt dabei, dass nur Pakete, die drei Tage oder älter sind,
+   installiert werden sollen, wobei das Datumsformat :rfc:`3339`-konform ist.
+
+   *Dependency Cooldowns* sind jedoch kein Allheilmittel. Wenn ein Paket mit
+   Sicherheitslücken so schnell wie möglich durch eine aktuellere Variante
+   ersetzt werden soll, können die *Dependency Cooldowns* umgangen werden mit
+
+   .. code-block:: console
+
+      $ uv sync --exclude-newer-package "{PACKAGE}=P0D"
+
 .. tip::
    Ihr könnt auch mit dem
    :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` regelmäßig

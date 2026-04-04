@@ -182,15 +182,15 @@ Abhängigkeiten festzuschreiben.
 
 .. tip::
    In keinem unserer Bibliotheksprojekte passiert so viel, dass die
-   :doc:`Git-History <Python4DataScience:productive/git/review>` vorwiegend aus
+   :doc:`Git-Historie <Python4DataScience:productive/git/review>` vorwiegend aus
    Updates bestehen sollte. Lediglich bei Problemen schränken wir dort die zu
    verwendenden Versionsnummern ein. Bei Anwendungen (:abbr:`engl. (englisch)`:
    Apps) schreiben wir die Versionsnummern jedoch fest.
 
 Um für unsere Anwendungen die Versionen festzuschreiben und
-plattformübergreifende Lock-Dateien zu erhalten, verwenden wir `PDM
-<https://pdm-project.org/en/latest>`_. Zudem unterstützt PDM die Verwaltung
-virtueller Umgebungen mit ``pdm venv activate``.
+plattformübergreifende Lock-Dateien zu erhalten, verwenden wir :ref:`uv`. Zudem
+unterstützt uns ``uv`` bei :ref:`reproduzierbaren Python-Umgebungen
+<reproduce-virtual-env>`.
 
 … von Python
 ::::::::::::
