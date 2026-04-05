@@ -111,7 +111,25 @@ PyPI
 
 Registriert euch nun beim :term:`Python Package Index` (:term:`PyPI`) und stellt
 sicher, dass die `Zwei-Faktor-Authentifizierung
-<https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_.
+<https://blog.python.org/2019/05/use-two-factor-auth-to-improve-your.html>`_
+aktiviert ist, indem ihr Folgendes in die Datei :file:`~/.pypirc` einfügt:
+
+.. code-block:: ini
+
+   [distutils]
+   index-servers=
+       pypi
+       test
+
+   [test]
+   repository = https://test.pypi.org/legacy/
+   username = veit
+
+   [pypi]
+   username = __token__
+
+Bei dieser Konfiguration wird für das Hochladen nicht mehr die Kombination aus
+Name und Passwort verwendet, sondern ein Upload-Token.
 
 .. seealso::
     * `PyPI now supports uploading via API token
@@ -169,16 +187,16 @@ folgendermaßen aussehen:
        needs: [test]
        steps:
        - name: Checkout
-         uses: actions/checkout@v4
+         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
          with:
            fetch-depth: 0
        - name: Set up Python
-         uses: actions/setup-python@v5
+         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
          with:
            python-version-file: .python-version
            cache-dependency-path: '**/pyproject.toml'
        - name: Setup cached uv
-         uses: hynek/setup-cached-uv@v2
+         uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
        - name: Create venv
          run: |
            uv venv
@@ -189,9 +207,9 @@ folgendermaßen aussehen:
        - name: Retrieve and publish
          steps:
          - name: Retrieve release distributions
-           uses: actions/download-artifact@v4
+           uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
          - name: Publish package distributions to PyPI
-           uses: pypa/gh-action-pypi-publish@release/v1
+           uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
            with:
              username: __token__
              password: ${{ secrets.PYPI_TOKEN }}
@@ -215,17 +233,53 @@ Zeile 38–41
    * `GitHub Actions <https://docs.github.com/en/actions>`_
    * :doc:`cibuildwheel`
 
+Absichern des Release-Workflows
+-------------------------------
+
+Continuous Deployment zur Veröffentlichung von Python-Paketen sind ein beliebtes
+Ziel für Angriffe. Ihr könnt viele der Gefahren vermeiden, indem ihr einige
+wenige Sicherheitsempfehlungen befolgt:
+
+Vermeidet unsichere Trigger
+    Workflows, die bei einem Angriff ausgelöst werden können, insbesondere
+    Eingaben, die dieser kontrolliert (wie :ref:`Pull Requests
+    <merge-pull-requests>`- oder :doc:`Branch
+    <Python4DataScience:productive/git/branch>`-Titel), wurden in der
+    Vergangenheit genutzt, Befehle einzuschleusen. Insbesondere der Trigger
+    ``pull_request_target`` der :ref:`github-actions` sollte  vermieden werden.
+Säubert Parameter und Eingaben
+    Jeder Workflow-Parameter oder jede Eingabe, die sich zu einem ausführbaren
+    Befehl erweitern lässt, birgt das Potenzial, bei Angriffen ausgenutzt zu
+    werden. Säubert Werte, indem ihr sie als Umgebungsvariablen an Befehle
+    übergebt, um :abbr:`SSTI (Server Side Template Injection)`-Angriffe zu
+    vermeiden.
+Vermeidet veränderbare Referenzen
+    fixiert eure Abhängigkeiten in Workflows.
+
+    * Bevorzugt Git-Commit-`SHA
+      <https://de.wikipedia.org/wiki/Secure_Hash_Algorithm>`_-Werte anstelle von
+      :doc:`Git-Tags <Python4DataScience:productive/git/tag>`, da Tags änderbar
+      sind.
+    * Verwendet eine :ref:`uv_lock` für PyPI-Abhängigkeiten, die in Workflows
+      verwendet wird.
+
+Verwendet überprüfbare Deployments
+    Mit :ref:`trusted_publishers` könnt ihr überprüfbare GitHub-Umgebungen für
+    den Bau eurer Python-Pakete verwenden. Falls ihr GitHub Actions für die
+    kontinuierliche Bereitstellung nutzt, solltet ihr :ref:`zizmorcore`
+    verwenden um unsichere Workflows zu erkennen und zu beheben.
+
 .. _trusted_publishers:
 
 Trusted Publishers
-------------------
+~~~~~~~~~~~~~~~~~~
 
 `Trusted Publishers <https://docs.pypi.org/trusted-publishers/>`_ ist ein
 Verfahren zum Veröffentlichen von Paketen auf dem :term:`PyPI`. Es  basiert auf
 OpenID Connect und erfordert weder Passwort noch Token. Dazu sind lediglich die
 folgenden Schritte erforderlich:
 
-#. Fügt einen *Trusted Publishers*  auf PyPI hinzu
+#. Fügt einen *Trusted Publisher* auf PyPI hinzu
 
    Je nachdem, ob ihr ein neues Paket veröffentlichen oder ein bestehendes
    aktualisieren wollt, unterscheidet sich der Prozess geringfügig:
@@ -281,7 +335,7 @@ folgenden Schritte erforderlich:
    Zeilen 13–14
        Die ``write``-Berechtigung ist für *Trusted Publishing* erforderlich.
 
-   Zeilen 42–44
+   Zeilen 40–44
        ``username`` und ``password`` werden für die GitHub-Aktion
        ``pypa/gh-action-pypi-publish`` nicht mehr benötigt.
 
@@ -290,16 +344,11 @@ folgenden Schritte erforderlich:
           :lineno-start: 40
           :emphasize-lines: 3-
 
-             - name: Publish package distributions to PyPI
-               uses: pypa/gh-action-pypi-publish@release/v1
-          -    with:
-          -      username: __token__
-          -      password: ${{ secrets.PYPI_TOKEN }}
-
-.. _digital-attestations:
-
-Digital Attestations
---------------------
+          - name: Publish package distributions to PyPI
+            uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
+            with:
+              username: __token__
+              password: ${{ secrets.PYPI_TOKEN }}
 
 Seit 14. November 2024 unterstützt :term:`PyPI` auch :pep:`740` mit `Digital
 Attestations <https://docs.pypi.org/attestations/>`_. PyPI verwendet das
@@ -327,7 +376,7 @@ zum Veröffentlichen verwendet werden:
          id-token: write
        steps:
        - name: Publish package distributions to PyPI
-         uses: pypa/gh-action-pypi-publish@release/v1
+         uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
 
 .. note::
    Die Unterstützung für die automatische Erstellung von Digital Attestations
@@ -337,3 +386,58 @@ zum Veröffentlichen verwendet werden:
 .. seealso::
    `PyPI now supports digital attestations
    <https://blog.pypi.org/posts/2024-11-14-pypi-now-supports-digital-attestations/>`_
+
+.. _zizmorcore:
+
+zizmor
+~~~~~~
+
+`zizmor <https://docs.zizmor.sh>`_ kann viele Sicherheitsprobleme in typischen
+CI/CD-Konfigurationen von GitHub Actions aufspüren und beheben. zizmor ist für
+die Integration in GitHub Actions konzipiert. Eine typische GitHub Action von
+uns für zizmor sieht so aus:
+
+.. code-block:: yaml
+   :caption: .github/workflows/zizmor.yml
+
+   # https://github.com/woodruffw/zizmor
+   name: Zizmor
+
+   on:
+     push:
+       branches: ["main"]
+     pull_request:
+       branches: ["**"]
+
+   concurrency:
+     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+     cancel-in-progress: true
+
+   permissions: {}
+
+   jobs:
+     zizmor:
+       name: Run zizmor
+       runs-on: ubuntu-latest
+       permissions:
+         security-events: write # Required for upload-sarif (used by zizmor-action) to upload SARIF files.
+       steps:
+         - name: Checkout repository
+           uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+           with:
+             persist-credentials: false
+         - name: Run zizmor
+           uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8 # v0.5.2
+           with:
+             persona: pedantic
+
+.. _add_2fa:
+
+2FA für alle Entwicklungskonten
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ihr solltet Zwei-Faktor-Authentifizierung für alle eure Konten nutzen, die mit
+der Entwicklung in Verbindung stehen – nicht nur für :term:`PyPI`. Denkt an eure
+Konten für die Versionskontrolle (`GitHub <https://github.com/>`_, `GitLab
+<https://about.gitlab.com/>`_, `Codeberg <https://codeberg.org/>`_, `Forgejo
+<https://forgejo.org/>`_) und E-Mail.

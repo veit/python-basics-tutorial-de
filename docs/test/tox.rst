@@ -459,16 +459,16 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
           if: always()
 
           steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
               with:
                 persist-credentials: false
-            - uses: actions/setup-python@v6
+            - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
               with:
                 python-version-file: .python-version
-            - uses: hynek/setup-cached-uv@v2
+            - uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
 
             - name: Download coverage data
-              uses: actions/download-artifact@v7
+              uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
               with:
                 pattern: coverage-data-*
                 merge-multiple: true
@@ -492,16 +492,16 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
    ``steps``
        ist eine Liste von Schritten. Der Name eines jeden Schrittes kann
        beliebig sein und ist optional.
-   ``uses: actions/checkout@v4``
+   ``uses: actions/checkout``
        ist ein GitHub-Actions-Tool, das unser Repository auscheckt, damit der
        Rest des Workflows darauf zugreifen kann.
-   ``uses: actions/setup-python@v5``
+   ``uses: actions/setup-python``
        ist ein GitHub-Actions-Tool, das Python konfiguriert und in einer
        Build-Umgebung installiert.
    ``with: python-version: ${{ matrix.python }}``
        sagt, dass eine Umgebung für jede der in ``matrix.python`` aufgeführten
        Python-Versionen erstellt werden soll.
-   ``uses: hynek/setup-cached-uv@v2``
+   ``uses: hynek/setup-cached-uv``
        uses :term:`uv` in GitHub Actions.
 
        .. seealso::
