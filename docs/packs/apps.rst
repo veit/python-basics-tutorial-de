@@ -166,7 +166,7 @@ eine bestimmte Version aktualisieren.
       :caption: .pre-commit-config.yaml
 
       - repo: https://github.com/astral-sh/uv-pre-commit
-        rev: 0.5.21
+        rev: 6a280ba12b7901e47757c868c8c13c6a624c9ecb # 0.11.7
         hooks:
           - id: uv-lock
 
