@@ -2,29 +2,30 @@ Mock
 ====
 
 In diesem Kapitel werden wir die :abbr:`CLI (Befehlszeilenschnittstelle)`
-testen. Hierfür werden wir das :doc:`mock <python3:library/unittest.mock>`-Paket
-verwenden, das seit Python 3.3 als Teil der Python-Standardbibliothek unter dem
-Namen ``unittest.mock`` ausgeliefert wird. Für ältere Versionen von Python könnt
-ihr sie installieren mit:
+testen. Hierfür werden wir die :doc:`mock
+<python3:library/unittest.mock>`-Bibliothek verwenden, das seit Python 3.3 als
+Teil der Python-Standardbibliothek unter dem Namen ``unittest.mock``
+ausgeliefert wird.
 
-.. tab:: Linux/macOS
+Objekte, die nicht real sind, können entweder :term:`Dummies <Dummy>`,
+:term:`Fakes <Fake>`, :term:`Stubs <Stub>`, :term:`Mocks <Mock>` oder
+:term:`Spies <Spy>` sein. Sie sind alle :abbr:`sog. (sogenannte)` Test-Doubles.
+Mit dem pytest-eigenen :ref:`monkeypatch-fixture`-Fixture und
+:doc:`unittest.mock <python3:library/unittest.mock>` solltet ihr jedoch über
+alle Funktionen verfügen, die ihr benötigt.
 
-   .. code-block:: console
+Die drei Kernfunktionalitäten von :doc:`unittest.mock
+<python3:library/unittest.mock>` sind:
 
-      $ . bin/activate
-      $ python -m pip install mock
-
-.. tab:: Windows
-
-   .. code-block:: ps1con
-
-      C:> Scripts\activate.bat
-      C:> python -m pip install mock
-
-:term:`Mock`-Objekte werden manchmal auch als Test-Doubles, :term:`Fakes <Fake>`
-oder :term:`Stubs` bezeichnet. Mit dem pytest-eigenen
-:ref:`monkeypatch-fixture`-Fixture und mock solltet ihr über alle Funktionen
-verfügen, die ihr benötigt.
+:class:`Mock <python3:unittest.mock.Mock>`
+    Die Mock-Klasse kann zur Simulation eines beliebigen Objekts verwendet
+    werden.
+:class:`MagickMock <python3:unittest.mock.MagicMock>`
+    Unterklasse von Mock, die alle magischen Methoden enthält, :abbr:`z. B. (zum
+    Beispiel)` ``__str__``, ``__len__`` :abbr:`usw (und so weiter)`.
+:func:`patch <python3:unittest.mock.patch>`-Methode
+    In einem bestimmten Modul wird ein Objekt gesucht und ersetzt durch ein
+    anderes Objekt.
 
 Beispiel
 --------
@@ -66,29 +67,29 @@ Arbeitstage von Montag bis Freitag korrekt ermittelt werden.
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 17-19
+      :lines: 17-21
       :lineno-start: 17
 
    .. literalinclude:: test_mock.py
       :language: python
-      :lines: 21-23
-      :lineno-start: 21
+      :lines: 24-
+      :lineno-start: 24
 
 Testen mit Typer
 ----------------
 
-Für die Tests der Items-CLI werden wir uns auch ansehen, wie der von `Typer
+Für die Tests der Tasks-CLI werden wir uns auch ansehen, wie der von `Typer
 <https://typer.tiangolo.com>`_ bereitgestellte ``CliRunner`` beim Testen hilft.
 Typer bietet eine Testschnittstelle, womit wir unsere Anwendung aufrufen können,
 ohne, wie in dem kurzen :ref:`capsys-fixture`-Beispiel auf
 :func:`python3:subprocess.run` zurückgreifen zu müssen. Das ist gut, weil wir
 nicht simulieren können, was in einem separaten Prozess läuft. So können wir in
 :file:`tests/cli/conftest.py` der :func:`invoke`-Funktion unseres ``runner`` nur
-unsere Anwendung ``items.cli.app`` und eine Liste von Strings übergeben, die den
-Befehl darstellt: genauer wandeln wir mit :func:`shlex.split(command_string)`
-die Befehle, :abbr:`z.B. (zum Beispiel)` :samp:`list -o "veit"` in
-:samp:`["list", "-o", "veit"]` um und können die Ausgabe dann abfangen und
-zurückgeben.
+unsere Anwendung ``cusy.tasks.cli.app`` und eine Liste von Strings übergeben,
+die den Befehl darstellt: genauer wandeln wir mit
+:func:`shlex.split(command_string)` die Befehle, :abbr:`z. B. (zum Beispiel)`
+:samp:`list -o "veit"` in :samp:`["list", "-o", "veit"]` um und können die
+Ausgabe dann abfangen und zurückgeben.
 
 .. code-block:: python
    :emphasize-lines: 4, 8, 16-17
@@ -98,18 +99,18 @@ zurückgeben.
     import pytest
     from typer.testing import CliRunner
 
-    import items
+    from cusy import tasks
 
     runner = CliRunner()
 
 
     @pytest.fixture()
-    def items_cli(db_path, monkeypatch, items_db):
+    def tasks_cli(db_path, monkeypatch, tasks_db):
         monkeypatch.setenv("ITEMS_DB_DIR", db_path.as_posix())
 
         def run_cli(command_string):
             command_list = shlex.split(command_string)
-            result = runner.invoke(items.cli.app, command_list)
+            result = runner.invoke(tasks.cli.app, command_list)
             output = result.stdout.rstrip()
             return output
 
@@ -120,11 +121,11 @@ Beispiel)` die Version in :file:`tests/cli/test_version.py` zu testen:
 
 .. code-block:: python
 
-    import items
+    from cusy import tasks
 
 
-    def test_version(items_cli):
-        assert items_cli("version") == items.__version__
+    def test_version(tasks_cli):
+        assert tasks_cli("version") == tasks.__version__
 
 .. seealso::
    `Typer Learn Testing <https://typer.tiangolo.com/tutorial/testing/>`_
@@ -133,8 +134,8 @@ Mocking von Attributen
 ----------------------
 
 Schauen wir uns an, wie wir Mocking verwenden können, um sicherzustellen, dass
-:abbr:`z.B. (zum Beispiel)` auch dreistellige Versionsnummern von
-:func:`items.__version__` korrekt über die CLI ausgegeben werden. Hierfür werden
+:abbr:`z. B. (zum Beispiel)` auch dreistellige Versionsnummern von
+:func:`tasks.__version__` korrekt über die CLI ausgegeben werden. Hierfür werden
 wir :func:`mock.patch.object` als Kontextmanager verwenden:
 
 .. code-block:: python
@@ -142,22 +143,22 @@ wir :func:`mock.patch.object` als Kontextmanager verwenden:
 
     from unittest import mock
 
-    import items
+    from cusy import tasks
 
 
-    def test_mock_version(items_cli):
-        with mock.patch.object(items, "__version__", "100.0.0"):
-            assert items_cli("version") == items.__version__
+    def test_mock_version(tasks_cli):
+        with mock.patch.object(tasks, "__version__", "100.0.0"):
+            assert tasks_cli("version") == tasks.__version__
 
-In unserem Testcode importieren wir ``items``. Das resultierende items-Objekt
+In unserem Testcode importieren wir ``tasks``. Das resultierende tasks-Objekt
 ist das, was wir patchen werden. Der Aufruf von :func:`mock.patch.object`, der
 als :doc:`Kontextmanager <../control-flow/with>` innerhalb eines ``with``-Blocks
 verwendet wird, gibt ein Mock-Objekt zurück, das nach dem ``with``-Block
 aufgeräumt wird:
 
-#. In diesem Fall wird das Attribut ``__version__`` von ``items`` für die Dauer
+#. In diesem Fall wird das Attribut ``__version__`` von ``tasks`` für die Dauer
    des ``with``-Blocks durch ``"100.0.0"`` ersetzt.
-#. Anschließend verwenden wir :func:`items_cli`, um unsere CLI-Anwendung mit dem
+#. Anschließend verwenden wir :func:`tasks_cli`, um unsere CLI-Anwendung mit dem
    Befehl ``"version"`` aufzurufen. Wenn die Methode :func:`version` aufgerufen
    wird, ist das Attribut ``__version__`` jedoch nicht der ursprüngliche String,
    sondern der String, den wir mit :func:`mock.patch.object` ersetzt haben.
@@ -165,45 +166,46 @@ aufgeräumt wird:
 Mocking von Klassen und Methoden
 --------------------------------
 
-In :file:`src/items/cli.py` haben wir :func:`config` folgendermaßen definiert:
+In :file:`src/cusy/tasks/cli.py` haben wir :func:`config` folgendermaßen
+definiert:
 
 .. code-block:: python
 
     def config():
-        """List the path to the Items db."""
-        with items_db() as db:
+        """List the path to the Tasks db."""
+        with tasks_db() as db:
             print(db.path())
 
-:func:`items_db` ist ein :doc:`Kontextmanager <../control-flow/with>`, der ein
-``items.ItemsDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
+:func:`tasks_db` ist ein :doc:`Kontextmanager <../control-flow/with>`, der ein
+``tasks.TasksDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
 ``db`` verwendet, um :func:`db.path` aufzurufen. Wir sollten hier also zwei
-Dinge zu mocken: ``items.ItemsDB`` und eine seiner Methoden, :func:`path`.
+Dinge zu mocken: ``tasks.TasksDB`` und eine seiner Methoden, :func:`path`.
 Beginnen wir mit der Klasse:
 
 .. code-block:: python
 
     from unittest import mock
 
-    import items
+    from cusy import tasks
 
 
-    def test_mock_itemsdb(items_cli):
-        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
-            mock_db_path = MockItemsDB.return_value.path.return_value = "/foo/"
-            assert items_cli("config") == str(mock_db_path)
+    def test_mock_tasksdb(tasks_cli):
+        with mock.patch.object(tasks, "TasksDB") as MockTasksDB:
+            mock_db_path = MockTasksDB.return_value.path.return_value = "/foo/"
+            assert tasks_cli("config") == str(mock_db_path)
 
 Lasst und sicherstellen, dass es wirklich funktioniert:
 
 .. code-block:: pytest
 
-    $ pytest -v -s tests/cli/test_config.py::test_mock_itemsdb
+    $ uv run pytest -v -s tests/cli/test_config.py::test_mock_tasksdb
     ============================= test session starts ==============================
     ...
     configfile: pyproject.toml
     plugins: cov-4.1.0, Faker-19.11.0
     collected 1 item
 
-    tests/cli/test_config.py::test_mock_itemsdb PASSED
+    tests/cli/test_config.py::test_mock_tasksdb PASSED
 
     ============================== 1 passed in 0.04s ===============================
 
@@ -213,17 +215,17 @@ verschieben, denn wir werden ihn in vielen Testmethoden brauchen:
 .. code-block:: python
 
     @pytest.fixture()
-    def mock_itemsdb():
-        with mock.patch.object(items, "ItemsDB") as MockItemsDB:
-            yield MockItemsDB.return_value
+    def mock_tasksdb():
+        with mock.patch.object(tasks, "TasksDB") as MockTasksDB:
+            yield MockTasksDB.return_value
 
-Diese Fixture mockt das ``ItemsDB``-Objekt und gibt den ``return_value`` zurück,
+Diese Fixture mockt das ``TasksDB``-Objekt und gibt den ``return_value`` zurück,
 so dass Tests ihn verwenden können, um Dinge wie ``path`` zu ersetzen:
 
 .. code-block:: python
 
-    def test_mock_itemsdb(items_cli, mock_itemsdb):
-        mock_itemsdb.path.return_value = "/foo/"
+    def test_mock_tasksdb(tasks_cli, mock_tasksdb):
+        mock_tasksdb.path.return_value = "/foo/"
         result = runner.invoke(app, ["config"])
         assert result.stdout.rstrip() == "/foo/"
 
@@ -270,9 +272,9 @@ der Erstellung gelöst werden:
    :emphasize-lines: 3
 
     @pytest.fixture()
-    def mock_itemsdb():
-        with mock.patch.object(items, "ItemsDB", autospec=True) as MockItemsDB:
-            yield MockItemsDB.return_value
+    def mock_tasksdb():
+        with mock.patch.object(tasks, "TasksDB", autospec=True) as MockTasksDB:
+            yield MockTasksDB.return_value
 
 Üblicherweise wird dieser Schutz mit ``autospec`` immer eingebaut. Die einzige
 mir bekannte Ausnahme ist, wenn die Klasse oder das Objekt, das gemockt wird,
@@ -288,25 +290,25 @@ Aufruf überprüfen mit :func:`assert_called_with`
 Bisher haben wir die Rückgabewerte einer Mocking-Methode verwendet, um
 sicherzustellen, dass unser Anwendungscode mit den Rückgabewerten richtig
 umgeht. Aber manchmal gibt es keinen nützlichen Rückgabewert, :abbr:`z.B. (zum
-Beispiel)` bei :samp:`items add some tasks -o veit`. In diesen Fällen
+Beispiel)` bei :samp:`tasks add some tasks -o veit`. In diesen Fällen
 können wir das Mock-Objekt fragen, ob es korrekt aufgerufen wurde. Nach dem
-Aufruf von :func:`items_cli("add some tasks -o veit")` wird nicht die API
+Aufruf von :func:`tasks_cli("add some tasks -o veit")` wird nicht die API
 verwendet, um zu prüfen, ob das Element in die Datenbank gelangt ist, sondern
 ein Mock, um sicherzustellen, dass die CLI die richtige API-Methode korrekt
 aufgerufen hat. Die Implementierung des Befehls :func:`add` ruft schließlich
-:func:`db.add_item` mit einem ``Item``-Objekt auf:
+:func:`db.add_task` mit einem ``Task``-Objekt auf:
 
 .. _test_add_with_owner:
 
 .. code-block:: python
    :emphasize-lines: 4
 
-   def test_add_with_owner(mock_itemsdb, items_cli):
-       items_cli("add some task -o veit")
-       expected = items.Item("some task", owner="veit", state="todo")
-       mock_itemsdb.add_item.assert_called_with(expected)
+   def test_add_with_owner(mock_tasksdb, tasks_cli):
+       tasks_cli("add some task -o veit")
+       expected = tasks.Task("some task", owner="veit", state="todo")
+       mock_tasksdb.add_task.assert_called_with(expected)
 
-Wenn :func:`add_item` nicht aufgerufen wird oder mit dem falschen Typ oder dem
+Wenn :func:`add_task` nicht aufgerufen wird oder mit dem falschen Typ oder dem
 falschen Objektinhalt aufgerufen wird, schlägt der Test fehl. Wenn wir
 :abbr:`z.B. (zum Beispiel)` in ``expected`` den String ``"Veit"`` groß
 schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
@@ -314,7 +316,7 @@ schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
 .. code-block:: pytest
    :emphasize-lines: 10-13, 16
 
-   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   $ uv run pytest -s tests/cli/test_add.py::test_add_with_owner
    ============================= test session starts ==============================
    ...
    configfile: pyproject.toml
@@ -325,8 +327,8 @@ schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
    ...
    >           raise AssertionError(_error_message()) from cause
    E           AssertionError: expected call not found.
-   E           Expected: add_item(Item(summary='some task', owner='Veit', state='todo', id=None))
-   E           Actual: add_item(Item(summary='some task', owner='veit', state='todo', id=None))
+   E           Expected: add_task(Task(summary='some task', owner='Veit', state='todo', id=None))
+   E           Actual: add_task(Task(summary='some task', owner='veit', state='todo', id=None))
    ...
    =========================== short test summary info ============================
    FAILED tests/cli/test_add.py::test_add_with_owner - AssertionError: expected call not found.
@@ -345,31 +347,31 @@ schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
 Fehlerbedingungen erstellen
 ---------------------------
 
-Lasst uns nun überprüfen, ob die Items-CLI Fehlerbedingungen korrekt behandelt. Hier ist :abbr:`z.B. (zum Beispiel)` die Implementierung des Löschbefehls:
+Lasst uns nun überprüfen, ob die Tasks-CLI Fehlerbedingungen korrekt behandelt. Hier ist :abbr:`z.B. (zum Beispiel)` die Implementierung des Löschbefehls:
 
 .. code-block:: python
 
     @app.command()
-    def delete(item_id: int):
-        """Remove item in db with given id."""
-        with items_db() as db:
+    def delete(task_id: int):
+        """Remove task in db with given id."""
+        with tasks_db() as db:
             try:
-                db.delete_item(item_id)
-            except items.InvalidItemId:
-                print(f"Error: Invalid item id {item_id}")
+                db.delete_task(task_id)
+            except tasks.InvalidTaskId:
+                print(f"Error: Invalid task id {task_id}")
 
 Um zu testen, wie die CLI mit einer Fehlerbedingung umgeht, können wir so tun,
-als ob :func:`delete_item` eine Exception erzeugt, indem wir dem Mock-Objekt die
+als ob :func:`delete_task` eine Exception erzeugt, indem wir dem Mock-Objekt die
 Exception dem Attribut `side_effect
 <https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.side_effect>`_
 des Mock-Objekts zuweisen, etwa so:
 
 .. code-block:: python
 
-    def test_delete_invalid(mock_itemsdb, items_cli):
-        mock_itemsdb.delete_item.side_effect = items.api.InvalidItemId
-        out = items_cli("delete 42")
-        assert "Error: Invalid item id 42" in out
+    def test_delete_invalid(mock_tasksdb, tasks_cli):
+        mock_tasksdb.delete_task.side_effect = tasks.api.InvalidTaskId
+        out = tasks_cli("delete 42")
+        assert "Error: Invalid task id 42" in out
 
 Das ist alles, was wir brauchen, um die CLI zu testen: Mocking von
 Rückgabewerten, Überprüfen der Aufrufe von Mock-Funktionen und das Mocking von
@@ -403,7 +405,7 @@ Parametern aufruft.
 Mocking vermeiden mit Tests auf mehreren Ebenen
 -----------------------------------------------
 
-Wir können die Items-CLI auch ohne Mocks testen indem wir auch die API
+Wir können die Tasks-CLI auch ohne Mocks testen indem wir auch die API
 verwenden. Dabei werden wir nicht die API testen, sondern sie nur verwenden, um
 das Verhalten von Aktionen zu überprüfen, die über die CLI ausgeführt werden.
 Das Beispiel :ref:`test_add_with_owner <test_add_with_owner>` können wir auch
@@ -411,10 +413,10 @@ folgendermaßen testen:
 
 .. code-block:: python
 
-   def test_add_with_owner(items_db, items_cli):
-       items_cli("add some task -o veit")
-       expected = items.Item("some task", owner="veit", state="todo")
-       all = items_db.list_items()
+   def test_add_with_owner(tasks_db, tasks_cli):
+       tasks_cli("add some task -o veit")
+       expected = tasks.Task("some task", owner="veit", state="todo")
+       all = tasks_db.list_tasks()
        assert len(all) == 1
        assert all[0] == expected
 
@@ -428,7 +430,7 @@ schnell:
 
 .. code-block:: pytest
 
-   $ pytest -s tests/cli/test_add.py::test_add_with_owner
+   $ uv run pytest -s tests/cli/test_add.py::test_add_with_owner
    ============================= test session starts ==============================
    …
    configfile: pyproject.toml
@@ -441,17 +443,17 @@ schnell:
 
 Wir könnten Mocking auch auf eine andere Weise vermeiden. Wir könnten das
 Verhalten vollständig über die CLI testen. Dazu müsste möglicherweise die
-Ausgabe der Items-Liste geparst werden, um den korrekten Datenbankinhalt zu
+Ausgabe der Tasks-Liste geparst werden, um den korrekten Datenbankinhalt zu
 überprüfen.
 
-In der API gibt :func:`add_item` einen Index zurück und bietet eine
-:func:`get_item(index)`-Methode, die beim Testen hilft. Beide Methoden sind in
+In der API gibt :func:`add_task` einen Index zurück und bietet eine
+:func:`get_task(index)`-Methode, die beim Testen hilft. Beide Methoden sind in
 der CLI nicht vorhanden, könnten es aber sein. Wir könnten vielleicht die
-Befehle ``items get index`` oder ``items info index`` hinzufügen, damit wir ein
-Item abrufen können, anstatt ``items list für`` alles verwenden zu müssen.
+Befehle ``tasks get index`` oder ``tasks info index`` hinzufügen, damit wir ein
+Task abrufen können, anstatt ``tasks list für`` alles verwenden zu müssen.
 ``list`` unterstützt auch bereits Filterung. Vielleicht würde das Filtern nach
 ``index`` funktionieren, anstatt einen neuen Befehl hinzuzufügen. Und wir
-könnten ``items add`` eine Ausgabe hinzufügen, die etwas sagt wie *Item
+könnten ``tasks add`` eine Ausgabe hinzufügen, die etwas sagt wie *Task
 hinzugefügt bei Index 3*. Diese Änderungen würden in die Kategorie *Design for
 Testability* fallen. Sie scheinen auch keine tiefen Eingriffe in die
 Schnittstelle zu sein und sollten vielleicht in zukünftigen Versionen

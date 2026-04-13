@@ -33,10 +33,10 @@ In :doc:`fixtures` haben wir die Standardbibliothek
 
     @pytest.fixture(scope="session")
     def db():
-        """ItemsDB object connected to a temporary database"""
+        """TasksDB object connected to a temporary database"""
         with TemporaryDirectory() as db_dir:
             db_path = Path(db_dir)
-            db_ = items.ItemsDB(db_path)
+            db_ = tasks.TasksDB(db_path)
             yield db_
             db_.close()
 
@@ -49,9 +49,9 @@ verwenden können. Wir können jedoch ``tmp_path_factory`` verwenden:
 
     @pytest.fixture(scope="session")
     def db(tmp_path_factory):
-        """ItemsDB object connected to a temporary database"""
-        db_path = tmp_path_factory.mktemp("items_db")
-        db_ = items.ItemsDB(db_path)
+        """TasksDB object connected to a temporary database"""
+        db_path = tmp_path_factory.mktemp("tasks_db")
+        db_ = tasks.TasksDB(db_path)
         yield db_
         db_.close()
 
@@ -80,22 +80,22 @@ Ihr könnt auch euer eigenes Basisverzeichnis angeben mit :samp:`pytest
 ----------
 
 Manchmal soll der Anwendungscode etwas auf ``stdout``, ``stderr`` :abbr:`usw.
-(und so weiter)` ausgeben. Das Items-Beispielprojekt hat deswegen auch eine
+(und so weiter)` ausgeben. Das Tasks-Beispielprojekt hat deswegen auch eine
 Kommandozeilen-Schnittstelle, die wir nun testen wollen.
 
-Der Befehl ``items version`` soll die Version ausgeben:
+Der Befehl ``cusy.tasks version`` soll die Version ausgeben:
 
 .. code-block:: console
 
-    $ items version
+    $ uv run cusy.tasks version
     0.1.0
 
 Die Version ist auch via Python verfügbar:
 
 .. code-block:: pycon
 
-    >>> import items
-    >>> items.__version__
+    >>> from cusy import tasks
+    >>> tasks.__version__
     '0.1.0'
 
 Eine Möglichkeit, dies zu testen, ist
@@ -108,15 +108,15 @@ Eine Möglichkeit, dies zu testen, ist
 
     import subprocess
 
-    import items
+    from cusy import tasks
 
 
     def test_version():
         process = subprocess.run(
-            ["items", "version"], capture_output=True, text=True
+            ["tasks", "version"], capture_output=True, text=True
         )
         output = process.stdout.rstrip()
-        assert output == items.__version__
+        assert output == tasks.__version__
 
 Die Funktion ``rstrip()`` wird verwendet, um den Zeilenumbruch zu entfernen.
 
@@ -128,13 +128,13 @@ implementiert, direkt aufrufen und ``capsys`` zum Lesen der Ausgabe verwenden:
 
 .. code-block::
 
-    import items
+    from cusy import tasks
 
 
     def test_version(capsys):
-        items.cli.version()
+        tasks.cli.version()
         output = capsys.readouterr().out.rstrip()
-        assert output == items.__version__
+        assert output == tasks.__version__
 
 Die Methode ``capsys.readouterr()`` gibt ein ``namedtuple`` zurück, das ``out``
 und ``err`` enthält. Wir lesen nur den ``out``-Teil und entfernen dann den
@@ -147,18 +147,18 @@ normalerweise die Ausgaben eurer Tests und des Anwendungscodes. Dies schließt
 
 .. code-block:: python
 
-    import items
+    from cusy import tasks
 
 
     def test_stdout():
-        version = items.__version__
-        print("\nitems " + version)
+        version = tasks.__version__
+        print("\ntasks " + version)
 
 Wenn wir den Test jedoch ausführen, sehen wir keine Ausgabe:
 
 .. code-block:: pytest
 
-    $ pytest tests/test_output.py
+    $ uv run pytest tests/test_output.py
     ============================= test session starts ==============================
     …
     collected 1 item
@@ -175,13 +175,13 @@ Option ``-s`` oder ``--capture=no`` verwenden:
 .. code-block:: pytest
    :emphasize-lines: 7
 
-    $ pytest -s tests/test_output.py
+    $ uv run pytest -s tests/test_output.py
     ============================= test session starts ==============================
     …
     collected 1 item
 
     tests/test_output.py
-    items 0.1.0
+    cusy.tasks 0.1.0
     .
 
     ============================== 1 passed in 0.00s ===============================
@@ -191,26 +191,26 @@ Eine andere Möglichkeit, die Ausgabe immer einzuschließen, ist
 
 .. code-block:: python
 
-    import items
+    from cusy import tasks
 
 
     def test_stdout(capsys):
         with capsys.disabled():
-            version = items.__version__
-            print("\nitems " + version)
+            version = tasks.__version__
+            print("\ntasks " + version)
 
 Nun wird sie Ausgabe im ``with``-Block immer angezeigt, auch ohne die
 ``-s``-Option:
 
 .. code-block:: pytest
 
-    $ pytest tests/test_output.py
+    $ uv run pytest tests/test_output.py
     ============================= test session starts ==============================
     …
     collected 1 item
 
     tests/test_output.py
-    items 0.1.0
+    cusy.tasks 0.1.0
     .                                                   [100%]
 
     ============================== 1 passed in 0.00s ===============================
@@ -235,7 +235,7 @@ Nun wird sie Ausgabe im ``with``-Block immer angezeigt, auch ohne die
 
 Mit ``capsys`` kann ich zwar gut die ``stdout`` und ``stderr``-Ausgabe steuern,
 aber es ist immer noch nicht die Art, wie ich die :abbr:`CLI (Command Line
-Interface)` testen möchte. Die Items-Anwendung verwendet eine Bibliothek namens `Typer <https://typer.tiangolo.com>`_, die eine Runner-Funktion enthält um
+Interface)` testen möchte. Die Tasks-Anwendung verwendet eine Bibliothek namens `Typer <https://typer.tiangolo.com>`_, die eine Runner-Funktion enthält um
 unserem Code so zu testen, wie wir es von einem Befehlszeilentest erwarten
 würden, der im Prozess bleibt und uns mit Output-Hooks versorgt, :abbr:`z.B.
 (zum Beispiel)`:
@@ -244,18 +244,18 @@ würden, der im Prozess bleibt und uns mit Output-Hooks versorgt, :abbr:`z.B.
 
     from typer.testing import CliRunner
 
-    import items
+    from cusy import tasks
 
 
     def test_version():
         runner = CliRunner()
-        result = runner.invoke(items.app, ["version"])
+        result = runner.invoke(tasks.app, ["version"])
         output = result.output.rstrip()
-        assert output == items.__version__
+        assert output == tasks.__version__
 
 Wir werden diese Methode der Ausgabentests als Ausgangspunkt für die restlichen
-Tests der Items-CLI verwenden. Ich habe mit den CLI-Tests begonnen, indem ich
-die Items-Version getestet habe. Um den Rest der CLI zu testen, müssen wir die
+Tests der Tasks-CLI verwenden. Ich habe mit den CLI-Tests begonnen, indem ich
+die Tasks-Version getestet habe. Um den Rest der CLI zu testen, müssen wir die
 Datenbank in ein temporäres Verzeichnis umleiten, so wie wir es beim Testen der
 API unter Verwendung von :ref:`Fixtures für Setup und Teardown
 <setup-and-teardown-fixtures>` getan haben. Hierfür verwenden wir nun
@@ -333,7 +333,7 @@ Wir können ``monkeypatch`` verwenden, um die :abbr:`CLI (Command Line
 Interface)` auf ein temporäres Verzeichnis für die Datenbank umzuleiten, und
 zwar auf zweierlei Weise. Beide Methoden erfordern Kenntnisse über den
 Anwendungscode. Schauen wir uns die Methode ``cli.get_path()`` in
-:file:`src/items/cli.py` an:
+:file:`src/cusy/tasks/cli.py` an:
 
 .. code-block:: python
 
@@ -346,42 +346,43 @@ Anwendungscode. Schauen wir uns die Methode ``cli.get_path()`` in
         if db_path_env:
             db_path = pathlib.Path(db_path_env)
         else:
-            db_path = pathlib.Path.home() / "items_db"
+            db_path = pathlib.Path.home() / "tasks_db"
         return db_path
 
 Diese Methode teilt dem restlichen CLI-Code mit, wo sich die Datenbank
 befindet. Um uns den Speicherort der Datenbank auf der Kommandozeile ausgeben zu
-lassen, definieren wir nun auch noch ``config()`` in :file:`src/items/cli.py`:
+lassen, definieren wir nun auch noch ``config()`` in
+:file:`src/cusy/tasks/cli.py`:
 
 .. code-block:: python
 
     @app.command()
     def config():
-        """Return the path to the Items db."""
-        with items_db() as db:
+        """Return the path to the Tasks db."""
+        with tasks_db() as db:
             print(db.path())
 
 .. code-block:: console
 
-    $ items config
-    /Users/veit/items_db
+    $ uv run cusy.tasks config
+    /Users/veit/tasks_db
 
 Um diese Methoden zu testen, können wir nun entweder die gesamte
 ``get_path()``-Funktion oder das ``pathlib.Path()``-Attribut ``home`` patchen.
 Hierfür definieren wir in :file:`tests/test_config.py` zunächst eine
-Hilfsfunktion ``run_items_cli``, die dasselbe ausgibt wie ``items`` auf der
+Hilfsfunktion ``run_tasks_cli``, die dasselbe ausgibt wie ``tasks`` auf der
 Kommandozeile:
 
 .. code-block:: python
 
     from typer.testing import CliRunner
 
-    import items
+    from cusy import tasks
 
 
-    def run_items_cli(*params):
+    def run_tasks_cli(*params):
         runner = CliRunner()
-        result = runner.invoke(items.app, params)
+        result = runner.invoke(tasks.app, params)
         return result.output.rstrip()
 
 Anschließend können wir dann unseren Test schreiben, der einen Patch für die
@@ -393,10 +394,10 @@ Anschließend können wir dann unseren Test schreiben, der einen Patch für die
         def fake_get_path():
             return tmp_path
 
-        monkeypatch.setattr(items.cli, "get_path", fake_get_path)
-        assert run_items_cli("config") == str(tmp_path)
+        monkeypatch.setattr(tasks.cli, "get_path", fake_get_path)
+        assert run_tasks_cli("config") == str(tmp_path)
 
-Die Funktion ``get_path()`` aus ``items.cli`` kann nicht einfach durch
+Die Funktion ``get_path()`` aus ``tasks.cli`` kann nicht einfach durch
 ``tmp_path`` ersetzt werden, da dies ein ``pathlib.Path``-Objekt ist, das nicht
 aufrufbar ist. Daher wird sie durch die ``fake_get_path()``-Funktion ersetzt.
 Alternativ können wir jedoch auch das ``home``-Attribut von ``pathlib.Path``
@@ -405,13 +406,13 @@ patchen:
 .. code-block:: python
 
     def test_home(monkeypatch, tmp_path):
-        items_dir = tmp_path / "items_db"
+        tasks_dir = tmp_path / "tasks_db"
 
         def fake_home():
             return tmp_path
 
-        monkeypatch.setattr(items.cli.pathlib.Path, "home", fake_home)
-        assert run_items_cli("config") == str(items_dir)
+        monkeypatch.setattr(tasks.cli.pathlib.Path, "home", fake_home)
+        assert run_tasks_cli("config") == str(tasks_dir)
 
 *Monkey patching* und *Mocking* verkomplizieren jedoch das Testen, sodass wir
 nach Möglichkeiten suchen werden, dies zu vermeiden, wann immer es möglich ist.
@@ -422,7 +423,7 @@ In unserem Fall könnte sinnvoll sein, eine Umgebungsvariable
 
     def test_env_var(monkeypatch, tmp_path):
         monkeypatch.setenv("ITEMS_DB_DIR", str(tmp_path))
-        assert run_items_cli("config") == str(tmp_path)
+        assert run_tasks_cli("config") == str(tmp_path)
 
 Monkeypatching von Dictionaries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -433,7 +434,7 @@ Beispiel)`:
 .. code-block:: python
    :caption: conf.py
 
-   DEFAULT_CONFIG = {"database": "items_db"}
+   DEFAULT_CONFIG = {"database": "tasks_db"}
 
 
    def create_connection(config=None):
@@ -446,7 +447,7 @@ Zum Testen können wir die Werte im ``DEFAULT_CONFIG``-Dictionary ändern:
 .. code-block:: python
    :caption: tests/test_conf.py
 
-   from items import conf
+   from cusy.tasks import conf
 
 
    def test_connection(monkeypatch):

@@ -2,7 +2,7 @@ Coverage
 ========
 
 Wir haben eine erste Liste von Testfällen erstellt. Die Tests im
-:file:`tests/api`-Verzeichnis testen die Items über die API. Aber woher wissen
+:file:`tests/api`-Verzeichnis testen die Tasks über die API. Aber woher wissen
 wir, ob diese Tests unseren Code umfassend testen? An dieser Stelle kommt die
 Codeabdeckung (engl.: Coverage) ins Spiel.
 
@@ -36,13 +36,13 @@ Ihr könnt einen Report für die Testabdeckung erstellen mit Coverage.py.
 
    .. code-block:: console
 
-      $ python -m pip install coverage pytest-cov
+      $ uv add --group tests pytest-cov
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m pip install coverage pytest-cov
+      C:> uv add --group tests pytest-cov
 
 .. note::
    Wollt ihr die Testabdeckung für Python 2 and Python<3.6 ermitteln, müsst ihr
@@ -50,21 +50,20 @@ Ihr könnt einen Report für die Testabdeckung erstellen mit Coverage.py.
 
 Um Tests mit Coverage.py auszuführen, müsst ihr die Option ``--cov`` hinzufügen
 und entweder einen Pfad zu dem Code angeben, den ihr messen wollt, oder das
-installierte Paket, das ihr testet. In unserem Fall ist das Projekt Items ein
-installiertes Paket, so dass wir es mit ``--cov=items`` testen werden.
+installierte Paket, das ihr testet. In unserem Fall ist das Projekt
+``cusy.task`` ein installiertes Paket, so dass wir es mit ``--cov=cusy.task``
+testen werden.
 
 Auf die normale pytest-Ausgabe folgt der Coverage-Bericht, wie hier gezeigt:
 
 .. code-block:: pytest
 
-    $ cd /PATH/TO/items
-    $ python3 -m venv .venv
-    $ . .venv/bin/activate
-    $ python -m pip install ".[dev]"
-    $ pytest --cov=items
+    $ cd /PATH/TO/cusy.tasks
+    $ uv sync --group tests
+    $ uv run pytest --cov=cusy.tasks
     ============================= test session starts ==============================
     ...
-    rootdir: /Users/veit/cusy/prj/items
+    rootdir: /Users/veit/cusy/prj/cusy.tasks
     configfile: pyproject.toml
     testpaths: tests
     plugins: cov-4.1.0, Faker-19.11.0
@@ -84,10 +83,10 @@ Auf die normale pytest-Ausgabe folgt der Coverage-Bericht, wie hier gezeigt:
     ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
     Name                    Stmts   Miss  Cover
     -------------------------------------------
-    src/items/__init__.py       3      0   100%
-    src/items/api.py           70      1    99%
-    src/items/cli.py           38      9    76%
-    src/items/db.py            23      0   100%
+    src/cusy.tasks/__init__.py  3      0   100%
+    src/cusy.tasks/api.py      70      1    99%
+    src/cusy.tasks/cli.py      38      9    76%
+    src/cusy.tasks/db.py       23      0   100%
     -------------------------------------------
     TOTAL                     134     10    93%
 
@@ -95,17 +94,17 @@ Auf die normale pytest-Ausgabe folgt der Coverage-Bericht, wie hier gezeigt:
     ============================== 35 passed in 0.11s ==============================
 
 Die vorherige Ausgabe wurde von den Berichtsfunktionen von coverage erzeugt, obwohl wir coverage nicht direkt aufgerufen haben.
-``pytest --cov=items`` wies das ``pytest-cov``-Plugin an
+``pytest --cov=cusy.tasks`` wies das ``pytest-cov``-Plugin an
 
-* ``coverage`` mit ``--source`` auf ``items`` zu setzen, während pytest mit den
-  Tests ausgeführt wird
+* ``coverage`` mit ``--source`` auf ``cusy.tasks`` zu setzen, während pytest mit
+  den Tests ausgeführt wird
 * ``coverage report`` auszuführen für den Line-Coverage-Report
 
 Ohne pytest-cov würden die Befehle wie folgt aussehen:
 
 .. code-block:: console
 
-    $ coverage run --source=items -m pytest
+    $ coverage run --source=cusy.tasks -m pytest
     $ coverage report
 
 Die Dateien :file:`__init__.py` und :file:`db.py` haben eine Abdeckung von 100%,
@@ -125,10 +124,10 @@ Wir können herausfinden, was übersehen wurde, indem wir die Tests erneut ausf�
 
 .. code-block:: pytest
 
-    pytest --cov=items --cov-report=term-missing
+    $ pytest --cov=cusy.tasks --cov-report=term-missing
     ============================= test session starts ==============================
     ...
-    rootdir: /Users/veit/cusy/prj/items
+    rootdir: /Users/veit/cusy/prj/cusy.tasks
     configfile: pyproject.toml
     testpaths: tests
     plugins: cov-4.1.0, Faker-19.11.0
@@ -148,10 +147,10 @@ Wir können herausfinden, was übersehen wurde, indem wir die Tests erneut ausf�
     ---------- coverage: platform darwin, python 3.11.5-final-0 ----------
     Name                    Stmts   Miss  Cover   Missing
     -----------------------------------------------------
-    src/items/__init__.py       3      0   100%
-    src/items/api.py           68      1    99%   52
-    src/items/cli.py           38      9    76%   18-19, 25, 39-43, 51
-    src/items/db.py            23      0   100%
+    src/cusy.tasks/__init__.py  3      0   100%
+    src/cusy.tasks/api.py      68      1    99%   52
+    src/cusy.tasks/cli.py      38      9    76%   18-19, 25, 39-43, 51
+    src/cusy.tasks/db.py       23      0   100%
     -----------------------------------------------------
     TOTAL                     132     10    92%
 
@@ -175,11 +174,9 @@ vorherigen Coverage-Run erstellt:
 
 .. code-block:: console
 
-    $ cd /PATH/TO/items
-    $ python3 -m venv .venv
-    $ . .venv/bin/activate
-    $ python -m pip install ".[dev]"
-    $ pytest --cov=items --cov-report=html
+    $ cd /PATH/TO/cusy.tasks
+    $ uv sync --group tests
+    $ uv run pytest --cov=cusy.tasks --cov-report=html
 
 Bei beiden Befehlen wird Coverage.py aufgefordert, einen HTML-Bericht im
 :file:`htmlcov/`-Verzeichnis zu erstellen. Öffnet :file:`htmlcov/index.html` mit
@@ -188,11 +185,11 @@ einem Browser und ihr solltet folgendes sehen:
 .. image:: coverage.png
    :alt: Coverage report: 92%
 
-Wenn ihr auf die :file:`src/items/api.py:`-Datei klickt, wird ein Bericht für
-diese Datei angezeigt:
+Wenn ihr auf die :file:`src/cusy/tasks/api.py`-Datei klickt, wird ein Bericht
+für diese Datei angezeigt:
 
 .. image:: api.png
-   :alt:  Coverage for src/items/api.py: 99%
+   :alt:  Coverage for src/uv run pytest --cov=cusy.tasks --cov-report=html/api.py: 99%
 
 Der obere Teil des Berichts zeigt den Prozentsatz der abgedeckten Zeilen (99%), die Gesamtzahl der Statements (68) und wie viele Statements ausgeführt (67),
 übersehen (1) und ausgeschlossen (0) wurden. Klickt auf
@@ -202,7 +199,7 @@ wurden:
 .. image:: missing.png
    :alt: raise MissingSummary
 
-Es sieht so aus, als hätte die Funktion :func:`add_item` eine Exception
+Es sieht so aus, als hätte die Funktion :func:`add_task` eine Exception
 ``MissingSummary``, die bisher nicht getestet wird.
 
 Code von der Testabdeckung ausschließen
@@ -210,11 +207,11 @@ Code von der Testabdeckung ausschließen
 
 In den HTML-Berichten findet ihr eine Spalte mit der Angabe *0 excluded*. Dies
 bezieht sich auf eine Funktion von Coverage.py, die es uns ermöglicht, einige
-Zeilen von der Prüfung auszuschließen. In Items schließen wir nichts aus. Es ist
-jedoch nicht ungewöhnlich, dass einige Codezeilen von der Berechnung der
-Testabdeckung ausgeschlossen werden, :abbr:`z.B. (zum Beispiel)` können Module,
-die sowohl importiert wie auch direkt ausgeführt werden sollen, einen Block
-enthalten, der so oder so ähnlich aussieht:
+Zeilen von der Prüfung auszuschließen. In ``cusy.tasks`` schließen wir nichts
+aus. Es ist jedoch nicht ungewöhnlich, dass einige Codezeilen von der Berechnung
+der Testabdeckung ausgeschlossen werden, :abbr:`z. B. (zum Beispiel)` können
+Module, die sowohl importiert wie auch direkt ausgeführt werden sollen, einen
+Block enthalten, der so oder so ähnlich aussieht:
 
 .. code-block:: python
 
@@ -313,7 +310,7 @@ Alternativ kann dies auch für alle Vorkommen konfiguriert werden:
      <https://pypi.org/project/coverage-conditional-plugin/>`_: Conditional
      coverage based on any rules you define
    * `Coverage.py regex pragmas
-     <https://nedbatchelder.com/blog/202507/coveragepy_regex_pragmas.html>`_
+     <https://nedbatchelder.com/blog/202507/coveragepy_regex_pragmas>`_
 
 .. _coverage_tip:
 

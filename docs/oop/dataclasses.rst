@@ -12,15 +12,15 @@ Klasse erstellen wollen.
    ich Matrizen mit Zahlen speichern muss, verwende ich :doc:`NumPy
    <Python4DataScience:workspace/numpy/index>`.
 
-Nehmen wir an, wir wollen eine Klasse speichern, die ein Item repräsentiert mit
-``summary``, ``owner``, ``state`` und ``id``. Wir können eine solche Klasse
+Nehmen wir an, wir wollen eine Klasse speichern, die einen Task repräsentiert
+mit ``summary``, ``owner``, ``state`` und ``id``. Wir können eine solche Klasse
 definieren mit:
 
 .. code-block:: pycon
 
    >>> from dataclasses import dataclass
    >>> @dataclass
-   ... class Item:
+   ... class Task:
    ...     summary: str = None
    ...     owner: str = None
    ...     state: str = "todo"
@@ -34,31 +34,31 @@ erhalte ich den Klassennamen und die Attribute:
 .. code-block:: pycon
 
    >>> i1
-   Item(summary='My first item', owner='veit', state='todo', id=1)
+   Task(summary='My first task', owner='veit', state='todo', id=1)
 
 Im Allgemeinen werden Datenklassen als syntaktischer Zucker für die Erstellung
 von Klassen, die Daten speichern, verwendet. Ihr könnt euren Klassen
 zusätzliche Funktionalität verleihen, indem ihr Methoden definiert. Wir werden
-der Klasse eine Methode hinzufügen, die ein Item-Objekt aus einem :doc:`Dict
+der Klasse eine Methode hinzufügen, die ein Task-Objekt aus einem :doc:`Dict
 <../types/dicts>` erstellt:
 
 .. code-block:: pycon
 
    >>> @dataclass
-   ... class Item:
+   ... class Task:
    ...     ...
    ...     @classmethod
    ...     def from_dict(cls, d):
-   ...         return Item(**d)
+   ...         return Task(**d)
    ...
-   >>> item_dict = {
-   ...     "summary": "My first item",
+   >>> task_dict = {
+   ...     "summary": "My first task",
    ...     "owner": "veit",
    ...     "state": "todo",
    ...     "id": 1,
    ... }
-   >>> Item.from_dict(item_dict)
-   Item(summary='My first item', owner='veit', state='todo', id=1)
+   >>> Task.from_dict(task_dict)
+   Task(summary='My first task', owner='veit', state='todo', id=1)
 
 .. tip::
    `cusy Seminar: Fortgeschrittenes Python

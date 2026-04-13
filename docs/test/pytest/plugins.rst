@@ -35,8 +35,8 @@ beliebte pytest-Plugins.
 Plugins installieren
 --------------------
 
-pytest-Plugins lassen sich, wie anderen Python-Pakete einfach mit :term:`pip`
-installieren: :samp:`python -m pip install {pytest-cov}`.
+pytest-Plugins lassen sich, wie anderen Python-Pakete einfach mit :term:`uv`
+installieren: :samp:`uv add --group tests {pytest-cov}`.
 
 Plugins für …
 -------------
@@ -335,7 +335,7 @@ lange Liste von Plugins, die das Testen weiter vereinfachen:
 ~~~~~~~~~~~~~~~~
 
 Wir haben `Faker <https://pypi.org/project/Faker/>`_ schon verwendet in
-:ref:`marker_fixtures_combined`, um mehrere Item-Instanzen zu erzeugen. Es gibt
+:ref:`marker_fixtures_combined`, um mehrere Task-Instanzen zu erzeugen. Es gibt
 viele Fälle in verschiedenen Bereichen, in denen es hilfreich ist, Fake-Daten zu
 erzeugen. Es überrascht daher nicht, dass es mehrere Plugins gibt, die diesen
 Bedarf decken:
@@ -366,7 +366,7 @@ Bedarf decken:
 
     .. image:: https://raster.shields.io/github/stars/adamchainz/time-machine
        :alt: Stars
-       :target: https://github.com/pytest-dev/adamchainz/time-machine
+       :target: https://github.com/adamchainz/time-machine
 
     .. image:: https://raster.shields.io/github/contributors/adamchainz/time-machine
        :alt: Contributors
@@ -539,7 +539,7 @@ Bedarf decken:
 
     .. image:: https://raster.shields.io/github/commit-activity/y/bloomberg/pytest-memray
        :alt: Commit activity
-       :target: https://github.com/bloomberg/pytest-memraygraphs/commit-activity
+       :target: https://github.com/bloomberg/pytest-memray/commit-activity
 
     .. image:: https://raster.shields.io/github/license/bloomberg/pytest-memray
        :alt: Lizenz

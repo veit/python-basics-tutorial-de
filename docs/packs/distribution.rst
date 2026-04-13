@@ -665,8 +665,8 @@ Diese Datei sollte Informationen enthalten,
    * GitHub-Dokumentation: `Hinzufügen einer Sicherheitsrichtlinie für dein
      Repository
      <https://docs.github.com/de/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/adding-a-security-policy-to-your-repository>`_
-   * `github.com/veit/items/security
-     <https://github.com/veit/items/security>`_
+   * `github.com/cusyio/cusy.tasks/security
+     <https://github.com/cusyio/cusy.tasks/security>`_
 
 Historische oder für binäre Erweiterungen benötigte Dateien
 -----------------------------------------------------------

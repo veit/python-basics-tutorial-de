@@ -8,7 +8,8 @@ Arrange-Act-Assert (AAA)
     wurde als Teil der :term:`testgetriebenen Entwicklung (TDD) <Testgetriebene
     Entwicklung>` populär.
 Given-When-Then (GWT)
-    wird im Kontext verhaltensgetriebener Entwicklung (BDD) verwendet.
+    wird im Kontext von :doc:`Behavior Driven Development (BDD) <../bdd>`
+    verwendet.
 
 Die Aufteilung in diese frei Phasen hat viele Vorteile. Dies trennt die Teile
 
@@ -39,13 +40,13 @@ Wenden wir diese Struktur als Beispiel auf einen unserer ersten Tests an:
 .. code-block:: python
 
     def test_equality_fail():
-        # Given two item objects with known contents
-        i1 = Item("do something", "veit")
-        i2 = Item("do something else", "veit.schiele")
-        # WHEN the two item objects are not identical
+        # Given two task objects with known contents
+        i1 = Task("do something", "veit")
+        i2 = Task("do something else", "veit.schiele")
+        # WHEN the two task objects are not identical
         if i1 != i2:
             # THEN the result will be a string
-            pytest.fail("The items are not identical!")
+            pytest.fail("The tasks are not identical!")
 
 Die Struktur hilft dabei, die Testfunktionen zu organisieren und sich auf das
 Testen **eines** Verhaltens zu konzentrieren. Die Struktur hilft euch auch
@@ -63,25 +64,25 @@ Bislang haben wir Testfunktionen innerhalb von Testmodulen in einem
 Dateisystem-Verzeichnis geschrieben. Diese Strukturierung des Testcodes
 funktioniert eigentlich ganz gut und ist für viele Projekte ausreichend.
 pytest erlaubt uns jedoch auch, Tests mit Klassen zu gruppieren. Nehmen wir
-einige der Testfunktionen, die sich auf die Gleichheit  der Items beziehen, und
+einige der Testfunktionen, die sich auf die Gleichheit der Tasks beziehen, und
 gruppieren sie in einer Klasse:
 
 .. code-block:: python
 
     class TestEquality:
         def test_equality(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something", "veit", "todo", 42)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something", "veit", "todo", 42)
             assert i1 == i2
 
         def test_equality_with_diff_ids(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something", "veit", "todo", 43)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something", "veit", "todo", 43)
             assert i1 == i2
 
         def test_inequality(self):
-            i1 = Item("do something", "veit", "todo", 42)
-            i2 = Item("do something else", "veit", "done", 42)
+            i1 = Task("do something", "veit", "todo", 42)
+            i2 = Task("do something else", "veit", "done", 42)
             assert i1 != i2
 
 Der Code sieht so ziemlich genauso aus wie vorher, mit der Ausnahme, dass jede
@@ -90,7 +91,7 @@ Methoden zusammen ausführen, indem wir die Klasse angeben:
 
 .. code-block:: pytest
 
-    $ pytest -v tests/test_classes.py::TestEquality
+    $ uv run pytest -v tests/test_classes.py::TestEquality
     ============================= test session starts ==============================
     …
     collected 3 items
@@ -105,7 +106,7 @@ Wir können immer noch zu einer einzigen Methode kommen:
 
 .. code-block:: pytest
 
-    $ pytest -v tests/test_classes.py::TestEquality::test_equality
+    $ uv run pytest -v tests/test_classes.py::TestEquality::test_equality
     ============================= test session starts ==============================
     …
     collected 1 item
@@ -176,7 +177,7 @@ Testpräfixe zu filtern, also :abbr:`z.B. (zum Beispiel)` alle Tests der Klasse
 
 .. code-block:: pytest
 
-    $ pytest -v -k TestEquality
+    $ uv run pytest -v -k TestEquality
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected
@@ -191,7 +192,7 @@ oder alle Tests mit ``equality`` im Namen:
 
 .. code-block:: pytest
 
-    pytest -v --tb=no -k equality
+    $ uv run pytest -v --tb=no -k equality
     ============================= test session starts ==============================
     …
     collected 7 items / 3 deselected / 4 selected
@@ -199,10 +200,10 @@ oder alle Tests mit ``equality`` im Namen:
     test_classes.py::TestEquality::test_equality PASSED                      [ 25%]
     test_classes.py::TestEquality::test_equality_with_diff_ids PASSED        [ 50%]
     test_classes.py::TestEquality::test_inequality PASSED                    [ 75%]
-    test_item_fail.py::test_equality_fail FAILED                             [100%]
+    test_task_fail.py::test_equality_fail FAILED                             [100%]
 
     =========================== short test summary info ============================
-    FAILED test_item_fail.py::test_equality_fail - Failed: The items are not identical!
+    FAILED test_task_fail.py::test_equality_fail - Failed: The tasks are not identical!
     ================== 1 failed, 3 passed, 3 deselected in 0.01s ===================
 
 Eines davon ist leider unser Fehlerbeispiel. Wir können es beseitigen, indem wir
@@ -210,7 +211,7 @@ den Ausdruck erweitern:
 
 .. code-block:: pytest
 
-    $ pytest -v --tb=no -k "equality and not equality_fail"
+    $ uv run pytest -v --tb=no -k "equality and not equality_fail"
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected
@@ -226,7 +227,7 @@ komplexe Ausdrücke zu erstellen. Hier ist ein Testlauf aller Tests mit oder "id
 
 .. code-block:: pytest
 
-    $ pytest -v --tb=no -k "(inequality or id) and not _fail"
+    $ uv run pytest -v --tb=no -k "(inequality or id) and not _fail"
     ============================= test session starts ==============================
     …
     collected 7 items / 4 deselected / 3 selected

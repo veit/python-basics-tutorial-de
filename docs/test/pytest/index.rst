@@ -26,28 +26,26 @@ pytest
   für fortgeschrittene Testanforderungen; unittest ist in seiner Erweiterbarkeit
   eingeschränkter.
 
+.. seealso::
+   Im :doc:`Jupyter Tutorial <jupyter-tutorial:notebook/testing/ipytest>` ist
+   beschrieben, wie pytest auch in Jupyter Notebooks verwendet werden kann.
+
 Installation
 ------------
 
-Ihr könnt pytest in :ref:`virtuellen Umgebungen <venv>` installieren mit:
+Ihr könnt pytest mit :ref:`uv` installieren:
 
 .. tab:: Linux/macOS
 
    .. code-block:: console
 
-      $ python -m pip install pytest
-      Collecting pytest
-      ...
-      Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
+      $ uv add --group tests pytest
 
 .. tab:: Windows
 
    .. code-block:: ps1con
 
-      C:> python -m pip install pytest
-      Collecting pytest
-      ...
-      Successfully installed attrs-21.2.0 iniconfig-1.1.1 pluggy-1.0.0 py-1.10.0 pytest-6.2.5 toml-0.10.2
+      C:>  uv add --group tests pytest
 
 .. toctree::
    :titlesonly:
