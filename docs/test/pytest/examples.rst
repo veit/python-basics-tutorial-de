@@ -20,8 +20,7 @@ pytest ausführen
 
 .. code-block:: pytest
 
-   $ cd docs/test/pytest
-   $ pytest test_one.py
+   $ uv run pytest docs/test/pytest/test_one.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -78,7 +77,7 @@ mit ``-v`` den kompletten Diff erhalten. Lasst uns das tun:
 
 .. code-block:: pytest
 
-   $ pytest -v test_two.py
+   $ uv run pytest -v docs/test/pytest/test_two.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -116,7 +115,7 @@ zwei Dateien mit Tests ausgeführt:
 
 .. code-block:: pytest
 
-   $ pytest --tb=no
+   $ uv run pytest --tb=no docs/test/pytest/
    ============================= test session starts ==============================
    …
 
@@ -137,7 +136,7 @@ hinzufügen:
 
 .. code-block:: pytest
 
-   $ pytest -v test_one.py::test_sorted
+   $ uv run pytest -v docs/test/pytest/test_one.py::test_sorted
    ============================= test session starts ==============================
    …
    collected 1 item

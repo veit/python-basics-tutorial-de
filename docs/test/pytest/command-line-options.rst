@@ -14,12 +14,12 @@ abhängt, könnt ihr dies mit folgendem Muster erreichen:
 .. code-block:: python
    :caption: test_example.py
 
-   def test_db(items_db, db_path, cmdopt):
+   def test_db(tasks_db, db_path, cmdopt):
        if cmdopt == "json":
            print("Save as JSON file")
        elif cmdopt == "sqlite":
            print("Save in a SQLite database")
-       assert items_db.path() == db_path
+       assert tasks_db.path() == db_path
 
 Damit dies funktioniert, muss die Befehlszeilenoption hinzugefügt und ``cmdopt``
 über eine Fixture-Funktion bereitgestellt werden:
@@ -47,7 +47,7 @@ Anschließend könnt ihr eure Tests :abbr:`z. B. (zum Beispiel)` aufrufen mit:
 
 .. code-block:: console
 
-   $ pytest --sqlite
+   $ uv run pytest --sqlite
 
 Darüberhinaus könnt ihr eine einfache Validierung der Eingabe hinzufügen, indem
 ihr die Auswahlmöglichkeiten auflistet:
@@ -69,7 +69,7 @@ So bekommen wir Feedback zu einem falschen Argument:
 
 .. code-block:: console
 
-   $ pytest --postgresql
+   $ uv run pytest --postgresql
    ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
    pytest: error: argument --cmdopt: invalid choice: 'postgresql' (choose from json, sqlite)
 
@@ -190,7 +190,7 @@ bereitgestellt werden:
    platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
    cachedir: .pytest_cache
    Is GIL enabled? False
-   rootdir: /Users/veit/sandbox/items
+   rootdir: /Users/veit/prj/cusy.tasks
    configfile: pyproject.toml
    plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
    ...

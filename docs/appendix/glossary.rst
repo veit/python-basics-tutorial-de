@@ -8,7 +8,7 @@ Glossar
    User Acceptance Test
        Überprüfung, ob Software aus Sicht der User wie beabsichtigt funktioniert
        und diese die Software akzeptieren. Akzeptanztests werden vor allem beim
-       :term:` Extreme Programming` verwendet.
+       :term:`Extreme Programming` verwendet.
 
    Argument
        Ein Wert, der einer :term:`Funktion` übergeben wird. Es gibt zwei Arten
@@ -19,6 +19,7 @@ Glossar
            ``name=``) in einem Funktionsaufruf vorangestellt ist oder das als
            Wert in einem Wörterbuch übergeben wird, dem ``**`` vorangestellt
            ist.
+
        Positionsargument
            ein Argument, das kein Schlüsselwortargument ist. Positionsargumente
            können am Anfang einer Argumentliste stehen und/oder als Elemente
@@ -704,7 +705,7 @@ Glossar
        :doc:`/test/unittest`
            unterstützt euch bei der Automatisierung von Tests.
        :doc:`/test/mock`
-           erlaubt euch das Erstellen und Verwenden von Mock-Objekten.
+           erlaubt euch das Erstellen und Verwenden von :term:`Mock`-Objekten.
        :doc:`../document/doctest`
            ermöglicht das Testen von in Python :term:`Docstrings <Docstring>`
            geschriebenen Tests.
@@ -727,26 +728,45 @@ Glossar
        verschiedenen Plattformen.
 
    Dummy
-       Objekt, das herumgereicht, aber nie wirklich benutzt wird. Normalerweise
-       werden Dummies nur zum Füllen von Parameter-Listen verwendet.
+       Ein Objekt, das weitergereicht wird, aber nicht für die Verwendung in
+       euren Tests vorgesehen ist. Es hat keinerlei Auswirkungen auf das
+       Verhalten Ihrer Tests. Ein Beispiel für einen Dummy könnte ein Attribut
+       sein, das zur Instanziierung einer Klasse benötigt wird, für den Test
+       jedoch nicht erforderlich ist.
 
    ``except``
        Schlüsselwort, das verwendet wird, um eine :term:`Exception` abzufangen
        und sorgfältig zu behandeln.
 
    Fake
-       Objekt, das eine tatsächlich funktionierende Implementierung hat, in der
-       Regel aber eine Abkürzung nimmt, die es nicht für die Produktion geeignet
-       macht.
+       Simulierte Version einer Klasse oder einer Methode. Sie verfügt über eine
+       funktionsfähige Implementierung, nutzt jedoch eine Art Abkürzung, sodass
+       sie für den Produktivbetrieb ungeeignet ist. Beispielsweise könnte eine
+       In-Memory-Datenbank zu Testzwecken verwendet werden, die jedoch nicht im
+       Produktivbetrieb verwendet wird. In diesem Zusammenhang würde die
+       In-Memory-Datenbank als Fake fungieren.
 
    Integrationstest
        Tests, die überprüfen, ob die verschiedenen Teile der Software wie
        erwartet zusammenarbeiten.
 
    Mock
-       Objekte, die mit :term:`Exception` programmiert sind, die eine
-       Spezifikation der Aufrufe bilden, die ihr voraussichtlich erhalten
-       werdet.
+       Ein Mock simuliert Attribute, Klassen und Methoden. Dies ermöglicht
+       Entwickler'innen,
+
+       * einige Aspekte ihres Codes besser testen zu können
+       * in einer kontrollierten Umgebung zu testen
+       * auf externe Abhängigkeiten zu testen
+
+       Im Gegensatz zu :term:`Stubs <Stub>` kann ein Mock nicht nur zur
+       Überprüfung des Ergebnisses verwendet werden, sondern auch dazu, **wie**
+       das Ergebnis erzielt wurde :abbr:`bzw. (beziehungsweise)` ob die
+       richtigen Methoden aufgerufen wurden.
+
+       Die Python-Bibliothek für Mocks ist :doc:`unittest.mock <../test/mock>`.
+       Sie wird auch von :doc:`../test/pytest/index` unterstützt. Alternativ
+       könnt ihr jedoch auch `pytest-mock
+       <https://pypi.org/project/pytest-mock/>`_ verwenden.
 
        .. seealso::
           * `Mock-Objekt <https://de.wikipedia.org/wiki/Mock-Objekt>`_
@@ -761,34 +781,37 @@ Glossar
        Tests zum Schutz vor neuen Fehlern oder Regressionen, die durch neue
        Software und Updates auftreten können.
 
-   Stubs
-       liefern vorgefertigte Antworten auf Aufrufe, die während des Tests
-       getätigt werden, und reagieren in der Regel überhaupt nicht auf
-       irgendetwas, das nicht für den Test programmiert wurde.
+   Spy
+       Spies werden verwendet, um echte Objekte zu umhüllen und standardmäßig
+       alle Methodenaufrufe an das Originalobjekt weiterzuleiten. Sie fangen
+       also alle Aufrufe an ein echtes Objekt ab und zeichnen sie auf. Dies
+       ermöglicht, Aufrufe an das Originalobjekt zu überprüfen (:abbr:`z. B.
+       (zum Beispiel)` wie oft eine bestimmte Methode aufgerufen wurde, ohne das
+       Originalobjekt zu ersetzen (wie es beispielsweise ein :term:`Mock` tut.
+
+   Stub
+       Nicht-reales Objekt mit vorprogrammiertem Verhalten. Meistens geben Stubs
+       einfach feste Werte, :abbr:`sog. (sogenannte)` *Canned Data* zurück.
 
    Test-driven development
    TDD
    Testgetriebene Entwicklung
        Technik zur Erstellung von Software, die die Softwareentwicklung durch
        das Schreiben von Tests führt. Sie wurde Ende der 1990er Jahre von Kent
-       Beck als Teil von :term:` Extreme Programming` entwickelt. Im
-       Wesentlichen folgen dabei wiederholt drei einfache Schritte:
+       Beck als Teil von :term:`Extreme Programming` entwickelt. Im Wesentlichen
+       folgen dabei wiederholt drei einfache Schritte:
 
        #. Schreiben eines Tests für die nächste Funktion, die hinzugefügt werden
           soll.
        #. Schreiben des Funktionscode, bis der Test bestanden ist.
-       #. Überarbeiten sowohl den neuen als auch den alten Code, um ihn gut zu
+       #. Überarbeiten sowohl des neuen wie auch des alten Code, um ihn gut zu
           strukturieren.
 
-       Obwohl diese drei Schritte, die oft als *„Red – Green – Refactor“*
-       zusammengefasst werden, das Herzstück des Prozesses bilden, gibt es auch
-       einen wichtigen ersten Schritt, bei dem zunächst eine Liste mit
-       Testfällen erstellt wird. Anschließend wird einer dieser Tests
-       ausgewählt, *„Red – Green – Refactor“* darauf angewendet  und dann der
-       nächste Test ausgewählt. Während des Prozesses werden weitere Tests
-       dieser Liste hinzugefügt.
+       Diese drei Schritte werden oft als *„Red – Green – Refactor“*
+       zusammengefasst.
 
        .. seealso::
+          * :doc:`../test/tdd`
           * Kent Beck: `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_
           * Kent Beck: `Test-driven development by example
             <https://archive.org/details/est-driven-development-by-example/test-driven-development-by-example/>`_

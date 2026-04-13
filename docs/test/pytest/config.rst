@@ -39,7 +39,7 @@ Projekt-Verzeichnisstruktur an:
 .. code-block:: console
    :emphasize-lines: 3, 7, 8
 
-    items
+    cusy.tasks
     ├── …
     ├── pyproject.toml
     ├── src
@@ -49,10 +49,10 @@ Projekt-Verzeichnisstruktur an:
         ├── conftest.py
         └── test_….py
 
-Im Falle des ``items``-Projekts, das wir bisher zum Testen verwendet haben, gibt
-es auf der obersten Ebene eine :file:`pyproject.toml`-Datei und ein Verzeichnis
-:file:`tests`. Wir werden uns auf diese Struktur beziehen, wenn wir im weiteren
-Verlauf dieses Abschnitts über die verschiedenen Dateien sprechen.
+Im Falle des ``cusy.tasks``-Projekts, das wir bisher zum Testen verwendet haben,
+gibt es auf der obersten Ebene eine :file:`pyproject.toml`-Datei und ein
+Verzeichnis :file:`tests`. Wir werden uns auf diese Struktur beziehen, wenn wir
+im weiteren Verlauf dieses Abschnitts über die verschiedenen Dateien sprechen.
 
 Speichern von Einstellungen und Optionen in :file:`pyproject.toml`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Projekteinstellungen verwendet werden.
      "exception: Only run expected exceptions",
      "finish: Only run finish tests",
      "smoke: Small subset of all tests",
-     "num_items: Number of items to be pre-filled for the items_db fixture",
+     "num_tasks: Number of tasks to be pre-filled for the tasks_db fixture",
    ]
 
 ``[tool.pytest]`` kennzeichnet den Beginn des pytest-Abschnitts. Danach folgen
@@ -224,11 +224,11 @@ findet:
 .. code-block:: pytest
    :emphasize-lines: 5, 6
 
-   $ cd items
-   $ pytest
+   $ cd cusy.tasks
+   $ uv run pytest
    ============================= test session starts ==============================
    …
-   rootdir: /Users/veit/cusy/prj/items
+   rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
    plugins: Faker-19.11.0
@@ -266,11 +266,10 @@ denselben Testdateinamen in mehreren Verzeichnissen verwenden, :abbr:`z.B. (zum
 Beispiel)`:
 
 .. code-block:: console
-   :emphasize-lines: 8, 11
+   :emphasize-lines: 7, 10
 
-    items
+    cusy.tasks
     ├── …
-    ├── pytest.ini
     ├── src
     │   └── …
     └── tests
@@ -290,10 +289,10 @@ in beiden Verzeichnissen liegt:
 
 .. code-block:: pytest
 
-    $ pytest
+    $ uv run pytest
     ============================= test session starts ==============================
     …
-    rootdir: /Users/veit/cusy/prj/items
+    rootdir: /Users/veit/cusy/prj/cusy.tasks
     configfile: pyproject.toml
     testpaths: tests
     plugins: Faker-19.11.0

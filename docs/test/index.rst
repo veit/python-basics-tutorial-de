@@ -12,17 +12,14 @@ unterschieden.
    `cusy Seminar: Effizient Testen mit Python
    <https://cusy.io/de/our-training-courses/efficient-testing-with-python.html>`_
 
-.. seealso::
-   * `Python Testing and Continuous Integration
-     <http://carpentries-incubator.github.io/python-testing/>`_
-
 .. toctree::
    :titlesonly:
    :hidden:
 
    unittest
    pytest/index
-   behave/index
+   tox
    mock
    hypothesis
-   tox
+   tdd
+   bdd

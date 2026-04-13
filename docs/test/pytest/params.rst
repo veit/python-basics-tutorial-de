@@ -25,20 +25,20 @@ die Funktionen vollständig zu testen. Parametrisiertes Testen ist eine
 Möglichkeit, mehrere Datensätze durch denselben Test zu schicken und pytest
 berichten zu lassen, wenn einer der Datensätze fehlschlägt. Um das Problem zu
 verstehen, das parametrisierte Tests zu lösen versuchen, schreiben wir einige
-Tests für die API-Methode ``finish()`` aus :file:`src/items/api.py`:
+Tests für die API-Methode ``finish()`` aus :file:`src/cusy.tasks/api.py`:
 
 .. code-block:: python
 
-   def finish(self, item_id: int):
-       """Set an item state to done."""
-       self.update_item(item_id, Item(state="done"))
+   def finish(self, task_id: int):
+       """Set a task state to done."""
+       self.update_task(task_id, Task(state="done"))
 
 Die in der Anwendung verwendeten Zustände sind *todo*, *in progress* und *done*,
 und ``finish()`` setzt den Zustand einer Karte auf *done*. Um dies zu testen,
 könnten wir
 
-#. ein Item-Objekt erstellen und es zur Datenbank hinzufügen, damit wir eine
-   Item haben, mit der wir arbeiten können,
+#. ein Task-Objekt erstellen und es zur Datenbank hinzufügen, damit wir einen
+   Task haben, mit der wir arbeiten können,
 #. ``finish()`` aufrufen
 #. sicherstellen, dass der Endzustand *done* ist.
 
@@ -47,38 +47,38 @@ oder sogar schon "done" sein. Lasst uns alle drei testen:
 
 .. code-block:: python
 
-   from items import Item
+   from cusy.tasks import Task
 
 
-   def test_finish_from_in_prog(items_db):
-       index = items_db.add_item(
-           Item("Update pytest section", state="in progress")
+   def test_finish_from_in_prog(tasks_db):
+       index = tasks_db.add_task(
+           Task("Update pytest section", state="in progress")
        )
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 
-   def test_finish_from_done(items_db):
-       index = items_db.add_item(
-           Item("Update cibuildwheel section", state="done")
+   def test_finish_from_done(tasks_db):
+       index = tasks_db.add_task(
+           Task("Update cibuildwheel section", state="done")
        )
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 
-   def test_finish_from_todo(items_db):
-       index = items_db.add_item(Item("Update mock tests", state="todo"))
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+   def test_finish_from_todo(tasks_db):
+       index = tasks_db.add_task(Task("Update mock tests", state="todo"))
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 Lassen wir es laufen:
 
 .. code-block:: pytest
 
-   pytest -v tests/test_finish.py
+   $ uv run pytest -v tests/test_finish.py
    ============================= test session starts ==============================
    …
    collected 3 items
@@ -96,25 +96,25 @@ zusammenzufassen, etwa so:
 
 .. code-block:: python
 
-   from items import Item
+   from cusy.tasks import Task
 
 
-   def test_finish(items_db):
+   def test_finish(tasks_db):
        for i in [
-           Item("Update pytest section", state="done"),
-           Item("Update cibuildwheel section", state="in progress"),
-           Item("Update mock tests", state="todo"),
+           Task("Update pytest section", state="done"),
+           Task("Update cibuildwheel section", state="in progress"),
+           Task("Update mock tests", state="todo"),
        ]:
-           index = items_db.add_item(i)
-           items_db.finish(index)
-           item = items_db.get_item(index)
-           assert item.state == "done"
+           index = tasks_db.add_task(i)
+           tasks_db.finish(index)
+           task = tasks_db.get_task(index)
+           assert task.state == "done"
 
 Nun lassen wir :file:`tests/test_finish.py` erneut laufen:
 
 .. code-block:: pytest
 
-   $ pytest -v tests/test_finish.py
+   $ uv run pytest -v tests/test_finish.py
    ============================= test session starts ==============================
    …
    collected 1 item
@@ -146,7 +146,7 @@ zu übergebenden Argumente zu definieren, etwa so:
 
    import pytest
 
-   from items import Item
+   from cusy.tasks import Task
 
 
    @pytest.mark.parametrize(
@@ -157,15 +157,15 @@ zu übergebenden Argumente zu definieren, etwa so:
            ("Update mock tests", "todo"),
        ],
    )
-   def test_finish(items_db, start_summary, start_state):
-       initial_item = Item(summary=start_summary, state=start_state)
-       index = items_db.add_item(initial_item)
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+   def test_finish(tasks_db, start_summary, start_state):
+       initial_task = Task(summary=start_summary, state=start_state)
+       index = tasks_db.add_task(initial_task)
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 Die ``test_finish()``-Funktion  hat jetzt ihre ursprüngliche
-``items_db``-Fixture als Parameter, aber auch zwei neue Parameter:
+``tasks_db``-Fixture als Parameter, aber auch zwei neue Parameter:
 ``start_summary`` und ``start_state``. Diese stimmen direkt mit dem ersten
 Argument von ``@pytest.mark.parametrize()`` überein.
 
@@ -183,7 +183,7 @@ durch und meldet jeden als separaten Test:
 
 .. code-block:: console
 
-   $ pytest -v tests/test_finish.py
+   $ uv run pytest -v tests/test_finish.py
    ============================= test session starts ==============================
    …
    collected 3 items
@@ -203,7 +203,7 @@ macht jeden Testfall komplexer. Ändern wir die Parametrisierung in
 
    import pytest
 
-   from items import Item
+   from cusy.tasks import Task
 
 
    @pytest.mark.parametrize(
@@ -214,19 +214,19 @@ macht jeden Testfall komplexer. Ändern wir die Parametrisierung in
            "todo",
        ],
    )
-   def test_finish(items_db, start_state):
-       i = Item("Update pytest section", state=start_state)
-       index = items_db.add_item(i)
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+   def test_finish(tasks_db, start_state):
+       i = Task("Update pytest section", state=start_state)
+       index = tasks_db.add_task(i)
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 Wenn wir die Tests jetzt ausführen, konzentrieren sie sich auf die Veränderung,
 die uns wichtig ist:
 
 .. code-block:: console
 
-   $ pytest -v tests/test_finish.py
+   $ uv run pytest -v tests/test_finish.py
    ============================= test session starts ==============================
    …
    collected 3 items
@@ -257,7 +257,7 @@ jeden Fixture-Wert einmal aufgerufen. Auch die Syntax ist anders:
 
    import pytest
 
-   from items import Item
+   from cusy.tasks import Task
 
 
    @pytest.fixture(params=["done", "in progress", "todo"])
@@ -265,12 +265,12 @@ jeden Fixture-Wert einmal aufgerufen. Auch die Syntax ist anders:
        return request.param
 
 
-   def test_finish(items_db, start_state):
-       i = Item("Update pytest section", state=start_state)
-       index = items_db.add_item(i)
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+   def test_finish(tasks_db, start_state):
+       i = Task("Update pytest section", state=start_state)
+       index = tasks_db.add_task(i)
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 Das bedeutet, dass pytest ``start_state()`` dreimal aufruft, jeweils einmal für
 alle Werte in ``params``. Jeder Wert von ``params`` wird in ``request.param``
@@ -286,7 +286,7 @@ Und nach all dem sieht die Ausgabe genauso aus wie vorher:
 
 .. code-block:: console
 
-   $ pytest -v tests/test_finish.py
+   $ uv run pytest -v tests/test_finish.py
    ============================= test session starts ==============================
    …
    collected 3 items
@@ -323,7 +323,7 @@ sieht wie folgt aus:
 
 .. code-block:: python
 
-   from items import Item
+   from cusy.tasks import Task
 
 
    def pytest_generate_tests(metafunc):
@@ -331,12 +331,12 @@ sieht wie folgt aus:
            metafunc.parametrize("start_state", ["done", "in progress", "todo"])
 
 
-   def test_finish(items_db, start_state):
-       i = Item("Update pytest section", state=start_state)
-       index = items_db.add_item(i)
-       items_db.finish(index)
-       item = items_db.get_item(index)
-       assert item.state == "done"
+   def test_finish(tasks_db, start_state):
+       i = Task("Update pytest section", state=start_state)
+       index = tasks_db.add_task(i)
+       tasks_db.finish(index)
+       task = tasks_db.get_task(index)
+       assert task.state == "done"
 
 Die ``test_finish()``-Funktion hat sich nicht geändert; wir haben nur die Art
 und Weise geändert, wie pytest den Wert für ``initial_state`` bei jedem
@@ -394,9 +394,9 @@ Hier ist ein einfaches Beispiel, wie ihr dies erreichen könnt.
    import pytest
 
 
-   def test_db_initialised(items_db):
+   def test_db_initialised(tasks_db):
        # An example test
-       if items_db.__class__.__name__ == "Sqlite":
+       if tasks_db.__class__.__name__ == "Sqlite":
            pytest.fail("Deliberately failing for demonstration purposes")
 
 Wir können nun eine Testkonfiguration hinzufügen, die zwei Aufrufe der Funktion
@@ -410,8 +410,8 @@ ein Datenbankobjekt für die eigentlichen Testaufrufe erstellt:
 
 
    def pytest_generate_tests(metafunc):
-       if "items_db" in metafunc.fixturenames:
-           metafunc.parametrize("items_db", ["json", "sqlite"], indirect=True)
+       if "tasks_db" in metafunc.fixturenames:
+           metafunc.parametrize("tasks_db", ["json", "sqlite"], indirect=True)
 
 
    class Json:
@@ -423,7 +423,7 @@ ein Datenbankobjekt für die eigentlichen Testaufrufe erstellt:
 
 
    @pytest.fixture
-   def items_db(request):
+   def tasks_db(request):
        if request.param == "json":
            return Json()
        elif request.param == "sqlite":
@@ -440,12 +440,12 @@ aussieht:
    $ uv run pytest tests/test_backends.py --collect-only
    ============================= test session starts ==============================
    platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
-   rootdir: /Users/veit/sandbox/items
+   rootdir: /Users/veit/sandbox/cusy.tasks
    configfile: pyproject.toml
    plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
    collected 2 items
 
-   <Dir items>
+   <Dir cusy.tasks>
      <Dir tests>
        <Module test_backends.py>
          <Function test_db_initialised[json]>
@@ -462,7 +462,7 @@ aussieht:
 
    db = <conftest.Sqlite object at 2491125695488>
 
-       def test_db_initialised(items_db):
+       def test_db_initialised(tasks_db):
            # An example test
            if db.__class__.__name__ == "Sqlite":
    >           pytest.fail("Deliberately failing for demo purposes")
