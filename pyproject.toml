@@ -20,7 +20,7 @@ classifiers = [
 ]
 dependencies = []
 urls."Bug Tracker" = "https://github.com/veit/python-basics-tutorial-de/issues"
-urls."Homepage" = "https://github.com/veit/python-basics-tutorial-de/"
+urls.Homepage = "https://github.com/veit/python-basics-tutorial-de/"
 
 [dependency-groups]
 dev = [
@@ -36,7 +36,7 @@ docs = [
   "matplotlib",                     # matplotlib is required for social cards
   "nbsphinx",
   "pygments-pytest",
-  "sphinx<8.2",                     # furo requires sphinx < 8.2
+  "sphinx",
   "sphinx-copybutton",
   "sphinx-inline-tabs",
   "sphinx-lint",
