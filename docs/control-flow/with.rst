@@ -3,10 +3,10 @@ Kontextmanagement mit ``with``
 
 Eine rationellere Art, das Muster ``try``-``except``-``finally`` zu kapseln, ist
 die Verwendung des Schlüsselworts ``with`` und eines Kontextmanagers. Python
-definiert Kontextmanager für Dinge wie den Zugriff auf :doc:`/save-data/files`
-und eigene Kontextmanager. Ein Vorteil von Kontextmanagern ist, dass sie
-Bereinigungsaktionen definieren können, die immer ausgeführt werden, unabhängig
-davon, ob eine Ausnahme auftritt oder nicht.
+definiert Kontextmanager für Dinge wie den Zugriff auf
+:doc:`/save-data/files-directories` und eigene Kontextmanager. Ein Vorteil von
+Kontextmanagern ist, dass sie Bereinigungsaktionen definieren können, die immer
+ausgeführt werden, unabhängig davon, ob eine Ausnahme auftritt oder nicht.
 
 .. seealso::
    :doc:`python3:library/contextlib`
@@ -31,7 +31,7 @@ diesem Code:
    :linenos:
 
 .. seealso::
-   * :doc:`../save-data/files`
+   * :doc:`../save-data/files-directories`
 
 Locking
 -------
