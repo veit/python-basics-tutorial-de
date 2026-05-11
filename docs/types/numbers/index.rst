@@ -167,14 +167,14 @@ Das ``math``-Modul bietet :abbr:`u.a. (unter anderem)`
 Kaufmännisch runden
 -------------------
 
-Üblicherweise rechnet Python Gleitkommazahlen der `IEEE 754
-<https://de.wikipedia.org/wiki/IEEE_754>`_-Norm entsprechend, wobei Zahlen in
+Üblicherweise rechnet Python Gleitkommazahlen auf der Basis 2, wobei Zahlen in
 der Mitte in der Hälfte der Fälle abgerundet werden und in der anderen Hälfte
 aufgerundet werden um eine statistische Drift bei längeren Rechnungen zu
-vermeiden. Für das `kaufmännische Runden werden
-<https://de.wikipedia.org/wiki/Rundung#Kaufmännisches_Runden>`_ daher
-:class:`Decimal <python3:decimal.Decimal>` und :data:`ROUND_HALF_UP
-<python3:decimal.ROUND_HALF_UP>` aus dem :py:mod:`decimal`-Modul benötigt:
+vermeiden. Mit der :class:`Decimal <python3:decimal.Decimal>`-Klasse kann jedoch
+auch auf der Basis 10 gerechnet werden. Für das `kaufmännische Runden
+<https://de.wikipedia.org/wiki/Rundung#Kaufmännisches_Runden>`_ wird darüber
+hinaus :data:`ROUND_HALF_UP <python3:decimal.ROUND_HALF_UP>` aus der
+:py:mod:`decimal`-Klasse benötigt:
 
 .. code-block:: pycon
 
@@ -183,6 +183,9 @@ vermeiden. Für das `kaufmännische Runden werden
     >>> rounded = num.quantize(decimal.Decimal("0"), rounding=decimal.ROUND_HALF_UP)
     >>> rounded
     Decimal('3')
+
+.. seealso::
+   * `IEEE 754 <https://de.wikipedia.org/wiki/IEEE_754>`_
 
 Eingebaute Module für Zahlen
 ----------------------------
