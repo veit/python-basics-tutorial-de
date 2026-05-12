@@ -97,7 +97,7 @@ Zeilen 25 und 26
 
          >>> import wc, importlib
          >>> importlib.reload(wc)
-         <module 'wc' from '/home/veit/.local/lib/python3.13/site-packages/wc.py'>
+         <module 'wc' from '/home/veit/.local/lib/python3.14/site-packages/wc.py'>
 
     * als Skript  wird es mit dem Namen ``__main__`` ausgeführt und die Funktion
       ``words_occur()`` aufgerufen:

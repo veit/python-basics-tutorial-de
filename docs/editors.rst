@@ -17,7 +17,7 @@ geschrieben wurde, einfach als Modul einbinden könnt.
    .. code-block:: console
 
       $ python3
-      Python 3.13.0 (main, Oct  7 2024, 05:02:14) on linux
+      Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ] on linux
       Type "help", "copyright", "credits" or "license" for more information.
       >>>
 
@@ -29,7 +29,7 @@ geschrieben wurde, einfach als Modul einbinden könnt.
 
 
       $ python3
-      Python 3.13.0 (main, Oct  7 2024, 05:02:14) [Clang 15.0.0 (clang-1500.1.0.2.5)] on darwin
+      Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ] on darwin
       Type "help", "copyright", "credits" or "license" for more information.
       >>>
 
@@ -41,7 +41,7 @@ geschrieben wurde, einfach als Modul einbinden könnt.
 .. tab:: Windows
 
    Die interaktive Python-Shell könnt ihr starten in :menuselection:`Start -->
-   Programme --> Python 3.13`
+   Programme --> Python 3.14`
 
    Alternativ könnt ihr auch die direkt ausführbare Datei :file:`Python.exe`
    suchen, :abbr:`z.B. (zum Beispiel)` in
@@ -76,7 +76,7 @@ verschiedenen Plattformen:
 
    .. code-block:: console
 
-      $ idle-python3.13
+      $ idle-python3.14
 
 .. tab:: Windows
 

@@ -56,14 +56,14 @@ Konfiguration in der :file:`pyproject.toml`-Datei:
 .. code-block:: toml
 
    [tool.tox]
-   env_list = ["py313"]
+   env_list = ["py314"]
 
    [tool.tox.env_run_base]
    dependency_groups = [ "tests" ]
    commands = [[ "pytest"]]
 
-Im ``[tool.tox]``-Abschnitt haben wir ``env_list = ["py313"]`` definiert. Dies
-ist eine Abkürzung, die tox anweist, unsere Tests mit Python Version 3.13
+Im ``[tool.tox]``-Abschnitt haben wir ``env_list = ["py314"]`` definiert. Dies
+ist eine Abkürzung, die tox anweist, unsere Tests mit Python Version 3.14
 durchzuführen. Wir werden in Kürze weitere Python-Versionen hinzufügen, aber die
 Verwendung einer Version hilft uns zunächst, den Ablauf von tox besser zu
 verstehen.
@@ -96,16 +96,16 @@ Um tox auszuführen, startet einfach tox:
 .. code-block:: pytest
 
    $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
-   py313: commands[0]> python --version --version
-   Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
-   py313: commands[1]> coverage run -m pytest
+   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
+   py314: commands[0]> python --version --version
+   Python 3.14.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
+   py314: commands[1]> coverage run -m pytest
    ============================= test session starts ==============================
-   platform darwin -- Python 3.13.0, pytest-9.0.2, pluggy-1.6.0
-   cachedir: .tox/py313/.pytest_cache
+   platform darwin -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
+   cachedir: .tox/py314/.pytest_cache
    rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
    testpaths: tests
@@ -138,8 +138,8 @@ Um tox auszuführen, startet einfach tox:
    tests/cli/test_version.py .                                              [100%]
 
    ============================== 83 passed in 0.35s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-     py313: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+     py314: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
      congratulations :) (1.23 seconds)
 
 Mehrere Python-Versionen testen
@@ -169,9 +169,9 @@ der folgenden Darstellung lediglich die Unterschiede hervorhebe:
    :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
 
    $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
    py310: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/19/cusy.tasks-26.2.0.tar.gz
    py310: commands[0]> python --version --version
    Python 3.10.17 (main, Apr  9 2025, 03:47:39) [Clang 20.1.0 ]
@@ -227,7 +227,7 @@ der folgenden Darstellung lediglich die Unterschiede hervorhebe:
    ============================= test session starts ==============================
    ...
    ============================== 83 passed in 0.39s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.13/site-packages/pyproject_api/_backend.py True hatchling.build
+   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
      py310: OK (1.30=setup[0.54]+cmd[0.01,0.75] seconds)
      py311: OK (1.16=setup[0.38]+cmd[0.01,0.76] seconds)
      py312: OK (1.79=setup[0.42]+cmd[0.01,1.36] seconds)
@@ -329,7 +329,7 @@ mitteilt, welche Quelltext-Pfade als identisch betrachtet werden sollen:
 Der Tasks-Quellcode befindet sich zunächst in :file:`src/cusy/tasks/`, bevor von
 tox die virtuellen Umgebungen erstellt und cusy.tasks in der Umgebung
 installiert wird. Dann befindet es sich :abbr:`z. B. (zum Beispiel)` in
-:file:`.tox/py313/lib/python3.13/site-packages/cusy.tasks`.
+:file:`.tox/py314/lib/python3.14/site-packages/cusy.tasks`.
 
 .. code-block:: console
    :emphasize-lines: 1
@@ -408,7 +408,7 @@ Abdeckung zu deaktivieren:
 .. code-block:: pytest
    :emphasize-lines: 1, 3
 
-   $ uv run tox -e py313 -- -k test_version --no-cov
+   $ uv run tox -e py314 -- -k test_version --no-cov
    ...
    coverage-report: commands[0]> coverage combine
    Combined data file .coverage.fay.local.19539.XpQXpsGx
@@ -424,6 +424,7 @@ Abdeckung zu deaktivieren:
      py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
      py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
      py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
+     py314: OK (1.46=setup[0.83]+cmd[0.62] seconds)
      coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
      congratulations :) (10.26 seconds)
 
