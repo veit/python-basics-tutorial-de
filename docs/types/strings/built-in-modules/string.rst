@@ -322,8 +322,8 @@ Checks
   dass sie keine Leerzeichen mehr enthält und besser als Dateinamen verwendet
   werden kann?
 
-* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
-  Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
+* Wenn ihr überprüfen möchtet, ob ein Dateiname mit ``pylock`` beginnt, welche
+  Methode würdet ihr verwenden? Gibt es noch andere Möglichkeiten?
 
 * Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
   und Zeilenumbruch. Wie können diese aus der Zeichenkette entfernt werden?

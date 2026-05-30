@@ -274,6 +274,8 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Klassifizierer ``"Private :: Do Not Upload"``. :term:`PyPI` wird immer
     Pakete ablehnen, deren Klassifizierer mit ``"Private ::"`` beginnt.
 
+.. _dependencies:
+
 ``dependencies``
     gibt die Abhängigkeiten für euer Paket in einem Array an.
 

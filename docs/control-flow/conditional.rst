@@ -40,3 +40,23 @@ Zeile 8
     Die optionale ``else``-Klausel bezeichnet einen Codeblock, der nur dann
     ausgeführt wird, wenn die anderen bedingten Blöcke, ``if`` und ``elif``,
     alle unzutreffend sind.
+
+Darüber hinaus können die Bedingungen logisch miteinander verknüpft werden, zum
+Beispiel:
+
+.. code-block:: pycon
+
+   >>> if (
+   ...     len(filename) > 11
+   ...     and filename.startswith("pylock.")
+   ...     and filename.endswith(".toml")
+   ... ):
+   ...     name = filename.removeprefix("pylock.").removesuffix(".toml")
+   ...
+
+Checks
+------
+
+* Wenn ihr überprüfen möchtet, ob ein Dateiname mit ``pylock.`` beginnt und auf   ``.toml`` endet, welche Methode würdet ihr verwenden, um den Namen der
+  Umgebung abzurufen, die darin enthalten sein könnte, zum Beispiel ``prod`` in
+  ``pylock.prod.toml``?

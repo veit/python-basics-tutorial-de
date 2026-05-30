@@ -364,14 +364,15 @@ Checks
      >>> "-".join(ve.split())
      'variables-and-expressions'
 
-* Wenn ihr überprüfen wollt, ob eine Zeile mit ``.. note::`` beginnt, welche
-  Methode würdet ihr verwenden? Gibt es auch noch andere Möglichkeiten?
+* Wenn ihr überprüfen möchtet, ob ein Dateiname mit ``pylock`` beginnt, welche
+  Methode würdet ihr verwenden? Gibt es noch andere Möglichkeiten?
 
   .. code-block:: pycon
 
-     >>> x.startswith(".. note::")
+     >>> filename = "pylock.prod.toml"
+     >>> filename.startswith("pylock")
      True
-     >>> x[:9] == ".. note::"
+     >>> filename[:6] == "pylock"
      True
 
 * Angenommen, ihr habt eine Zeichenkette mit Ausrufezeichen, Anführungszeichen
@@ -413,6 +414,14 @@ Checks
       entspricht einem Ausdruck, der mit ``0`` beginnt, gefolgt von einem
       kleinen oder großen ``x``, gefolgt von einem oder mehreren Zeichen in den
       Bereichen ``0-9``, ``a-f`` oder ``A-F``.
+
+* Welchen regulären Ausdruck würdet ihr für einen Dateinamen wie
+  :samp:`pylock.{NAME.}toml` verwenden?
+
+  ``pylock\.([^.]+\.)?toml$``
+
+    erkennt sowohl :file:`pylock.toml` als auch :file:`pylock.prod.toml` sowie
+    ähnliche Dateinamen.
 
 :doc:`/types/strings/input`
 ---------------------------
@@ -493,6 +502,63 @@ Checks
      Who? Veit
      >>> print(personal_data[who])
      60
+
+  .. blacken-docs:on
+
+:doc:`/types/strings/built-in-modules/string`
+---------------------------------------------
+* How can you change a heading such as ``variables and expressions`` so that it
+  contains hyphens instead of spaces and can therefore be better used as a file
+  name?
+@@ -349,15 +352,15 @@ Checks
+     >>> "-".join(ve.split())
+     'variables-and-expressions'
+* If you wanted to check whether a filename starts with ``pylock``, which method
+  would you use? Are there any other options?
+
+  .. code-block:: pycon
+     >>> filename = "pylock.prod.toml"
+     >>> filename.startswith("pylock")
+     True
+     >>> filename[:6] == "pylock"
+* Suppose you have a string with exclamation marks, quotation marks and line
+  breaks. How can these be removed from the string?
+@@ -398,6 +401,14 @@ Checks
+      upper case ``x``, followed by one or more characters in the ranges
+      ``0-9``, ``a-f`` or ``A-F``.
+
+* What regular expression would you use for a :samp:`pylock.{NAME.}toml`
+  filename?
+  ``pylock\.([^.]+\.)?toml$``
+    rrecognises both :file:`pylock.toml` and :file:`pylock.prod.toml`, as well
+    as similar filenames.
+:doc:`/types/strings/input`
+---------------------------
+
+@@ -476,6 +487,26 @@ Checks
+     >>> print(personal_data[who])
+     60
+
+:doc:`/control-flow/conditional`
+--------------------------------
+
+* Wenn ihr überprüfen möchtet, ob ein Dateiname mit ``pylock.`` beginnt und auf
+  ``.toml`` endet, welche Methode würdet ihr verwenden, um den Namen der
+  Umgebung abzurufen, die darin enthalten sein könnte, zum Beispiel ``prod`` in
+  ``pylock.prod.toml``?
+
+  .. code-block:: pycon
+
+     >>> filename = "pylock.prod.toml"
+     >>> if (
+     ...     len(filename) > 11
+     ...     and filename.startswith("pylock.")
+     ...     and filename.endswith(".toml")
+     ... ):
+     ...     name = filename.removeprefix("pylock.").removesuffix(".toml")
+     ...
+     >>> name
+     'prod'
 
 :doc:`/control-flow/loops`
 --------------------------

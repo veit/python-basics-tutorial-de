@@ -90,7 +90,7 @@ virtuellen Umgebung erfolgt in zwei Schritten:
          > .venv\Scripts\activate
 
 #. Python-Pakete nur für diese virtuelle Umgebung installieren, :abbr:`z.B. (zum
-Beispiel)` die beliebte ``pandas``-Bibliothek:
+   Beispiel)` die beliebte ``pandas``-Bibliothek:
 
    .. tab:: Linux/macOS
 
@@ -131,20 +131,20 @@ Die grundlegende Syntax von ``pip`` ist recht einfach:
 
 .. code-block:: console
 
-    $ python -m pip install pandas
+   (.venv) $ python -m pip install pandas
 
 Wenn ihr eine bestimmte Version eines Pakets angeben wollt, könnt ihr die
 Versionsnummern einfach anhängen:
 
 .. code-block:: console
 
-    $ python -m pip install pandas==2.2.2
+   (.venv) $ python -m pip install pandas==2.2.2
 
 oder
 
 .. code-block:: console
 
-    $ python -m pip install "pandas>=2"
+   (.venv) $ python -m pip install "pandas>=2"
 
 Proxy-Server
 ~~~~~~~~~~~~
@@ -161,7 +161,7 @@ Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
 
    .. code-block:: bash
 
-      export HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
+      $ export HTTP_PROXY=http://{USER_NAME}:{PASSWORD}@{PROXYSERVER_NAME}:{PORT}
 
 .. tab:: Windows
 
@@ -169,28 +169,10 @@ Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
 
    .. code-block:: ps1
 
-      set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
+      > set HTTP_PROXY={PROXYSERVER_NAME}:{PORT}
 
-Festschreiben der Versionsnummern
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-… von Paketen
-:::::::::::::
-
-Für eine stabile Umgebung ist es sinnvoll, die Versionsnummern der
-Abhängigkeiten festzuschreiben.
-
-.. tip::
-   In keinem unserer Bibliotheksprojekte passiert so viel, dass die
-   :doc:`Git-Historie <Python4DataScience:productive/git/review>` vorwiegend aus
-   Updates bestehen sollte. Lediglich bei Problemen schränken wir dort die zu
-   verwendenden Versionsnummern ein. Bei Anwendungen (:abbr:`engl. (englisch)`:
-   Apps) schreiben wir die Versionsnummern jedoch fest.
-
-Um für unsere Anwendungen die Versionen festzuschreiben und
-plattformübergreifende Lock-Dateien zu erhalten, verwenden wir :ref:`uv`. Zudem
-unterstützt uns ``uv`` bei :ref:`reproduzierbaren Python-Umgebungen
-<reproduce-virtual-env>`.
+Festschreiben …
+~~~~~~~~~~~~~~~
 
 … von Python
 ::::::::::::
@@ -208,14 +190,77 @@ für `setup-python <https://github.com/actions/setup-python>`_ verwenden können
 
 .. literalinclude:: ../../.github/workflows/ci.yml
    :caption: .github/workflows/ci.yml
-   :lines: 20-28
-   :emphasize-lines: 9
+   :lines: 14, 29-35, 37-40
+   :emphasize-lines: 12
 
 In unseren
 :doc:`Python4DataScience:productive/git/advanced/gitlab/ci-cd/index`-Pipelines
 verwenden wir jedoch ``requires-python`` aus der :ref:`pyproject-toml`-Datei, um
 :doc:`Docker-Container mit der passenden Python-Version
 <Python4DataScience:productive/git/advanced/gitlab/ci-cd/docker>` zu bauen.
+
+… von Paketen
+:::::::::::::
+
+Für eine stabile Umgebung ist es sinnvoll, die exakten Varianten der
+Abhängigkeiten festzuschreiben.
+
+.. tip::
+   In keinem unserer Bibliotheksprojekte passiert so viel, dass die
+   :doc:`Git-Historie <Python4DataScience:productive/git/review>` vorwiegend aus
+   Updates bestehen sollte. Lediglich bei Problemen schränken wir dort die zu
+   verwendenden Versionsnummern ein. Bei Anwendungen (:abbr:`engl. (englisch)`:
+   Apps) schreiben wir die Versionsnummern jedoch fest.
+
+Um für unsere Anwendungen die exakte Variante festzuschreiben und
+plattformübergreifende Lock-Dateien zu erhalten, verwenden wir üblicherweise
+:ref:`uv`. Zudem unterstützt uns ``uv`` bei :ref:`reproduzierbaren
+Python-Umgebungen <reproduce-virtual-env>`.
+
+Pakete können jedoch auch mit pip≥26.1 festgeschrieben werden:
+
+.. code-block::
+
+   $ python -m pip install --upgrade pip
+   $ python -m pip --version
+
+:pep:`751` legte das Format für die :file:`pylock.toml`-Datei fest, die mit
+folgendem Aufruf erzeugt werden kann, :abbr:`z. B. (zum Beispiel)` mit:
+
+.. code-block:: console
+
+   $ python -m pip lock -e . -o pylock.prod.toml
+
+Alternativ kann auch aus einer :file:`requirements.txt`-Datei eine
+:file:`pylock.toml`-Datei generiert werden:
+
+.. code-block:: console
+
+   $ python -m pip lock -r requirements.txt -o pylock.prod.toml
+
+.. warning::
+   In beiden Fällen werden jedoch nur die Pakete für die aktuelle Plattform- und
+   Python-Version festgeschrieben.
+
+.. tip::
+   Wenn ``pip`` nicht das einzige verfügbare Tool ist, stellt die
+   plattformübergreifende Ausgabe von ``uv export`` den reibungsloseren Weg dar.
+
+Anschließend können die in der :samp:`pylock{.NAME}.toml` festgeschriebenen
+Pakete in einer anderen Umgebung installiert werden mit:
+
+.. code-block:: console
+
+   $ python -m pip install -r pylock.prod.toml --no-deps
+
+``--no-deps``
+    sorgt dafür, dass auch die transitiven Abhängigkeiten nicht zusätzlich zur
+    :samp:`pylock{.NAME}.toml`-Datei aufgelöst werden.
+
+.. seealso::
+   * `pip lock <https://pip.pypa.io/en/stable/cli/pip_lock/>`_
+   * `pylock.toml Specification
+     <https://packaging.python.org/en/latest/specifications/pylock-toml/>`_
 
 .. _uv:
 
@@ -289,13 +334,13 @@ Python-Installation
 
 Mit ``uv python install`` lässt sich die aktuelle Python-Version installieren.
 Alternativ lässt sich auch eine spezifische Version installieren mit :samp:`uv
-python install {3.12}`. Es lassen sich jedoch nicht nur ältere CPython-Versionen
+python install {3.14}`. Es lassen sich jedoch nicht nur ältere CPython-Versionen
 installieren, sondern :abbr:`z.B. (zum Beispiel)` auch `PyPy
 <https://pypy.org>`_ mit :samp:`uv python install pypy@{3.12}` oder
 Free-threaded Python mit :samp:`uv python install --python-preference
 only-managed {3.14t}`. Die bereits installierten Python-Versionen erhaltet ihr
 mit ``uv python list``. Eine installierte Python-Version könnt ihr aufrufen mit
-:samp:`uv run --python {3.12} python`.
+:samp:`uv run --python {3.14} python`.
 
 Projektstruktur erstellen
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,3 +348,26 @@ Projektstruktur erstellen
 Je nachdem, ob ihr eine :doc:`Bibliothek <../packs/distribution>` oder
 :doc:`Anwendung <../packs/apps>` erstellen wollt, kann ``uv`` eine passende
 Projektstruktur erstellen.
+
+Abhängigkeiten installieren
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mit ``uv sync --frozen`` könnt ihr die Abhängigkeiten eures Projekts
+installieren in den in der :file:`uv.lock`-Datei exakt festgeschriebenen
+Varianten.
+
+.. seealso::
+   * :ref:`uv_lock`
+   * :ref:`reproduce-virtual-env`
+
+Mit :samp:`uv pip install --pylock pylock{.NAME}.toml` könnt ihr die
+Abhängigkeiten auch von einer bestehenden :samp:`pylock{.NAME}.toml`-Datei
+installieren.
+
+Abhängigkeiten hinzufügen
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mit :samp:`uv add {PACKAGE}` könnt ihr eurem Projekt weitere Abhängigkeiten
+hinzufügen. Dabei wird das hinzugefügte Paket sowohl im
+``dependencies``-Abschnitt der :file:`pyproject.toml`-Datei hinzugefügt, wie
+auch die exakte Vatiante in die :file:`uv.lock`-Datei geschrieben.
