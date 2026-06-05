@@ -88,6 +88,8 @@ Auch der `NumPy Style guide
 `Docstring-Standards <https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard>`_. Der wesentliche Unterschied zwischen beiden besteht darin,
 dass Google Einrückungen verwendet und NumPy Unterstreichungen:
 
+.. _google-docstrings:
+
 Google Python Style Guide:
     .. code-block:: python
 
