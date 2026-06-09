@@ -603,7 +603,7 @@ Glossar
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/claude-cursor`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
-       * Schwachstellen überprüfen mit :ref:`uv-secure <check-vulnerabilities>`
+       * Schwachstellen überprüfen mit :ref:`uv audit <check-vulnerabilities>`
 
        .. seealso::
           * `Docs <https://docs.astral.sh/uv/>`__
