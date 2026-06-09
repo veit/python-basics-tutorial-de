@@ -276,8 +276,8 @@ verwenden:
 
 .. code-block:: console
 
-    $ python -m pip install dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
-    $ python
+    $ uv add dataprep/dist/dataprep-0.1.0-cp39-cp39-macosx_10_9_x86_64.whl
+    $ uv run python
 
 .. code-block:: pycon
 

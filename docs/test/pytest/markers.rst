@@ -188,7 +188,7 @@ der Zahl 2 zu vergleichen.
 
 In diesem Beispiel wird als zusätzliches Paket `packaging
 <https://pypi.org/project/packaging/>`_ verwendet. Wenn ihr das Beispiel
-ausprobieren möchtet, installiert es zunächst mit ``python -m pip install
+ausprobieren möchtet, installiert es zunächst mit ``uv add --group dev
 packaging``.
 
 .. tip::
@@ -781,8 +781,8 @@ notwendig:
 #. Nun modifizieren wir die ``tasks_db``-Fixture in der
    :file:`conftest.py`-Datei, um den Marker verwenden zu können. Um die
    Task-Informationen nicht hart kodieren zu müssen, werden wir das Python-Paket
-   `Faker <https://faker.readthedocs.io/>`_ verwenden, das wir mit ``python -m
-   pip install faker`` installieren können:
+   `Faker <https://faker.readthedocs.io/>`_ verwenden, das wir mit ``uv add
+   --group tests faker`` installieren können:
 
    .. code-block:: python
       :linenos:

@@ -391,8 +391,8 @@ Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 45-51
-   :lineno-start: 45
+   :lines: 72-78
+   :lineno-start: 72
 
 ``include-hidden-files``
     ist mit `actions/upload-artifact v4.4.0
@@ -409,8 +409,8 @@ der die Ergebnisse zusammenführt:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 53-91
-   :lineno-start: 53
+   :lines: 80-120
+   :lineno-start: 80
 
 ``needs: tests``
     stellt sicher, dass alle Tests durchgeführt werden. Wenn euer Job, der die
@@ -445,14 +445,14 @@ speichern. Hierfür erweitern wir unsere :download:`ci.yaml` folgendermaßen:
 
 .. literalinclude:: ci.yaml
    :language: yaml
-   :lines: 93-
-   :lineno-start: 93
+   :lines: 122-
+   :lineno-start: 122
 
-Zeile 97
-    ``GIST_TOKEN`` ist ein persönliches GitHub-Zugangs-Token.
-Zeile 98
-    ``YOUR_GIST_ID`` solltet ihr durch eure eigene Gist-ID ersetzen. Falls ihr
-    noch keine Gist-ID habt, könnt ihr diese erstellen mit:
+``GIST_TOKEN``
+    ist ein persönliches GitHub-Zugangs-Token.
+``YOUR_GIST_ID``
+    solltet ihr durch eure eigene Gist-ID ersetzen. Falls ihr noch keine Gist-ID
+    habt, könnt ihr diese erstellen mit:
 
     #. Ruft https://gist.github.com auf und erstellt einen neuen Gist, den ihr
        :abbr:`z.B. (zum Beispiel)` :file:`test.json` nennen könnt. Die ID des
@@ -468,13 +468,12 @@ Zeile 98
        das  :samp:`{GIST_SECRET}` auch in :menuselection:`YOUR_REPO --> Settings
        --> Secrets --> Dependabot` hinzufügen.
 
-Zeilen 102-104
+``minColorRange``,  ``maxColorRange``, ``valColorRange``
     Das Badge wird automatisch eingefärbt:
 
     * ≤ 50 % in rot
     * ≥ 90 % in grün
     * mit einem Farbverlauf zwischen den beiden
-
 
 Jetzt kann das Badge mit einer URL wie dieser angezeigt werden:
 :samp:`https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{YOUR_GITHUB_NAME}/{GIST_SECRET}/raw/covbadge.json`.

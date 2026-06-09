@@ -45,8 +45,7 @@ Installation
 
 .. code-block:: console
 
-    $ python3 -m venv cookiecutter_env
+    $ uv init --package cookiecutter_env
     $ cd !$
     cd cookiecutter_env
-    $ . bin/activate
-    $ python -m pip install cookiecutter
+    $ uv add --group dev cookiecutter

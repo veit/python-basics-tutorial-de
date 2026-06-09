@@ -10,8 +10,8 @@ Installation
 
 .. code-block:: console
 
-   $ python -m pip install shot-scraper
-   $ shot-scraper install
+   $ uv add --group docs shot-scraper
+   $ uv run shot-scraper install
 
 .. note::
    Die zweite Zeile installiert den benötigten Browser.

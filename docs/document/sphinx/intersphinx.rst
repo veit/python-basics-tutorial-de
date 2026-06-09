@@ -81,7 +81,7 @@ Der Fehler kann mit korrigiert werden:
 
    .. code-block:: console
 
-    $ python -m pip install sphobjinv
+    $ uv add --group docs sphobjinv
 
 #. Dann könnt ihr die Originaldatei herunterladen mit:
 
