@@ -189,3 +189,16 @@ Erst dann stellt er die folgenden fünf Schritte vor:
 #. Gehe zu 2. zurück, bis die Liste leer ist
 
    Teste und mplementiere so lange, bis das gewünschte Verhalten erreicht ist.
+
+.. note::
+   Wir verwenden testgetriebene Entwicklung auch, wenn wir uns bei der
+   Software-Entwicklung von Coding-Agenten unterstützen lassen:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use Test Driven Development (TDD) for all code you write. Write tests before writing the implementation code.
+      - When you come across a bug or regression, think hard about writing a test and also how to create code that will prevent this from a happening again in the future.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`

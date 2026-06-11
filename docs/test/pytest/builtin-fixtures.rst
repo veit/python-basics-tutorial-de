@@ -326,6 +326,18 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
        Wenn er gesetzt ist, wird der Wert der Umgebungsvariablen in
        :samp:`{VALUE} + prepend + {OLD_VALUE}` geändert.
 
+.. note::
+   Bei agentischer Software-Entwicklung versuchen wir, Monkeypatching so gut wie
+   möglich zu vermeiden:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Prefer testing real code where possible. Use mocks and `monkeypatch` when absolute necessary. Try to avoid mocking as much as possible.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 Monkeypatching von Umgebungsvariablen
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

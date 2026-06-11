@@ -402,6 +402,18 @@ Parametern aufruft.
    * Hynek Schlawack: `“Don’t Mock What You Don’t Own”
      <https://hynek.me/articles/what-to-mock-in-5-mins/>`_
 
+.. note::
+   Auch bei agentischer Software-Entwicklung versuchen wir, Mocking so weit wie
+   möglich zu vermeiden:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Prefer testing real code where possible. Use mocks and `monkeypatch` when absolute necessary. Try to avoid mocking as much as possible.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 Mocking vermeiden mit Tests auf mehreren Ebenen
 -----------------------------------------------
 

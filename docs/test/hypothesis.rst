@@ -16,6 +16,17 @@ Fehler in euren Tests finden zu können.
    Im :doc:`Jupyter Tutorial <jupyter-tutorial:notebook/testing/hypothesis>` ist
    beschrieben, wie Hypothesis auch in Jupyter Notebooks verwendet werden kann.
 
+.. note::
+   Auch bei agentischer Software-Entwicklung verwenden wir Hypothesis:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use the `hypothesis` library for property-based testing when you have complex input spaces or need to test edge cases.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 Installation
 ------------
 

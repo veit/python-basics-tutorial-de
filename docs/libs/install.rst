@@ -270,6 +270,21 @@ Pakete in einer anderen Umgebung installiert werden mit:
 :term:`uv` vereinfacht das Erstellen einer initialen Projektstruktur und die
 Verwaltung eurer Abhängigkeiten.
 
+.. note::
+   Viele Coding-Agenten verwenden üblicherweise ``pip``, wenn Pakete installiert
+   oder Skripte ausgeführt werden sollen. Daher müssen wir sie zunächst so
+   konfigurieren, dass sie ``uv`` verwenden:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      - Use `uv` to manage Python environments and dependencies.
+      - Use `uv run` to execute Python scripts and commands.
+      - Don't edit `pyproject.toml` directly. Instead, use `uv add` and `uv add --dev` to manage dependencies.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:uv`
+
 Installation
 ~~~~~~~~~~~~
 

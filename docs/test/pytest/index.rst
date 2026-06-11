@@ -26,6 +26,20 @@ pytest
   für fortgeschrittene Testanforderungen; unittest ist in seiner Erweiterbarkeit
   eingeschränkter.
 
+.. note::
+   Auch bei agentischer Software-Entwicklung nutzen wir pytest:
+
+   .. code-block:: md
+      :caption: AGENTS.md
+
+      # Testing
+      - Use `pytest` for testing your code.
+      - Collect pytest fixtures in a `conftest.py` file to avoid duplication.
+      - When a test fails, run the last failed test first using `uv run pytest --last-failed`.
+
+   .. seealso::
+      * :ref:`agentic-software-engineering:testing`
+
 .. seealso::
    Im :doc:`Jupyter Tutorial <jupyter-tutorial:notebook/testing/ipytest>` ist
    beschrieben, wie pytest auch in Jupyter Notebooks verwendet werden kann.

@@ -63,6 +63,10 @@ intersphinx_mapping = {
     "python3.14": ("https://docs.python.org/3.14/", None),
     "jupyter-tutorial": ("https://jupyter-tutorial.readthedocs.io/de/latest/", None),
     "Python4DataScience": ("https://www.python4data.science/de/latest/", None),
+    "agentic-software-engineering": (
+        "https://agentic-software-engineering.readthedocs.io/de/latest/",
+        None,
+    ),
     "pytest": ("https://docs.pytest.org/en/latest/", None),
     "Sybil": ("https://sybil.readthedocs.io/en/latest/", None),
 }
