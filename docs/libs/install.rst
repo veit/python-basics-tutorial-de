@@ -309,7 +309,7 @@ Automatische Shell-Vervollständigung
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Um die automatische Shell-Vervollständigung für ``uv``-Befehle zu aktivieren,
-führt einen der folgenden Schritte aus:
+führt jeweils einen der folgenden Schritte aus:
 
 .. tab:: Linux/macOS
 
@@ -320,14 +320,30 @@ führt einen der folgenden Schritte aus:
 
       $ echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
       $ echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
-      $ echo 'uv generate-shell-completion fish | source' >> ~/.config/fish/config.fish
+      $ echo 'uv generate-shell-completion fish | source' > ~/.config/fish/completions/uv.fish
       $ echo 'eval (uv generate-shell-completion elvish | slurp)' >> ~/.elvish/rc.elv
+
+   .. code-block:: console
+
+      $ echo 'eval "$(uvx --generate-shell-completion bash)"' >> ~/.bashrc
+      $ echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
+      $ echo 'uvx --generate-shell-completion fish | source' > ~/.config/fish/completions/uvx.fish
+      $ echo 'eval (uvx --generate-shell-completion elvish | slurp)' >> ~/.elvish/rc.elv
 
 .. tab:: Windows
 
    .. code-block:: ps1
 
+      if (!(Test-Path -Path $PROFILE)) {
+        New-Item -ItemType File -Path $PROFILE -Force
+      }
       Add-Content -Path $PROFILE -Value '(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression'
+
+   .. code-block:: ps1
+
+      if (!(Test-Path -Path $PROFILE)) {
+        New-Item -ItemType File -Path $PROFILE -Force
+      }
       Add-Content -Path $PROFILE -Value '(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression'
 
 Startet dann die Shell neu oder ruft ``source`` mit eurer
