@@ -15,7 +15,7 @@ repos:
     - id: check-added-large-files
       args: ['--maxkb=1024']
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 3a8ef795727fa946dfcb21c5d07b1442c2362c09 # v2.23.0
+    rev: 0c8c15d8fe996493035be407c5cf4a288cf6bf8e # v2.25.1
     hooks:
     - id: pyproject-fmt
   - repo: https://github.com/abravalheri/validate-pyproject
