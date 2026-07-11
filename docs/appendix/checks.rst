@@ -445,8 +445,8 @@ Checks
 
   .. code-block:: pycon
 
-     >>> import datetime
-     >>> current = datetime.datetime.now()
+     >>> import datetime as dt
+     >>> current = dt.datetime.now()
      >>> year = current.year
      >>> year_birth = input("Geburtsjahr? ")
      Geburtsjahr? 1964
@@ -459,8 +459,8 @@ Checks
 
   .. code-block:: pycon
 
-     >>> import datetime
-     >>> current = datetime.datetime.now()
+     >>> import datetime as dt
+     >>> current = dt.datetime.now()
      >>> year = current.year
      >>> year_birth = float(input("Geburtsjahr: "))
      Geburtsjahr: 1964
@@ -471,8 +471,8 @@ Checks
 
   .. code-block:: pycon
 
-     >>> import datetime
-     >>> current = datetime.datetime.now()
+     >>> import datetime as dt
+     >>> current = dt.datetime.now()
      >>> year = current.year
      >>> year_birth = int(input("Geburtsjahr: "))
      Geburtsjahr: Schaltjahr
@@ -1156,12 +1156,12 @@ Checks
     .. code-block:: pycon
        :linenos:
 
-       >>> import datetime
+       >>> import datetime as dt
        >>> import pathlib
        >>> import zipfile
        >>> file_pattern = "*.txt"
        >>> archive_path = "archive"
-       >>> today = f"{datetime.date.today():%Y-%m-%d}"
+       >>> today = f"{dt.date.today():%Y-%m-%d}"
        >>> cur_path = pathlib.Path(".")
        >>> paths = cur_path.glob(file_pattern)
        >>> zip_path = cur_path.joinpath(archive_path, today + ".zip")
