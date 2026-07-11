@@ -22,8 +22,8 @@ des Alters aus dem Geburtsjahr:
 
 .. code-block:: pycon
 
-    >>> import datetime
-    >>> current = datetime.datetime.now()
+    >>> import datetime as dt
+    >>> current = dt.datetime.now()
     >>> year = current.year
     >>> year_birth = input("Geburtsjahr? ")
     Geburtsjahr? 1964

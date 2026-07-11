@@ -219,11 +219,11 @@ gleichen Syntax wie die :py:meth:`datetime.strftime
 
 .. code-block:: pycon
 
-   >>> import datetime
+   >>> import datetime as dt
    >>> import locale
    >>> locale.setlocale(locale.LC_TIME, "de_DE.utf-8")
    'de_DE.utf-8'
-   >>> today = datetime.date.today()
+   >>> today = dt.date.today()
    >>> print(f"Heute ist {today:%A, %d. %B %Y}.")
    Heute ist Freitag, 11. Juli 2025.
 
@@ -233,12 +233,12 @@ auch Zeichenketten in ``datetime``-Objekte umwandeln:
 .. code-block:: pycon
 
    >>> today_string = "Fri, 11 Jul 2025 18:46:49"
-   >>> today = datetime.datetime.strptime(today_string, "%A, %d. %B %Y")
+   >>> today = dt.datetime.strptime(today_string, "%A, %d. %B %Y")
 
 .. code-block:: pycon
 
    >>> today_string = "Fri, 11 Jul 2025 18:46:49"
-   >>> today = datetime.datetime.strptime(today_string, "%A, %d. %B %Y")
+   >>> today = dt.datetime.strptime(today_string, "%A, %d. %B %Y")
 
 .. csv-table:: Häufige Formatierungen
    :header: "Beschreibung", "Beispiel", "Format"

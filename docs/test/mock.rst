@@ -33,7 +33,8 @@ Beispiel
 Zunächst wollten wir mit einem einfachen Beispiel starten und überprüfen, ob die
 Arbeitstage von Montag bis Freitag korrekt ermittelt werden.
 
-#. Zunächst importieren wir ``datetime.datetime`` und ``Mock``:
+#. Zunächst importieren wir :class:`datetime.datetime` und :class:`Mock
+   <python3:unittest.mock.Mock>`:
 
    .. literalinclude:: test_mock.py
       :language: python
