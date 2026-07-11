@@ -92,8 +92,13 @@ dies klarer:
    :func:`python3:isinstance`
         stellt fest, ob :abbr:`z.B. (zum Beispiel)` eine Klasse, die an eine
         Funktion oder Methode übergeben wird, vom erwarteten Typ ist.
+
+   .. start-issubclass
+
    :func:`python3:issubclass`
         stellt fest, ob eine Klasse die Unterklasse einer anderen ist.
+
+   .. end-issubclass
 
    .. code-block:: pycon
 
