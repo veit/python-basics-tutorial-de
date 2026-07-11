@@ -111,12 +111,24 @@ Checks
 
 * Entscheidet, ob die folgenden Aussagen wahr oder falsch sind:
 
-  * ``1`` → True
-  * ``0`` → False
-  * ``-1`` → True
-  * ``[0]`` → True (Liste mit einem Task)
-  * ``1 and 0`` → False
-  * ``1 > 0 or []`` → True
+  .. code-block:: console
+
+     >>> bool([0])
+     True
+     >>> bool(1)
+     True
+     bool(0)
+     False
+     >>> bool(-1)
+     True
+     >>> bool([0])  # Liste mit einem Element
+     True
+     >>> bool([])   # Liste mit keinem Element
+     False
+     >>> bool(1 and 0)
+     False
+     >>> bool(1 > 0 or [])
+     True
 
 :doc:`/types/sequences-sets/lists`
 ----------------------------------
