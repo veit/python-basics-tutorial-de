@@ -20,8 +20,8 @@ von ``with`` und einem Kontextmanager.
 .. literalinclude:: with.py
    :linenos:
 
-Hier wird ein Kontextmanager eingerichtet, der die Funktion ``open`` und den
-darauf folgenden Block umschließt. Die vordefinierte Aufräumaktion des
+Hier wird ein Kontextmanager eingerichtet, der die Funktion :func:`python3:open`
+und den darauf folgenden Block umschließt. Die vordefinierte Aufräumaktion des
 Kontextmanagers schließt die Datei, auch wenn eine Ausnahme auftritt. Solange
 der Ausdruck in der ersten Zeile ausgeführt wird, ohne eine Ausnahme
 auszulösen, wird die Datei immer geschlossen. Dieser Code ist äquivalent zu

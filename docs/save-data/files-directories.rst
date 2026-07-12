@@ -18,54 +18,126 @@ ausführlicher vor.
 Lesen und Schreiben von Dateien
 -------------------------------
 
-In Python öffnet und lest ihr eine Datei, indem ihr die Funktion
-:meth:`python3:pathlib.Path.open` und verschiedene eingebaute Leseoperationen
-verwendet. :meth:`python3:pathlib.Path.open` öffnet die Datei, auf die der Pfad
-verweist, wie es die integrierte Funktion :func:`python3:open` tut. Das folgende
-kurze Python-Programm liest eine Zeile aus einer Textdatei namens
-:file:`myfile.txt` in :file:`docs/save-data/` ein:
+In Python öffnet und lest ihr eine Datei mit der Klasse
+:class:`python3:pathlib.Path` und verschiedenen eingebauten Leseoperationen:
+
+:meth:`python3:pathlib.Path.read_text`
+    gibt den dekodierten Inhalt der Datei, auf die der Zeiger verweist, als
+    Zeichenkette zurück.
+:meth:`python3:pathlib.Path.write_text`
+    öffnet die angegebene Datei im Textmodus, schreibt und schließt die Datei
+    wieder. Eine vorhandene Datei mit demselben Namen wird überschrieben.
+
+.. note::
+   Ihr müsst bei beiden Methoden keine :doc:`with
+   <../control-flow/with>`-Anweisung verwenden, da die Datei beeits mit einem
+   Kontextmanager geöffnet wird.
+
+.. tip::
+   Beim Öffnen, Lesen und Schreiben einer Datei solltet ihr jedoch immer die
+   Zeichenkodierung explizit angeben, da Python<3.15 ansonsten eine
+   plattformabhängige Standardkodierung auswählt. Eine falsche Kodierung kann
+   jedoch eine :doc:`Exception <../control-flow/exceptions>` auslösen oder zu
+   Zeichensalat führen:
 
 .. code-block:: pycon
    :linenos:
 
    >>> from pathlib import Path
-   >>> p = Path("docs", "save-data", "myfile.txt")
-   >>> f = p.open()
-   >>> headline = f.readline()
+   >>> p = Path("docs", "save-data", "python.txt")
+   >>> p.write_text("🐍", encoding="utf-8")
+   1
+   >>> p.read_text(encoding="cp1252")
+   Traceback (most recent call last):
+     File "<python-input-3>", line 1, in <module>
+       p.read_text(encoding="cp1252")
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+       return f.read()
+              ~~~~~~^^
+     File "/Users/veit/Library/Application Support/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/encodings/cp1252.py", line 23, in decode
+       return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 2: character maps to <undefined>
 
 Zeile 2:
     Die Argumente von :class:`python3:pathlib.Path` sind Pfadsegmente, entweder
     als :class:`PosixPath <pathlib.PosixPath>` oder :class:`WindowsPath
     <pathlib.WindowsPath>`. Im vorigen Beispiel öffnet ihr eine Datei, von der
     ihr annehmt, dass sie sich relativ zu eurem Aufruf im
-    :file:`docs/save-data/myfile.txt` befindet.
+    :file:`docs/save-data/python.txt` befindet.
 
-    Das folgende Beispiel öffnet eine Datei an einem absoluten Speicherort –
-    :file:`C:\\My Documents\\myfile.txt`:
+    Das folgende Beispiel gibt einen absoluten Speicherort an –
+    :file:`C:\\Users\\Veit\\My Documents\\python.txt`:
 
     .. code-block:: pycon
        :lineno-start: 2
 
-       >>> p = Path("C:/", "Users", "Veit", "My Documents", "myfile.txt")
-       >>> with p.open() as f:
-       ...     f.readline()
-       ...
+       >>> p = Path("C:/", "Users", "Veit", "My Documents", "python.txt")
 
-    .. note::
-       In diesem Beispiel wird das Schlüsselwort ``with`` verwendet, :abbr:`d.h.
-       (das heißt)`, dass die Datei mit einem Kontextmanager geöffnet wird, der
-       in :doc:`/control-flow/with` näher erläutert wird. Diese Art des Öffnens
-       von Dateien verwaltet mögliche I/O-Fehler besser und sollte im
-       Allgemeinen bevorzugt werden.
+Mit dem ``errors``-Argument können wir diese Ausnahme unterdrücken. Der
+Standardwert für ``errors`` ist ``strict``, wodurch eine Exception ausgelöst
+wird.
 
-Zeile 3:
+Jedes fehlerhafte Byte kann durch das entsprechende Unicode Replacement
+Character (``U+FFFD``, �) ersetzt werden:
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="replace")
+   'ðŸ��'
+
+.. version-added:: 3.15
+   Ab Python 3.15 wird standardmäßig überall UTF-8 verwendet. Erst wenn die
+   Unterstützung für Python 3.14 und frühere Versionen eingestellt wird, kann
+   die Angabe von ``encoding`` für UTF-8-Dateien optional werden.
+
+Alternativ können Fehler auch ignoriert werden:
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="ignore")
+   'ðŸ'
+
+Oder ihr könnt die Bytes durch ein Escape-Zeichen ersetzen:
+
+.. code-block:: pycon
+
+   >>> p.read_text(encoding="cp1252", errors="backslashreplace")
+   'ðŸ\\x90\\x8d'
+
+Der reine numerische Bytewert wird durch die Hexadezimalzahlen nach ``\\x``
+angegeben.
+
+.. note::
+   Das ``errors``-Argument hilft nur dann, wenn die Dekodierung fehlschlägt. Das
+   Einlesen einer Datei mit falscher Kodierung **kann** einen
+   ``UnicodeDecodeError`` auslösen. Es kann jedoch auch einfach stillschweigend
+   zu Zeichensalat führen, wenn eine Dekodierung mit falscher Kodierung
+   scheinbar erfolgreich ist, sodass anstelle einer Exception anscheinend
+   gültige Zeichen angezeigt werden. Das ``errors``-Argument kann Zeichensalat
+   nicht beheben.
+
+Wenn ihr :func:`python3:open` bevorzugt – sei es mit :doc:`Kontextmanager
+<../control-flow/with>` oder anderweitig – könnt ihr stattdessen die
+:meth:`pathlib.Path.open`-Methode eures :class:`pathlib.Path`-Objekts verwenden:
+
+.. code-block:: pycon
+   :linenos:
+
+   >>> with p.open(encoding="utf-8") as f:
+   ...     f.readline()
+   ...
+   '🐍'
+
+Zeile 1:
     :meth:`python3:pathlib.Path.open` liest nichts aus der Datei, sondern gibt
     ein Datei-Objekt zurück, mit dem ihr auf die geöffnete Datei zugreifen
     könnt. Es behält den Überblick über eine Datei und darüber, wie viel von der
     Datei gelesen oder geschrieben wurde. Alle Dateieingaben in Python werden
     mit Dateiobjekten und nicht mit Dateinamen durchgeführt.
 
-Zeile 4:
+Zeile 2:
     Der erste Aufruf von :meth:`readline() <codecs.StreamReader.readline>` gibt
     die erste Zeile des Datei-Objekts zurück, also alles bis einschließlich des
     ersten Zeilenumbruchs oder die gesamte Datei, wenn es keinen Zeilenumbruch
@@ -75,18 +147,18 @@ Zeile 4:
     einen leeren String zurück.
 
 Dieses Verhalten von :meth:`readline() <codecs.StreamReader.readline>` macht es
-einfach, :abbr:`z.B. (zum Beispiel)` die Anzahl der Zeilen in einer Datei zu
+einfach, :abbr:`z. B. (zum Beispiel)` die Anzahl der Zeilen in einer Datei zu
 ermitteln:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     lc = 0
    ...     while f.readline() != "":
    ...         lc = lc + 1
    ...     print(lc)
    ...
-   2
+   1
 
 Ein kürzerer Weg, alle Zeilen zu zählen, gibt es mit der ebenfalls eingebauten
 :meth:`readlines() <codecs.StreamReader.readlines>`-Methode, die alle Zeilen
@@ -95,10 +167,10 @@ zurückgibt:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     print(len(f.readlines()))
    ...
-   2
+   1
 
 Wenn ihr alle Zeilen einer großen Datei zählt, kann diese Methode jedoch dazu
 führen, dass der Speicher vollläuft, weil die gesamte Datei auf einmal gelesen
@@ -113,13 +185,13 @@ behandeln:
 
 .. code-block:: pycon
 
-   >>> with p.open() as f:
+   >>> with p.open(encoding="utf-8") as f:
    ...     lc = 0
    ...     for l in f:
    ...         lc = lc + 1
    ...     print(lc)
    ...
-   2
+   1
 
 Diese Methode hat den Vorteil, dass die Zeilen je nach Bedarf in den Speicher
 eingelesen werden, so dass selbst bei großen Dateien kein Speicherplatzmangel zu
@@ -137,35 +209,21 @@ angebt, wodurch nur diese Zeichenfolge als Zeilenumbruch verwendet wird:
 
 .. code-block:: pycon
 
-   >>> with p.open(newline="\r\n") as f:
+   >>> with p.open(encoding="utf-8", newline="\r\n") as f:
    ...     lc = 0
    ...
 
 In diesem Beispiel wird nur ``\n`` als Zeilenumbruch gewertet. Wenn die Datei
-jedoch im Binärmodus geöffnet wurde, ist der Parameter ``newline`` nicht
-erforderlich, da alle Bytes genau so zurückgegeben werden, wie sie in der Datei
-stehen.
+jedoch im Binärmodus geöffnet wird, sind die ``encoding``- und
+``newline``-Argumente unsinnig, da alle Bytes genau so zurückgegeben werden, wie
+sie in der Datei stehen:
 
-:meth:`python3:pathlib.Path.read_text`
-    gibt den dekodierten Inhalt der angegebenen Datei als Zeichenkette zurück:
+.. code-block:: pycon
 
-    .. code-block:: pycon
-
-       >>> p.read_text()
-       'This is the first line of myfile.\nAnd this is another line.\n'
-
-:meth:`python3:pathlib.Path.write_text`
-    öffnet die angegebene Datei im Textmodus, schreibt Daten in sie und schließt
-    die Datei:
-
-    .. code-block:: pycon
-
-       >>> p.write_text("New content")
-       11
-       >>> p.read_text()
-       'New content'
-
-    Eine vorhandene Datei mit demselben Namen wird überschrieben.
+   >>> with p.open(mode="rb") as f:
+   ...     print(len(f.readlines()))
+   ...
+   1
 
 Verzeichnisse lesen
 -------------------
@@ -254,8 +312,6 @@ Verzeichnis oder anderweitig nicht zugänglich ist, wird ein
        ...         (root / name).rmdir()
        ...
 
-    .. versionadded:: 3.12
-
 Erstellen von Dateien und Verzeichnissen
 ----------------------------------------
 
@@ -298,7 +354,7 @@ Verschieben, Kopieren und Löschen
        >>> myfile.rename(newfile)
        PosixPath('docs/newdir/newfile.txt')
 
-.. versionadded:: 3.14
+.. version-added:: 3.14
    In Python 3.14 kommen die Methoden :meth:`pathlib.Path.copy`,
    :meth:`pathlib.Path.copy_into`, :meth:`pathlib.Path.move` und
    :meth:`pathlib.Path.move_into` hinzu.
