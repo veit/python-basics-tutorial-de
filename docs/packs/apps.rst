@@ -124,10 +124,10 @@ Wollt ihr ``uv run`` in einer produktiven Umgebung verwenden, so wird mit der
 Aktualisieren der Python-Umgebung
 ---------------------------------
 
-Standardmässig bevorzugt ``uv`` bei der Ausführung von ``uv sync`` und
-``uv lock`` die gesperrten Versionen der Pakete. Paketversionen werden nur dann
-geändert, wenn die Abhängigkeitsbedingungen des Projekts die vorherige,
-gesperrte Version ausschließen.
+``uv`` bevorzugt bei der Ausführung von ``uv sync`` und ``uv lock`` die
+gesperrten Versionen der Pakete. Paketversionen werden nur dann geändert, wenn
+die Abhängigkeitsbedingungen des Projekts die vorherige, gesperrte Version
+ausschließen.
 
 Mit ``uv lock --upgrade`` könnt ihr alle Pakete aktualisieren und mit :samp:`uv
 lock --upgrade-package {PACKAGE}=={VERSION}` lassen sich einzelnes Pakete auf
@@ -158,9 +158,9 @@ eine bestimmte Version aktualisieren.
       $ uv sync --exclude-newer-package "{PACKAGE}=P0D"
 
 .. tip::
-   Ihr könnt auch mit dem
-   :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` regelmäßig
-   eure eure :file:`uv.lock`-Datei aktualisieren:
+   Ihr könnt auch mit
+   :doc:`Python4DataScience:productive/git/advanced/hooks/prek` regelmäßig eure
+   :file:`uv.lock`-Datei aktualisieren:
 
    .. code-block:: yaml
       :caption: .pre-commit-config.yaml
@@ -169,6 +169,7 @@ eine bestimmte Version aktualisieren.
         rev: 6a280ba12b7901e47757c868c8c13c6a624c9ecb # 0.11.7
         hooks:
           - id: uv-lock
+            args: ["--exclude-newer = 'P3D'", "--quiet"]
 
 Plattform- und Python-Versionen einschränken
 --------------------------------------------

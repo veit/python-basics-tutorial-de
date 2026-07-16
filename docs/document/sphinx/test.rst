@@ -149,9 +149,8 @@ reST-Formatierung
 Ob die :doc:`Sphinx <start>`-Dokumentation in gültigem :doc:`rest`-Format
 geschrieben ist, lässt sich mit `sphinx-lint
 <https://pypi.org/project/sphinx-lint/>`_ überprüfen. Dies binden wir
-üblicherweise in unsere :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>`-Konfiguration
-ein:
+üblicherweise in unsere :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>`-Konfiguration ein:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
@@ -201,8 +200,8 @@ Code-Formatierung
 Die Formatierung von Code-Blöcken lässt sich mit `blacken-docs
 <https://github.com/adamchainz/blacken-docs>`_ überprüfen, das
 :doc:`Python4DataScience:productive/qa/black` verwendet. Üblicherweise binden
-wir die Bibliothek über das :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>`-Framework ein:
+wir die Bibliothek über :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>` ein:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
@@ -321,9 +320,8 @@ Anschließend solltet ihr :abbr:`ggf. (gegebenenfalls)` eure :ref:`.gitignore
 
    styles/*
 
-Ihr könnt Vale für das :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>`-Framework
-konfigurieren mit:
+Ihr könnt Vale für :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>` konfigurieren mit:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
@@ -393,8 +391,8 @@ Nun könnt ihr ``interrogate`` in eure :doc:`../../test/tox`-Datei einfügen,
    commands =
        interrogate --quiet --fail-under 95 src tests
 
-Ihr könnt ``interrogate`` auch mit :doc:`pre-commit
-<Python4DataScience:productive/git/advanced/hooks/pre-commit>` nutzen:
+Ihr könnt ``interrogate`` auch mit :doc:`prek
+<Python4DataScience:productive/git/advanced/hooks/prek>` nutzen:
 
 .. code-block:: yaml
    :caption: .pre-commit-config.yaml
