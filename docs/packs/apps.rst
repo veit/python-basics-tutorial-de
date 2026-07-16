@@ -159,8 +159,8 @@ eine bestimmte Version aktualisieren.
 
 .. tip::
    Ihr könnt auch mit dem
-   :doc:`Python4DataScience:productive/git/advanced/hooks/pre-commit` regelmäßig
-   eure eure :file:`uv.lock`-Datei aktualisieren:
+   :doc:`Python4DataScience:productive/git/advanced/hooks/prek` regelmäßig eure
+   eure :file:`uv.lock`-Datei aktualisieren:
 
    .. code-block:: yaml
       :caption: .pre-commit-config.yaml

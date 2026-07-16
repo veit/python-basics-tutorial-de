@@ -386,7 +386,7 @@ vornehmen, damit Parameter an pytest übergeben werden können:
    [tool.tox]
    requires = [ "tox>=4" ]
    env_list = [
-     "pre-commit",
+     "prek",
      "docs",
      "py3{10-14}",
      "py{13-14}t",
