@@ -317,8 +317,8 @@ Abhängigkeitsgruppen
        :lineno-start: 33
 
 Auch rekursive Abhängigkeitsgruppen sind möglich. So könnt ihr beispielsweise
-für ``dev`` neben ``pre-commit`` auch alle Abhängigkeiten aus ``docs`` und
-``test`` übernehmen:
+für ``dev`` neben ``prek`` auch alle Abhängigkeiten aus ``docs`` und ``test``
+übernehmen:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
@@ -773,7 +773,7 @@ Dateistruktur für Pakete erstellen:
 
     .. literalinclude:: mypack/pyproject.toml
        :caption: mypack/pyproject.toml
-       :emphasize-lines: 21
+       :emphasize-lines: 20
 
 :file:`mypack/src/mypack/__init__.py`
     Das Modul definiert eine CLI-Funktion :func:`main`:

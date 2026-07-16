@@ -17,6 +17,13 @@ wir Zweige für ältere Versionen starten müssen.
 `Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/25.1.0...HEAD>`_
 ---------------------------------------------------------------------------------------
 
+Changed
+~~~~~~~
+
+* 👷🔧📝 Switch to prek
+
+  * Remove pre-commit
+
 `25.1.0 <https://github.com/veit/python-basics-tutorial-de/compare/24.3.0...25.1.0>`_
 -------------------------------------------------------------------------------------
 
