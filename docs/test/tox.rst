@@ -73,6 +73,10 @@ angegeben. Somit weiß tox, dass die entsprechenden Bibliotheken in dieser
 Umgebung installiert werden sollen. Mit ``commands`` wird tox schließlich
 angewiesen, ``pytest`` auszuführen.
 
+Mit :samp:`tool.tox.env.{ENV_NAME}` ließe sich die Konfiguration für eine
+bestimmte Umgebung hinzufügen und mit :samp:`tool.tox.env_pkg_base` die
+Basiskonfiguration für Pakete.
+
 tox ausführen
 -------------
 
