@@ -17,8 +17,8 @@ jedoch zwei Probleme mit sich:
 Python bietet :ref:`pip` als aktuelle Lösung für beide Probleme an. ``pip``
 versucht, das Modul im :term:`Python Package Index` (:term:`PyPI`) zu finden,
 lädt es und alle Abhängigkeiten herunter und kümmert sich um die Installation.
-Ihr könnt auch :term:`pypi.org` direkt aufrufen und nach Paketen zu suchen oder
-die Pakete nach Kategorien filtern.
+Ihr könnt auch :term:`pypi.org` direkt aufrufen um nach Paketen zu suchen oder
+die Pakete nach Kategorien zu filtern.
 
 .. warning::
    Installiert niemals irgendetwas mit ``pip`` in das globale Python, auch nicht
@@ -145,6 +145,29 @@ oder
 .. code-block:: console
 
    (.venv) $ python -m pip install "pandas>=2"
+
+Üblicherweise führt ``pip`` jedoch keine Prüfungen zum Schutz vor Manipulationen
+durch und ermöglicht die Ausführung von beliebigem Code aus den Distributionen.
+Ihr könnt ``pip`` jedoch auch so nutzen, dass sicherere Installationsmechanismen
+gewährleistet sind:
+
+``--require-hashes``
+    aktiviert den Hash-Prüfmodus.
+
+    Dies stellt sicher, dass Hashes in der Requirements-Datei bereitgestellt
+    wurden. Zudem ist es eine bequeme Möglichkeit, selbst eine Liste von Hashes
+    anzulegen, da dabei die Hashes der heruntergeladenen Pakete angezeigt
+    werden. Es wird für jedes Paket jedoch nur das bevorzugte Archiv
+    heruntergeladen, sodass ihr möglicherweise weiterhin Hashes für alternative
+    Archive mit :samp:`pip hash {PACKAGE_NAME}` hinzufügen müsst –
+    beispielsweise, wenn verschiedene Betriebssystemvarianten vorhanden sind.
+
+``--only-binary :all:``
+    verhindert die Bereitstellung von Quellcode.
+
+.. seealso::
+   * `Secure installs <https://pip.pypa.io/en/stable/topics/secure-installs/>`_
+   * `pip hash <https://pip.pypa.io/en/stable/cli/pip_hash/>`_
 
 Proxy-Server
 ~~~~~~~~~~~~
