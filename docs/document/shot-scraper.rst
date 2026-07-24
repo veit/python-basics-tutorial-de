@@ -1,9 +1,8 @@
 shot-scraper
 ============
 
-`shot-scraper <https://simonwillison.net/2022/Mar/10/shot-scraper/>`_ ist ein
-Werkzeug, mit dem sich der Prozess der Aktualisierung von Screenshots
-automatisieren lässt.
+`shot-scraper <https://shot-scraper.datasette.io/en/stable/>`_ ist ein Werkzeug,
+mit dem sich die Aktualisierung von Screenshots automatisieren lässt.
 
 Installation
 ------------
@@ -16,22 +15,27 @@ Installation
 .. note::
    Die zweite Zeile installiert den benötigten Browser.
 
+.. seealso::
+   `shot-scraper Installation
+   <https://shot-scraper.datasette.io/en/stable/installation.html>`_
+
 Verwendung
 ----------
 
-shot-scraper kann auf zweierlei Art verwendet werden
+shot-scraper kann auf mehrere Arten verwendet werden
 
 #. …für einzelne Screenshots auf der Kommandozeile:
 
    .. code-block:: console
 
-      $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
+      $ uv run shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -o ~/Downloads/clean-prep.png
 
-   …oder mit zusätzlichen Optionen, z.B. für JavaScript- und CSS-Selektoren:
+   …oder mit zusätzlichen Optionen, :abbr:`z. B. (zum Beispiel)` für
+   JavaScript- und CSS-Selektoren:
 
-   .. code-block::
+   .. code-block:: console
 
-      $ shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
+      $ uv run shot-scraper https://jupyter-tutorial.readthedocs.io/de/latest/clean-prep/index.html -s '#overview' -o ~/Downloads/clean-prep.png
 
 #. …für eine Reihe von Screenshots, die in einer YAML-Datei konfiguriert sind:
 
@@ -44,7 +48,8 @@ shot-scraper kann auf zweierlei Art verwendet werden
         quality: 40
         output: example.jpg
 
-   Anschließend kann ``shot-scraper multi`` verwendet werden, z.B.:
+   Anschließend kann ``shot-scraper multi`` verwendet werden, :abbr:`z. B. (zum
+   Beispiel)`:
 
    .. code-block:: console
 
@@ -53,12 +58,40 @@ shot-scraper kann auf zweierlei Art verwendet werden
       Screenshot of 'https://www.example.org/' written to 'example.jpg'
 
    .. seealso::
-      * In der `README.md
-        <https://github.com/simonw/shot-scraper/blob/main/README.md>`_-Datei
-        findet ihr eine vollständige Übersicht über die möglichen Optionen.
+      * `Taking multiple screenshots
+        <https://shot-scraper.datasette.io/en/stable/multi.html>`_
       * Im shot-scraper-demo-Repository findet ihr eine deutlich umfangreichere
         `shots.yaml
         <https://github.com/simonw/shot-scraper-demo/blob/main/.github/workflows/shots.yml>`_-Datei.
+
+#. …für Videos:
+
+   Der ``shot-scraper video``-Befehl nimmt ein WebM-Video anhand eines
+   :doc:`Python4DataScience:data-processing/serialisation-formats/yaml/index`-Storyboards
+   auf. Storyboards beschreiben das Video als Abfolge von Szenen. Jede Szene
+   kann eine Seite öffnen, auf Inhalte warten, Aktionen ausführen und zwischen
+   den Schritten eine Pause einlegen, :abbr:`z. B. (zum Beispiel)`:
+
+   .. literalinclude:: storyboard.yml
+      :caption: storyboard.yml
+      :language: yaml
+
+   Führt anschließend folgenden Befehl aus:
+
+   .. code-block:: console
+
+      $ uv run shot-scraper video storyboard.yml
+
+   Dadurch wird ``url`` geöffnet, die Szenen werden aufgezeichnet und das Video
+   wird unter dem Namen :file:`demo.webm` gespeichert.
+
+   Sofern `FFmpeg <https://www.ffmpeg.org/>`_ installiert ist, könnt ihr mit der
+   Option ``--mp4`` das aufgezeichnete WebM-Video zusätzlich in MP4
+   konvertieren.
+
+   .. seealso::
+      * `Recording videos
+        <https://shot-scraper.datasette.io/en/stable/video.html>`_
 
 GitHub-Actions
 --------------
