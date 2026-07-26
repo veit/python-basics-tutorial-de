@@ -376,6 +376,8 @@ folgenden Schritte erforderlich:
               username: __token__
               password: ${{ secrets.PYPI_TOKEN }}
 
+.. _package-attestations:
+
 Seit 14. November 2024 unterstützt :term:`PyPI` auch :pep:`740` mit `Digital
 Attestations <https://docs.pypi.org/attestations/>`_. PyPI verwendet das
 `in-toto Attestation Framework <https://github.com/in-toto/attestation>`_ zum
