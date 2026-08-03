@@ -17,6 +17,11 @@ wir Zweige für ältere Versionen starten müssen.
 `Unreleased <https://github.com/veit/python-basics-tutorial-de/compare/25.1.0...HEAD>`_
 ---------------------------------------------------------------------------------------
 
+Added
+~~~~~
+
+* 📝 Add pytest-leak-finder
+
 Changed
 ~~~~~~~
 

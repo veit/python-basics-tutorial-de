@@ -171,6 +171,25 @@ Ablauf eines Test:
        :alt: Lizenz
        :target: https://github.com/tonybaloney/pytest-freethreaded?tab=MIT-1-ov-file#readme
 
+`pytest-leak-finder <https://github.com/mgaitan/pytest-leak-finder>`_
+    für die binäre Suche nach Testartefakten.
+
+    .. image:: https://raster.shields.io/github/stars/mgaitan/pytest-leak-finder
+       :alt: Stars
+       :target: https://github.com/mgaitan/pytest-leak-finder/stargazers
+
+    .. image:: https://raster.shields.io/github/contributors/mgaitan/pytest-leak-finder
+       :alt: Contributors
+       :target: https://github.com/mgaitan/pytest-leak-finder/graphs/contributors
+
+    .. image:: https://raster.shields.io/github/commit-activity/y/mgaitan/pytest-leak-finder
+       :alt: Commit activity
+       :target: https://github.com/mgaitan/pytest-leak-finder/graphs/commit-activity
+
+    .. image:: https://raster.shields.io/github/license/mgaitan/pytest-leak-finder
+       :alt: Lizenz
+       :target: https://github.com/mgaitan/pytest-leak-finder?tab=MIT-1-ov-file
+
 … veränderten Output
 ~~~~~~~~~~~~~~~~~~~~
 
