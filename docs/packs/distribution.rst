@@ -395,7 +395,7 @@ Andere Dateien
 
 In der :file:`CHANGELOG`-Datei sollten alle wesentlichen Änderungen eines
 Projekts dokumentiert werden. `Keep a Changelog
-<https://keepachangelog.com/en/1.1.0/>`_ empfiehlt hierfür folgendes Format:
+<https://keepachangelog.com/en/2.0.0/>`_ empfiehlt hierfür folgendes Format:
 
 .. code-block:: rest
 
@@ -534,7 +534,7 @@ Es gibt auch etliche Python-Bibliotheken, die euch beim Erstellen der
 
 `changelog_manager <https://github.com/masukomi/changelog_manager>`_
     hilft euch, eine :file:`CHANGELOG.md`-Datei für euer Git-Repo zu erstellen,
-    die dem `Keep A Changelog <https://keepachangelog.com/en/1.1.0/>`_-Standard
+    die dem `Keep A Changelog <https://keepachangelog.com/en/2.0.0/>`_-Standard
     entspricht.
 
     .. image:: https://raster.shields.io/github/stars/masukomi/changelog_manager
