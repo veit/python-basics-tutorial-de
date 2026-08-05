@@ -11,6 +11,7 @@ build:
   apt_packages:
     # plantuml is required for sphinxcontrib.plantuml
     - plantuml
+
   tools:
     python: "3.14"
 
@@ -24,3 +25,8 @@ python:
 
 sphinx:
   configuration: docs/conf.py
+
+# If using Sphinx, optionally build your docs in additional formats such as PDF
+formats:
+  - epub
+  # - pdf
