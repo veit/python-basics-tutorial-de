@@ -466,7 +466,8 @@ Bedarf decken:
        :target: https://github.com/pytest-dev/pytest-cov?tab=MIT-1-ov-file#readme
 
 `pytest-mock <https://pypi.org/project/pytest-mock/>`_
-    ist ein dünner Wrapper um die :doc:`unittest.mock <../mock>`-Patching-API.
+    ist ein dünner Wrapper um die :doc:`unittest.mock
+    <../mock/index>`-Patching-API.
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-mock
        :alt: Stars

@@ -19,7 +19,7 @@ unterschieden.
    unittest
    pytest/index
    tox
-   mock
+   mock/index
    hypothesis
    tdd
    bdd

@@ -683,7 +683,7 @@ Glossar
          <https://de.wikipedia.org/wiki/Statische_Code-Analyse>`_
 
          Es gibt diverse Python-Pakete, die euch bei der statischen Code-Analyse
-         unterstützen können, :abbr:`u.a. (unter anderem)`
+         unterstützen können, :abbr:`u. a. (unter anderem)`
          :doc:`Python4DataScience:productive/qa/flake8`,
          :doc:`Python4DataScience:productive/qa/pysa` und
          :doc:`Python4DataScience:productive/qa/wily`.
@@ -717,7 +717,7 @@ Glossar
 
        :doc:`/test/unittest`
            unterstützt euch bei der Automatisierung von Tests.
-       :doc:`/test/mock`
+       :doc:`/test/mock/index`
            erlaubt euch das Erstellen und Verwenden von :term:`Mock`-Objekten.
        :doc:`../document/doctest`
            ermöglicht das Testen von in Python :term:`Docstrings <Docstring>`
@@ -776,9 +776,9 @@ Glossar
        das Ergebnis erzielt wurde :abbr:`bzw. (beziehungsweise)` ob die
        richtigen Methoden aufgerufen wurden.
 
-       Die Python-Bibliothek für Mocks ist :doc:`unittest.mock <../test/mock>`.
-       Sie wird auch von :doc:`../test/pytest/index` unterstützt. Alternativ
-       könnt ihr jedoch auch `pytest-mock
+       Die Python-Bibliothek für Mocks ist :doc:`unittest.mock
+       <../test/mock/index>`. Sie wird auch von :doc:`../test/pytest/index`
+       unterstützt. Alternativ könnt ihr jedoch auch `pytest-mock
        <https://pypi.org/project/pytest-mock/>`_ verwenden.
 
        .. seealso::

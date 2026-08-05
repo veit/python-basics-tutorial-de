@@ -270,8 +270,8 @@ zu ersetzen, die für das Testen besser geeignet sind. Mit dem eingebauten
 Fixture ``monkeypatch`` könnt ihr dies im Kontext eines einzelnen Tests tun. Es
 wird verwendet, um Objekte, Dicts, Umgebungsvariablen, ``PYTHONPATH`` oder
 das aktuelle Verzeichnis zu ändern. Es ist wie eine Mini-Version von
-:doc:`Mocking <../mock>`. Und wenn der Test endet, wird unabhängig davon, ob er
-bestanden wurde oder nicht, der ursprüngliche, ungepatchte Code
+:doc:`Mocking <../mock/index>`. Und wenn der Test endet, wird unabhängig davon,
+ob er bestanden wurde oder nicht, der ursprüngliche, ungepatchte Code
 wiederhergestellt und alles rückgängig gemacht, was durch den Patch geändert
 wurde.
 
