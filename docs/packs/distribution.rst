@@ -260,6 +260,9 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     Dabei werden Installationsprogramme wie :term:`pip` ältere Versionen von
     Paketen durchsuchen, bis sie eines finden, das eine passende Python-Version
     hat.
+
+.. _classifiers:
+
 ``classifiers``
     gibt dem :term:`Python Package Index` (:term:`PyPI`) und :term:`pip` einige
     zusätzliche Metadaten über euer Paket. In diesem Fall ist das Paket nur mit
@@ -313,8 +316,8 @@ Abhängigkeitsgruppen
 
     .. literalinclude:: dataprep/pyproject.toml
        :language: toml
-       :lines: 33, 39-44
-       :lineno-start: 33
+       :lines: 32, 38-43
+       :lineno-start: 32
 
 Auch rekursive Abhängigkeitsgruppen sind möglich. So könnt ihr beispielsweise
 für ``dev`` neben ``prek`` auch alle Abhängigkeiten aus ``docs`` und ``test``
@@ -322,8 +325,8 @@ für ``dev`` neben ``prek`` auch alle Abhängigkeiten aus ``docs`` und ``test``
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
-   :lines: 34-38
-   :lineno-start: 34
+   :lines: 33-37
+   :lineno-start: 33
 
 Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z.B. (zum Beispiel)`
 mit:
