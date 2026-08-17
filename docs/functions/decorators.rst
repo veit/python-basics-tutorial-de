@@ -27,9 +27,9 @@ kann dann anstelle der ursprünglichen Funktion verwendet werden:
    Execute function my_func with the argument(s)
    ('Hello', 'Pythonistas!')
 
-Zeile 2
+Zeile 1
     Die ``inf``-Funktion gibt den Namen der Funktion, die sie umhüllt, aus.
-Zeile 6
+Zeile 12
     Wenn sie fertig ist, gibt die ``inf``-Funktion die umhüllte Funktion zurück.
 
 Ein Dekorator ist `syntaktischer Zucker
@@ -61,7 +61,7 @@ Funktion zurückgeben, wie folgt:
 
 Zeile 1
     Die Funktion ``my_func`` wird mit ``@inf`` dekoriert.
-Zeile 7
+Zeile 8
     Die umhüllte Funktion wird aufgerufen, nachdem die Dekorator-Funktion fertig
     ist.
 
@@ -84,25 +84,67 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
        :linenos:
 
        >>> from timeit import timeit
-       ... from functools import cache
-       ... @cache
+       >>> from functools import cache
+       >>> @cache
        ... def factorial(n):
        ...     return n * factorial(n - 1) if n else 1
-       ... timeit("factorial(8)", globals=globals())
-       0.02631620899774134
+       ...
+       >>> timeit("factorial(10)", number=1, globals=globals())
+       8.74977558851242e-06
+       >>> timeit("factorial(12)", number=1, globals=globals())
+       4.041939973831177e-06
+       >>> timeit("factorial(12)", number=1, globals=globals())
+       1.8328428268432617e-06
 
     Zeile 1
         importiert das :mod:`timeit`-Modul zum Messen der Messen der
         Ausführungszeit.
     Zeile 2
         importiert :func:`functools.cache`.
-    Zeile 5
+    Zeile 3
         Der ``@cache``-Dekorator wird verwendet, um Zwischenergebnisse zu
         speichern, die dann erneut verwendet werden können. In unserem Fall
         wird die Ausführungsgeschwindigkeit ungefähr verzehnfacht.
-    Zeile 10
-        :func:`timeit.timeit` misst die Zeit eines Aufrufs. Sofern nichts
-        anderes angegeben ist, erfolgt der Aufruf eine Millionen mal.
+    Zeile 7
+        :func:`timeit.timeit` misst die Zeit eines Aufrufs.
+    Zeile 9
+        Nur zwei weitere rekursive Aufrufe müssen durchgeführt werden, da
+        ``factorial(10)`` bereits zwischengespeichert ist.
+
+:func:`functools.singledispatch`
+    wandelt eine Funktion in eine generische Funktion um. Um eine generische
+    Funktion zu definieren, wird diese mit dem Dekorator ``@singledispatch``
+    versehen:
+
+    .. code-block:: pycon
+
+       >>> from functools import singledispatch
+       >>>
+       >>> @singledispatch
+       ... def multiply(a, b):
+       ...     raise NotImplementedError("Unsupported type")
+       ...
+
+    Um der Funktion überladene Implementierungen hinzuzufügen, könnt ihr
+    :func:`register` der generischen Funktion als Dekorator verwenden:
+
+    .. code-block:: pycon
+
+       >>> @multiply.register(float)
+       ... def _(a, b):
+       ...     print(a * b)
+       ...
+       >>> @multiply.register(str)
+       ... def _(a, b):
+       ...     print(float(a) * float(b))
+       ...
+       >>> multiply(7.0, 0.6)
+       4.2
+       >>> multiply("7.0", "0.6")
+       4.2
+
+    Bei Funktionen, die mit Typen annotiert sind, leitet der Dekorator den Typ
+    des ersten Arguments automatisch ab.
 
 :func:`functools.wraps`
     Dieser Dekorator lässt die Wrapper-Funktion so, so wie die ursprüngliche
@@ -139,6 +181,103 @@ könnt ihr sie als Dekoratoren verwenden, so :abbr:`u.a. (unter anderem)`:
         >>> example.__doc__
         'Wrapper docstring'
 
-.. tip::
-   `cusy Seminar: Fortgeschrittenes Python
-   <https://cusy.io/de/our-training-courses/advanced-python.html>`_
+Weitere typische Anwendungen für Python-Dekoratoren
+---------------------------------------------------
+
+Andere Python-Compiler
+~~~~~~~~~~~~~~~~~~~~~~
+
+Python-Compiler wie :abbr:`z. B. (zum Beispiel)` `Numba
+<https://numba.pydata.org/>`_ können mit einem Dekorator verwendet werden:
+
+.. code-block:: python
+
+   @numba.jit(nopython=True)
+   def dist(x, y):
+       """Calculate the distance"""
+       dist = 0
+       for i in range(len(x)):
+           dist += (x[i] - y[i]) ** 2
+       return dist
+
+.. seealso::
+   * :ref:`/performance/index.rst#numba`
+
+Parallelisierung
+~~~~~~~~~~~~~~~~
+
+Die sequenzielle Ausführung unabhängiger Pipeline-Schritte nutzt die
+Rechenkapazitäten von Prozessoren nicht optimal aus. Der Dekorator
+`@dask.delayed <https://docs.dask.org/en/stable/delayed.html#decorator>`_
+erstellt einen gerichteten azyklischen Graphen (englisch :abbr:`DAG (directed
+acyclic graph)`), um die Aufgaben parallel auszuführen, was zur Verkürzung der
+Gesamtlaufzeit beiträgt:
+
+.. code-block:: pycon
+
+   >>> import dask
+   >>> @dask.delayed
+   ... def inc(x):
+   ...     return x + 1
+   ...
+   >>> @dask.delayed
+   ... def double(x):
+   ...     return x * 2
+   ...
+   >>> @dask.delayed
+   ... def add(x, y):
+   ...     return x + y
+   ...
+   >>> data = range(1, 6)
+   >>> output = []
+   >>> for x in data:
+   ...     a = inc(x)
+   ...     b = double(x)
+   ...     c = add(a, b)
+   ...     output.append(c)
+   ...
+   >>> total = dask.delayed(sum)(output)
+   >>> total.compute()
+   50
+   >>> total.visualize()
+   <IPython.core.display.Image object>
+
+.. figure:: mydask.png
+
+Memory-Profiling
+~~~~~~~~~~~~~~~~
+
+Der Dekorator ``@memory_profiler.profile`` dient dazu, den Speicherverbrauch zu
+messen. Dabei wird die umschlossene Funktion Schritt für Schritt überwacht und
+dabei für jedem einzelnen Schritt der RAM-Verbrauch bzw. der freigegebene
+Speicher beobachtet:
+
+.. code-block:: python
+   :linenos:
+
+   from memory_profiler import profile
+
+
+   @profile
+   def my_func():
+       a = [1] * (10**6)
+       b = [2] * (2 * 10**7)
+       del b
+       return a
+
+Die Ausgabe kann dann so aussehen:
+
+.. code-block:: console
+
+   Line #    Mem usage    Increment   Line Contents
+   ================================================
+        4     67.3 MiB     67.3 MiB   @profile
+        5                             def my_func():
+        6     74.8 MiB      7.5 MiB       a = [1] * (10 ** 6)
+        7    227.4 MiB    152.6 MiB       b = [2] * (2 * 10 ** 7)
+        8     74.9 MiB      0.0 MiB       del b
+        9     74.9 MiB      0.0 MiB       return a
+
+.. seealso::
+   * `memory-profiler
+     <https://www.python4data.science/de/latest/performance/ipython-profiler.html#Speicherprofil-erstellen:-%memit-und-%mprun>`_
