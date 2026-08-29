@@ -20,6 +20,7 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add timezone
 * 📝 Add pytest-leak-finder
 
 Changed
