@@ -58,7 +58,7 @@ zusammenhängenden Beispiel dargestellt: :download:`form.py`.
        In der ``__init__``-Methode fügt sich die Instanz in die Liste
        ``circles`` ein.
    Zeilen 37 und 38
-       ``circumferences`` ist eine Klassenmethode und nimmt die Klasse selbst
+       ``perimeters`` ist eine Klassenmethode und nimmt die Klasse selbst
        (``cls``) als Parameter.
    Zeile 41
        verwendet den Parameter ``cls`` für den Zugriff auf die Klassenvariable
@@ -94,12 +94,12 @@ gegangen und die ``move()``-Methode von ``Form`` verwendet:
    >>> c2.diameter, c2.x, c2.y
    (2, 8, 10)
 
-Ihr könnt auch die Klassenmethode ``circumferences()`` der Klasse ``Circle``
+Ihr könnt auch die Klassenmethode ``perimeters()`` der Klasse ``Circle``
 aufrufen, entweder über die Klasse selbst oder durch eine Instanz:
 
 .. code-block:: pycon
 
-   >>> form.Circle.circumferences()
+   >>> form.Circle.perimeters()
    9.424769999999999
-   >>> c2.circumferences()
+   >>> c2.perimeters()
    9.424769999999999

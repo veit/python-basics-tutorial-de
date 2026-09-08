@@ -12,20 +12,40 @@ Was ist ein Modul?
 
 Ein Modul ist eine Datei, die Code enthält. Sie definiert eine Gruppe von
 Python-Funktionen oder anderen Objekten, und der Name des Moduls wird vom Namen
-der Datei abgeleitet. Module enthalten meist Python-Quellcode [#]_, fassen
-verwandte Python-Objekte zusammen und helfen, Namenskonflikte zu vermeiden. So
-könnt ihr für euer Programm ein Modul namens ``mymodule`` schreiben, das eine
-Funktion namens :func:`my_func` definiert. Im selben Programm möchtet ihr
-vielleicht auch ein anderes Modul namens ``othermodule`` verwenden, das
-ebenfalls eine Funktion namens :func:`my_func` definiert, aber etwas anderes tut
-als :func:`mymodule.my_func`. Ohne Module wäre es unmöglich, zwei verschiedene
+der Datei abgeleitet.
+
+Module enthalten meist Python-Quellcode [#]_, fassen verwandte Python-Objekte
+zusammen und helfen, Namenskonflikte zu vermeiden. So könnt ihr für euer
+Programm ein Modul namens ``mymodule`` schreiben, das eine Funktion namens
+:func:`my_func` definiert. Im selben Programm möchtet ihr vielleicht auch ein
+anderes Modul namens ``othermodule`` verwenden, das ebenfalls eine Funktion
+namens :func:`my_func` definiert, aber etwas anderes tut als
+:func:`mymodule.my_func`. Ohne Module wäre es unmöglich, zwei verschiedene
 Funktionen mit demselben Namen zu verwenden. Mit Modulen könnt ihr in eurem
 Hauptprogramm auf die Funktionen :func:`mymodule.my_func` und
-:func:`othermodule.my_func` verweisen. Die Verwendung der Modulnamen sorgt
-dafür, dass die beiden :func:`my_func`-Funktionen nicht verwechselt werden, da
-Python :abbr:`sog. (sogenannte)` Namespaces verwendet. Ein Namespace ist im
-Wesentlichen ein Wörterbuch mit Bezeichnungen für die dort zur Verfügung
+:func:`othermodule.my_func` verweisen. Jedes Modul erstellt automatisch einen
+Namensraum, wodurch Variablen mit demselben Namen in verschiedenen Modulen
+niemals versehentlich kollidieren: die beiden :func:`my_func`-Funktionen können
+nicht verwechselt werden, wenn ihr in Python :abbr:`sog. (sogenannte)`
+:doc:`../oop/namespaces` verwendet. Ein Namensraum ist im Wesentlichen ein
+:doc:`Dictionary <../types/dicts>` mit Bezeichnungen für die dort zur Verfügung
 stehenden Funktionen, Klassen, Module :abbr:`usw (und so weiter)`.
+
+    Namespaces are one honking great idea – let’s do more of those!
+
+– `The Zen of Python <https://peps.python.org/pep-0020/>`_, von Tim Peters
+
+.. code-block:: pycon
+
+   >>> import cmath, math
+   >>> math.sin(34)
+   0.5290826861200238
+   >>> cmath.sin(34)
+   (0.5290826861200238-0j)
+
+.. warning::
+   Ein Import mit Platzhaltern macht diese Trennung der Namensräume jedoch
+   zunichte: ``import *`` überträgt jeden Namen aus einem Modul in ein anderes.
 
 Module werden auch verwendet, um Python selbst überschaubarer zu machen. Die
 meisten Standardfunktionen von Python sind nicht in den Kern der Sprache
@@ -122,7 +142,7 @@ wird.
    Wenn es kein zutreffendes Modul in diesem  Suchpfad gibt, wird ein
    ``ImportError`` ausgelöst.
 
-   Wenn ihr :ref:`idle`  verwendet, könnt ihr euch den Suchpfad und die darin
+   Wenn ihr :ref:`idle` verwendet, könnt ihr euch den Suchpfad und die darin
    enthaltenen Module grafisch ansehen, indem ihr das Fenster
    :menuselection:`File --> Path Browser` verwendet.
 
@@ -192,6 +212,77 @@ Zudem wird automatisch eine Hilfeoption ``-h`` oder ``--help`` erzeugt:
      -h, --help            show this help message and exit
      -f FILENAME, --file FILENAME
                            read data from the file
+
+Öffentliche API mit ``__all__`` deklarieren
+-------------------------------------------
+
+Mit ``__all__`` könnt ihr eine öffentliche API eures Moduls bereitstellen,
+wodurch bestimmt wird, was mit :samp:`from {MODUL} import *` importiert wird.
+Angenommen, euer Modul sieht folgendermaßen aus:
+
+.. literalinclude:: perimeter.py
+   :caption: perimeter.py
+
+Dann könnt ihr dieses Modul folgendermaßen verwenden:
+
+.. code-block:: pycon
+
+   >>> from perimeter import *
+   >>> circle_perimeter(3)
+   9.42477796076938
+   >>> square_perimeter(3)
+   12
+   >>> square_length(16)
+   4.0
+
+Ihr könnt jedoch nicht die ``pi``-Variable aus dem Modul verwenden:
+
+.. code-block:: pycon
+
+   >>> pi
+   Traceback (most recent call last):
+     File "<python-input-1>", line 1, in <module>
+       pi
+   NameError: name 'pi' is not defined
+
+Auch mit :py:func:`dir` erhaltet ihr zusätzlich nur die beiden Funktionen aus
+``__all__``:
+
+.. code-block:: pycon
+
+   >>> dir()
+   ['__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'circle_perimeter', 'square_length', 'square_perimeter']
+
+Dies hat den Vorteil, dass Interne Hilfsfunktionen und -Variablen gekapselt
+und nicht versehentlich exportiert werden. Ohne ``__all__`` wäre jeder Name, der
+nicht mit einem Unterstrich beginnt, ebenfalls importiert worden, einschließlich
+``pi`` und der ``sqrt``-Funktion, die wir aus :py:mod:`math` importiert haben.
+
+Die Hilfefunktion :py:func:`help` liest ebenfalls ``__all__`` aus und
+dokumentiert nicht alles im Modul; die interne Variable ``pi`` und ``sqrt``, das
+nicht einmal von uns stammt, werden nicht angezeigt:
+
+.. code-block:: pycon
+
+   >>> import perimeter
+   >>> help(perimeter)
+
+.. code-block:: text
+
+   Help on module perimeter:
+
+   NAME
+       perimeter
+
+   FUNCTIONS
+       circle_perimeter(diameter)
+
+       square_length(area)
+
+       square_perimeter(length)
+
+   DATA
+       __all__ = ['circle_perimeter', 'square_length', 'square_perimeter']
 
 Checks
 ------

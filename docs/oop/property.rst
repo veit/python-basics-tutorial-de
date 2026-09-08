@@ -51,7 +51,7 @@ unserem Fall in ``length.setter``:
 
     >>> s1 = form.Square()
     >>> s1.length = 2
-    >>> s1.circumference()
+    >>> s1.perimeter()
     8
 
 Ein großer Vorteil von Pythons Fähigkeit, Eigenschaften hinzuzufügen, besteht

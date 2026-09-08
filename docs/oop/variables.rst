@@ -47,7 +47,7 @@ zugänglich zu machen:
     ...     pi = 3.14159
     ...     def __init__(self, diameter):
     ...         self.diameter = diameter
-    ...     def circumference(self):
+    ...     def perimeter(self):
     ...         return self.diameter * Circle.pi
     ...
 
@@ -68,20 +68,20 @@ Wenn ihr diese Definition eingegeben habt, könnt ihr ``pi`` abfragen mit:
 
 Ihr könnt auch von einer Methode einer Klasse aus über den Klassennamen auf eine
 Klassenvariable zugreifen. Ihr tut dies in der Definition von
-``Circle.circumference``, wo die Funktion ``circumference`` einen speziellen
-Verweis auf ``Circle.pi`` enthält:
+``Circle.perimeter``, wo die Funktion ``perimeter`` einen speziellen Verweis auf
+``Circle.pi`` enthält:
 
 .. code-block:: pycon
 
     >>> c = Circle(3)
-    >>> c.circumference()
+    >>> c.perimeter()
     9.424769999999999
 
-Unschön ist jedoch, dass der Klassenname ``Circle`` in der Methode
-``circumference`` verwendet wird, um die Klassenvariable ``pi`` anzusprechen.
-Ihr könnt dies vermeiden, indem ihr das spezielle ``__class__``-Attribut
-verwendet, das für alle Python-Klasseninstanzen verfügbar ist. Dieses Attribut
-gibt die Klasse zurück, zu der die Instanz gehört, :abbr:`z.B. (zum Beispiel)`:
+Unschön ist jedoch, dass der Klassenname ``Circle`` in der Methode ``perimeter``
+verwendet wird, um die Klassenvariable ``pi`` anzusprechen. Ihr könnt dies
+vermeiden, indem ihr das spezielle ``__class__``-Attribut verwendet, das für
+alle Python-Klasseninstanzen verfügbar ist. Dieses Attribut gibt die Klasse
+zurück, zu der die Instanz gehört, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
 
@@ -101,7 +101,7 @@ ohne sich explizit auf den Namen der Klasse ``Circle`` zu beziehen:
     >>> c.__class__.pi
     3.14159
 
-Ihr könnt diesen Code intern in der Methode ``circumference`` verwenden, um den
+Ihr könnt diesen Code intern in der Methode ``perimeter`` verwenden, um den
 expliziten Verweis auf die Klasse ``Circle`` loszuwerden; ersetzt ``Circle.pi``
 durch ``self.__class__.pi``.
 

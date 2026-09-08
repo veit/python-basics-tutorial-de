@@ -4,23 +4,23 @@ Methoden
 Eine Methode ist eine Funktion, die mit einer bestimmten Klasse verbunden ist.
 Ihr habt bereits die spezielle ``__init__``-Methode kennengelernt, die bei einer
 neuen Instanz aufgerufen wird, wenn diese erstellt wird. Im folgenden Beispiel
-definiert ihr eine weitere Methode, ``circumference``, für die Klasse
-``Square``; diese Methode kann verwendet werden, um den Umfang für eine
-beliebige ``Square``-Instanz zu berechnen und zurückzugeben. Wie die meisten
-benutzerdefinierten Methoden wird ``circumference`` mit einer Syntax aufgerufen,
-die dem Zugriff auf Instanz-Variablen ähnelt:
+definiert ihr eine weitere Methode, ``perimeter``, für die Klasse ``Square``;
+diese Methode kann verwendet werden, um den Umfang für eine beliebige
+``Square``-Instanz zu berechnen und zurückzugeben. Wie die meisten
+benutzerdefinierten Methoden wird ``perimeter`` mit einer Syntax aufgerufen, die
+dem Zugriff auf Instanz-Variablen ähnelt:
 
 .. code-block:: pycon
 
    >>> class Square:
    ...     def __init__(self):
    ...         self.length = 1
-   ...     def circumference(self):
+   ...     def perimeter(self):
    ...         return 4 * self.length
    ...
    >>> s = Square()
    >>> s.length = 5
-   >>> print(s.circumference())
+   >>> print(s.perimeter())
    20
 
 Die Syntax für Methodenaufrufe besteht aus einer Instanz, gefolgt von einem
@@ -34,12 +34,12 @@ Klasse sein muss, in der die Methode definiert ist, und weniger klar ist:
 
 .. code-block:: pycon
 
-   >>> print(Square.circumference(s))
+   >>> print(Square.perimeter(s))
    20
 
-Wie ``__init__`` wird auch die ``circumference``-Methode als Funktion innerhalb
-der Klasse definiert. Das erste Argument jeder Methode ist die Instanz, von der
-oder auf der sie aufgerufen wurde, konventionsgemäß ``self`` genannt. In vielen
+Wie ``__init__`` wird auch die ``perimeter``-Methode als Funktion innerhalb der
+Klasse definiert. Das erste Argument jeder Methode ist die Instanz, von der oder
+auf der sie aufgerufen wurde, konventionsgemäß ``self`` genannt. In vielen
 Sprachen wird die Instanz ``this`` genannt und nie explizit übergeben.
 
 Methoden können mit Argumenten aufgerufen werden, wenn die Methodendefinitionen
@@ -53,7 +53,7 @@ eines Quadrats festlegen zu müssen:
    >>> class Square:
    ...     def __init__(self, length):
    ...         self.length = length
-   ...     def circumference(self):
+   ...     def perimeter(self):
    ...         return 4 * self.length
    ...
 
@@ -129,10 +129,10 @@ Zeile 14
    >>> import circle
    >>> c1 = circle.Circle(1)
    >>> c2 = circle.Circle(2)
-   >>> circle.Circle.circumferences()
+   >>> circle.Circle.perimeters()
    9.424769999999999
    >>> c2.diameter = 3
-   >>> circle.Circle.circumferences()
+   >>> circle.Circle.perimeters()
    12.56636
 
 .. _classmethod:
@@ -159,18 +159,18 @@ Zeile 27
     Ihr könnt ``cls`` anstelle von ``self.__class__`` verwenden.
 
     Durch die Verwendung einer Klassenmethode anstelle einer statischen Methode
-    müsst ihr den Klassennamen nicht hart in ``circumferences`` codieren.
+    müsst ihr den Klassennamen nicht hart in ``perimeters`` codieren.
 
 .. code-block:: pycon
 
    >>> import circle_cm
    >>> c1 = circle_cm.Circle(1)
    >>> c2 = circle_cm.Circle(2)
-   >>> circle_cm.Circle.circumferences()
+   >>> circle_cm.Circle.perimeters()
    9.424769999999999
 
 Checks
 ------
 
-* Schreibt eine Klassenmethode, die ähnlich wie :func:`circumferences` ist, aber
+* Schreibt eine Klassenmethode, die ähnlich wie :func:`perimeters` ist, aber
   die Gesamtfläche aller Kreise zurückgibt.

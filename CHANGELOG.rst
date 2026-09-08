@@ -26,6 +26,11 @@ Added
 Changed
 ~~~~~~~
 
+* 📝 Update module section
+
+  * Add module namespace
+  * Add public API with __all__
+
 * 📝 Update decorators
 
   * Add functools.singledispatch

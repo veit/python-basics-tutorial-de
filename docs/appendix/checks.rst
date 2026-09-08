@@ -836,8 +836,8 @@ Checks
 :doc:`/oop/methods`
 -------------------
 
-* Schreibt eine Klassenmethode, die ähnlich wie :func:`circumferences` ist, aber
-  die Gesamtfläche aller Kreise zurückgibt.
+* Schreibt eine Klassenmethode, die ähnlich wie :func:`perimeters` ist, aber die
+  Gesamtfläche aller Kreise zurückgibt.
 
   .. code-block:: python
 
