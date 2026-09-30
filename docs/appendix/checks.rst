@@ -529,10 +529,12 @@ Checks
   would you use? Are there any other options?
 
   .. code-block:: pycon
+
      >>> filename = "pylock.prod.toml"
      >>> filename.startswith("pylock")
      True
      >>> filename[:6] == "pylock"
+
 * Suppose you have a string with exclamation marks, quotation marks and line
   breaks. How can these be removed from the string?
 @@ -398,6 +401,14 @@ Checks

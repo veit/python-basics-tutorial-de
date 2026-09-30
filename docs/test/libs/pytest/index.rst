@@ -19,7 +19,7 @@ pytest
   Testabhängigkeiten vereinfacht.
 * In unittest sind parametrisierte Tests zwar möglich, erfordern jedoch
   zusätzliche Aufwand. pytest enthält hingegen den :doc:`Dekorator
-  <../../functions/decorators>` ``@pytest.mark.parametrize``, mit dem mühelos
+  <../../../functions/decorators>` ``@pytest.mark.parametrize``, mit dem mühelos
   Testfunktionen mit unterschiedlichen Eingaben und erwarteten Ergebnissen
   ausgeführt werden können.
 * pytest verfügt über ein umfangreiches Ökosystem mit über 800 :doc:`plugins`

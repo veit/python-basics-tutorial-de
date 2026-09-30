@@ -16,10 +16,5 @@ unterschieden.
    :titlesonly:
    :hidden:
 
-   unittest
-   pytest/index
-   tox
-   mock/index
-   hypothesis
-   tdd
-   bdd
+   libs/index
+   methods/index

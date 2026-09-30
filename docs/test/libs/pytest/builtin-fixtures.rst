@@ -320,8 +320,8 @@ Das ``monkeypatch``-Fixture bietet die folgenden Funktionen:
 +-----------------------------------------------+-----------------------+
 
 .. [1] Der ``raising``-:term:`Parameter` teilt pytest mit, ob eine
-       :doc:`Exception <../../control-flow/exceptions>` ausgelöst werden soll,
-       wenn das Element (noch) nicht vorhanden ist.
+       :doc:`Exception <../../../control-flow/exceptions>` ausgelöst werden
+       soll, wenn das Element (noch) nicht vorhanden ist.
 .. [2] Der ``prepend``-:term:`Parameter` von ``setenv()`` kann ein Zeichen sein.
        Wenn er gesetzt ist, wird der Wert der Umgebungsvariablen in
        :samp:`{VALUE} + prepend + {OLD_VALUE}` geändert.
@@ -497,7 +497,7 @@ Verbleibende Built-in-Fixtures
 +-----------------------------------------------+-----------------------------------------------+
 | :fixture:`pytest:doctest_namespace`           | nützlich, wenn ihr pytest verwenden möchtet,  |
 |                                               | um :doc:`Doctests                             |
-|                                               | <../../document/doctest>`                     |
+|                                               | <../../../document/doctest>`                  |
 |                                               | durchzuführen.                                |
 +-----------------------------------------------+-----------------------------------------------+
 | :fixture:`pytest:pytestconfig`                | wird verwendet, um Zugriff auf                |

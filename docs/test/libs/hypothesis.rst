@@ -80,7 +80,7 @@ Beispiel mit ``strategies`` und ``given``
       :lineno-start: 1
 
 #. Für unseren Test verwenden wir nun ``hypothesis.given`` als :doc:`Dekorator
-   <../functions/decorators>` um die Testfunktion in eine parametrisierte
+   <../../functions/decorators>` um die Testfunktion in eine parametrisierte
    umzuwandeln, die dann mit einer großen Varianz passender Daten ausgeführt
    wird:
 
@@ -180,7 +180,7 @@ Beispiel mit regulären Ausdrücken
 
 #. Im folgenden Beispiel versuchen wir, aus einer E-Mail-Adresse ``username``
    und ``domain`` mit einem :doc:`regulären Ausdruck
-   <../types/strings/built-in-modules/regex>` zu ermitteln:
+   <../../types/strings/built-in-modules/regex>` zu ermitteln:
 
    .. literalinclude:: test_emails.py
       :lines: 1, 5-9

@@ -127,7 +127,7 @@ wir :func:`mock.patch.object` als Kontextmanager verwenden:
 
 In unserem Testcode importieren wir ``tasks``. Das resultierende tasks-Objekt
 ist das, was wir patchen werden. Der Aufruf von :func:`mock.patch.object`, der
-als :doc:`Kontextmanager <../../control-flow/with>` innerhalb eines
+als :doc:`Kontextmanager <../../../control-flow/with>` innerhalb eines
 ``with``-Blocks verwendet wird, gibt ein Mock-Objekt zurück, das nach dem
 ``with``-Block aufgeräumt wird:
 
@@ -151,7 +151,7 @@ definiert:
         with tasks_db() as db:
             print(db.path())
 
-:func:`tasks_db` ist ein :doc:`Kontextmanager <../../control-flow/with>`, der
+:func:`tasks_db` ist ein :doc:`Kontextmanager <../../../control-flow/with>`, der
 ein ``tasks.TasksDB``-Objekt zurückgibt. Das zurückgegebene Objekt wird dann als
 ``db`` verwendet, um :func:`db.path` aufzurufen. Wir sollten hier also zwei
 Dinge zu mocken: ``tasks.TasksDB`` und eine seiner Methoden, :func:`path`.
@@ -205,7 +205,7 @@ so dass Tests ihn verwenden können, um Dinge wie ``path`` zu ersetzen:
         assert result.stdout.rstrip() == "/foo/"
 
 Alternativ kann zum Mocken von Klassen oder Objekten auch der
-:func:`@mock.patch`-:doc:`Dekorator <../../functions/decorators>` verwendet
+:func:`@mock.patch`-:doc:`Dekorator <../../../functions/decorators>` verwendet
 werden. In den folgenden Beispielen wird die Ausgabe von ``os.listdir`` gemockt.
 Dazu muss ``db_path`` nicht im Dateisystem vorhanden sein:
 

@@ -96,7 +96,7 @@ Kontinuierliche Integration
 
 :abbr:`Ggf. (Gegebenenfalls)` könnt ihr auch automatisiert in eurer
 :term:`CI`-Pipeline überprüfen, ob die Dokumentation gebaut wird und die Links
-gültig sind. In :doc:`../../test/tox` kann die Konfiguration folgendermaßen
+gültig sind. In :doc:`../../test/libs/tox` kann die Konfiguration folgendermaßen
 ergänzt werden:
 
 .. code-block:: ini
@@ -165,8 +165,8 @@ geschrieben ist, lässt sich mit `sphinx-lint
    Mit :doc:`Sybil:index` könnt ihr nicht nur :doc:`rest` überprüfen, sondern
    :abbr:`z.B. (zum Beispiel)` auch :doc:`Markdown <Sybil:markdown>` und
    :doc:`Myst <Sybil:myst>`. Darüberhinaus kann Sybil auch Code-Blöcke in der
-   Dokumentation entweder mit :doc:`../../test/pytest/index` oder mit
-   :doc:`../../test/unittest` überprüfen.
+   Dokumentation entweder mit :doc:`../../test/libs/pytest/index` oder mit
+   :doc:`../../test/libs/unittest` überprüfen.
 
 .. _test_code:
 
@@ -379,7 +379,7 @@ Ihr könnt ``interrogate`` :abbr:`z.B. (zum Beispiel)` in der
 
    * `Configuration <https://interrogate.readthedocs.io/en/latest/index.html#configuration>`_
 
-Nun könnt ihr ``interrogate`` in eure :doc:`../../test/tox`-Datei einfügen,
+Nun könnt ihr ``interrogate`` in eure :doc:`../../test/libs/tox`-Datei einfügen,
 :abbr:`z.B. (zum Beispiel)` mit
 
 .. code-block:: ini

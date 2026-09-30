@@ -5,22 +5,6 @@ Unittest
 Testautomatisierung mit gemeinsam genutztem Setup- und TearDown-Code sowie der
 Aggregation und Unabhängigkeit von Tests.
 
-Hierfür liefert es die folgenden Testkonzepte:
-
-.. glossary::
-
-   Test Case (Testfall)
-       testet eine einzelnes Szenario.
-
-   Test Fixture (Prüfvorrichtung)
-       ist eine konsistente Testumgebung.
-
-   Test Suite
-       ist eine Sammlung mehrerer :term:`Test Cases <Test Case (Testfall)>`.
-
-   Test Runner
-       durchläuft eine :term:`Test Suite` und stellt die Ergebnisse dar.
-
 Beispiel
 --------
 
@@ -121,19 +105,19 @@ Beispiel: SQLite-Datenbank testen
 ---------------------------------
 
 #. Zum Testen, ob die Datenbank ``library.db`` mit :download:`create_db.py
-   <../save-data/sqlite/create_db.py>` angelegt wurde, importieren wir neben
+   <../../save-data/sqlite/create_db.py>` angelegt wurde, importieren wir neben
    :doc:`sqlite3 <python3:library/sqlite3>` und :doc:`unittest
    <python3:library/unittest>` auch noch :download:`create_db.py
-   <../save-data/sqlite/create_db.py>` und :doc:`os <python3:library/os>`:
+   <../../save-data/sqlite/create_db.py>` und :doc:`os <python3:library/os>`:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 1-5
       :lineno-start: 1
 
 #. Anschließend definieren wir zunächst eine Testklasse ``TestCreateDB``:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 8
       :lineno-start: 8
@@ -142,7 +126,7 @@ Beispiel: SQLite-Datenbank testen
    ``assert`` die Annahme treffen, dass die Datei in :doc:`os.path
    <python3:library/os.path>` existiert:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 9-10
       :lineno-start: 9
@@ -152,7 +136,7 @@ Beispiel: SQLite-Datenbank testen
    ``assertRaises``, dass ``sqlite`` mit einem ``OperationalError`` beendet
    wird:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 12-14
       :lineno-start: 12
@@ -160,7 +144,7 @@ Beispiel: SQLite-Datenbank testen
 #. Weitere Tests wollen wir nicht an einer Datenbank im Dateisystem
    durchführen sondern in einer SQLite-Datenbank im Arbeitsspeicher:
 
-   .. literalinclude:: ../save-data/sqlite/test_sqlite.py
+   .. literalinclude:: ../../save-data/sqlite/test_sqlite.py
       :language: python
       :lines: 17-20
       :lineno-start: 17

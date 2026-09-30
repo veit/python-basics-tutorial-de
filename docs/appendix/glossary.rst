@@ -715,20 +715,20 @@ Glossar
 
        In Python stehen euch verschiedene Module zur Verfügung:
 
-       :doc:`/test/unittest`
+       :doc:`/test/libs/unittest`
            unterstützt euch bei der Automatisierung von Tests.
-       :doc:`/test/mock/index`
+       :doc:`/test/libs/mock/index`
            erlaubt euch das Erstellen und Verwenden von :term:`Mock`-Objekten.
        :doc:`../document/doctest`
            ermöglicht das Testen von in Python :term:`Docstrings <Docstring>`
            geschriebenen Tests.
-       :doc:`/test/tox`
+       :doc:`/test/libs/tox`
            ermöglicht das Testen in verschiedenen Umgebungen.
 
    Blackbox-Test
-       wird ohne Kenntnis des Quellcodes entwickelt. Neben :doc:`/test/unittest`
-       kann in Python auch :doc:`/test/hypothesis` für solche Tests verwendet
-       werden.
+       wird ohne Kenntnis des Quellcodes entwickelt. Neben
+       :doc:`/test/libs/unittest` kann in Python auch
+       :doc:`/test/libs/hypothesis` für solche Tests verwendet werden.
 
    ``assert``
        Ein Schlüsselwort, das die Codeausführung anhält, wenn sein Argument
@@ -777,9 +777,9 @@ Glossar
        richtigen Methoden aufgerufen wurden.
 
        Die Python-Bibliothek für Mocks ist :doc:`unittest.mock
-       <../test/mock/index>`. Sie wird auch von :doc:`../test/pytest/index`
-       unterstützt. Alternativ könnt ihr jedoch auch `pytest-mock
-       <https://pypi.org/project/pytest-mock/>`_ verwenden.
+       <../test/libs/mock/index>`. Sie wird auch von
+       :doc:`../test/libs/pytest/index` unterstützt. Alternativ könnt ihr jedoch
+       auch `pytest-mock <https://pypi.org/project/pytest-mock/>`_ verwenden.
 
        .. seealso::
           * `Mock-Objekt <https://de.wikipedia.org/wiki/Mock-Objekt>`_
@@ -788,7 +788,7 @@ Glossar
        Ein Python-Paket mit Test-Utilities.
 
        .. seealso::
-          * :doc:`/test/pytest/index`
+          * :doc:`/test/libs/pytest/index`
 
    Regressionstest
        Tests zum Schutz vor neuen Fehlern oder Regressionen, die durch neue
@@ -824,7 +824,7 @@ Glossar
        zusammengefasst.
 
        .. seealso::
-          * :doc:`../test/tdd`
+          * :doc:`../test/methods/tdd`
           * Kent Beck: `Canon TDD <https://tidyfirst.substack.com/p/canon-tdd>`_
           * Kent Beck: `Test-driven development by example
             <https://archive.org/details/est-driven-development-by-example/test-driven-development-by-example/>`_

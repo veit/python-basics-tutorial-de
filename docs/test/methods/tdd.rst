@@ -59,8 +59,8 @@ Erst dann stellt er die folgenden fünf Schritte vor:
         :abbr:`ggf. (gegebenenfalls)` auch eine Ganzzahl.
       * Ist die Menge oder Sequenz leer, soll eine Fehlermeldung ausgegeben
         werden.
-      * Sind ein oder mehrere  Elemente :doc:`../types/strings/index`, so soll
-        versucht werden, diese in Zahlen vom passenden Typ umzuwandeln.
+      * Sind ein oder mehrere  Elemente :doc:`../../types/strings/index`, so
+        soll versucht werden, diese in Zahlen vom passenden Typ umzuwandeln.
       * Gelingt die Umwandlung einzelner Elemente in Zahlen nicht, soll eine
         passende Fehlermeldung ausgegeben werden.
 
@@ -88,11 +88,11 @@ Erst dann stellt er die folgenden fünf Schritte vor:
              assert mean(ls) == mean(tp) == mean(st) == 2
 
       Wir haben lediglich festgelegt, dass die Funktion :func:`mean` heißen soll
-      und als Parameter eine :doc:`../types/sequences-sets/lists`, ein
-      :doc:`../types/sequences-sets/tuples` oder ein
-      :doc:`../types/sequences-sets/sets` verarbeitet werden kann.
+      und als Parameter eine :doc:`../../types/sequences-sets/lists`, ein
+      :doc:`../../types/sequences-sets/tuples` oder ein
+      :doc:`../../types/sequences-sets/sets` verarbeitet werden kann.
 
-      Mit dem :doc:`Dekorator <../functions/decorators>`
+      Mit dem :doc:`Dekorator <../../functions/decorators>`
       :func:`@pytest.mark.xfail` erwarten wir, dass dieser Test zunächst
       fehlschlägt.
 

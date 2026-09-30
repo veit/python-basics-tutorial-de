@@ -20,8 +20,8 @@ Abhängigkeits-Konfigurationen und verschiedenen Konfigurationen für verschiede
 Betriebssysteme verwenden. tox verwendet dabei Projektinformationen aus der
 :file:`setup.py`- oder :file:`pyproject.toml`-Datei für das zu testende Paket,
 um eine installierbare :doc:`Distribution eures Pakets
-<../packs/distribution>` zu erstellen. Es sucht im ``[tool.tox]``-Abschnitt der
-:file:`pyproject.toml`-Datei nach einer Liste von Umgebungen, und führt dann
+<../../packs/distribution>` zu erstellen. Es sucht im ``[tool.tox]``-Abschnitt
+der :file:`pyproject.toml`-Datei nach einer Liste von Umgebungen, und führt dann
 jeweils folgende Schritte aus:
 
 #. erstellt eine :term:`virtuelle Umgebung <Virtuelle Umgebung>`
