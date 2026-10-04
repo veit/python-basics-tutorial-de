@@ -20,6 +20,12 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add what’s new in Python 3.15
+
+  * Add lacy imports
+  * Add frozendict
+  * Add unpacking in comprehensions
+
 * 📝 Add timezone
 * 📝 Add pytest-leak-finder
 

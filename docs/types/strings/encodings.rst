@@ -114,6 +114,8 @@ Codepunkten und definiert mehrere verschiedene Kodierungen aus einem einzigen
 Zeichensatz. UTF-8 ist ein Kodierungsschema für die Darstellung von
 Unicode-Zeichen als Binärdaten mit einem oder mehreren Bytes pro Zeichen.
 
+.. _default-encoding:
+
 .. versionadded:: 3.15
    Python 3.15 verwendet UTF-8 als Standardkodierung, unabhängig von der
    Systemumgebung. Das bedeutet, dass I/O-Operationen ohne explizite Kodierung,
