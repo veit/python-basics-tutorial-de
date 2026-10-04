@@ -115,6 +115,48 @@ die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
 
+.. _frozendict:
+
+``frozendict``
+--------------
+
+.. versionadded:: 3.15
+
+   :pep:`814` führt :class:`python3:frozendict` ein, ein :term:`unveränderliches
+   <unveränderlich>` Dictionary:
+
+   .. code-block:: pycon
+
+      >>> titles = frozendict({7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"})
+      >>> titles
+      frozendict({7.0: 'Data Types', 7.1: 'Lists', 7.2: 'Tuples'})
+      >>> titles[7.3] = "Sets"
+      Traceback (most recent call last):
+        File "<python-input-16>", line 1, in <module>
+          titles[7.3] = "Sets"
+          ~~~~~~^^^^^
+      TypeError: 'frozendict' object does not support item assignment
+
+   Unveränderliche Mappings sind hashbar, wodurch sie als Schlüssel in
+   Dictionaries, als Elemente in :doc:`sets <sequences-sets/sets>` verwendet
+   werden können oder von Funktionen, die mit :func:`@functools.lru_cache`
+   :doc:`dekoriert <../functions/decorators>` sind, als Argumente akzeptiert
+   werden:
+
+   .. code-block:: pycon
+
+      >>> hash(titles)
+      3827265406416199624
+
+   Mit dem merge-Operator (``|``) lassen sich zwei ``frozendict``-Objekte oder
+   ein ``frozendict``-Objekt mit einem ``dict``-Objekt zusammenführen,
+   :abbr:`z. B. (zum Beispiel)`:
+
+   .. code-block:: pycon
+
+      >>> titles | new_titles
+      frozendict({7.0: 'Data types', 7.1: 'Lists', 7.2: 'Tuples', 7.3: 'Sets'})
+
 Erweiterungen
 -------------
 

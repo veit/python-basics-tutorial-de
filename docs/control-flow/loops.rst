@@ -180,6 +180,27 @@ Das allgemeine Format hierfür ist:
 
 :samp:`{NEW_DICT} = \{{KEY}: {VALUE} for {MEMBER} in {ITERABLE}\}`
 
+.. _unpacking_in_comprehensions:
+
+Entpacken
+~~~~~~~~~
+
+.. versionadded:: 3.15
+
+   Mit :pep:`798` unterstützen nun :doc:`../types/sequences-sets/lists`,
+   :doc:`../types/sequences-sets/sets` und :doc:`../types/dicts` Comprehensions
+   mit ``*`` und ``**``:
+
+   .. code-block:: pycon
+
+      >>> nested_list = [[0, 1], [2, 3], [4, 5]]
+      >>> [*l for l in nested_list]
+      [0, 1, 2, 3, 4, 5]
+      >>>
+      >>> nested_dict = [{0: "a"}, {1: "b"}, {2: "c"}]
+      >>> {**d for d in nested_dict}
+      {0: 'a', 1: 'b', 2: 'c'}
+
 Ändern einer ``Collection``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

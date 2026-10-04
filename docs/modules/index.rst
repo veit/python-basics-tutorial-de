@@ -56,6 +56,45 @@ Bedarf laden könnt.
    * :doc:`../libs/batteries`
    * :ref:`python3:py-modindex`
 
+.. _explicit-lazy-imports:
+
+.. versionadded:: 3.15
+
+   Python 3.15 bringt mit :pep:`810` *explicit lazy imports*: Wenn einer
+   ``import``-Anweisung das Schlüsselwort ``lazy`` vorangestellt wird, wird das
+   Modul nicht sofort geladen, sondern stattdessen ein Proxy-Objekt erstellt.
+   Das eigentliche Modul wird bei der ersten Verwendung geladen:
+
+   .. code-block:: pycon
+
+      >>> import sys
+      >>> lazy import json
+      >>> lazy from pathlib import Path
+      >>> "json" in sys.modules
+      False
+      >>> with Path.open("books.json") as f:
+      ...     data = json.load(f)
+      ...
+      >>> "json" in sys.modules
+      True
+
+   Wenn ihr ``lazy`` nicht direkt verwenden könnt, :abbr:`z. B. (zum Beispiel)`
+   in älteren Python-Versionen, kann ein :attr:`~module.__lazy_modules__`-Modul
+   als Container definiert werden, dessen Importanweisungen *lazy* behandelt
+   werden:
+
+   .. code-block:: pycon
+
+      >>> __lazy_modules__ = {"json"}
+      >>> import json
+      >>> import sys
+
+   Python 3.14 und früher ignorieren ``__lazy_modules__``, während 3.15 und
+   höher die ``lazy`` “ Variante verwenden.
+
+   .. seealso::
+      * :ref:`lazy-imports`
+
 Erstellen von Modulen
 ---------------------
 

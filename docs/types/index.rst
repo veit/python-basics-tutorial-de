@@ -39,7 +39,7 @@ speziellen Methodenattribute definiert habt, bearbeitet werden.
    daran, dass alle Python-Objekte Instanzen der einen oder anderen Klasse sind.
 
 .. seealso::
-   * :doc:`python3:library/stdtypes`
+   * :doc:`python3:builtins/stdtypes`
 
 .. toctree::
    :titlesonly:
