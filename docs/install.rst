@@ -4,8 +4,8 @@ Installation
 Die Installation von Python kann einfach sein. Der erste Schritt besteht darin,
 die aktuelle Version von `www.python.org/downloads
 <https://www.python.org/downloads/>`_ herunterzuladen. Das Tutorial basiert auf
-Python 3.14.0, falls ihr jedoch Python 3.10 oder neuer installiert habt, sollte
-das auch kein Problem sein.
+Python 3.15.0, falls ihr jedoch Python 3.11 oder neuer installiert habt, ist das
+meist auch kein Problem.
 
 .. tab:: Linux
 
@@ -20,9 +20,9 @@ das auch kein Problem sein.
 
    .. code-block:: console
 
-      $ wget https://www.python.org/ftp/python/3.14.0/Python-3.14.0.tgz
-      $ tar xf Python-3.14.0.tgz
-      $ cd Python-3.14.0
+      $ wget https://www.python.org/ftp/python/3.15.0/Python-3.15.0.tgz
+      $ tar xf Python-3.15.0.tgz
+      $ cd Python-3.15.0
       $ ./configure --enable-optimizations
       $ sudo make altinstall
 
@@ -56,12 +56,12 @@ das auch kein Problem sein.
    #. Ladet das aktuelle Installationsprogramm von `Python Releases for Windows
       <https://www.python.org/downloads/windows/>`_ herunter, :abbr:`z.B. (zum
       Beispiel)` `Windows installer (64-bit)
-      <https://www.python.org/ftp/python/3.14.0/python-3.14.0-amd64.exe>`_.
+      <https://www.python.org/ftp/python/3.15.0/python-3.15.0-amd64.exe>`_.
    #. Startet das Installationsprogramm. Sofern ihr die notwendigen
       Berechtigungen habt, installiert Python mit der Option *Install launcher
       for all users*. Dies sollte Python in
-      :file:`C:\\Program Files\\Python314-64` installieren. Außerdem sollte *Add
-      Python 3.14 to PATH* aktiviert sein damit dieser Pfad zur
+      :file:`C:\\Program Files\\Python315-64` installieren. Außerdem sollte *Add
+      Python 3.15 to PATH* aktiviert sein damit dieser Pfad zur
       Python-Installation auch in der Liste der ``PATH``-Umgebungsvariablen
       eingetragen wird.
    #. Schließlich könnt ihr die Installation nun überprüfen, indem ihr in der
@@ -70,7 +70,7 @@ das auch kein Problem sein.
       .. code-block:: ps1con
 
          C:\> py -V
-         Python 3.14.0
+         Python 3.15.0
 
    .. warning::
       Ein Nachteil ist, dass ihr regelmäßig auf die Website zurückkehren müsst,
