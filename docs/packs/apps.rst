@@ -153,9 +153,9 @@ eine bestimmte Version aktualisieren.
    Sicherheitslücken so schnell wie möglich durch eine aktuellere Variante
    ersetzt werden soll, können die *Dependency Cooldowns* umgangen werden mit
 
-   .. code-block:: console
+   .. code-block:: toml
 
-      $ uv sync --exclude-newer-package "{PACKAGE}=P0D"
+      exclude-newer-package = { PACKAGE = "P0D" }
 
 .. tip::
    Ihr könnt auch mit
