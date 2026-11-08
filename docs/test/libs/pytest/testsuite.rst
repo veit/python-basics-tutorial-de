@@ -53,9 +53,9 @@ Testen **eines** Verhaltens zu konzentrieren. Die Struktur hilft euch auch
 dabei, an andere Testfälle zu denken. Die Konzentration auf einen
 Ausgangszustand hilft euch, an andere Zustände zu denken, die für das Testen der
 gleichen Aktion relevant sein könnten. Ebenso hilft die Konzentration auf ein
-ideales Ergebnis dabei, an andere mögliche Ergebnisse zu denken, wie :abbr:`z.B.
-(zum Beispiel)` Ausfallzustände oder Fehlerzustände, die ebenfalls mit anderen
-Testfällen getestet werden sollten.
+ideales Ergebnis dabei, an andere mögliche Ergebnisse zu denken, wie
+:abbr:`z. B. (zum Beispiel)` Ausfallzustände oder Fehlerzustände, die ebenfalls
+mit anderen Testfällen getestet werden sollten.
 
 Tests mit Klassen gruppieren
 ----------------------------
@@ -172,7 +172,7 @@ Ob ``pytest`` euren Testcode findet, hängt von der Namensgebung ab:
    Code-Struktur orientieren.
 
 Ihr könnt auch :samp:`-k {pattern}` verwenden, um Verzeichnisse, Klassen oder
-Testpräfixe zu filtern, also :abbr:`z.B. (zum Beispiel)` alle Tests der Klasse
+Testpräfixe zu filtern, also :abbr:`z. B. (zum Beispiel)` alle Tests der Klasse
 ``TestEquality``
 
 .. code-block:: pytest

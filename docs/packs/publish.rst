@@ -2,7 +2,7 @@ Paket veröffentlichen
 =====================
 
 Schließlich könnt ihr das Paket auf dem :term:`Python Package Index`
-(:term:`PyPI`) oder einem anderen Index, :abbr:`z.B. (zum Beispiel)`
+(:term:`PyPI`) oder einem anderen Index, :abbr:`z. B. (zum Beispiel)`
 :doc:`gitlab` oder :term:`devpi`, bereitstellen.
 
 Für den :term:`Python Package Index` müsst ihr euch bei *Test PyPI*
@@ -328,8 +328,8 @@ folgenden Schritte erforderlich:
 
      * Namen des PyPI-Projekts
      * GitHub-Repository Owner
-     * Namen des Workflows, :abbr:`z.B. (zum Beispiel)` :file:`publish.yml`
-     * Name der Umgebung (optional), :abbr:`z.B. (zum Beispiel)` ``release``
+     * Namen des Workflows, :abbr:`z. B. (zum Beispiel)` :file:`publish.yml`
+     * Name der Umgebung (optional), :abbr:`z. B. (zum Beispiel)` ``release``
 
 #. Erstellt eine Umgebung für die GitHub-Actions
 

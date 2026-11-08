@@ -182,7 +182,7 @@ Checks
   .. note::
      Mit diesem Code wird nur das erste Vorkommen von ``i`` entfernt. Um alle
      Vorkommen von ``i`` aus der Liste zu entfernen, könnte die Liste
-     :abbr:`z.B. (zum Beispiel)` in den :doc:`Set
+     :abbr:`z. B. (zum Beispiel)` in den :doc:`Set
      </types/sequences-sets/sets>`-Typ umgewandelt werden:
 
      .. code-block:: pycon
@@ -314,7 +314,7 @@ Checks
 :doc:`/types/strings/index`
 ---------------------------
 
-* Könnt ihr :abbr:`z.B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
+* Könnt ihr :abbr:`z. B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
   addieren oder multiplizieren, oder mit einer Gleitkommazahl oder einer
   komplexen Zahl?
 

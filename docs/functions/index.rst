@@ -73,21 +73,17 @@ Inspiriert durch :doc:`Python4DataScience:productive/qa/mypy` wurden in Python
 :doc:`params` und Rückgabewerte definiert werden können, in unserem
 :func:`fact`-Beispiel mit:
 
-.. blacken-docs:off
 .. code-block:: python
 
    def fact(n: int) -> int:
-       ...
-.. blacken-docs:on
+       pass
 
 oder:
 
-.. blacken-docs:off
 .. code-block:: python
 
    def factlist(flist: list[float]) -> list[float]:
-       ...
-.. blacken-docs:on
+       pass
 
 Wir erhalten zur Laufzeit die Typen mit dem ``__annotations__``-Attribut:
 
@@ -96,7 +92,7 @@ Wir erhalten zur Laufzeit die Typen mit dem ``__annotations__``-Attribut:
    >>> fact.__annotations__
    {'n': <class 'int'>, 'return': <class 'int'>}
    >>> factlist.__annotations__
-   {'list': list[float], 'return': list[float]}
+   {'flist': list[float], 'return': list[float]}
 
 Es findet jedoch zur Laufzeit **keine** Typ-Überprüfung statt.
 

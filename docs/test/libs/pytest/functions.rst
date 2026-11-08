@@ -213,7 +213,7 @@ Die Ausgabe sieht wie folgt aus:
 
 Beim Aufruf von ``pytest.fail()`` oder dem Auslösen einer Exception, erhalten
 wir nicht das von pytest angebotene ``assert``-Rewriting. Es gibt jedoch
-sinnvolle Gelegenheiten, ``pytest.fail()`` zu verwenden, wie :abbr:`z.B. (zum
+sinnvolle Gelegenheiten, ``pytest.fail()`` zu verwenden, wie :abbr:`z. B. (zum
 Beispiel)` in einem ``assertion``-Hilfsprogramm.
 
 Schreiben von ``assertion``-Hilfsfunktionen
@@ -343,7 +343,7 @@ ausgelöst wird oder eine andere Ausnahme ausgelöst wird, schlägt der Test feh
 
 Wir haben gerade in ``test_db_exists()`` den Typ der Exception überprüft. Wir
 können auch überprüfen, ob die Meldung korrekt ist, oder jeden anderen Aspekt
-der Exception, wie :abbr:`z.B. (zum Beispiel)` zusätzliche Parameter:
+der Exception, wie :abbr:`z. B. (zum Beispiel)` zusätzliche Parameter:
 
 .. code-block:: python
 

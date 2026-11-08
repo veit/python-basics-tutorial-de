@@ -10,8 +10,8 @@ Satz von Ausnahmen, und ihr könnt neue Ausnahmen für eure eigenen Zwecke
 definieren.
 
 Eine Exception ist ein Objekt, das automatisch von Python-Funktionen mit einer
-:ref:`raise <python3:raise>`-Anweisung erzeugt wird, :abbr:`z.B. (zum Beispiel)`
-mit:
+:ref:`raise <python3:raise>`-Anweisung erzeugt wird, :abbr:`z. B. (zum
+Beispiel)` mit:
 
 .. literalinclude:: exceptions.py
    :language: python
@@ -37,7 +37,7 @@ Eine Übersicht über die Klassenhierarchie eingebauter Exceptions erhaltet ihr
 unter `Exception hierarchy
 <https://docs.python.org/3/library/exceptions.html#exception-hierarchy>`_ in der
 Python-Dokumentation. Jeder Ausnahmetyp ist eine Python-Klasse, die von ihrem
-übergeordneten Exception-Typ erbt. So ist :abbr:`z.B. (zum Beispiel)` ein
+übergeordneten Exception-Typ erbt. So ist :abbr:`z. B. (zum Beispiel)` ein
 ``ZeroDivisionError`` durch Vererbung auch ein ``ArithmeticError``, eine
 ``Exception`` und auch eine ``BaseException``. Diese Hierarchie ist gewollt: Die
 meisten Ausnahmen erben von ``Exception``, und es wird dringend empfohlen, dass
@@ -95,7 +95,7 @@ Zeile 19
 
 .. note::
    Die Art und Weise, wie Python Fehlersituationen im Allgemeinen behandelt,
-   unterscheidet sich von manch anderen Sprachen, :abbr:`z.B. (zum Beispiel)`
+   unterscheidet sich von manch anderen Sprachen, :abbr:`z. B. (zum Beispiel)`
    Java. Diese Sprachen prüfen mögliche Fehler so weit wie möglich, bevor sie
    auftreten, da die Behandlung von Exceptions nach ihrem Auftreten kostspielig
    ist. Dies wird manchmal als :term:`LBYL`-Ansatz bezeichnet.

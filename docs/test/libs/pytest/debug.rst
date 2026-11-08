@@ -224,7 +224,7 @@ mit diesem einen Testfehler erneut ausführen: ``tox -e py315 -- --lf --tb=no
 | :samp:`--trace`               | startet den pdb-Quellcode-Debugger sofort     |
 |                               | bei der Ausführung jedes Tests.               |
 +-------------------------------+-----------------------------------------------+
-| :samp:`--pdbcls`              | verwendet Alternativen zu pdb, :abbr:`z.B.    |
+| :samp:`--pdbcls`              | verwendet Alternativen zu pdb, :abbr:`z. B.   |
 |                               | (zum Beispiel)` den IPython-Debugger mit      |
 |                               | ``--pdb-cls =                                 |
 |                               | IPython.terminal.debugger:TerminalPdb``       |

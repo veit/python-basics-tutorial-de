@@ -171,7 +171,7 @@ Argument von ``@pytest.mark.parametrize()`` überein.
 
 #. Das erste Argument von ``@pytest.mark.parametrize()`` ist eine Liste von
    Parameter-Namen. Dieses Argument könnte auch eine Liste von Zeichenketten
-   sein, wie :abbr:`z.B. (zum Beispiel)` ``["start_summary", "start_state"]``
+   sein, wie :abbr:`z. B. (zum Beispiel)` ``["start_summary", "start_state"]``
    oder eine komma-getrennte Zeichenkette ``"start_summary, start_state"``.
 #. Das zweite Argument von ``@pytest.mark.parametrize()`` ist unsere Liste von
    Testfällen. Jedes Element in der Liste ist ein Testfall, der durch ein Tupel
@@ -302,7 +302,7 @@ Zweck wie die Funktionsparametrisierung, allerdings mit etwas mehr Code. Die
 Fixture-Parametrisierung hat jedoch den Vorteil, dass für jeden Satz von
 Argumenten ein Fixture ausgeführt wird. Dies ist nützlich, wenn ihr *Setup* -
 oder *Teardown*-Code habt, der für jeden Testfall ausgeführt werden muss,
-:abbr:`z.B. (zum Beispiel)` eine andere Datenbankverbindung oder ein anderer
+:abbr:`z. B. (zum Beispiel)` eine andere Datenbankverbindung oder ein anderer
 Dateiinhalt oder was auch immer.
 
 Es hat auch den Vorteil, dass viele Testfunktionen mit demselben Satz von
@@ -439,10 +439,10 @@ aussieht:
 
    $ uv run pytest tests/test_backends.py --collect-only
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    rootdir: /Users/veit/sandbox/cusy.tasks
    configfile: pyproject.toml
-   plugins: anyio-4.9.0, Faker-37.4.0, cov-6.2.1
+   plugins: cov-7.1.0, Faker-40.43.0, anyio-4.15.1, platformdirs-4.13.5
    collected 2 items
 
    <Dir cusy.tasks>

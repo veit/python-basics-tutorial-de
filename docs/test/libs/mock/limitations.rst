@@ -4,7 +4,7 @@ Grenzen des Mocking
 Eines der größten Probleme bei der Verwendung von Mocks besteht darin, dass wir
 bei in einem Test nicht mehr das Verhalten, sondern die Implementierung testen.
 Dies ist jedoch nicht nur zeitaufwändig, sondern auch gefährlich: Ein gültiges
-Refactoring :abbr:`z.B. (zum Beispiel)` das Ändern eines Variablennamens, kann
+Refactoring :abbr:`z. B. (zum Beispiel)` das Ändern eines Variablennamens, kann
 Tests zum Scheitern bringen, wenn diese bestimmte Variable gemockt wurde. Wir
 wollen jedoch, dass unsere Tests nur dann fehlschlagen, wenn es Brüche im
 Verhalten gibt, nicht jedoch nur bei Codeänderungen.
@@ -12,7 +12,7 @@ Verhalten gibt, nicht jedoch nur bei Codeänderungen.
 Manchmal ist Mocking jedoch der einfachste Weg, Exceptions oder
 Fehlerbedingungen zu erzeugen und sicherzustellen, dass euer Code diese korrekt
 behandelt. Es gibt auch Fälle, in denen das Testen von Verhalten unzumutbar ist,
-wie :abbr:`z.B. (zum Beispiel)` beim Zugriff auf eine Zahlungs-API oder beim
+wie :abbr:`z. B. (zum Beispiel)` beim Zugriff auf eine Zahlungs-API oder beim
 Senden von E-Mails. In diesen Fällen ist es eine gute Option zu testen, ob euer
 Code eine bestimmte API-Methode zum richtigen Zeitpunkt und mit den richtigen
 Parametern aufruft.

@@ -26,7 +26,7 @@ Ihr könnt pytest-Plugins von Drittanbietern an verschiedenen Stellen finden,
 :abbr:`u.a. (unter anderem)` enthält die :doc:`pytest-Dokumentation
 <pytest:reference/plugin_list>` eine alphabetisch geordnete Liste von Plugins,
 die von :term:`pypi.org` stammen. Ihr könnt auch pypi.org selbst durchsuchen,
-:abbr:`z.B. (zum Beispiel)` nach `pytest <https://pypi.org/search/?q=pytest>`_
+:abbr:`z. B. (zum Beispiel)` nach `pytest <https://pypi.org/search/?q=pytest>`_
 oder nach dem `pytest-Framework
 <https://pypi.org/search/?q=&c=Framework+%3A%3A+Pytest>`_. Schließlich finden
 sich in `pytest-dev <https://github.com/pytest-dev>`_  auf GitHub auch viele
@@ -221,7 +221,7 @@ verändern:
 
 `pytest-html <https://pypi.org/project/pytest-html/>`_
     ermöglicht die Erstellung von HTML-Berichten. Berichte können mit
-    zusätzlichen Daten und Bildern, wie :abbr:`z.B. (zum Beispiel)` Screenshots
+    zusätzlichen Daten und Bildern, wie :abbr:`z. B. (zum Beispiel)` Screenshots
     von Fehlerfällen, erweitert werden.
 
     .. image:: https://raster.shields.io/github/stars/pytest-dev/pytest-html

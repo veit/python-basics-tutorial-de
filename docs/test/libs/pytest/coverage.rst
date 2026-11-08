@@ -386,7 +386,7 @@ Testabdeckung aller Tests mit GitHub-Actions
 --------------------------------------------
 
 Nachdem ihr die Testabdeckung überprüft habt, könnt ihr die Dateien als
-GitHub-Action :abbr:`z.B. (zum Beispiel)` in einer :download:`ci.yaml` als
+GitHub-Action :abbr:`z. B. (zum Beispiel)` in einer :download:`ci.yaml` als
 Artefakte hochladen um sie später in weiteren Jobs wiederverwenden zu können:
 
 .. literalinclude:: ci.yaml
@@ -455,13 +455,13 @@ speichern. Hierfür erweitern wir unsere :download:`ci.yaml` folgendermaßen:
     habt, könnt ihr diese erstellen mit:
 
     #. Ruft https://gist.github.com auf und erstellt einen neuen Gist, den ihr
-       :abbr:`z.B. (zum Beispiel)` :file:`test.json` nennen könnt. Die ID des
+       :abbr:`z. B. (zum Beispiel)` :file:`test.json` nennen könnt. Die ID des
        Gist ist der lange alphanumerische Teil der URL, den ihr hier benötigt.
     #. Anschließend geht ihr zu https://github.com/settings/tokens und erstellt
        ein neues Token mit dem Gist-Bereich.
     #. Geht schließlich zu :menuselection:`YOUR_REPO --> Settings --> Secrets
        --> Actions` und fügt dieses Token hinzu. Ihr könnt ihm einen beliebigen
-       Namen geben, :abbr:`z.B. (zum Beispiel)` :samp:`{GIST_SECRET}`.
+       Namen geben, :abbr:`z. B. (zum Beispiel)` :samp:`{GIST_SECRET}`.
 
        Wenn ihr `Dependabot <https://github.com/dependabot>`_ verwendet, um die
        Abhängigkeiten eures Repository automatisch zu aktualisieren, müsst ihr

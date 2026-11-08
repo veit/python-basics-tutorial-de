@@ -97,7 +97,7 @@ Beispiel mit ``strategies`` und ``given``
 
          $ uv run pytest docs/test/test_hypothesis.py
          ============================= test session starts ==============================
-         platform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0
+         platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
          rootdir: /Users/veit/cusy/trn/python-basics-tutorial-de
          plugins: hypothesis-6.152.1
          collected 1 item
@@ -137,7 +137,7 @@ Beispiel mit ``strategies`` und ``given``
 
          C:> uv run pytest docs/test/test_hypothesis.py
          ============================= test session starts ==============================
-         platform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0
+         platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
          rootdir: C:\Users\veit\python-basics-tutorial-de
          plugins: hypothesis-6.152.1
          collected 1 item
@@ -204,7 +204,7 @@ Beispiel mit regulären Ausdrücken
 
       $ uv run pytest docs/test/test_emails.py
       ============================= test session starts ==============================
-      platform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0
+      platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
       rootdir: /Users/veit/cusy/trn/python-basics-tutorial-de
       configfile: pyproject.toml
       plugins: hypothesis-6.152.1
@@ -218,7 +218,7 @@ Beispiel mit regulären Ausdrücken
         |   File "/Users/veit/cusy/trn/python-basics-tutorial-de/docs/test/test_emails.py", line 12, in test_parse_email
         |     def test_parse_email(email):
         |                    ^^^
-        |   File "/Users/veit/cusy/trn/python-basics-tutorial-de/.venv/lib/python3.14/site-packages/hypothesis/core.py", line 2264, in wrapped_test
+        |   File "/Users/veit/cusy/trn/python-basics-tutorial-de/.venv/lib/python3.15/site-packages/hypothesis/core.py", line 2264, in wrapped_test
         |     raise the_error_hypothesis_found
         | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
         +-+---------------- 1 ----------------
@@ -257,7 +257,7 @@ Beispiel mit regulären Ausdrücken
 
         $ uv run pytest docs/test/test_emails_2.py
         ============================= test session starts ==============================
-        platform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0
+        platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
         rootdir: /Users/veit/cusy/trn/python-basics-tutorial-de
         configfile: pyproject.toml
         plugins: hypothesis-6.152.1

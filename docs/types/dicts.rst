@@ -36,7 +36,7 @@ einem Wörterbuch enthalten ist.
    Traceback (most recent call last):
      File "<python-input-15>", line 1, in <module>
        timeseries["2022-02-04"]
-       ~~~~^^^^^^^^^^^^^^
+       ~~~~~~~~~~^^^^^^^^^^^^^^
    KeyError: '2022-02-04'
    >>> timeseries.get("2022-02-03", "Messwert nicht vorhanden")
    -0.268295
@@ -92,11 +92,12 @@ einzigen Dictionary zusammenfügen:
 ~~~~~~~~~~~~~~
 
 :py:meth:`setdefault <dict.setdefault>` kann verwendet werden, um Zähler für
-die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
+die Schlüssel eines Dicts bereitzustellen, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
 
    >>> titles = ["Data types", "Lists", "Sets", "Lists"]
+   >>> titles_count = {}
    >>> for title in titles:
    ...     titles_count.setdefault(title, 0)
    ...     titles_count[title] += 1
@@ -112,6 +113,7 @@ die Schlüssel eines Dicts bereitzustellen, :abbr:`z.B. (zum Beispiel)`:
 
    .. code-block:: pycon
 
+      >>> import collections
       >>> collections.Counter(titles)
       Counter({'Lists': 2, 'Data types': 1, 'Sets': 1})
 
@@ -179,7 +181,7 @@ Checks
      >>> z = x.setdefault("e", 8)
      >>> x.update(y)
 
-# Welcher der folgenden Ausdrücke kann ein Schlüssel eines Dictionary sein:
+* Welcher der folgenden Ausdrücke kann ein Schlüssel eines Dictionary sein:
   ``1``; ``"Veit"``; ``("Veit", [1])``; ``[("Veit", [1])]``; ``["Veit"]``;
   ``("Veit", "Tim", "Monique")``
 

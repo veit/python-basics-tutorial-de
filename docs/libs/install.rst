@@ -89,8 +89,8 @@ virtuellen Umgebung erfolgt in zwei Schritten:
 
          > .venv\Scripts\activate
 
-#. Python-Pakete nur für diese virtuelle Umgebung installieren, :abbr:`z.B. (zum
-   Beispiel)` die beliebte ``pandas``-Bibliothek:
+#. Python-Pakete nur für diese virtuelle Umgebung installieren, :abbr:`z. B.
+   (zum Beispiel)` die beliebte ``pandas``-Bibliothek:
 
    .. tab:: Linux/macOS
 
@@ -180,7 +180,7 @@ Ihr könnt den Proxy-Server auch dauerhaft als Umgebungsvariable speichern:
 
 .. tab:: Linux
 
-   :abbr:`z.B. (zum Beispiel)` in der :file:`~/.bashrc` mit:
+   :abbr:`z. B. (zum Beispiel)` in der :file:`~/.bashrc` mit:
 
    .. code-block:: bash
 
@@ -336,7 +336,7 @@ führt jeweils einen der folgenden Schritte aus:
 
 .. tab:: Linux/macOS
 
-   Bestimmt eure Shell, :abbr:`z.B. (zum Beispiel)` mit ``echo $SHELL``, dann
+   Bestimmt eure Shell, :abbr:`z. B. (zum Beispiel)` mit ``echo $SHELL``, dann
    führt einen der folgenden Befehle aus:
 
    .. code-block:: console
@@ -388,13 +388,13 @@ Python-Installation
 
 Mit ``uv python install`` lässt sich die aktuelle Python-Version installieren.
 Alternativ lässt sich auch eine spezifische Version installieren mit :samp:`uv
-python install {3.14}`. Es lassen sich jedoch nicht nur ältere CPython-Versionen
-installieren, sondern :abbr:`z.B. (zum Beispiel)` auch `PyPy
+python install {3.15}`. Es lassen sich jedoch nicht nur ältere CPython-Versionen
+installieren, sondern :abbr:`z. B. (zum Beispiel)` auch `PyPy
 <https://pypy.org>`_ mit :samp:`uv python install pypy@{3.12}` oder
 Free-threaded Python mit :samp:`uv python install --python-preference
-only-managed {3.14t}`. Die bereits installierten Python-Versionen erhaltet ihr
+only-managed {3.15t}`. Die bereits installierten Python-Versionen erhaltet ihr
 mit ``uv python list``. Eine installierte Python-Version könnt ihr aufrufen mit
-:samp:`uv run --python {3.14} python`.
+:samp:`uv run --python {3.15} python`.
 
 Projektstruktur erstellen
 ~~~~~~~~~~~~~~~~~~~~~~~~~

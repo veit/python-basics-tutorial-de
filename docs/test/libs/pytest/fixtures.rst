@@ -149,7 +149,7 @@ verwendet wird und die Tests laufen. Nach Beendigung des Tests wird die
 Kontrolle wieder an das Fixture übergeben, :func:`db.close` kann ausgeführt
 werden und der ``with``-Block kann den Zugriff auf das Verzeichnis schließen.
 
-Wir können Fixtures auch in mehreren Tests verwenden, :abbr:`z.B. (zum
+Wir können Fixtures auch in mehreren Tests verwenden, :abbr:`z. B. (zum
 Beispiel)` in
 
 .. code-block:: python
@@ -709,7 +709,7 @@ andere Fixture in einer Parameter-Liste benannt. Ihr könnt jedoch
 ``autouse=True`` verwenden, um ein Fixture immer laufen zu lassen. Dies eignet
 sich gut für Code, der zu bestimmten Zeiten ausgeführt werden soll, aber Tests
 sind nicht wirklich von einem Systemzustand oder Daten aus der Fixture abhängig,
-:abbr:`z.B. (zum Beispiel)`:
+:abbr:`z. B. (zum Beispiel)`:
 
 .. code-block::
 

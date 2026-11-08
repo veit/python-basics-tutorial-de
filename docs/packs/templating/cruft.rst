@@ -28,7 +28,7 @@ Ein neues Projekt erstellen
 ---------------------------
 
 Um ein neues Projekt mit cruft zu erstellen, könnt ihr :samp:`cruft create
-{PROJECT_URL}` auf der Kommandozeile ausführen, :abbr:`z.B. (zum Beispiel)`:
+{PROJECT_URL}` auf der Kommandozeile ausführen, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: console
 
@@ -42,7 +42,7 @@ Git-Hash der verwendeten Vorlage sowie die angegebenen Parameter enthält.
 
 .. tip::
 
-    Bestimmte Dateien eignen sich selten zum Aktualisieren, :abbr:`z.B. (Zum
+    Bestimmte Dateien eignen sich selten zum Aktualisieren, :abbr:`z. B. (Zum
     Beispiel)` Testfälle oder :file:`__init__`-Dateien. Ihr könnt cruft
     anweisen, die Aktualisierung dieser Dateien in einem Projekt immer zu
     überspringen, indem ihr das Projekt mit den Argumenten
@@ -94,7 +94,7 @@ Ein bestehendes Projekt verknüpfen
 Wenn ihr ein bestehendes Projekt habt, das ihr in der Vergangenheit mit
 Cookiecutter direkt aus einer Vorlage erstellt habt, könnt ihr es mit
 :samp:`cruft link {TEMPLATE_REPOSITORY}` mit der Vorlage verknüpfen, mit der es
-erstellt wurde, :abbr:`z.B. (zum Beispiel)`:
+erstellt wurde, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: console
 

@@ -187,7 +187,7 @@ bereitgestellt werden:
 
    $ uv run pytest -v
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    cachedir: .pytest_cache
    Is GIL enabled? False
    rootdir: /Users/veit/prj/cusy.tasks

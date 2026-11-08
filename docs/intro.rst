@@ -65,13 +65,13 @@ Open Source
     <https://www.python.org/psf/sponsorship/>`_.
 
 Python hat zwar einige Vorteile, aber keine Sprache ist in allen Bereichen
-die beste Lösung. So schneidet :abbr:`z.B. (zum Beispiel)` Python in den
+die beste Lösung. So schneidet :abbr:`z. B. (zum Beispiel)` Python in den
 folgenden Bereichen weniger gut ab:
 
 Geschwindigkeit
     Python ist keine vollständig kompilierte Sprache und der Code wird zunächst
     in Bytecode kompiliert bevor er vom Python-Interpreter ausgeführt wird. Zwar
-    gibt es einige Aufgaben, wie :abbr:`z.B. (zum Beispiel)` das Parsen von
+    gibt es einige Aufgaben, wie :abbr:`z. B. (zum Beispiel)` das Parsen von
     Zeichenketten mit regulären Ausdrücken, für die Python effiziente
     Implementierungen bereitstellt, und die genauso schnell wie ein C-Programm
     sind, dennoch werden Python-Programme in den meisten Fällen langsamer sein
@@ -95,7 +95,7 @@ Variablentypen
     der dynamischen Typisierung wiegt die Probleme meist auf.
 Unterstützung für mobile Geräte
     Es gibt mittlerweile einige Optionen, Python auf mobilen Geräten laufen zu
-    lassen, :abbr:`z.B. (zum Beispiel)` mit :ref:`briefcase` oder
+    lassen, :abbr:`z. B. (zum Beispiel)` mit :ref:`briefcase` oder
     :ref:`beeware`. Python selbst wird ab Version 3.13 `Tier 3
     <https://peps.python.org/pep-0011/#tier-3>`_ :abbr:`u.a. (unter anderem)`
     für Windows, iOS und Pi OS bieten. Zudem soll es zukünftig einfacher werden,

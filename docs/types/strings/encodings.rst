@@ -208,7 +208,7 @@ Python 3 setzt voll und ganz auf Unicode und speziell auf UTF-8:
 * Python 3 akzeptiert viele Unicode-Codepunkte in :ref:`Bezeichnern
   <identifiers>`.
 * Pythons :doc:`re-Modul <python3:library/re>` verwendet standardmäßig das
-  ``re.UNICODE``-Flag und nicht ``re.ASCII``. Das bedeutet, dass :abbr:`z.B.
+  ``re.UNICODE``-Flag und nicht ``re.ASCII``. Das bedeutet, dass :abbr:`z. B.
   (zum Beispiel)` ``r"\w"`` auf Unicode-Wortzeichen passt, nicht nur auf
   ASCII-Buchstaben.
 * Die Standardkodierung in ``str.encode()`` und ``bytes.decode()`` ist UTF-8.

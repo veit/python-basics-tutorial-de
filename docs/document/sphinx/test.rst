@@ -13,7 +13,7 @@ Ihr habt die Möglichkeit, vor der Veröffentlichung eurer Änderungen zu
 überprüfen, ob eure Inhalte ordnungsgemäß erstellt werden. Hierfür hat
 `Sphinx <https://www.sphinx-doc.org/>`_ einen pingelig (:abbr:`engl.
 (englisch)` nitpicky)-Modus, der mit der Option ``-n`` aufgerufen werden kann,
-also :abbr:`z.B. (zum Beispiel)` mit:
+also :abbr:`z. B. (zum Beispiel)` mit:
 
 .. tab:: Linux/macOS
 
@@ -49,7 +49,7 @@ könnt mit:
 
        C:> python -m sphinx -b linkcheck docs\ docs\_build\
 
-Die Ausgabe kann dann :abbr:`z.B. (zum Beispiel)` so aussehen:
+Die Ausgabe kann dann :abbr:`z. B. (zum Beispiel)` so aussehen:
 
 .. tab:: Linux/macOS
 
@@ -114,7 +114,7 @@ ergänzt werden:
    dependency_groups = docs
    commands = sphinx-build -W -b linkcheck -d {envtmpdir}/doctrees docs docs/_build/html
 
-Anschließend könnt ihr :abbr:`z.B. (zum Beispiel)` für GitHub folgende Jobs
+Anschließend könnt ihr :abbr:`z. B. (zum Beispiel)` für GitHub folgende Jobs
 definieren:
 
 .. code-block:: yaml
@@ -135,7 +135,7 @@ definieren:
        - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
          with:
            # Keep in sync with tox.ini/docs & .readthedocs.yaml
-           python-version: "3.14"
+           python-version: "3.15"
        - uses: hynek/setup-cached-uv@4300ec2180bc77d705e626a34e381b81a4772c51 # v2.5.0
 
        - run: >
@@ -163,7 +163,7 @@ geschrieben ist, lässt sich mit `sphinx-lint
 
 .. seealso::
    Mit :doc:`Sybil:index` könnt ihr nicht nur :doc:`rest` überprüfen, sondern
-   :abbr:`z.B. (zum Beispiel)` auch :doc:`Markdown <Sybil:markdown>` und
+   :abbr:`z. B. (zum Beispiel)` auch :doc:`Markdown <Sybil:markdown>` und
    :doc:`Myst <Sybil:myst>`. Darüberhinaus kann Sybil auch Code-Blöcke in der
    Dokumentation entweder mit :doc:`../../test/libs/pytest/index` oder mit
    :doc:`../../test/libs/unittest` überprüfen.
@@ -234,8 +234,8 @@ Version der auf `Wikipedia
 verfügbaren Wörterbücher. :abbr:`Ggf. (Gegebenenfalls)` könnt ihr jedoch auch
 eigene Wörterbücher mit der ``--builtin``-Option bereitstellen.
 
-Ihr könnt ``codespell`` in der :file:`pyproject.toml` konfigurieren, :abbr:`z.B.
-(zum Beispiel)`:
+Ihr könnt ``codespell`` in der :file:`pyproject.toml` konfigurieren,
+:abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: toml
    :caption: pyproject.toml
@@ -345,7 +345,7 @@ Codebasis auf fehlende Dokumentationsstrings und generiert ein
 `shields.io-ähnliches Badge
 <https://interrogate.readthedocs.io/en/latest/#other-usage>`_.
 
-Ihr könnt ``interrogate`` :abbr:`z.B. (zum Beispiel)` in der
+Ihr könnt ``interrogate`` :abbr:`z. B. (zum Beispiel)` in der
 :ref:`pyproject-toml`-Datei konfigurieren:
 
 .. code-block:: toml
@@ -380,7 +380,7 @@ Ihr könnt ``interrogate`` :abbr:`z.B. (zum Beispiel)` in der
    * `Configuration <https://interrogate.readthedocs.io/en/latest/index.html#configuration>`_
 
 Nun könnt ihr ``interrogate`` in eure :doc:`../../test/libs/tox`-Datei einfügen,
-:abbr:`z.B. (zum Beispiel)` mit
+:abbr:`z. B. (zum Beispiel)` mit
 
 .. code-block:: ini
    :caption: tox.ini

@@ -70,7 +70,7 @@ werden, sobald ihr neue ``*.rst``-Dateien hinzufügt.
 Generiert die Dokumentation
 ---------------------------
 
-Ihr könnt die Dokumentation nun generieren, :abbr:`z.B. (zum Beispiel)` mit:
+Ihr könnt die Dokumentation nun generieren, :abbr:`z. B. (zum Beispiel)` mit:
 
 .. tab:: Linux/macOS
 

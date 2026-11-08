@@ -30,7 +30,8 @@ Cookiecutter-Features
     full_name [Veit Schiele]:
     …
 
-* Verzeichnis- und Dateinamen können Vorlagen zugewiesen werden, z.B.:
+* Verzeichnis- und Dateinamen können Vorlagen zugewiesen werden, :abbr:`z. B.
+  (zum Beispiel)`:
 
   .. code-block:: jinja
 
@@ -73,7 +74,8 @@ Cookiecutter-Features
 
 * Cookiecutter-Templates, die aus einem Repository geladen wurden, werden
   üblicherweise in ``~/.cookiecutters/`` gespeichert. Anschließend können sie
-  direkt über ihren Verzeichnisnamen referenziert werden, also z.B. mit:
+  direkt über ihren Verzeichnisnamen referenziert werden, also :abbr:`z. B. (zum
+  Beispiel)` mit:
 
   .. code-block:: console
 

@@ -11,7 +11,7 @@ Sphinx unterscheidet die folgenden Platzhalter-Variablen:
 .. rst:role:: file
 
     Der Name einer Datei oder eines Verzeichnisses. Geschweifte Klammern können
-    verwendet werden, um :abbr:`z.B. (zum Beispiel)` einen variablen Teil
+    verwendet werden, um :abbr:`z. B. (zum Beispiel)` einen variablen Teil
     anzugeben::
 
         … is installed in :file:`/usr/lib/python3.{x}/site-packages` …
@@ -26,7 +26,7 @@ Sphinx unterscheidet die folgenden Platzhalter-Variablen:
 
 .. rst:role:: samp
 
-    Textbeispiel, wie :abbr:`z.B. (zum Beispiel)` Code, innerhalb dessen
+    Textbeispiel, wie :abbr:`z. B. (zum Beispiel)` Code, innerhalb dessen
     geschweifte Klammern verwendet werden können, um einen variablen Teil
     anzuzeigen, wie in :rst:role:`file` oder in ``:samp:`print 1+{VARIABLE}```.
 
@@ -37,7 +37,7 @@ Sphinx unterscheidet die folgenden Platzhalter-Variablen:
     .. rst:role:: content
 
     Diese Rolle hat standardmäßig keine besondere Bedeutung. Ihr könnt sie daher
-    für alles Mögliche zu verwenden, :abbr:`z.B. (zum Beispiel)` auch für
+    für alles Mögliche zu verwenden, :abbr:`z. B. (zum Beispiel)` auch für
     Variablennamen.
 
 .. seealso::

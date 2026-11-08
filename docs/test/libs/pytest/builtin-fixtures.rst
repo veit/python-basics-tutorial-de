@@ -237,7 +237,7 @@ Mit ``capsys`` kann ich zwar gut die ``stdout`` und ``stderr``-Ausgabe steuern,
 aber es ist immer noch nicht die Art, wie ich die :abbr:`CLI (Command Line
 Interface)` testen möchte. Die Tasks-Anwendung verwendet eine Bibliothek namens `Typer <https://typer.tiangolo.com>`_, die eine Runner-Funktion enthält um
 unserem Code so zu testen, wie wir es von einem Befehlszeilentest erwarten
-würden, der im Prozess bleibt und uns mit Output-Hooks versorgt, :abbr:`z.B.
+würden, der im Prozess bleibt und uns mit Output-Hooks versorgt, :abbr:`z. B.
 (zum Beispiel)`:
 
 .. code-block:: python

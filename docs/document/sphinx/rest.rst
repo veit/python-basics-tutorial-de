@@ -96,13 +96,13 @@ Link zur :doc:`Startseite <../index>` oder zu :doc:`docstrings`.
 Dokumente herunterladen
 :::::::::::::::::::::::
 
-Link zu einem Dokument, das nicht von Sphinx gerendert werden soll, :abbr:`z.B.
+Link zu einem Dokument, das nicht von Sphinx gerendert werden soll, :abbr:`z. B.
 (zum Beispiel)` zu :download:`autodoc-examples.rst`.
 
 .. code-block:: rest
 
    Link zu einem Dokument, das nicht von Sphinx gerendert werden soll,
-   :abbr:`z.B. (zum Beispiel)` zu :download:`docstrings-example.rst`.
+   :abbr:`z. B. (zum Beispiel)` zu :download:`docstrings-example.rst`.
 
 Bilder
 ------

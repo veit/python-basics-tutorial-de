@@ -111,7 +111,7 @@ zwischen die Zeichenfolgen beliebige Zeichen einfügen:
    >>> " :: ".join(["License", "OSI Approved"])
    'License :: OSI Approved'
 
-Ihr könnt auch eine leere Zeichenkette, ``""``, verwenden, :abbr:`z.B. (zum
+Ihr könnt auch eine leere Zeichenkette, ``""``, verwenden, :abbr:`z. B. (zum
 Beispiel)` für die CamelCase-Schreibweise von Python-Klassen:
 
 .. code-block:: pycon
@@ -286,8 +286,8 @@ Zeichenketten ändern
 modifizierte Version der ursprünglichen Zeichenkette zurückgeben können.
 
 :py:meth:`str.replace` könnt ihr verwenden, um Vorkommen des ersten
-:doc:`../../../functions/params` durch den zweiten zu ersetzen, :abbr:`z.B. (zum
-Beispiel)`:
+:doc:`../../../functions/params` durch den zweiten zu ersetzen, :abbr:`z. B.
+(zum Beispiel)`:
 
 .. code-block:: pycon
 
@@ -295,8 +295,8 @@ Beispiel)`:
    'Hello Pythonistas!\n\r'
 
 :py:meth:`str.maketrans` und :py:meth:`str.translate` können zusammen verwendet
-werden, um Zeichen in Zeichenketten in andere Zeichen zu übersetzen, :abbr:`z.B.
-(zum Beispiel)`:
+werden, um Zeichen in Zeichenketten in andere Zeichen zu übersetzen,
+:abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
    :linenos:

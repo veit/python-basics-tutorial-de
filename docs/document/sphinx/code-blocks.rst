@@ -8,7 +8,7 @@ Code-Block könnt ihr angeben mit
 
 .. rst:directive:: .. code-block:: LANGUAGE
 
-   Ihr könnt dies :abbr:`z.B. (zum Beispiel)` so verwenden:
+   Ihr könnt dies :abbr:`z. B. (zum Beispiel)` so verwenden:
 
    .. code-block:: rest
 
@@ -80,7 +80,7 @@ Code-Block könnt ihr angeben mit
    .. rst:directive:option:: diff
 
       Wenn ihr das Diff eures Codes anzeigen möchtet, könnt ihr die alte Datei
-      mit der ``diff``-Option angeben, :abbr:`z.B. (zum Beispiel)`:
+      mit der ``diff``-Option angeben, :abbr:`z. B. (zum Beispiel)`:
 
       .. code-block:: rest
 
@@ -98,7 +98,7 @@ Veralteter Code
 .. rst:directive:: .. deprecated:: version
 
    Beschreibt, wann die Funktion veraltet wurde. Es kann auch eine Erklärung
-   angegeben werden, um :abbr:`z.B.` darüber zu informieren, was stattdessen
+   angegeben werden, um :abbr:`z. B.` darüber zu informieren, was stattdessen
    verwendet werden sollte. Beispiel:
 
    .. code-block:: rest

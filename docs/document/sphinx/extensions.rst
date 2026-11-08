@@ -155,7 +155,7 @@ Erweiterungen von Drittanbietern
 
 `Sphinx-Needs <https://sphinx-needs.readthedocs.io/>`_
     erlaubt die Definition, Verlinkung und Filterung von need-Objekten, also
-    :abbr:`z.B. (zum Beispiel)` von Anforderungen und Testfälle
+    :abbr:`z. B. (zum Beispiel)` von Anforderungen und Testfälle
 
     .. image:: https://raster.shields.io/github/stars/useblocks/sphinx-needs
        :alt: Stars
@@ -365,7 +365,7 @@ Erweiterungen von Drittanbietern
 `Sphinx Gitstamp Generator Extension <https://github.com/jdillard/sphinx-gitstamp>`_
     fügt :doc:`Git
     <Python4DataScience:productive/git/index>`-Zeitstempel im Kontext ein,
-    :abbr:`z.B. (zum Beispiel)` in einem `Jinja
+    :abbr:`z. B. (zum Beispiel)` in einem `Jinja
     <https://jinja.palletsprojects.com/en/stable/>`_-Template:
 
     .. code-block:: jinja

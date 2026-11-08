@@ -24,7 +24,7 @@ der Funktion ``fact``; Änderungen an ihnen, die während der Ausführung der
 Funktion vorgenommen werden, haben keine Auswirkungen auf Variablen außerhalb
 der Funktion. Alle Variablen in der Parameter-Liste einer Funktion und alle
 Variablen, die innerhalb einer Funktion durch eine Zuweisung erzeugt werden, wie
-:abbr:`z.B. (zum Beispiel)` ``f = 1``, sind für die Funktion lokal:
+:abbr:`z. B. (zum Beispiel)` ``f = 1``, sind für die Funktion lokal:
 
 .. code-block:: pycon
 

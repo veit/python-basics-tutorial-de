@@ -32,7 +32,7 @@ Voraussetzungen
      Stellt sicher, dass das Verzeichnis, in dem Cookiecutter installiert wird,
      sich in eurem ``Path`` befindet, damit ihr es direkt aufrufen könnt. Sucht
      dazu auf eurem Computer nach *Environment Variables* und fügt dieses
-     Verzeichnis zu ``Path`` hinzu, also :abbr:`z.B.(zum Beispiel)`
+     Verzeichnis zu ``Path`` hinzu, also :abbr:`z. B.(zum Beispiel)`
      ``%APPDATA%\Python\Python3x\Scripts``. Anschließend müsst ihr vermutlich
      die Session neu starten um die Umgebungsvariablen nutzen zu können.
 

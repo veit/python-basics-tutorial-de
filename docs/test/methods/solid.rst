@@ -41,7 +41,7 @@ jede Klasse nur eine Aufgabe erfüllen soll:
 – `Robert C. Martin: SRP: The Single Responsibility Principle
 <https://web.archive.org/web/20140407020253/http://www.objectmentor.com/resources/articles/srp.pdf>`_
 
-Nehmen wir :abbr:`z.B. (zum Beispiel)` eine Anwendung, die eine Sammlung von
+Nehmen wir :abbr:`z. B. (zum Beispiel)` eine Anwendung, die eine Sammlung von
 Formen – Kreise und Quadrate – nimmt und die Summe der Umfänge aller Formen  der
 Sammlung berechnet.
 

@@ -15,8 +15,8 @@ meist auch kein Problem.
    Paketmanager zu tun haben, sondern alles über ``rpm``-/``deb``- :abbr:`o.ä.
    (oder ähnliche)` Paketmanager etc. verwalten. Sie wollen auch nicht, dass
    ihre Pakete für andere Dinge als Systemzwecke verwendet werden. Daher solltet
-   ihr euch euer eigenes Python installieren. Unter Ubuntu geht dies :abbr:`z.B.
-   (zum Beispiel)` mit:
+   ihr euch euer eigenes Python installieren. Unter Ubuntu geht dies
+   :abbr:`z. B. (zum Beispiel)` mit:
 
    .. code-block:: console
 
@@ -54,7 +54,7 @@ meist auch kein Problem.
    Python-Installationsprogramm in drei Schritten installiert werden:
 
    #. Ladet das aktuelle Installationsprogramm von `Python Releases for Windows
-      <https://www.python.org/downloads/windows/>`_ herunter, :abbr:`z.B. (zum
+      <https://www.python.org/downloads/windows/>`_ herunter, :abbr:`z. B. (zum
       Beispiel)` `Windows installer (64-bit)
       <https://www.python.org/ftp/python/3.15.0/python-3.15.0-amd64.exe>`_.
    #. Startet das Installationsprogramm. Sofern ihr die notwendigen

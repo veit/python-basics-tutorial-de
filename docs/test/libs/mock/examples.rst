@@ -91,7 +91,7 @@ Ausgabe dann abfangen und zurückgeben.
 
         return run_cli
 
-Anschließend können wir diese Fixture einfach verwenden um :abbr:`z.B. (zum
+Anschließend können wir diese Fixture einfach verwenden um :abbr:`z. B. (zum
 Beispiel)` die Version in :file:`tests/cli/test_version.py` zu testen:
 
 .. code-block:: python

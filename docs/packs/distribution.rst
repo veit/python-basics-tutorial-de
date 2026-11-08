@@ -2,7 +2,7 @@ Verteilungspaket erstellen
 ==========================
 
 Verteilungspakete (engl.: :term:`Distribution Packages <Distribution Package>`
-sind Archive, die in einen Paket-Index wie :abbr:`z.B. (zum Beispiel)`
+sind Archive, die in einen Paket-Index wie :abbr:`z. B. (zum Beispiel)`
 :term:`pypi.org` hochgeladen und mit :term:`pip` installiert werden können.
 
 .. tip::
@@ -12,7 +12,7 @@ sind Archive, die in einen Paket-Index wie :abbr:`z.B. (zum Beispiel)`
 Struktur
 --------
 
-Ein minimales *Distribution Package* kann :abbr:`z.B. (zum Beispiel)` so
+Ein minimales *Distribution Package* kann :abbr:`z. B. (zum Beispiel)` so
 aussehen:
 
 .. code-block:: console
@@ -39,7 +39,7 @@ Distributionspakete für euer Projekt zu erstellen. Ihr könnt aus einer Reihe v
 Backends wählen, wobei dieses Tutorial standardmäßig ``hatchling`` verwendet.
 
 Eine minimale und dennoch funktionale :download:`dataprep/pyproject.toml`-Datei
-sieht dann :abbr:`z.B. (zum Beispiel)` so aus:
+sieht dann :abbr:`z. B. (zum Beispiel)` so aus:
 
 .. code-block:: toml
    :linenos:
@@ -99,7 +99,7 @@ Metadaten
 ~~~~~~~~~
 
 In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
-:abbr:`z.B. (zum Beispiel)`:
+:abbr:`z. B. (zum Beispiel)`:
 
 .. literalinclude:: dataprep/pyproject.toml
    :language: toml
@@ -115,7 +115,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
     ist die Version des Pakets.
 
     In unserem Beispiel ist die Versionsnummer statisch gesetzt worden. Es gibt
-    jedoch auch die Möglichkeit, die Version dynamisch anzugeben, :abbr:`z.B.
+    jedoch auch die Möglichkeit, die Version dynamisch anzugeben, :abbr:`z. B.
     (zum Beispiel)` durch eine Datei:
 
     .. code-block:: toml
@@ -140,7 +140,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        * `Calendar Versioning <https://calver.org>`_
        * `ZeroVer <https://0ver.org/>`_
 
-    Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z.B. (zum
+    Es gibt jedoch noch weitere Versionsschema-Plugins, wie :abbr:`z. B. (zum
     Beispiel)` `hatch-semver <https://github.com/fleetingbytes/hatch-semver>`_
     für `Semantic Versioning <https://semver.org>`_.
 
@@ -190,7 +190,7 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
        von `Bump My Version
        <https://github.com/callowayproject/bump-my-version>`_ empfehlen.
 
-       Die Konfigurationsdatei :file:`.bumpversion.toml` kann :abbr:`z.B. (zum
+       Die Konfigurationsdatei :file:`.bumpversion.toml` kann :abbr:`z. B. (zum
        Beispiel)` so aussehen:
 
        .. code-block:: toml
@@ -328,7 +328,7 @@ für ``dev`` neben ``prek`` auch alle Abhängigkeiten aus ``docs`` und ``test``
    :lines: 33-37
    :lineno-start: 33
 
-Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z.B. (zum Beispiel)`
+Ihr könnt diese Abhängigkeitsgruppen installieren, :abbr:`z. B. (zum Beispiel)`
 mit:
 
 .. code-block:: console
@@ -674,7 +674,7 @@ Wenn ihr diese Dateien in euren Paketen ersetzen wollt, könnt ihr dies mit
 ~~~~~~~~~~~~~~~~
 
 Eine minimale und dennoch funktionale :download:`dataprep/setup.py` kann
-:abbr:`z.B. (zum Beispiel)` so aussehen:
+:abbr:`z. B. (zum Beispiel)` so aussehen:
 
 .. literalinclude:: dataprep/setup.py
    :language: python
@@ -697,7 +697,7 @@ alle Pakete in diesem Verzeichnis finden.
 Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ``wheel`` sammelt heutzutage alle erforderlichen Lizenzdateien automatisch und
 ``setuptools`` kann mit dem ``options``-Keyword-Argument universelle
-``wheel``-Pakete bauen, :abbr:`z.B. (zum Beispiel)`
+``wheel``-Pakete bauen, :abbr:`z. B. (zum Beispiel)`
 :file:`dataprep-0.1.0-py3-none-any.whl`.
 
 .. _manifest-in:
@@ -706,7 +706,7 @@ Diese Datei wird nicht mehr benötigt, zumindest nicht für die Paketierung.
 ~~~~~~~~~~~~~~~~~~~
 
 Die Datei enthält alle Dateien und Verzeichnisse, die nicht bereits mit
-``packages`` oder ``py_module`` erfasst werden. Sie kann :abbr:`z.B. (zum
+``packages`` oder ``py_module`` erfasst werden. Sie kann :abbr:`z. B. (zum
 Beispiel)` so aussehen: :download:`dataprep/MANIFEST.in`:
 
 .. literalinclude:: dataprep/MANIFEST.in
@@ -723,7 +723,7 @@ Weitere Anweisungen in ``Manifest.in`` findet ihr in `MANIFEST.in commands
 
 .. note::
    Wenn Dateien und Verzeichnisse aus :file:`MANIFEST.in` auch installiert
-   werden sollen, :abbr:`z.B. (zum Beispiel)` wenn es sich um laufzeitrelevante
+   werden sollen, :abbr:`z. B. (zum Beispiel)` wenn es sich um laufzeitrelevante
    Daten handelt, könnt ihr dies mit ``include_package_data=True`` in eurem
    :func:`setup`-Aufruf angeben.
 
@@ -776,7 +776,7 @@ Dateistruktur für Pakete erstellen:
 
     .. literalinclude:: mypack/pyproject.toml
        :caption: mypack/pyproject.toml
-       :emphasize-lines: 20
+       :emphasize-lines: 19
 
 :file:`mypack/src/mypack/__init__.py`
     Das Modul definiert eine CLI-Funktion :func:`main`:
@@ -888,7 +888,7 @@ Anschließend könnt ihr die :term:`Wheel`-Datei überprüfen mit:
     dist/dataprep-0.1.0-py3-none-any.whl: OK
 
 Alternativ könnt ihr das Paket auch in einem neuen Projekt installieren,
-:abbr:`z.B. (zum Beispiel)` in :samp:`myapp`:
+:abbr:`z. B. (zum Beispiel)` in :samp:`myapp`:
 
 .. code-block:: console
 
@@ -912,7 +912,7 @@ Anschließend könnt ihr ``mypack`` mit ``uv run`` aufrufen:
 
 .. note::
    Es gibt immer noch viele Anleitungen, die einen Schritt zum Aufruf der
-   :file:`setup.py` enthalten, :abbr:`z.B. (zum Beispiel)` :samp:`python
+   :file:`setup.py` enthalten, :abbr:`z. B. (zum Beispiel)` :samp:`python
    setup.py sdist`. Dies wird jedoch heutzutage von Teilen der `Python Packaging
    Authority (PyPA) <https://github.com/pypa/>`_ als `Anti-Pattern
    <https://x.com/pganssle/status/1152695229105000453>`_ angesehen.
