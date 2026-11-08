@@ -42,7 +42,8 @@ einer :doc:`Zeichenkette <types/strings/index>`:
 
 .. code-block:: pycon
 
-    >>> x = "# Dies ist eine Zeichenkette und kein Kommentar"
+   >>> # Dies ist eine Zeichenkette und kein Kommentar
+   >>> x = "# Dies ist eine Zeichenkette und kein Kommentar"
 
 Grundlegender Python-Stil
 -------------------------

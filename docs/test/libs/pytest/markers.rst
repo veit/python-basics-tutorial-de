@@ -389,7 +389,7 @@ Nun konnten wir zwar nur einen Test durchzuführen, aber wir haben auch eine
 Warnung erhalten: ``PytestUnknownMarkWarning: Unknown pytest.mark.smoke - is
 this a typo?`` Sie hilft, Tippfehler zu vermeiden. pytest möchte, dass wir
 benutzerdefinierte Marker registrieren, indem wir einen Marker-Abschnitt zu
-:file:`pyproject.toml` hinzufügen, :abbr:`z.B. (zum Beispiel)`:
+:file:`pyproject.toml` hinzufügen, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: toml
 
@@ -635,7 +635,7 @@ Wir können auch alle logischen Verknüpfungen zusammen verwenden:
    ======================= 2 passed, 34 deselected in 0.08s =======================
 
 Schließlich können wir auch Marker und Keywords für die Auswahl kombinieren,
-:abbr:`z.B. (zum Beispiel)` um Smoke-Tests auszuführen, die nicht Teil der
+:abbr:`z. B. (zum Beispiel)` um Smoke-Tests auszuführen, die nicht Teil der
 Klasse :class:`TestFinish` sind:
 
 .. code-block:: console
@@ -971,7 +971,7 @@ Tests anzeigen lassen:
 
    $ uv run pytest -rs tests/test_platform.py
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items
 
@@ -987,7 +987,7 @@ oder spezifischer:
 
    $ uv run pytest -m darwin -rs tests/test_platform.py
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0b4, pytest-8.4.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items / 3 deselected / 1 selected
 
@@ -1044,7 +1044,7 @@ Nun können wir die Option ``-m`` verwenden, um einen Satz auszuwählen:
 
    $ uv run pytest -m darwin
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0
+   platform darwin -- Python 3.15.1, pytest-9.1.1, pluggy-1.7.0
    ...
    collected 4 items / 3 deselected / 1 selected
 

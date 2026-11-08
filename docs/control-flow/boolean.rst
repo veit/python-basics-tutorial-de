@@ -3,7 +3,7 @@ Boolesche Werte und Ausdrücke
 
 In Python gibt es mehrere Möglichkeiten, boolesche Werte auszudrücken; die
 boolesche Konstante ``False``, ``0``, der Python-Typ :doc:`../types/none` und
-leere Werte (:abbr:`z.B. (zum Beispiel)` die leere Liste ``[]`` oder die leere
+leere Werte (:abbr:`z. B. (zum Beispiel)` die leere Liste ``[]`` oder die leere
 Zeichenkette ``""``) werden alle als ``False`` betrachtet. Die boolesche
 Konstante ``True`` und alles andere wird als ``True`` betrachtet.
 

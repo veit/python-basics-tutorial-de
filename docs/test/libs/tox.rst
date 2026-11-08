@@ -2,86 +2,79 @@ tox
 ===
 
 `tox <https://tox.readthedocs.io/>`_ ist ein Automatisierungstool, das ähnlich
-wie ein :term:`CI`-Tool funktioniert, aber sowohl lokal als auch in Verbindung
+wie ein :term:`CI`-Tool funktioniert, jedoch sowohl lokal als auch in Verbindung
 mit anderen CI-Tools auf einem Server ausgeführt werden kann.
 
-Im Folgenden richten wir uns tox für unsere Tasks-Anwendung so ein, dass es uns
-beim lokalen Testen hilft. Anschließend werden wir das Testen mithilfe von
-GitHub Actions einrichten.
+Im Folgenden richten wir tox für unsere Tasks-Anwendung so ein, dass es uns beim
+lokalen Testen unterstützt. Anschließend richten wir das Testen mithilfe von
+GitHub Actions ein.
 
 Einführung in tox
 -----------------
 
-tox ist ein Kommandozeilen-Tool, mit dem ihr eure komplette Testsuite in
+tox ist ein Befehlszeilentool, mit dem ihr eure gesamte Testsuite in
 verschiedenen Umgebungen ausführen könnt. Wir werden tox verwenden, um das
-Tasks-Projekt in mehreren Python-Versionen zu testen. tox ist jedoch nicht nur
-auf Python-Versionen beschränkt. Ihr könnt es zum Testen mit verschiedenen
-Abhängigkeits-Konfigurationen und verschiedenen Konfigurationen für verschiedene
-Betriebssysteme verwenden. tox verwendet dabei Projektinformationen aus der
-:file:`setup.py`- oder :file:`pyproject.toml`-Datei für das zu testende Paket,
-um eine installierbare :doc:`Distribution eures Pakets
-<../../packs/distribution>` zu erstellen. Es sucht im ``[tool.tox]``-Abschnitt
-der :file:`pyproject.toml`-Datei nach einer Liste von Umgebungen, und führt dann
-jeweils folgende Schritte aus:
+Tasks-Projekt in mehreren Python-Versionen zu testen, doch tox ist nicht nur auf
+Python-Versionen beschränkt. Ihr könnt es nutzen, um Tests mit unterschiedlichen
+Abhängigkeitskonfigurationen und unterschiedlichen Konfigurationen für
+verschiedene Betriebssysteme durchzuführen. tox verwendet Projektinformationen
+aus der Datei :file:`setup.py` oder :file:`pyproject.toml` des zu testenden
+Pakets, um eine installierbare :doc:`Distribution eures Pakets
+<../../packs/distribution>` zu erstellen. Es sucht im Abschnitt ``[tool.tox]``
+der Datei :file:`pyproject.toml` nach einer Liste von Umgebungen und führt dann
+für jede einzelne die folgenden Schritte aus:
 
-#. erstellt eine :term:`virtuelle Umgebung <Virtuelle Umgebung>`
+#. erstellt eine :term:`virtuelle Umgebung`
 #. installiert einige Abhängigkeiten mit :term:`pip`
-#. baut euer Paket
+#. erstellt euer Paket
 #. installiert euer Paket mit pip
-#. führt weitere Tests aus
+#. führt weitere Tests durch
 
 Nachdem alle Umgebungen getestet wurden, gibt tox eine Zusammenfassung der
 Ergebnisse aus.
 
-Um diesen Prozess mit :term:`uv` zu beschleunigen, verwenden wir tox nicht
-direkt, sondern `tox-uv <https://github.com/tox-dev/tox-uv>`_.
+Um diesen Prozess mit :term:`uv` zu beschleunigen, verwenden wir nicht direkt
+tox, sondern `tox-uv <https://github.com/tox-dev/tox-uv>`_.
 
-.. note::
-   Obwohl tox von vielen Projekten verwendet wird, gibt es Alternativen, die
-   ähnliche Funktionen erfüllen. Zwei Alternativen zu tox sind `nox
-   <https://nox.thea.codes/en/stable/>`_ und `invoke
-   <https://www.pyinvoke.org>`_.
+Einrichten von tox
+------------------
 
-tox einrichten
---------------
-
-Früher wurde tox üblicherweise in der :file:`tox.ini`-Datei konfiguriert. Seit
-tox 4.44.0 ist deren Funktionalität jedoch eingefroren und zukünftige
-Konfigurationsparameter werden wohl nur noch in einer
+Bisher wurde tox in der Regel in der Datei :file:`tox.ini` konfiguriert. Seit
+tox 4.44.0 ist der Funktionsumfang jedoch eingefroren, und zukünftige
+Konfigurationsparameter werden voraussichtlich nur noch in einer
 :doc:`Python4DataScience:data-processing/serialisation-formats/toml/index`-Datei
-bereitgestellt werden, :abbr:`z. B. (zum Beispiel)` in der
-:ref:`pyproject-toml`-Datei. Werfen wir einen Blick auf eine einfache
-Konfiguration in der :file:`pyproject.toml`-Datei:
+bereitgestellt, beispielsweise in der Datei :ref:`pyproject-toml`. Sehen wir uns
+eine einfache Konfiguration in der Datei :file:`pyproject.toml` an:
 
 .. code-block:: toml
 
    [tool.tox]
-   env_list = ["py314"]
+   env_list = ["py315"]
 
    [tool.tox.env_run_base]
    dependency_groups = [ "tests" ]
    commands = [[ "pytest"]]
 
-Im ``[tool.tox]``-Abschnitt haben wir ``env_list = ["py314"]`` definiert. Dies
-ist eine Abkürzung, die tox anweist, unsere Tests mit Python Version 3.14
-durchzuführen. Wir werden in Kürze weitere Python-Versionen hinzufügen, aber die
-Verwendung einer Version hilft uns zunächst, den Ablauf von tox besser zu
-verstehen.
+Im Abschnitt ``[tool.tox]`` haben wir ``env_list = ["py315"]`` definiert. Dies
+ist eine Kurzschreibweise, die tox anweist, unsere Tests mit der Python-Version
+3.15 auszuführen. Wir werden in Kürze weitere Python-Versionen hinzufügen, aber
+die Verwendung einer einzigen Version hilft uns, die Funktionsweise von tox
+besser zu verstehen.
 
-Im ``[tool.tox.env_run_base]``-Abschnitt wird in ``dependency_groups`` ``tests``
-angegeben. Somit weiß tox, dass die entsprechenden Bibliotheken in dieser
-Umgebung installiert werden sollen. Mit ``commands`` wird tox schließlich
-angewiesen, ``pytest`` auszuführen.
+Im Abschnitt ``[tool.tox.env_run_base]`` gibt ``dependency_groups`` ``tests``
+an. Dadurch wird tox mitgeteilt, dass die entsprechenden Bibliotheken in dieser
+Umgebung installiert werden sollen. Schließlich weist ``commands`` tox an,
+``pytest`` auszuführen.
 
-Mit :samp:`tool.tox.env.{ENV_NAME}` ließe sich die Konfiguration für eine
-bestimmte Umgebung hinzufügen und mit :samp:`tool.tox.env_pkg_base` die
-Basiskonfiguration für Pakete.
+Die Konfiguration für eine bestimmte Umgebung kann über
+:samp:`tool.tox.env.ENV_NAME` hinzugefügt werden, die Basiskonfiguration für
+Pakete über :samp:`tool.tox.env_pkg_base`.
 
-tox ausführen
--------------
+Ausführen von tox
+-----------------
 
-Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass ihr tox-uv
-installiert habt:
+Bevor ihr tox ausführen könnt, müsst ihr sicherstellen, dass tox-uv installiert
+ist:
 
 .. tab:: Linux/macOS
 
@@ -95,26 +88,26 @@ installiert habt:
 
       C:> uv add --group tests tox-uv
 
-Um tox auszuführen, startet einfach tox:
+Um tox auszuführen, startet tox einfach wie folgt:
 
 .. code-block:: pytest
 
    $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy.tasks-26.2.0.tar.gz
-   py314: commands[0]> python --version --version
-   Python 3.14.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
-   py314: commands[1]> coverage run -m pytest
+   True: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   True: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   True: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   3.15: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/9/cusy_tasks-26.2.0.tar.gz
+   3.15: commands[0]> python --version --version
+   Python 3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 17.0.0 (clang-1700.6.4.2)]
+   3.15: commands[1]> coverage run -m pytest ''
    ============================= test session starts ==============================
-   platform darwin -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
-   cachedir: .tox/py314/.pytest_cache
+   platform darwin -- Python 3.15.0, pytest-9.2.0, pluggy-1.7.0
+   cachedir: .tox/3.15/.pytest_cache
    rootdir: /Users/veit/cusy/prj/cusy.tasks
    configfile: pyproject.toml
-   testpaths: tests
-   plugins: Faker-40.1.0, cov-7.0.0
+   plugins: cov-7.1.0, Faker-40.44.0
    collected 83 items
+
    tests/api/test_add.py ......                                             [  7%]
    tests/api/test_config.py .                                               [  8%]
    tests/api/test_count.py ...                                              [ 12%]
@@ -122,11 +115,11 @@ Um tox auszuführen, startet einfach tox:
    tests/api/test_delete_all.py ..                                          [ 18%]
    tests/api/test_exceptions.py ..                                          [ 20%]
    tests/api/test_finish.py ....                                            [ 25%]
-   tests/api/test_task.py ...                                               [ 28%]
-   tests/api/test_task_id.py .                                              [ 30%]
-   tests/api/test_list.py .........                                         [ 40%]
-   tests/api/test_list_edge_cases.py ........                               [ 50%]
-   tests/api/test_start.py ....                                             [ 55%]
+   tests/api/test_item_id.py .                                              [ 26%]
+   tests/api/test_list.py .........                                         [ 37%]
+   tests/api/test_list_edge_cases.py ........                               [ 46%]
+   tests/api/test_start.py ....                                             [ 51%]
+   tests/api/test_task.py ...                                               [ 55%]
    tests/api/test_update.py .....                                           [ 61%]
    tests/api/test_version.py .                                              [ 62%]
    tests/cli/test_add.py ..                                                 [ 65%]
@@ -141,153 +134,161 @@ Um tox auszuführen, startet einfach tox:
    tests/cli/test_update.py .                                               [ 98%]
    tests/cli/test_version.py .                                              [100%]
 
-   ============================== 83 passed in 0.35s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-     py314: OK (1.19=setup[0.45]+cmd[0.01,0.72] seconds)
-     congratulations :) (1.23 seconds)
+   ============================== 83 passed in 0.21s ==============================
+   True: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+     3.15: OK (0.76=setup[0.15]+cmd[0.01,0.60] seconds)
+     congratulations :) (0.79 seconds)
 
-Mehrere Python-Versionen testen
--------------------------------
+Testen mehrerer Python-Versionen
+--------------------------------
 
-Hierfür erweitern wir ``envlist`` in der :file:`pyproject.toml`-Datei um weitere
+Dazu erweitern wir ``envlist`` in der Datei :file:`pyproject.toml`, um weitere
 Python-Versionen hinzuzufügen:
 
 .. code-block:: toml
 
    [tool.tox]
    env_list = [
-     "py3{10-14}",
-     "py{13-14}t",
+     "3.15",
+     "3.14",
+     "3.13",
+     "3.12",
+     "3.11",
+     "3.13t",
+     "3.14t",
+     "3.15t",
    ]
    skip_missing_interpreters = true
 
-Damit werden wir jetzt Python-Versionen von 3.10 bis 3.14 testen. Zusätzlich
-haben wir auch die Einstellung ``skip_missing_interpreters = true`` hinzugefügt,
-damit tox nicht fehlschlägt, wenn auf eurem System eine der aufgeführten
-Python-Versionen fehlt. Ist der Wert auf ``true`` gesetzt, führt tox die Tests
-mit jeder verfügbaren Python-Version durch, überspringt aber Versionen, die es
-nicht findet, ohne fehlzuschlagen. Die Ausgabe ist sehr ähnlich, wobei ich in
-der folgenden Darstellung lediglich die Unterschiede hervorhebe:
+Wir werden nun die Python-Versionen von 3.11 bis 3.15 testen. Zudem haben wir
+die Einstellung ``skip_missing_interpreters = true`` hinzugefügt, damit tox
+nicht fehlschlägt, falls eine der aufgeführten Python-Versionen auf eurem System
+fehlt. Ist der Wert auf ``true`` gesetzt, führt tox die Tests mit jeder
+verfügbaren Python-Version durch, überspringt jedoch die nicht gefundenen
+Versionen, ohne dass es zu einem Fehler kommt. Die Ausgabe ist sehr ähnlich,
+allerdings werde ich im folgenden nur die Unterschiede hervorheben:
 
 .. code-block:: pytest
-   :emphasize-lines: 3-4, 8-12, 16-20, 24-28, 32-
+   :emphasize-lines: 3-6, 10-14, 18-22, 26-30, 34-38, 42-46, 50-54, 58-62, 67-
 
-   $ uv run tox
-   .pkg: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   .pkg: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-   py310: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/19/cusy.tasks-26.2.0.tar.gz
-   py310: commands[0]> python --version --version
-   Python 3.10.17 (main, Apr  9 2025, 03:47:39) [Clang 20.1.0 ]
-   py310: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.35s ==============================
-   py310: OK ✔ in 1.3 seconds
-   py311: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/20/cusy.tasks-26.2.0.tar.gz
-   py311: commands[0]> python --version --version
-   Python 3.11.11 (main, Feb  5 2025, 18:58:27) [Clang 19.1.6 ]
-   py311: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.36s ==============================
-   py311: OK ✔ in 1.16 seconds
-   py312: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/21/cusy.tasks-26.2.0.tar.gz
-   py312: commands[0]> python --version --version
-   Python 3.12.12 (main, Oct 14 2025, 21:38:21) [Clang 20.1.4 ]
-   py312: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.55s ==============================
-   py312: OK ✔ in 1.79 seconds
-   py313: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/22/cusy.tasks-26.2.0.tar.gz
-   py313: commands[0]> python --version --version
-   Python 3.13.0 (main, Oct  7 2024, 23:47:22) [Clang 18.1.8 ]
-   py313: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.35s ==============================
-   py313: OK ✔ in 1.07 seconds
-   py314: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/23/cusy.tasks-26.2.0.tar.gz
-   py314: commands[0]> python --version --version
-   Python 3.14.0 (main, Oct 14 2025, 21:10:22) [Clang 20.1.4 ]
-   py314: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.36s ==============================
-   py314: OK ✔ in 1.28 seconds
-   py313t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/24/cusy.tasks-26.2.0.tar.gz
-   py313t: commands[0]> python --version --version
-   Python 3.13.0 experimental free-threading build (main, Oct 16 2024, 08:24:33) [Clang 18.1.8 ]
-   py313t: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.49s ==============================
-   py313t: OK ✔ in 1.51 seconds
-   py314t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy.tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/25/cusy.tasks-26.2.0.tar.gz
-   py314t: commands[0]> python --version --version
-   Python 3.14.0b4 free-threading build (main, Jul  8 2025, 21:06:49) [Clang 20.1.4 ]
-   py314t: commands[1]> coverage run -m pytest
-   ============================= test session starts ==============================
-   ...
-   ============================== 83 passed in 0.39s ==============================
-   .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
-     py310: OK (1.30=setup[0.54]+cmd[0.01,0.75] seconds)
-     py311: OK (1.16=setup[0.38]+cmd[0.01,0.76] seconds)
-     py312: OK (1.79=setup[0.42]+cmd[0.01,1.36] seconds)
-     py313: OK (1.07=setup[0.34]+cmd[0.01,0.71] seconds)
-     py314: OK (1.28=setup[0.42]+cmd[0.01,0.85] seconds)
-     py313t: OK (1.51=setup[0.44]+cmd[0.01,1.05] seconds)
-     py314t: OK (1.34=setup[0.44]+cmd[0.01,0.89] seconds)
-     congratulations :) (9.48 seconds)
+    $ uv run tox
+    ...
+    3.15: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/18/cusy_tasks-26.2.0.tar.gz
+    3.15: commands[0]> python --version --version
+    Python 3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 17.0.0 (clang-1700.6.4.2)]
+    3.15: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.22s ==============================
+    3.15: OK ✔ in 0.77 seconds
+    3.14: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/19/cusy_tasks-26.2.0.tar.gz
+    3.14: commands[0]> python --version --version
+    Python 3.14.9 (main, Oct 21 2026, 17:47:42) [Clang 23.1.3 ]
+    3.14: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.24s ==============================
+    3.14: OK ✔ in 0.68 seconds
+    3.13: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/20/cusy_tasks-26.2.0.tar.gz
+    3.13: commands[0]> python --version --version
+    Python 3.13.16 (main, Sep 30 2026, 18:57:20) [Clang 17.0.0 (clang-1700.6.4.2)]
+    3.13: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.34s ==============================
+    3.13: OK ✔ in 0.84 seconds
+    3.12: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/21/cusy_tasks-26.2.0.tar.gz
+    3.12: commands[0]> python --version --version
+    Python 3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]
+    3.12: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.72s ==============================
+    3.12: OK ✔ in 1.33 seconds
+    3.11: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/22/cusy_tasks-26.2.0.tar.gz
+    3.11: commands[0]> python --version --version
+    Python 3.11.17 (main, Oct 21 2026, 17:46:23) [Clang 23.1.3 ]
+    3.11: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.31s ==============================
+    3.11: OK ✔ in 0.71 seconds
+    3.13t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/23/cusy_tasks-26.2.0.tar.gz
+    3.13t: commands[0]> python --version --version
+    Python 3.13.0 experimental free-threading build (main, Oct 16 2024, 08:24:33) [Clang 18.1.8 ]
+    3.13t: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.85s ==============================
+    3.13t: OK ✔ in 1.56 seconds
+    3.14t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/24/cusy_tasks-26.2.0.tar.gz
+    3.14t: commands[0]> python --version --version
+    Python 3.14.0b4 free-threading build (main, Jul  8 2025, 21:06:49) [Clang 20.1.4 ]
+    3.14t: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.25s ==============================
+    3.14t: OK ✔ in 0.69 seconds
+    3.15t: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/25/cusy_tasks-26.2.0.tar.gz
+    3.15t: commands[0]> python --version --version
+    Python 3.15.0 free-threading build (main, Oct  9 2026, 15:11:36) [Clang 22.1.3 ]
+    3.15t: commands[1]> coverage run -m pytest ''
+    ============================= test session starts ==============================
+    ...
+    ============================== 83 passed in 0.21s ==============================
+    True: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+      3.15: OK (0.76=setup[0.15]+cmd[0.01,0.60] seconds)
+      3.14: OK (0.68=setup[0.07]+cmd[0.01,0.60] seconds)
+      3.13: OK (0.84=setup[0.09]+cmd[0.01,0.75] seconds)
+      3.12: OK (1.33=setup[0.08]+cmd[0.02,1.23] seconds)
+      3.11: OK (0.71=setup[0.07]+cmd[0.01,0.63] seconds)
+      3.13t: OK (1.56=setup[0.07]+cmd[0.01,1.47] seconds)
+      3.14t: OK (0.69=setup[0.07]+cmd[0.01,0.61] seconds)
+      3.15t: OK (0.68=setup[0.08]+cmd[0.01,0.59] seconds)
+      congratulations :) (7.28 seconds)
 
-.. versionchanged:: tox 4.25.0
-   Vor tox 4.25.0 vom 27. März 2025 mussten die verschiedenen Python-Versionen
-   einzeln angegeben werden:
-
-   .. code-block:: toml
-
-      [tool.tox]
-      envlist = ["py3{10,11,12,13,14,13t,14t}"]
-
-Tox-Umgebungen parallel ausführen
----------------------------------
+Parallele Ausführung von Tox-Umgebungen
+---------------------------------------
 
 Im vorherigen Beispiel wurden die verschiedenen Umgebungen nacheinander
-ausgeführt. Es ist auch möglich, sie mit der Option ``-p`` parallel laufen zu
-lassen:
+ausgeführt. Mit der Option ``-p`` ist es auch möglich, sie parallel auszuführen:
 
 .. code-block:: pytest
 
    $ uv run tox -p
-   py311: OK ✔ in 1.7 seconds
-   py310: OK ✔ in 1.8 seconds
-   py313: OK ✔ in 1.8 seconds
-   py314t: OK ✔ in 1.89 seconds
-   py314: OK ✔ in 1.91 seconds
-   py313t: OK ✔ in 2.24 seconds
-     py310: OK (1.80=setup[0.62]+cmd[0.02,1.16] seconds)
-     py311: OK (1.70=setup[0.54]+cmd[0.02,1.15] seconds)
-     py312: OK (2.28=setup[0.58]+cmd[0.01,1.69] seconds)
-     py313: OK (1.80=setup[0.60]+cmd[0.02,1.18] seconds)
-     py314: OK (1.91=setup[0.62]+cmd[0.02,1.28] seconds)
-     py313t: OK (2.24=setup[0.72]+cmd[0.02,1.51] seconds)
-     py314t: OK (1.89=setup[0.61]+cmd[0.02,1.26] seconds)
-     congratulations :) (2.33 seconds)
+   warning: Malware checks are experimental and may change without warning. Pass `--preview-features malware-check` to disable this warning.
+   3.15t: OK ✔ in 1.01 seconds
+   3.14t: OK ✔ in 1.08 seconds
+   3.14: OK ✔ in 1.29 seconds
+   3.15: OK ✔ in 1.31 seconds
+   3.11: OK ✔ in 1.36 seconds
+   3.13: OK ✔ in 1.43 seconds
+   3.12: OK ✔ in 1.85 seconds
+     3.15: OK (1.31=setup[0.26]+cmd[0.02,1.03] seconds)
+     3.14: OK (1.29=setup[0.27]+cmd[0.01,1.01] seconds)
+     3.13: OK (1.43=setup[0.29]+cmd[0.02,1.13] seconds)
+     3.12: OK (1.85=setup[0.25]+cmd[0.02,1.58] seconds)
+     3.11: OK (1.36=setup[0.28]+cmd[0.02,1.06] seconds)
+     3.13t: OK (2.19=setup[0.27]+cmd[0.01,1.91] seconds)
+     3.14t: OK (1.08=setup[0.22]+cmd[0.01,0.84] seconds)
+     3.15t: OK (1.01=setup[0.19]+cmd[0.01,0.81] seconds)
+     congratulations :) (2.23 seconds)
 
 .. note::
-   Die Ausgabe ist nicht abgekürzt; dies ist die gesamte Ausgabe, die ihr seht,
-   wenn alles funktioniert.
+   Die Ausgabe ist nicht gekürzt; dies ist die vollständige Ausgabe, die ihr
+   sehen werdet, wenn alles funktioniert.
 
-Coverage-Report in tox hinzufügen
----------------------------------
+Coverage-Bericht in tox hinzufügen
+----------------------------------
 
-Der :file:`pyproject.toml`-Datei kann einfach die Konfiguration von Coverage
-Reports hinzugefügt werden. Dazu müssen wir ``pytest-cov`` in der
-``tests``-Abhängigkeitsgruppe hinzufügen, damit das ``pytest-cov``-Plugin auch
-in den tox-Testumgebungen installiert wird. Das Einbinden von ``pytest-cov``
-schließt auch alle weiteren Abhängigkeiten ein, wie :abbr:`z. B. (zum Beispiel)`
-Coverage. Wir fügen dann noch die :samp:`env.coverage-report.{OPTIONS}` hinzu und ändern ``env_run_base.commands``:
+Die Konfiguration von Coverage-Berichten lässt sich ganz einfach in die Datei
+:file:`pyproject.toml` einfügen. Dazu müssen wir ``pytest-cov`` zur
+Abhängigkeitsgruppe ``tests`` hinzufügen, damit das ``pytest-cov``-Plugin auch
+in den tox-Testumgebungen installiert wird. Durch die Einbindung von
+``pytest-cov`` werden auch alle anderen Abhängigkeiten, wie beispielsweise
+``coverage``, mit einbezogen. Anschließend fügen wir
+:samp:`env.coverage-report.{OPTIONS}` hinzu und ändern
+``env_run_base.commands``:
 
 .. code-block:: toml
    :emphasize-lines: 6, 16-23, 26-
@@ -321,79 +322,87 @@ Coverage. Wir fügen dann noch die :samp:`env.coverage-report.{OPTIONS}` hinzu u
      [ "coverage", "run", "-m", "pytest" ],
    ]
 
-Bei der Verwendung von Coverage mit ``tox`` kann es manchmal sinnvoll sein, in
-der  :file:`pyproject.toml`-Datei einen Abschnitt einzurichten, der Coverage
-mitteilt, welche Quelltext-Pfade als identisch betrachtet werden sollen:
+Wenn ihr Coverage zusammen mit ``tox`` verwendet, kann es manchmal hilfreich
+sein, einen Abschnitt in die Datei :file:`pyproject.toml` einzufügen, um
+Coverage mitzuteilen, welche Quellcode-Pfade als identisch betrachtet werden
+sollen:
 
 .. code-block:: toml
 
    [tool.coverage.paths]
    source = ["src", ".tox/py*/**/site-packages"]
 
-Der Tasks-Quellcode befindet sich zunächst in :file:`src/cusy/tasks/`, bevor von
-tox die virtuellen Umgebungen erstellt und cusy.tasks in der Umgebung
-installiert wird. Dann befindet es sich :abbr:`z. B. (zum Beispiel)` in
-:file:`.tox/py314/lib/python3.14/site-packages/cusy.tasks`.
+Der Quellcode von Tasks befindet sich zunächst im Verzeichnis
+:file:`src/cusy/tasks/`, bevor tox die virtuellen Umgebungen erstellt und Tasks
+in der Umgebung installiert. Anschließend befindet er sich beispielsweise unter
+:file:`.tox/py315/lib/python3.15/site-packages/cusy.tasks`.
 
 .. code-block:: console
    :emphasize-lines: 1
 
    $ uv run tox
    ...
+   coverage-report: commands[1]> coverage report
    Name    Stmts   Miss Branch BrPart  Cover   Missing
    ---------------------------------------------------
-   TOTAL     540      0     32      0   100%
+   TOTAL     365      0     14      0   100%
 
-   33 files skipped due to complete coverage.
-     py310: OK (1.10=setup[0.44]+cmd[0.01,0.64] seconds)
-     py311: OK (0.98=setup[0.31]+cmd[0.01,0.66] seconds)
-     py312: OK (1.59=setup[0.34]+cmd[0.01,1.24] seconds)
-     py313: OK (1.06=setup[0.34]+cmd[0.01,0.71] seconds)
-     py314: OK (1.10=setup[0.35]+cmd[0.01,0.74] seconds)
-     py313t: OK (1.36=setup[0.40]+cmd[0.01,0.95] seconds)
-     py314t: OK (1.31=setup[0.44]+cmd[0.01,0.86] seconds)
-     coverage-report: OK (1.55=setup[0.37]+cmd[1.08,0.10] seconds)
-     congratulations :) (10.09 seconds)
+   29 files skipped due to complete coverage.
+     3.15: OK (0.82=setup[0.15]+cmd[0.01,0.65] seconds)
+     3.14: OK (0.78=setup[0.07]+cmd[0.01,0.70] seconds)
+     3.13: OK (0.92=setup[0.09]+cmd[0.01,0.82] seconds)
+     3.12: OK (1.35=setup[0.08]+cmd[0.01,1.26] seconds)
+     3.11: OK (0.77=setup[0.08]+cmd[0.01,0.69] seconds)
+     3.13t: OK (1.64=setup[0.08]+cmd[0.01,1.55] seconds)
+     3.14t: OK (0.82=setup[0.09]+cmd[0.01,0.72] seconds)
+     3.15t: OK (0.74=setup[0.08]+cmd[0.01,0.66] seconds)
+     coverage-report: OK (0.19=setup[0.00]+cmd[0.09,0.10] seconds)
+     congratulations :) (8.07 seconds)
 
-Mindestabdeckungsgrad festlegen
--------------------------------
+Mindestabdeckung festlegen
+--------------------------
 
-Bei der Ausführung der Coverage durch tox ist auch sinnvoll, einen
-Mindestabdeckungsgrad festzulegen, um eventuelle Ausrutscher bei der Coverage zu
-erkennen. Dies wird mit der Option ``--cov-fail-under`` erreicht:
+Bei der Durchführung einer Abdeckungsanalyse mit tox ist es sinnvoll, einen
+Mindestwert für die Abdeckung festzulegen, um eventuelle Abdeckungslücken zu
+erkennen. Dies geschieht mit der Option ``--cov-fail-under``:
 
 .. code-block:: console
    :emphasize-lines: 8
 
    Name               Stmts   Miss Branch BrPart  Cover   Missing
    --------------------------------------------------------------
-   src/cusy.tasks/api.py 68      1     12      1    98%   88
+   src/cusy/tasks/api.py 68      1     12      1    98%   88
    --------------------------------------------------------------
    TOTAL                428      1     32      1    99%
 
    26 files skipped due to complete coverage.
    Coverage failure: total of 99 is less than fail-under=100
 
-Dadurch wird der Ausgabe die hervorgehobene Zeile hinzugefügt.
+Dadurch wird die markierte Zeile zur Ausgabe hinzugefügt.
 
 .. _posargs:
 
-pytest-Parameter an tox übergeben
----------------------------------
+Weitergabe von pytest-Parametern an tox
+---------------------------------------
 
 Wir können auch einzelne Tests mit tox aufrufen, indem wir eine weitere Änderung
-vornehmen, damit Parameter an pytest übergeben werden können:
+vornehmen, sodass :term:`parameters <Parameter>` an pytest übergeben werden
+können:
 
 .. code-block:: toml
-   :emphasize-lines: 15
+   :emphasize-lines: 19
 
    [tool.tox]
    requires = [ "tox>=4" ]
    env_list = [
-     "prek",
-     "docs",
-     "py3{10-14}",
-     "py{13-14}t",
+     "3.15",
+     "3.14",
+     "3.13",
+     "3.12",
+     "3.11",
+     "3.13t",
+     "3.14t",
+     "3.15t",
      "coverage-report",
    ]
    skip_missing_interpreters = true
@@ -404,55 +413,70 @@ vornehmen, damit Parameter an pytest übergeben werden können:
      [ "coverage", "run", "-m", "pytest", "{posargs}" ],
    ]
 
-Um Argumente an pytest zu übergeben, fügt sie zwischen den tox-Argumenten und
-den pytest-Argumenten ein. In diesem Fall wählen wir ``test_version``-Tests mit
-der Schlüsselwort-Option ``-k`` aus. Wir verwenden auch ``--no-cov``, um die
-Abdeckung zu deaktivieren:
+Um Argumente an pytest zu übergeben, fügt diese zwischen den tox-Argumenten und
+den pytest-Argumenten ein. In diesem Fall wählen wir mit der Schlüsselwortoption
+``-k`` Tests der Version ``test_version`` aus. Außerdem verwenden wir
+``--no-cov``, um die Codeabdeckung zu deaktivieren:
 
 .. code-block:: pytest
-   :emphasize-lines: 1, 3
+   :emphasize-lines: 1, 7
 
-   $ uv run tox -e py314 -- -k test_version --no-cov
+   $ uv run tox -e py315 -- -k test_version --no-cov
    ...
-   coverage-report: commands[0]> coverage combine
-   Combined data file .coverage.fay.local.19539.XpQXpsGx
-   coverage-report: commands[1]> coverage report
-   Name               Stmts   Miss Branch BrPart  Cover   Missing
-   --------------------------------------------------------------
-   src/cusy.tasks/api.py 68      1     12      1    98%   88
-   --------------------------------------------------------------
-   TOTAL                428      1     32      1    99%
+   py315: recreate env because requirements removed: coverage[toml]
+   py315: remove tox env folder /Users/veit/cusy/prj/cusy.tasks/.tox/py315
+   py315: venv> .venv/bin/uv venv -p cpython3.15 --allow-existing '--prompt=cusy.tasks[py315]' --python-preference system /Users/veit/cusy/prj/cusy.tasks/.tox/py315
+   py315: install_dependency-groups> .venv/bin/uv pip install 'coverage[toml]' faker pytest-cov 'pytest>=9'
+   True: _optional_hooks> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   True: get_requires_for_build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   True: build_sdist> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+   py315: install_package_deps> .venv/bin/uv pip install rich 'tinydb<4.9' typer
+   py315: install_package> .venv/bin/uv pip install --reinstall --no-deps cusy-tasks@/Users/veit/cusy/prj/cusy.tasks/.tox/.tmp/package/5/cusy_tasks-26.2.0.tar.gz
+   py315: commands[0]> python --version --version
+   Python 3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 17.0.0 (clang-1700.6.4.2)]
+   True: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.15/site-packages/pyproject_api/_backend.py True uv_build
+     py315: OK (0.58=setup[0.57]+cmd[0.01] seconds)
+     congratulations :) (0.61 seconds)
 
-   26 files skipped due to complete coverage.
-     py310: OK (2.12=setup[1.49]+cmd[0.63] seconds)
-     py311: OK (1.41=setup[0.80]+cmd[0.62] seconds)
-     py312: OK (1.43=setup[0.81]+cmd[0.62] seconds)
-     py313: OK (1.46=setup[0.83]+cmd[0.62] seconds)
-     py314: OK (1.46=setup[0.83]+cmd[0.62] seconds)
-     coverage-report: OK (0.16=setup[0.00]+cmd[0.07,0.09] seconds)
-     congratulations :) (10.26 seconds)
+      py314: commands[0]> coverage run -m pytest -k test_version --no-cov
+      ============================= test session starts ==============================
+      platform darwin -- Python 3.14.0, pytest-8.3.3, pluggy-1.5.0
+      cachedir: .tox/py314/.pytest_cache
+      rootdir: /Users/veit/cusy/prj/cusy.tasks
+      configfile: pyproject.toml
+      testpaths: tests
+      plugins: cov-5.0.0, anyio-4.6.0, Faker-30.3.0
+      collected 49 items / 47 deselected / 2 selected
 
-``tox`` eignet sich nicht nur hervorragend für die lokale Automatisierung von
-Testprozessen, sondern hilft auch bei Server-basierter :term:`CI`. Fahren wir
-fort mit der Ausführung von ``pytest`` und ``tox`` mithilfe von GitHub-Aktionen.
+      tests/api/test_version.py .                                              [ 50%]
+      tests/cli/test_version.py .                                              [100%]
 
-``tox`` mit GitHub-Aktionen ausführen
--------------------------------------
+      ======================= 2 passed, 47 deselected in 0.07s =======================
+      .pkg: _exit> python /Users/veit/cusy/prj/cusy.tasks/.venv/lib/python3.14/site-packages/pyproject_api/_backend.py True hatchling.build
+        py314: OK (1.49=setup[0.96]+cmd[0.53] seconds)
+        congratulations :) (1.53 seconds)
 
-Wenn euer Projekt auf `GitHub <https://github.com/>`_ gehostet ist, könnt ihr
-GitHub-Actions verwenden um automatisiert eure Tests in verschiedenen Umgebungen
-ausführen zu können. Dabei sind eine ganze Reihe von Umgebungen für die
-GitHub-Actions verfügbar: `github.com/actions/runner-images
-<https://github.com/actions/runner-images>`_.
+``tox`` eignet sich nicht nur ideal für die lokale Automatisierung von
+Testprozessen, sondern unterstützt auch serverbasierte :term:`CI`. Fahren wir
+nun mit der Ausführung von pytest und tox mithilfe von GitHub Actions fort.
+
+Ausführung von ``tox`` mit GitHub Actions
+-----------------------------------------
+
+Wenn euer Projekt auf `GitHub <https://github.com/>`_ gehostet wird, könnt ihr
+GitHub Actions nutzen, um eure Tests automatisch in verschiedenen Umgebungen
+auszuführen. Für GitHub Actions steht eine ganze Reihe von Umgebungen zur
+Verfügung: `github.com/actions/virtual-environments
+<https://github.com/actions/runner-images?tab=readme-ov-file>`_.
 
 #. Um eine GitHub-Action in eurem Projekt zu erstellen, klickt auf
-   :menuselection:`Actions --> set up a workflow yourself`. Dies erstellt
-   üblicherweise eine Datei :file:`.github/workflows/main.yml`.
+   :menuselection:`Actions --> set up a workflow yourself`. Dadurch wird in der
+   Regel eine Datei namens :file:`.github/workflows/main.yml` erstellt.
 #. Gebt dieser Datei einen aussagekräftigeren Namen. Wir verwenden hierfür
    üblicherweise :file:`ci.yml`.
-#. Die vorausgefüllte YAML-Datei ist für unsere Zwecke wenig hilfreich. Ihr
-   könnt hier einen ``coverage``-Abschnitt einfügen, :abbr:`z.B. (zum Beispiel)`
-   mit:
+#. Die vorbelegte YAML-Datei ist für unsere Zwecke nicht besonders hilfreich.
+   Ihr könnt einen Abschnitt zur Testabdeckung hinzufügen, :abbr:`z. B. (zum
+   Beispiel)` mit:
 
    .. code-block:: yaml
 
@@ -495,8 +519,8 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
        kann ein beliebiger Name sein. Er wird in der Benutzeroberfläche von
        GitHub Actions angezeigt.
    ``steps``
-       ist eine Liste von Schritten. Der Name eines jeden Schrittes kann
-       beliebig sein und ist optional.
+       ist eine Liste von Schritten. Der Name jedes Schritts kann beliebig
+       gewählt werden und ist optional.
    ``uses: actions/checkout``
        ist ein GitHub-Actions-Tool, das unser Repository auscheckt, damit der
        Rest des Workflows darauf zugreifen kann.
@@ -504,53 +528,52 @@ GitHub-Actions verfügbar: `github.com/actions/runner-images
        ist ein GitHub-Actions-Tool, das Python konfiguriert und in einer
        Build-Umgebung installiert.
    ``with: python-version: ${{ matrix.python }}``
-       sagt, dass eine Umgebung für jede der in ``matrix.python`` aufgeführten
-       Python-Versionen erstellt werden soll.
+       legt fest, dass für jede der in ``matrix.python`` aufgeführten
+       Python-Versionen eine Umgebung erstellt werden soll.
    ``uses: hynek/setup-cached-uv``
-       uses :term:`uv` in GitHub Actions.
+       verwendet :term:`uv` in GitHub Actions.
 
        .. seealso::
           * `setup-cached-uv <https://github.com/hynek/setup-cached-uv>`_
 
-#. Anschließend könnt ihr auf :guilabel:`Start commit` klicken. Da wir noch
-   weitere Änderungen vornehmen wollen bevor die Tests automatisiert ausgeführt
-   werden sollen, wählen wir :guilabel:`Create a new branch for this commit and
-   start a pull request` und als Name für den neuen :term:`Branch <branch>`
-   ``github-actions``. Schließlich könnt ihr auf :guilabel:`Create pull request`
-   klicken.
-#. Um nun in den neuen Branch zu wechseln, gehen wir zu :menuselection:`Code -->
-   main --> github-actions`.
+#. Anschließend könnt ihr auf :guilabel:`Start commit` klicken. Da wir vor der
+   automatischen Ausführung der Tests noch weitere Änderungen vornehmen möchten,
+   wählen wir :guilabel:`Create a new branch for this commit and start a pull
+   request` und geben *github-actions* als Namen für den neuen Branch ein. Zum
+   Schluss könnt ihr auf :guilabel:`Create pull request` klicken.
+#. Um zum neuen Branch zu wechseln, gehen wir zu :menuselection:`Code --> main
+   --> github-actions`.
 
-Die Actions-Syntax ist gut dokumentiert. Ein guter Startpunkt in der
+Die Actions-Syntax ist gut dokumentiert. Ein guter Einstieg in die
 GitHub-Actions-Dokumentation ist die Seite `Building and Testing Python
-<https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`_.
-Die Dokumentation zeigt euch auch, wie ihr pytest direkt ohne tox ausführen
-könnt und wie ihr die Matrix auf mehrere Betriebssysteme erweitern könnt. Sobald
-ihr eure :file:`*.yml`-Datei eingerichtet und in euer GitHub-Repository
-hochgeladen habt, wird sie automatisch ausgeführt. Im Reiter
-:menuselection:`Actions` könnt ihr anschließend die Durchläufe sehen:
+<https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`__.
+Die Dokumentation zeigt euch auch, wie ihr pytest direkt ohne tox ausführen und
+wie ihr die Matrix auf mehrere Betriebssysteme erweitern könnt. Sobald ihr eure
+:file:`*.yml`-Datei eingerichtet und in euer GitHub-Repository hochgeladen habt,
+wird sie automatisch ausgeführt. Die Ausführungsläufe können Sie dann auf der
+Registerkarte :menuselection:`Actions` einsehen:
 
 .. figure:: github-actions.png
    :alt: Screenshot der GitHub-Actions-Übersicht
 
 Die verschiedenen Python-Umgebungen sind auf der linken Seite aufgelistet. Wenn
-ihr eine auswählt, werden die Ergebnisse für diese Umgebung angezeigt, wie im
-folgenden Screenshot dargestellt:
+ihr eine davon auswählt, werden die Ergebnisse für diese Umgebung angezeigt, wie
+im folgenden Screenshot zu sehen ist:
 
 .. figure:: github-actions-run.png
-   :alt: Screenshot eines GitHub-Actions-Run für eine Umgebung
+   :alt: Screenshot eines GitHub-Actions-Laufs für eine Umgebung
 
 .. seealso::
    * `Building and testing Python
-     <https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`_
+     <https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python>`__
    * `Workflow syntax for GitHub Actions
      <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>`_
 
 Badge anzeigen
 --------------
 
-Nun könnt ihr in eurer :file:`README.rst`-Datei noch ein Badge eures
-:term:`CI`-Status hinzufügen, :abbr:`z.B. (zum Beispiel)` mit:
+Jetzt könnt ihr eurer :file:`README.rst`-Datei ein Badge mit eurem
+:term:`CI`-Status hinzufügen, :abbr:`z. B. (zum Beispiel)` mit:
 
 .. code-block:: rest
 
@@ -561,29 +584,29 @@ Nun könnt ihr in eurer :file:`README.rst`-Datei noch ein Badge eures
 Testabdeckung veröffentlichen
 -----------------------------
 
-Die Testabdeckung könnt ihr auf GitHub veröffentlichen, :abbr:`s.a. (siehe
+Ihr könnt die Testabdeckung auf GitHub veröffentlichen, :abbr:`s. a. (siehe
 auch)` :ref:`Coverage GitHub-Actions <coverage-github-actions>`.
 
 tox erweitern
 -------------
 
-tox verwendet `pluggy <https://pluggy.readthedocs.io/en/stable/>`_, um das
-Standardverhalten anzupassen. Pluggy findet ein Plugin, indem es nach
-einem Einstiegspunkt mit dem Namen ``tox`` sucht, :abbr:`z.B. (zum Beispiel)` in
-einer :file:`pyproject.toml`-Datei:
+tox nutzt `pluggy <https://pluggy.readthedocs.io/en/stable/>`_, um das
+Standardverhalten anzupassen. Pluggy findet ein Plugin, indem es nach einem
+Einstiegspunkt mit dem Namen ``tox`` sucht, beispielsweise in einer
+:file:`pyproject.toml`-Datei:
 
 .. code-block:: toml
 
    [project.entry-points.tox]
    my_plugin = "my_plugin.hooks"
 
-Um das Plugin zu verwenden, muss es daher lediglich in der gleichen Umgebung
-installiert werden, in der auch tox läuft, und es wird über den definierten
+Um das Plugin zu nutzen, muss es daher lediglich in derselben Umgebung
+installiert werden, in der tox läuft, und es wird über den definierten
 Einstiegspunkt gefunden.
 
 Ein Plugin wird durch die Implementierung von Erweiterungspunkten in Form von
-Hooks erstellt. Der folgende Codeschnipsel würde zum Beispiel ein neues --my
-:abbr:`CLI (Command Line Interface)` definieren:
+Hooks erstellt. Der folgende Codeausschnitt würde beispielsweise eine neue
+``--my``-:abbr:`CLI (Command Line Interface)` definieren:
 
 .. code-block:: python
 
@@ -604,22 +627,20 @@ Hooks erstellt. Der folgende Codeschnipsel würde zum Beispiel ein neues --my
 ``tox-uv``
 ----------
 
-`tox-uv <https://pypi.org/project/tox-uv/>`__ ist ein Tox-Plugin, das
-:term:`virtualenv` und :term:`pip` durch :term:`uv` in euren Tox-Umgebungen
-ersetzt.
+`tox-uv <https://pypi.org/project/tox-uv/>`_ ist ein Tox-Plugin, das :term:`virtualenv` und :term:`pip` in eurem Tox-Umgebungen durch :term:`uv` ersetzt.
 
-Ihr könnt ``tox`` und ``tox-uv`` installieren mit:
+Ihr könnt ``tox`` und ``tox-uv`` wie folgt installieren:
 
 .. code-block:: console
 
    $ uv tool install tox --with tox-uv
 
-``uv.lock``-Unterstützung
-~~~~~~~~~~~~~~~~~~~~~~~~~
+:file:`uv.lock`-Unterstützung
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wenn ihr für eine Tox-Umgebung ``uv sync`` mit einer :file:`uv.lock`-Datei
-verwenden wollt, müsst ihr für diese Tox-Umgebung den Runner auf
-``uv-venv-lock-runner`` ändern, zum Beispiel:
+Wenn ihr  ``uv sync`` mit einer :file:`uv.lock`-Datei für eine Tox-Umgebung
+verwenden möchtet, müsst ihr den Runner für diese Tox-Umgebung auf
+``uv-venv-lock-runner`` ändern, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: toml
    :caption: pyproject.toml
@@ -628,8 +649,9 @@ verwenden wollt, müsst ihr für diese Tox-Umgebung den Runner auf
    env.app.runner = "uv-venv-lock-runner"
    commands = [[ "pytest"]]
 
-Die ``app``-Umgebung  verwendet den ``uv-venv-lock-runner`` und nutzt ``uv sync --locked``, um die Abhängigkeiten in den Versionen der :file:`uv.lock`-Datei zu
-installieren.
+Die ``app``-Umgebung nutzt den ``uv-venv-lock-runner`` und verwendet den Befehl
+``uv sync --locked``, um die Abhängigkeiten in den in der Datei :file:`uv.lock`
+angegebenen Versionen zu installieren.
 
 .. seealso::
    * `uv.lock support

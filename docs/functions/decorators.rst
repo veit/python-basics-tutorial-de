@@ -2,7 +2,7 @@ Dekoratoren
 ===========
 
 Funktionen können auch als Argumente an andere Funktionen übergeben werden und
-die Ergebnisse anderer Funktionen zurückgegeben. So ist es :abbr:`z.B. (zum
+die Ergebnisse anderer Funktionen zurückgegeben. So ist es :abbr:`z. B. (zum
 Beispiel)` möglich, eine Python-Funktion zu schreiben, die eine andere Funktion
 als Parameter annimmt, sie in eine andere Funktion einbettet, die etwas
 Ähnliches tut, und dann die neue Funktion zurückgibt. Diese neue Kombination

@@ -20,7 +20,7 @@ Logging erfüllt üblicherweise zwei verschiedene Zwecke:
 * Monitoring:
 
   * Das Logging zeichnet Ereignisse für benutzerdefinierten Heuristiken auf,
-    :abbr:`z.B. (zum Beispiel)` für Geschäftsanalysen. Diese Aufzeichnungen
+    :abbr:`z. B. (zum Beispiel)` für Geschäftsanalysen. Diese Aufzeichnungen
     können für Berichte oder Optimierungen der Geschäftsziele verwendet und
     :abbr:`ggf. (gegebenenfalls)` visualisiert werden.
 

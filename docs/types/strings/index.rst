@@ -30,7 +30,7 @@ folgende Code wird also nicht funktionieren:
 
 Sie können auch Tabulator- (``\t``) und *Newline*-Zeichen (``\n``) enthalten.
 Allgemein können Backslashes ``\`` als Escape-Zeichen verwendet werden. So kann
-:abbr:`z.B. (zum Beispiel)` ``\\`` für einen einzelnen Backslash und ``\'`` für
+:abbr:`z. B. (zum Beispiel)` ``\\`` für einen einzelnen Backslash und ``\'`` für
 ein einfaches Anführungszeichen verwendet werden, wodurch es die
 Zeichenfolge nicht beendet:
 
@@ -60,7 +60,7 @@ Backslashes ``\`` als Escape-Zeichen enthalten können.
 Checks
 ------
 
-* Könnt ihr :abbr:`z.B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
+* Könnt ihr :abbr:`z. B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
   addieren oder multiplizieren, oder mit einer Gleitkommazahl oder einer
   komplexen Zahl?
 

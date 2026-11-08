@@ -45,7 +45,7 @@ bearbeiten, um den relativen Pfad zum Paket anzugeben, also:
    import MODULE
 
 Wenn ihr eure Sphinx-Dokumentation in einer virtuellen Umgebung installiert
-habt, könnt ihr euer Paket auch dort mitinstallieren, :abbr:`z.B. (zum
+habt, könnt ihr euer Paket auch dort mitinstallieren, :abbr:`z. B. (zum
 Beispiel)` indem ihr es in eure :file:`requirements.txt`-Datei eintragt.
 
 Beispiele

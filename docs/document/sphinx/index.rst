@@ -1,7 +1,7 @@
 Sphinx
 ======
 
-Für umfangreiche Dokumentationen könnt ihr :abbr:`z.B.(zum Beispiel)` `Sphinx
+Für umfangreiche Dokumentationen könnt ihr :abbr:`z. B.(zum Beispiel)` `Sphinx
 <https://www.sphinx-doc.org/>`_ verwenden, ein Dokumentationswerkzeug, das
 reStructuredText in HTML oder PDF, EPub und man pages umwandelt. Auch die Python
 Basics werden mit Sphinx erstellt. Um einen ersten Eindruck von Sphinx zu
@@ -26,7 +26,7 @@ erstellen. Oft wird die Dokumentation auch im gleichen  :doc:`Git
 Erstellung der neuesten Software-Dokumentation einfach bleibt.
 
 Sphinx wird auch in Projekten außerhalb der Python-Gemeinschaft eingesetzt,
-:abbr:`z.B. (zum Beispiel)` für die Dokumentation des Linux-Kernels: `Kernel
+:abbr:`z. B. (zum Beispiel)` für die Dokumentation des Linux-Kernels: `Kernel
 documentation update <https://lwn.net/Articles/705224/>`_.
 
 `Read the Docs <https://about.readthedocs.com/>`_ wurde entwickelt, um die

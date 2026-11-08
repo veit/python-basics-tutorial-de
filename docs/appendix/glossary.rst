@@ -15,7 +15,7 @@ Glossar
        von Argumenten:
 
        Schlüsselwortargument
-           ein Argument, dem ein Bezeichner (:abbr:`z.B. (zum Beispiel)`
+           ein Argument, dem ein Bezeichner (:abbr:`z. B. (zum Beispiel)`
            ``name=``) in einem Funktionsaufruf vorangestellt ist oder das als
            Wert in einem Wörterbuch übergeben wird, dem ``**`` vorangestellt
            ist.
@@ -202,7 +202,7 @@ Glossar
 
        Conda installiert keine Pakete von :term:`PyPI` und kann nur von den
        offiziellen Continuum-Repositories oder von `anaconda.org
-       <https://anaconda.org/>`_ oder lokalen (:abbr:`z.B. (zum Beispiel)`
+       <https://anaconda.org/>`_ oder lokalen (:abbr:`z. B. (zum Beispiel)`
        Intranet-) Paketservern installieren.
 
        .. note::
@@ -331,7 +331,7 @@ Glossar
 
        Extension Module
            In der Regel in eine einzelne dynamisch ladbare vorkompilierte
-           Datei, :abbr:`z.B. (zum Beispiel)` einer gemeinsamen Objektdatei
+           Datei, :abbr:`z. B. (zum Beispiel)` einer gemeinsamen Objektdatei
            (``.so``).
 
        .. seealso::

@@ -115,7 +115,7 @@ Zeile 5
 
     .. tip::
        Zum Umkehren der Reihenfolge dürfte jedoch :func:`list.reverse` besser
-       lesbar sein als ein  *Stride* von ``-1``, :abbr:`s.a. (siehe auch)`
+       lesbar sein als ein  *Stride* von ``-1``, :abbr:`s. a. (siehe auch)`
        :ref:`list.reverse() <reverse>`.
 
 .. seealso::
@@ -126,7 +126,7 @@ Zeile 5
 -----------------
 
 Ihr könnt diese Notation verwenden, um Elemente in einer Liste hinzuzufügen, zu
-entfernen und zu ersetzen oder um ein Element oder eine neue Liste zu erhalten, die ein *Slice* davon ist, :abbr:`z.B. (zum Beispiel)`:
+entfernen und zu ersetzen oder um ein Element oder eine neue Liste zu erhalten, die ein *Slice* davon ist, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
    :linenos:
@@ -164,7 +164,7 @@ ausgeführt werden, wodurch die Lesbarkeit des Codes verbessert wird:
 
    >>> x.reverse()
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1]
+   [[7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, -1]
 
 Darüberhinaus könnt ihr die eingebauten Funktionen (:func:`python3:len`,
 :func:`max` und :func:`min`), einige Operatoren (:ref:`in, not in <python3:in>`,
@@ -176,28 +176,28 @@ Darüberhinaus könnt ihr die eingebauten Funktionen (:func:`python3:len`,
    :linenos:
 
    >>> len(x)
-   4
+   8
    >>> x[len(x) :] = [0, -1]
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, -1, 0, -1]
    >>> x.append(-2)
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1, -2]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, -1, 0, -1, -2]
    >>> y = [-3, -4, -5]
    >>> x.append(y)
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1, -2, [-3, -4, -5]]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, -1, 0, -1, -2, [-3, -4, -5]]
    >>> x[7:8] = []
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1, -2]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, 0, -1, -2, [-3, -4, -5]]
    >>> x.extend(y)
    >>> x
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1, -2, -3, -4, -5]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, 0, -1, -2, [-3, -4, -5], -3, -4, -5]
    >>> x + [-6, -7]
-   [(5.1, 5.2), [3.1, 3.2, 3.3], 'zweitens', 1, 0, -1, -2, -3, -4, -5, -6, -7]
+   [7, 6, (5.1, 5.2), ['4a', '4b'], 3.0, 'zweitens', 0, 0, -1, -2, [-3, -4, -5], -3, -4, -5, -6, -7]
    >>> x.reverse()
    >>> x
-   [-5, -4, -3, -2, -1, 0, 1, 'zweitens', [3.1, 3.2, 3.3], (5.1, 5.2)]
+   [-5, -4, -3, [-3, -4, -5], -2, -1, 0, 0, 'zweitens', 3.0, ['4a', '4b'], (5.1, 5.2), 6, 7]
 
 Zeile 1
     gibt die Anzahl der Listenelemente aus.
@@ -314,7 +314,7 @@ Die Funktion ``sorted``
 :::::::::::::::::::::::
 
 Listen haben eine eingebaute Methode, um sich selbst zu sortieren
-:meth:`python3:list.sort`. Andere *Iterables* in Python, wie :abbr:`z.B. (zum
+:meth:`python3:list.sort`. Andere *Iterables* in Python, wie :abbr:`z. B. (zum
 Beispiel)` die Schlüssel von :doc:`../dicts`, haben jedoch keine Sortiermethode.
 Python bietet hierfür jedoch die eingebaute Funktion :func:`python3:sorted` an,
 die eine sortierte Liste aus einer beliebigen  *Iterables* zurückgibt.
@@ -463,7 +463,7 @@ die Anzahl der Vorkommen in der Liste zurück und nicht die Position:
 Verschachtelte Listen und ``deepcopy``
 --------------------------------------
 
-Listen können verschachtelt werden, :abbr:`z.B. (zum Beispiel)` für die
+Listen können verschachtelt werden, :abbr:`z. B. (zum Beispiel)` für die
 Darstellung zweidimensionaler Matrizen. Auf die Elemente dieser Matrizen kann
 mit Hilfe von zweidimensionalen Indizes verwiesen werden:
 
@@ -502,7 +502,7 @@ zwischen ``sub`` und ``sup`` unterbrochen:
    [[2], 1]
 
 Ihr könnt eine Kopie einer Liste erhalten, indem ihr ein vollständiges *Slice*
-(also ``x[:]`` erzeugt) oder  + oder * verwendet (:abbr:`z.B. (zum Beispiel)`
+(also ``x[:]`` erzeugt) oder  + oder * verwendet (:abbr:`z. B. (zum Beispiel)`
 ``x + []`` oder ``x * 1``). Alle drei erzeugen eine so genannte flache Kopie der
 Liste, was wahrscheinlich in den meisten Fällen das Gewünschte ist. Wenn eure
 Liste jedoch andere Listen enthält, die in ihr verschachtelt sind, möchtet ihr

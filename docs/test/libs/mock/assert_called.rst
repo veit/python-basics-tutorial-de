@@ -24,7 +24,7 @@ richtige API-Methode korrekt aufgerufen hat. Die Implementierung des Befehls
 
 Wenn :func:`add_task` nicht aufgerufen wird oder mit dem falschen Typ oder dem
 falschen Objektinhalt aufgerufen wird, schlägt der Test fehl. Wenn wir
-:abbr:`z.B. (zum Beispiel)` in ``expected`` den String ``"Veit"`` groß
+:abbr:`z. B. (zum Beispiel)` in ``expected`` den String ``"Veit"`` groß
 schreiben, aber nicht im CLI-Aufruf, erhalten wir folgende Ausgabe:
 
 .. code-block:: pytest

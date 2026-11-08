@@ -2,7 +2,7 @@
 ===========
 
 Die Funktion :func:`print` gibt Zeichenketten aus wobei andere Python-Datentypen
-leicht in Strings umgewandelt und formatiert werden können, :abbr:`z.B. (zum
+leicht in Strings umgewandelt und formatiert werden können, :abbr:`z. B. (zum
 Beispiel)`:
 
 .. code-block:: pycon
@@ -64,7 +64,7 @@ Werte lassen sich auch in binäre und hexadezimale Werte umrechnen:
    Hex block size: c0
 
 Es gibt auch Formatierungsangaben, die ideal geeignet sind für die :abbr:`CLI
-(Command Line Interface)`-Ausgabe, :abbr:`z.B. (zum Beispiel)`:
+(Command Line Interface)`-Ausgabe, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: pycon
 
@@ -167,7 +167,7 @@ ihre Bedeutung aufgeführt:
 +-----------------------+-------------------------------------------------------+
 
 .. [#] Der Formatbezeichner ``n`` formatiert eine Zahl in einer lokal angepassten
-    Weise, :abbr:`z.B. (zum Beispiel)`:
+    Weise, :abbr:`z. B. (zum Beispiel)`:
 
     .. code-block:: pycon
 

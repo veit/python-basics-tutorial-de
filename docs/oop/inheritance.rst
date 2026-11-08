@@ -107,7 +107,7 @@ ist. Um diesen Effekt zu sehen, definiert eine weitere Methode in der Klasse
         ...
 
 Wenn ihr die Parameter ``delta_x`` und ``delta_y`` der Methode ``move`` in den
-``__init__``-Methoden von ``Circle`` und ``Square`` übernehmt, könnt ihr :abbr:`z.B. (zum Beispiel)` folgende interaktive Sitzung ausführen:
+``__init__``-Methoden von ``Circle`` und ``Square`` übernehmt, könnt ihr :abbr:`z. B. (zum Beispiel)` folgende interaktive Sitzung ausführen:
 
 .. code-block:: pycon
 

@@ -9,7 +9,7 @@ sind:
 * konfigurationsfrei
 * transaktional
 
-SQLite wird verwendet, um Daten lokal zu speichern, :abbr:`z.B. (zum Beispiel)`
+SQLite wird verwendet, um Daten lokal zu speichern, :abbr:`z. B. (zum Beispiel)`
 in Mobiltelefonen (Android, iOS) und in Browsern (Firefox, Safari, Chrome) sowie
 in vielen anderen Anwendungen.
 

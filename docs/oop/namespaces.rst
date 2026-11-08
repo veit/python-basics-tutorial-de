@@ -75,8 +75,8 @@ erhaltet ihr mit
 
 Diese drei Namensräume werden ebenfalls in dieser Reihenfolge durchsucht.
 
-Den Namensraum der Instanz könnt ihr nun :abbr:`z.B. (zum Beispiel)` analysieren
-mit der Methode ``instance_variables``:
+Den Namensraum der Instanz könnt ihr nun :abbr:`z. B. (zum Beispiel)`
+analysieren mit der Methode ``instance_variables``:
 
 .. literalinclude:: form_ns.py
     :language: python
@@ -98,7 +98,7 @@ mit der Methode ``instance_variables``:
     private Klassenvariablen der Superklasse so nicht zugänglich.
 
 Wenn ihr nur Instanzen einer bestimmten Klasse ändern wollt, könnt ihr dies
-:abbr:`z.B. (zum Beispiel)` mit dem :mod:`Garbage Collector <gc>`:
+:abbr:`z. B. (zum Beispiel)` mit dem :mod:`Garbage Collector <gc>`:
 
 .. code-block:: pycon
 

@@ -103,7 +103,7 @@ Nun könnt ihr euer Paket auf GitLab veröffentlichen mit:
 
 .. tip::
    :abbr:`Ggf. (Gegebenenfalls)` könnt ihr mit ``RUST_LOG=uv=trace`` weitere
-   Informationen zu den Authentifizierungsversuchen erhalten, also :abbr:`z.B.
+   Informationen zu den Authentifizierungsversuchen erhalten, also :abbr:`z. B.
    (zum Beispiel)` mit ``RUST_LOG=uv=trace uv --verbose publish --publish-url
    ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*``.
 
@@ -114,7 +114,7 @@ Nun könnt ihr euer Paket auf GitLab veröffentlichen mit:
 Installieren des Pakets
 -----------------------
 
-Ihr könnt die neueste Version eures Pakets installieren :abbr:`z.B. (zum
+Ihr könnt die neueste Version eures Pakets installieren :abbr:`z. B. (zum
 Beispiel)` mit
 
 .. code-block:: console

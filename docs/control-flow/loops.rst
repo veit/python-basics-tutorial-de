@@ -59,7 +59,7 @@ Zeile 5
 Die ``for``-Schleife ist einfach, aber mächtig, weil sie über einen beliebigen
 iterierbaren Typ, wie eine Liste oder ein Tupel, iterieren kann. Anders als in
 vielen anderen Sprachen iteriert die ``for``-Schleife in Python über jedes
-Element in einer Sequenz (:abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+Element in einer Sequenz (:abbr:`z. B. (zum Beispiel)` eine :doc:`Liste
 <../types/sequences-sets/lists>` oder ein :doc:`../types/sequences-sets/tuples`),
 was sie eher zu einer *for each*-Schleife macht. Die folgende Schleife verwendet
 den `Modulo <https://de.wikipedia.org/wiki/Division_mit_Rest#Modulo>`_-Operator
@@ -88,7 +88,7 @@ gefunden wurde, wird die Schleife mit der ``break``-Anweisung beendet.
 ``for``-Schleifen mit einem Index
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ihr könnt in einer ``for``-Schleife auch den Index ausgeben, :abbr:`z.B. (zum
+Ihr könnt in einer ``for``-Schleife auch den Index ausgeben, :abbr:`z. B. (zum
 Beispiel)` mit :py:func:`enumerate`:
 
 .. code-block:: pycon

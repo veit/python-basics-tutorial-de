@@ -28,7 +28,7 @@ Mit :py:func:`type` könnt ihr euch den Objekttyp anzeigen lassen, :abbr:`z. B
 ihr das Hilfesystem auf, mit dem ihr Informationen zu Modulen, Schlüsselwörtern
 und weiteren Themen erhalten könnt. Wenn ihr euch im Hilfesystem befindet, seht
 ihr mit ``help>`` eine Eingabeaufforderung. Ihr könnt nun einen Modulnamen
-eingeben, :abbr:`z.B. (zum Beispiel)` ``float``, um die `Python-Dokumentation
+eingeben, :abbr:`z. B. (zum Beispiel)` ``float``, um die `Python-Dokumentation
 <https://docs.python.org/>`_ zu diesem Typ zu durchsuchen.
 
 :func:`help` ist Teil der :doc:`pydoc <python3:library/pydoc>`-Bibliothek, die
@@ -90,7 +90,7 @@ Methoden und Daten lokal oder für ein bestimmtes Objekt verfügbar sind:
    >>> dir()
    ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'x']
 
-So können wir uns :abbr:`z.B. (zum Beispiel)` mit ``dir(__builtins__)`` eine
+So können wir uns :abbr:`z. B. (zum Beispiel)` mit ``dir(__builtins__)`` eine
 Liste dessen anzeigen lassen, was in der Python-Standardbibliothek bereits
 verfügbar ist:
 

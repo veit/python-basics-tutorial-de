@@ -22,7 +22,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 
 .. note::
    Ich bin der festen Überzeugung, dass eine Python-Anwendung richtig gepackt
-   sein sollte, um die vielen Vorteile zu genießen, wie :abbr:`z.B. (zum
+   sein sollte, um die vielen Vorteile zu genießen, wie :abbr:`z. B. (zum
    Beispiel)`:
 
    * die Ressourcenverwaltung mit :doc:`importlib <python3:library/importlib>`
@@ -37,7 +37,7 @@ App-Projekte sind für Webserver, Skripte und Befehlszeilenschnittstellen
 
     .. literalinclude:: myapp/pyproject.toml
        :caption: myapp/pyproject.toml
-       :lines: 12-13
+       :lines: 19
 
 :file:`myapp/src/myapp/__init__.py`
     Das Modul definiert eine CLI-Funktion :func:`main`:
@@ -176,7 +176,7 @@ Plattform- und Python-Versionen einschränken
 
 Wenn euer Projekt nur eine begrenzte Anzahl von Plattformen oder
 Python-Versionen unterstützt, könnt ihr dies in der
-:file:`pyprojects.toml`-Datei :pep:`508`-konform tun, :abbr:`z.B. (zum
+:file:`pyprojects.toml`-Datei :pep:`508`-konform tun, :abbr:`z. B. (zum
 Beispiel)` um euer Projekt nur auf macOS und Linux einzuschränken könnt ihr in
 eurer :file:`pyproject.toml`-Datei folgenden Abschnitt hinzufügen:
 

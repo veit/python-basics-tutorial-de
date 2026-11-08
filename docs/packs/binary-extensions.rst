@@ -47,8 +47,8 @@ Systemzugriffe auf niedriger Ebene
     oder IO-gebunden sind.
 
 Nicht alle Erweiterungsmodule passen genau in die oben genannten Kategorien. So
-umfassen z.B. die in `NumPy <https://numpy.org/>`_ enthaltenen
-Erweiterungsmodule alle drei Anwendungsfälle:
+umfassen :abbr:`z. B. (zum Beispiel)` die in `NumPy <https://numpy.org/>`_
+enthaltenen Erweiterungsmodule alle drei Anwendungsfälle:
 
 * Sie verschieben innere Schleifen aus Geschwindigkeitsgründen auf C,
 * umschließen externe Bibliotheken in C, FORTRAN und anderen Sprachen und
@@ -354,9 +354,10 @@ Die Binärkompatibilität auf macOS wird durch das Zielsystem für die minimale
 Implementierung bestimmt, z. B. *10.9* , das in der Umgebungsvariable
 ``MACOSX_DEPLOYMENT_TARGET`` definiert wird. Beim Erstellen mit
 setuptools/distutils wird das Deployment-Ziel mit dem Flag ``--plat-name``
-angegeben, z.B. ``macosx-10.9-x86_64``. Weitere Informationen zu
-Deployment-Zielen für Mac OS Python-Distributionen findet ihr im `MacPython
-Spinning Wheels-Wiki <https://github.com/MacPython/wiki/wiki/Spinning-wheels>`_.
+angegeben, :abbr:`z. B. (zum Beispiel)` ``macosx-10.9-x86_64``. Weitere
+Informationen zu Deployment-Zielen für Mac OS Python-Distributionen findet ihr
+im `MacPython Spinning Wheels-Wiki
+<https://github.com/MacPython/wiki/wiki/Spinning-wheels>`_.
 
 Deployment von Beschleunigungsmodulen
 -------------------------------------

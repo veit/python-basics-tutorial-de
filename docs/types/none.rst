@@ -31,7 +31,7 @@ In Python verlassen wir uns oft darauf, dass :class:`None` ``False`` ist:
    >>> bool(None)
    False
 
-So können wir :abbr:`z.B. (zum Beispiel)` in einer :doc:`if-Anweisung
+So können wir :abbr:`z. B. (zum Beispiel)` in einer :doc:`if-Anweisung
 <../control-flow/conditional>` überprüfen, ob :doc:`../types/strings/index` leer
 sind:
 

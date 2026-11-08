@@ -14,7 +14,7 @@ In ``docs/conf.py`` muss Intersphinx als Erweiterung angegeben werden:
 
     extensions = [..., "sphinx.ext.intersphinx"]
 
-Externe Sphinx-Dokumentation kann dann angegeben werden, :abbr:`z.B. (zum
+Externe Sphinx-Dokumentation kann dann angegeben werden, :abbr:`z. B. (zum
 Beispiel)` mit:
 
 .. code-block:: python
@@ -24,7 +24,7 @@ Beispiel)` mit:
         "bokeh": ("https://bokeh.pydata.org/en/latest/", None),
     }
 
-Es können jedoch auch alternative Dateien für eine Bestandsaufnahme angegeben werden, :abbr:`z.B. (zum Beispiel)`:
+Es können jedoch auch alternative Dateien für eine Bestandsaufnahme angegeben werden, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: python
 
@@ -35,7 +35,7 @@ Es können jedoch auch alternative Dateien für eine Bestandsaufnahme angegeben 
 Bestimmen von Linkzielen
 ------------------------
 
-Um die in einem Inventar verfügbaren Links zu ermitteln, könnt ihr :abbr:`z.B.
+Um die in einem Inventar verfügbaren Links zu ermitteln, könnt ihr :abbr:`z. B.
 (zum Beispiel)` Folgendes eingeben:
 
 .. code-block:: console
@@ -72,7 +72,7 @@ Benutzerdefinierte Links
 ------------------------
 
 Ihr könnt auch eure eigenen ``intersphinx``-Zuweisungen erstellen, wenn
-:abbr:`z.B. (zum Beispiel)` ``objects.inv`` Fehler aufweist wie bei `Beautiful
+:abbr:`z. B. (zum Beispiel)` ``objects.inv`` Fehler aufweist wie bei `Beautiful
 Soup <https://bugs.launchpad.net/beautifulsoup/+bug/1453370>`_.
 
 Der Fehler kann mit korrigiert werden:
@@ -108,7 +108,7 @@ Der Fehler kann mit korrigiert werden:
 
     $ sphobjinv convert plain bs4_objects.inv bs4_objects.txt
 
-#. Editiert die Textdatei, :abbr:`z.B. (zum Beispiel)`:
+#. Editiert die Textdatei, :abbr:`z. B. (zum Beispiel)`:
 
    .. code-block:: console
 
@@ -145,7 +145,7 @@ Rollen hinzufügen
 -----------------
 
 Wenn ihr eine Fehlermeldung erhaltet, dass eine bestimmte Textrolle unbekannt
-ist, :abbr:`z.B. (zum Beispiel)`:
+ist, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: console
 

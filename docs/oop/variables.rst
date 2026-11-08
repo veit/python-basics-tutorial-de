@@ -29,7 +29,7 @@ Klassenvariablen
 Eine Klassenvariable ist eine Variable, die mit einer Klasse verbunden ist,
 nicht mit einer Instanz einer Klasse, und auf die alle Instanzen der Klasse
 zugreifen können. Eine Klassenvariable kann verwendet werden, um einige
-Informationen auf Klassenebene zu speichern, :abbr:`z.B. (zum Beispiel)` wie
+Informationen auf Klassenebene zu speichern, :abbr:`z. B. (zum Beispiel)` wie
 viele Instanzen der Klasse zu einem bestimmten Zeitpunkt erstellt wurden. Python
 stellt Klassenvariablen zur Verfügung, obwohl deren Verwendung etwas mehr
 Aufwand erfordert als in den meisten anderen Sprachen. Außerdem müsst ihr auf

@@ -2,7 +2,7 @@ Tupel
 =====
 
 Tupel ähneln :doc:`lists`, können jedoch nicht geändert sondern nur erstellt
-werden. Tupel haben die wichtige Aufgabe, effizient :abbr:`z.B. (zum Beispiel)`
+werden. Tupel haben die wichtige Aufgabe, effizient :abbr:`z. B. (zum Beispiel)`
 Schlüssel für :doc:`../dicts` zu erstellen.
 
 Tupel werden ähnlich wie die Listen erstellt: einer Variablen wird eine Folge

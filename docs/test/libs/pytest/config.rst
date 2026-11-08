@@ -262,7 +262,7 @@ API-Tests, und einige könnt ihr auch gemeinsam nutzen.
 
 Die :file:`__init__.py`-Datei erlaubt es, doppelte Testdateinamen zu haben. Wenn
 ihr :file:`__init__.py`-Dateien in jedem Test-Unterverzeichnis habt, könnt ihr
-denselben Testdateinamen in mehreren Verzeichnissen verwenden, :abbr:`z.B. (zum
+denselben Testdateinamen in mehreren Verzeichnissen verwenden, :abbr:`z. B. (zum
 Beispiel)`:
 
 .. code-block:: console

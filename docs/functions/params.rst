@@ -171,7 +171,7 @@ eines ``*`` vor den endgültigen Parameter-Namen der Funktion, dass alle
 überschüssigen Nicht-Schlüsselwort-Argumente in einem Funktionsaufruf,
 :abbr:`d.h. (das heißt)` die Positionsargumente, die keinem anderen Parameter
 zugewiesen sind, gesammelt und als Tupel dem angegebenen Parameter zugewiesen
-werden. Dies ist :abbr:`z.B. (zum Beispiel)` eine einfache Möglichkeit, eine
+werden. Dies ist :abbr:`z. B. (zum Beispiel)` eine einfache Möglichkeit, eine
 Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
 
 .. code-block:: pycon
@@ -184,7 +184,7 @@ Funktion zu implementieren, die den Mittelwert in einer Liste von Zahlen findet:
     ...     return m
     ...
 
-Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z.B. (zum Beispiel)`
+Nun könnt ihr das Verhalten der Funktion testen, :abbr:`z. B. (zum Beispiel)`
 mit:
 
 .. code-block:: pycon
@@ -200,7 +200,7 @@ für jeden Eintrag im Dict ist das Schlüsselwort (Parametername) für das
 Argument. Der Wert dieses Eintrags ist das Argument selbst. Ein per
 Schlüsselwort übergebenes Argument ist in diesem Zusammenhang überflüssig, wenn
 das Schlüsselwort, mit dem es übergeben wurde, nicht mit einem der
-Parameternamen in der Funktionsdefinition übereinstimmt, :abbr:`z.B. (zum
+Parameternamen in der Funktionsdefinition übereinstimmt, :abbr:`z. B. (zum
 Beispiel)`:
 
 .. code-block:: pycon
@@ -241,7 +241,7 @@ Verweis auf das Objekt. Bei :term:`unveränderlichen <Unveränderlich>` Objekten
 wie :doc:`/types/sequences-sets/tuples`, :doc:`/types/strings/index` und
 :doc:`/types/numbers/index` hat das, was mit einem Parameter gemacht wird, keine
 Auswirkungen außerhalb der Funktion. Wenn ihr jedoch ein veränderliches Objekt
-übergebt, :abbr:`z.B. (zum Beispiel)` eine :doc:`Liste
+übergebt, :abbr:`z. B. (zum Beispiel)` eine :doc:`Liste
 </types/sequences-sets/lists>`, ein :doc:`Dict </types/dicts>` oder eine
 Klasseninstanz, ändert jede Änderung des Objekts, worauf das Argument außerhalb
 der Funktion verweist. Die Neuzuweisung des Parameters hat keine Auswirkungen

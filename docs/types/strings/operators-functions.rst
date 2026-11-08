@@ -134,7 +134,7 @@ aneinanderhängt werden, um die endgültige Zeichenkette zu bilden.
 .. note::
    Während :ref:`str <python3:textseq>` meist verwendet wird, um für Menschen
    lesbare Texte zu erzeugen, wird :func:`python3:repr` eher für
-   Debugging-Ausgaben oder Statusberichte verwendet, :abbr:`z.B. (zum
+   Debugging-Ausgaben oder Statusberichte verwendet, :abbr:`z. B. (zum
    Beispiel)`, um Informationen über die eingebaute Python-Funktion
    :func:`python3:len` zu erhalten:
 
@@ -146,7 +146,7 @@ aneinanderhängt werden, um die endgültige Zeichenkette zu bilden.
 Checks
 ------
 
-* Könnt ihr :abbr:`z.B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
+* Könnt ihr :abbr:`z. B. (zum Beispiel)` eine Zeichenkette mit einer ganzen Zahl
   addieren oder multiplizieren, oder mit einer Gleitkommazahl oder einer
   komplexen Zahl?
 

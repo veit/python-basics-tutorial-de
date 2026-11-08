@@ -88,7 +88,7 @@ Optionen
 --------
 
 ``cibuildwheel`` kann entweder über Umgebungsvariablen oder über eine
-Konfigurationsdatei wie :file:`pyproject.toml` konfiguriert werden, :abbr:`z.B.
+Konfigurationsdatei wie :file:`pyproject.toml` konfiguriert werden, :abbr:`z. B.
 (zum Beispiel)`:
 
 .. literalinclude:: pyproject.toml

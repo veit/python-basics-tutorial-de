@@ -15,7 +15,7 @@ Sets erstellen
 ~~~~~~~~~~~~~~
 
 Ihr könnt Sets erstellen, indem ihr :class:`set` auf eine Sequenz anwendet,
-:abbr:`z.B. (zum Beispiel)` auf eine :doc:`Liste <lists>`.
+:abbr:`z. B. (zum Beispiel)` auf eine :doc:`Liste <lists>`.
 
 .. code-block:: pycon
 
@@ -132,7 +132,7 @@ Reihenfolge
 Der Geschwindigkeitsvorteil hat jedoch auch ihren Preis: Sets halten die
 Elemente nicht in der richtigen Reihenfolge, während :doc:`lists` und
 :doc:`tuples` dies tun. Wenn die Reihenfolge für euch wichtig ist, solltet ihr
-nur für bestimmte Operationen die Elemente in ein Set umwandeln, :abbr:`z.B.
+nur für bestimmte Operationen die Elemente in ein Set umwandeln, :abbr:`z. B.
 (zum Beispiel)` um zu überprüfen, ob die Elemente einer Liste eindeutig sind mit
 
 .. code-block:: pycon

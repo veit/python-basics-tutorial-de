@@ -7,14 +7,14 @@ Hooks
 Ihr könnt :abbr:`sog. (sogenannte)` Pre- oder Post-Generate-Hooks schreiben, di
 entweder vor oder nach dem Generieren der Vorlage in den Ablauf eingehängt
 werden. Dabei werden die Jinja-Template-Variablen in die Skripte integriert,
-:abbr:`z.B. (zum Beispiel)`:
+:abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: python
 
     if "Not open source" == "{{ cookiecutter.license }}":
         remove_file("LICENSE")
 
-In einem Pre-Generate-Hook können :abbr:`z.B. (zum Beispiel)` Variablen
+In einem Pre-Generate-Hook können :abbr:`z. B. (zum Beispiel)` Variablen
 validiert werden:
 
 .. code-block:: python
@@ -36,7 +36,7 @@ Konfiguration
 -------------
 
 Wenn ihr Cookiecutter häufig verwendet, empfiehlt sich eine eigene
-Konfigurationsdatei:  ``~/cookiecutterrc``, :abbr:`z.B. (zum Beispiel)`:
+Konfigurationsdatei:  ``~/cookiecutterrc``, :abbr:`z. B. (zum Beispiel)`:
 
 .. code-block:: bash
 
@@ -51,7 +51,7 @@ Wiederholung
 ------------
 
 Beim Aufruf von ``cookiecutter`` wird eine ``json``-Datei angelegt in
-``/.cookiecutter_replay/``, :abbr:`z.B. (zum Beispiel)`
+``/.cookiecutter_replay/``, :abbr:`z. B. (zum Beispiel)`
 ``~/.cookiecutter_replay/cookiecutter-namespace-template.json``:
 
 .. code-block:: json
@@ -59,7 +59,7 @@ Beim Aufruf von ``cookiecutter`` wird eine ``json``-Datei angelegt in
     {"cookiecutter": {"full_name": "Veit Schiele", "email": "veit@cusy.io", "github_username": "veit", "project_name": "vsc.example", "project_slug": "vsc.example", "namespace": "vsc", "package_name": "example", "project_short_description": "Python Namespace Package contains all you need to create a Python namespace package.", "pypi_username": "veit", "use_pytest": "y", "command_line_interface": "Click", "version": "0.1.0", "create_author_file": "y", "license": "MIT license", "_template": "https://github.com/veit/cookiecutter-namespace-template"}}
 
 Wenn ihr dies diese Informationen erneut verwenden wollt ohne diese erneut in
-der Kommandozeile bestätigen zu müssen, könnt ihr :abbr:`z.B. (zum Beispiel)`
+der Kommandozeile bestätigen zu müssen, könnt ihr :abbr:`z. B. (zum Beispiel)`
 einfach folgendes eingeben:
 
 .. code-block:: console
@@ -74,15 +74,15 @@ Alternativ kann auch die Python-API verwendet werden:
 
     cookiecutter("gh:veit/cookiecutter-namespace-template", replay=True)
 
-Diese Funktion ist hilfreich, wenn ihr z.B. ein Projekt aus einer aktualisierten
-Vorlage erstellen wollt.
+Diese Funktion ist hilfreich, wenn ihr :abbr:`z. B. (zum Beispiel)` ein Projekt
+aus einer aktualisierten Vorlage erstellen wollt.
 
 Auswahlvariablen
 ----------------
 
 Auswahlvariablen bieten verschiedene Möglichkeiten beim Erstellen eines
 Projekts. Abhängig von der Wahl des Benutzers rendert die Vorlage diese
-anders, :abbr:`z.B. (zum Beispiel)` wenn in der ``cookiecutter.json``-Datei
+anders, :abbr:`z. B. (zum Beispiel)` wenn in der ``cookiecutter.json``-Datei
 folgende Auswahl angeboten wird:
 
 .. code-block:: json
