@@ -7,23 +7,40 @@ eingeschränkte Funktion, die nicht länger als eine Zeile ist. Wie eine normale
 Funktion kann eine Lambda-Funktion mehrere Argumente haben, aber nur einen
 Ausdruck, der ausgewertet und zurückgegeben wird.
 
-Die Syntax einer Lambda-Funktion lautet:
-
-:samp:`lambda {ARGUMENTS}: {EXPRESSION}`
-
-.. code-block:: pycon
-
-   >>> add = lambda x, y: x + y
-   >>> add(2, 3)
-   5
+Die Syntax einer Lambda-Funktion lautet :samp:`lambda {ARGUMENTS}:
+{EXPRESSION}`.
 
 .. note::
    Es gibt in der Lambda-Funktion keine ``return``-Anweisung. Der einzelne
    Ausdruck nach dem Doppelpunkt ist der Rückgabewert.
 
-Im nächsten Beispiel wird eine lambda-Funktion innerhalb eines Funktionsaufrufs
-erstellt. Es gibt jedoch keine globale Variable, um die Werte der
-lambda-Funktion zu speichern:
+.. tip::
+   Verwendet jedoch stets eine ``def``-Anweisung anstelle einer Zuweisung, die
+   einen Lambda-Ausdruck direkt an einen Identifikator bindet, also nicht
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> add = lambda x, y: x + y
+      >>> add(2, 3)
+      5
+
+   sondern
+
+   .. code-block:: pycon
+      :class: good
+
+      >>> def add(x, y):
+      ...     return x + y
+      ...
+      >>> add(2, 3)
+      5
+
+Dies ist im Allgemeinen für Tracebacks und String-Repräsentationen nützlicher.
+Der einzige Vorteil von lambda-Funktionen ist, dass sie in einen größeren
+Ausdruck eingebettet werden können. Im nächsten Beispiel sehen wir, wie eine
+lambda-Funktion innerhalb eines Funktionsaufrufs erstellt wird. Dabei gibt es
+keine globale Variable, um die Werte der lambda-Funktion zu speichern:
 
 .. code-block:: pycon
    :linenos:

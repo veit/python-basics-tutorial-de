@@ -43,6 +43,27 @@ sind:
    ...
    No value was specified.
 
+.. tip::
+   Bei Sequenzen wie :doc:`strings/index`, :doc:`sequences-sets/lists` und
+   :doc:`sequences-sets/tuples` könnt ihr ausnutzen, dass leere Sequenzen
+   ``False`` sind:
+
+   .. code-block:: pycon
+      :class: good
+
+      >>> if seq:
+      ...     pass
+      ...
+
+   Ihr müsst hierfür nicht umständlich :func:`len` verwenden:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if len(seq):
+      ...     pass
+      ...
+
 :class:`None` steht für Leere
 -----------------------------
 
@@ -50,8 +71,8 @@ sind:
 
    >>> titles = {7.0: "Data Types", 7.1: "Lists", 7.2: "Tuples"}
    >>> third_title = titles.get("7.3")
-   >>> print(third_title)
-   None
+   >>> type(third_title)
+   <class 'NoneType'>
 
 Der Standard-Rückgabewert einer Funktion ist :class:`None`
 ----------------------------------------------------------
@@ -64,5 +85,27 @@ einen Wert zurückgibt, was bedeutet, dass sie standardmäßig ``None`` zurückg
    >>> def myfunc():
    ...     pass
    ...
-   >>> print(myfunc())
-   None
+   >>> type(myfunc())
+   <class 'NoneType'>
+
+``return None`` ist jedoch aussagekräftiger und wird auch von :pep:`PEP 8
+<8#programming-recommendations>` empfohlen, also nicht
+
+.. code-block::
+   :class: bad
+
+   def myfunc(x):
+       if x >= 0:
+           return x**2
+
+sondern
+
+.. code-block::
+   :class: good
+   :emphasize-lines: 4-
+
+   def myfunc(x):
+       if x >= 0:
+           return x**2
+       else:
+           return None

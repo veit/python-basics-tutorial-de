@@ -30,6 +30,27 @@ automatisch über sie verfügen:
    >>> welcome.replace("\n", "")
    'hello pythonistas!'
 
+.. tip::
+   Verwendet :py:meth:`str.startswith` und :py:meth:`str.endswith` anstelle von
+   String-Slicing, um auf Präfixe oder Suffixe zu prüfen; sie sind
+   übersichtlicher und weniger fehleranfällig:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if welcome[0:5] == "hello":
+      ...     print("Hi")
+      ...
+      Hi
+
+   .. code-block:: pycon
+      :class: good
+
+      >>> if welcome.startswith("hello"):
+      ...     print("Hi")
+      ...
+      Hi
+
 Im Folgenden findet ihr einen Überblick über die häufigsten
 :ref:`String-Methoden <python3:string-methods>`:
 

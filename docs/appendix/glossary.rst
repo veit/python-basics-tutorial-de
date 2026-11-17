@@ -599,11 +599,11 @@ Glossar
        * :ref:`Reproduzieren <reproduce-virtual-env>` und :ref:`aktualisieren
          <update-uv-lock>` der Python-Umgebung,
          :abbr:`ggf. (gegebenenfalls)` auch mit einem
-         :doc:`Python4DataScience:productive/envs/uv/dependency-bot`
+         :doc:`Python4DataScience:productive/envs/uv/renovate`
        * :doc:`Python4DataScience:productive/envs/uv/cicd`
        * :doc:`Python4DataScience:productive/envs/uv/claude-cursor`
        * :doc:`Python4DataScience:productive/envs/uv/docker`
-       * Schwachstellen überprüfen mit :ref:`uv audit <check-vulnerabilities>`
+       * Schwachstellen überprüfen mit :ref:`uv audit <vulnerability_scans>`
 
        .. seealso::
           * `Docs <https://docs.astral.sh/uv/>`__
@@ -684,8 +684,8 @@ Glossar
 
          Es gibt diverse Python-Pakete, die euch bei der statischen Code-Analyse
          unterstützen können, :abbr:`u. a. (unter anderem)`
-         :doc:`Python4DataScience:productive/qa/flake8`,
-         :doc:`Python4DataScience:productive/qa/pysa` und
+         :doc:`Python4DataScience:productive/qa/ruff`,
+         :doc:`Python4DataScience:productive/git/advanced/hooks/prek` und
          :doc:`Python4DataScience:productive/qa/wily`.
 
          .. note::

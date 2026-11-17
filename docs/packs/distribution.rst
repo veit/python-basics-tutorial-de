@@ -296,7 +296,9 @@ In :file:`pyproject.toml` könnt ihr auch Metadaten zu eurem Paket angeben, wie
    \`{/PATH/TO/}pyproject.toml\`` erhaltet, habt ihr vermutlich keinen
    ``[project]``-Abschnitt definiert. Dies kann in Repositorys auftreten, die
    die :file:`pyproject.toml`-Datei nur für die Konfiguration von Tools wie
-   Black und Ruff verwenden, das Projekt selbst jedoch nicht definieren.
+   :doc:`Python4DataScience:productive/qa/black` und
+   :doc:`Python4DataScience:productive/qa/ruff` verwenden, das Projekt selbst
+   jedoch nicht definieren.
 
    Um das Problem zu beheben, könnt ihr einen ``[project]``-Abschnitt einfügen,
    der zumindest ``name`` und ``version`` enthalten muss. Alternativ könnt ihr

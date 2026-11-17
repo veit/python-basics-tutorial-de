@@ -41,6 +41,20 @@ Zeile 8
     ausgeführt wird, wenn die anderen bedingten Blöcke, ``if`` und ``elif``,
     alle unzutreffend sind.
 
+.. tip::
+   Vergleicht boolesche Werte nicht mit ``True`` oder ``False`` mithilfe von
+   ``==`` oder ``is``:
+
+   .. code-block:: pycon
+      :class: bad
+
+      >>> if x < 1 == True:
+      ...     pass
+      ...
+      >>> if x < 1 is True:
+      ...     pass
+      ...
+
 Darüber hinaus können die Bedingungen logisch miteinander verknüpft werden, zum
 Beispiel:
 

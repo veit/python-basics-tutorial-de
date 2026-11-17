@@ -20,6 +20,10 @@ wir Zweige für ältere Versionen starten müssen.
 Added
 ~~~~~
 
+* 📝 Add recommendations on programming style
+
+  * Add CSS classes 'good' and 'bad'
+
 * 📝 Add what’s new in Python 3.15
 
   * Add lacy imports

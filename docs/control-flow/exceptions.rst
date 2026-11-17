@@ -44,7 +44,7 @@ meisten Ausnahmen erben von ``Exception``, und es wird dringend empfohlen, dass
 alle benutzerdefinierten Ausnahmen auch die Unterklasse von ``Exception``  und
 nicht von ``BaseException`` bilden:
 
-Es ist möglich, verschiedene Arten von Ausnahmen zu erzeugen, um die
+Es ist möglich, verschiedene Arten von Ausnahmen zu erstellen, um die
 tatsächliche Ursache des gemeldeten Fehlers oder außergewöhnlichen Umstandes zu
 reflektieren.
 
@@ -106,6 +106,47 @@ Zeile 19
    Exceptions richtig eingesetzt werden, und Fehler werden nur dann behandelt,
    wenn sie auftreten. Diese pythonische Herangehensweise zur Behandlung von
    Fehlern wird oft als :term:`EAFP` beschrieben.
+
+.. tip::
+   Wenn ihr Exceptions abfangt, solltet ihr bestimmte Exceptions nennen, anstatt
+   bloß die ``except``-Klausel zu verwenden, da eine einfache
+   ``„except:``-Klausel auch die Ausnahmen ``SystemExit`` und
+   ``KeyboardInterrupt`` abfängt , wodurch es schwierig wird, ein Programm mit
+   :kbd:`Strg+C` zu unterbrechen, und andere Probleme verdeckt werden können.
+
+   Wenn ihr alle Exceptions abfangen möchtet, die auf Programmfehler hinweisen,
+   verwendet ``except Exception:``.
+
+.. tip::
+   Meist sollten einfache ``except``-Klauseln auf zwei Fälle beschränkt werden:
+   Wenn der Exception-Handler einen Traceback ausgibt oder protokolliert, wird
+   dem User zumindest bewusst, dass ein Fehler aufgetreten ist.
+
+.. tip::
+   Bei allen ``try``-``except``-Anweisungen sollte die ``try``-Anweisung auf das
+   absolut notwendige Minimum an Code beschränkt werden. Die folgende
+   ``try``-Anweisung ist zu breit gefasst und die ``except``-Anweisung fängt
+   auch den ``KeyError``:
+
+   .. code-block:: python
+      :class: bad
+
+      try:
+          return process_value(collection[key])
+      except KeyError:
+          return key_not_found(key)
+
+   Beser ist:
+
+   .. code-block:: python
+      :class: good
+
+      try:
+          value = collection[key]
+      except KeyError:
+          return key_not_found(key)
+      else:
+          return process_value(value)
 
 Checks
 ------

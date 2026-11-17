@@ -5,8 +5,8 @@ Die grundlegende Syntax für eine Python-Funktionsdefinition lautet
 
 .. code-block:: python
 
-    def function_name(param1, param2):
-        body
+   def function_name(param1, param2):
+       pass
 
 Wie bei :doc:`Kontrollströmen </control-flow/index>` verwendet Python
 Einrückungen, um die Funktion von der Funktionsdefinition abzugrenzen. Das
@@ -18,13 +18,13 @@ erhalten:
 .. code-block:: python
    :linenos:
 
-    def fact(n):
-        """Return the factorial of the given number."""
-        f = 1
-        while n > 0:
-            f = f * n
-            n = n - 1
-        return f
+   def fact(n):
+       """Return the factorial of the given number."""
+       f = 1
+       while n > 0:
+           f = f * n
+           n = n - 1
+       return f
 
 Zeile 2
     Dies ist ein optionaler Dokumentationsstring, oder ``docstring``. Ihr könnt
@@ -40,8 +40,8 @@ Zeile 2
     Zeile folgen zu lassen und mit dem Rest der Informationen zu enden.
 
     .. seealso::
-        * :doc:`../document/sphinx/docstrings`
-        * :pep:`257`
+       * :doc:`../document/sphinx/docstrings`
+       * :pep:`257`
 
 Zeile 7
     Der Wert wird nach dem Aufruf der Funktion zurückgegeben. Ihr könnt auch
@@ -55,11 +55,11 @@ Rückgabewert einer Funktion verwendet wird:
 .. code-block:: pycon
    :linenos:
 
-    >>> fact(3)
-    6
-    >>> x = fact(3)
-    >>> x
-    6
+   >>> fact(3)
+   6
+   >>> x = fact(3)
+   >>> x
+   6
 
 Zeile 1
     Der Rückgabewert ist nicht mit einer Variablen verknüpft.

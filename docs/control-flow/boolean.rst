@@ -96,10 +96,22 @@ Konstante ``True`` und alles andere wird als ``True`` betrachtet.
        >>> x is not None
        True
 
-    Auch der Python-Style-Guide in :pep:`8` empfiehlt, dass ihr auf Identität
-    mit :doc:`../types/none` und nicht auf Werte überprüfen solltet, also
-    niemals ``x == None``, sondern stattdessen immer ``x is None``  verwenden
-    solltet.
+    .. tip::
+       Der Python-Style-Guide in :pep:`PEP 8 <8#programming-recommendations>`
+       empfiehlt, dass ihr auf Identität mit :doc:`../types/none` und nicht auf
+       Werte überprüfen solltet, also nicht:
+
+       .. code-block:: pycon
+          :class: bad
+
+          >>> x == None
+
+       sondern
+
+       .. code-block:: pycon
+          :class: good
+
+          >>> x is None
 
 ``and``, ``not``, ``or``
     sind logische Operatoren, mit denen wir die oben genannten Überprüfungen
